@@ -1,0 +1,179 @@
+export type MenuGroup = {
+  slug: string;
+  en: string;
+  vi: string;
+  kicker: string;
+  headline: string;
+  intro: string;
+  items: readonly string[];
+  image: string;
+};
+
+export const menuGroups: readonly MenuGroup[] = [
+  {
+    slug: "discover",
+    en: "Discover VGG",
+    vi: "Về VGG",
+    kicker: "Van Lang Global Graduate",
+    headline: "Khám phá một VGG lấy người học làm trung tâm.",
+    intro:
+      "VGG kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",
+    items: [
+      "Giới thiệu",
+      "Tầm nhìn & Sứ mệnh",
+      "Lãnh đạo",
+      "Vì sao chọn VGG",
+      "Xếp hạng & Thành tựu",
+      "Liên hệ",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1800&q=86",
+  },
+  {
+    slug: "programmes",
+    en: "Programmes",
+    vi: "Chương trình đào tạo",
+    kicker: "Choose the path that moves you forward",
+    headline: "Chương trình cho từng bước tiến sự nghiệp.",
+    intro:
+      "Các lộ trình kết nối tri thức chuyên sâu với nhu cầu thực tiễn và mục tiêu nghề nghiệp.",
+    items: [
+      "Chương trình Thạc sĩ Flagship",
+      "Thạc sĩ",
+      "Tiến sĩ",
+      "Executive Education",
+      "Chương trình Quốc tế",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1800&q=86",
+  },
+  {
+    slug: "admissions",
+    en: "Admissions",
+    vi: "Tuyển sinh",
+    kicker: "Your VGG journey starts here",
+    headline: "Thông tin rõ ràng. Hành trình tinh gọn.",
+    intro: "Tìm hiểu điều kiện, học phí, học bổng, quy trình hồ sơ và các mốc quan trọng.",
+    items: [
+      "Yêu cầu tuyển sinh",
+      "Học phí",
+      "Học bổng & Hỗ trợ tài chính",
+      "Quy trình nộp hồ sơ",
+      "Các mốc thời gian",
+      "FAQ",
+      "Đặt lịch tư vấn",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=86",
+  },
+  {
+    slug: "research",
+    en: "Research & Innovation",
+    vi: "Nghiên cứu & Đổi mới",
+    kicker: "Knowledge for real-world impact",
+    headline: "Nghiên cứu để giải quyết vấn đề thực tiễn.",
+    intro:
+      "VGG kết nối nhà khoa học, doanh nghiệp và cộng đồng để kiến tạo các giải pháp có giá trị.",
+    items: [
+      "Các cụm nghiên cứu",
+      "Dự án nghiên cứu",
+      "Công bố khoa học",
+      "Hội thảo & Sự kiện khoa học",
+      "Đổi mới sáng tạo",
+      "Hợp tác doanh nghiệp",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1800&q=86",
+  },
+  {
+    slug: "global",
+    en: "Global Opportunities",
+    vi: "Cơ hội quốc tế",
+    kicker: "Learn beyond borders",
+    headline: "Thế giới là một phần của hành trình học tập.",
+    intro:
+      "Trao đổi, bằng đôi, thực tập và mạng lưới đối tác giúp người học mở rộng góc nhìn toàn cầu.",
+    items: [
+      "Trao đổi sinh viên",
+      "Dual Degree",
+      "Thực tập Quốc tế",
+      "Study Tour",
+      "Overseas Immersion",
+      "Đối tác toàn cầu",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1800&q=86",
+  },
+  {
+    slug: "student-success",
+    en: "Student Success",
+    vi: "Hành trình học viên",
+    kicker: "Supported at every step",
+    headline: "Thành công của học viên là trung tâm.",
+    intro:
+      "Hệ sinh thái hỗ trợ học tập, nghề nghiệp và kết nối doanh nghiệp đồng hành xuyên suốt hành trình.",
+    items: [
+      "Dịch vụ hỗ trợ học viên",
+      "Phát triển sự nghiệp",
+      "Tài nguyên học tập",
+      "Cựu học viên",
+      "Câu chuyện thành công",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=86",
+  },
+  {
+    slug: "news",
+    en: "News & Events",
+    vi: "Tin tức & Sự kiện",
+    kicker: "The pulse of our academic community",
+    headline: "Theo dòng chuyển động học thuật.",
+    intro: "Cập nhật tin tức, sự kiện, seminar và những khoảnh khắc nổi bật trong cộng đồng VGG.",
+    items: [
+      "Tin tức",
+      "Sự kiện",
+      "Seminar / Webinar",
+      "Thông cáo báo chí",
+      "Thư viện hình ảnh",
+      "Video",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1800&q=86",
+  },
+  {
+    slug: "resources",
+    en: "Resources",
+    vi: "Tài nguyên",
+    kicker: "Everything you need in one place",
+    headline: "Tài nguyên học thuật dễ tìm, dễ sử dụng.",
+    intro: "Truy cập biểu mẫu, chính sách, tài liệu, lịch học thuật và câu hỏi thường gặp.",
+    items: ["Biểu mẫu", "Chính sách & Quy định", "Tài liệu tải về", "Lịch học thuật", "FAQ"],
+    image:
+      "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1800&q=86",
+  },
+];
+
+export const programmes = [
+  "Quản trị Kinh doanh",
+  "Kinh doanh Thương mại",
+  "Tài chính - Ngân hàng",
+  "Kế toán",
+  "Luật Kinh tế",
+  "Quan hệ Công chúng",
+  "Ngôn ngữ Anh",
+  "Công nghệ Sinh học",
+  "Kỹ thuật Môi trường",
+  "Quản lý Tài nguyên và Môi trường",
+  "Kỹ thuật Xây dựng",
+  "Kỹ thuật ô tô",
+  "Logistics và Quản lý chuỗi cung ứng",
+  "Kiến trúc",
+  "Mỹ thuật Ứng dụng",
+  "Lý luận và Lịch sử Mỹ thuật Ứng dụng",
+  "Quản trị Dịch vụ Du lịch và Lữ hành",
+  "Quản trị Khách sạn",
+] as const;
+
+export function findGroup(slug: string): MenuGroup | undefined {
+  return menuGroups.find((group) => group.slug === slug);
+}

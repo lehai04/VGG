@@ -1,0 +1,10 @@
+export { Admissions } from "./Admissions";
+export { Footer } from "./Footer";
+export { Header } from "./Header";
+export { Hero } from "./Hero";
+export { News } from "./News";
+export { ProgrammeCatalog } from "./ProgrammeCatalog";
+export { Programmes } from "./Programmes";
+export { Research } from "./Research";
+export { ResourcesConsultation } from "./ResourcesConsultation";
+export { StudentSuccess } from "./StudentSuccess";
