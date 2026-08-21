@@ -1,11 +1,19 @@
+/**
+ * data/site.ts — nguồn dữ liệu tĩnh dùng chung toàn website.
+ *
+ * Sửa file này khi muốn đổi: tên menu, slug URL, headline landing page,
+ * danh sách chương trình (dropdown form tư vấn), hoặc ảnh hero của page con.
+ * Không nhét nội dung dài của Discover vào đây — nội dung đó nằm ở
+ * app/discover/[slug]/page.tsx (object `pages`).
+ */
 export type MenuGroup = {
-  slug: string;
+  slug: string; // khớp với thư mục route: app/<slug>/page.tsx
   en: string;
   vi: string;
-  kicker: string;
+  kicker: string; // dòng phụ trên hero
   headline: string;
   intro: string;
-  items: readonly string[];
+  items: readonly string[]; // mục mega menu + danh sách landing
   image: string;
 };
 
@@ -181,6 +189,7 @@ export const menuGroups: readonly MenuGroup[] = [
   },
 ];
 
+/** Danh sách ngành cho form tư vấn. Phải khớp option trong ResourcesConsultation. */
 export const programmes = [
   "Quản trị Kinh doanh",
   "Kinh doanh Thương mại",
@@ -202,6 +211,7 @@ export const programmes = [
   "Quản trị Khách sạn",
 ] as const;
 
+/** Lấy 1 nhóm menu theo slug. SectionLanding gọi hàm này; nếu không có thì 404. */
 export function findGroup(slug: string): MenuGroup | undefined {
   return menuGroups.find((group) => group.slug === slug);
 }

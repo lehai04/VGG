@@ -1,3 +1,7 @@
+/**
+ * Cấu hình Next.js: ẩn header X-Powered-By, khóa Turbopack vào thư mục project
+ * (tránh nhầm root khi folder có khoảng trắng / nằm sâu), và gắn security headers.
+ */
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {

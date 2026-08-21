@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { ProgrammeFinder } from "@/components/sections/ProgrammeFinder";
+import  ProgrammeSearch  from "@/components/sections/ProgrammeSearch";
 
+/** Dữ liệu lộ trình (Master / PhD / Global) — sẵn để gắn section mới; landing hiện chưa render. */
 export const pathways = [
   {
     index: "01",
@@ -31,6 +32,7 @@ export const pathways = [
   },
 ] as const;
 
+/** Nhóm ngành cho trang /programmes — hiện chưa gắn UI; ProgrammeFinder dùng list riêng. */
 export const masterFields = [
   {
     code: "EET",
@@ -156,7 +158,7 @@ export function ProgrammesLanding() {
         </div>
       </section>
 
-      <ProgrammeFinder />
+      <ProgrammeSearch />
 
       <section className="programmes-admission">
         <div>

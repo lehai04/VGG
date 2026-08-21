@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+/** Giao diện 404. Next tự render khi notFound() được gọi hoặc URL không khớp route. */
 export default function NotFound() {
   return (
     <main className="not-found" id="main-content">

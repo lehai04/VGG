@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Header trang con. `compact` = dùng Header homepage ở chế độ routeMode
+ * (click menu đi tới /slug thay vì #anchor). Nhánh không compact là mega menu hover cũ.
+ */
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";

@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Form tư vấn (client): submit JSON tới POST /api/consultations.
+ * Field ẩn `website` = honeypot chống bot. `consent` = hidden "yes".
+ */
 import { FormEvent, useState } from "react";
 import { programmes as PROGRAMMES } from "@/data/site";
 

@@ -1,3 +1,9 @@
+/**
+ * Root layout — bọc mọi page.
+ * - Nạp font Maison Neue (file trong app/fonts), gán CSS variable --font-maison-neue
+ * - Metadata mặc định (SEO); page con ghi đè title/description
+ * - StickyActions (AI / Facebook / Zalo / Apply) hiện trên mọi trang
+ */
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";

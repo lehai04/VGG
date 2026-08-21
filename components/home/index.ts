@@ -1,3 +1,7 @@
+/**
+ * Barrel export: app/page.tsx import một lần từ @/components/home
+ * thay vì liệt kê từng file. Thêm section mới thì export tại đây.
+ */
 export { Admissions } from "./Admissions";
 export { Footer } from "./Footer";
 export { Header } from "./Header";

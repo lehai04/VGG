@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { legalLinks } from "./footerData";
+
+/** Dòng copyright + điều khoản / bảo mật / sitemap. */
 export function FooterBottom() {
   return (
     <div className="university-footer-bottom">

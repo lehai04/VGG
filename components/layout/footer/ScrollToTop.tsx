@@ -1,5 +1,7 @@
 "use client";
 import { FooterIcon } from "./FooterIcon";
+
+/** Nút cuộn lên đầu trang — client component vì cần window.scrollTo. */
 export function ScrollToTop() {
   return (
     <button

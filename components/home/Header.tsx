@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * Header homepage (và header compact của trang con khi routeMode=true).
+ * routeMode=false: link #section trên trang chủ.
+ * routeMode=true: link /admissions, /research, ...
+ */
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";

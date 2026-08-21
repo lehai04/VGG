@@ -2,6 +2,8 @@ import Link from "next/link";
 import { aboutLinks, quickLinks, socialLinks } from "./footerData";
 import { FooterIcon } from "./FooterIcon";
 
+/** 3 cột giữa footer: Về chúng tôi, Truy cập nhanh, Theo dõi. */
+
 function LinkColumn({
   title,
   links,

@@ -1,6 +1,7 @@
 import { locations } from "./footerData";
 import { FooterIcon } from "./FooterIcon";
 
+/** Cột địa chỉ + iframe Google Maps (cơ sở đầu tiên trong `locations`). */
 export function FooterLocation() {
   const [mainLocation, ...otherLocations] = locations;
   return (

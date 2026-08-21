@@ -1,3 +1,7 @@
+/**
+ * Landing editorial /discover. Nội dung dài viết trực tiếp tại đây.
+ * Menu con (Giới thiệu, Tầm nhìn…) lấy slug từ data/site.ts → /discover/[slug].
+ */
 import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "@/components/layout/SiteFooter";

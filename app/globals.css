@@ -1,3 +1,8 @@
+/*
+  app/globals.css — style dùng chung (không phải homepage).
+  Token màu VLU, header/footer trang con, landing, Discover, Programmes, responsive.
+  Homepage bổ sung app/home.css (selector .home-page).
+*/
 :root {
   --vlu-red: #d72134;
   --vlu-red-dark: #a91528;
@@ -5453,5 +5458,178 @@ main:not(.subpage) .mega-menu {
 
   .hero-stats b {
     font-size: 30px;
+  }
+}
+/* ============================= */
+/* PROGRAMME SEARCH */
+/* ============================= */
+
+.programme-search-wrapper {
+  padding: 60px 20px;
+  background: #f3f3f3;
+}
+
+.programme-search-heading {
+  max-width: 900px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.programme-search-heading h2 {
+  margin: 0 0 10px;
+  color: #111;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.programme-search-heading p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #222;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.programme-search-panel {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 26px 34px 40px;
+
+  background: #666a96;
+  border-radius: 30px;
+}
+
+.programme-search-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+.programme-search-input {
+  flex: 1;
+
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 20px;
+
+  background: #232763;
+  border-radius: 999px;
+}
+
+.programme-search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+}
+
+.programme-search-input input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: #fff;
+
+  font-size: 18px;
+}
+
+.programme-search-input input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.programme-search-button {
+  height: 64px;
+
+  padding: 0 28px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #232763;
+  color: #fff;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.programme-search-button:hover {
+  transform: translateY(-2px);
+}
+
+.programme-search-filters {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.programme-search-filters select {
+  height: 62px;
+
+  padding: 0 24px;
+
+  border: none;
+  outline: none;
+  border-radius: 999px;
+
+  background: #232763;
+  color: #fff;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  text-align: center;
+  cursor: pointer;
+}
+
+.programme-search-filters select option {
+  background: #fff;
+  color: #111;
+}
+
+
+/* TABLET + MOBILE */
+
+@media (max-width: 768px) {
+
+  .programme-search-wrapper {
+    padding: 40px 16px;
+  }
+
+  .programme-search-heading h2 {
+    font-size: 30px;
+  }
+
+  .programme-search-heading p {
+    font-size: 16px;
+  }
+
+  .programme-search-panel {
+    padding: 22px 18px;
+  }
+
+  .programme-search-top {
+    flex-direction: column;
+  }
+
+  .programme-search-button {
+    width: 100%;
+  }
+
+  .programme-search-filters {
+    grid-template-columns: 1fr;
   }
 }

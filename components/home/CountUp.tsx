@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Đếm số khi vào viewport (IntersectionObserver).
+ * Tôn trọng prefers-reduced-motion: hiện số cuối ngay, không animate.
+ */
 import { useEffect, useRef, useState } from "react";
 
 type CountUpProps = {

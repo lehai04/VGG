@@ -1,3 +1,7 @@
+/**
+ * lib/consultation.ts — kiểm tra dữ liệu form tư vấn, không phụ thuộc giao diện.
+ * API route và (nếu cần) test dùng chung hàm này để rule validation chỉ viết 1 lần.
+ */
 import { programmes } from "@/data/site";
 
 export type Consultation = {
@@ -21,6 +25,7 @@ export function validateConsultation(value: unknown): ValidationResult {
   const phone = typeof input.phone === "string" ? input.phone.trim() : "";
   const email = typeof input.email === "string" ? input.email.trim().toLowerCase() : "";
   const programme = typeof input.programme === "string" ? input.programme.trim() : "";
+  // Honeypot: field `website` ẩn trên form. Bot thường điền → từ chối im lặng.
   if (typeof input.website === "string" && input.website)
     return { success: false, message: "Yêu cầu không hợp lệ." };
   if (name.length < 2 || name.length > 80)

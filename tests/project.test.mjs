@@ -1,3 +1,7 @@
+/**
+ * Kiểm tra cấu trúc (không chạy browser): scripts Next.js, API tư vấn, đủ file page.tsx.
+ * Chạy: npm test
+ */
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";

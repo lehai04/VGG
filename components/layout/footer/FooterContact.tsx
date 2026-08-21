@@ -2,6 +2,7 @@ import Image from "next/image";
 import { contactItems } from "./footerData";
 import { FooterIcon } from "./FooterIcon";
 
+/** Hàng trên cùng footer: logo + email / đào tạo / tuyển sinh / call center. */
 export function FooterContact() {
   return (
     <section className="university-footer-contact">

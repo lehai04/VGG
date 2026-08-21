@@ -22,7 +22,7 @@ export function SiteFooter() {
   );
 }
 
-/** Cụm hành động luôn hiện trên mọi trang. */
+/** Cụm nút nổi (AI, Facebook, Apply, Zalo, cuộn lên) — được RootLayout gắn 1 lần. */
 export function StickyActions() {
   return (
     <>

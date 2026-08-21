@@ -1,3 +1,4 @@
+/** Next.js tự phục vụ GET /sitemap.xml từ hàm này. URL lấy từ menuGroups. */
 import type { MetadataRoute } from "next";
 import { menuGroups } from "@/data/site";
 export default function sitemap(): MetadataRoute.Sitemap {

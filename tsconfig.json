@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    // Alias @/* = thư mục gốc project. Import: import { x } from "@/data/site"
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

@@ -1,3 +1,11 @@
+/**
+ * POST /api/consultations
+ * Luồng: chặn origin lạ → giới hạn tần suất theo IP → validate JSON
+ * → nếu có CONSULTATION_WEBHOOK_URL thì chuyển tiếp CRM, không thì chỉ xác nhận.
+ *
+ * Lưu ý: `attempts` nằm trong bộ nhớ process. Restart server / nhiều instance Vercel
+ * sẽ reset bộ đếm; đủ cho demo, chưa phải rate-limit phân tán.
+ */
 import { NextRequest, NextResponse } from "next/server";
 import { validateConsultation } from "@/lib/consultation";
 
@@ -5,6 +13,7 @@ const attempts = new Map<string, { count: number; resetAt: number }>();
 const LIMIT = 5;
 const WINDOW_MS = 10 * 60 * 1000;
 
+/** Tối đa 5 lần / IP / 10 phút. */
 function isAllowed(ip: string): boolean {
   const now = Date.now();
   const entry = attempts.get(ip);
@@ -17,6 +26,7 @@ function isAllowed(ip: string): boolean {
   return true;
 }
 
+/** Cho phép same-origin và các origin liệt kê trong ALLOWED_ORIGINS (cách nhau bởi dấu phẩy). */
 function originAllowed(request: NextRequest): boolean {
   const origin = request.headers.get("origin");
   if (!origin) return true;

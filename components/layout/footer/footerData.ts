@@ -1,3 +1,7 @@
+/**
+ * Nội dung footer: SĐT, email, cột link, MXH, địa chỉ, legal.
+ * Đổi thông tin liên hệ/cơ sở tại đây; markup nằm ở các file Footer*.tsx.
+ */
 import { menuGroups } from "@/data/site";
 
 export const contactItems = [

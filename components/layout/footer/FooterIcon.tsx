@@ -1,3 +1,4 @@
+/** SVG icon nội bộ (không phụ thuộc thư viện icon). Thêm tên mới thì bổ sung vào IconName + paths. */
 type IconName =
   | "mail"
   | "book"

@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Gắn class .scrollReveal rồi thêm .isRevealVisible khi section vào màn hình.
+ * CSS animation nằm ở app/home.css. Component không render DOM (return null).
+ */
 import { useEffect } from "react";
 
 const REVEAL_GROUPS = [

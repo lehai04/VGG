@@ -3647,3 +3647,145 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Compact, light programme search styling for the home page. */
+.home-page .vgg-programme-finder {
+  padding: 88px 7vw 72px;
+  background: #f7fbff;
+}
+.home-page .vgg-finder-heading {
+  display: block;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+.home-page .vgg-finder-heading > div > p {
+  color: #d82338;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+.home-page .vgg-finder-heading h2 {
+  color: #092a58;
+  font-size: clamp(34px, 4vw, 48px);
+}
+.home-page .vgg-finder-heading > label {
+  display: block;
+  margin-top: 28px;
+  padding: 28px 30px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+  background: #e4f2ff;
+  box-shadow: 0 12px 30px rgba(53, 113, 165, 0.1);
+  text-align: left;
+}
+.home-page .vgg-finder-heading > label > span {
+  display: none;
+}
+.home-page .vgg-finder-heading > label > div {
+  min-height: 54px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(35, 78, 119, 0.08);
+}
+.home-page .vgg-finder-heading input {
+  padding-left: 22px;
+  font-size: 15px;
+}
+.home-page .vgg-finder-workspace {
+  max-width: 1000px;
+  margin: -18px auto 0;
+  grid-template-columns: 1fr;
+}
+.home-page .vgg-filter-sidebar {
+  position: static;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 30px 28px;
+  border: 0;
+  border-radius: 0 0 22px 22px;
+  background: #e4f2ff;
+}
+.home-page .vgg-filter-sidebar header {
+  display: none;
+}
+.home-page .vgg-filter-sidebar fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.home-page .vgg-filter-sidebar legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.home-page .vgg-filter-sidebar fieldset label {
+  display: none;
+}
+.home-page .vgg-filter-sidebar fieldset::after {
+  display: block;
+  overflow: hidden;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: #fff;
+  color: #123458;
+  font-size: 13px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(35, 78, 119, 0.06);
+}
+.home-page .vgg-filter-sidebar fieldset:nth-of-type(1)::after {
+  content: "Bậc đào tạo  ⌄";
+}
+.home-page .vgg-filter-sidebar fieldset:nth-of-type(2)::after {
+  content: "Lĩnh vực  ⌄";
+}
+.home-page .vgg-filter-sidebar fieldset:nth-of-type(3)::after {
+  content: "Hình thức học  ⌄";
+}
+.home-page .vgg-finder-results {
+  display: none;
+}
+
+/* Dark compact variant for the home search panel. */
+.home-page .vgg-programme-finder { background: #fff; padding: 58px 7vw 66px; }
+.home-page .vgg-finder-heading > div > p { display: none; }
+.home-page .vgg-finder-heading h2 { color: #111; font-family: var(--font-body); font-size: clamp(30px, 3vw, 40px); font-weight: 500; }
+.home-page .vgg-finder-heading > label { margin-top: 16px; padding: 26px 46px 44px; border: 0; border-radius: 30px; background: #5e628c; box-shadow: none; }
+.home-page .vgg-finder-heading > label::before { content: "Tìm kiếm chương trình Thạc sĩ và Tiến sĩ phù hợp với định hướng học tập và phát triển chuyên môn của bạn tại Văn Lang."; display: block; max-width: 650px; margin: -78px auto 35px; color: #171717; font-size: 15px; line-height: 1.45; text-align: center; }
+.home-page .vgg-finder-heading > label > div { min-height: 63px; background: #21255e; box-shadow: none; }
+.home-page .vgg-finder-heading input { color: #fff; font-size: 18px; }.home-page .vgg-finder-heading input::placeholder { color: transparent; }
+.home-page .vgg-finder-heading > label > div::before { content: "⌕"; color: #fff; font-size: 34px; line-height: 1; }
+.home-page .vgg-finder-heading label button { min-height: 63px; padding: 0 26px; border-radius: 999px; background: #21255e; color: #fff; font-size: 17px; font-weight: 700; }
+.home-page .vgg-finder-workspace { margin: -47px auto 0; }.home-page .vgg-filter-sidebar { gap: 50px; padding: 0 46px 44px; border-radius: 0 0 30px 30px; background: #5e628c; }.home-page .vgg-filter-sidebar fieldset::after { padding: 17px 40px; background: #21255e; color: #fff; font-size: 19px; font-weight: 500; box-shadow: none; text-align: left; }.home-page .vgg-filter-sidebar fieldset:nth-of-type(1)::after { content: "Bậc đào tạo"; }.home-page .vgg-filter-sidebar fieldset:nth-of-type(2)::after { content: "Lĩnh vực"; }.home-page .vgg-filter-sidebar fieldset:nth-of-type(3)::after { content: "Khoa / Viện"; }
+@media (max-width: 760px) { .home-page .vgg-finder-heading > label { padding: 22px 20px 28px; }.home-page .vgg-finder-heading > label::before { margin: -74px auto 32px; font-size: 13px; }.home-page .vgg-filter-sidebar { gap: 12px; padding: 0 20px 28px; }.home-page .vgg-filter-sidebar fieldset::after { font-size: 16px; }.home-page .vgg-finder-workspace { margin: -30px auto 0; } }
+.home-page .vgg-results-toolbar {
+  border: 0;
+  padding: 0 2px 18px;
+}
+.home-page .vgg-programme-result {
+  border-radius: 14px;
+}
+@media (max-width: 760px) {
+  .home-page .vgg-programme-finder {
+    padding: 64px 6vw;
+  }
+  .home-page .vgg-finder-heading > label {
+    padding: 18px;
+  }
+  .home-page .vgg-filter-sidebar {
+    grid-template-columns: 1fr;
+    padding: 0 18px 20px;
+  }
+  .home-page .vgg-filter-sidebar:not(.is-open) {
+    display: grid;
+  }
+  .home-page .vgg-finder-workspace {
+    margin-top: -10px;
+  }
+}

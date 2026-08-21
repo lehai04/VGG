@@ -126,6 +126,8 @@ const pages = {
 } as const;
 
 type PageSlug = keyof typeof pages;
+
+/** Build-time: Next tạo sẵn HTML cho từng slug trong `pages`. */
 export function generateStaticParams() {
   return Object.keys(pages).map((slug) => ({ slug }));
 }
