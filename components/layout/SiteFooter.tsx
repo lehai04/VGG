@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+/** FOOTER DÙNG CHUNG cho các page ngoài homepage. */
 export function SiteFooter() {
   return (
     <footer>
@@ -47,6 +48,7 @@ export function SiteFooter() {
   );
 }
 
+/** CỤM HÀNH ĐỘNG DÙNG CHUNG: AI, Facebook và Zalo; responsive được quản lý trong globals.css. */
 export function StickyActions() {
   return (
     <>

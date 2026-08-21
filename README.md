@@ -39,7 +39,7 @@ app/news/              Tin tức và sự kiện
 app/resources/         Tài nguyên
 ```
 
-Mỗi nhóm hiện chỉ có một `page.tsx` tổng quan để chỉnh sửa độc lập; dự án không tạo route trang con. Giao diện khung nằm tại `components/sections/SectionPages.tsx`; menu và nội dung điều hướng nằm tại `data/site.ts`.
+Mỗi nhóm có một `page.tsx` tổng quan để chỉnh sửa độc lập. Riêng nhóm `discover` có thêm route động `app/discover/[slug]/page.tsx` cho các nội dung giới thiệu, tầm nhìn, lãnh đạo, kiểm định, đối tác và liên hệ. Giao diện khung nằm tại `components/sections/SectionPages.tsx`; menu và nội dung điều hướng nằm tại `data/site.ts`.
 
 ## Font nhận diện
 

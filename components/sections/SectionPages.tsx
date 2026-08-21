@@ -4,6 +4,10 @@ import { SiteFooter, StickyActions } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { findGroup } from "@/data/site";
 
+/**
+ * TEMPLATE PAGE CHUNG cho admissions, research, global, student-success, news và resources.
+ * Tiêu đề, mô tả và ảnh được lấy từ data/site.ts để tránh tạo sáu component gần giống nhau.
+ */
 export function SectionLanding({ section }: { section: string }) {
   const group = findGroup(section);
   if (!group) notFound();
@@ -57,6 +61,7 @@ export function sectionMetadata(section: string) {
   };
 }
 
+// SECTION DÙNG CHUNG: Hero của các landing page theo dữ liệu menu group.
 function SectionHero({ section }: { section: string }) {
   const group = findGroup(section);
   if (!group) notFound();
@@ -77,6 +82,8 @@ function SectionHero({ section }: { section: string }) {
     </section>
   );
 }
+
+// SECTION DÙNG CHUNG: CTA cuối các landing page, dẫn người dùng về tuyển sinh.
 function CallToAction() {
   return (
     <section className="sub-cta">

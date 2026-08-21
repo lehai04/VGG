@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./home.css";
 
 const maisonNeue = localFont({
   variable: "--font-maison-neue",
@@ -16,6 +17,7 @@ const maisonNeue = localFont({
   ],
 });
 
+// Metadata nền tảng được mọi route kế thừa; từng page chỉ cần ghi đè title/description riêng.
 export const metadata: Metadata = {
   metadataBase: new URL("https://vgg.vlu.edu.vn"),
   title: {
@@ -52,8 +54,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
-      <body className={`${maisonNeue.variable} antialiased`}>
+    // Trình duyệt/extension có thể chèn thuộc tính vào html hoặc body trước hydration.
+    <html lang="vi" suppressHydrationWarning>
+      <body className={`${maisonNeue.variable} antialiased`} suppressHydrationWarning>
         <a className="skip-link" href="#main-content">
           Bỏ qua điều hướng
         </a>

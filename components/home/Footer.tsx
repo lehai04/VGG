@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+/** FOOTER RIÊNG của homepage; các page khác dùng layout/SiteFooter.tsx. */
 export function Footer() {
   return (
     // Footer gồm logo, thông tin liên hệ, mạng xã hội và thanh liên kết nhanh.

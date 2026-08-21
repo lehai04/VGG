@@ -3,6 +3,7 @@ import Image from "next/image";
 // Ảnh nền chính; thay file tại đường dẫn này để đổi hình Hero.
 const HERO_IMAGE_SRC = "/images/hero/campus-hero.jpg";
 
+/** HOMEPAGE SECTION: Hero đầu trang, CTA chính và các số liệu tổng quan. */
 export function Hero() {
   return (
     // Hero là khu vực giới thiệu nổi bật đầu tiên ngay dưới Header.

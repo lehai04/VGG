@@ -216,15 +216,45 @@
   left: 0;
   z-index: 1;
   width: 100%;
-  min-height: 390px;
-  padding: 48px 6vw;
+  min-height: 430px;
+  padding: 40px 6vw;
   display: grid;
-  grid-template-columns: 0.9fr 1.6fr 0.85fr;
-  gap: 5vw;
+  grid-template-columns: minmax(420px, 1.15fr) minmax(520px, 1fr);
+  grid-template-rows: 1fr auto;
+  gap: 24px 4vw;
   border-top: 5px solid #db2639;
   background: #ffffff;
   color: #202550;
   box-shadow: 0 22px 40px rgba(12, 18, 40, 0.18);
+}
+
+.home-page .megaIntro {
+  position: relative;
+  grid-row: 1 / 3;
+  min-height: 350px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #202550;
+}
+
+.home-page .megaIntro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 25, 60, 0.05) 35%, rgba(20, 25, 60, 0.88) 100%);
+}
+
+.home-page .megaImage {
+  object-fit: cover;
+}
+
+.home-page .megaIntroCopy {
+  position: absolute;
+  z-index: 1;
+  left: 30px;
+  right: 30px;
+  bottom: 26px;
+  color: #ffffff;
 }
 
 .home-page .megaIntro > span {
@@ -234,7 +264,7 @@
 
 .home-page .megaIntro h2 {
   max-width: 360px;
-  margin: 40px 0 12px;
+  margin: 12px 0 8px;
   font-family: var(--font-display);
   font-size: clamp(30px, 3vw, 46px);
   line-height: 0.98;
@@ -243,7 +273,7 @@
 }
 
 .home-page .megaIntro p {
-  color: #7b8583;
+  color: rgba(255, 255, 255, 0.82);
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -294,11 +324,13 @@
 }
 
 .home-page .megaPromo {
-  min-height: 290px;
-  padding: 40px 34px 28px;
-  display: flex;
-  flex-direction: column;
-  border-bottom: 8px solid #db2639;
+  min-height: 92px;
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  border-left: 6px solid #db2639;
   background: #202550;
   color: #ffffff;
 }
@@ -310,15 +342,15 @@
 }
 
 .home-page .megaPromo strong {
-  margin: 38px 0 30px;
+  margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(22px, 2vw, 32px);
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.3;
 }
 
 .home-page .megaPromo a {
   width: fit-content;
-  margin-top: auto;
+  margin-top: 0;
   padding-bottom: 10px;
   border-bottom: 1px solid #ffffff;
   font-size: 12px;
@@ -595,7 +627,7 @@
   padding-top: 32px;
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 14px;
   color: #151935;
   font-size: 14px;
   font-weight: 700;
@@ -1178,7 +1210,10 @@
   font-size: 15px;
   font-weight: 600;
   box-shadow: 0 10px 24px rgba(219, 38, 57, 0.2);
-  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
 }
 
 .home-page .programmeCatalogCta b {
@@ -1186,7 +1221,8 @@
 }
 
 @keyframes programmeCtaPulse {
-  0%, 100% {
+  0%,
+  100% {
     background-color: #db2639;
     box-shadow: 0 10px 24px rgba(219, 38, 57, 0.22);
   }
@@ -1301,7 +1337,7 @@
 .home-page .programmeArcLabel text {
   fill: #ffffff;
   font-family: var(--font-body);
-  font-size: 8.5px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -1899,6 +1935,7 @@
 
 .home-page .resourcesBlock,
 .home-page .consultationBlock {
+  /* Nền sáng nhiều lớp thay cho mảng đỏ phẳng; đỏ chỉ còn là màu nhấn. */
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   gap: 9vw;
@@ -1961,44 +1998,168 @@
 }
 
 .home-page .consultationBlock {
-  background: var(--resource-red);
+  position: relative;
+  isolation: isolate;
+  grid-template-columns: minmax(0, 0.88fr) minmax(520px, 1.12fr);
+  gap: clamp(64px, 8vw, 150px);
+  min-height: 650px;
+  padding-top: 92px;
+  padding-bottom: 92px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(255, 255, 255, 0.92), transparent 34%),
+    radial-gradient(circle at 92% 82%, rgba(223, 34, 54, 0.07), transparent 28%),
+    linear-gradient(120deg, #eef1f6 0%, #e4e8f0 58%, #f5f3ef 100%);
+}
+
+.home-page .consultationBlock::before {
+  /* Watermark thương hiệu nằm sau nội dung và không nhận tương tác chuột. */
+  content: "VGG";
+  position: absolute;
+  z-index: -1;
+  right: -0.03em;
+  bottom: -0.3em;
+  color: rgba(24, 33, 74, 0.035);
+  font-family: var(--font-display);
+  font-size: clamp(180px, 24vw, 450px);
+  font-weight: 800;
+  letter-spacing: -0.09em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.home-page .consultationIntro {
+  align-self: center;
+  color: #18214a;
+}
+
+.home-page .consultationIntro > p {
+  color: #c81f35;
 }
 
 .home-page .consultationIntro > div {
-  max-width: 530px;
-  margin-top: 10px;
-  font-size: 14px;
-  line-height: 1.7;
+  max-width: 480px;
+  margin-top: 26px;
+  color: #596078;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.home-page .consultationIntro h2 {
+  max-width: 680px;
+  font-size: clamp(42px, 4.5vw, 74px);
+  line-height: 0.98;
+}
+
+.home-page .consultationIntro h2 em {
+  color: #f15a67;
+  font-style: normal;
+}
+
+.home-page .consultationBenefits {
+  max-width: 490px;
+  margin: 42px 0 0;
+  padding: 0;
+  border-top: 1px solid rgba(24, 33, 74, 0.18);
+  list-style: none;
+}
+
+.home-page .consultationBenefits li {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  min-height: 50px;
+  border-bottom: 1px solid rgba(24, 33, 74, 0.18);
+  color: #303a5a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.home-page .consultationBenefits span {
+  color: #f15a67;
+  font-size: 10px;
+  letter-spacing: 0.08em;
 }
 
 .home-page .consultationFields {
+  /* Panel form độc lập giúp phân cấp rõ với nội dung giới thiệu bên trái. */
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px 22px;
+  gap: 26px 24px;
   align-content: center;
+  align-self: center;
+  padding: clamp(30px, 3.2vw, 48px);
+  padding-bottom: clamp(24px, 2vw, 32px);
+  border: 1px solid rgba(24, 33, 74, 0.12);
+  border-top: 4px solid var(--resource-red);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #151b3f;
+  box-shadow: 0 30px 70px rgba(24, 33, 74, 0.16);
+}
+
+.home-page .consultationFormHead {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 8px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #d8d8d2;
+}
+
+.home-page .consultationFormHead div {
+  display: grid;
+  gap: 8px;
+}
+
+.home-page .consultationFormHead span {
+  color: var(--resource-red);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.home-page .consultationFormHead strong {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.home-page .consultationFormHead small {
+  color: #6f7385;
+  font-size: 10px;
+  white-space: nowrap;
 }
 
 .home-page .consultationFields label {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-size: 10px;
+  color: #41465f;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.04em;
 }
 
 .home-page .consultationFields input,
 .home-page .consultationFields select {
   width: 100%;
   border: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+  border-bottom: 1px solid #afb2bc;
   border-radius: 0;
   outline: none;
-  padding: 0 0 12px;
+  padding: 2px 0 13px;
   background: transparent;
-  color: #ffffff;
+  color: #111735;
   font: inherit;
   font-size: 11px;
+}
+
+.home-page .consultationFields input:focus,
+.home-page .consultationFields select:focus {
+  border-bottom-color: var(--resource-red);
 }
 
 .home-page .consultationFields .form-honeypot {
@@ -2010,7 +2171,7 @@
 }
 
 .home-page .consultationFields input::placeholder {
-  color: rgba(255, 255, 255, 0.9);
+  color: #777b8c;
 }
 
 .home-page .consultationFields select option {
@@ -2018,19 +2179,41 @@
 }
 
 .home-page .consultationFields button {
+  /* CTA dạng pill, căn giữa theo mẫu thiết kế đã duyệt. */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 195px;
-  min-height: 47px;
+  gap: 18px;
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, 210px);
+  min-height: 52px;
   border: 0;
-  padding: 0 18px;
-  background: #ffffff;
-  box-shadow: 6px 7px 0 #202657;
-  color: #202657;
+  border-radius: 999px;
+  padding: 0 22px;
+  background: var(--resource-red);
+  box-shadow: 0 16px 34px rgba(223, 34, 54, 0.24);
+  color: #ffffff;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.home-page .consultationFields button:hover {
+  background: #c91d31;
+  box-shadow: 0 20px 38px rgba(223, 34, 54, 0.3);
+  transform: translateY(-2px);
+}
+
+.home-page .consultationFields button span {
+  font-size: 15px;
+  line-height: 1;
 }
 
 .home-page .consultationFields button:disabled {
@@ -2039,10 +2222,23 @@
 }
 
 .home-page .consultationMessage {
+  grid-column: 1 / -1;
   align-self: center;
   margin: 0;
+  color: #30364f;
   font-size: 11px;
   line-height: 1.45;
+}
+
+.home-page .consultationMessage:empty {
+  display: none;
+}
+
+.home-page .consultationPrivacy {
+  grid-column: 1 / -1;
+  color: #777b8c;
+  font-size: 9px;
+  line-height: 1.5;
 }
 
 /* =========================================================
@@ -2686,6 +2882,224 @@
   }
 }
 
+/* Header compact theo phong cách VLU: menu Việt hóa, một dòng và line đỏ khi tương tác. */
+@media (min-width: 901px) {
+  .home-page .topBar {
+    height: 32px;
+  }
+
+  .home-page .headerShell {
+    top: 32px;
+  }
+
+  .home-page .header {
+    height: 76px;
+  }
+
+  .home-page .brandLogo {
+    height: 48px;
+  }
+
+  .home-page .nav {
+    transform: none;
+  }
+
+  .home-page .nav > a:not(.navCta) {
+    position: relative;
+    min-width: 0;
+    padding: 0 clamp(9px, 1.05vw, 19px);
+    gap: 0;
+    background: transparent;
+  }
+
+  .home-page .nav > a:not(.navCta)::after {
+    content: "";
+    position: absolute;
+    right: clamp(9px, 1.05vw, 19px);
+    bottom: 0;
+    left: clamp(9px, 1.05vw, 19px);
+    height: 3px;
+    background: #db2639;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 180ms ease;
+  }
+
+  .home-page .nav > a:hover,
+  .home-page .nav > a.active {
+    background: transparent;
+  }
+
+  .home-page .nav > a:hover::after,
+  .home-page .nav > a:focus-visible::after,
+  .home-page .nav > a.active::after {
+    transform: scaleX(1);
+  }
+
+  .home-page .nav > a.active .navTitle {
+    color: #10153e;
+  }
+
+  .home-page .navTitle {
+    font-size: clamp(11px, 0.88vw, 14px);
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .home-page .megaMenu {
+    top: 76px;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-page .header {
+    height: 72px;
+  }
+
+  .home-page .nav {
+    top: 72px;
+    max-height: calc(100dvh - 104px);
+  }
+}
+
+/* Mega menu tối giản theo nhịp bố cục của website VLU. */
+@media (min-width: 901px) {
+  .home-page .megaMenuVlu {
+    top: 76px;
+    min-height: 0;
+    padding: 26px 2vw 30px;
+    display: grid;
+    grid-template-columns: minmax(420px, 0.92fr) minmax(560px, 1.08fr);
+    grid-template-rows: auto;
+    align-items: stretch;
+    gap: clamp(32px, 4vw, 72px);
+    border-top: 1px solid #e2e3e8;
+    background: #ffffff;
+    color: #11152f;
+    box-shadow: 0 24px 42px rgba(17, 21, 47, 0.12);
+  }
+
+  .home-page .megaVluImage {
+    position: relative;
+    min-height: 350px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #202550;
+  }
+
+  .home-page .megaVluImage img {
+    object-fit: cover;
+  }
+
+  .home-page .megaVluBody {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-page .megaVluHeading h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(34px, 3.2vw, 52px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .home-page .megaVluHeading > a {
+    width: fit-content;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #11152f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  .home-page .megaVluHeading > a b {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #df2236;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 180ms ease;
+  }
+
+  .home-page .megaVluHeading > a:hover b {
+    transform: translateX(4px);
+  }
+
+  .home-page .megaVluLinks {
+    margin-top: 24px;
+    padding: 20px 0 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px clamp(42px, 6vw, 100px);
+    border-top: 1px solid #d9dbe2;
+    border-bottom: 1px solid #d9dbe2;
+  }
+
+  .home-page .megaVluLinks a {
+    width: fit-content;
+    color: #171a2d;
+    font-size: clamp(13px, 1vw, 16px);
+    font-weight: 500;
+    line-height: 1.35;
+    transition: color 160ms ease;
+  }
+
+  .home-page .megaVluLinks a:hover,
+  .home-page .megaVluLinks a:focus-visible {
+    color: #df2236;
+  }
+
+  .home-page .megaVluPromo {
+    min-height: 86px;
+    margin-top: auto;
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 0.85fr 1.25fr auto;
+    align-items: center;
+    gap: 20px;
+    border-left: 5px solid #df2236;
+    background: #202657;
+    color: #ffffff;
+  }
+
+  .home-page .megaVluPromo small {
+    color: #efc86c;
+    font-size: 9px;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+  }
+
+  .home-page .megaVluPromo strong {
+    font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1.15;
+  }
+
+  .home-page .megaVluPromo a {
+    padding: 12px 16px;
+    border-radius: 999px;
+    background: #df2236;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .home-page .megaVluPromo a span {
+    margin-left: 8px;
+  }
+}
+
 /* Color-block programme families */
 .home-page .programmeFieldGrid {
   gap: 14px;
@@ -3059,7 +3473,7 @@
   }
 
   .home-page .programmeArcLabel text {
-    font-size: 8.5px;
+    font-size: 9.5px;
   }
 
   .home-page .programmeFieldGrid {
@@ -3115,5 +3529,121 @@
     translate: none;
     filter: none;
     transition: none;
+  }
+}
+
+/* Final responsive safeguards (kept last to normalize later component rules). */
+.home-page {
+  overflow-x: clip;
+}
+@media (max-width: 900px) {
+  .home-page .topBar {
+    height: 32px;
+    padding: 0 5vw;
+  }
+  .home-page .topBarUniversity {
+    max-width: none;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .home-page .topBarLinks button {
+    padding: 0 13px;
+    font-size: 12px;
+  }
+  .home-page .headerShell {
+    top: 32px;
+  }
+  .home-page .header {
+    height: 82px;
+    padding: 0 5vw;
+  }
+  .home-page .nav {
+    top: 82px;
+    left: 0;
+    right: 0;
+    padding: 16px 5vw 24px;
+    max-height: calc(100dvh - 114px);
+    border-top: 1px solid #e6e2dc;
+    background: #fff;
+    box-shadow: 0 20px 34px rgba(31, 34, 81, 0.15);
+  }
+  .home-page .heroStats {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 42px;
+  }
+}
+@media (max-width: 600px) {
+  .home-page .topBarUniversity {
+    max-width: none;
+    font-size: 10px;
+  }
+  .home-page .brandLogo {
+    width: auto;
+    height: 48px;
+    max-width: 190px;
+  }
+  .home-page .menuButton {
+    min-width: 64px;
+    min-height: 44px;
+  }
+  .home-page .hero {
+    min-height: 0;
+    padding: 170px 6vw 52px;
+  }
+  .home-page .hero h1 {
+    max-width: 100%;
+    font-size: clamp(45px, 14vw, 58px);
+    line-height: 1;
+  }
+  .home-page .heroActions {
+    width: 100%;
+    gap: 10px;
+  }
+  .home-page .heroActions a {
+    width: 100%;
+    min-height: 56px;
+    padding: 16px 18px;
+    justify-content: space-between;
+  }
+  .home-page .heroStats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .home-page .heroStats div {
+    min-width: 0;
+    padding: 14px 8px;
+  }
+  .home-page .heroStats b {
+    font-size: 24px;
+  }
+  .home-page .heroStats span {
+    font-size: 8px;
+  }
+  .home-page .graduateStatsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .home-page .graduateStats article {
+    min-height: 150px;
+  }
+}
+@media (max-width: 380px) {
+  .home-page .topBarUniversity {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .home-page .brandLogo {
+    max-width: 170px;
+  }
+  .home-page .hero h1 {
+    font-size: 43px;
+  }
+  .home-page .heroStats {
+    grid-template-columns: 1fr;
   }
 }

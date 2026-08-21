@@ -1,4 +1,3 @@
-import "./home.css";
 import {
   Admissions,
   Footer,
@@ -13,6 +12,7 @@ import {
 } from "@/components/home";
 import { ScrollReveal } from "@/components/home/ScrollReveal";
 
+/** PAGE LỚN: Trang chủ (/). File này chỉ ghép thứ tự các section trong components/home. */
 export default function Home() {
   return (
     <main id="main-content" className="home-page">

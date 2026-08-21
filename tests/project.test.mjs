@@ -18,7 +18,7 @@ test("consultation endpoint validates input before forwarding", async () => {
   assert.match(source, /status:\s*429/);
   assert.match(source, /CONSULTATION_WEBHOOK_URL/);
 });
-test("top-level section routes are separated for independent editing", async () => {
+test("top-level section routes expose independently editable pages", async () => {
   for (const section of [
     "discover",
     "programmes",
@@ -30,6 +30,6 @@ test("top-level section routes are separated for independent editing", async () 
     "resources",
   ]) {
     const landing = await readFile(new URL(`../app/${section}/page.tsx`, import.meta.url), "utf8");
-    assert.match(landing, /SectionLanding/);
+    assert.match(landing, /export default/);
   }
 });

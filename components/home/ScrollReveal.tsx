@@ -20,6 +20,7 @@ const REVEAL_GROUPS = [
   ".consultationIntro > *, .consultationFields > *",
 ] as const;
 
+/** BEHAVIOR DÙNG CHUNG TRONG HOMEPAGE: kích hoạt animation khi section đi vào viewport. */
 export function ScrollReveal() {
   useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

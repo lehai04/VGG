@@ -2,87 +2,58 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { menuGroups } from "@/data/site";
+import { discoverSections, menuGroups } from "@/data/site";
+import { Header } from "@/components/home/Header";
 
+function UtilityBar() {
+  return (
+    <div className="utility">
+      <span>TRƯỜNG ĐẠI HỌC VĂN LANG</span>
+      <div>
+        <Link href="/news">Tin tức</Link>
+        <Link href="/resources">Tài nguyên</Link>
+        <span>VI</span>
+      </div>
+    </div>
+  );
+}
+
+function BrandLink({ className }: { className: string }) {
+  return (
+    <Link href="/" className={className} aria-label="Trang chủ VGG">
+      <Image
+        src="/images/logo/logo-vgg.png"
+        alt="Viện Sau đại học Văn Lang"
+        width={320}
+        height={125}
+        priority
+      />
+    </Link>
+  );
+}
+
+/**
+ * LAYOUT DÙNG CHUNG cho các page ngoài homepage.
+ * `compact` dùng header route trực tiếp; nhánh còn lại hỗ trợ mega menu đầy đủ.
+ */
 export function SiteHeader({ compact = false }: { compact?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
-  const pathname = usePathname();
   const active = menuGroups.find((group) => group.slug === activeSlug);
 
   if (compact)
     return (
-      <>
-        <div className="utility">
-          <span>TRƯỜNG ĐẠI HỌC VĂN LANG</span>
-          <div>
-            <Link href="/news">Tin tức</Link>
-            <Link href="/resources">Tài nguyên</Link>
-            <span>VI</span>
-          </div>
-        </div>
-        <header className="sub-header">
-          <Link href="/" className="sub-logo" aria-label="Trang chủ VGG">
-            <Image
-              src="/images/logo/logo-vgg.png"
-              alt="Viện Sau đại học Văn Lang"
-              width={320}
-              height={125}
-              priority
-            />
-          </Link>
-          <button
-            className="sub-menu-button"
-            type="button"
-            aria-expanded={mobileOpen}
-            aria-controls="sub-main-menu"
-            onClick={() => setMobileOpen((value) => !value)}
-          >
-            {mobileOpen ? "ĐÓNG ×" : "MENU ☰"}
-          </button>
-          <nav
-            id="sub-main-menu"
-            className={mobileOpen ? "open" : ""}
-            aria-label="Điều hướng chính"
-          >
-            {menuGroups.map((group) => (
-              <Link
-                href={`/${group.slug}`}
-                key={group.slug}
-                className={pathname.startsWith(`/${group.slug}`) ? "active" : ""}
-                onClick={() => setMobileOpen(false)}
-              >
-                {group.en}
-                <small>{group.vi}</small>
-              </Link>
-            ))}
-          </nav>
-        </header>
-      </>
+      <div className="home-page shared-header-scope">
+        <Header routeMode />
+      </div>
     );
 
   return (
     <>
-      <div className="utility">
-        <span>TRƯỜNG ĐẠI HỌC VĂN LANG</span>
-        <div>
-          <Link href="/news">Tin tức</Link>
-          <Link href="/resources">Tài nguyên</Link>
-          <span>VI</span>
-        </div>
-      </div>
+      <UtilityBar />
       <header className="vgg-header" onMouseLeave={() => setActiveSlug(null)}>
-        <Link className="vgg-brand" href="/" aria-label="Trang chủ VGG">
-          <Image
-            src="/images/logo/logo-vgg.png"
-            alt="Viện Sau đại học Văn Lang"
-            width={320}
-            height={125}
-            priority
-          />
-        </Link>
+        <BrandLink className="vgg-brand" />
         <button
           className="menu-button"
           type="button"
@@ -126,7 +97,11 @@ export function SiteHeader({ compact = false }: { compact?: boolean }) {
               {active.items.map((item, index) => (
                 <Link
                   key={item}
-                  href={`/${active.slug}`}
+                  href={
+                    active.slug === "discover"
+                      ? `/discover/${discoverSections[index].slug}`
+                      : `/${active.slug}`
+                  }
                   onClick={() => {
                     setActiveSlug(null);
                     setMobileOpen(false);

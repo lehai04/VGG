@@ -9,6 +9,7 @@ const ADMISSION_STEPS = [
   ["Nhập học tại VGG", "Hoàn tất thủ tục và chính thức gia nhập cộng đồng học thuật."],
 ] as const;
 
+/** HOMEPAGE SECTION: Quy trình tuyển sinh và CTA đăng ký. */
 export function Admissions() {
   return (
     // Khu vực giới thiệu quy trình tuyển sinh năm 2026.

@@ -22,6 +22,7 @@ const NEWS_ITEMS = [
   },
 ] as const;
 
+/** HOMEPAGE SECTION: Danh sách tin tức và sự kiện nổi bật. */
 export function News() {
   return (
     // Khu vực tin tức và sự kiện mới nhất.

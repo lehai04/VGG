@@ -8,6 +8,7 @@ type CountUpProps = {
   duration?: number;
 };
 
+/** UI UTILITY: chạy hiệu ứng đếm số khi phần tử xuất hiện trong viewport. */
 export function CountUp({ end, pad = 2, duration = 1400 }: CountUpProps) {
   const [value, setValue] = useState(0);
   const elementRef = useRef<HTMLElement>(null);
@@ -16,13 +17,13 @@ export function CountUp({ end, pad = 2, duration = 1400 }: CountUpProps) {
     const element = elementRef.current;
     if (!element) return;
 
+    let animationFrame = 0;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reducedMotion) {
-      setValue(end);
-      return;
+      animationFrame = requestAnimationFrame(() => setValue(end));
+      return () => cancelAnimationFrame(animationFrame);
     }
 
-    let animationFrame = 0;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;

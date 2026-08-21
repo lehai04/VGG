@@ -1,6 +1,7 @@
 import { ImmersiveVideo } from "./ImmersiveVideo";
 import { CountUp } from "./CountUp";
 
+/** HOMEPAGE SECTION: Giới thiệu VGG bằng video và các số liệu đào tạo. */
 export function Programmes() {
   return (
     // Tổng quan VGG gồm video giới thiệu và số liệu nổi bật.

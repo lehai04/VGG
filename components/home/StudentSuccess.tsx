@@ -5,6 +5,7 @@ const STUDENT_SERVICES = [
   ["Global Community", "Cựu học viên & đối tác toàn cầu"],
 ] as const;
 
+/** HOMEPAGE SECTION: Dịch vụ hỗ trợ và hành trình thành công của học viên. */
 export function StudentSuccess() {
   return (
     // Khu vực Student Success và các dịch vụ hỗ trợ người học.

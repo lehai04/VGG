@@ -1,15 +1,17 @@
+/** Nhãn SVG chạy theo đường cong ở phần bầu dưới của mỗi thẻ thống kê. */
 function CurvedLabel({ children, pathId }: { children: string; pathId: string }) {
   return (
     <svg className="programmeArcLabel" viewBox="0 0 140 140" role="img" aria-label={children}>
       <defs>
-        <path id={pathId} d="M 14 88 Q 70 136 126 88" />
+        {/* Đường quadratic hạ thấp để chữ bám sát viền tròn nhưng không bị cắt. */}
+        <path id={pathId} d="M 10 100 Q 70 164 130 100" />
       </defs>
       <text>
         <textPath
           href={`#${pathId}`}
           startOffset="50%"
           textAnchor="middle"
-          textLength="108"
+          textLength="116"
           lengthAdjust="spacingAndGlyphs"
         >
           {children}
@@ -50,12 +52,7 @@ const MASTER_FIELDS = [
     english: "Business & Management",
     description:
       "Nền tảng quản trị vững chắc, tư duy chiến lược linh hoạt và năng lực tạo giá trị trong nền kinh tế mới.",
-    programmes: [
-      "Quản trị Kinh doanh",
-      "Kinh doanh Thương mại",
-      "Tài chính Ngân hàng",
-      "Kế toán",
-    ],
+    programmes: ["Quản trị Kinh doanh", "Kinh doanh Thương mại", "Tài chính Ngân hàng", "Kế toán"],
   },
   {
     code: "TH",
@@ -83,16 +80,19 @@ const MASTER_FIELDS = [
   },
 ] as const;
 
+/** HOMEPAGE SECTION: Danh mục các nhóm chương trình và liên kết sang /programmes. */
 export function ProgrammeCatalog() {
   return (
     <section className="programmeCatalog" aria-labelledby="programme-catalog-title">
       <div className="programmeCatalogShowcase">
+        {/* Khu vực ảnh chủ động giữ placeholder để đội nội dung có thể thay asset sau. */}
         <div className="programmeCatalogVisual" aria-label="Vị trí dành cho ảnh học viên">
           <span>YOUR IMAGE</span>
           <small>ẢNH HỌC VIÊN · 1600 × 1200 PX</small>
         </div>
         <div className="programmeCatalogLead">
           <p>PROGRAMMES · CHƯƠNG TRÌNH ĐÀO TẠO</p>
+          {/* Ba số liệu chính dùng chung component nhãn cong để bảo đảm đồng bộ. */}
           <div className="programmeCatalogNumbers">
             <h2 className="programmeArcStat programmeArcStatMasters" id="programme-catalog-title">
               <strong>18</strong>
@@ -110,6 +110,7 @@ export function ProgrammeCatalog() {
         </div>
       </div>
 
+      {/* Các nhóm ngành được tạo từ dữ liệu tĩnh phía trên; details giữ trang gọn khi chưa mở. */}
       <div className="programmeFieldGrid">
         {MASTER_FIELDS.map((field, fieldIndex) => (
           <article

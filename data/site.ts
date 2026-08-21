@@ -9,23 +9,51 @@ export type MenuGroup = {
   image: string;
 };
 
+// NGUỒN DỮ LIỆU CHUNG cho menu Discover, landing page và các liên kết trang con.
+export const discoverSections = [
+  {
+    slug: "gioi-thieu",
+    title: "Giới thiệu",
+    summary: "Khám phá câu chuyện và môi trường học thuật của VGG.",
+  },
+  {
+    slug: "tam-nhin-su-menh",
+    title: "Tầm nhìn & Sứ mệnh",
+    summary: "Tìm hiểu định hướng phát triển và những giá trị VGG theo đuổi.",
+  },
+  {
+    slug: "lanh-dao",
+    title: "Lãnh đạo",
+    summary: "Gặp gỡ đội ngũ định hướng hành trình học thuật tại VGG.",
+  },
+  {
+    slug: "vi-sao-chon-vgg",
+    title: "Vì sao chọn VGG",
+    summary: "Những khác biệt làm nên trải nghiệm sau đại học tại Văn Lang.",
+  },
+  {
+    slug: "xep-hang-thanh-tuu",
+    title: "Xếp hạng & Thành tựu",
+    summary: "Các dấu ấn từ cộng đồng học thuật và người học VGG.",
+  },
+  {
+    slug: "lien-he",
+    title: "Liên hệ",
+    summary: "Kết nối với đội ngũ VGG để được tư vấn và hỗ trợ.",
+  },
+] as const;
+
+// NGUỒN DỮ LIỆU CHUNG cho navigation và các landing page dùng SectionLanding.
 export const menuGroups: readonly MenuGroup[] = [
   {
     slug: "discover",
-    en: "Discover VGG",
+    en: "About VGG",
     vi: "Về VGG",
     kicker: "Van Lang Global Graduate",
     headline: "Khám phá một VGG lấy người học làm trung tâm.",
     intro:
       "VGG kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",
-    items: [
-      "Giới thiệu",
-      "Tầm nhìn & Sứ mệnh",
-      "Lãnh đạo",
-      "Vì sao chọn VGG",
-      "Xếp hạng & Thành tựu",
-      "Liên hệ",
-    ],
+    items: discoverSections.map((item) => item.title),
     image:
       "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1800&q=86",
   },

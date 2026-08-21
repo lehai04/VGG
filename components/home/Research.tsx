@@ -11,6 +11,7 @@ const RESEARCH_LINKS = [
   "Hợp tác doanh nghiệp",
 ] as const;
 
+/** HOMEPAGE SECTION: Tổng quan nghiên cứu, đổi mới và các hướng nghiên cứu chính. */
 export function Research() {
   return (
     // Bố cục chia đôi: hình ảnh bên trái và nội dung bên phải.
@@ -26,9 +27,7 @@ export function Research() {
       </div>
 
       <div className="researchContent">
-        <p className="researchEyebrow">
-          RESEARCH &amp; INNOVATION
-        </p>
+        <p className="researchEyebrow">RESEARCH &amp; INNOVATION</p>
         <h2>
           Tri thức tạo nên
           <br />

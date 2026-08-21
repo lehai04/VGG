@@ -4,7 +4,7 @@ import { SiteFooter, StickyActions } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { ProgrammeFinder } from "@/components/sections/ProgrammeFinder";
 
-const pathways = [
+export const pathways = [
   {
     index: "01",
     degree: "Master's",
@@ -31,7 +31,7 @@ const pathways = [
   },
 ] as const;
 
-const masterFields = [
+export const masterFields = [
   {
     code: "EET",
     title: "Kỹ thuật, Môi trường & Công nghệ",
@@ -81,6 +81,7 @@ const masterFields = [
   },
 ] as const;
 
+/** PAGE COMPONENT CHUYÊN BIỆT cho /programmes; chỉ route wrapper nằm trong app/programmes. */
 export function ProgrammesLanding() {
   return (
     <main className="subpage programmes-page" id="main-content">

@@ -150,6 +150,7 @@ const DEGREES = ["Thạc sĩ", "Tiến sĩ"];
 const FIELDS = [...new Set(PROGRAMMES.map((programme) => programme.field))];
 const MODES = [...new Set(PROGRAMMES.map((programme) => programme.mode))];
 
+/** SECTION TƯƠNG TÁC: tìm kiếm, lọc và sắp xếp danh sách chương trình đào tạo. */
 export function ProgrammeFinder() {
   const [query, setQuery] = useState("");
   const [degrees, setDegrees] = useState<string[]>([]);
