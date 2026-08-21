@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "./home.css";
+import { StickyActions } from "@/components/layout/SiteFooter";
 
 const maisonNeue = localFont({
   variable: "--font-maison-neue",
@@ -61,6 +62,7 @@ export default function RootLayout({
           Bỏ qua điều hướng
         </a>
         {children}
+        <StickyActions />
       </body>
     </html>
   );

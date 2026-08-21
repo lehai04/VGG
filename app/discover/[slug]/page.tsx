@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { SiteFooter, StickyActions } from "@/components/layout/SiteFooter";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 
 // CONTENT MODEL: Nội dung riêng của từng trang con; tất cả cùng dùng template render bên dưới.
@@ -201,7 +201,6 @@ export default async function DiscoverDetail({ params }: { params: Promise<{ slu
         </Link>
       </section>
       <SiteFooter />
-      <StickyActions />
     </main>
   );
 }

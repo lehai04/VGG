@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { SiteFooter, StickyActions } from "@/components/layout/SiteFooter";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { findGroup } from "@/data/site";
 
@@ -43,7 +43,6 @@ export function SectionLanding({ section }: { section: string }) {
       </section>
       <CallToAction />
       <SiteFooter />
-      <StickyActions />
     </main>
   );
 }

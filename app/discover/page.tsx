@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SiteFooter, StickyActions } from "@/components/layout/SiteFooter";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { discoverSections } from "@/data/site";
 
@@ -184,7 +184,6 @@ export default function DiscoverPage() {
       </section>
 
       <SiteFooter />
-      <StickyActions />
     </main>
   );
 }

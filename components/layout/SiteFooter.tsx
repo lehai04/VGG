@@ -1,54 +1,28 @@
-import Image from "next/image";
 import Link from "next/link";
+import { FooterBottom } from "./footer/FooterBottom";
+import { FooterAbout, FooterQuickLinks, FooterSocial } from "./footer/FooterColumns";
+import { FooterContact } from "./footer/FooterContact";
+import { FooterLocation } from "./footer/FooterLocation";
+import { ScrollToTop } from "./footer/ScrollToTop";
 
-/** FOOTER DÙNG CHUNG cho các page ngoài homepage. */
+/** Footer duy nhất, được chia nhỏ theo từng vùng nội dung để tái sử dụng toàn site. */
 export function SiteFooter() {
   return (
-    <footer>
-      <div className="footer-brand logo-footer">
-        <Image
-          src="/images/logo/logo-vgg.png"
-          alt="Viện Sau đại học Văn Lang"
-          width={320}
-          height={125}
-        />
+    <footer className="university-footer" id="footer">
+      <FooterContact />
+      <div className="university-footer-divider" />
+      <div className="university-footer-content">
+        <FooterAbout />
+        <FooterQuickLinks />
+        <FooterSocial />
+        <FooterLocation />
       </div>
-      <div>
-        <small>LIÊN HỆ</small>
-        <p>
-          <a href="mailto:v.sdh@vlu.edu.vn">v.sdh@vlu.edu.vn</a>
-          <br />
-          <a href="tel:+842871016869">028 7101 6869</a>
-          <br />
-          <a href="tel:+84988486869">0988 48 68 69</a>
-        </p>
-      </div>
-      <div>
-        <small>ĐỊA CHỈ</small>
-        <p>
-          Phòng A02.01, Tòa A,
-          <br />
-          69/68 Đặng Thùy Trâm,
-          <br />
-          P. Bình Lợi Trung, TP.HCM
-        </p>
-      </div>
-      <div>
-        <small>TRUY CẬP NHANH</small>
-        <p>
-          <Link href="/admissions">Tuyển sinh</Link>
-          <br />
-          <Link href="/resources">Tài nguyên</Link>
-          <br />
-          <Link href="/discover">Liên hệ</Link>
-        </p>
-      </div>
-      <div className="copyright">© 2026 Trường Đại học Văn Lang. Bảo lưu mọi quyền.</div>
+      <FooterBottom />
     </footer>
   );
 }
 
-/** CỤM HÀNH ĐỘNG DÙNG CHUNG: AI, Facebook và Zalo; responsive được quản lý trong globals.css. */
+/** Cụm hành động luôn hiện trên mọi trang. */
 export function StickyActions() {
   return (
     <>
@@ -66,6 +40,9 @@ export function StickyActions() {
         <span>f</span>
         <b>Facebook Văn Lang</b>
       </a>
+      <Link className="apply-now-float" href="/admissions" aria-label="Nộp hồ sơ ngay">
+        Apply now
+      </Link>
       <a
         className="zalo-float"
         href="https://zalo.me/0988486869"
@@ -76,6 +53,7 @@ export function StickyActions() {
         <span>Zalo</span>
         <b>Liên hệ tuyển sinh</b>
       </a>
+      <ScrollToTop />
     </>
   );
 }
