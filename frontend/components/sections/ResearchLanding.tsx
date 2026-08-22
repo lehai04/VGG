@@ -43,7 +43,7 @@ export function ResearchLanding() {
       <header data-reveal><p className={styles.kicker}>05 — EXPLORE RESEARCH</p><h2>Khám phá Research.</h2></header>
       <nav aria-label="Điều hướng nghiên cứu">{navigation.map(([title,href],index)=><Link href={href} key={href} data-reveal><span>{String(index+1).padStart(2,"0")}</span><strong>{title}</strong><ArrowUpRight /></Link>)}</nav>
     </section>
-    <section className={styles.cta} data-reveal><p>HỢP TÁC NGHIÊN CỨU</p><h2>Cùng mở rộng<br />biên giới tri thức.</h2><Link href="/discover/lien-he">Trao đổi với chúng tôi <ArrowUpRight /></Link></section>
+    <section className={styles.cta} data-reveal><p>HỢP TÁC NGHIÊN CỨU</p><h2>Cùng mở rộng<br />biên giới tri thức.</h2><Link className="vgg-cta-pill" href="/discover/lien-he">Trao đổi với chúng tôi <ArrowUpRight /></Link></section>
     <NextStepCTA />
     <SiteFooter />
   </main>;

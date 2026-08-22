@@ -151,7 +151,7 @@ export function ProgrammeCatalog() {
         ))}
       </div>
 
-      <Link className="programmeCatalogCta" href="/programmes">
+      <Link className="programmeCatalogCta vgg-cta-pill" href="/programmes">
         <span>XEM CHI TIẾT</span>
         <b>→</b>
       </Link>

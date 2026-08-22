@@ -1,12 +1,3 @@
-@font-face {
-  font-family: "Rifton VGG";
-  src: url("./fonts/Rifton-Normal-Viethoa.ttf") format("truetype");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400 900;
-  size-adjust: 68%;
-}
-
 /*
   app/globals.css — style dùng chung (không phải homepage).
   Token màu VLU, header/footer trang con, landing, Discover, Programmes, responsive.
@@ -82,7 +73,7 @@
 .detail-facts p { line-height:1.65; color:#555; }
 .detail-quote { padding:clamp(90px,12vw,190px) clamp(24px,12vw,190px); background:var(--detail-ink); color:white; }
 .detail-quote>p { color:#ffb5ad; font-size:12px; letter-spacing:.2em; }
-.detail-quote blockquote { max-width:1150px; margin:40px 0 0; font-family:Georgia,serif; font-size:clamp(36px,5vw,74px); line-height:1.15; }
+.detail-quote blockquote { max-width:1150px; margin:40px 0 0; font-family:var(--font-body); font-size:clamp(36px,5vw,74px); line-height:1.15; }
 .detail-next { display:flex; justify-content:space-between; align-items:end; gap:40px; padding:90px clamp(24px,8vw,130px); background:var(--detail-red); color:#fff; }
 .detail-next h2 { font-size:clamp(40px,6vw,84px); margin:16px 0 0; letter-spacing:-.04em; }
 .detail-next>a { display:flex; gap:12px; color:#fff; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:10px; white-space:nowrap; }
@@ -104,7 +95,7 @@ html {
 }
 body {
   --font-body: var(--font-maison-neue), Arial, sans-serif;
-  --font-display: "Rifton VGG", var(--font-maison-neue), Arial, sans-serif;
+  --font-display: var(--font-maison-neue), Arial, sans-serif;
   margin: 0;
   background: #fff;
   color: #24243c;
@@ -116,6 +107,53 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* CTA dùng chung: pill đỏ VGG; không áp dụng cho menu, accordion hay icon control. */
+.vgg-cta-pill {
+  min-height: 50px !important;
+  width: max-content;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px !important;
+  border: 1px solid var(--vlu-red) !important;
+  border-radius: 999px !important;
+  background: var(--vlu-red) !important;
+  color: #fff !important;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: background-color 260ms ease, border-color 260ms ease, transform 260ms ease, box-shadow 260ms ease !important;
+}
+.vgg-cta-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--vlu-red-dark) !important;
+  background: var(--vlu-red-dark) !important;
+  box-shadow: 0 10px 24px rgba(169, 21, 40, .2);
+}
+.vgg-cta-pill:focus-visible {
+  outline: 3px solid rgba(215, 33, 52, .3);
+  outline-offset: 3px;
+}
+.vgg-cta-pill:disabled {
+  cursor: not-allowed;
+  opacity: .58;
+  transform: none;
+  box-shadow: none;
+}
+@media (max-width: 599px) {
+  .vgg-cta-pill {
+    min-height: 48px !important;
+    padding: 11px 20px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vgg-cta-pill { transition: none !important; }
 }
 h1,
 h2,
@@ -1130,7 +1168,7 @@ footer > div > small {
 
 .facebook-float > span {
   margin-top: 7px;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 38px;
   font-weight: 700;
   line-height: 1;
@@ -2195,7 +2233,7 @@ footer {
 }
 .discover-editorial-hero h1 {
   margin: 0 0 70px;
-  font-family: Cambria, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: clamp(54px, 6.5vw, 96px);
   font-weight: 400;
   line-height: 0.92;
@@ -2248,7 +2286,7 @@ footer {
 }
 .discover-editorial-intro h2 {
   margin: 0 0 48px;
-  font-family: Cambria, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: clamp(46px, 5.5vw, 76px);
   font-weight: 400;
   line-height: 1.05;
@@ -2301,7 +2339,7 @@ footer {
 }
 .discover-editorial-chapter-heading h2 {
   margin: 0;
-  font-family: Cambria, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: clamp(42px, 4.2vw, 64px);
   font-weight: 400;
   line-height: 1.08;
@@ -2330,7 +2368,7 @@ footer {
   margin: 45px 0;
   padding: 5px 0 5px 30px;
   border-left: 6px solid #ddd;
-  font-family: Cambria, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: clamp(25px, 2.3vw, 35px);
   font-style: italic;
   line-height: 1.4;
@@ -2406,7 +2444,7 @@ footer {
 }
 .discover-editorial-more-card h2 {
   margin: 0 0 18px;
-  font-family: Cambria, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: 45px;
   font-weight: 400;
 }
@@ -2449,7 +2487,7 @@ footer {
 }
 .discover-editorial-more-nav > h2 {
   margin: 0;
-  font-family: Cambria, "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: 40px;
   font-weight: 400;
   white-space: nowrap;

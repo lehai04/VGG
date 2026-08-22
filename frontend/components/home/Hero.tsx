@@ -33,10 +33,10 @@ export function Hero() {
       </p>
 
       <div className="heroActions">
-        <a href="#programmes" className="primary">
+        <a href="#programmes" className="primary vgg-cta-pill">
           Khám phá chương trình →
         </a>
-        <a href="#admissions">Tuyển sinh 2026 ↘</a>
+        <a className="vgg-cta-pill" href="#admissions">Tuyển sinh 2026 ↘</a>
       </div>
 
       <div className="heroStats">

@@ -2458,7 +2458,7 @@
 
 .home-page .facebookFloat > span {
   margin-top: 7px;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 38px;
   font-weight: 700;
   line-height: 1;

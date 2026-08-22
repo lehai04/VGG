@@ -29,7 +29,7 @@ export function Admissions() {
       <div className="admissionsProcess">
         <EditorialAccordion items={ADMISSION_STEPS} label="Hành trình tuyển sinh" className="admissionsSteps" />
 
-        <a href="#contact" className="admissionCta">
+        <a href="#contact" className="admissionCta vgg-cta-pill">
           <span>Apply now · Đăng ký ngay</span>
           <b>↗</b>
         </a>

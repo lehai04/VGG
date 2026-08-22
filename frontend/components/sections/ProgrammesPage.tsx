@@ -84,7 +84,7 @@ export function ProgrammesLanding() {
 
           <div className="programmes-hero-actions">
 
-            <a href="#programme-directory">
+            <a className="vgg-cta-pill" href="#programme-directory">
 
               Khám phá chương trình
 
@@ -95,7 +95,7 @@ export function ProgrammesLanding() {
             </a>
 
 
-            <Link href="/admissions">
+            <Link className="vgg-cta-pill" href="/admissions">
 
               Thông tin tuyển sinh
 
@@ -237,7 +237,7 @@ export function ProgrammesLanding() {
         </p>
 
 
-        <Link href="/admissions">
+        <Link className="vgg-cta-pill" href="/admissions">
 
           Khám phá tuyển sinh
 

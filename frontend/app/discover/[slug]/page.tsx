@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { AboutIntroduction } from "@/components/sections/AboutIntroduction";
 import { VisionMissionPage } from "@/components/sections/VisionMissionPage";
 import { LeadershipPage } from "@/components/sections/LeadershipPage";
+import { WhyVGGPage } from "@/components/sections/WhyVGGPage";
 import { DiscoverMore } from "@/components/sections/DiscoverMore";
 import { NextStepCTA } from "@/components/sections/NextStepCTA";
 import { RevealOnScroll } from "@/components/layout/RevealOnScroll";
@@ -155,6 +156,7 @@ export default async function DiscoverDetail({ params }: { params: Promise<{ slu
   // Trang institutional statement có content model/layout riêng; các slug khác vẫn dùng template chung.
   if (slug === "tam-nhin-su-menh") return <VisionMissionPage />;
   if (slug === "lanh-dao") return <LeadershipPage />;
+  if (slug === "vi-sao-chon-vgg") return <WhyVGGPage />;
   return (
     <main className="subpage discover-detail" id="main-content">
       <RevealOnScroll />

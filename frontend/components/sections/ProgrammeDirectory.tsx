@@ -1044,7 +1044,7 @@ export default function ProgrammeDirectory() {
 
                           <Link
                             href="/admissions"
-                            className="vgg-pd-card__primary"
+                            className="vgg-pd-card__primary vgg-cta-pill"
                           >
 
                             Thông tin tuyển sinh
@@ -1058,7 +1058,7 @@ export default function ProgrammeDirectory() {
 
                           <Link
                             href="/discover/lien-he"
-                            className="vgg-pd-card__secondary"
+                            className="vgg-pd-card__secondary vgg-cta-pill"
                           >
 
                             Liên hệ tư vấn

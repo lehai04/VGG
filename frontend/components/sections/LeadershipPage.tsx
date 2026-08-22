@@ -39,7 +39,7 @@ export function LeadershipPage() {
             <div className={styles.profileCopy} data-reveal>
               <h2 id={`leader-profile-${index}`}>{title}</h2>
               <p>{copy}</p>
-              <Link href="/discover/lien-he">{button}</Link>
+              <Link className="vgg-cta-pill" href="/discover/lien-he">{button}</Link>
             </div>
             <div className={styles.profileGallery} data-reveal>
               <figure className={styles.profileMainImage}>
