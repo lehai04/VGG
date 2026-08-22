@@ -1,82 +1,32 @@
-# VGG – Viện Sau đại học Văn Lang
+# VGG Platform
 
-Website thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ học viên của VGG. Dự án sử dụng Next.js App Router, React và TypeScript.
-
-## Cấu trúc dự án
+Monorepo cho website public, logic nghiệp vụ dùng chung và ứng dụng quản trị VGG.
 
 ```text
-vgg-demo-vercel/
-├── app/                    # Route, layout, metadata và API của Next.js
-│   ├── api/consultations/  # Endpoint nhận yêu cầu tư vấn
-│   ├── fonts/              # Font nhận diện Maison Neue
-│   ├── [section]/          # Các trang nội dung và trang chi tiết
-│   ├── globals.css         # Style nền tảng dùng chung
-│   └── home.css            # Style riêng của trang chủ
-├── components/
-│   ├── home/               # Các section cấu thành trang chủ
-│   ├── forms/              # Biểu mẫu và trạng thái nhập liệu
-│   ├── layout/             # Header, footer và thành phần bố cục
-│   └── sections/           # Khung trang nội dung và trang chi tiết
-├── data/                   # Dữ liệu menu, chương trình và nội dung tĩnh
-├── lib/                    # Validation và nghiệp vụ không phụ thuộc giao diện
-├── public/                 # Logo, hình ảnh và favicon
-├── tests/                  # Kiểm thử cấu trúc và chức năng trọng yếu
-└── package.json            # Scripts và dependency của dự án
+frontend/  Website public Next.js (port 3000)
+backend/   Validation/domain logic không phụ thuộc framework
+admin/     Admin Next.js độc lập (port 3001; khung ban đầu)
+docs/      Page map, architecture và Design System
 ```
 
-## Cấu trúc trang
+## Bắt đầu
 
-Mỗi nhóm nội dung có route riêng để có thể chỉnh sửa độc lập:
-
-```text
-app/discover/          Về VGG
-app/programmes/        Chương trình đào tạo
-app/admissions/        Tuyển sinh
-app/research/          Nghiên cứu
-app/global/            Cơ hội quốc tế
-app/student-success/   Hành trình học viên
-app/news/              Tin tức và sự kiện
-app/resources/         Tài nguyên
-```
-
-Mỗi nhóm có một `page.tsx` tổng quan để chỉnh sửa độc lập. Riêng nhóm `discover` có thêm route động `app/discover/[slug]/page.tsx` cho các nội dung giới thiệu, tầm nhìn, lãnh đạo, kiểm định, đối tác và liên hệ. Giao diện khung nằm tại `components/sections/SectionPages.tsx`; menu và nội dung điều hướng nằm tại `data/site.ts`.
-
-## Font nhận diện
-
-Website tự lưu trữ bộ font Maison Neue trong `app/fonts` và nạp bằng `next/font/local`:
-
-- Maison Neue Book/Medium/Demi/Bold cho nội dung, biểu mẫu và giao diện.
-- Maison Neue Extended Bold/Black cho tiêu đề, số liệu và điểm nhấn thương hiệu.
-
-Các biến CSS `--font-body` và `--font-display` được khai báo trong `app/globals.css`. Không tải font từ CDN bên ngoài.
-
-## Yêu cầu
-
-- Node.js 22.13 trở lên
-- npm 10 trở lên
-
-## Chạy local
+Yêu cầu Node.js 22.13+ và npm 10+.
 
 ```bash
 npm ci
-copy .env.example .env.local
+copy frontend/.env.example frontend/.env.local
 npm run dev
 ```
 
-Mở `http://localhost:3000`.
+Mở `http://localhost:3000`. Chạy admin với `npm run dev:admin`.
 
-## Kiểm tra chất lượng
+## Chất lượng và triển khai
 
-```bash
-npm run check
-```
+`npm run check` chạy lint, typecheck, test và build production cho public site lẫn admin.
 
-Lệnh này lần lượt chạy ESLint, TypeScript, test và production build.
+Khi triển khai frontend trên Vercel, giữ **Root Directory** ở repository root để workspace `backend` có thể được resolve, đặt Build Command là `npm run build`, và khai báo biến môi trường theo `frontend/.env.example`.
 
-## Form tư vấn
+## Documentation
 
-API `POST /api/consultations` kiểm tra dữ liệu, origin, honeypot và giới hạn tần suất. Đặt `CONSULTATION_WEBHOOK_URL` trong `.env.local` để chuyển tiếp yêu cầu sang CRM hoặc workflow nội bộ. Nếu không cấu hình webhook, API vẫn xác nhận dữ liệu hợp lệ nhưng không lưu lâu dài.
-
-## Triển khai Vercel
-
-Import repository vào Vercel, khai báo các biến môi trường theo `.env.example` và dùng cấu hình Next.js mặc định. Build command là `npm run build`.
+Xem [docs/README.md](./docs/README.md) trước khi thêm page hoặc component. Đây là nguồn tham chiếu gọn cho cấu trúc page và Design System.
