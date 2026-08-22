@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 
 /** Nhãn SVG chạy theo đường cong ở phần bầu dưới của mỗi thẻ thống kê. */
 function CurvedLabel({ children, pathId }: { children: string; pathId: string }) {
@@ -158,3 +158,4 @@ export function ProgrammeCatalog() {
     </section>
   );
 }
+

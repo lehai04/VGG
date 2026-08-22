@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { RevealOnScroll } from "@/components/layout/RevealOnScroll";
@@ -58,3 +58,4 @@ export function LeadershipPage() {
     </main>
   );
 }
+

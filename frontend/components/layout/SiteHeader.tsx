@@ -5,10 +5,11 @@
  * (click menu đi tới /slug thay vì #anchor). Nhánh không compact là mega menu hover cũ.
  */
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 import { useState } from "react";
 import { discoverSections, menuGroups, subpageHref } from "@/data/site";
 import { Header } from "@/components/home/Header";
+import { LanguageToggle } from "@/components/layout/LanguageToggle";
 
 function UtilityBar() {
   return (
@@ -17,7 +18,7 @@ function UtilityBar() {
       <div>
         <Link href="/news">Tin tức</Link>
         <Link href="/resources">Tài nguyên</Link>
-        <span>VI</span>
+        <LanguageToggle />
       </div>
     </div>
   );
@@ -132,3 +133,4 @@ export function SiteHeader({ compact = false }: { compact?: boolean }) {
     </>
   );
 }
+

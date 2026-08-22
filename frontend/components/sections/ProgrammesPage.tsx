@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 
 import {
   SiteFooter
@@ -261,3 +261,4 @@ export function ProgrammesLanding() {
 
   );
 }
+

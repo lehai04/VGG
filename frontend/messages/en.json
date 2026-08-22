@@ -1,0 +1,47 @@
+{
+  "navigation": {
+    "news": "News",
+    "resources": "Resources",
+    "overview": "Overview",
+    "menu": "MENU",
+    "close": "CLOSE",
+    "university": "VAN LANG UNIVERSITY"
+  },
+  "common": {
+    "discoverMore": "Explore VGG",
+    "aboutVgg": "About VGG",
+    "readMore": "Learn more",
+    "contact": "Contact us",
+    "applyNow": "Apply now"
+  },
+  "discover": {
+    "gioi-thieu": "Introduction",
+    "tam-nhin-su-menh": "Vision & Mission",
+    "lanh-dao": "Leadership",
+    "vi-sao-chon-vgg": "Why VGG",
+    "xep-hang-thanh-tuu": "Rankings & Achievements",
+    "lien-he": "Contact"
+  },
+  "cta": {
+    "eyebrow": "BOOK A CONSULTATION",
+    "titleLine1": "Ready to take",
+    "titleLine2": "your next step?",
+    "support": "Explore the programme that fits your goals and take the next step in your academic and professional journey.",
+    "benefit1": "Find the right programme",
+    "benefit2": "Get tuition and scholarship guidance",
+    "benefit3": "Receive application support",
+    "formTitle": "Your information",
+    "response": "Response within 24 hours",
+    "name": "Full name",
+    "phone": "Phone number",
+    "email": "Email",
+    "programme": "Programme of interest",
+    "chooseProgramme": "Choose a programme",
+    "submit": "Submit request",
+    "submitting": "Submitting...",
+    "success": "Your request has been sent. VGG will contact you soon.",
+    "invalid": "Some information is invalid. Please check and try again.",
+    "connectionError": "Unable to connect to the server. Please try again later.",
+    "privacy": "Your information is confidential and used only for admissions counselling."
+  }
+}

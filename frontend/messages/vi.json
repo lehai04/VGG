@@ -1,0 +1,47 @@
+{
+  "navigation": {
+    "news": "Tin tức",
+    "resources": "Tài nguyên",
+    "overview": "Tổng quan",
+    "menu": "MENU",
+    "close": "ĐÓNG",
+    "university": "TRƯỜNG ĐẠI HỌC VĂN LANG"
+  },
+  "common": {
+    "discoverMore": "Khám phá thêm",
+    "aboutVgg": "About VGG",
+    "readMore": "Tìm hiểu thêm",
+    "contact": "Liên hệ tư vấn",
+    "applyNow": "Đăng ký ngay"
+  },
+  "discover": {
+    "gioi-thieu": "Giới thiệu",
+    "tam-nhin-su-menh": "Tầm nhìn & Sứ mệnh",
+    "lanh-dao": "Lãnh đạo",
+    "vi-sao-chon-vgg": "Vì sao chọn VGG",
+    "xep-hang-thanh-tuu": "Xếp hạng & Thành tựu",
+    "lien-he": "Liên hệ"
+  },
+  "cta": {
+    "eyebrow": "BOOK CONSULTATION · ĐẶT LỊCH TƯ VẤN",
+    "titleLine1": "Bạn đã sẵn sàng",
+    "titleLine2": "cho bước tiến mới?",
+    "support": "Khám phá chương trình đào tạo phù hợp và bắt đầu bước tiếp theo trong hành trình học tập và sự nghiệp của bạn.",
+    "benefit1": "Tư vấn chương trình phù hợp",
+    "benefit2": "Hướng dẫn học phí và học bổng",
+    "benefit3": "Đồng hành hoàn thiện hồ sơ",
+    "formTitle": "Thông tin của bạn",
+    "response": "Phản hồi trong 24 giờ",
+    "name": "Họ và tên",
+    "phone": "Số điện thoại",
+    "email": "Email",
+    "programme": "Chương trình quan tâm",
+    "chooseProgramme": "Chọn chương trình",
+    "submit": "Gửi yêu cầu tư vấn",
+    "submitting": "Đang gửi...",
+    "success": "Đã gửi yêu cầu. VGG sẽ sớm liên hệ với bạn.",
+    "invalid": "Thông tin chưa hợp lệ. Vui lòng kiểm tra lại.",
+    "connectionError": "Không thể kết nối máy chủ. Vui lòng thử lại sau.",
+    "privacy": "Thông tin của bạn được bảo mật và chỉ sử dụng cho mục đích tư vấn tuyển sinh."
+  }
+}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -221,3 +221,4 @@ export default async function DiscoverDetail({ params }: { params: Promise<{ slu
     </main>
   );
 }
+

@@ -14,6 +14,7 @@ export type MenuGroup = {
   headline: string;
   intro: string;
   items: readonly string[]; // mục mega menu + danh sách landing
+  itemsEn: readonly string[]; // nhãn English dùng cho Header/search; cùng index với items
   image: string;
 };
 
@@ -62,6 +63,7 @@ export const menuGroups: readonly MenuGroup[] = [
     intro:
       "VGG kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",
     items: discoverSections.map((item) => item.title),
+    itemsEn: ["Introduction", "Vision & Mission", "Leadership", "Why VGG", "Rankings & Achievements", "Contact"],
     image:
       "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1800&q=86",
   },
@@ -80,6 +82,7 @@ export const menuGroups: readonly MenuGroup[] = [
       "Executive Education",
       "Chương trình Quốc tế",
     ],
+    itemsEn: ["Flagship Master's Programmes", "Master's Programmes", "Doctoral Programmes", "Executive Education", "International Programmes"],
     image:
       "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1800&q=86",
   },
@@ -99,6 +102,7 @@ export const menuGroups: readonly MenuGroup[] = [
       "FAQ",
       "Đặt lịch tư vấn",
     ],
+    itemsEn: ["Admission Requirements", "Tuition Fees", "Scholarships & Financial Aid", "Application Process", "Key Dates", "FAQ", "Book a Consultation"],
     image:
       "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=86",
   },
@@ -118,6 +122,7 @@ export const menuGroups: readonly MenuGroup[] = [
       "Đổi mới sáng tạo",
       "Hợp tác doanh nghiệp",
     ],
+    itemsEn: ["Research Clusters", "Research Projects", "Publications", "Conferences & Academic Events", "Innovation", "Industry Collaboration"],
     image:
       "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1800&q=86",
   },
@@ -137,6 +142,7 @@ export const menuGroups: readonly MenuGroup[] = [
       "Overseas Immersion",
       "Đối tác toàn cầu",
     ],
+    itemsEn: ["Student Exchange", "Dual Degree", "International Internships", "Study Tour", "Overseas Immersion", "Global Partners"],
     image:
       "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1800&q=86",
   },
@@ -155,6 +161,7 @@ export const menuGroups: readonly MenuGroup[] = [
       "Cựu học viên",
       "Câu chuyện thành công",
     ],
+    itemsEn: ["Student Support", "Career Development", "Learning Resources", "Alumni", "Success Stories"],
     image:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=86",
   },
@@ -173,6 +180,7 @@ export const menuGroups: readonly MenuGroup[] = [
       "Thư viện hình ảnh",
       "Video",
     ],
+    itemsEn: ["News", "Events", "Seminars / Webinars", "Press Releases", "Photo Gallery", "Video"],
     image:
       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1800&q=86",
   },
@@ -184,6 +192,7 @@ export const menuGroups: readonly MenuGroup[] = [
     headline: "Tài nguyên học thuật dễ tìm, dễ sử dụng.",
     intro: "Truy cập biểu mẫu, chính sách, tài liệu, lịch học thuật và câu hỏi thường gặp.",
     items: ["Biểu mẫu", "Chính sách & Quy định", "Tài liệu tải về", "Lịch học thuật", "FAQ"],
+    itemsEn: ["Forms", "Policies & Regulations", "Downloads", "Academic Calendar", "FAQ"],
     image:
       "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1800&q=86",
   },

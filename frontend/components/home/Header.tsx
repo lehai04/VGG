@@ -7,9 +7,12 @@
  */
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 import { usePathname } from "next/navigation";
 import { discoverSections, menuGroups, subpageHref } from "@/data/site";
+import { LanguageToggle } from "@/components/layout/LanguageToggle";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+import { stripLocale } from "@/lib/i18n";
 
 // Đường dẫn logo chính của Header.
 const LOGO_SRC = "/images/logo/logo-vgg.png";
@@ -20,15 +23,18 @@ const MENU_ITEMS = menuGroups.map((group) => ({
   english: group.en,
   vietnamese: group.vi,
   links: group.items,
+  linksEn: group.itemsEn,
 }));
 
 /** Header dùng chung; routeMode được giữ lại để tương thích các nơi đang sử dụng component. */
 export function Header({ routeMode = false }: { routeMode?: boolean }) {
+  const { locale, messages } = useLocale();
   // Quản lý trạng thái menu trên thiết bị di động và mục mega menu đang được chọn.
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+  const routePathname = stripLocale(pathname);
   const activeItem = activeMenu === null ? null : MENU_ITEMS[activeMenu];
 
   // Navigation chính không dùng hash: mọi page có đích route độc lập trong app/<slug>/page.tsx.
@@ -61,14 +67,12 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
     <>
       <div className="topBar">
         <Link className="topBarUniversity" href="/">
-          TRƯỜNG ĐẠI HỌC VĂN LANG
+          {messages.navigation.university}
         </Link>
         <nav className="topBarLinks" aria-label="Liên kết nhanh">
-          <Link href="/news">Tin tức</Link>
-          <Link href="/resources">Tài nguyên</Link>
-          <button type="button" aria-label="Chuyển đổi ngôn ngữ">
-            VI <span>/ EN</span>
-          </button>
+          <Link href="/news">{messages.navigation.news}</Link>
+          <Link href="/resources">{messages.navigation.resources}</Link>
+          <LanguageToggle />
         </nav>
       </div>
 
@@ -99,18 +103,18 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
             aria-expanded={open}
             aria-label="Mở menu điều hướng"
           >
-            MENU <i>{open ? "×" : "+"}</i>
+            {open ? messages.navigation.close : messages.navigation.menu} <i>{open ? "×" : "+"}</i>
           </button>
 
           <nav className={open ? "nav open" : "nav"} aria-label="Điều hướng chính">
             {MENU_ITEMS.map((item, index) => (
-              <a
+              <Link
                 href={itemHref(item.slug)}
                 key={item.english}
                 aria-expanded={activeMenu === index}
                 aria-controls="header-mega-menu"
                 className={
-                  activeMenu === index || (routeMode && pathname.startsWith(`/${item.slug}`))
+                  activeMenu === index || (routeMode && routePathname.startsWith(`/${item.slug}`))
                     ? "active"
                     : ""
                 }
@@ -119,8 +123,8 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
                   setActiveMenu((current) => current === index ? null : index);
                 }}
               >
-                <span className="navTitle">{item.vietnamese}</span>
-              </a>
+                <span className="navTitle">{locale === "en" ? item.english : item.vietnamese}</span>
+              </Link>
             ))}
           </nav>
         </header>
@@ -143,34 +147,34 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
 
             <div className="megaVluBody">
               <div className="megaVluHeading">
-                <h2>{activeItem.vietnamese}</h2>
-                <a href={itemHref(activeItem.slug)} onClick={() => setActiveMenu(null)}>
-                  <span>TỔNG QUAN</span>
+                <h2>{locale === "en" ? activeItem.english : activeItem.vietnamese}</h2>
+                <Link href={itemHref(activeItem.slug)} onClick={() => setActiveMenu(null)}>
+                  <span>{messages.navigation.overview.toUpperCase()}</span>
                   <b aria-hidden="true">›</b>
-                </a>
+                </Link>
               </div>
 
-              <nav className="megaVluLinks" aria-label={`Các mục ${activeItem.vietnamese}`}>
-                {activeItem.links.map((link, index) => (
-                  <a
+              <nav className="megaVluLinks" aria-label={`${messages.navigation.overview} ${locale === "en" ? activeItem.english : activeItem.vietnamese}`}>
+                {(locale === "en" ? activeItem.linksEn : activeItem.links).map((link, index) => (
+                  <Link
                     href={submenuHref(activeItem.slug, index)}
                     key={link}
                     onClick={() => setActiveMenu(null)}
                   >
                     {link}
-                  </a>
+                  </Link>
                 ))}
               </nav>
 
               <aside className="megaVluPromo">
                 <small>VAN LANG GLOBAL GRADUATE</small>
                 <strong>
-                  Chuẩn quốc tế.
+                  {locale === "en" ? "International standards." : "Chuẩn quốc tế."}
                   <br />
-                  Lấy người học làm trung tâm.
+                  {locale === "en" ? "Learner-centered." : "Lấy người học làm trung tâm."}
                 </strong>
                 <Link href="/discover" onClick={() => setActiveMenu(null)}>
-                  Khám phá VGG <span>→</span>
+                  {locale === "en" ? "Explore VGG" : "Khám phá VGG"} <span>→</span>
                 </Link>
               </aside>
             </div>
@@ -180,3 +184,4 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
     </>
   );
 }
+

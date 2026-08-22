@@ -1,9 +1,12 @@
-import Link from "next/link";
+"use client";
+
+import Link from "@/components/i18n/LocalizedLink";
 import { FooterBottom } from "./footer/FooterBottom";
 import { FooterAbout, FooterQuickLinks, FooterSocial } from "./footer/FooterColumns";
 import { FooterContact } from "./footer/FooterContact";
 import { FooterLocation } from "./footer/FooterLocation";
 import { ScrollToTop } from "./footer/ScrollToTop";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 /** Footer duy nhất, được chia nhỏ theo từng vùng nội dung để tái sử dụng toàn site. */
 export function SiteFooter() {
@@ -24,11 +27,12 @@ export function SiteFooter() {
 
 /** Cụm nút nổi (AI, Facebook, Apply, Zalo, cuộn lên) — được RootLayout gắn 1 lần. */
 export function StickyActions() {
+  const { locale, messages } = useLocale();
   return (
     <>
       <Link className="chatbot-float" href="/#consultation" aria-label="Mở khu vực tư vấn VGG">
         <span>AI</span>
-        <b>Chat với VGG</b>
+        <b>{locale === "en" ? "Chat with VGG" : "Chat với VGG"}</b>
       </Link>
       <a
         className="facebook-float"
@@ -41,7 +45,7 @@ export function StickyActions() {
         <b>Facebook Văn Lang</b>
       </a>
       <Link className="apply-now-float" href="/admissions" aria-label="Nộp hồ sơ ngay">
-        <span>Apply now</span>
+        <span>{messages.common.applyNow}</span>
       </Link>
       <a
         className="zalo-float"
@@ -51,7 +55,7 @@ export function StickyActions() {
         aria-label="Liên hệ tuyển sinh qua Zalo"
       >
         <span>Zalo</span>
-        <b>Liên hệ tuyển sinh</b>
+        <b>{locale === "en" ? "Admissions contact" : "Liên hệ tuyển sinh"}</b>
       </a>
       <ScrollToTop />
     </>

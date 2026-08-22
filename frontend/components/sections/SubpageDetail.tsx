@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 import { notFound } from "next/navigation";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -55,3 +55,4 @@ export function subpageMetadata(section: string, slug: string) {
   const page = sectionSubpages[section]?.find((entry) => entry.slug === slug);
   return page ? { title: page.title, description: page.summary } : {};
 }
+

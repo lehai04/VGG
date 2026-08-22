@@ -46,6 +46,23 @@
   .home-page .editorialAccordionItem,.home-page .editorialAccordionPanel,.home-page .editorialAccordionItem > button > i { transition:none; }
 }
 
+/* Header language toggle: override style của nút ngôn ngữ cũ. */
+.home-page .topBarLinks .languageToggle {
+  height: 100%;
+  padding: 0 15px;
+  background: var(--vlu-red);
+}
+.home-page .topBarLinks .languageToggle button {
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: 0;
+  color: rgba(255,255,255,.55);
+  background: transparent;
+  font-size: inherit;
+}
+.home-page .topBarLinks .languageToggle button.active { color:#fff; }
+
 .home-page,
 .home-page * {
   box-sizing: border-box;
@@ -710,6 +727,11 @@
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* Iframe hoạt động như video background, không nhận hover/click để toolbar YouTube không xuất hiện. */
+.home-page .immersiveVideo iframe {
+  pointer-events: none;
 }
 
 .home-page .immersiveVideoPoster {

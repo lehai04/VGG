@@ -7,6 +7,7 @@
 import { FormEvent, useState } from "react";
 import { programmes as PROGRAMMES } from "@/data/site";
 import { EditorialAccordion } from "./EditorialAccordion";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 // Danh sách tài nguyên tải xuống hoặc tra cứu.
 const RESOURCES = [
@@ -22,6 +23,8 @@ const RESOURCES = [
  * để kế thừa nguyên form “Sẵn sàng cho bước tiến mới” mà không lặp logic/API.
  */
 export function ResourcesConsultation({ showResources = true }: { showResources?: boolean }) {
+  const { messages } = useLocale();
+  const cta = messages.cta;
   // Thông báo trạng thái gửi form cho người dùng.
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,7 +32,7 @@ export function ResourcesConsultation({ showResources = true }: { showResources?
   // Gửi dữ liệu tư vấn đến API nội bộ và xử lý phản hồi thành công/thất bại.
   async function submitForm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setMessage("Đang gửi...");
+    setMessage(cta.submitting);
     setIsSubmitting(true);
 
     const form = event.currentTarget;
@@ -44,12 +47,12 @@ export function ResourcesConsultation({ showResources = true }: { showResources?
 
       if (response.ok) {
         form.reset();
-        setMessage("Đã gửi yêu cầu. VGG sẽ sớm liên hệ với bạn.");
+        setMessage(cta.success);
       } else {
-        setMessage(result.message ?? "Thông tin chưa hợp lệ. Vui lòng kiểm tra lại.");
+        setMessage(result.message ?? cta.invalid);
       }
     } catch {
-      setMessage("Không thể kết nối máy chủ. Vui lòng thử lại sau.");
+      setMessage(cta.connectionError);
     } finally {
       setIsSubmitting(false);
     }
@@ -74,25 +77,25 @@ export function ResourcesConsultation({ showResources = true }: { showResources?
       <div className="consultationBlock" id={showResources ? "consultation" : undefined}>
         {/* Cột giới thiệu nhấn mạnh giá trị người dùng nhận được trước khi điền form. */}
         <div className="consultationIntro">
-          <p>BOOK CONSULTATION · ĐẶT LỊCH TƯ VẤN</p>
+          <p>{cta.eyebrow}</p>
           <h2>
-            Bạn đã sẵn sàng
+            {cta.titleLine1}
             <br />
-            cho <em>bước tiến mới?</em>
+            <em>{cta.titleLine2}</em>
           </h2>
-          <div>Để lại thông tin, đội ngũ tuyển sinh VGG sẽ liên hệ và đồng hành cùng bạn.</div>
+          <div>{cta.support}</div>
           <ul className="consultationBenefits" aria-label="Quyền lợi tư vấn">
             <li>
               <span>01</span>
-              Tư vấn chương trình phù hợp
+              {cta.benefit1}
             </li>
             <li>
               <span>02</span>
-              Hướng dẫn học phí và học bổng
+              {cta.benefit2}
             </li>
             <li>
               <span>03</span>
-              Đồng hành hoàn thiện hồ sơ
+              {cta.benefit3}
             </li>
           </ul>
         </div>
@@ -102,9 +105,9 @@ export function ResourcesConsultation({ showResources = true }: { showResources?
           <div className="consultationFormHead">
             <div>
               <span>PRIVATE CONSULTATION</span>
-              <strong>Thông tin của bạn</strong>
+              <strong>{cta.formTitle}</strong>
             </div>
-            <small>Phản hồi trong 24 giờ</small>
+            <small>{cta.response}</small>
           </div>
           {/* consent phục vụ API; honeypot chặn bot và được ẩn khỏi người dùng thật. */}
           <input type="hidden" name="consent" value="yes" />
@@ -116,7 +119,7 @@ export function ResourcesConsultation({ showResources = true }: { showResources?
             aria-hidden="true"
           />
           <label>
-            Họ và tên
+            {cta.name}
             <input
               name="name"
               placeholder="Nguyễn Văn A"
@@ -127,7 +130,7 @@ export function ResourcesConsultation({ showResources = true }: { showResources?
             />
           </label>
           <label>
-            Số điện thoại
+            {cta.phone}
             <input
               name="phone"
               type="tel"
@@ -141,7 +144,7 @@ export function ResourcesConsultation({ showResources = true }: { showResources?
             />
           </label>
           <label>
-            Email
+            {cta.email}
             <input
               name="email"
               type="email"
@@ -152,10 +155,10 @@ export function ResourcesConsultation({ showResources = true }: { showResources?
             />
           </label>
           <label>
-            Chương trình quan tâm
+            {cta.programme}
             <select name="programme" defaultValue="" required>
               <option value="" disabled>
-                Chọn chương trình
+                {cta.chooseProgramme}
               </option>
               {PROGRAMMES.map((programme) => (
                 <option value={programme} key={programme}>
@@ -165,14 +168,14 @@ export function ResourcesConsultation({ showResources = true }: { showResources?
             </select>
           </label>
           <button className="vgg-cta-pill" type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Đang gửi..." : "Gửi yêu cầu tư vấn"} <span>→</span>
+            {isSubmitting ? cta.submitting : cta.submit} <span>→</span>
           </button>
           {/* aria-live thông báo kết quả gửi form cho cả người dùng bàn phím và trình đọc màn hình. */}
           <p className="consultationMessage" aria-live="polite">
             {message}
           </p>
           <small className="consultationPrivacy">
-            Thông tin của bạn được bảo mật và chỉ sử dụng cho mục đích tư vấn tuyển sinh.
+            {cta.privacy}
           </small>
         </form>
       </div>

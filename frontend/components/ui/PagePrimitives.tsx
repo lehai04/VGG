@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 import type { ReactNode } from "react";
 import styles from "./PageUI.module.css";
 
@@ -32,3 +32,4 @@ export function ImageFeature({image,imageAlt,children,reverse=false,className}:{
 export function PageCTA({eyebrow,title,children,tone="red",className}:{eyebrow:string;title:ReactNode;children?:ReactNode;tone?:"red"|"ink";className?:string}){
   return <section className={cx(`${styles.cta} ${tone==="ink"?styles.ctaInk:styles.ctaRed}`,className)} data-reveal><PageContainer><p className={styles.eyebrow}>{eyebrow}</p><h2>{title}</h2>{children&&<div className={styles.ctaActions}>{children}</div>}</PageContainer></section>
 }
+

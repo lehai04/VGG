@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -48,3 +48,4 @@ export function ResearchLanding() {
     <SiteFooter />
   </main>;
 }
+

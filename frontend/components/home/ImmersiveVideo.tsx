@@ -40,8 +40,8 @@ export function ImmersiveVideo() {
       player.postMessage(JSON.stringify({ event: "command", func, args }), "*");
 
     if (play) {
-      command("unMute");
-      command("setVolume", [100]);
+      // Autoplay nền phải luôn tắt tiếng để không bị trình duyệt chặn.
+      command("mute");
       command("playVideo");
     } else {
       command("pauseVideo");
@@ -67,10 +67,9 @@ export function ImmersiveVideo() {
         {hasLoaded ? (
           <iframe
             ref={iframeRef}
-            src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=0&enablejsapi=1&rel=0&playsinline=1`}
+            src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&disablekb=1&fs=0&iv_load_policy=3&playsinline=1&rel=0&enablejsapi=1`}
             title="Video giới thiệu VGG"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
+            allow="autoplay; encrypted-media"
             onLoad={() => controlVideo(shouldPlay)}
           />
         ) : (

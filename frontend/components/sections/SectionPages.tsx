@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -93,3 +93,4 @@ function SectionHero({ section }: { section: string }) {
     </section>
   );
 }
+

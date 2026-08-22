@@ -1,12 +1,16 @@
+"use client";
+
 import { locations } from "./footerData";
 import { FooterIcon } from "./FooterIcon";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 /** Cột địa chỉ + iframe Google Maps (cơ sở đầu tiên trong `locations`). */
 export function FooterLocation() {
+  const { locale } = useLocale();
   const [mainLocation, ...otherLocations] = locations;
   return (
     <section className="university-footer-location">
-      <h2>Địa chỉ</h2>
+      <h2>{locale === "en" ? "Locations" : "Địa chỉ"}</h2>
       <a
         className="university-footer-map"
         href={mainLocation.mapUrl}
@@ -27,7 +31,7 @@ export function FooterLocation() {
           <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" key={location.name}>
             <FooterIcon name="pin" />
             <span>
-              <strong>{location.name}:</strong> {location.address}
+              <strong>{locale === "en" ? (location === mainLocation ? "Main campus" : "Campus 2") : location.name}:</strong> {location.address}
             </span>
           </a>
         ))}

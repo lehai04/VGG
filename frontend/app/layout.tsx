@@ -5,10 +5,13 @@
  * - StickyActions (AI / Facebook / Zalo / Apply) hiện trên mọi trang
  */
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import localFont from "next/font/local";
 import "./globals.css";
 import "./home.css";
 import { StickyActions } from "@/components/layout/SiteFooter";
+import { LocaleProvider } from "@/components/i18n/LocaleProvider";
+import { defaultLocale, isLocale } from "@/lib/i18n";
 
 const maisonNeue = localFont({
   variable: "--font-maison-neue",
@@ -25,7 +28,7 @@ const maisonNeue = localFont({
 });
 
 // Metadata nền tảng được mọi route kế thừa; từng page chỉ cần ghi đè title/description riêng.
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   metadataBase: new URL("https://vgg.vlu.edu.vn"),
   title: {
     default: "VGG – Viện Sau đại học Văn Lang",
@@ -55,20 +58,40 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = await headers();
+  const headerLocale = requestHeaders.get("x-vgg-locale");
+  const locale = isLocale(headerLocale) ? headerLocale : defaultLocale;
+  const localizedPath = requestHeaders.get("x-vgg-pathname") ?? `/${locale}`;
+  const routePath = localizedPath.replace(/^\/(vi|en)/, "") || "";
+  return {
+    ...baseMetadata,
+    alternates: {
+      canonical: `/${locale}${routePath}`,
+      languages: { vi: `/vi${routePath}`, en: `/en${routePath}`, "x-default": `/vi${routePath}` },
+    },
+  };
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const requestHeaders = await headers();
+  const headerLocale = requestHeaders.get("x-vgg-locale");
+  const locale = isLocale(headerLocale) ? headerLocale : defaultLocale;
   return (
     // Trình duyệt/extension có thể chèn thuộc tính vào html hoặc body trước hydration.
-    <html lang="vi" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${maisonNeue.variable} antialiased`} suppressHydrationWarning>
         <a className="skip-link" href="#main-content">
           Bỏ qua điều hướng
         </a>
-        {children}
-        <StickyActions />
+        <LocaleProvider locale={locale}>
+          {children}
+          <StickyActions />
+        </LocaleProvider>
       </body>
     </html>
   );

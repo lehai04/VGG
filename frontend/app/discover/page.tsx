@@ -3,7 +3,7 @@
  * Menu con (Giới thiệu, Tầm nhìn…) lấy slug từ data/site.ts → /discover/[slug].
  */
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { DiscoverMore } from "@/components/sections/DiscoverMore";
@@ -164,3 +164,4 @@ export default function DiscoverPage() {
     </main>
   );
 }
+

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 import { useState } from "react";
 
 export type EditorialAccordionItem = {
@@ -31,3 +31,4 @@ export function EditorialAccordion({ items, label, className = "" }: {
     })}
   </div>;
 }
+

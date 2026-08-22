@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n/LocalizedLink";
 import { useEffect, useMemo, useState } from "react";
 
 import {
@@ -1147,3 +1147,4 @@ function getProgrammeDetails(programme: Programme) {
     careers: ["Đảm nhận các vị trí chuyên môn và quản lý tại doanh nghiệp, tổ chức trong và ngoài nước", "Tham gia nghiên cứu, tư vấn, hoạch định và triển khai các dự án chuyên ngành", "Giảng dạy tại cơ sở đào tạo hoặc tiếp tục học tập ở trình độ cao hơn"],
   };
 }
+
