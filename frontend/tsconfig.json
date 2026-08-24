@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    // Alias @/* = thư mục frontend. Import: import { x } from "@/data/site"
+    // Alias @/* = thư mục frontend/src. Import: import { x } from "@/data/site"
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -20,7 +20,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [

@@ -1,0 +1,738 @@
+.page {
+  --admissions-red: #d72134;
+  --admissions-dark-red: #a91528;
+  --admissions-navy: #171d45;
+  --admissions-ink: #171717;
+  --admissions-paper: #f5f3ef;
+  color: var(--admissions-ink);
+  background: #fff;
+  overflow: clip;
+}
+
+.page h1,
+.page h2,
+.page h3 {
+  font-family: var(--font-heading);
+}
+.eyebrow {
+  margin: 0;
+  color: var(--admissions-red);
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase;
+}
+
+.hero {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  align-items: flex-end;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--admissions-navy);
+  color: #fff;
+}
+.heroImage {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center 43%;
+}
+.heroOverlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 20, 50, 0.06) 20%, rgba(10, 12, 30, 0.9) 100%);
+}
+.breadcrumb {
+  position: absolute;
+  top: 54px;
+  left: var(--container-padding);
+  z-index: 2;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+}
+.breadcrumb span {
+  color: #ef334b;
+  font-size: 22px;
+  font-weight: 800;
+}
+.breadcrumb strong {
+  font-weight: 600;
+}
+.heroCopy {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(360px, 1.15fr);
+  gap: clamp(50px, 8vw, 128px);
+  align-items: end;
+  padding: 160px var(--container-padding) 62px;
+}
+.heroCopy > p {
+  grid-column: 1 / -1;
+  margin: 0 0 -20px;
+  color: #f4a2ab;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em;
+}
+.heroCopy h1 {
+  max-width: none;
+  margin: 0;
+  padding-left: 24px;
+  border-left: 5px solid var(--admissions-red);
+  font-size: clamp(40px, 4.4vw, 62px) !important;
+  font-weight: 600 !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.035em !important;
+  text-transform: none;
+}
+.heroCopy h1 span {
+  display: block;
+  white-space: nowrap;
+}
+main:global(#main-content).page .heroCopy > strong {
+  max-width: 52ch;
+  display: block;
+  font-size: clamp(18px, 1.45vw, 21px);
+  font-weight: 500;
+  line-height: 1.6;
+}
+.heroAction,
+.introduction > a,
+.storyCopy > a,
+.supportCopy > a {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+.heroAction {
+  margin-top: 34px;
+  padding-bottom: 7px;
+  border-bottom: 2px solid var(--admissions-red);
+}
+.heroAction svg,
+.introduction a svg,
+.storyCopy a svg,
+.supportCopy a svg {
+  width: 18px;
+  transition: transform 0.25s ease;
+}
+.heroAction:hover svg,
+.introduction a:hover svg,
+.storyCopy a:hover svg,
+.supportCopy a:hover svg {
+  transform: translateX(5px);
+}
+.introduction {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(54px, 8vw, 130px);
+  padding: clamp(72px, 8vw, 112px) var(--container-padding);
+  background: #fff;
+}
+.introduction h2 {
+  max-width: 14ch;
+  margin: 20px 0 0;
+  font-size: clamp(38px, 4.4vw, 62px) !important;
+  line-height: 1.06 !important;
+}
+.introduction h3 {
+  margin: 4px 0 22px;
+  font-size: clamp(25px, 2.4vw, 34px) !important;
+  line-height: 1.15 !important;
+}
+main:global(#main-content).page .introduction p:not(.eyebrow) {
+  max-width: 58ch;
+  margin: 0;
+  color: #4c4e57;
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+}
+.introduction a {
+  margin-top: 28px;
+  color: var(--admissions-red);
+  border-bottom: 1px solid currentColor;
+}
+
+.story {
+  display: grid;
+  grid-template-columns: minmax(380px, 1.08fr) minmax(0, 0.92fr);
+  align-items: stretch;
+  background: var(--admissions-paper);
+}
+.storyMedia {
+  position: relative;
+  min-height: 700px;
+  margin: 0;
+  overflow: hidden;
+}
+.storyMedia img {
+  object-fit: cover;
+}
+.storyCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(64px, 7vw, 104px);
+}
+.storyCopy h2 {
+  max-width: 13ch;
+  margin: 20px 0 28px;
+  font-size: clamp(38px, 4vw, 58px) !important;
+  line-height: 1.07 !important;
+}
+main:global(#main-content).page .storyCopy > p:not(.eyebrow) {
+  max-width: 53ch;
+  margin: 0 0 18px;
+  color: #41434b;
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+}
+.storyCopy > a {
+  margin-top: 18px;
+  color: var(--admissions-dark-red);
+}
+
+.profile {
+  padding: clamp(64px, 7vw, 96px) var(--container-padding);
+  color: #fff;
+  background: var(--admissions-red);
+}
+.profile > header {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: clamp(32px, 6vw, 90px);
+  align-items: end;
+  margin-bottom: clamp(46px, 6vw, 76px);
+}
+.profile .eyebrow {
+  color: #ffe3e6;
+}
+.profile h2 {
+  max-width: 17ch;
+  margin: 0;
+  font-size: clamp(36px, 4.4vw, 62px) !important;
+  line-height: 1.06 !important;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.23);
+}
+.stats > div {
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px clamp(20px, 3vw, 44px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+.stats > div + div {
+  border-left: 1px solid rgba(255, 255, 255, 0.23);
+}
+.stats strong {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(60px, 7vw, 104px);
+  font-weight: 500;
+  line-height: 0.9;
+}
+.stats span {
+  margin-top: 17px;
+  color: #d8dae5;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.procedures {
+  padding: clamp(72px, 9vw, 128px) var(--container-padding);
+  background: #fff;
+}
+.procedures > header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+  gap: 18px clamp(48px, 7vw, 110px);
+  align-items: end;
+  margin-bottom: clamp(44px, 6vw, 76px);
+}
+.procedures > header .eyebrow {
+  grid-column: 1 / -1;
+}
+.procedures > header h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(38px, 4.5vw, 64px) !important;
+  line-height: 1.05 !important;
+}
+main:global(#main-content).page .procedures > header > p:not(.eyebrow) {
+  max-width: 53ch;
+  margin: 0;
+  color: #555762;
+  font-size: 18px !important;
+  line-height: 1.68 !important;
+}
+.programmeCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.programmeCard {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--admissions-navy);
+  background: #f1f3fb;
+  border-radius: 4px;
+}
+.programmeCard > img {
+  z-index: 0;
+  top: auto !important;
+  bottom: 0 !important;
+  height: 42% !important;
+  object-fit: cover;
+  transition: transform 0.55s var(--motion-ease);
+}
+.programmeShade {
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  height: 42%;
+  background: linear-gradient(180deg, rgba(10, 12, 30, 0.04), rgba(10, 12, 30, 0.28));
+  pointer-events: none;
+  transition: background 0.35s ease;
+}
+.programmeNumber {
+  position: absolute;
+  z-index: 3;
+  top: 24px;
+  left: 28px;
+  width: 20px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: transparent;
+  background: #e88698;
+  border-radius: 1px 1px 6px 6px;
+  font-size: 0;
+}
+.programmeNumber::after {
+  content: "";
+  position: absolute;
+  inset: auto 3px -3px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.75);
+}
+.programmeCard:nth-child(2) .programmeNumber {
+  background: #00a982;
+  border-radius: 0;
+}
+.programmeCard:nth-child(3) .programmeNumber {
+  background: #f47421;
+  border-radius: 1px 1px 9px 9px;
+}
+.programmeCard > div {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 58%;
+  display: flex;
+  flex-direction: column;
+  padding: 66px clamp(24px, 2.4vw, 32px) 28px;
+  background: #f1f3fb;
+}
+.programmeCard h3 {
+  max-width: none;
+  margin: 0 0 12px;
+  padding: 0;
+  font-family: var(--font-body) !important;
+  font-size: clamp(22px, 1.7vw, 27px) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+main:global(#main-content).page .programmeCard p {
+  max-width: 42ch;
+  margin: 0;
+  color: #4f566e;
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+}
+.programmeCard strong {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  color: var(--admissions-navy);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 800;
+}
+.programmeCard strong svg {
+  width: 28px;
+  height: 28px;
+  padding: 7px;
+  color: #fff;
+  background: var(--admissions-red);
+  border-radius: 5px;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+.programmeCard:hover > img {
+  transform: scale(1.045);
+}
+.programmeCard:hover .programmeShade {
+  background: linear-gradient(180deg, rgba(10, 12, 30, 0), rgba(10, 12, 30, 0.16));
+}
+.programmeCard:hover strong svg {
+  background: #ed1b35;
+  transform: translate(2px, -2px);
+}
+
+.finance {
+  display: grid;
+  gap: clamp(42px, 6vw, 76px);
+  padding: clamp(64px, 8vw, 108px) var(--container-padding);
+  background: #f1f3fb;
+}
+.financeRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 1fr);
+  gap: clamp(42px, 7vw, 100px);
+  align-items: center;
+}
+.financeRow:nth-child(even) .financeCopy {
+  order: 2;
+}
+.financeRow:nth-child(even) .financeMedia {
+  order: 1;
+}
+.financeCopy {
+  padding-block: 10px;
+}
+.financeCopy h2 {
+  margin: 0 0 22px;
+  font-family: var(--font-body) !important;
+  font-size: clamp(31px, 3vw, 45px) !important;
+  font-weight: 750 !important;
+  line-height: 1.1 !important;
+}
+main:global(#main-content).page .financeCopy p {
+  max-width: 59ch;
+  margin: 0;
+  color: #32384c;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+.financeCopy a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  color: var(--admissions-red);
+  font-size: 14px;
+  font-weight: 800;
+}
+.financeCopy a svg {
+  width: 17px;
+  transition: transform 0.25s ease;
+}
+.financeCopy a:hover svg {
+  transform: translateX(4px);
+}
+.financeMedia {
+  position: relative;
+  min-height: 310px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #dfe3ef;
+}
+.financeMedia img {
+  object-fit: cover;
+  transition: transform 0.55s var(--motion-ease);
+}
+.financeRow:hover .financeMedia img {
+  transform: scale(1.025);
+}
+
+.pathways {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(54px, 8vw, 120px);
+  padding: clamp(72px, 9vw, 128px) var(--container-padding);
+}
+.pathwaysHead {
+  position: sticky;
+  top: 142px;
+  align-self: start;
+}
+.pathwaysHead h2 {
+  max-width: 12ch;
+  margin: 20px 0 26px;
+  font-size: clamp(38px, 4vw, 58px) !important;
+  line-height: 1.06 !important;
+}
+main:global(#main-content).page .pathwaysHead > p:not(.eyebrow) {
+  max-width: 45ch;
+  margin: 0;
+  color: #555762;
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+}
+.pathwayList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.pathwayList a {
+  display: grid;
+  grid-template-columns: 48px 1fr 28px;
+  gap: 16px;
+  align-items: center;
+  min-height: 138px;
+  padding: 24px;
+  border: 1px solid #d9d9de;
+  color: inherit;
+  background: #fff;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.pathwayList a:hover {
+  color: var(--admissions-red);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(23, 29, 69, 0.1);
+}
+.pathwayList span {
+  color: var(--admissions-red);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.pathwayList h3 {
+  margin: 0;
+  font-size: clamp(22px, 2vw, 30px) !important;
+  line-height: 1.15 !important;
+}
+.pathwayList svg {
+  width: 20px;
+}
+
+.support {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 610px;
+  background: var(--admissions-red);
+  color: #fff;
+}
+.supportCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(64px, 7vw, 104px);
+}
+.support .eyebrow {
+  color: #ffe0e3;
+}
+.supportCopy h2 {
+  max-width: 13ch;
+  margin: 20px 0 26px;
+  font-size: clamp(40px, 4.6vw, 66px) !important;
+  line-height: 1.04 !important;
+}
+main:global(#main-content).page .supportCopy > p:not(.eyebrow) {
+  max-width: 48ch;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 18px !important;
+  line-height: 1.68 !important;
+}
+.supportCopy > a {
+  margin-top: 30px;
+  padding-bottom: 7px;
+  border-bottom: 2px solid #fff;
+}
+.supportMedia {
+  position: relative;
+  min-height: 610px;
+  margin: 0;
+  overflow: hidden;
+}
+.supportMedia img {
+  object-fit: cover;
+}
+
+.page :global([data-reveal]) {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 650ms var(--motion-ease) var(--academic-delay, 0ms),
+    transform 650ms var(--motion-ease) var(--academic-delay, 0ms);
+}
+.page :global([data-reveal].academic-reveal--visible) {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .story,
+  .support {
+    grid-template-columns: 1fr;
+  }
+  .heroCopy {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .heroCopy > p {
+    margin-bottom: 0;
+  }
+  .introduction {
+    grid-template-columns: 1fr;
+  }
+  .storyMedia,
+  .supportMedia {
+    min-height: 520px;
+  }
+  .profile > header,
+  .pathways {
+    grid-template-columns: 1fr;
+  }
+  .procedures > header {
+    grid-template-columns: 1fr;
+  }
+  .procedures > header .eyebrow {
+    grid-column: auto;
+  }
+  .programmeCards {
+    grid-template-columns: 1fr;
+  }
+  .programmeCard {
+    min-height: 520px;
+  }
+  .financeRow {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .financeRow:nth-child(even) .financeCopy,
+  .financeRow:nth-child(even) .financeMedia {
+    order: initial;
+  }
+  .financeRow:nth-child(even) .financeCopy {
+    order: 1;
+  }
+  .financeRow:nth-child(even) .financeMedia {
+    order: 2;
+  }
+  .pathwaysHead {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 620px;
+  }
+  .heroImage {
+    object-position: 55% center;
+  }
+  .breadcrumb {
+    top: 34px;
+    left: 24px;
+    font-size: 12px;
+  }
+  .heroCopy {
+    padding: 130px 24px 46px;
+  }
+  .heroCopy h1 {
+    max-width: none;
+    padding-left: 16px;
+    font-size: clamp(34px, 9.4vw, 42px) !important;
+  }
+  .heroCopy h1 span {
+    white-space: normal;
+  }
+  main:global(#main-content).page .heroCopy > strong {
+    font-size: 17px;
+  }
+  .introduction {
+    gap: 36px;
+    padding: 56px 24px;
+  }
+  main:global(#main-content).page .introduction p:not(.eyebrow) {
+    font-size: 17px !important;
+  }
+  .storyMedia {
+    min-height: 360px;
+  }
+  .storyCopy,
+  .supportCopy {
+    padding: 54px 24px;
+  }
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .stats > div {
+    min-height: 150px;
+    padding-inline: 0;
+  }
+  .stats > div + div {
+    border-left: 0;
+  }
+  .pathways {
+    padding: 58px 24px;
+  }
+  .procedures {
+    padding: 58px 24px;
+  }
+  .programmeCard {
+    min-height: 500px;
+  }
+  .finance {
+    padding: 58px 24px;
+  }
+  .financeMedia {
+    min-height: 240px;
+  }
+  .pathwayList a {
+    grid-template-columns: 42px 1fr 24px;
+    min-height: 94px;
+  }
+  .pathwayList {
+    grid-template-columns: 1fr;
+  }
+  .supportMedia {
+    min-height: 360px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page :global([data-reveal]) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .heroAction svg,
+  .introduction a svg,
+  .storyCopy a svg,
+  .supportCopy a svg {
+    transition: none;
+  }
+}

@@ -1,0 +1,317 @@
+.page {
+  --contact-navy: #171d45;
+  --contact-red: #d72134;
+  color: var(--contact-navy);
+  background: #fff;
+}
+
+.hero {
+  position: relative;
+  height: 610px;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background: var(--contact-navy);
+}
+.hero > img {
+  z-index: -2;
+  object-fit: cover;
+}
+.heroOverlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(22, 27, 65, 0.94), rgba(22, 27, 65, 0.28));
+}
+.heroTitle {
+  position: absolute;
+  left: var(--container-padding);
+  right: var(--container-padding);
+  bottom: 70px;
+}
+.heroTitle p,
+.sectionHeading > p,
+.eyebrow {
+  margin: 0;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.19em !important;
+  text-transform: uppercase;
+}
+.heroTitle h1 {
+  margin: 20px 0 12px;
+  text-transform: uppercase;
+}
+.heroTitle span {
+  color: #ef8793;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.remoteSection {
+  padding: clamp(64px, 7vw, 96px) var(--container-padding);
+  background: #f7f6f2;
+}
+.sectionHeading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+  column-gap: clamp(40px, 6vw, 88px);
+  align-items: end;
+  margin-bottom: clamp(42px, 5vw, 68px);
+}
+.sectionHeading > p {
+  grid-column: 1 / -1;
+  margin-bottom: 18px;
+  color: var(--contact-red);
+}
+.sectionHeading h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(36px, 4vw, 58px) !important;
+  line-height: 1.06 !important;
+}
+.sectionHeading > span {
+  max-width: 52ch;
+  color: #555968;
+  font-size: 18px;
+  line-height: 1.65;
+}
+.contactCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.contactCard {
+  position: relative;
+  min-width: 0;
+  padding: clamp(34px, 4vw, 54px);
+  border: 1px solid #dedde1;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+}
+.hotlineCard {
+  color: #fff;
+  border-color: var(--contact-navy);
+  background: var(--contact-navy);
+}
+.cardNumber {
+  margin-bottom: 46px;
+  color: var(--contact-red);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+.hotlineCard .cardNumber {
+  color: #ef8793;
+}
+.contactCard h3 {
+  max-width: 18ch;
+  margin: 0 0 22px;
+  font-size: clamp(26px, 2.3vw, 34px) !important;
+  line-height: 1.12 !important;
+}
+main:global(#main-content).page .contactCard > p,
+main:global(#main-content).page .visitCopy > p:not(.eyebrow) {
+  margin: 0;
+  max-width: 58ch;
+  font-size: 18px !important;
+  line-height: 1.68 !important;
+}
+.contactCard > p {
+  color: #464957;
+}
+.hotlineCard > p {
+  color: rgba(255, 255, 255, 0.78);
+}
+.socialLinks,
+.phoneLinks {
+  display: grid;
+  gap: 10px;
+  margin-top: 34px;
+}
+.socialLinks {
+  grid-template-columns: repeat(3, 1fr);
+}
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #dedde1;
+  border-radius: 999px;
+  color: var(--contact-navy);
+  font-weight: 700;
+}
+.socialLinks svg {
+  width: 18px;
+  flex: 0 0 auto;
+}
+.socialLinks svg:last-child {
+  width: 15px;
+  margin-left: auto;
+}
+.phoneLinks {
+  grid-template-columns: 1fr 1fr;
+}
+.phoneLinks a {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  color: #fff;
+}
+.phoneLinks svg {
+  width: 20px;
+  color: #ef8793;
+}
+.phoneLinks span,
+.visitDetails span {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.phoneLinks small,
+.visitDetails small {
+  display: block;
+  margin-bottom: 3px;
+  color: inherit;
+  opacity: 0.62;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.visitSection {
+  display: grid;
+  grid-template-columns: minmax(360px, 1fr) minmax(0, 0.9fr);
+  gap: clamp(48px, 7vw, 104px);
+  align-items: center;
+  padding: clamp(64px, 7vw, 96px) var(--container-padding);
+}
+.visitMedia {
+  position: relative;
+  min-height: min(600px, 46vw);
+  margin: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ecebe7;
+}
+.visitMedia img {
+  object-fit: cover;
+}
+.visitCopy {
+  max-width: 660px;
+}
+.eyebrow {
+  color: var(--contact-red);
+}
+.visitCopy h2 {
+  max-width: 15ch;
+  margin: 20px 0 24px;
+  font-size: clamp(36px, 4vw, 56px) !important;
+  line-height: 1.08 !important;
+}
+.visitCopy > p:not(.eyebrow) {
+  color: #3f4250;
+}
+.visitDetails {
+  display: grid;
+  gap: 16px;
+  margin-top: 30px;
+}
+.visitDetails > div {
+  display: flex;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid #d9d9dd;
+}
+.visitDetails svg {
+  width: 21px;
+  flex: 0 0 auto;
+  color: var(--contact-red);
+}
+.mapLink {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  padding: 13px 20px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--contact-red);
+  font-weight: 700;
+}
+.mapLink svg {
+  width: 17px;
+}
+
+@media (max-width: 1050px) {
+  .socialLinks,
+  .phoneLinks {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 800px) {
+  .sectionHeading,
+  .contactCards,
+  .visitSection {
+    grid-template-columns: 1fr;
+  }
+  .sectionHeading {
+    gap: 20px;
+  }
+  .visitMedia {
+    min-height: 440px;
+  }
+}
+@media (max-width: 600px) {
+  .hero {
+    height: 520px;
+  }
+  .heroTitle {
+    left: 24px;
+    right: 24px;
+    bottom: 48px;
+  }
+  .heroTitle span {
+    font-size: 12px;
+  }
+  .remoteSection,
+  .visitSection {
+    padding: 48px 24px 58px;
+  }
+  .sectionHeading > span {
+    font-size: 17px;
+  }
+  .contactCards {
+    gap: 16px;
+  }
+  .contactCard {
+    padding: 30px 24px;
+  }
+  .cardNumber {
+    margin-bottom: 30px;
+  }
+  main:global(#main-content).page .contactCard > p,
+  main:global(#main-content).page .visitCopy > p:not(.eyebrow) {
+    font-size: 17px !important;
+  }
+  .socialLinks {
+    grid-template-columns: 1fr;
+  }
+  .visitMedia {
+    min-height: 330px;
+    order: 2;
+  }
+  .visitCopy {
+    order: 1;
+  }
+}

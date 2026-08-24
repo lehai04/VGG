@@ -1,6 +1,6 @@
 # VGG Design System
 
-Use this as the compact source of truth before creating UI. Prefer the existing CSS variables in `frontend/app/globals.css`; do not invent near-duplicate colours.
+Use this as the compact source of truth before creating UI. Prefer the existing CSS variables in `frontend/src/app/globals.css`; do not invent near-duplicate colours.
 
 ## Foundation tokens
 

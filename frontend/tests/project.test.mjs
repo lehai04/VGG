@@ -13,14 +13,14 @@ test("package exposes a complete Next.js workflow", async () => {
   assert.ok(pkg.scripts.check);
   assert.match(pkg.dependencies.next, /^16\./);
 });
-test("consultation endpoint validates input before forwarding", async () => {
+test("consultation endpoint forwards to the real backend service", async () => {
   const source = await readFile(
-    new URL("../app/api/consultations/route.ts", import.meta.url),
+    new URL("../src/app/api/consultations/route.ts", import.meta.url),
     "utf8",
   );
-  assert.match(source, /validateConsultation/);
-  assert.match(source, /status:\s*429/);
-  assert.match(source, /CONSULTATION_WEBHOOK_URL/);
+  assert.match(source, /BACKEND_INTERNAL_URL/);
+  assert.match(source, /\/api\/public\/consultations/);
+  assert.match(source, /status:\s*502/);
 });
 test("top-level section routes expose independently editable pages", async () => {
   for (const section of [
@@ -33,7 +33,7 @@ test("top-level section routes expose independently editable pages", async () =>
     "news",
     "resources",
   ]) {
-    const landing = await readFile(new URL(`../app/${section}/page.tsx`, import.meta.url), "utf8");
+    const landing = await readFile(new URL(`../src/app/(public)/${section}/page.tsx`, import.meta.url), "utf8");
     assert.match(landing, /export default/);
   }
 });

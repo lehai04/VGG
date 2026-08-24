@@ -11,10 +11,10 @@ vgg-platform/
 
 ## Boundaries
 
-- `frontend/app/api/**` owns HTTP concerns: request parsing, origin/rate limit and responses.
+- `frontend/src/app/api/**` owns HTTP concerns: request parsing, origin/rate limit and responses.
 - `backend/src/**` must not import Next.js, React, or frontend data. Pass required data in as arguments.
 - `admin` may consume `backend`, but is intentionally isolated from public UI components.
-- Static public content belongs in `frontend/data`; visual UI belongs in `frontend/components`; route composition stays in `frontend/app`.
+- Static public content belongs in `frontend/src/data`; feature UI belongs in `frontend/src/features`; cross-feature UI belongs in `frontend/src/shared`; route composition stays in `frontend/src/app`.
 
 ## Commands
 

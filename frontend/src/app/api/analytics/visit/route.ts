@@ -1,0 +1,2 @@
+import { NextRequest, NextResponse } from "next/server";
+export async function POST(request:NextRequest){ const backend=process.env.BACKEND_INTERNAL_URL; if(!backend)return NextResponse.json({success:false},{status:503}); const response=await fetch(`${backend}/api/public/visits`,{method:"POST",headers:{"content-type":"application/json"},body:await request.text()}); return new NextResponse(await response.text(),{status:response.status,headers:{"content-type":"application/json"}}); }

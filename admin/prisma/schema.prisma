@@ -1,0 +1,125 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum AdminStatus {
+  ACTIVE
+  INACTIVE
+  LOCKED
+}
+
+enum AuditAction {
+  LOGIN_SUCCESS
+  LOGIN_FAILED
+  LOGOUT
+  PASSWORD_CHANGED
+  PASSWORD_RESET
+  ACCOUNT_CREATED
+  ACCOUNT_UPDATED
+  ACCOUNT_DISABLED
+  ACCOUNT_ENABLED
+  ROLE_CHANGED
+  PERMISSION_CHANGED
+}
+
+model Admin {
+  id                  String      @id @default(cuid())
+  username            String      @unique @db.VarChar(50)
+  passwordHash        String      @map("password_hash")
+  fullName            String      @map("full_name") @db.VarChar(120)
+  email               String?     @db.VarChar(190)
+  phone               String?     @db.VarChar(30)
+  roleId               String      @map("role_id")
+  role                 Role        @relation(fields: [roleId], references: [id])
+  status               AdminStatus @default(ACTIVE)
+  mustChangePassword   Boolean     @default(true) @map("must_change_password")
+  failedLoginAttempts  Int         @default(0) @map("failed_login_attempts")
+  lockedUntil          DateTime?   @map("locked_until")
+  lastLoginAt          DateTime?   @map("last_login_at")
+  passwordChangedAt    DateTime?   @map("password_changed_at")
+  createdById          String?     @map("created_by")
+  createdBy            Admin?      @relation("AdminCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  createdAdmins        Admin[]     @relation("AdminCreator")
+  sessions             Session[]
+  auditLogs             AuditLog[] @relation("AuditActor")
+  targetAuditLogs       AuditLog[] @relation("AuditTarget")
+  createdAt             DateTime    @default(now()) @map("created_at")
+  updatedAt             DateTime    @updatedAt @map("updated_at")
+
+  @@index([roleId])
+  @@index([status])
+  @@map("admins")
+}
+
+model Role {
+  id          String           @id @default(cuid())
+  code        String           @unique @db.VarChar(50)
+  name        String           @db.VarChar(100)
+  level       Int              @unique
+  admins      Admin[]
+  permissions RolePermission[]
+  createdAt   DateTime         @default(now()) @map("created_at")
+  updatedAt   DateTime         @updatedAt @map("updated_at")
+
+  @@map("roles")
+}
+
+model Permission {
+  id          String           @id @default(cuid())
+  code        String           @unique @db.VarChar(100)
+  description String?          @db.VarChar(255)
+  roles       RolePermission[]
+  createdAt   DateTime         @default(now()) @map("created_at")
+
+  @@map("permissions")
+}
+
+model RolePermission {
+  roleId       String     @map("role_id")
+  permissionId String     @map("permission_id")
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+  @@map("role_permissions")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique @map("token_hash") @db.Char(64)
+  adminId   String   @map("admin_id")
+  admin     Admin    @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  lastSeenAt DateTime @default(now()) @map("last_seen_at")
+  ipAddress String?  @map("ip_address") @db.VarChar(64)
+  userAgent String?  @map("user_agent") @db.VarChar(500)
+
+  @@index([adminId])
+  @@index([expiresAt])
+  @@map("admin_sessions")
+}
+
+model AuditLog {
+  id            String      @id @default(cuid())
+  action        AuditAction
+  actorAdminId  String?     @map("actor_admin_id")
+  actor         Admin?      @relation("AuditActor", fields: [actorAdminId], references: [id], onDelete: SetNull)
+  targetAdminId String?     @map("target_admin_id")
+  target        Admin?      @relation("AuditTarget", fields: [targetAdminId], references: [id], onDelete: SetNull)
+  username      String?     @db.VarChar(50)
+  ipAddress     String?     @map("ip_address") @db.VarChar(64)
+  userAgent     String?     @map("user_agent") @db.VarChar(500)
+  metadata      Json?
+  createdAt     DateTime    @default(now()) @map("created_at")
+
+  @@index([actorAdminId])
+  @@index([targetAdminId])
+  @@index([action, createdAt])
+  @@map("audit_logs")
+}

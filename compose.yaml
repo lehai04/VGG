@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-vgg}
+      POSTGRES_USER: ${POSTGRES_USER:-vgg}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-vgg_local_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - vgg_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-vgg} -d ${POSTGRES_DB:-vgg}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - vgg_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-vgg_minio}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-vgg_minio_password}
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - vgg_minio_data:/data
+
+volumes:
+  vgg_postgres_data:
+  vgg_redis_data:
+  vgg_minio_data:
+

@@ -12,6 +12,14 @@ const nextConfig: NextConfig = {
     // Dùng root monorepo để Turbopack resolve workspace package và node_modules hoisted.
     root: join(process.cwd(), ".."),
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
   async headers() {
     return [
       {
