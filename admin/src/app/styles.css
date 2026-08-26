@@ -1000,6 +1000,7 @@ textarea {
 .resource-form-grid .full { grid-column: 1 / -1; }
 .resource-dropzone { display: grid; min-height: 145px; padding: 18px; place-items: center; border: 1.5px dashed #aeb7c5; border-radius: 12px; background: #fafbfc; cursor: pointer; transition: .2s; }
 .resource-dropzone:hover { border-color: var(--admin-accent); background: #fff7f8; }
+.resource-dropzone.dragging { border-color: var(--admin-accent); background: #fff0f3; box-shadow: 0 0 0 4px rgba(227,30,54,.1); transform: translateY(-1px); }
 .resource-dropzone.uploading { opacity: .7; pointer-events: none; }
 .resource-dropzone > div:not(.uploaded-file) { display: grid; place-items: center; gap: 6px; color: var(--admin-muted); text-align: center; }
 .resource-dropzone > div > b { color: var(--admin-accent); font-size: 1.45rem; }

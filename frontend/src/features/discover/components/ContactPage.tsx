@@ -81,7 +81,7 @@ export function ContactPage() {
           </p>
           <div className={styles.visitDetails}>
             <div><MapPin aria-hidden="true" /><span><small>Địa điểm</small>Phòng A02.01, Tòa A, 69/68 Đặng Thùy Trâm, P. Bình Lợi Trung, TP.HCM</span></div>
-            <div><Clock3 aria-hidden="true" /><span><small>Thời gian làm việc</small>Thứ Hai – Thứ Sáu, 08:00 – 17:00</span></div>
+            <div><Clock3 aria-hidden="true" /><span><small>Thời gian làm việc</small>Thứ Hai – Thứ Bảy, 08:00 – 17:00</span></div>
           </div>
           <a className={styles.mapLink} href="https://www.google.com/maps?q=69%2F68%20Dang%20Thuy%20Tram%2C%20Ho%20Chi%20Minh%20City" target="_blank" rel="noopener noreferrer">
             Xem đường đi <ArrowUpRight aria-hidden="true" />
