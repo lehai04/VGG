@@ -24,9 +24,9 @@ export function ContactPage() {
         <Image src="/images/pages/discover/content/campus.jpg" alt="Khuôn viên Trường Đại học Văn Lang" fill priority sizes="100vw" />
         <div className={styles.heroOverlay} />
         <div className={styles.heroTitle}>
-          <p>DISCOVER VGG · 06</p>
+          <p>DISCOVER Viện Sau Đại học · 06</p>
           <h1 id="contact-title">Liên hệ</h1>
-          <span>Contact VGG</span>
+          <span>Contact Viện Sau Đại học</span>
         </div>
       </section>
 
@@ -34,7 +34,7 @@ export function ContactPage() {
         <header className={styles.sectionHeading} data-reveal>
           <p>01 / KẾT NỐI TỪ XA</p>
           <h2 id="remote-title">Luôn sẵn sàng lắng nghe bạn</h2>
-          <span>Chọn kênh thuận tiện nhất để bắt đầu cuộc trò chuyện cùng đội ngũ VGG.</span>
+          <span>Chọn kênh thuận tiện nhất để bắt đầu cuộc trò chuyện cùng đội ngũ Viện Sau Đại học.</span>
         </header>
 
         <div className={styles.contactCards}>
@@ -42,7 +42,7 @@ export function ContactPage() {
             <div className={styles.cardNumber}>01</div>
             <h3>Liên hệ qua mạng xã hội</h3>
             <p>
-              Kết nối với VGG qua Facebook, Zalo hoặc Instagram để cập nhật thông tin mới nhất. Đội ngũ tư vấn tiếp nhận các câu hỏi về chương trình, tuyển sinh và hồ sơ. Bạn có thể gửi tin nhắn bất cứ khi nào thuận tiện. Mỗi yêu cầu sẽ được chuyển đến đúng bộ phận phụ trách. VGG luôn phản hồi rõ ràng và đầy đủ.
+              Kết nối với Viện Sau Đại học qua Facebook, Zalo hoặc Instagram để cập nhật thông tin mới nhất. Đội ngũ tư vấn tiếp nhận các câu hỏi về chương trình, tuyển sinh và hồ sơ. Bạn có thể gửi tin nhắn bất cứ khi nào thuận tiện. Mỗi yêu cầu sẽ được chuyển đến đúng bộ phận phụ trách. Viện Sau Đại học luôn phản hồi rõ ràng và đầy đủ.
             </p>
             <div className={styles.socialLinks} aria-label="Các kênh mạng xã hội">
               {socialLinks.map(({ label, href }) => (
@@ -71,13 +71,13 @@ export function ContactPage() {
 
       <section className={styles.visitSection} aria-labelledby="visit-title">
         <figure className={styles.visitMedia} data-reveal>
-          <Image src="/images/pages/discover/content/graduates.jpg" alt="Đội ngũ VGG hỗ trợ người học" fill sizes="(max-width: 900px) 100vw, 52vw" />
+          <Image src="/images/pages/discover/content/graduates.jpg" alt="Đội ngũ Viện Sau Đại học hỗ trợ người học" fill sizes="(max-width: 900px) 100vw, 52vw" />
         </figure>
         <div className={styles.visitCopy} data-reveal>
           <p className={styles.eyebrow}>02 / LÀM VIỆC TRỰC TIẾP</p>
-          <h2 id="visit-title">Gặp đội ngũ VGG tại văn phòng</h2>
+          <h2 id="visit-title">Gặp đội ngũ Viện Sau Đại học tại văn phòng</h2>
           <p>
-            Bạn có thể đến văn phòng để trao đổi trực tiếp cùng đội ngũ phụ trách. Chuyên viên sẽ hỗ trợ hồ sơ, lộ trình học tập và các thủ tục liên quan. Một cuộc hẹn trước giúp chúng tôi chuẩn bị thông tin phù hợp với bạn. Khi đến, vui lòng mang theo giấy tờ hoặc tài liệu cần tư vấn. VGG mong muốn mỗi buổi gặp đều thân thiện và hiệu quả.
+            Bạn có thể đến văn phòng để trao đổi trực tiếp cùng đội ngũ phụ trách. Chuyên viên sẽ hỗ trợ hồ sơ, lộ trình học tập và các thủ tục liên quan. Một cuộc hẹn trước giúp chúng tôi chuẩn bị thông tin phù hợp với bạn. Khi đến, vui lòng mang theo giấy tờ hoặc tài liệu cần tư vấn. Viện Sau Đại học mong muốn mỗi buổi gặp đều thân thiện và hiệu quả.
           </p>
           <div className={styles.visitDetails}>
             <div><MapPin aria-hidden="true" /><span><small>Địa điểm</small>Phòng A02.01, Tòa A, 69/68 Đặng Thùy Trâm, P. Bình Lợi Trung, TP.HCM</span></div>

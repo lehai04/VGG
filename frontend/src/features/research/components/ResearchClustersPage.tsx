@@ -42,7 +42,7 @@ export function ResearchClustersPage() {
       <SiteHeader compact />
 
       <section className={styles.hero} aria-labelledby="clusters-title">
-        <Image src="/images/pages/research/content/campus.jpg" alt="Hoạt động nghiên cứu tại VGG" fill priority sizes="100vw" />
+        <Image src="/images/pages/research/content/campus.jpg" alt="Hoạt động nghiên cứu tại Viện Sau Đại học" fill priority sizes="100vw" />
         <div className={styles.heroOverlay} />
         <div className={styles.heroTitle}>
           <p>RESEARCH &amp; INNOVATION · 01</p>

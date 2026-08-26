@@ -773,7 +773,7 @@
 }
 
 /* =========================================================
-   04. TỔNG QUAN VGG, VIDEO VÀ SỐ LIỆU
+   04. TỔNG QUAN Viện Sau Đại học, VIDEO VÀ SỐ LIỆU
    ========================================================= */
 .home-page .overview {
   background: #ffffff;
@@ -2269,7 +2269,7 @@
 
 .home-page .consultationBlock::before {
   /* Watermark thương hiệu nằm sau nội dung và không nhận tương tác chuột. */
-  content: "VGG";
+  content: "Viện Sau Đại học";
   position: absolute;
   z-index: -1;
   right: -0.03em;

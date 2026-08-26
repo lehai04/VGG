@@ -28,7 +28,7 @@ const HIGHLIGHTS = [
   {
     num: "03",
     title: "Đồng hành đến cùng",
-    copy: "Đội ngũ tư vấn VGG sẵn sàng hỗ trợ từ bước tìm hiểu đầu tiên đến khi bạn chính thức trở thành học viên.",
+    copy: "Đội ngũ tư vấn Viện Sau Đại học sẵn sàng hỗ trợ từ bước tìm hiểu đầu tiên đến khi bạn chính thức trở thành học viên.",
   },
 ] as const;
 
@@ -82,7 +82,7 @@ export function AdmissionsSubpage({ slug }: { slug: string }) {
         <Image
           className={styles.heroImage}
           src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=86"
-          alt="Tuyển sinh VGG"
+          alt="Tuyển sinh Viện Sau Đại học"
           fill
           priority
           sizes="100vw"
@@ -123,7 +123,7 @@ export function AdmissionsSubpage({ slug }: { slug: string }) {
             <h2 id="adm-overview-heading">{page.headline}</h2>
             <p className={styles.lead}>{page.summary}</p>
             <p>
-              VGG kết nối nền tảng học thuật, trải nghiệm thực tiễn và một cộng đồng đa lĩnh vực để
+              Viện Sau Đại học kết nối nền tảng học thuật, trải nghiệm thực tiễn và một cộng đồng đa lĩnh vực để
               mỗi lựa chọn đều dẫn tới giá trị lâu dài.
             </p>
             <nav className={styles.breadcrumb} aria-label="Breadcrumb">
@@ -150,7 +150,7 @@ export function AdmissionsSubpage({ slug }: { slug: string }) {
       {/* ── HIGHLIGHTS (NAVY) ────────────────────────────────── */}
       <section className={styles.highlights} aria-labelledby="highlights-heading">
         <div className={styles.highlightsHead} data-reveal>
-          <p className={styles.eyebrow}>TẠI SAO CHỌN VGG</p>
+          <p className={styles.eyebrow}>TẠI SAO CHỌN Viện Sau Đại học</p>
           <h2 id="highlights-heading">Ba cam kết của chúng tôi với bạn.</h2>
         </div>
         <div className={styles.highlightsGrid}>
@@ -214,17 +214,17 @@ export function AdmissionsSubpage({ slug }: { slug: string }) {
           </div>
         </section>
       ) : (
-        <section className={styles.quote} aria-label="Triết lý VGG">
+        <section className={styles.quote} aria-label="Triết lý Viện Sau Đại học">
           <figure className={styles.quoteMedia} data-reveal>
             <Image
               src={MEDIA[(index + 1) % MEDIA.length]}
-              alt="Cộng đồng học viên VGG"
+              alt="Cộng đồng học viên Viện Sau Đại học"
               fill
               sizes="(max-width: 767px) 100vw, 44vw"
             />
           </figure>
           <div className={styles.quoteCopy} data-reveal>
-            <p className={styles.eyebrow}>VGG PERSPECTIVE</p>
+            <p className={styles.eyebrow}>Viện Sau Đại học PERSPECTIVE</p>
             <blockquote>
               &ldquo;Tri thức chỉ thật sự có ý nghĩa khi giúp con người tiến xa hơn và tạo ra thay
               đổi tích cực cho tổ chức và cộng đồng.&rdquo;
@@ -243,5 +243,5 @@ export function AdmissionsSubpage({ slug }: { slug: string }) {
 
 export function admissionsSubpageMetadata(slug: string) {
   const page = sectionSubpages["admissions"]?.find((p) => p.slug === slug);
-  return page ? { title: `${page.title} | Tuyển sinh VGG`, description: page.summary } : {};
+  return page ? { title: `${page.title} | Tuyển sinh Viện Sau Đại học`, description: page.summary } : {};
 }

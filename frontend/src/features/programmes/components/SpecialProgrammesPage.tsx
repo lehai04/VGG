@@ -31,20 +31,20 @@ const doctoral = programmes.filter((programme) => programme.degree === "Tiến s
 
 const doctoralConfig: PageConfig = {
   variant: "doctoral",
-  eyebrow: "VGG · DOCTORAL PROGRAMMES",
+  eyebrow: "Viện Sau Đại học · DOCTORAL PROGRAMMES",
   title: "Chương trình Tiến sĩ",
   stats: "01 chương trình · Định hướng nghiên cứu · 36–48 tháng",
   overviewEyebrow: "CHƯƠNG TRÌNH TIẾN SĨ · TIẾNG VIỆT",
   overviewTitle: "Kiến tạo tri thức mới.",
   overview: [
     "Chương trình Tiến sĩ tại Văn Lang được xây dựng cho các nhà nghiên cứu muốn phát triển chuyên môn ở chiều sâu, làm chủ phương pháp khoa học và tạo ra những đóng góp có giá trị cho cộng đồng.",
-    "VGG hiện triển khai chương trình Tiến sĩ Khoa học Môi trường với lộ trình nghiên cứu chuyên sâu, kết nối đội ngũ giảng viên giàu kinh nghiệm và hệ sinh thái học thuật đa ngành.",
+    "Viện Sau Đại học hiện triển khai chương trình Tiến sĩ Khoa học Môi trường với lộ trình nghiên cứu chuyên sâu, kết nối đội ngũ giảng viên giàu kinh nghiệm và hệ sinh thái học thuật đa ngành.",
   ],
   quote:
     "Văn Lang mang đến cho nghiên cứu sinh một môi trường học thuật định hướng nghiên cứu, nơi nền tảng chuyên môn, năng lực công bố và khả năng tạo ra giải pháp bền vững được phát triển song hành.",
-  quoteBy: "Ban lãnh đạo VGG",
+  quoteBy: "Ban lãnh đạo Viện Sau Đại học",
   quoteRole: "Viện Sau đại học · Trường Đại học Văn Lang",
-  whyTitle: "Tại sao nên chọn chương trình Tiến sĩ tại VGG?",
+  whyTitle: "Tại sao nên chọn chương trình Tiến sĩ tại Viện Sau Đại học?",
   whyLead:
     "Một môi trường nghiên cứu được thiết kế để nghiên cứu sinh phát triển năng lực học thuật và theo đuổi những vấn đề có ý nghĩa lâu dài.",
   benefits: [
@@ -80,20 +80,20 @@ const doctoralConfig: PageConfig = {
 
 const internationalConfig: PageConfig = {
   variant: "international",
-  eyebrow: "VGG · INTERNATIONAL PROGRAMMES",
+  eyebrow: "Viện Sau Đại học · INTERNATIONAL PROGRAMMES",
   title: "Chương trình Quốc tế",
   stats: "Kết nối toàn cầu · Trải nghiệm đa văn hóa · Chuẩn học thuật quốc tế",
   overviewEyebrow: "CHƯƠNG TRÌNH QUỐC TẾ",
   overviewTitle: "Mở rộng biên giới học thuật.",
   overview: [
-    "Chương trình Quốc tế tại VGG mở rộng trải nghiệm sau đại học thông qua môi trường học thuật đa văn hóa, hoạt động trao đổi tri thức và kết nối với mạng lưới chuyên gia quốc tế.",
+    "Chương trình Quốc tế tại Viện Sau Đại học mở rộng trải nghiệm sau đại học thông qua môi trường học thuật đa văn hóa, hoạt động trao đổi tri thức và kết nối với mạng lưới chuyên gia quốc tế.",
     "Các cơ hội được định hướng nhằm giúp người học nâng cao năng lực chuyên môn, khả năng làm việc trong bối cảnh toàn cầu và tư duy thích ứng trước những thay đổi của nghề nghiệp.",
   ],
   quote:
     "Trải nghiệm quốc tế không chỉ là dịch chuyển giữa các quốc gia, mà là khả năng đối thoại với nhiều hệ tri thức, cộng tác vượt qua khác biệt và tạo ra giá trị trong một thế giới kết nối.",
-  quoteBy: "Ban lãnh đạo VGG",
+  quoteBy: "Ban lãnh đạo Viện Sau Đại học",
   quoteRole: "Viện Sau đại học · Trường Đại học Văn Lang",
-  whyTitle: "Tại sao nên chọn chương trình Quốc tế tại VGG?",
+  whyTitle: "Tại sao nên chọn chương trình Quốc tế tại Viện Sau Đại học?",
   whyLead:
     "Một hành trình học thuật giúp người học mở rộng góc nhìn, mạng lưới chuyên môn và năng lực làm việc trong môi trường toàn cầu.",
   benefits: [
@@ -187,7 +187,7 @@ function SpecialProgrammesPage({ config }: { config: PageConfig }) {
             fill
             sizes="(max-width: 950px) 100vw, 44vw"
           />
-          <span>VGG · KNOWLEDGE WITHOUT BORDERS</span>
+          <span>Viện Sau Đại học · KNOWLEDGE WITHOUT BORDERS</span>
         </div>
       </section>
 
@@ -203,7 +203,7 @@ function SpecialProgrammesPage({ config }: { config: PageConfig }) {
         <div className={styles.quotePortrait}>
           <Image
             src="/images/pages/programmes/content/academic-leader.avif"
-            alt="Đại diện lãnh đạo học thuật VGG"
+            alt="Đại diện lãnh đạo học thuật Viện Sau Đại học"
             fill
             sizes="(max-width: 900px) 100vw, 40vw"
           />

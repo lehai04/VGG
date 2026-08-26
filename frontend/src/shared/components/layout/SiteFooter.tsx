@@ -30,9 +30,9 @@ export function StickyActions() {
   const { locale, messages } = useLocale();
   return (
     <>
-      <Link className="chatbot-float" href="/#consultation" aria-label="Mở khu vực tư vấn VGG">
+      <Link className="chatbot-float" href="/#consultation" aria-label="Mở khu vực tư vấn Viện Sau Đại học">
         <span>AI</span>
-        <b>{locale === "en" ? "Chat with VGG" : "Chat với VGG"}</b>
+        <b>{locale === "en" ? "Chat with Viện Sau Đại học" : "Chat với Viện Sau Đại học"}</b>
       </Link>
       <a
         className="facebook-float"

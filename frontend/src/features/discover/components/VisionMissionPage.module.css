@@ -679,7 +679,7 @@
 /* Watermark thương hiệu nằm dưới nội dung, không can thiệp khả năng đọc. */
 .story::after,
 .philosophy::after {
-  content: "VGG";
+  content: "Viện Sau Đại học";
   position: absolute;
   left: 50%;
   bottom: 4%;

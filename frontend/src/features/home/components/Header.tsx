@@ -40,7 +40,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
   // Navigation chính không dùng hash: mọi page có đích route độc lập trong app/<slug>/page.tsx.
   const itemHref = (slug: string) => `/${slug}`;
 
-  // Chỉ Về VGG còn trang con. Các nhóm khác đi thẳng tới trang tổng hợp duy nhất.
+  // Chỉ Về Viện Sau Đại học còn trang con. Các nhóm khác đi thẳng tới trang tổng hợp duy nhất.
   const submenuHref = (slug: string, index: number) => {
     if (slug === "discover") return index === 0 ? "/discover" : `/discover/${discoverSections[index].slug}`;
     return subpageHref(slug, index);
@@ -78,7 +78,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
 
       <div className="headerShell" ref={headerRef}>
         <header className="header">
-          <Link className="brand" href="/" aria-label="Trang chủ VGG">
+          <Link className="brand" href="/" aria-label="Trang chủ Viện Sau Đại học">
             <Image
               className="brandLogo"
               src={LOGO_SRC}
@@ -179,7 +179,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
                   {locale === "en" ? "Learner-centered." : "Lấy người học làm trung tâm."}
                 </strong>
                 <Link href="/discover" onClick={() => setActiveMenu(null)}>
-                  {locale === "en" ? "Explore VGG" : "Khám phá VGG"} <span>→</span>
+                  {locale === "en" ? "Explore Viện Sau Đại học" : "Khám phá Viện Sau Đại học"} <span>→</span>
                 </Link>
               </aside>
             </div>

@@ -156,9 +156,9 @@
   color: #fff;
 }
 
-/* "VGG" watermark overlay */
+/* "Viện Sau Đại học" watermark overlay */
 .story::after {
-  content: "VGG";
+  content: "Viện Sau Đại học";
   position: absolute;
   left: 50%;
   bottom: 4%;
@@ -300,7 +300,7 @@
   text-transform: uppercase;
 }
 
-/* Trang Vì sao chọn VGG: tiêu đề liền mạch, nội dung gọn và bám góc trên. */
+/* Trang Vì sao chọn Viện Sau Đại học: tiêu đề liền mạch, nội dung gọn và bám góc trên. */
 .whyPage .heroCopy h1 {
   max-width: none;
   font-size: clamp(46px, 6.6vw, 94px);
@@ -347,7 +347,7 @@
 }
 
 .contact::after {
-  content: "VGG";
+  content: "Viện Sau Đại học";
   position: absolute;
   left: 50%;
   bottom: 2%;

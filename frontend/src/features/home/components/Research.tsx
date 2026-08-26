@@ -42,7 +42,7 @@ export function Research() {
         <EditorialAccordion items={RESEARCH_LINKS} label="Các hướng nghiên cứu" className="researchLinks" />
 
         <div className="researchFooter">
-          <span>VGG RESEARCH ECOSYSTEM</span>
+          <span>Viện Sau Đại học RESEARCH ECOSYSTEM</span>
           <b>Knowledge for real-world impact</b>
         </div>
       </div>

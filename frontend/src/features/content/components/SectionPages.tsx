@@ -44,7 +44,7 @@ export function SectionLanding({ section }: { section: string }) {
       <CmsPublishedItems section={section} />
       <section className="academic-feature" data-reveal>
         <div>
-          <p>VGG PERSPECTIVE / 2026</p>
+          <p>Viện Sau Đại học PERSPECTIVE / 2026</p>
           <h2>
             Chuẩn quốc tế.
             <br />
@@ -52,7 +52,7 @@ export function SectionLanding({ section }: { section: string }) {
           </h2>
         </div>
         <blockquote>
-          “Mỗi chương trình, dịch vụ và trải nghiệm tại VGG đều được thiết kế để người học tiến xa
+          “Mỗi chương trình, dịch vụ và trải nghiệm tại Viện Sau Đại học đều được thiết kế để người học tiến xa
           hơn trong chuyên môn và tạo giá trị cho cộng đồng.”
         </blockquote>
       </section>

@@ -1,14 +1,14 @@
 import { CountUp } from "./CountUp";
 
-/** HOMEPAGE SECTION: Giới thiệu VGG và các số liệu đào tạo. */
+/** HOMEPAGE SECTION: Giới thiệu Viện Sau Đại học và các số liệu đào tạo. */
 export function Programmes() {
   return (
-    // Tổng quan VGG gồm phần giới thiệu và số liệu nổi bật.
+    // Tổng quan Viện Sau Đại học gồm phần giới thiệu và số liệu nổi bật.
     <section className="overview" id="about">
       <div className="overviewFeature" id="programmes">
         <div className="overviewIntro">
           <div className="overviewCopy">
-            <p>VGG · VAN LANG GLOBAL GRADUATE</p>
+            <p>Viện Sau Đại học · VAN LANG GLOBAL GRADUATE</p>
             <h2>
               Tri thức. Thực tiễn.
               <br />
@@ -16,7 +16,7 @@ export function Programmes() {
             </h2>
           </div>
           <p className="overviewDescription">
-            VGG kết nối tri thức chuyên sâu với thực tiễn nghề nghiệp, nuôi dưỡng tư duy nghiên cứu
+            Viện Sau Đại học kết nối tri thức chuyên sâu với thực tiễn nghề nghiệp, nuôi dưỡng tư duy nghiên cứu
             và năng lực lãnh đạo để người học tạo ra những giá trị tích cực cho cộng đồng.
           </p>
         </div>

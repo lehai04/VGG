@@ -9,7 +9,7 @@
   },
   "common": {
     "discoverMore": "Khám phá thêm",
-    "aboutVgg": "About VGG",
+    "aboutVgg": "About Viện Sau Đại học",
     "readMore": "Tìm hiểu thêm",
     "contact": "Liên hệ tư vấn",
     "applyNow": "Đăng ký ngay"
@@ -18,7 +18,7 @@
     "gioi-thieu": "Giới thiệu",
     "tam-nhin-su-menh": "Tầm nhìn & Sứ mệnh",
     "lanh-dao": "Lãnh đạo",
-    "vi-sao-chon-vgg": "Vì sao chọn VGG",
+    "vi-sao-chon-vgg": "Vì sao chọn Viện Sau Đại học",
     "xep-hang-thanh-tuu": "Xếp hạng & Thành tựu",
     "lien-he": "Liên hệ"
   },
@@ -39,7 +39,7 @@
     "chooseProgramme": "Chọn chương trình",
     "submit": "Gửi yêu cầu tư vấn",
     "submitting": "Đang gửi...",
-    "success": "Đã gửi yêu cầu. VGG sẽ sớm liên hệ với bạn.",
+    "success": "Đã gửi yêu cầu. Viện Sau Đại học sẽ sớm liên hệ với bạn.",
     "invalid": "Thông tin chưa hợp lệ. Vui lòng kiểm tra lại.",
     "connectionError": "Không thể kết nối máy chủ. Vui lòng thử lại sau.",
     "privacy": "Thông tin của bạn được bảo mật và chỉ sử dụng cho mục đích tư vấn tuyển sinh."

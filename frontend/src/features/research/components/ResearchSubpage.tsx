@@ -78,7 +78,7 @@ export function ResearchSubpage({ slug }: { slug: string }) {
         <div className={styles.overviewRight}>
           <p>{data.intro}</p>
           <p>
-            VGG kết nối nền tảng học thuật nghiêm túc với nhu cầu thực tiễn của
+            Viện Sau Đại học kết nối nền tảng học thuật nghiêm túc với nhu cầu thực tiễn của
             xã hội — để mỗi kết quả nghiên cứu đều dẫn tới hành động và tạo
             giá trị lâu dài.
           </p>
@@ -121,7 +121,7 @@ export function ResearchSubpage({ slug }: { slug: string }) {
 
       {/* ─── QUOTE ─── */}
       <section className={styles.quoteSection} data-reveal>
-        <p className={styles.quoteLabel}>VGG / PERSPECTIVE</p>
+        <p className={styles.quoteLabel}>Viện Sau Đại học / PERSPECTIVE</p>
         <blockquote>“{data.quote}”</blockquote>
         <p className={styles.quoteAttrib}>— {data.quoteAttrib}</p>
       </section>

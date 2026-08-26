@@ -609,7 +609,7 @@ export default function ProgrammeDirectory() {
 
             <p>
               Trao đổi với đội ngũ
-              VGG để tìm lộ trình
+              Viện Sau Đại học để tìm lộ trình
               phù hợp với mục tiêu
               học tập và nghề nghiệp.
             </p>

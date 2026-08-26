@@ -17,9 +17,9 @@ const pages = {
   "gioi-thieu": {
     number: "01",
     title: "Giới thiệu",
-    en: "About VGG",
+    en: "About Viện Sau Đại học",
     headline: "Một không gian học thuật cho những bước tiến dài.",
-    lead: "VGG là nơi tri thức chuyên sâu, thực tiễn nghề nghiệp và tinh thần đổi mới cùng hội tụ trong một trải nghiệm sau đại học lấy người học làm trung tâm.",
+    lead: "Viện Sau Đại học là nơi tri thức chuyên sâu, thực tiễn nghề nghiệp và tinh thần đổi mới cùng hội tụ trong một trải nghiệm sau đại học lấy người học làm trung tâm.",
     sections: [
       [
         "Học thuật gắn với thực tiễn",
@@ -31,7 +31,7 @@ const pages = {
       ],
       [
         "Hành trình tạo tác động",
-        "Mỗi trải nghiệm tại VGG hướng đến năng lực chuyển hóa tri thức thành giá trị tích cực cho tổ chức và cộng đồng.",
+        "Mỗi trải nghiệm tại Viện Sau Đại học hướng đến năng lực chuyển hóa tri thức thành giá trị tích cực cho tổ chức và cộng đồng.",
       ],
     ],
   },
@@ -40,7 +40,7 @@ const pages = {
     title: "Tầm nhìn & Sứ mệnh",
     en: "Vision & Mission",
     headline: "Tri thức mở lối. Con người dẫn đường.",
-    lead: "VGG hướng đến một cộng đồng sau đại học có năng lực học tập suốt đời, tư duy toàn cầu và bản lĩnh kiến tạo thay đổi.",
+    lead: "Viện Sau Đại học hướng đến một cộng đồng sau đại học có năng lực học tập suốt đời, tư duy toàn cầu và bản lĩnh kiến tạo thay đổi.",
     sections: [
       [
         "Tầm nhìn",
@@ -61,7 +61,7 @@ const pages = {
     title: "Lãnh đạo",
     en: "Leadership",
     headline: "Dẫn dắt bằng tầm nhìn và sự thấu hiểu.",
-    lead: "Đội ngũ lãnh đạo VGG định hình một môi trường học thuật cởi mở, chuẩn mực và luôn sẵn sàng đổi mới vì người học.",
+    lead: "Đội ngũ lãnh đạo Viện Sau Đại học định hình một môi trường học thuật cởi mở, chuẩn mực và luôn sẵn sàng đổi mới vì người học.",
     sections: [
       [
         "Định hướng học thuật",
@@ -79,10 +79,10 @@ const pages = {
   },
   "vi-sao-chon-vgg": {
     number: "04",
-    title: "Vì sao chọn VGG",
-    en: "Why VGG",
+    title: "Vì sao chọn Viện Sau Đại học",
+    en: "Why Viện Sau Đại học",
     headline: "Một lựa chọn được thiết kế cho tương lai.",
-    lead: "Tại VGG, người học không chỉ tiếp nhận kiến thức mà còn phát triển cách tư duy, mạng lưới và sự tự tin để tiến xa hơn.",
+    lead: "Tại Viện Sau Đại học, người học không chỉ tiếp nhận kiến thức mà còn phát triển cách tư duy, mạng lưới và sự tự tin để tiến xa hơn.",
     sections: [
       [
         "Chương trình thiết thực",
@@ -103,7 +103,7 @@ const pages = {
     title: "Xếp hạng & Thành tựu",
     en: "Recognition & Achievements",
     headline: "Mỗi dấu ấn là một bước tiến chung.",
-    lead: "Những kết quả của VGG được tạo nên từ nỗ lực học tập, nghiên cứu và đổi mới bền bỉ của toàn cộng đồng.",
+    lead: "Những kết quả của Viện Sau Đại học được tạo nên từ nỗ lực học tập, nghiên cứu và đổi mới bền bỉ của toàn cộng đồng.",
     sections: [
       [
         "Chất lượng đào tạo",
@@ -122,9 +122,9 @@ const pages = {
   "lien-he": {
     number: "06",
     title: "Liên hệ",
-    en: "Contact VGG",
-    headline: "Bắt đầu cuộc trò chuyện cùng VGG.",
-    lead: "Dù bạn đang tìm hiểu chương trình, chuẩn bị hồ sơ hay cần hỗ trợ trong hành trình học tập, đội ngũ VGG luôn sẵn sàng lắng nghe.",
+    en: "Contact Viện Sau Đại học",
+    headline: "Bắt đầu cuộc trò chuyện cùng Viện Sau Đại học.",
+    lead: "Dù bạn đang tìm hiểu chương trình, chuẩn bị hồ sơ hay cần hỗ trợ trong hành trình học tập, đội ngũ Viện Sau Đại học luôn sẵn sàng lắng nghe.",
     sections: [
       ["Email", "v.sdh@vlu.edu.vn"],
       ["Điện thoại", "028 7101 6869 · 0988 48 68 69"],
@@ -142,7 +142,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const page = pages[slug as PageSlug];
-  return page ? { title: `${page.title} | About VGG`, description: page.lead } : {};
+  return page ? { title: `${page.title} | About Viện Sau Đại học`, description: page.lead } : {};
 }
 
 /**
@@ -177,7 +177,7 @@ export default async function DiscoverDetail({ params }: { params: Promise<{ slu
         />
         <div className="discover-detail-overlay" />
         <div className="discover-detail-title">
-          <p>DISCOVER VGG · {page.number}</p>
+          <p>DISCOVER Viện Sau Đại học · {page.number}</p>
           <h1>{page.title}</h1>
           <span>{page.en}</span>
         </div>
@@ -185,13 +185,13 @@ export default async function DiscoverDetail({ params }: { params: Promise<{ slu
       <nav className="discover-detail-trail">
         <Link href="/">Trang chủ</Link>
         <span>／</span>
-        <Link href="/discover">Về VGG</Link>
+        <Link href="/discover">Về Viện Sau Đại học</Link>
         <span>／</span>
         <b>{page.title}</b>
       </nav>
       <section className="discover-detail-body">
         <aside>
-          <p>DISCOVER VGG</p>
+          <p>DISCOVER Viện Sau Đại học</p>
           {Object.entries(pages).map(([key, item]) => (
             <Link className={key === slug ? "active" : ""} href={`/discover/${key}`} key={key}>
               <span>{item.number}</span>
@@ -216,7 +216,7 @@ export default async function DiscoverDetail({ params }: { params: Promise<{ slu
       </section>
       <section className="discover-detail-next">
         <p>TIẾP TỤC KHÁM PHÁ</p>
-        <h2>Kiến tạo bước tiến tiếp theo cùng VGG.</h2>
+        <h2>Kiến tạo bước tiến tiếp theo cùng Viện Sau Đại học.</h2>
         <Link href="/admissions">
           Tìm hiểu tuyển sinh <span>→</span>
         </Link>

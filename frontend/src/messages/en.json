@@ -8,8 +8,8 @@
     "university": "VAN LANG UNIVERSITY"
   },
   "common": {
-    "discoverMore": "Explore VGG",
-    "aboutVgg": "About VGG",
+    "discoverMore": "Explore Viện Sau Đại học",
+    "aboutVgg": "About Viện Sau Đại học",
     "readMore": "Learn more",
     "contact": "Contact us",
     "applyNow": "Apply now"
@@ -18,7 +18,7 @@
     "gioi-thieu": "Introduction",
     "tam-nhin-su-menh": "Vision & Mission",
     "lanh-dao": "Leadership",
-    "vi-sao-chon-vgg": "Why VGG",
+    "vi-sao-chon-vgg": "Why Viện Sau Đại học",
     "xep-hang-thanh-tuu": "Rankings & Achievements",
     "lien-he": "Contact"
   },
@@ -39,7 +39,7 @@
     "chooseProgramme": "Choose a programme",
     "submit": "Submit request",
     "submitting": "Submitting...",
-    "success": "Your request has been sent. VGG will contact you soon.",
+    "success": "Your request has been sent. Viện Sau Đại học will contact you soon.",
     "invalid": "Some information is invalid. Please check and try again.",
     "connectionError": "Unable to connect to the server. Please try again later.",
     "privacy": "Your information is confidential and used only for admissions counselling."

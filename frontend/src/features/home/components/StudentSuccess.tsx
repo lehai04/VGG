@@ -23,7 +23,7 @@ export function StudentSuccess() {
           <em>mỗi người học thành công.</em>
         </h2>
         <div>
-          Từ hỗ trợ học tập, tư vấn học thuật, phát triển nghề nghiệp đến kết nối doanh nghiệp — VGG
+          Từ hỗ trợ học tập, tư vấn học thuật, phát triển nghề nghiệp đến kết nối doanh nghiệp — Viện Sau Đại học
           đồng hành xuyên suốt hành trình của học viên.
         </div>
         <a href="#student-success">Khám phá dịch vụ học viên ↗</a>

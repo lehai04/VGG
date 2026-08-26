@@ -34,7 +34,7 @@ export function FooterAbout() {
 }
 export function FooterQuickLinks() {
   const { locale } = useLocale();
-  const labels = locale === "en" ? ["Home", "About VGG", "Programmes", "Admissions", "Research & Innovation", "Global Opportunities", "Student Success", "News & Events", "Resources", "Contact"] : quickLinks.map((item) => item.label);
+  const labels = locale === "en" ? ["Home", "About Viện Sau Đại học", "Programmes", "Admissions", "Research & Innovation", "Global Opportunities", "Student Success", "News & Events", "Resources", "Contact"] : quickLinks.map((item) => item.label);
   return <LinkColumn title={locale === "en" ? "Quick links" : "Truy cập nhanh"} links={quickLinks.map((item,index) => ({...item,label:labels[index] ?? item.label}))} />;
 }
 export function FooterSocial() {

@@ -28,7 +28,7 @@ export function MasterProgrammesPage() {
         <Image src="/images/pages/programmes/content/graduates.jpg" alt="Học viên chương trình Thạc sĩ Văn Lang" fill priority sizes="100vw" />
         <div className={styles.heroShade} />
         <div className={styles.heroCopy}>
-          <p>VGG · MASTER PROGRAMMES</p>
+          <p>Viện Sau Đại học · MASTER PROGRAMMES</p>
           <h1 id="master-title">Chương trình<br />Thạc sĩ</h1>
           <span>18 chương trình · 05 khối ngành · 18–24 tháng</span>
         </div>
@@ -45,12 +45,12 @@ export function MasterProgrammesPage() {
           <h2>Phát triển chiều sâu chuyên môn.</h2>
           <div className={styles.overviewText}>
             <p>Chương trình Sau đại học tại Văn Lang không ngừng được cập nhật theo định hướng gắn kết học thuật với thực tiễn. Với lộ trình đào tạo từ 18 đến 24 tháng, mỗi ngành học mang đến mục tiêu phát triển và cơ hội nghề nghiệp rõ ràng.</p>
-            <p>VGG hiện triển khai 18 chương trình Thạc sĩ thuộc 05 khối ngành, trang bị cho người học năng lực chuyên môn nâng cao, tư duy nghiên cứu, khả năng giải quyết vấn đề và nền tảng để phát triển sự nghiệp bền vững.</p>
+            <p>Viện Sau Đại học hiện triển khai 18 chương trình Thạc sĩ thuộc 05 khối ngành, trang bị cho người học năng lực chuyên môn nâng cao, tư duy nghiên cứu, khả năng giải quyết vấn đề và nền tảng để phát triển sự nghiệp bền vững.</p>
           </div>
         </div>
         <div className={styles.overviewMedia}>
           <Image src="/images/pages/programmes/content/campus.jpg" alt="Không gian đào tạo và nghiên cứu tại Văn Lang" fill sizes="(max-width: 950px) 100vw, 44vw" />
-          <span>VGG · KNOWLEDGE IN PRACTICE</span>
+          <span>Viện Sau Đại học · KNOWLEDGE IN PRACTICE</span>
         </div>
       </section>
 
@@ -62,10 +62,10 @@ export function MasterProgrammesPage() {
             cấp nguồn nhân lực chất lượng cao, đáp ứng yêu cầu từ các nhà tuyển
             dụng trong và ngoài nước. Chương trình sau đại học trang bị nền tảng
             vững chắc cho các nhà quản lý, chuyên gia, nhà nghiên cứu và giảng
-            viên tương lai. Đến nay, VGG đã triển khai 18 chương trình Thạc sĩ
+            viên tương lai. Đến nay, Viện Sau Đại học đã triển khai 18 chương trình Thạc sĩ
             thuộc nhiều lĩnh vực chuyên sâu.
           </blockquote>
-          <p><strong>Ban lãnh đạo VGG</strong><small>Viện Sau đại học · Trường Đại học Văn Lang</small></p>
+          <p><strong>Ban lãnh đạo Viện Sau Đại học</strong><small>Viện Sau đại học · Trường Đại học Văn Lang</small></p>
         </div>
         <div className={styles.quotePortrait}>
           <Image
@@ -79,7 +79,7 @@ export function MasterProgrammesPage() {
 
       <section className={styles.why} aria-labelledby="why-master-title">
         <header data-reveal>
-          <h2 id="why-master-title">Tại sao nên chọn chương trình Thạc sĩ tại VGG?</h2>
+          <h2 id="why-master-title">Tại sao nên chọn chương trình Thạc sĩ tại Viện Sau Đại học?</h2>
           <p>Một lộ trình được thiết kế cho người học muốn tiến xa hơn trong chuyên môn mà không tách rời thực tiễn nghề nghiệp.</p>
         </header>
         <div className={styles.benefits}>

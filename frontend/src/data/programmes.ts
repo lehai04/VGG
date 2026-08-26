@@ -56,7 +56,7 @@ export type Programme = {
   intake: string;
 };
 
-/** Học phí toàn khóa theo danh mục tuyển sinh do VGG công bố. */
+/** Học phí toàn khóa theo danh mục tuyển sinh do Viện Sau Đại học công bố. */
 export function getProgrammeTuition(programme: Programme) {
   if (programme.degree === "Tiến sĩ") return "145.000.000 VNĐ";
   if (programme.field === "Thiết kế & Mỹ thuật Ứng dụng") return "100.000.000 VNĐ";

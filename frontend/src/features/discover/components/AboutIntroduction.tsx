@@ -42,12 +42,12 @@ export function AboutIntroduction() {
         />
         <div className={styles.heroShade} />
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>ABOUT VGG · GIỚI THIỆU</p>
+          <p className={styles.eyebrow}>ABOUT Viện Sau Đại học · GIỚI THIỆU</p>
           <h1 id="about-title">Giới thiệu</h1>
           <p className={styles.heroLead}>Viện Đào tạo Sau đại học<br />Trường Đại học Văn Lang</p>
           <p className={styles.heroStatement}>Một hành trình học thuật cho bước tiến tiếp theo.</p>
         </div>
-        <a className={styles.scrollCue} href="#about-institute" aria-label="Khám phá về VGG">
+        <a className={styles.scrollCue} href="#about-institute" aria-label="Khám phá về Viện Sau Đại học">
           <span>Khám phá</span><ArrowDown aria-hidden="true" />
         </a>
       </section>
@@ -129,7 +129,7 @@ export function AboutIntroduction() {
       </section>
 
       {/* Kế thừa nguyên section tư vấn và logic form đang dùng trên các trang con khác. */}
-      {/* Kế thừa section điều hướng chung của nhóm trang About VGG. */}
+      {/* Kế thừa section điều hướng chung của nhóm trang About Viện Sau Đại học. */}
       <DiscoverMore activeSlug="gioi-thieu" />
       <NextStepCTA />
       <SiteFooter />

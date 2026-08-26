@@ -24,8 +24,8 @@ export function AdmissionsMore({ activeIndex = -1 }: { activeIndex?: number }) {
           <h2 id="admissions-more-title">{locale === "en" ? "Explore more" : "Khám phá thêm"}</h2>
           <p>
             {locale === "en"
-              ? "Find admissions requirements, tuition, scholarships and every milestone needed to prepare a clear application journey with VGG."
-              : "Tìm hiểu điều kiện dự tuyển, học phí, học bổng và các mốc quan trọng để chủ động chuẩn bị một hành trình hồ sơ rõ ràng cùng VGG."}
+              ? "Find admissions requirements, tuition, scholarships and every milestone needed to prepare a clear application journey with Viện Sau Đại học."
+              : "Tìm hiểu điều kiện dự tuyển, học phí, học bổng và các mốc quan trọng để chủ động chuẩn bị một hành trình hồ sơ rõ ràng cùng Viện Sau Đại học."}
           </p>
           <div>
             <Link href={subpageHref("admissions", 0)}>{labels[0]}</Link>
@@ -35,7 +35,7 @@ export function AdmissionsMore({ activeIndex = -1 }: { activeIndex?: number }) {
       </div>
 
       <div className="discover-editorial-more-nav">
-        <h2>{locale === "en" ? "VGG Admissions" : "Tuyển sinh VGG"}</h2>
+        <h2>{locale === "en" ? "Viện Sau Đại học Admissions" : "Tuyển sinh Viện Sau Đại học"}</h2>
         <nav aria-label={locale === "en" ? "Admissions pages" : "Các trang tuyển sinh"}>
           <Link className={activeIndex === -1 ? "active" : ""} href="/admissions">
             {locale === "en" ? "Overview" : "Tổng quan"}

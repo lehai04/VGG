@@ -9,7 +9,7 @@ type FilterKey = "field" | "year" | "author" | "type" | "language";
 
 const labels: Record<FilterKey,string> = { field:"Theo lĩnh vực", year:"Theo năm phát hành", author:"Theo tác giả", type:"Theo phân loại", language:"Theo ngôn ngữ gốc" };
 
-export function PublicationsSearch({ publications, titleFirst="Khám phá tất cả", titleSecond="Bài báo khoa học VGG", breadcrumbLast="Bài báo khoa học", searchPlaceholder="Tìm kiếm Bài báo khoa học", resultLabel="kết quả tìm kiếm" }: { publications:PublicationItem[]; titleFirst?:string; titleSecond?:string; breadcrumbLast?:string; searchPlaceholder?:string; resultLabel?:string }) {
+export function PublicationsSearch({ publications, titleFirst="Khám phá tất cả", titleSecond="Bài báo khoa học Viện Sau Đại học", breadcrumbLast="Bài báo khoa học", searchPlaceholder="Tìm kiếm Bài báo khoa học", resultLabel="kết quả tìm kiếm" }: { publications:PublicationItem[]; titleFirst?:string; titleSecond?:string; breadcrumbLast?:string; searchPlaceholder?:string; resultLabel?:string }) {
   const [query,setQuery] = useState("");
   const [open,setOpen] = useState<FilterKey|null>(null);
   const [mobileFilters,setMobileFilters] = useState(false);

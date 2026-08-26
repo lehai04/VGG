@@ -41,7 +41,7 @@
   --cream: var(--vlu-pale);
 }
 
-/* VGG typography design system — semantic scale shared by every public page. */
+/* Viện Sau Đại học typography design system — semantic scale shared by every public page. */
 html {
   font-size: 100%;
 }
@@ -925,7 +925,7 @@ a {
   text-decoration: none;
 }
 
-/* CTA dùng chung: pill đỏ VGG; không áp dụng cho menu, accordion hay icon control. */
+/* CTA dùng chung: pill đỏ Viện Sau Đại học; không áp dụng cho menu, accordion hay icon control. */
 .vgg-cta-pill {
   min-height: 50px !important;
   width: max-content;
@@ -3076,7 +3076,7 @@ footer {
   }
 }
 
-/* About VGG */
+/* About Viện Sau Đại học */
 .discover-editorial {
   overflow-x: clip;
   background: #fff;
@@ -3493,7 +3493,7 @@ footer {
   --site-touch: 44px;
 }
 
-/* Shared VGG layout grid. Full-bleed sections keep their background while
+/* Shared Viện Sau Đại học layout grid. Full-bleed sections keep their background while
    their direct content aligns to this single horizontal axis. */
 .vgg-container {
   width: 100%;
@@ -4787,7 +4787,7 @@ footer {
   }
 }
 
-/* Homepage alignment with the established VGG visual direction. */
+/* Homepage alignment with the established Viện Sau Đại học visual direction. */
 main:not(.subpage) > .utility {
   position: absolute;
   inset: 0 0 auto;
@@ -6847,7 +6847,7 @@ main:not(.subpage) .mega-menu {
   }
 }
 /* =========================================================
-   VGG PROGRAMME DIRECTORY — FINAL
+   Viện Sau Đại học PROGRAMME DIRECTORY — FINAL
    ========================================================= */
 
 /* =========================================================

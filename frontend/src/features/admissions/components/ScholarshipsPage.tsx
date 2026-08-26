@@ -126,7 +126,7 @@ export function ScholarshipsPage() {
             fill
             sizes="(max-width: 900px) 100vw, 46vw"
           />
-          <span>VGG · INVEST IN YOUR FUTURE</span>
+          <span>Viện Sau Đại học · INVEST IN YOUR FUTURE</span>
         </figure>
       </section>
 
@@ -208,7 +208,7 @@ export function ScholarshipsPage() {
 
       <section className={styles.closing}>
         <div data-reveal>
-          <p>VGG FINANCIAL SUPPORT</p>
+          <p>Viện Sau Đại học FINANCIAL SUPPORT</p>
           <h2>Đồng hành cùng bạn trong suốt hành trình phát triển chuyên môn.</h2>
         </div>
         <Link href="/admissions/nop-ho-so" data-reveal>

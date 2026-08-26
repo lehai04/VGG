@@ -27,7 +27,7 @@ function UtilityBar() {
 
 function BrandLink({ className }: { className: string }) {
   return (
-    <Link href="/" className={className} aria-label="Trang chủ VGG">
+    <Link href="/" className={className} aria-label="Trang chủ Viện Sau Đại học">
       <Image
         src="/images/logo/logo-vgg.png"
         alt="Viện Sau đại học Văn Lang"
@@ -142,7 +142,7 @@ export function SiteHeader({ compact = false }: { compact?: boolean }) {
                 <br />
                 làm trung tâm.
               </h3>
-              <Link href="/discover">Khám phá VGG →</Link>
+              <Link href="/discover">Khám phá Viện Sau Đại học →</Link>
             </div>
           </div>
         )}

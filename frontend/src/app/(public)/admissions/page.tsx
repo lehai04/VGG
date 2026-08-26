@@ -64,14 +64,14 @@ export default function AdmissionsPage() {
           <strong>Tuyển sinh</strong>
         </nav>
         <div className={styles.heroCopy}>
-          <p>VGG ADMISSIONS · 2026</p>
+          <p>Viện Sau Đại học ADMISSIONS · 2026</p>
           <h1 id="admissions-title">
             <span>Một bước gần hơn</span>
             <span>đến tương lai</span>
             <span>bạn mong muốn</span>
           </h1>
           <strong>
-            Tương lai luôn nằm trong tầm với khi bạn có một định hướng rõ ràng. VGG đồng hành để bạn
+            Tương lai luôn nằm trong tầm với khi bạn có một định hướng rõ ràng. Viện Sau Đại học đồng hành để bạn
             lựa chọn chương trình, chuẩn bị hồ sơ và tạo dựng bước tiến phù hợp với mục tiêu nghề
             nghiệp của mình.
           </strong>
@@ -88,7 +88,7 @@ export default function AdmissionsPage() {
           <p>
             18 chương trình thạc sĩ và 01 chương trình tiến sĩ mở ra nhiều lựa chọn để bạn phát
             triển chuyên môn từ chính kinh nghiệm, sở thích và thế mạnh của mình. Nếu bạn chưa xác
-            định được lộ trình, đội ngũ tư vấn VGG sẽ giúp bạn tìm ra hướng đi phù hợp.
+            định được lộ trình, đội ngũ tư vấn Viện Sau Đại học sẽ giúp bạn tìm ra hướng đi phù hợp.
           </p>
           <Link href="/programmes">
             Khám phá các chương trình <ArrowRight aria-hidden="true" />
@@ -109,7 +109,7 @@ export default function AdmissionsPage() {
           <p className={styles.eyebrow}>A CLEAR ADMISSION JOURNEY</p>
           <h2 id="admission-story-title">Không có một hành trình chung cho tất cả.</h2>
           <p>
-            VGG xem xét mỗi hồ sơ từ nền tảng học thuật, kinh nghiệm nghề nghiệp và định hướng phát
+            Viện Sau Đại học xem xét mỗi hồ sơ từ nền tảng học thuật, kinh nghiệm nghề nghiệp và định hướng phát
             triển của từng ứng viên. Điều quan trọng không chỉ là nơi bạn bắt đầu, mà còn là mục
             tiêu bạn muốn theo đuổi và giá trị bạn mong muốn tạo ra trong tương lai.
           </p>
@@ -125,7 +125,7 @@ export default function AdmissionsPage() {
 
       <section className={styles.profile} aria-labelledby="profile-title">
         <header data-reveal>
-          <p className={styles.eyebrow}>VGG GRADUATE PROFILE</p>
+          <p className={styles.eyebrow}>Viện Sau Đại học GRADUATE PROFILE</p>
           <h2 id="profile-title">Một cộng đồng học thuật dành cho bước tiến mới.</h2>
         </header>
         <div className={styles.stats}>
@@ -147,7 +147,7 @@ export default function AdmissionsPage() {
           <p className={styles.eyebrow}>THỦ TỤC XÉT TUYỂN</p>
           <h2 id="procedures-title">Chương trình tuyển sinh Sau đại học</h2>
           <p>
-            Tìm hiểu tổng quan về các bậc đào tạo sau đại học tại VGG và chọn chương trình phù hợp
+            Tìm hiểu tổng quan về các bậc đào tạo sau đại học tại Viện Sau Đại học và chọn chương trình phù hợp
             để xem nội dung, điều kiện và lộ trình chi tiết.
           </p>
         </header>
@@ -196,7 +196,7 @@ export default function AdmissionsPage() {
           <div className={styles.financeMedia}>
             <Image
               src="/images/pages/admissions/content/graduates.jpg"
-              alt="Học viên VGG trong môi trường học tập"
+              alt="Học viên Viện Sau Đại học trong môi trường học tập"
               fill
               sizes="(max-width: 800px) 100vw, 50vw"
             />

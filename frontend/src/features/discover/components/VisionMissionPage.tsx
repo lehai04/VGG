@@ -8,9 +8,9 @@ import { DiscoverMore } from "@/features/discover/components/DiscoverMore";
 import styles from "./VisionMissionPage.module.css";
 
 const vision = "Trở thành đơn vị đào tạo sau đại học tiên phong trong kết nối tri thức học thuật với thực tiễn nghề nghiệp, mở rộng mạng lưới học thuật – doanh nghiệp và phát triển nguồn nhân lực có năng lực tạo ra giá trị cho xã hội.";
-const mission = "Kiến tạo môi trường đào tạo và nghiên cứu chất lượng cao, giúp người học phát triển chuyên môn chuyên sâu, năng lực nghiên cứu, tư duy phản biện và khả năng giải quyết các vấn đề thực tiễn. Thông qua sự kết nối giữa học thuật, doanh nghiệp và cộng đồng, VGG đồng hành cùng người học trong phát triển sự nghiệp và tạo ra những tác động tích cực cho xã hội.";
+const mission = "Kiến tạo môi trường đào tạo và nghiên cứu chất lượng cao, giúp người học phát triển chuyên môn chuyên sâu, năng lực nghiên cứu, tư duy phản biện và khả năng giải quyết các vấn đề thực tiễn. Thông qua sự kết nối giữa học thuật, doanh nghiệp và cộng đồng, Viện Sau Đại học đồng hành cùng người học trong phát triển sự nghiệp và tạo ra những tác động tích cực cho xã hội.";
 
-/** Trang riêng cho tuyên ngôn VGG: nhịp editorial lớn, không dùng layout card của các trang con khác. */
+/** Trang riêng cho tuyên ngôn Viện Sau Đại học: nhịp editorial lớn, không dùng layout card của các trang con khác. */
 export function VisionMissionPage() {
   return <main className={styles.page} id="main-content">
     <RevealOnScroll />
@@ -52,7 +52,7 @@ export function VisionMissionPage() {
     <section className={styles.philosophy}>
       <div className={styles.philosophyHead} data-reveal><p className={styles.eyebrow}>03 / TRIẾT LÝ GIẢNG DẠY</p><h2>Triết lý giảng dạy</h2></div>
       <div className={styles.philosophyBottom}>
-        <p data-reveal>VGG hướng đến mô hình giáo dục lấy người học làm trung tâm, trong đó quá trình giảng dạy không chỉ truyền đạt kiến thức mà còn khuyến khích tư duy độc lập, khám phá và ứng dụng. Nội dung đào tạo được kết nối với các vấn đề thực tiễn, hoạt động nghiên cứu và kinh nghiệm nghề nghiệp, giúp người học chuyển hóa tri thức thành năng lực hành động và những giá trị có ý nghĩa cho tổ chức, cộng đồng và xã hội.</p>
+        <p data-reveal>Viện Sau Đại học hướng đến mô hình giáo dục lấy người học làm trung tâm, trong đó quá trình giảng dạy không chỉ truyền đạt kiến thức mà còn khuyến khích tư duy độc lập, khám phá và ứng dụng. Nội dung đào tạo được kết nối với các vấn đề thực tiễn, hoạt động nghiên cứu và kinh nghiệm nghề nghiệp, giúp người học chuyển hóa tri thức thành năng lực hành động và những giá trị có ý nghĩa cho tổ chức, cộng đồng và xã hội.</p>
         {/* Ảnh luôn hiển thị; không gắn reveal để tránh bị giữ opacity khi section vào viewport nhanh. */}
         <figure><Image src="/images/pages/discover/Vision/1.avif" alt="Trải nghiệm học tập của cộng đồng học viên Văn Lang" fill sizes="(max-width: 767px) 100vw, 38vw" /></figure>
       </div>

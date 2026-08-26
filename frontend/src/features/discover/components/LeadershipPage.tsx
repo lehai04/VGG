@@ -61,7 +61,7 @@ export function LeadershipPage() {
         <Image src="/images/pages/discover/content/campus.jpg" alt="Khuôn viên Trường Đại học Văn Lang" fill priority sizes="100vw" />
         <div className={styles.heroOverlay} />
         <div className={styles.heroTitle}>
-          <p>DISCOVER VGG · 03</p>
+          <p>DISCOVER Viện Sau Đại học · 03</p>
           <h1 id="leadership-title">Lãnh đạo</h1>
           <span>Leadership</span>
         </div>

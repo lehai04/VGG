@@ -222,7 +222,7 @@ export function DiscoverSubpageVM({ slug, page }: { slug: string; page: PageData
         />
         <div className={styles.heroOverlay} />
         <div className={styles.heroCopy}>
-          <p>DISCOVER VGG · {page.number}</p>
+          <p>DISCOVER Viện Sau Đại học · {page.number}</p>
           <h1 id="dvm-title">
             {titleParts.map((part, i) => (
               <span key={i}>
@@ -252,7 +252,7 @@ export function DiscoverSubpageVM({ slug, page }: { slug: string; page: PageData
               <h2 id="dvm-intro-heading">{page.en}</h2>
               <p className={styles.lead}>{page.lead}</p>
               <div className={styles.keywords} aria-label="Từ khoá">
-                <span>VGG</span>
+                <span>Viện Sau Đại học</span>
                 <span>Graduate School</span>
                 <span>Văn Lang University</span>
               </div>

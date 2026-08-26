@@ -23,32 +23,32 @@ export const discoverSections = [
   {
     slug: "gioi-thieu",
     title: "Giới thiệu",
-    summary: "Khám phá câu chuyện và môi trường học thuật của VGG.",
+    summary: "Khám phá câu chuyện và môi trường học thuật của Viện Sau Đại học.",
   },
   {
     slug: "tam-nhin-su-menh",
     title: "Tầm nhìn & Sứ mệnh",
-    summary: "Tìm hiểu định hướng phát triển và những giá trị VGG theo đuổi.",
+    summary: "Tìm hiểu định hướng phát triển và những giá trị Viện Sau Đại học theo đuổi.",
   },
   {
     slug: "lanh-dao",
     title: "Lãnh đạo",
-    summary: "Gặp gỡ đội ngũ định hướng hành trình học thuật tại VGG.",
+    summary: "Gặp gỡ đội ngũ định hướng hành trình học thuật tại Viện Sau Đại học.",
   },
   {
     slug: "vi-sao-chon-vgg",
-    title: "Vì sao chọn VGG",
+    title: "Vì sao chọn Viện Sau Đại học",
     summary: "Những khác biệt làm nên trải nghiệm sau đại học tại Văn Lang.",
   },
   {
     slug: "xep-hang-thanh-tuu",
     title: "Xếp hạng & Thành tựu",
-    summary: "Các dấu ấn từ cộng đồng học thuật và người học VGG.",
+    summary: "Các dấu ấn từ cộng đồng học thuật và người học Viện Sau Đại học.",
   },
   {
     slug: "lien-he",
     title: "Liên hệ",
-    summary: "Kết nối với đội ngũ VGG để được tư vấn và hỗ trợ.",
+    summary: "Kết nối với đội ngũ Viện Sau Đại học để được tư vấn và hỗ trợ.",
   },
 ] as const;
 
@@ -56,18 +56,18 @@ export const discoverSections = [
 export const menuGroups: readonly MenuGroup[] = [
   {
     slug: "discover",
-    en: "About VGG",
-    vi: "Về VGG",
+    en: "About Viện Sau Đại học",
+    vi: "Về Viện Sau Đại học",
     kicker: "Van Lang Global Graduate",
-    headline: "Khám phá một VGG lấy người học làm trung tâm.",
+    headline: "Khám phá một Viện Sau Đại học lấy người học làm trung tâm.",
     intro:
-      "VGG kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",
+      "Viện Sau Đại học kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",
     items: discoverSections.map((item) => item.title),
     itemsEn: [
       "Introduction",
       "Vision & Mission",
       "Leadership",
-      "Why VGG",
+      "Why Viện Sau Đại học",
       "Rankings & Achievements",
       "Contact",
     ],
@@ -103,7 +103,7 @@ export const menuGroups: readonly MenuGroup[] = [
     slug: "admissions",
     en: "Admissions",
     vi: "Tuyển sinh",
-    kicker: "Your VGG journey starts here",
+    kicker: "Your Viện Sau Đại học journey starts here",
     headline: "Thông tin rõ ràng. Hành trình tinh gọn.",
     intro: "Tìm hiểu điều kiện, học phí, học bổng, quy trình hồ sơ và các mốc quan trọng.",
     items: [
@@ -130,7 +130,7 @@ export const menuGroups: readonly MenuGroup[] = [
     kicker: "Knowledge for real-world impact",
     headline: "Nghiên cứu chuyên sâu. Kết nối tri thức toàn cầu.",
     intro:
-      "VGG kết nối nhà khoa học, doanh nghiệp, cộng đồng và mạng lưới đối tác quốc tế để kiến tạo tri thức, giải pháp thực tiễn và những cơ hội học tập vượt ra ngoài biên giới.",
+      "Viện Sau Đại học kết nối nhà khoa học, doanh nghiệp, cộng đồng và mạng lưới đối tác quốc tế để kiến tạo tri thức, giải pháp thực tiễn và những cơ hội học tập vượt ra ngoài biên giới.",
     items: [
       "Các cụm nghiên cứu",
       "Dự án nghiên cứu",
@@ -220,7 +220,7 @@ export const menuGroups: readonly MenuGroup[] = [
     vi: "Tin tức & Sự kiện",
     kicker: "The pulse of our academic community",
     headline: "Theo dòng chuyển động học thuật.",
-    intro: "Cập nhật tin tức, sự kiện, seminar và những khoảnh khắc nổi bật trong cộng đồng VGG.",
+    intro: "Cập nhật tin tức, sự kiện, seminar và những khoảnh khắc nổi bật trong cộng đồng Viện Sau Đại học.",
     items: [
       "Tin tức",
       "Sự kiện",
@@ -331,7 +331,7 @@ export const sectionSubpages: Record<string, SectionSubpage[]> = Object.fromEntr
         title,
         eyebrow: `${group.en} / ${String(index + 1).padStart(2, "0")}`,
         headline: `${title}: kiến tạo một hành trình có chiều sâu.`,
-        summary: `Khám phá thông tin, cơ hội và nguồn lực dành cho ${title.toLowerCase()} tại VGG — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm.`,
+        summary: `Khám phá thông tin, cơ hội và nguồn lực dành cho ${title.toLowerCase()} tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm.`,
       })),
     ]),
 );

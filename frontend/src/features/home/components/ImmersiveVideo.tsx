@@ -101,7 +101,7 @@ export function ImmersiveVideo() {
             <button
               className="immersiveVideoPlay"
               type="button"
-              aria-label="Phát video giới thiệu VGG"
+              aria-label="Phát video giới thiệu Viện Sau Đại học"
               onClick={() => {
                 setHasLoaded(true);
                 setShouldPlay(true);
@@ -114,7 +114,7 @@ export function ImmersiveVideo() {
         )}
 
         <div className="immersiveVideoMark" aria-hidden="true">
-          VGG <span>／</span> 03:15
+          Viện Sau Đại học <span>／</span> 03:15
         </div>
 
         {hasLoaded && shouldPlay && isMuted && (

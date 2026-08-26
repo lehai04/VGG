@@ -20,26 +20,26 @@ const inter = localFont({ src: "./fonts/Inter-Variable.ttf", weight: "400 700", 
 const baseMetadata: Metadata = {
   metadataBase: new URL("https://vgg.vlu.edu.vn"),
   title: {
-    default: "VGG – Viện Sau đại học Văn Lang",
-    template: "%s | VGG",
+    default: "Viện Sau Đại học Văn Lang",
+    template: "%s | Viện Sau Đại học",
   },
   description:
-    "Cổng thông tin Van Lang Global Graduate (VGG) – Viện Sau đại học, Trường Đại học Văn Lang.",
+    "Cổng thông tin Viện Sau Đại học, Trường Đại học Văn Lang.",
   applicationName: "Van Lang Global Graduate",
-  keywords: ["VGG", "Văn Lang", "sau đại học", "thạc sĩ", "tiến sĩ"],
+  keywords: ["Viện Sau Đại học", "Văn Lang", "sau đại học", "thạc sĩ", "tiến sĩ"],
   openGraph: {
     type: "website",
     locale: "vi_VN",
     siteName: "Van Lang Global Graduate",
-    title: "VGG – Viện Sau đại học Văn Lang",
+    title: "Viện Sau Đại học Văn Lang",
     description:
-      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ học viên VGG.",
+      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ học viên Viện Sau Đại học.",
   },
   twitter: {
     card: "summary",
-    title: "VGG – Viện Sau đại học Văn Lang",
+    title: "Viện Sau Đại học Văn Lang",
     description:
-      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ học viên VGG.",
+      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ học viên Viện Sau Đại học.",
   },
   icons: {
     icon: "/favicon.svg",

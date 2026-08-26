@@ -8,7 +8,7 @@ import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import styles from "./DiscoverSubpageVM.module.css";
 
 /**
- * Nội dung "Vì sao chọn VGG" được đặt cứng ở đây vì có cấu trúc giàu hơn
+ * Nội dung "Vì sao chọn Viện Sau Đại học" được đặt cứng ở đây vì có cấu trúc giàu hơn
  * so với dữ liệu tổng quan trong pages object (keywords, bg variant, ảnh riêng).
  */
 const reasons = [
@@ -16,7 +16,7 @@ const reasons = [
     bg: "paper" as const,
     eyebrow: "01 / HỌC THUẬT & THỰC TIỄN",
     title: "Một bước tiến trong học thuật mở ra một bước tiến trong sự nghiệp.",
-    copy: "VGG mang đến môi trường đào tạo sau đại học nơi chiều sâu học thuật gắn liền với thực tiễn nghề nghiệp, với 18 chương trình Thạc sĩ và 01 chương trình Tiến sĩ thuộc 05 nhóm ngành. Các chương trình được định hướng phát triển chuyên môn, năng lực nghiên cứu, tư duy phân tích và khả năng vận dụng kiến thức vào những vấn đề thực tiễn.",
+    copy: "Viện Sau Đại học mang đến môi trường đào tạo sau đại học nơi chiều sâu học thuật gắn liền với thực tiễn nghề nghiệp, với 18 chương trình Thạc sĩ và 01 chương trình Tiến sĩ thuộc 05 nhóm ngành. Các chương trình được định hướng phát triển chuyên môn, năng lực nghiên cứu, tư duy phân tích và khả năng vận dụng kiến thức vào những vấn đề thực tiễn.",
     img: "/images/pages/discover/visao/1.JPG",
     keywords: ["Chuyên môn chuyên sâu", "Nghiên cứu ứng dụng", "Tư duy phân tích"],
   },
@@ -32,21 +32,21 @@ const reasons = [
     bg: "navy" as const,
     eyebrow: "03 / CỘNG ĐỒNG & KẾT NỐI",
     title: "Một môi trường để đi xa hơn.",
-    copy: "Với lộ trình đào tạo phù hợp cho người học đang phát triển sự nghiệp, VGG tạo điều kiện để người học kết nối với giảng viên, chuyên gia, cộng đồng học thuật và thực tiễn doanh nghiệp; từ đó mở rộng góc nhìn, xây dựng mạng lưới và tìm kiếm những cơ hội phát triển mới.",
+    copy: "Với lộ trình đào tạo phù hợp cho người học đang phát triển sự nghiệp, Viện Sau Đại học tạo điều kiện để người học kết nối với giảng viên, chuyên gia, cộng đồng học thuật và thực tiễn doanh nghiệp; từ đó mở rộng góc nhìn, xây dựng mạng lưới và tìm kiếm những cơ hội phát triển mới.",
     img: "/images/pages/discover/visao/3.jpg",
     keywords: null,
   },
   {
     bg: "paper" as const,
     eyebrow: "04 / QUYẾT TÂM & TẦM NHÌN",
-    title: "Chọn VGG là chọn chủ động đi tiếp.",
+    title: "Chọn Viện Sau Đại học là chọn chủ động đi tiếp.",
     copy: "Học sâu hơn, tư duy rộng hơn, kết nối nhiều hơn và sẵn sàng cho những bước tiến xa hơn trong sự nghiệp và cuộc sống.",
     img: "/images/pages/discover/visao/4.jpg",
     keywords: ["Học suốt đời", "Mạng lưới rộng", "Tư duy toàn cầu"],
   },
 ] as const;
 
-/** Trang "Vì sao chọn VGG" (/discover/vi-sao-chon-vgg) theo phong cách VisionMissionPage. */
+/** Trang "Vì sao chọn Viện Sau Đại học" (/discover/vi-sao-chon-vgg) theo phong cách VisionMissionPage. */
 export function WhyVGGPage() {
   return (
     <main className={`${styles.page} ${styles.whyPage} subpage`} id="main-content">
@@ -65,10 +65,10 @@ export function WhyVGGPage() {
         />
         <div className={styles.heroOverlay} />
         <div className={styles.heroCopy}>
-          <p>DISCOVER VGG · 04</p>
+          <p>DISCOVER Viện Sau Đại học · 04</p>
           <h1 id="why-vgg-title">
             <span>
-              <i>VÌ SAO CHỌN VGG</i>
+              <i>VÌ SAO CHỌN Viện Sau Đại học</i>
             </span>
           </h1>
           <strong>Một lựa chọn được thiết kế cho tương lai.</strong>

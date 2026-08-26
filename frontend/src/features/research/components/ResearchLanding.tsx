@@ -71,9 +71,9 @@ export function ResearchLanding() {
         <Image src="/images/pages/research/content/campus.jpg" alt="Không gian nghiên cứu tại Văn Lang" fill priority sizes="100vw" />
         <div className={styles.heroShade} />
         <div className={styles.heroCopy} data-reveal>
-          <p>RESEARCH &amp; GLOBAL OPPORTUNITIES · VGG</p>
+          <p>RESEARCH &amp; GLOBAL OPPORTUNITIES · Viện Sau Đại học</p>
           <h1>Nghiên cứu khoa học<br />&amp; Cơ hội quốc tế</h1>
-          <span>VGG phát triển tri thức mới, giải pháp thực tiễn và kết nối người học với các chương trình, đối tác cùng trải nghiệm học thuật trên phạm vi toàn cầu.</span>
+          <span>Viện Sau Đại học phát triển tri thức mới, giải pháp thực tiễn và kết nối người học với các chương trình, đối tác cùng trải nghiệm học thuật trên phạm vi toàn cầu.</span>
         </div>
         <a href="#overview" className={styles.heroDown} aria-label="Xem nội dung"><ArrowDown /></a>
       </section>
@@ -82,7 +82,7 @@ export function ResearchLanding() {
         <div>
           <p>01 · TỔNG QUAN</p>
           <h2>Đặt nền móng cho những tác động truyền cảm hứng</h2>
-          <p>Nền tảng của đổi mới nằm ở những khám phá mới. Thông qua các dự án nghiên cứu mang tính ứng dụng, những ý tưởng tiềm năng được cộng đồng VGG đào sâu để phát triển thành phương pháp, kỹ thuật và giải pháp có thể đóng góp cải thiện xã hội.</p>
+          <p>Nền tảng của đổi mới nằm ở những khám phá mới. Thông qua các dự án nghiên cứu mang tính ứng dụng, những ý tưởng tiềm năng được cộng đồng Viện Sau Đại học đào sâu để phát triển thành phương pháp, kỹ thuật và giải pháp có thể đóng góp cải thiện xã hội.</p>
         </div>
         <figure><Image src="/images/pages/research/content/academic-leader.avif" alt="Nhà nghiên cứu tại Văn Lang" fill sizes="(max-width: 800px) 100vw, 42vw" /></figure>
       </section>
@@ -91,7 +91,7 @@ export function ResearchLanding() {
         <header data-reveal>
           <p>02 · ĐỊNH HƯỚNG</p>
           <h2>Mục tiêu nghiên cứu</h2>
-          <span>Nghiên cứu tại VGG hướng đến chất lượng học thuật, giá trị ứng dụng và khả năng kết nối cộng đồng tri thức trong nước lẫn quốc tế.</span>
+          <span>Nghiên cứu tại Viện Sau Đại học hướng đến chất lượng học thuật, giá trị ứng dụng và khả năng kết nối cộng đồng tri thức trong nước lẫn quốc tế.</span>
         </header>
         <div>
           {goals.map((goal) => (
@@ -108,7 +108,7 @@ export function ResearchLanding() {
         <header data-reveal>
           <p>03 · RESEARCH AREAS</p>
           <h2>Lĩnh vực nghiên cứu trọng tâm</h2>
-          <span>Cộng đồng VGG tiếp cận các vấn đề từ nhiều lĩnh vực để tạo ra góc nhìn liên ngành và những kết quả có giá trị cho xã hội.</span>
+          <span>Cộng đồng Viện Sau Đại học tiếp cận các vấn đề từ nhiều lĩnh vực để tạo ra góc nhìn liên ngành và những kết quả có giá trị cho xã hội.</span>
         </header>
         <div className={styles.fieldGrid}>
           {fields.map((field, index) => (
@@ -155,7 +155,7 @@ export function ResearchLanding() {
         <div className={styles.partnerLead} data-reveal>
           <p>06 · HỢP TÁC</p>
           <h2>Các đối tác nghiên cứu</h2>
-          <span>VGG mở rộng quan hệ hợp tác để kết nối nguồn lực học thuật, kinh nghiệm thực tiễn và cơ hội chuyển giao tri thức.</span>
+          <span>Viện Sau Đại học mở rộng quan hệ hợp tác để kết nối nguồn lực học thuật, kinh nghiệm thực tiễn và cơ hội chuyển giao tri thức.</span>
         </div>
         <div className={styles.partnerCards}>
           <article>
@@ -172,7 +172,7 @@ export function ResearchLanding() {
       <section className={styles.industryNetwork} aria-labelledby="industry-network-title">
         <div className={styles.industryRedRail} aria-hidden="true" />
         <figure className={styles.industryPhoto} data-reveal>
-          <Image src="/images/pages/research/content/graduates.jpg" alt="Người học VGG kết nối với chuyên gia và doanh nghiệp" fill sizes="(max-width: 800px) 100vw, 34vw" />
+          <Image src="/images/pages/research/content/graduates.jpg" alt="Người học Viện Sau Đại học kết nối với chuyên gia và doanh nghiệp" fill sizes="(max-width: 800px) 100vw, 34vw" />
           <figcaption>Chương trình đào tạo<br />đảm bảo tính thực tiễn cao</figcaption>
         </figure>
         <div className={styles.industryContent} data-reveal>
@@ -187,7 +187,7 @@ export function ResearchLanding() {
           <figure className={styles.partnerLogoBoard}>
             <Image
               src="/images/pages/research/content/partner-logos.png"
-              alt="Logo các đối tác doanh nghiệp thuộc nhiều lĩnh vực của VGG"
+              alt="Logo các đối tác doanh nghiệp thuộc nhiều lĩnh vực của Viện Sau Đại học"
               width={832}
               height={800}
               sizes="(max-width: 900px) 100vw, 56vw"
@@ -203,5 +203,5 @@ export function ResearchLanding() {
 }
 
 export function ResearchGateway({ activeHref = "/research" }: { activeHref?: string }) {
-  return <section className={styles.admissionGateway} aria-labelledby="research-admission-title"><div className={styles.admissionScene}><Image src="/images/pages/research/content/campus.jpg" alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang" fill sizes="100vw" /><div className={styles.admissionCard} data-reveal><h2>Khám phá thêm</h2><p>Tìm hiểu các cụm nghiên cứu, dự án, công bố khoa học và hoạt động đổi mới để kết nối sâu hơn với hệ sinh thái nghiên cứu của VGG.</p><div><Link href="/research/cum-nghien-cuu">Các cụm nghiên cứu</Link><Link href="/research/du-an">Dự án nghiên cứu</Link></div></div></div><div className={styles.admissionNav}><h2 id="research-admission-title">Nghiên cứu &amp; Đổi mới</h2><nav aria-label="Điều hướng Nghiên cứu và Đổi mới">{researchLinks.map((item) => <Link className={item.href === activeHref ? styles.activeAdmissionLink : undefined} href={item.href} key={item.href}>{item.label}</Link>)}</nav></div></section>;
+  return <section className={styles.admissionGateway} aria-labelledby="research-admission-title"><div className={styles.admissionScene}><Image src="/images/pages/research/content/campus.jpg" alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang" fill sizes="100vw" /><div className={styles.admissionCard} data-reveal><h2>Khám phá thêm</h2><p>Tìm hiểu các cụm nghiên cứu, dự án, công bố khoa học và hoạt động đổi mới để kết nối sâu hơn với hệ sinh thái nghiên cứu của Viện Sau Đại học.</p><div><Link href="/research/cum-nghien-cuu">Các cụm nghiên cứu</Link><Link href="/research/du-an">Dự án nghiên cứu</Link></div></div></div><div className={styles.admissionNav}><h2 id="research-admission-title">Nghiên cứu &amp; Đổi mới</h2><nav aria-label="Điều hướng Nghiên cứu và Đổi mới">{researchLinks.map((item) => <Link className={item.href === activeHref ? styles.activeAdmissionLink : undefined} href={item.href} key={item.href}>{item.label}</Link>)}</nav></div></section>;
 }
