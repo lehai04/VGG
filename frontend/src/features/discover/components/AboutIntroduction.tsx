@@ -67,7 +67,7 @@ export function AboutIntroduction() {
             <Image src="/images/pages/discover/content/campus.jpg" alt="Không gian học tập tại Văn Lang" fill sizes="(max-width: 900px) 90vw, 44vw" />
           </figure>
           <figure className={styles.studentFrame}>
-            <Image src="/images/pages/discover/content/graduates.jpg" alt="Học viên tốt nghiệp tại Văn Lang" fill sizes="(max-width: 900px) 48vw, 18vw" />
+            <Image src="/images/pages/discover/content/1.jpg" alt="Học viên tốt nghiệp tại Văn Lang" fill sizes="(max-width: 900px) 48vw, 18vw" />
           </figure>
         </div>
       </section>
@@ -96,7 +96,7 @@ export function AboutIntroduction() {
             ))}
           </ol>
           <figure data-reveal>
-            <Image src="/images/pages/discover/content/graduates.jpg" alt="Học viên Văn Lang trong ngày tốt nghiệp" fill sizes="(max-width: 900px) 90vw, 40vw" />
+            <Image src="/images/pages/discover/content/1.jpg" alt="Học viên Văn Lang trong ngày tốt nghiệp" fill sizes="(max-width: 900px) 90vw, 40vw" />
           </figure>
         </div>
       </section>
@@ -109,7 +109,7 @@ export function AboutIntroduction() {
           <blockquote>Tri thức trở nên có giá trị khi được chuyển hóa thành năng lực hành động.</blockquote>
         </div>
         <figure data-reveal>
-          <Image src="/images/pages/discover/content/graduates.jpg" alt="Niềm vui của học viên sau đại học" fill sizes="(max-width: 900px) 100vw, 46vw" />
+          <Image src="/images/pages/discover/content/1.jpg" alt="Niềm vui của học viên sau đại học" fill sizes="(max-width: 900px) 100vw, 46vw" />
         </figure>
       </section>
 

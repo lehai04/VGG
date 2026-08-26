@@ -16,7 +16,7 @@ interface PageData {
   sections: readonly (readonly [string, string])[];
 }
 
-const MEDIA = ["/images/pages/discover/content/graduates.jpg", "/images/pages/discover/content/campus.jpg"];
+const MEDIA = ["/images/pages/discover/content/1.jpg", "/images/pages/discover/content/campus.jpg"];
 
 const RANKINGS = [
   {
@@ -147,7 +147,7 @@ function RankingsContent() {
       <section className={styles.learnerImpact} aria-labelledby="learner-impact-heading">
         <div className={styles.learnerImpactMedia} data-reveal>
           <Image
-            src="/images/pages/discover/content/graduates.jpg"
+            src="/images/pages/discover/content/1.jpg"
             alt="Cộng đồng người học sau đại học Văn Lang"
             fill
             sizes="(max-width: 767px) 100vw, 43vw"

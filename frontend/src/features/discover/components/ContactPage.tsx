@@ -71,7 +71,7 @@ export function ContactPage() {
 
       <section className={styles.visitSection} aria-labelledby="visit-title">
         <figure className={styles.visitMedia} data-reveal>
-          <Image src="/images/pages/discover/content/graduates.jpg" alt="Đội ngũ Viện Sau Đại học hỗ trợ người học" fill sizes="(max-width: 900px) 100vw, 52vw" />
+          <Image src="/images/pages/discover/content/1.jpg" alt="Đội ngũ Viện Sau Đại học hỗ trợ người học" fill sizes="(max-width: 900px) 100vw, 52vw" />
         </figure>
         <div className={styles.visitCopy} data-reveal>
           <p className={styles.eyebrow}>02 / LÀM VIỆC TRỰC TIẾP</p>
