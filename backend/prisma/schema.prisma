@@ -46,6 +46,21 @@ enum ContentStatus {
   ARCHIVED
 }
 
+enum ResourceType {
+  DIRECTIVE_DOCUMENT
+  EXECUTION_DOCUMENT
+  BROCHURE
+  PDF_DOCUMENT
+}
+
+enum ResourceDocumentType {
+  REGULATION
+  RULE
+  PROCESS
+  NOTICE
+  GUIDELINE
+}
+
 model Admin {
   id                  String                @id @default(cuid())
   username            String                @unique @db.VarChar(50)
@@ -92,6 +107,7 @@ model NewsPost {
   coverImage  String?       @map("cover_image") @db.VarChar(1000)
   status      ContentStatus @default(DRAFT)
   publishedAt DateTime?     @map("published_at")
+  authorName  String?       @map("author_name") @db.VarChar(120)
   authorId    String        @map("author_id")
   author      Admin         @relation(fields: [authorId], references: [id])
   createdAt   DateTime      @default(now()) @map("created_at")
@@ -103,23 +119,42 @@ model NewsPost {
 }
 
 model ResourceFile {
-  id          String        @id @default(cuid())
-  slug        String        @unique @db.VarChar(190)
-  locale      String        @default("vi") @db.VarChar(5)
-  title       String        @db.VarChar(250)
-  description String?
-  category    String?       @db.VarChar(120)
-  fileUrl     String        @map("file_url") @db.VarChar(1000)
-  fileName    String?       @map("file_name") @db.VarChar(255)
-  status      ContentStatus @default(DRAFT)
-  publishedAt DateTime?     @map("published_at")
-  authorId    String        @map("author_id")
-  author      Admin         @relation(fields: [authorId], references: [id])
-  createdAt   DateTime      @default(now()) @map("created_at")
-  updatedAt   DateTime      @updatedAt @map("updated_at")
+  id                   String                @id @default(cuid())
+  slug                 String                @unique @db.VarChar(190)
+  locale               String                @default("vi") @db.VarChar(5)
+  title                String                @db.VarChar(250)
+  description          String?
+  categoryId           String                @map("category_id")
+  category             ResourceCategory      @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  resourceType         ResourceType           @map("resource_type")
+  documentType         ResourceDocumentType?  @map("document_type")
+  documentNumber       String?                @map("document_number") @db.VarChar(100)
+  issueDate            DateTime?              @map("issue_date") @db.Date
+  issuingOrganization  String?                @map("issuing_organization") @db.VarChar(250)
+  fileUrl              String                 @map("file_url") @db.VarChar(1000)
+  fileName             String                 @map("file_name") @db.VarChar(255)
+  fileType             String                 @map("file_type") @db.VarChar(120)
+  fileSize             Int                    @map("file_size")
+  status               ContentStatus          @default(PUBLISHED)
+  publishedAt          DateTime?               @map("published_at")
+  authorId             String                 @map("author_id")
+  author               Admin                  @relation(fields: [authorId], references: [id])
+  createdAt            DateTime                @default(now()) @map("created_at")
+  updatedAt            DateTime                @updatedAt @map("updated_at")
 
   @@index([status, publishedAt])
+  @@index([categoryId, resourceType])
   @@map("resource_files")
+}
+
+model ResourceCategory {
+  id        String         @id @default(cuid())
+  name      String         @unique @db.VarChar(120)
+  resources ResourceFile[]
+  createdAt DateTime       @default(now()) @map("created_at")
+  updatedAt DateTime       @updatedAt @map("updated_at")
+
+  @@map("resource_categories")
 }
 
 model SiteContent {

@@ -12,3 +12,4 @@ admin/generated/
 backend/generated/
 backend/src/generated/
 backend/dist/
+frontend/public/uploads/

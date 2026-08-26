@@ -6,9 +6,9 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-vgg}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-vgg_local_password}
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
-      - vgg_postgres_data:/var/lib/postgresql/data
+      - vgg_postgres_data_2026:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-vgg} -d ${POSTGRES_DB:-vgg}"]
       interval: 5s
@@ -41,7 +41,6 @@ services:
       - vgg_minio_data:/data
 
 volumes:
-  vgg_postgres_data:
+  vgg_postgres_data_2026:
   vgg_redis_data:
   vgg_minio_data:
-

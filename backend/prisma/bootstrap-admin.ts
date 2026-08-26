@@ -18,9 +18,6 @@ const permissions = [
 ] as const;
 
 async function main() {
-  const username = z.string().trim().min(3).max(50).regex(/^[a-zA-Z0-9._-]+$/).transform((value) => value.toLowerCase()).parse(process.env.INITIAL_ADMIN_USERNAME);
-  const password = z.string().min(10).regex(/[A-Z]/).regex(/[a-z]/).regex(/[0-9]/).regex(/[^A-Za-z0-9]/).parse(process.env.INITIAL_ADMIN_PASSWORD);
-  const fullName = z.string().trim().min(2).max(120).parse(process.env.INITIAL_ADMIN_NAME);
   const roleSeeds = [{ code: "SUPER_ADMIN", name: "QTV Bậc 1 – Super Admin", level: 1 }, { code: "ADMIN_LEVEL_2", name: "QTV Bậc 2", level: 2 }, { code: "ADMIN_LEVEL_3", name: "QTV Bậc 3", level: 3 }];
   const roles = await Promise.all(roleSeeds.map((role) => prisma.role.upsert({ where: { code: role.code }, update: role, create: role })));
   const permissionRows = await Promise.all(permissions.map((code) => prisma.permission.upsert({ where: { code }, update: {}, create: { code, description: `Quyền ${code}` } })));
@@ -28,6 +25,9 @@ async function main() {
   await prisma.rolePermission.createMany({ data: permissionRows.map((permission) => ({ roleId: superRole.id, permissionId: permission.id })), skipDuplicates: true });
   const existing = await prisma.admin.findFirst({ where: { role: { code: "SUPER_ADMIN" } } });
   if (existing) return console.log(`Đã có Super Admin (${existing.username}); không tạo thêm.`);
+  const username = z.string().trim().min(3).max(50).regex(/^[a-zA-Z0-9._-]+$/).transform((value) => value.toLowerCase()).parse(process.env.INITIAL_ADMIN_USERNAME);
+  const password = z.string().min(10).regex(/[A-Z]/).regex(/[a-z]/).regex(/[0-9]/).regex(/[^A-Za-z0-9]/).parse(process.env.INITIAL_ADMIN_PASSWORD);
+  const fullName = z.string().trim().min(2).max(120).parse(process.env.INITIAL_ADMIN_NAME);
   const passwordHash = await argon2.hash(password, { type: argon2.argon2id, memoryCost: 65536, timeCost: 3, parallelism: 1 });
   await prisma.admin.create({ data: { username, passwordHash, fullName, email: process.env.INITIAL_ADMIN_EMAIL?.trim() || null, roleId: superRole.id, mustChangePassword: true } });
   console.log(`Đã tạo Super Admin đầu tiên: ${username}.`);

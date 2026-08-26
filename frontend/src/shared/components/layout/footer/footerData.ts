@@ -44,7 +44,7 @@ export const socialLinks = [
 export const locations = [
   {
     name: "Cơ sở chính",
-    address: "69/68 Đặng Thùy Trâm, Phường 13, Quận Bình Thạnh, TP. Hồ Chí Minh",
+    address: "69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
     mapUrl:
       "https://www.google.com/maps?q=69%2F68%20Dang%20Thuy%20Tram%2C%20Ho%20Chi%20Minh%20City",
   },

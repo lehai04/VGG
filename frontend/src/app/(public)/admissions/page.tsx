@@ -121,7 +121,6 @@ export default function AdmissionsPage() {
 
       <section className={styles.profile} aria-labelledby="profile-title">
         <header data-reveal>
-          <p className={styles.eyebrow}>Viện Sau Đại học GRADUATE PROFILE</p>
           <h2 id="profile-title">Một cộng đồng học thuật dành cho bước tiến mới.</h2>
         </header>
         <div className={styles.stats}>

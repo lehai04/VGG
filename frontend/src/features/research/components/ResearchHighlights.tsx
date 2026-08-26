@@ -13,6 +13,12 @@ const fallback: ResearchPost[] = [
   { id: "publication-3", slug: "https://www.vlu.edu.vn/publications/cac-yeu-to-anh-huong-den-chat-luong-cam-nhan-dich-vu-dao-tao-cua-sinh-vien-truong-dai-hoc-van-lang", title: "Các yếu tố ảnh hưởng đến chất lượng cảm nhận dịch vụ đào tạo của sinh viên trường Đại học Văn Lang", excerpt: "Tại Trường Đại học Văn Lang, chúng tôi hướng tới mang đến những nghiên cứu khoa học mang tính...", coverImage: null, category: "RESEARCH_PUBLICATION" },
 ];
 
+const publicationLinks = [
+  "https://www.vlu.edu.vn/publications/nhung-nhan-to-tac-dong-den-xu-huong-hanh-vi-cua-cong-chung-trong-boi-canh-khung-hoang-truyen-thong",
+  "https://www.vlu.edu.vn/publications/danh-gia-chat-luong-va-ung-dung-cong-nghe-dat-ngap-nuoc-voi-su-tham-gia-cua-co-nang-eleocharis-dulcis-de-xu-ly-nuoc-thai-nuoi-tom",
+  "https://www.vlu.edu.vn/publications/cac-yeu-to-anh-huong-den-chat-luong-cam-nhan-dich-vu-dao-tao-cua-sinh-vien-truong-dai-hoc-van-lang",
+] as const;
+
 async function getResearchPosts() {
   const backend = process.env.BACKEND_INTERNAL_URL;
   if (!backend) return fallback;
@@ -38,7 +44,7 @@ export async function ResearchHighlights() {
       <div className={styles.projectGrid}>{projects.map((post) => <article key={post.id} className={styles.projectCard}><div className={styles.projectImage} style={{ backgroundImage: `url("${post.coverImage || "/images/pages/research/content/campus.jpg"}")` }} /><h3><Link href={`/news/${post.slug}`}>{post.title}</Link></h3>{post.excerpt && <p>{post.excerpt}</p>}</article>)}</div>
       <div className={styles.publicationBlock}>
         <div className={styles.publicationHead}><h3>Công bố khoa học</h3><Link href="https://www.vlu.edu.vn/research/publications/search">Xem tất cả công bố <ArrowUpRight /></Link></div>
-        <div className={styles.projectGrid}>{publications.map((post) => <article key={post.id} className={styles.projectCard}><div className={styles.projectImage} style={{ backgroundImage: `url("${post.coverImage || "/images/pages/research/content/campus.jpg"}")` }} /><h3><Link href={`/news/${post.slug}`}>{post.title}</Link></h3>{post.excerpt && <p>{post.excerpt}</p>}</article>)}</div>
+        <div className={styles.projectGrid}>{publications.map((post, index) => <article key={post.id} className={styles.projectCard}><div className={styles.projectImage} style={{ backgroundImage: `url("${post.coverImage || "/images/pages/research/content/campus.jpg"}")` }} /><h3><Link href={publicationLinks[index]}>{post.title}</Link></h3>{post.excerpt && <p>{post.excerpt}</p>}</article>)}</div>
       </div>
     </section>
   );

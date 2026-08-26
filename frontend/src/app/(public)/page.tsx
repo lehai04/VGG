@@ -8,6 +8,7 @@ import {
   Footer,
   Header,
   Hero,
+  News,
   ProgrammeCatalog,
   Programmes,
   Research,
@@ -30,6 +31,8 @@ export default function Home() {
       <ProgrammeCatalog />
       <Admissions />
       <StudentSuccess />
+      {/* Năm bài viết đã xuất bản gần nhất từ CMS */}
+      <News />
       {/* Form POST tới /api/consultations */}
       <ResourcesConsultation />
       <Footer />

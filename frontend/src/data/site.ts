@@ -126,7 +126,7 @@ export const menuGroups: readonly MenuGroup[] = [
   {
     slug: "research",
     en: "Research & Global Opportunities",
-    vi: "Nghiên cứu khoa học & Cơ hội quốc tế",
+    vi: "Nghiên cứu khoa học & Hợp tác quốc tế",
     kicker: "Knowledge for real-world impact",
     headline: "Nghiên cứu chuyên sâu. Kết nối tri thức toàn cầu.",
     intro:
@@ -165,7 +165,7 @@ export const menuGroups: readonly MenuGroup[] = [
   {
     slug: "global",
     en: "Global Opportunities",
-    vi: "Cơ hội quốc tế",
+    vi: "Hợp tác quốc tế",
     kicker: "Learn beyond borders",
     headline: "Thế giới là một phần của hành trình học tập.",
     intro:
@@ -231,7 +231,7 @@ export const menuGroups: readonly MenuGroup[] = [
     ],
     itemsEn: ["News", "Events", "Seminars / Webinars", "Press Releases", "Photo Gallery", "Video"],
     image:
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1800&q=86",
+      "/images/pages/news/content/banner.jpg",
   },
   {
     slug: "resources",
@@ -243,7 +243,7 @@ export const menuGroups: readonly MenuGroup[] = [
     items: ["Biểu mẫu", "Chính sách & Quy định", "Tài liệu tải về", "Lịch học thuật", "FAQ"],
     itemsEn: ["Forms", "Policies & Regulations", "Downloads", "Academic Calendar", "FAQ"],
     image:
-      "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1800&q=86",
+      "/images/pages/resources/content/banner.jpg",
   },
 ];
 
@@ -274,7 +274,7 @@ export function findGroup(slug: string): MenuGroup | undefined {
   return menuGroups.find((group) => group.slug === slug);
 }
 
-/** Navigation chính: Cơ hội quốc tế đã được gộp vào nhóm Nghiên cứu. */
+/** Navigation chính: Hợp tác quốc tế đã được gộp vào nhóm Nghiên cứu. */
 export const navigationGroups = menuGroups.filter((group) => group.slug !== "global");
 
 export type SectionSubpage = {

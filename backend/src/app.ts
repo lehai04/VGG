@@ -10,7 +10,7 @@ import { consultationRoutes } from "./modules/consultations/consultations.routes
 import { cmsRoutes } from "./modules/cms/cms.routes.js";
 
 export async function buildApp() {
-  const app = Fastify({ logger: true, trustProxy: true, bodyLimit: 1_000_000 });
+  const app = Fastify({ logger: true, trustProxy: true, bodyLimit: 1_000_000, maxParamLength: 300 });
   await app.register(helmet);
   await app.register(cookie);
   await app.register(cors, { origin: [env.PUBLIC_APP_URL, env.ADMIN_APP_URL], credentials: true, methods: ["GET", "POST", "PUT", "PATCH", "DELETE"] });

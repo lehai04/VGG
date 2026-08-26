@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/db7pslxk7/image/upload/**",
+      },
     ],
   },
   async headers() {

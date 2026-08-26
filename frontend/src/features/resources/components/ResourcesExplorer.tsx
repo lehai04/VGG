@@ -1,0 +1,25 @@
+"use client";
+import { useMemo, useState } from "react";
+import { Building2, CalendarDays, Download, Eye, FileText, Search, X } from "lucide-react";
+import type { PublicResource } from "../data";
+import { documentTypeLabels, resourceTypeLabels } from "../data";
+import styles from "./ResourcesLanding.module.css";
+
+const formatDate=(value:string|null)=>value?new Date(value).toLocaleDateString("vi-VN"):"Đang cập nhật";
+const formatSize=(bytes:number)=>bytes>=1048576?`${(bytes/1048576).toFixed(1)} MB`:`${Math.max(1,Math.round(bytes/1024))} KB`;
+
+export function ResourcesExplorer({resources}:{resources:PublicResource[]}){
+  const [query,setQuery]=useState(""); const [category,setCategory]=useState("ALL"); const [type,setType]=useState("ALL"); const [preview,setPreview]=useState<PublicResource|null>(null);
+  const categories=useMemo(()=>Array.from(new Map(resources.map(item=>[item.category.id,item.category])).values()),[resources]);
+  const types=useMemo(()=>Array.from(new Set(resources.map(item=>item.resourceType))),[resources]);
+  const filtered=useMemo(()=>{const keyword=query.trim().toLocaleLowerCase("vi");return resources.filter(item=>{const haystack=[item.title,item.description,item.documentNumber,item.issuingOrganization,item.fileName].filter(Boolean).join(" ").toLocaleLowerCase("vi");return(!keyword||haystack.includes(keyword))&&(category==="ALL"||item.category.id===category)&&(type==="ALL"||item.resourceType===type);});},[resources,query,category,type]);
+  return <>
+    <section className={styles.explorer} aria-labelledby="resource-heading">
+      <header className={styles.intro}><div><p>THƯ VIỆN TÀI LIỆU</p><h2 id="resource-heading">Tra cứu tài nguyên</h2></div><span>Tài liệu được cập nhật trực tiếp từ hệ thống quản trị của Viện Sau Đại học.</span></header>
+      <div className={styles.filters}><label className={styles.search}><Search/><input value={query} onChange={e=>setQuery(e.target.value)} type="search" placeholder="Tìm theo tên, số văn bản hoặc đơn vị ban hành..."/><span className="sr-only">Tìm kiếm tài nguyên</span></label><select value={category} onChange={e=>setCategory(e.target.value)} aria-label="Lọc theo danh mục"><option value="ALL">Tất cả danh mục</option>{categories.map(item=><option value={item.id} key={item.id}>{item.name}</option>)}</select><select value={type} onChange={e=>setType(e.target.value)} aria-label="Lọc theo loại tài nguyên"><option value="ALL">Tất cả loại tài nguyên</option>{types.map(item=><option value={item} key={item}>{resourceTypeLabels[item]??item}</option>)}</select></div>
+      <div className={styles.resultBar}><b>{filtered.length} tài liệu</b><span>{query||category!=="ALL"||type!=="ALL"?"Kết quả phù hợp với bộ lọc":"Tài liệu mới cập nhật"}</span></div>
+      {filtered.length?<div className={styles.list}>{filtered.map(item=><article className={styles.card} key={item.id}><div className={styles.fileIcon}><FileText/><span>{item.fileType.split("/").pop()?.toUpperCase()||"FILE"}</span></div><div className={styles.cardBody}><div className={styles.badges}><span>{item.category.name}</span><i>{resourceTypeLabels[item.resourceType]??item.resourceType}</i>{item.documentType&&<i>{documentTypeLabels[item.documentType]??item.documentType}</i>}</div><h3>{item.title}</h3>{item.description&&<p>{item.description}</p>}<dl>{item.documentNumber&&<div><dt>Số văn bản</dt><dd>{item.documentNumber}</dd></div>}<div><CalendarDays/><dt>Ngày ban hành</dt><dd>{formatDate(item.issueDate)}</dd></div>{item.issuingOrganization&&<div><Building2/><dt>Đơn vị ban hành</dt><dd>{item.issuingOrganization}</dd></div>}<div><dt>Tệp</dt><dd>{item.fileName} · {formatSize(item.fileSize)}</dd></div></dl></div><div className={styles.actions}><button type="button" onClick={()=>setPreview(item)}><Eye/>Xem trước</button><a href={item.fileUrl} target="_blank" rel="noopener noreferrer" download><Download/>Tải xuống</a></div></article>)}</div>:<div className={styles.empty}><Search/><h3>Không tìm thấy tài liệu</h3><p>Hãy thử từ khóa hoặc bộ lọc khác.</p><button onClick={()=>{setQuery("");setCategory("ALL");setType("ALL");}}>Xóa bộ lọc</button></div>}
+    </section>
+    {preview&&<div className={styles.modalBackdrop} role="presentation" onMouseDown={()=>setPreview(null)}><section className={styles.modal} role="dialog" aria-modal="true" aria-label={`Xem trước ${preview.title}`} onMouseDown={e=>e.stopPropagation()}><header><div><span>XEM TRƯỚC TÀI LIỆU</span><h2>{preview.title}</h2></div><button onClick={()=>setPreview(null)} aria-label="Đóng"><X/></button></header><div className={styles.previewFrame}>{preview.fileType.includes("pdf")||preview.fileType.startsWith("image/")?<iframe src={preview.fileUrl} title={preview.title}/>:<div><FileText/><p>Trình duyệt không hỗ trợ xem trước định dạng này.</p><a href={preview.fileUrl} target="_blank" rel="noopener noreferrer">Mở hoặc tải tài liệu</a></div>}</div><footer><span>{preview.fileName} · {formatSize(preview.fileSize)}</span><a href={preview.fileUrl} target="_blank" rel="noopener noreferrer" download><Download/>Tải xuống</a></footer></section></div>}
+  </>;
+}

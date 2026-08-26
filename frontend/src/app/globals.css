@@ -3652,7 +3652,7 @@ textarea {
 .university-footer h2 {
   margin: 0 0 18px;
   color: #fff;
-  font-size: 19px;
+  font-size: 11px;
   font-weight: 700;
 }
 .university-footer ul {
@@ -3667,7 +3667,7 @@ textarea {
   align-items: center;
   gap: 9px;
   line-height: 1.35;
-  font-size: 16px;
+  font-size: 13px;
 }
 .university-footer li a:hover {
   transform: translateX(3px);
@@ -6650,6 +6650,7 @@ main:not(.subpage) .mega-menu {
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.055em;
+  text-align: center;
 }
 
 .programme-search-heading h2 em {

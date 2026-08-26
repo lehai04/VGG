@@ -6,6 +6,7 @@ import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import { ResearchHighlights } from "./ResearchHighlights";
+import { StrategicPartnersCarousel } from "./StrategicPartnersCarousel";
 import styles from "./ResearchLanding.module.css";
 
 const goals = [
@@ -15,44 +16,6 @@ const goals = [
 ] as const;
 
 const fields = ["Kinh doanh & Quản trị", "Công nghệ & Kỹ thuật", "Môi trường & Phát triển bền vững", "Du lịch & Dịch vụ", "Thiết kế & Truyền thông", "Khoa học xã hội & Nhân văn"] as const;
-
-const experts = [
-  {
-    name: "PGS.TS. Lê Thị Kim Oanh",
-    faculty: "Khoa Môi trường",
-    image: "/images/pages/discover/leadership/environment-transparent.png",
-  },
-  {
-    name: "PGS.TS. Phạm Thanh Phong",
-    faculty: "Viện Tiên tiến Khoa học và Công nghệ (STAI)",
-    image: "/images/pages/research/experts/pham-thanh-phong.png",
-  },
-  {
-    name: "ThS. Trần Công Minh",
-    faculty: "Viện Tiên tiến Khoa học và Công nghệ (STAI)",
-    image: "/images/pages/research/experts/tran-cong-minh.png",
-  },
-  {
-    name: "TS. Lê Thọ Huệ",
-    faculty: "Viện Tiên tiến Khoa học và Công nghệ (STAI)",
-    image: "/images/pages/research/experts/le-tho-hue.png",
-  },
-  {
-    name: "TS. Hirobumi Mineo",
-    faculty: "Viện Tiên tiến Khoa học và Công nghệ (STAI)",
-    image: "/images/pages/research/experts/hirobumi-mineo.png",
-  },
-  {
-    name: "TS. Eibun Senaha",
-    faculty: "Viện Tiên tiến Khoa học và Công nghệ (STAI)",
-    image: "/images/pages/research/experts/eibun-senaha.png",
-  },
-  {
-    name: "TS. Huỳnh Tấn Lợi",
-    faculty: "Khoa Môi trường",
-    image: "/images/pages/research/experts/huynh-tan-loi.png",
-  },
-] as const;
 
 const researchLinks = [
   { label: "Tổng quan", href: "/research" }, { label: "Các cụm nghiên cứu", href: "/research/cum-nghien-cuu" },
@@ -68,11 +31,11 @@ export function ResearchLanding() {
       <SiteHeader compact />
 
       <section className={styles.hero}>
-        <Image src="/images/pages/research/content/campus.jpg" alt="Không gian nghiên cứu tại Văn Lang" fill priority sizes="100vw" />
+        <Image src="/images/pages/research/content/banner.jpg" alt="Không gian nghiên cứu tại Văn Lang" fill priority sizes="100vw" />
         <div className={styles.heroShade} />
         <div className={styles.heroCopy} data-reveal>
           <p>RESEARCH &amp; GLOBAL OPPORTUNITIES · Viện Sau Đại học</p>
-          <h1>Nghiên cứu khoa học<br />&amp; Cơ hội quốc tế</h1>
+          <h1>Nghiên cứu khoa học<br />&amp; Hợp tác quốc tế</h1>
           <span>Viện Sau Đại học phát triển tri thức mới, giải pháp thực tiễn và kết nối người học với các chương trình, đối tác cùng trải nghiệm học thuật trên phạm vi toàn cầu.</span>
         </div>
         <a href="#overview" className={styles.heroDown} aria-label="Xem nội dung"><ArrowDown /></a>
@@ -124,49 +87,12 @@ export function ResearchLanding() {
 
       <ResearchHighlights />
 
-      <section className={styles.experts} id="experts">
-        <header data-reveal>
-          <div>
-            <h2>Các chuyên gia nghiên cứu tại VLU</h2>
-            <p>Tìm hiểu các chuyên gia nghiên cứu và dự án khoa học của Văn Lang.</p>
-          </div>
-          <Link href="https://www.vlu.edu.vn/research">Tìm hiểu thêm <ArrowUpRight /></Link>
+      <section className={styles.partners} aria-labelledby="strategic-partners-title">
+        <header className={styles.partnerLead} data-reveal>
+          <h2 id="strategic-partners-title">Các đối tác chiến lược</h2>
+          <p>Trường Đại học Văn Lang tự hào là đối tác của các đại học, viện nghiên cứu, doanh nghiệp và tập đoàn hàng đầu thế giới. Những mối quan hệ đối tác đa dạng trên nhiều lĩnh vực mở ra cơ hội để người học làm giàu kiến thức và tích lũy trải nghiệm toàn cầu.</p>
         </header>
-        <div>
-          {experts.map((expert) => (
-            <article key={expert.name} data-reveal>
-              <figure>
-                <Image
-                  src={expert.image}
-                  alt={`Chân dung ${expert.name}`}
-                  className={expert.image.includes("pham-thanh-phong") ? styles.expertImageCompact : undefined}
-                  fill
-                  sizes="(max-width: 700px) 100vw, 320px"
-                />
-              </figure>
-              <h3>{expert.name}</h3>
-              <p>{expert.faculty}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.partners}>
-        <div className={styles.partnerLead} data-reveal>
-          <p>06 · HỢP TÁC</p>
-          <h2>Các đối tác nghiên cứu</h2>
-          <span>Viện Sau Đại học mở rộng quan hệ hợp tác để kết nối nguồn lực học thuật, kinh nghiệm thực tiễn và cơ hội chuyển giao tri thức.</span>
-        </div>
-        <div className={styles.partnerCards}>
-          <article>
-            <h3>Đối tác học thuật</h3>
-            <p>Các trường đại học, viện nghiên cứu và cộng đồng chuyên gia cùng phát triển đề tài, hội thảo và hoạt động trao đổi học thuật.</p>
-          </article>
-          <article>
-            <h3>Đối tác doanh nghiệp</h3>
-            <p>Doanh nghiệp đồng hành trong việc xác định vấn đề thực tiễn, hỗ trợ dự án và đưa các kết quả có tiềm năng đến gần hơn với ứng dụng.</p>
-          </article>
-        </div>
+        <StrategicPartnersCarousel />
       </section>
 
       <section className={styles.industryNetwork} aria-labelledby="industry-network-title">
