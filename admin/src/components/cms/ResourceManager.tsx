@@ -762,7 +762,12 @@ export function ResourceManager({
                   setDragging(true);
                 }}
                 onDragLeave={(event) => {
-                  if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setDragging(false);
+                  if (
+                    !event.currentTarget.contains(
+                      event.relatedTarget as Node | null,
+                    )
+                  )
+                    setDragging(false);
                 }}
                 onDrop={dropFile}
               >
@@ -798,7 +803,7 @@ export function ResourceManager({
                       {pdfOnly
                         ? "Chỉ hỗ trợ PDF"
                         : "PDF, DOC, DOCX, XLS, XLSX, JPG, JPEG, PNG"}{" "}
-                      · tối đa 50 MB
+                      · tối đa 10 MB
                     </small>
                   </div>
                 )}

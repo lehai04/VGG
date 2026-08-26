@@ -4,11 +4,27 @@ import { getNewsPosts, newsCategories } from "@/features/news/data";
 
 // PAGE DÙNG TEMPLATE CHUNG: nội dung route lấy từ data/site.ts.
 export const metadata = sectionMetadata("news");
-export default async function NewsPage({ searchParams }: { searchParams: Promise<{ category?: string; q?: string }> }) {
+export default async function NewsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string; q?: string }>;
+}) {
   const filters = await searchParams;
   const requestedCategory = filters.category;
-  const activeCategory = newsCategories.some((item) => item.value === requestedCategory) ? requestedCategory : undefined;
+  const activeCategory = newsCategories.some((item) => item.value === requestedCategory)
+    ? requestedCategory
+    : undefined;
   const query = filters.q?.trim().slice(0, 100) || undefined;
-  const posts = await getNewsPosts({ category: activeCategory, q: query });
-  return <NewsLanding posts={posts} activeCategory={activeCategory} query={query} />;
+  const [posts, newestPosts] = await Promise.all([
+    getNewsPosts({ category: activeCategory, q: query }),
+    getNewsPosts({ limit: 1 }),
+  ]);
+  return (
+    <NewsLanding
+      posts={posts}
+      newestPostId={newestPosts[0]?.id}
+      activeCategory={activeCategory}
+      query={query}
+    />
+  );
 }
