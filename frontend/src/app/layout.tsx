@@ -15,7 +15,6 @@ import { defaultLocale, isLocale } from "@/lib/i18n";
 import { VisitTracker } from "@/shared/analytics/components/VisitTracker";
 
 const inter = localFont({ src: "./fonts/Inter-Variable.ttf", weight: "400 700", display: "swap", variable: "--font-inter" });
-const lora = localFont({ src: "./fonts/Lora-Variable.ttf", weight: "500 700", display: "swap", variable: "--font-lora" });
 
 // Metadata nền tảng được mọi route kế thừa; từng page chỉ cần ghi đè title/description riêng.
 const baseMetadata: Metadata = {
@@ -74,7 +73,7 @@ export default async function RootLayout({
   return (
     // Trình duyệt/extension có thể chèn thuộc tính vào html hoặc body trước hydration.
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} ${lora.variable} antialiased`} suppressHydrationWarning>
+      <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
         <VisitTracker />
         <a className="skip-link" href="#main-content">
           Bỏ qua điều hướng

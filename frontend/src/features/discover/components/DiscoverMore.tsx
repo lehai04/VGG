@@ -10,11 +10,11 @@ export function DiscoverMore({ activeSlug = "gioi-thieu" }: { activeSlug?: strin
   const { locale, messages } = useLocale();
   return <section className="discover-editorial-more">
     <div className="discover-editorial-more-scene">
-      <Image src="/images/hero/campus-hero.jpg" alt="Khuôn viên Văn Lang nhìn qua kiến trúc hiện đại" fill sizes="100vw" />
+      <Image src="/images/pages/discover/content/campus.jpg" alt="Khuôn viên Văn Lang nhìn qua kiến trúc hiện đại" fill sizes="100vw" />
       <div className="discover-editorial-more-card">
         <h2>{messages.common.discoverMore}</h2>
         <p>{locale === "en" ? "VGG builds on Van Lang University's spirit of innovation, connecting education, research, and practice to prepare learners to lead and contribute to their communities." : "VGG phát triển từ tinh thần đổi mới của Trường Đại học Văn Lang, kết nối giáo dục, nghiên cứu và thực tiễn để chuẩn bị cho người học năng lực dẫn dắt và đóng góp cho cộng đồng."}</p>
-        <div><Link href="/discover/lanh-dao">{locale === "en" ? "VGG Leadership" : "Lãnh đạo VGG"}</Link><Link href="/discover/gioi-thieu">{locale === "en" ? "Our story" : "Câu chuyện của chúng tôi"}</Link></div>
+        <div><Link href="/discover/lanh-dao">{locale === "en" ? "VGG Leadership" : "Lãnh đạo VGG"}</Link><Link href="/discover">{locale === "en" ? "Introduction" : "Giới thiệu"}</Link></div>
       </div>
     </div>
     <div className="discover-editorial-more-nav">

@@ -15,7 +15,7 @@ export function AdmissionsMore({ activeIndex = -1 }: { activeIndex?: number }) {
     <section className="discover-editorial-more" aria-labelledby="admissions-more-title">
       <div className="discover-editorial-more-scene">
         <Image
-          src="/images/hero/campus-hero.jpg"
+          src="/images/pages/admissions/content/campus.jpg"
           alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang"
           fill
           sizes="100vw"

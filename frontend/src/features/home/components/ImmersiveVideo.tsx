@@ -2,16 +2,16 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const VIDEO_ID = "M-d6m_ATQEU";
+const VIDEO_SRC = "/video/video-banner.webm";
 
 /** Video giới thiệu tự phát khi đi vào viewport và tạm dừng khi người dùng cuộn qua. */
 export function ImmersiveVideo() {
-  // Chỉ tạo iframe khi video xuất hiện lần đầu để giảm tài nguyên tải ban đầu.
+  // Chỉ tải file video lớn khi section xuất hiện lần đầu.
   const [hasLoaded, setHasLoaded] = useState(false);
-  // Trạng thái mong muốn; trình phát YouTube được điều khiển qua postMessage bên dưới.
   const [shouldPlay, setShouldPlay] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const stage = stageRef.current;
@@ -31,31 +31,47 @@ export function ImmersiveVideo() {
     return () => observer.disconnect();
   }, []);
 
-  // Gửi lệnh theo chuẩn YouTube IFrame Player API mà không cần tải thêm SDK ngoài.
-  const controlVideo = (play: boolean) => {
-    const player = iframeRef.current?.contentWindow;
-    if (!player) return;
-
-    const command = (func: string, args: unknown[] = []) =>
-      player.postMessage(JSON.stringify({ event: "command", func, args }), "*");
-
-    if (play) {
-      // Autoplay nền phải luôn tắt tiếng để không bị trình duyệt chặn.
-      command("mute");
-      command("playVideo");
-    } else {
-      command("pauseVideo");
-    }
-  };
-
   useEffect(() => {
     if (!hasLoaded) return;
 
-    controlVideo(shouldPlay);
-    // Gửi lại sau 500 ms để xử lý trường hợp iframe vừa tải nhưng player chưa sẵn sàng.
-    const retry = window.setTimeout(() => controlVideo(shouldPlay), 500);
-    return () => window.clearTimeout(retry);
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (!shouldPlay) {
+      video.pause();
+      return;
+    }
+
+    // Ưu tiên phát có tiếng khi section đi vào viewport. Nếu chính sách autoplay
+    // của trình duyệt chặn, vẫn phát hình ở chế độ tắt tiếng và mở tiếng ngay sau
+    // tương tác đầu tiên của người dùng.
+    video.muted = false;
+    setIsMuted(false);
+    void video.play().catch(() => {
+      video.muted = true;
+      setIsMuted(true);
+      void video.play();
+    });
   }, [hasLoaded, shouldPlay]);
+
+  useEffect(() => {
+    if (!shouldPlay) return;
+
+    const enableSound = () => {
+      const video = videoRef.current;
+      if (!video) return;
+      video.muted = false;
+      setIsMuted(false);
+      void video.play();
+    };
+
+    window.addEventListener("pointerdown", enableSound, { once: true });
+    window.addEventListener("keydown", enableSound, { once: true });
+    return () => {
+      window.removeEventListener("pointerdown", enableSound);
+      window.removeEventListener("keydown", enableSound);
+    };
+  }, [shouldPlay]);
 
   return (
     <div
@@ -65,20 +81,9 @@ export function ImmersiveVideo() {
     >
       <div className={shouldPlay ? "immersiveVideo isPlaying" : "immersiveVideo"}>
         {hasLoaded ? (
-          <iframe
-            ref={iframeRef}
-            src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&disablekb=1&fs=0&iv_load_policy=3&playsinline=1&rel=0&enablejsapi=1`}
-            title="Video giới thiệu VGG"
-            allow="autoplay; encrypted-media"
-            onLoad={() => controlVideo(shouldPlay)}
-          />
+          <video ref={videoRef} src={VIDEO_SRC} loop playsInline preload="auto" />
         ) : (
-          <div
-            className="immersiveVideoPoster"
-            style={{
-              backgroundImage: `url("https://i.ytimg.com/vi/${VIDEO_ID}/maxresdefault.jpg")`,
-            }}
-          />
+          <div className="immersiveVideoPoster" />
         )}
 
         {!hasLoaded && (
@@ -111,6 +116,22 @@ export function ImmersiveVideo() {
         <div className="immersiveVideoMark" aria-hidden="true">
           VGG <span>／</span> 03:15
         </div>
+
+        {hasLoaded && shouldPlay && isMuted && (
+          <button
+            className="immersiveVideoSound"
+            type="button"
+            onClick={() => {
+              const video = videoRef.current;
+              if (!video) return;
+              video.muted = false;
+              setIsMuted(false);
+              void video.play();
+            }}
+          >
+            <span aria-hidden="true">🔊</span> Bật âm thanh
+          </button>
+        )}
       </div>
     </div>
   );

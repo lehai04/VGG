@@ -2,7 +2,7 @@ import Image from "next/image";
 import { EditorialAccordion } from "./EditorialAccordion";
 
 // Ảnh đại diện cho khu vực Nghiên cứu & Đổi mới.
-const RESEARCH_IMAGE_SRC = "/images/hero/campus-hero.jpg";
+const RESEARCH_IMAGE_SRC = "/images/pages/home/sections/campus.jpg";
 
 // Danh sách các hướng nghiên cứu nổi bật.
 const RESEARCH_LINKS = [

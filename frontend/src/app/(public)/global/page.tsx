@@ -1,7 +1,6 @@
-import { SectionLanding, sectionMetadata } from "@/features/content/components/SectionPages";
+import { redirect } from "next/navigation";
 
-// PAGE DÙNG TEMPLATE CHUNG: nội dung route lấy từ data/site.ts.
-export const metadata = sectionMetadata("global");
+/** Route cũ được giữ để chuyển người dùng tới phần Cơ hội quốc tế trong trang gộp. */
 export default function GlobalPage() {
-  return <SectionLanding section="global" />;
+  redirect("/research#trao-doi");
 }

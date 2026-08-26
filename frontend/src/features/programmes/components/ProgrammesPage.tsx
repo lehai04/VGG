@@ -44,7 +44,7 @@ export function ProgrammesLanding() {
       >
 
         <Image
-          src="/images/hero/campus-hero.jpg"
+          src="/images/pages/programmes/content/campus.jpg"
           alt="Khuôn viên Trường Đại học Văn Lang"
           fill
           priority
@@ -53,23 +53,18 @@ export function ProgrammesLanding() {
 
         <div className="programmes-hero-overlay" />
 
+        <nav className="programmes-breadcrumb" aria-label="Breadcrumb">
+          <Link href="/">Trang chủ</Link>
+          <span>/</span>
+          <strong>Chương trình đào tạo</strong>
+        </nav>
+
 
         <div className="programmes-hero-copy">
 
-          <p className="programmes-label">
-            PROGRAMMES · CHƯƠNG TRÌNH ĐÀO TẠO
-          </p>
-
           <h1 id="programmes-title">
-
-            Học để tiến xa.
-
-            <br />
-
-            <em>
-              Dẫn dắt tương lai.
-            </em>
-
+            <span>Học để tiến xa.</span>
+            <em>Dẫn dắt tương lai.</em>
           </h1>
 
           <p className="programmes-hero-lead">
@@ -80,32 +75,6 @@ export function ProgrammesLanding() {
             và lãnh đạo toàn cầu.
 
           </p>
-
-
-          <div className="programmes-hero-actions">
-
-            <a className="vgg-cta-pill" href="#programme-directory">
-
-              Khám phá chương trình
-
-              <span>
-                ↓
-              </span>
-
-            </a>
-
-
-            <Link className="vgg-cta-pill" href="/admissions">
-
-              Thông tin tuyển sinh
-
-              <span>
-                ↗
-              </span>
-
-            </Link>
-
-          </div>
 
         </div>
 
@@ -173,48 +142,6 @@ export function ProgrammesLanding() {
           =============================== */}
 
       <ProgrammeDirectory />
-
-
-      {/* ===============================
-          ADMISSIONS CTA
-          =============================== */}
-
-      <section className="programmes-admission">
-
-        <div>
-
-          <p>
-            ADMISSIONS 2026
-          </p>
-
-          <h2>
-            Sẵn sàng cho bước
-            tiến tiếp theo?
-          </h2>
-
-        </div>
-
-
-        <p>
-
-          Đội ngũ tư vấn VGG sẽ giúp bạn
-          lựa chọn chương trình và chuẩn bị
-          hồ sơ phù hợp với mục tiêu cá nhân.
-
-        </p>
-
-
-        <Link className="vgg-cta-pill" href="/admissions">
-
-          Khám phá tuyển sinh
-
-          <span>
-            ↗
-          </span>
-
-        </Link>
-
-      </section>
 
       <NextStepCTA />
 

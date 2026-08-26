@@ -7,7 +7,8 @@ import { fail, ok } from "../../shared/http/response.js";
 
 const status = z.enum(["DRAFT", "PUBLISHED", "ARCHIVED"]);
 const slug = z.string().trim().min(2).max(190).regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
-const newsInput = z.object({ slug, locale: z.enum(["vi", "en"]).default("vi"), title: z.string().trim().min(2).max(250), excerpt: z.string().max(1000).optional().nullable(), content: z.string().min(1), coverImage: z.string().url().max(1000).optional().nullable(), status: status.default("DRAFT") });
+const newsCategory = z.enum(["GENERAL", "RESEARCH_PROJECT", "RESEARCH_PUBLICATION"]);
+const newsInput = z.object({ slug, locale: z.enum(["vi", "en"]).default("vi"), category: newsCategory.default("GENERAL"), title: z.string().trim().min(2).max(250), excerpt: z.string().max(1000).optional().nullable(), content: z.string().min(1), coverImage: z.string().url().max(1000).optional().nullable(), status: status.default("DRAFT") });
 const resourceInput = z.object({ slug, locale: z.enum(["vi", "en"]).default("vi"), title: z.string().trim().min(2).max(250), description: z.string().max(2000).optional().nullable(), category: z.string().max(120).optional().nullable(), fileUrl: z.string().url().max(1000), fileName: z.string().max(255).optional().nullable(), status: status.default("DRAFT") });
 const siteInput = z.object({ key: z.string().trim().min(2).max(190), locale: z.enum(["vi", "en"]).default("vi"), section: z.string().trim().min(1).max(100), page: z.string().trim().min(1).max(190), title: z.string().max(250).optional().nullable(), value: z.record(z.string(), z.unknown()), published: z.boolean().default(false) });
 
@@ -19,7 +20,7 @@ async function guard(request: FastifyRequest, reply: FastifyReply, permission: s
 }
 
 export async function cmsRoutes(app: FastifyInstance) {
-  app.get("/api/public/news", async (_request, reply) => ok(reply, { posts: await prisma.newsPost.findMany({ where: { status: "PUBLISHED" }, orderBy: { publishedAt: "desc" } }) }));
+  app.get("/api/public/news", async (request, reply) => { const query = z.object({ category: newsCategory.optional(), locale: z.enum(["vi", "en"]).optional() }).parse(request.query); return ok(reply, { posts: await prisma.newsPost.findMany({ where: { status: "PUBLISHED", ...(query.category ? { category: query.category } : {}), ...(query.locale ? { locale: query.locale } : {}) }, orderBy: { publishedAt: "desc" } }) }); });
   app.get("/api/public/resources", async (_request, reply) => ok(reply, { resources: await prisma.resourceFile.findMany({ where: { status: "PUBLISHED" }, orderBy: { publishedAt: "desc" } }) }));
   app.get("/api/public/site-content", async (request, reply) => { const query = z.object({ locale: z.enum(["vi", "en"]).default("vi") }).parse(request.query); return ok(reply, { contents: await prisma.siteContent.findMany({ where: { locale: query.locale, published: true } }) }); });
   app.post("/api/public/visits", async (request, reply) => { const input = z.object({ path: z.string().max(500), locale: z.string().max(5).optional(), visitorId: z.string().max(100).optional() }).parse(request.body); await prisma.pageVisit.create({ data: input }); return reply.code(201).send({ success: true, data: {}, message: "" }); });

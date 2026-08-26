@@ -12,6 +12,7 @@ import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import { findResearchSubpage, researchSubpages } from "@/data/research";
+import { ResearchGateway } from "./ResearchLanding";
 import styles from "./ResearchSubpage.module.css";
 
 /** Labels tiếng Việt khớp với thứ tự researchSubpages */
@@ -147,6 +148,7 @@ export function ResearchSubpage({ slug }: { slug: string }) {
         </div>
       </section>
 
+      <ResearchGateway activeHref={`/research/${slug}`} />
       <NextStepCTA />
       <SiteFooter />
     </main>

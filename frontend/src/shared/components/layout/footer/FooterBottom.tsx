@@ -10,7 +10,7 @@ export function FooterBottom() {
   const labels = locale === "en" ? ["Terms", "Privacy Policy", "Sitemap"] : legalLinks.map((item) => item.label);
   return (
     <div className="university-footer-bottom">
-      <span>© 2024 Van Lang University. All rights reserved.</span>
+      <span>© 2026 Van Lang University. All rights reserved.</span>
       <nav aria-label="Liên kết pháp lý">
         {legalLinks.map((link,index) => (
           <Link href={link.href} key={link.label}>

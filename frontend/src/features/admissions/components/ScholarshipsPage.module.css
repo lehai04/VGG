@@ -1,0 +1,551 @@
+.page {
+  --red: #df1f35;
+  --deep-red: #ae1328;
+  --navy: #171d45;
+  --paper: #f5f2eb;
+  overflow: clip;
+  background: #fff;
+  color: var(--navy);
+}
+
+.hero {
+  min-height: clamp(650px, 86svh, 900px);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: #fff;
+  background: var(--navy);
+}
+
+.hero > img {
+  object-fit: cover;
+  object-position: center 48%;
+  animation: heroDrift 14s ease-in-out infinite alternate;
+}
+
+.heroShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(12, 17, 53, 0.94),
+    rgba(174, 19, 40, 0.69) 48%,
+    rgba(12, 17, 53, 0.12)
+  );
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 1;
+  padding: 180px var(--page-gutter) clamp(95px, 12vh, 135px);
+}
+
+.heroCopy > p,
+.sectionIndex,
+.scholarshipSection > header > p,
+.paymentCopy > p:first-child,
+.encouragement > header > p,
+.closing p {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.2em;
+}
+
+.heroCopy h1 {
+  max-width: 1050px;
+  margin: 28px 0 30px;
+  font-size: clamp(60px, 7.5vw, 112px);
+  line-height: 0.91;
+  letter-spacing: -0.058em;
+}
+
+.heroCopy > span {
+  font-size: clamp(17px, 1.5vw, 23px);
+}
+
+.scrollCue {
+  position: absolute;
+  right: var(--page-gutter);
+  bottom: 48px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.scrollCue svg {
+  width: 18px;
+  animation: cue 1.7s ease-in-out infinite;
+}
+
+.breadcrumb {
+  padding: 18px var(--page-gutter);
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #e4e4e8;
+  color: #6c6d78;
+  font-size: 13px;
+}
+
+.breadcrumb a {
+  color: inherit;
+}
+
+.intro {
+  padding: clamp(40px, 4.5vw, 64px) var(--page-gutter);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+  gap: clamp(48px, 6vw, 96px);
+  align-items: start;
+  background: var(--paper);
+}
+
+.sectionIndex {
+  color: var(--deep-red);
+}
+
+.introCopy {
+  max-width: 830px;
+}
+
+.intro h2 {
+  margin: 16px 0 22px;
+  font-size: clamp(44px, 4.6vw, 68px);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+}
+
+.intro h2 em {
+  color: var(--red);
+  font-style: normal;
+}
+
+.introCopy > p:last-child {
+  max-width: 850px;
+  margin: 0;
+  color: #444650;
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.75;
+}
+
+.introMedia {
+  min-height: clamp(340px, 30vw, 450px);
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 22px 52px rgba(23, 29, 69, 0.15);
+}
+
+.introMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 58%, rgba(13, 18, 54, 0.68));
+}
+
+.introMedia img {
+  object-fit: cover;
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.introMedia:hover img {
+  transform: scale(1.045);
+}
+
+.introMedia span {
+  position: absolute;
+  bottom: 24px;
+  left: 26px;
+  z-index: 1;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.17em;
+}
+
+.scholarshipSection {
+  padding: clamp(74px, 8vw, 118px) var(--page-gutter);
+}
+
+.scholarshipSection > header {
+  max-width: 980px;
+  margin-bottom: clamp(42px, 5vw, 70px);
+}
+
+.scholarshipSection > header > p {
+  color: var(--deep-red);
+}
+
+.scholarshipSection > header h2,
+.encouragement > header h2,
+.closing h2 {
+  margin: 19px 0 0;
+  font-size: clamp(43px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.scholarshipGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.scholarshipCard {
+  min-height: 540px;
+  position: relative;
+  padding: clamp(28px, 3vw, 42px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 18px;
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 350ms ease;
+}
+
+.scholarshipCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 54px rgba(23, 29, 69, 0.18);
+}
+.red {
+  background: var(--red);
+  color: #fff;
+}
+.navy {
+  background: var(--navy);
+  color: #fff;
+}
+.paper {
+  background: #edf0f5;
+  color: var(--navy);
+}
+
+.cardNumber {
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.18em;
+}
+.cardIcon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 28px;
+  height: 28px;
+  opacity: 0.8;
+}
+.scholarshipCard > strong {
+  margin-top: auto;
+  font-size: clamp(70px, 7vw, 108px);
+  line-height: 0.8;
+  letter-spacing: -0.065em;
+}
+.scholarshipCard > small {
+  margin-top: 20px;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.17em;
+}
+.scholarshipCard h3 {
+  margin: 18px 0 13px;
+  font-size: clamp(24px, 2vw, 32px);
+  line-height: 1.08;
+}
+.scholarshipCard p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  opacity: 0.8;
+}
+
+.payment {
+  padding: clamp(48px, 5.5vw, 78px) var(--page-gutter);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(42px, 5vw, 78px);
+  align-items: start;
+  background: #f6e3e0;
+}
+
+.paymentMedia {
+  width: 100%;
+  min-height: clamp(430px, 36vw, 570px);
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 22px 52px rgba(84, 16, 28, 0.14);
+}
+
+.paymentMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(174, 19, 40, 0.04) 35%, rgba(23, 29, 69, 0.74));
+}
+
+.paymentMedia img {
+  object-fit: cover;
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.paymentMedia:hover img {
+  transform: scale(1.045);
+}
+
+.paymentMedia span {
+  position: absolute;
+  bottom: 24px;
+  left: 26px;
+  z-index: 1;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.17em;
+}
+.paymentCopy {
+  padding-top: 8px;
+}
+.paymentCopy > p:first-child {
+  color: var(--deep-red);
+}
+.paymentCopy h2 {
+  margin: 20px 0 28px;
+  font-size: clamp(45px, 5.4vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+.paymentCopy h2 strong {
+  color: var(--red);
+  font-size: 1.35em;
+}
+.paymentCopy > p:last-child {
+  max-width: 760px;
+  margin: 0;
+  color: #45454d;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.encouragement {
+  padding: clamp(72px, 8vw, 115px) var(--page-gutter);
+  background: var(--navy);
+  color: #fff;
+}
+.encouragement > header {
+  max-width: 850px;
+  margin-bottom: 52px;
+}
+.encouragement > header > p {
+  color: #ff909c;
+}
+.encouragementGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.encouragementGrid article {
+  min-height: 330px;
+  position: relative;
+  padding: clamp(28px, 3vw, 42px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.055);
+  transition:
+    background 280ms ease,
+    transform 280ms ease;
+}
+.encouragementGrid article:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-6px);
+}
+.encouragementGrid article > span {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--red);
+}
+.encouragementGrid article > span svg {
+  width: 22px;
+}
+.encouragementGrid strong {
+  display: block;
+  margin-top: 52px;
+  color: #ff7a88;
+  font-size: clamp(54px, 5vw, 76px);
+  line-height: 0.8;
+}
+.encouragementGrid h3 {
+  margin: 22px 0 12px;
+  font-size: 25px;
+}
+.encouragementGrid p {
+  max-width: 560px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.65;
+}
+.encouragementGrid article > svg {
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  width: 22px;
+  color: #ff7a88;
+}
+
+.closing {
+  padding: clamp(75px, 9vw, 130px) var(--page-gutter);
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  align-items: flex-end;
+  background: #fff;
+}
+.closing > div {
+  max-width: 1050px;
+}
+.closing p {
+  color: var(--deep-red);
+}
+.closing a {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 22px;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.closing a svg {
+  width: 17px;
+}
+
+.page :global([data-reveal]) {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 650ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--academic-delay, 0ms),
+    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--academic-delay, 0ms);
+}
+.page :global([data-reveal].academic-reveal--visible) {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes heroDrift {
+  from {
+    transform: scale(1.01);
+  }
+  to {
+    transform: scale(1.07) translate3d(-1%, -0.5%, 0);
+  }
+}
+@keyframes cue {
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+@media (max-width: 900px) {
+  .intro,
+  .payment {
+    grid-template-columns: 1fr;
+  }
+  .introMedia {
+    min-height: 360px;
+  }
+  .scholarshipGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .scholarshipCard:last-child {
+    grid-column: 1 / -1;
+  }
+  .closing {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    min-height: 700px;
+  }
+  .heroCopy {
+    padding: 150px 20px 85px;
+  }
+  .heroCopy h1 {
+    font-size: 52px;
+    line-height: 0.98;
+  }
+  .scrollCue {
+    right: 20px;
+    bottom: 26px;
+  }
+  .breadcrumb,
+  .intro,
+  .scholarshipSection,
+  .payment,
+  .encouragement,
+  .closing {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .introMedia {
+    min-height: 280px;
+    border-radius: 14px;
+  }
+  .intro h2,
+  .scholarshipSection > header h2,
+  .encouragement > header h2,
+  .closing h2 {
+    font-size: 40px;
+  }
+  .scholarshipGrid,
+  .encouragementGrid {
+    grid-template-columns: 1fr;
+  }
+  .scholarshipCard:last-child {
+    grid-column: auto;
+  }
+  .scholarshipCard {
+    min-height: 490px;
+  }
+  .paymentMedia {
+    min-height: 340px;
+    border-radius: 14px;
+  }
+  .paymentCopy h2 {
+    font-size: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero > img,
+  .scrollCue svg {
+    animation: none;
+  }
+  .scholarshipCard,
+  .encouragementGrid article,
+  .page :global([data-reveal]) {
+    transition: none;
+  }
+}

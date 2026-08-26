@@ -198,8 +198,10 @@
   align-self: start;
   position: sticky;
   top: 120px;
+  background: #ead7c2;
 }
 .missionMedia img {
+  object-fit: contain;
   object-position: 50% center;
 }
 .mission .eyebrow {

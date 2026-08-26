@@ -8,7 +8,6 @@ import {
   Footer,
   Header,
   Hero,
-  News,
   ProgrammeCatalog,
   Programmes,
   Research,
@@ -31,7 +30,6 @@ export default function Home() {
       <ProgrammeCatalog />
       <Admissions />
       <StudentSuccess />
-      <News />
       {/* Form POST tới /api/consultations */}
       <ResourcesConsultation />
       <Footer />

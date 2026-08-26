@@ -36,7 +36,7 @@ export function StickyActions() {
       </Link>
       <a
         className="facebook-float"
-        href="https://www.facebook.com/truongdaihocvanlang/"
+        href="https://www.facebook.com/saudaihoc.vlu"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Theo dõi Văn Lang University trên Facebook"

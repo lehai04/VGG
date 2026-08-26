@@ -5,7 +5,7 @@ import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
-import { AdmissionsMore } from "@/features/admissions/components/AdmissionsMore";
+import { UnifiedSectionContent } from "@/features/content/components/SectionPages";
 import { findGroup, subpageHref } from "@/data/site";
 import styles from "./AdmissionsPage.module.css";
 
@@ -21,21 +21,24 @@ const admissionsStats = [
 const programmeOptions = [
   {
     title: "Chương trình Thạc sĩ",
-    description: "Dành cho người học muốn nâng cao năng lực chuyên môn, quản lý và khả năng ứng dụng tri thức vào thực tiễn nghề nghiệp.",
+    description:
+      "Dành cho người học muốn nâng cao năng lực chuyên môn, quản lý và khả năng ứng dụng tri thức vào thực tiễn nghề nghiệp.",
     href: "/programmes/thac-si",
-    image: "/images/programmers/pic_pro.jpg",
+    image: "/images/pages/admissions/content/graduates.jpg",
   },
   {
     title: "Chương trình Tiến sĩ",
-    description: "Dành cho những nhà nghiên cứu và chuyên gia muốn phát triển tri thức mới, năng lực học thuật và tác động chuyên sâu.",
+    description:
+      "Dành cho những nhà nghiên cứu và chuyên gia muốn phát triển tri thức mới, năng lực học thuật và tác động chuyên sâu.",
     href: "/programmes/tien-si",
-    image: "/images/hero/campus-hero.jpg",
+    image: "/images/pages/admissions/content/campus.jpg",
   },
   {
     title: "Chương trình Quốc tế",
-    description: "Mở rộng trải nghiệm học thuật toàn cầu thông qua chương trình hợp tác, mạng lưới đối tác và môi trường học tập quốc tế.",
+    description:
+      "Mở rộng trải nghiệm học thuật toàn cầu thông qua chương trình hợp tác, mạng lưới đối tác và môi trường học tập quốc tế.",
     href: "/programmes/quoc-te",
-    image: "/images/programmers/pic_pro.jpg",
+    image: "/images/pages/admissions/content/graduates.jpg",
   },
 ] as const;
 
@@ -48,7 +51,7 @@ export default function AdmissionsPage() {
       <section className={styles.hero} aria-labelledby="admissions-title">
         <Image
           className={styles.heroImage}
-          src="/images/programmers/pic_pro.jpg"
+          src="/images/pages/admissions/content/graduates.jpg"
           alt="Học viên Văn Lang trong ngày tốt nghiệp"
           fill
           priority
@@ -56,7 +59,9 @@ export default function AdmissionsPage() {
         />
         <div className={styles.heroOverlay} />
         <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">Trang chủ</Link><span>/</span><strong>Tuyển sinh</strong>
+          <Link href="/">Trang chủ</Link>
+          <span>/</span>
+          <strong>Tuyển sinh</strong>
         </nav>
         <div className={styles.heroCopy}>
           <p>VGG ADMISSIONS · 2026</p>
@@ -66,9 +71,9 @@ export default function AdmissionsPage() {
             <span>bạn mong muốn</span>
           </h1>
           <strong>
-            Tương lai luôn nằm trong tầm với khi bạn có một định hướng rõ ràng.
-            VGG đồng hành để bạn lựa chọn chương trình, chuẩn bị hồ sơ và tạo dựng
-            bước tiến phù hợp với mục tiêu nghề nghiệp của mình.
+            Tương lai luôn nằm trong tầm với khi bạn có một định hướng rõ ràng. VGG đồng hành để bạn
+            lựa chọn chương trình, chuẩn bị hồ sơ và tạo dựng bước tiến phù hợp với mục tiêu nghề
+            nghiệp của mình.
           </strong>
         </div>
       </section>
@@ -81,10 +86,9 @@ export default function AdmissionsPage() {
         <div>
           <h3>Bạn đang quan tâm điều gì?</h3>
           <p>
-            18 chương trình thạc sĩ và 01 chương trình tiến sĩ mở ra nhiều lựa
-            chọn để bạn phát triển chuyên môn từ chính kinh nghiệm, sở thích và
-            thế mạnh của mình. Nếu bạn chưa xác định được lộ trình, đội ngũ tư
-            vấn VGG sẽ giúp bạn tìm ra hướng đi phù hợp.
+            18 chương trình thạc sĩ và 01 chương trình tiến sĩ mở ra nhiều lựa chọn để bạn phát
+            triển chuyên môn từ chính kinh nghiệm, sở thích và thế mạnh của mình. Nếu bạn chưa xác
+            định được lộ trình, đội ngũ tư vấn VGG sẽ giúp bạn tìm ra hướng đi phù hợp.
           </p>
           <Link href="/programmes">
             Khám phá các chương trình <ArrowRight aria-hidden="true" />
@@ -95,7 +99,7 @@ export default function AdmissionsPage() {
       <section className={styles.story} aria-labelledby="admission-story-title">
         <figure className={styles.storyMedia} data-reveal>
           <Image
-            src="/images/hero/campus-hero.jpg"
+            src="/images/pages/admissions/content/campus.jpg"
             alt="Không gian học thuật tại Trường Đại học Văn Lang"
             fill
             sizes="(max-width: 800px) 100vw, 56vw"
@@ -105,14 +109,13 @@ export default function AdmissionsPage() {
           <p className={styles.eyebrow}>A CLEAR ADMISSION JOURNEY</p>
           <h2 id="admission-story-title">Không có một hành trình chung cho tất cả.</h2>
           <p>
-            VGG xem xét mỗi hồ sơ từ nền tảng học thuật, kinh nghiệm nghề nghiệp
-            và định hướng phát triển của từng ứng viên. Điều quan trọng không chỉ
-            là nơi bạn bắt đầu, mà còn là mục tiêu bạn muốn theo đuổi và giá trị
-            bạn mong muốn tạo ra trong tương lai.
+            VGG xem xét mỗi hồ sơ từ nền tảng học thuật, kinh nghiệm nghề nghiệp và định hướng phát
+            triển của từng ứng viên. Điều quan trọng không chỉ là nơi bạn bắt đầu, mà còn là mục
+            tiêu bạn muốn theo đuổi và giá trị bạn mong muốn tạo ra trong tương lai.
           </p>
           <p>
-            Đội ngũ tuyển sinh cung cấp thông tin rõ ràng ở từng bước để bạn có
-            thể chủ động chuẩn bị, hoàn thiện hồ sơ và đưa ra lựa chọn phù hợp.
+            Đội ngũ tuyển sinh cung cấp thông tin rõ ràng ở từng bước để bạn có thể chủ động chuẩn
+            bị, hoàn thiện hồ sơ và đưa ra lựa chọn phù hợp.
           </p>
           <Link href={subpageHref("admissions", 0)}>
             Xem yêu cầu tuyển sinh <ArrowRight aria-hidden="true" />
@@ -127,7 +130,11 @@ export default function AdmissionsPage() {
         </header>
         <div className={styles.stats}>
           {admissionsStats.map(([value, label], index) => (
-            <div key={label} data-reveal style={{ "--academic-delay": `${index * 80}ms` } as React.CSSProperties}>
+            <div
+              key={label}
+              data-reveal
+              style={{ "--academic-delay": `${index * 80}ms` } as React.CSSProperties}
+            >
               <strong>{value}</strong>
               <span>{label}</span>
             </div>
@@ -140,8 +147,8 @@ export default function AdmissionsPage() {
           <p className={styles.eyebrow}>THỦ TỤC XÉT TUYỂN</p>
           <h2 id="procedures-title">Chương trình tuyển sinh Sau đại học</h2>
           <p>
-            Tìm hiểu tổng quan về các bậc đào tạo sau đại học tại VGG và chọn
-            chương trình phù hợp để xem nội dung, điều kiện và lộ trình chi tiết.
+            Tìm hiểu tổng quan về các bậc đào tạo sau đại học tại VGG và chọn chương trình phù hợp
+            để xem nội dung, điều kiện và lộ trình chi tiết.
           </p>
         </header>
         <div className={styles.programmeCards}>
@@ -153,13 +160,20 @@ export default function AdmissionsPage() {
               data-reveal
               style={{ "--academic-delay": `${index * 80}ms` } as React.CSSProperties}
             >
-              <Image src={programme.image} alt={programme.title} fill sizes="(max-width: 800px) 100vw, 33vw" />
+              <Image
+                src={programme.image}
+                alt={programme.title}
+                fill
+                sizes="(max-width: 800px) 100vw, 33vw"
+              />
               <span className={styles.programmeShade} />
               <span className={styles.programmeNumber}>{String(index + 1).padStart(2, "0")}</span>
               <div>
                 <h3>{programme.title}</h3>
                 <p>{programme.description}</p>
-                <strong>Tìm hiểu thêm <ArrowUpRight aria-hidden="true" /></strong>
+                <strong>
+                  Tìm hiểu thêm <ArrowUpRight aria-hidden="true" />
+                </strong>
               </div>
             </Link>
           ))}
@@ -167,19 +181,25 @@ export default function AdmissionsPage() {
       </section>
 
       <section className={styles.finance} aria-label="Thông tin học phí và học bổng">
-        <article className={styles.financeRow} data-reveal>
+        <article className={styles.financeRow} id="hoc-phi" data-reveal>
           <div className={styles.financeCopy}>
             <h2>Học phí</h2>
             <p>
-              Mỗi chương trình đào tạo sau đại học tại Trường Đại học Văn Lang
-              có mức học phí khác nhau, được xây dựng phù hợp với nội dung đào
-              tạo và lộ trình học tập. Người học có thể chủ động tham khảo,
-              so sánh và lựa chọn chương trình phù hợp với định hướng của mình.
+              Mỗi chương trình đào tạo sau đại học tại Trường Đại học Văn Lang có mức học phí khác
+              nhau, được xây dựng phù hợp với nội dung đào tạo và lộ trình học tập. Người học có thể
+              chủ động tham khảo, so sánh và lựa chọn chương trình phù hợp với định hướng của mình.
             </p>
-            <Link href={subpageHref("admissions", 1)}>Tìm hiểu học phí <ArrowRight aria-hidden="true" /></Link>
+            <Link href={subpageHref("admissions", 1)}>
+              Tìm hiểu học phí <ArrowRight aria-hidden="true" />
+            </Link>
           </div>
           <div className={styles.financeMedia}>
-            <Image src="/images/programmers/pic_pro.jpg" alt="Học viên VGG trong môi trường học tập" fill sizes="(max-width: 800px) 100vw, 50vw" />
+            <Image
+              src="/images/pages/admissions/content/graduates.jpg"
+              alt="Học viên VGG trong môi trường học tập"
+              fill
+              sizes="(max-width: 800px) 100vw, 50vw"
+            />
           </div>
         </article>
 
@@ -187,40 +207,26 @@ export default function AdmissionsPage() {
           <div className={styles.financeCopy}>
             <h2>Học bổng</h2>
             <p>
-              Trường Đại học Văn Lang mang đến nhiều chính sách học bổng và hỗ
-              trợ tài chính nhằm khuyến khích người học theo đuổi hành trình học
-              thuật chuyên sâu. Khám phá các chương trình hiện có để chuẩn bị
-              hồ sơ và lựa chọn cơ hội phù hợp nhất với bạn.
+              Trường Đại học Văn Lang mang đến nhiều chính sách học bổng và hỗ trợ tài chính nhằm
+              khuyến khích người học theo đuổi hành trình học thuật chuyên sâu. Khám phá các chương
+              trình hiện có để chuẩn bị hồ sơ và lựa chọn cơ hội phù hợp nhất với bạn.
             </p>
-            <Link href={subpageHref("admissions", 2)}>Khám phá học bổng <ArrowRight aria-hidden="true" /></Link>
+            <Link href={subpageHref("admissions", 2)}>
+              Khám phá học bổng <ArrowRight aria-hidden="true" />
+            </Link>
           </div>
           <div className={styles.financeMedia}>
-            <Image src="/images/hero/campus-hero.jpg" alt="Không gian học tập tại Trường Đại học Văn Lang" fill sizes="(max-width: 800px) 100vw, 50vw" />
+            <Image
+              src="/images/pages/admissions/content/campus.jpg"
+              alt="Không gian học tập tại Trường Đại học Văn Lang"
+              fill
+              sizes="(max-width: 800px) 100vw, 50vw"
+            />
           </div>
         </article>
       </section>
 
-      <section className={styles.pathways} aria-labelledby="pathways-title">
-        <header className={styles.pathwaysHead} data-reveal>
-          <p className={styles.eyebrow}>TAKE YOUR NEXT STEP</p>
-          <h2 id="pathways-title">Mọi thông tin bạn cần, tại một nơi.</h2>
-          <p>
-            Từ điều kiện dự tuyển đến học phí, học bổng và tư vấn trực tiếp —
-            chọn nội dung phù hợp với giai đoạn hiện tại của bạn.
-          </p>
-        </header>
-        <div className={styles.pathwayList}>
-          {group.items.map((item, index) => (
-            <Link href={subpageHref("admissions", index)} key={item} data-reveal>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{item}</h3>
-              <ArrowUpRight aria-hidden="true" />
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <AdmissionsMore />
+      <UnifiedSectionContent section="admissions" />
 
       <NextStepCTA />
       <SiteFooter />

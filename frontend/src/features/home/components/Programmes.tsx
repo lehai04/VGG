@@ -1,10 +1,9 @@
-import { ImmersiveVideo } from "./ImmersiveVideo";
 import { CountUp } from "./CountUp";
 
-/** HOMEPAGE SECTION: Giới thiệu VGG bằng video và các số liệu đào tạo. */
+/** HOMEPAGE SECTION: Giới thiệu VGG và các số liệu đào tạo. */
 export function Programmes() {
   return (
-    // Tổng quan VGG gồm video giới thiệu và số liệu nổi bật.
+    // Tổng quan VGG gồm phần giới thiệu và số liệu nổi bật.
     <section className="overview" id="about">
       <div className="overviewFeature" id="programmes">
         <div className="overviewIntro">
@@ -22,8 +21,6 @@ export function Programmes() {
           </p>
         </div>
       </div>
-
-      <ImmersiveVideo />
 
       <div className="graduateStats" aria-label="Thống kê chương trình đào tạo">
         <div className="graduateStatsGrid">

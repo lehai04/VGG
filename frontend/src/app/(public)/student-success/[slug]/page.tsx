@@ -1,3 +1,2 @@
-import { SubpageDetail, subpageMetadata } from "@/features/content/components/SubpageDetail";
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) { return subpageMetadata("student-success", (await params).slug); }
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) { return <SubpageDetail section="student-success" slug={(await params).slug} />; }
+import { redirect } from "next/navigation";
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) { redirect(`/student-success#${(await params).slug}`); }

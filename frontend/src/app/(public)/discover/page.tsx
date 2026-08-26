@@ -26,7 +26,7 @@ export default function DiscoverPage() {
         <h1>Giới thiệu VGG</h1>
         <div className="discover-editorial-cover">
           <Image
-            src="/images/hero/campus-hero.jpg"
+            src="/images/pages/discover/content/banner.jpg"
             alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang"
             fill
             priority
@@ -78,7 +78,7 @@ export default function DiscoverPage() {
           </p>
           <figure>
             <Image
-              src="/images/programmers/pic_pro.jpg"
+              src="/images/pages/discover/content/1.jpg"
               alt="Học viên Văn Lang trong ngày tốt nghiệp"
               fill
               sizes="(max-width: 800px) 92vw, 52vw"
@@ -109,7 +109,7 @@ export default function DiscoverPage() {
           </p>
           <figure className="campus-crop">
             <Image
-              src="/images/hero/campus-hero.jpg"
+              src="/images/pages/discover/content/2.jpg"
               alt="Cộng đồng học thuật tại khuôn viên Văn Lang"
               fill
               sizes="(max-width: 800px) 92vw, 52vw"
@@ -140,7 +140,7 @@ export default function DiscoverPage() {
           </p>
           <figure>
             <Image
-              src="/images/hero/campus-hero.jpg"
+              src="/images/pages/discover/content/3.jpg"
               alt="Không gian học thuật tại Văn Lang"
               fill
               sizes="(max-width: 800px) 92vw, 52vw"
@@ -156,4 +156,3 @@ export default function DiscoverPage() {
     </main>
   );
 }
-

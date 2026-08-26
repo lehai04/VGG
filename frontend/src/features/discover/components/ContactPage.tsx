@@ -9,7 +9,7 @@ import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import styles from "./ContactPage.module.css";
 
 const socialLinks = [
-  { label: "Facebook", href: "https://www.facebook.com/truongdaihocvanlang/" },
+  { label: "Facebook", href: "https://www.facebook.com/saudaihoc.vlu" },
   { label: "Zalo", href: "https://zalo.me/0988486869" },
   { label: "Instagram", href: "https://www.instagram.com/vanlanguniversity/" },
 ] as const;
@@ -21,7 +21,7 @@ export function ContactPage() {
       <SiteHeader compact />
 
       <section className={styles.hero} aria-labelledby="contact-title">
-        <Image src="/images/hero/campus-hero.jpg" alt="Khuôn viên Trường Đại học Văn Lang" fill priority sizes="100vw" />
+        <Image src="/images/pages/discover/content/campus.jpg" alt="Khuôn viên Trường Đại học Văn Lang" fill priority sizes="100vw" />
         <div className={styles.heroOverlay} />
         <div className={styles.heroTitle}>
           <p>DISCOVER VGG · 06</p>
@@ -71,7 +71,7 @@ export function ContactPage() {
 
       <section className={styles.visitSection} aria-labelledby="visit-title">
         <figure className={styles.visitMedia} data-reveal>
-          <Image src="/images/programmers/pic_pro.jpg" alt="Đội ngũ VGG hỗ trợ người học" fill sizes="(max-width: 900px) 100vw, 52vw" />
+          <Image src="/images/pages/discover/content/graduates.jpg" alt="Đội ngũ VGG hỗ trợ người học" fill sizes="(max-width: 900px) 100vw, 52vw" />
         </figure>
         <div className={styles.visitCopy} data-reveal>
           <p className={styles.eyebrow}>02 / LÀM VIỆC TRỰC TIẾP</p>

@@ -18,7 +18,7 @@ export function VisionMissionPage() {
 
     {/* Hero có sequence load riêng; ảnh priority để tránh layout shift ở vùng đầu trang. */}
     <section className={styles.hero} aria-labelledby="vision-mission-title">
-      <Image className={styles.heroImage} src="/images/hero/campus-hero.jpg" alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang" fill priority sizes="100vw" />
+      <Image className={styles.heroImage} src="/images/pages/discover/Vision/1.avif" alt="Không gian học thuật tại Trường Đại học Văn Lang" fill priority sizes="100vw" />
       <div className={styles.heroOverlay} />
       <div className={styles.heroCopy}>
         <p>VAN LANG UNIVERSITY · GRADUATE SCHOOL</p>
@@ -35,14 +35,14 @@ export function VisionMissionPage() {
         <div className={styles.keywords} aria-label="Trọng tâm tầm nhìn"><span>Tri thức học thuật</span><span>Thực tiễn nghề nghiệp</span><span>Tạo ra giá trị</span></div>
       </div>
       <figure className={styles.visionMedia} data-reveal>
-        <Image src="/images/hero/campus-hero.jpg" alt="Không gian học thuật tại khuôn viên Văn Lang" fill sizes="(max-width: 767px) 100vw, 44vw" />
+        <Image src="/images/pages/discover/Vision/2.avif" alt="Cộng đồng học thuật Văn Lang kết nối tri thức và thực tiễn" fill sizes="(max-width: 767px) 100vw, 44vw" />
         <figcaption>KNOWLEDGE<br />CONNECTION<br />IMPACT</figcaption>
       </figure>
     </section>
 
     {/* 02 — Sứ mệnh: mảng đỏ tương phản và ảnh giữ nhẹ trên desktop để tạo nhịp pause. */}
     <section className={`${styles.story} ${styles.mission}`}>
-      <figure className={styles.missionMedia} data-reveal><Image src="/images/programmers/pic_pro.jpg" alt="Học viên Văn Lang trong ngày tốt nghiệp" fill sizes="(max-width: 767px) 100vw, 44vw" /></figure>
+      <figure className={styles.missionMedia} data-reveal><Image src="/images/pages/discover/Vision/3.jpg" alt="Đạo đức, ý chí và sáng tạo — giá trị cốt lõi của Văn Lang" fill sizes="(max-width: 767px) 100vw, 44vw" /></figure>
       <div className={styles.storyCopy} data-reveal>
         <p className={styles.eyebrow}>02 / SỨ MỆNH</p><h2>Sứ mệnh</h2><p className={styles.lead}>{mission}</p>
       </div>
@@ -54,7 +54,7 @@ export function VisionMissionPage() {
       <div className={styles.philosophyBottom}>
         <p data-reveal>VGG hướng đến mô hình giáo dục lấy người học làm trung tâm, trong đó quá trình giảng dạy không chỉ truyền đạt kiến thức mà còn khuyến khích tư duy độc lập, khám phá và ứng dụng. Nội dung đào tạo được kết nối với các vấn đề thực tiễn, hoạt động nghiên cứu và kinh nghiệm nghề nghiệp, giúp người học chuyển hóa tri thức thành năng lực hành động và những giá trị có ý nghĩa cho tổ chức, cộng đồng và xã hội.</p>
         {/* Ảnh luôn hiển thị; không gắn reveal để tránh bị giữ opacity khi section vào viewport nhanh. */}
-        <figure><Image src="/images/programmers/pic_pro.jpg" alt="Cộng đồng học viên sau đại học Văn Lang" fill sizes="(max-width: 767px) 100vw, 38vw" /></figure>
+        <figure><Image src="/images/pages/discover/Vision/1.avif" alt="Trải nghiệm học tập của cộng đồng học viên Văn Lang" fill sizes="(max-width: 767px) 100vw, 38vw" /></figure>
       </div>
     </section>
 

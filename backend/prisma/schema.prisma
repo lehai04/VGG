@@ -86,6 +86,7 @@ model NewsPost {
   slug        String        @unique @db.VarChar(190)
   locale      String        @default("vi") @db.VarChar(5)
   title       String        @db.VarChar(250)
+  category    String        @default("GENERAL") @db.VarChar(50)
   excerpt     String?
   content     String
   coverImage  String?       @map("cover_image") @db.VarChar(1000)
@@ -97,6 +98,7 @@ model NewsPost {
   updatedAt   DateTime      @updatedAt @map("updated_at")
 
   @@index([status, publishedAt])
+  @@index([category, status, publishedAt])
   @@map("news_posts")
 }
 

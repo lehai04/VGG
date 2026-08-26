@@ -159,8 +159,10 @@ main:global(#main-content).page .introduction p:not(.eyebrow) {
 }
 .introduction a {
   margin-top: 28px;
-  color: var(--admissions-red);
-  border-bottom: 1px solid currentColor;
+  color: var(--admissions-dark-red);
+  border-bottom: 0;
+  font-size: 16px;
+  font-weight: 800;
 }
 
 .story {
@@ -209,7 +211,7 @@ main:global(#main-content).page .storyCopy > p:not(.eyebrow) {
 }
 .profile > header {
   display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
+  grid-template-columns: minmax(240px, 0.42fr) minmax(0, 1.58fr);
   gap: clamp(32px, 6vw, 90px);
   align-items: end;
   margin-bottom: clamp(46px, 6vw, 76px);
@@ -218,10 +220,11 @@ main:global(#main-content).page .storyCopy > p:not(.eyebrow) {
   color: #ffe3e6;
 }
 .profile h2 {
-  max-width: 17ch;
+  max-width: none;
   margin: 0;
-  font-size: clamp(36px, 4.4vw, 62px) !important;
+  font-size: clamp(34px, 2.8vw, 48px) !important;
   line-height: 1.06 !important;
+  white-space: nowrap;
 }
 .stats {
   display: grid;
@@ -417,6 +420,7 @@ main:global(#main-content).page .programmeCard p {
   grid-template-columns: minmax(0, 1fr) minmax(360px, 1fr);
   gap: clamp(42px, 7vw, 100px);
   align-items: center;
+  scroll-margin-top: 108px;
 }
 .financeRow:nth-child(even) .financeCopy {
   order: 2;
@@ -614,6 +618,9 @@ main:global(#main-content).page .supportCopy > p:not(.eyebrow) {
   .profile > header,
   .pathways {
     grid-template-columns: 1fr;
+  }
+  .profile h2 {
+    white-space: normal;
   }
   .procedures > header {
     grid-template-columns: 1fr;

@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
 import { usePathname } from "next/navigation";
-import { discoverSections, menuGroups, subpageHref } from "@/data/site";
+import { discoverSections, navigationGroups, subpageHref } from "@/data/site";
 import { LanguageToggle } from "@/shared/components/layout/LanguageToggle";
 import { useLocale } from "@/i18n/components/LocaleProvider";
 import { stripLocale } from "@/lib/i18n";
@@ -18,7 +18,7 @@ import { stripLocale } from "@/lib/i18n";
 const LOGO_SRC = "/images/logo/logo-vgg.png";
 
 // Homepage dùng chung nguồn navigation với các trang con; chỉ đích liên kết khác nhau.
-const MENU_ITEMS = menuGroups.map((group) => ({
+const MENU_ITEMS = navigationGroups.map((group) => ({
   slug: group.slug,
   english: group.en,
   vietnamese: group.vi,
@@ -40,9 +40,9 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
   // Navigation chính không dùng hash: mọi page có đích route độc lập trong app/<slug>/page.tsx.
   const itemHref = (slug: string) => `/${slug}`;
 
-  // Riêng nhóm Về VGG có route chi tiết; các nhóm còn lại dùng landing page hiện có.
+  // Chỉ Về VGG còn trang con. Các nhóm khác đi thẳng tới trang tổng hợp duy nhất.
   const submenuHref = (slug: string, index: number) => {
-    if (slug === "discover") return `/discover/${discoverSections[index].slug}`;
+    if (slug === "discover") return index === 0 ? "/discover" : `/discover/${discoverSections[index].slug}`;
     return subpageHref(slug, index);
   };
 
@@ -111,16 +111,21 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
               <Link
                 href={itemHref(item.slug)}
                 key={item.english}
-                aria-expanded={activeMenu === index}
-                aria-controls="header-mega-menu"
+                aria-expanded={item.slug === "discover" ? activeMenu === index : undefined}
+                aria-controls={item.slug === "discover" ? "header-mega-menu" : undefined}
                 className={
                   activeMenu === index || (routeMode && routePathname.startsWith(`/${item.slug}`))
                     ? "active"
                     : ""
                 }
                 onClick={(event) => {
-                  event.preventDefault();
-                  setActiveMenu((current) => current === index ? null : index);
+                  if (item.slug === "discover") {
+                    event.preventDefault();
+                    setActiveMenu((current) => current === index ? null : index);
+                    return;
+                  }
+                  setActiveMenu(null);
+                  setOpen(false);
                 }}
               >
                 <span className="navTitle">{locale === "en" ? item.english : item.vietnamese}</span>
@@ -138,7 +143,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
           >
             <div className="megaVluImage">
               <Image
-                src="/images/hero/campus-hero.jpg"
+                src="/images/pages/home/sections/campus.jpg"
                 alt="Khuôn viên Trường Đại học Văn Lang"
                 fill
                 sizes="(max-width: 900px) 0px, 42vw"

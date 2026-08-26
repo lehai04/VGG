@@ -1,0 +1,439 @@
+frontend/src\shared\components\ui\PageUI.module.css:1:.container {
+frontend/src\shared\components\ui\PageUI.module.css:42:  max-width: 1050px;
+frontend/src\shared\components\ui\PageUI.module.css:51:  max-width: 720px;
+frontend/src\shared\components\ui\PageUI.module.css:67:  max-width: 1200px;
+frontend/src\shared\components\ui\PageUI.module.css:74:  max-width: 760px;
+frontend/src\shared\components\ui\PageUI.module.css:174:  max-width: 1100px;
+frontend/src\shared\components\ui\PageUI.module.css:244:  max-width: 620px;
+frontend/src\shared\components\ui\PageUI.module.css:260:@media (max-width: 899px) {
+frontend/src\shared\components\ui\PageUI.module.css:283:@media (max-width: 599px) {
+frontend/src\shared\components\ui\PageUI.module.css:284:  .container {
+frontend/src\shared\components\ui\PageUI.module.css:315:    padding-left: 38px;
+frontend/src\shared\components\ui\PageUI.module.css:316:    padding-right: 12px;
+frontend/src\shared\components\ui\PagePrimitives.tsx:9:export function PageContainer({children,className}:CommonProps){return <div className={cx(styles.container,className)}>{children}</div>}
+frontend/src\shared\components\ui\PagePrimitives.tsx:29:  return <section className={cx(`${styles.imageFeature} ${reverse?styles.reverse:""}`,className)}><div className={styles.featureMedia} data-reveal><Image src={image} alt={imageAlt} fill sizes="(max-width: 899px) 100vw, 55vw"/></div><div className={styles.featureCopy} data-reveal>{children}</div></section>
+frontend/src\features\research\components\ResearchLanding.module.css:93:  max-width: 600px;
+frontend/src\features\research\components\ResearchLanding.module.css:135:  max-width: 1300px;
+frontend/src\features\research\components\ResearchLanding.module.css:140:  max-width: 680px;
+frontend/src\features\research\components\ResearchLanding.module.css:141:  margin-left: clamp(0px, calc(25% + 4vw), 380px);
+frontend/src\features\research\components\ResearchLanding.module.css:228:  padding-left: 24px;
+frontend/src\features\research\components\ResearchLanding.module.css:229:  padding-right: 24px;
+frontend/src\features\research\components\ResearchLanding.module.css:230:  margin-left: -24px;
+frontend/src\features\research\components\ResearchLanding.module.css:231:  margin-right: -24px;
+frontend/src\features\research\components\ResearchLanding.module.css:259:  max-width: 560px;
+frontend/src\features\research\components\ResearchLanding.module.css:349:  max-width: 440px;
+frontend/src\features\research\components\ResearchLanding.module.css:417:  padding-left: 32px;
+frontend/src\features\research\components\ResearchLanding.module.css:418:  padding-right: 32px;
+frontend/src\features\research\components\ResearchLanding.module.css:419:  margin-left: -32px;
+frontend/src\features\research\components\ResearchLanding.module.css:420:  margin-right: -32px;
+frontend/src\features\research\components\ResearchLanding.module.css:521:@media (max-width: 900px) {
+frontend/src\features\research\components\ResearchLanding.module.css:545:    padding-left: 16px;
+frontend/src\features\research\components\ResearchLanding.module.css:546:    padding-right: 16px;
+frontend/src\features\research\components\ResearchLanding.module.css:547:    margin-left: -16px;
+frontend/src\features\research\components\ResearchLanding.module.css:548:    margin-right: -16px;
+frontend/src\features\research\components\ResearchLanding.module.css:560:    padding-left: 20px;
+frontend/src\features\research\components\ResearchLanding.module.css:561:    padding-right: 20px;
+frontend/src\features\research\components\ResearchLanding.module.css:562:    margin-left: -20px;
+frontend/src\features\research\components\ResearchLanding.module.css:563:    margin-right: -20px;
+frontend/src\features\research\components\ResearchLanding.module.css:570:@media (max-width: 600px) {
+frontend/src\features\research\components\ResearchLanding.module.css:586:    margin-left: 0;
+frontend/src\features\research\components\ResearchLanding.module.css:598:    padding-left: 0;
+frontend/src\features\research\components\ResearchLanding.module.css:599:    padding-right: 0;
+frontend/src\features\research\components\ResearchLanding.module.css:600:    margin-left: 0;
+frontend/src\features\research\components\ResearchLanding.module.css:601:    margin-right: 0;
+frontend/src\features\research\components\ResearchLanding.module.css:620:    padding-left: 0;
+frontend/src\features\research\components\ResearchLanding.module.css:621:    padding-right: 0;
+frontend/src\features\research\components\ResearchLanding.module.css:622:    margin-left: 0;
+frontend/src\features\research\components\ResearchLanding.module.css:623:    margin-right: 0;
+frontend/src\features\research\components\ResearchSubpage.tsx:52:            sizes="(max-width: 900px) 100vw, 50vw"
+frontend/src\features\research\components\ResearchSubpage.module.css:67:  max-width: 500px;
+frontend/src\features\research\components\ResearchSubpage.module.css:175:  max-width: 680px;
+frontend/src\features\research\components\ResearchSubpage.module.css:274:  max-width: 680px;
+frontend/src\features\research\components\ResearchSubpage.module.css:297:  padding-left: clamp(24px, 3vw, 48px);
+frontend/src\features\research\components\ResearchSubpage.module.css:302:  max-width: 960px;
+frontend/src\features\research\components\ResearchSubpage.module.css:307:  margin-left: clamp(27px, 3.3vw, 51px);
+frontend/src\features\research\components\ResearchSubpage.module.css:351:  padding-left: 28px;
+frontend/src\features\research\components\ResearchSubpage.module.css:352:  padding-right: 28px;
+frontend/src\features\research\components\ResearchSubpage.module.css:353:  margin-left: -28px;
+frontend/src\features\research\components\ResearchSubpage.module.css:354:  margin-right: -28px;
+frontend/src\features\research\components\ResearchSubpage.module.css:392:@media (max-width: 900px) {
+frontend/src\features\research\components\ResearchSubpage.module.css:432:    padding-left: 16px;
+frontend/src\features\research\components\ResearchSubpage.module.css:433:    padding-right: 16px;
+frontend/src\features\research\components\ResearchSubpage.module.css:434:    margin-left: -16px;
+frontend/src\features\research\components\ResearchSubpage.module.css:435:    margin-right: -16px;
+frontend/src\features\research\components\ResearchSubpage.module.css:442:@media (max-width: 600px) {
+frontend/src\features\research\components\ResearchSubpage.module.css:469:    padding-left: 0;
+frontend/src\features\research\components\ResearchSubpage.module.css:470:    padding-right: 0;
+frontend/src\features\research\components\ResearchSubpage.module.css:471:    margin-left: 0;
+frontend/src\features\research\components\ResearchSubpage.module.css:472:    margin-right: 0;
+frontend/src\features\research\components\ResearchLanding.tsx:129:                  sizes="(max-width: 900px) 100vw, 38vw"
+frontend/src\features\research\components\ResearchLanding.tsx:146:            sizes="(max-width: 900px) 100vw, 55vw"
+frontend/src\features\admissions\components\AdmissionsSubpage.module.css:74:  max-width: 1000px;
+frontend/src\features\admissions\components\AdmissionsSubpage.module.css:162:  max-width: 820px;
+frontend/src\features\admissions\components\AdmissionsSubpage.module.css:499:@media (max-width: 1100px) {
+frontend/src\features\admissions\components\AdmissionsSubpage.module.css:508:@media (max-width: 767px) {
+frontend/src\features\discover\components\AboutIntroduction.tsx:67:            <Image src="/images/hero/campus-hero.jpg" alt="Không gian học tập tại Văn Lang" fill sizes="(max-width: 900px) 90vw, 44vw" />
+frontend/src\features\discover\components\AboutIntroduction.tsx:70:            <Image src="/images/programmers/pic_pro.jpg" alt="Học viên tốt nghiệp tại Văn Lang" fill sizes="(max-width: 900px) 48vw, 18vw" />
+frontend/src\features\discover\components\AboutIntroduction.tsx:99:            <Image src="/images/programmers/pic_pro.jpg" alt="Học viên Văn Lang trong ngày tốt nghiệp" fill sizes="(max-width: 900px) 90vw, 40vw" />
+frontend/src\features\discover\components\AboutIntroduction.tsx:112:          <Image src="/images/programmers/pic_pro.jpg" alt="Niềm vui của học viên sau đại học" fill sizes="(max-width: 900px) 100vw, 46vw" />
+frontend/src\features\discover\components\AboutIntroduction.tsx:126:          <figure data-reveal><Image src="/images/hero/campus-hero.jpg" alt="Hệ sinh thái học tập tại Văn Lang" fill sizes="(max-width: 900px) 90vw, 48vw" /></figure>
+frontend/src\features\discover\components\AboutIntroduction.module.css:74:  max-width: 560px;
+frontend/src\features\discover\components\AboutIntroduction.module.css:126:  max-width: 670px;
+frontend/src\features\discover\components\AboutIntroduction.module.css:214:  max-width: 150px;
+frontend/src\features\discover\components\AboutIntroduction.module.css:237:  max-width: 520px;
+frontend/src\features\discover\components\AboutIntroduction.module.css:267:  padding-left: 18px;
+frontend/src\features\discover\components\AboutIntroduction.module.css:299:  padding-right: clamp(45px, 6vw, 90px);
+frontend/src\features\discover\components\AboutIntroduction.module.css:308:  max-width: 640px;
+frontend/src\features\discover\components\AboutIntroduction.module.css:314:  max-width: 590px;
+frontend/src\features\discover\components\AboutIntroduction.module.css:451:@media (max-width: 1000px) {
+frontend/src\features\discover\components\AboutIntroduction.module.css:499:@media (max-width: 700px) {
+frontend/src\features\discover\components\AboutIntroduction.module.css:511:    max-width: 75%;
+frontend/src\features\discover\components\AboutIntroduction.module.css:606:@media (max-width: 430px) {
+frontend/src\features\discover\components\AboutIntroduction.module.css:611:    max-width: 88%;
+frontend/src\features\admissions\components\AdmissionsSubpage.tsx:124:            sizes="(max-width: 767px) 100vw, 44vw"
+frontend/src\features\admissions\components\AdmissionsSubpage.tsx:165:            sizes="(max-width: 767px) 100vw, 44vw"
+frontend/src\features\discover\components\ContactPage.tsx:74:          <Image src="/images/programmers/pic_pro.jpg" alt="Đội ngũ VGG hỗ trợ người học" fill sizes="(max-width: 900px) 100vw, 52vw" />
+frontend/src\features\discover\components\ContactPage.module.css:28:  left: var(--container-padding);
+frontend/src\features\discover\components\ContactPage.module.css:29:  right: var(--container-padding);
+frontend/src\features\discover\components\ContactPage.module.css:54:  padding: clamp(64px, 7vw, 96px) var(--container-padding);
+frontend/src\features\discover\components\ContactPage.module.css:70:  max-width: 14ch;
+frontend/src\features\discover\components\ContactPage.module.css:76:  max-width: 52ch;
+frontend/src\features\discover\components\ContactPage.module.css:111:  max-width: 18ch;
+frontend/src\features\discover\components\ContactPage.module.css:119:  max-width: 58ch;
+frontend/src\features\discover\components\ContactPage.module.css:155:  margin-left: auto;
+frontend/src\features\discover\components\ContactPage.module.css:196:  padding: clamp(64px, 7vw, 96px) var(--container-padding);
+frontend/src\features\discover\components\ContactPage.module.css:210:  max-width: 660px;
+frontend/src\features\discover\components\ContactPage.module.css:216:  max-width: 15ch;
+frontend/src\features\discover\components\ContactPage.module.css:256:@media (max-width: 1050px) {
+frontend/src\features\discover\components\ContactPage.module.css:262:@media (max-width: 800px) {
+frontend/src\features\discover\components\ContactPage.module.css:275:@media (max-width: 600px) {
+frontend/src\features\discover\components\DiscoverSubpageVM.module.css:75:  max-width: 920px;
+frontend/src\features\discover\components\DiscoverSubpageVM.module.css:190:  max-width: 820px;
+frontend/src\features\discover\components\DiscoverSubpageVM.module.css:477:@media (max-width: 1100px) {
+frontend/src\features\discover\components\DiscoverSubpageVM.module.css:502:@media (max-width: 767px) {
+frontend/src\features\discover\components\LeadershipPage.module.css:26:  left: var(--container-padding);
+frontend/src\features\discover\components\LeadershipPage.module.css:27:  right: var(--container-padding);
+frontend/src\features\discover\components\LeadershipPage.module.css:54:  padding: clamp(56px, 6vw, 84px) var(--container-padding);
+frontend/src\features\discover\components\LeadershipPage.module.css:69:  max-width: 680px;
+frontend/src\features\discover\components\LeadershipPage.module.css:76:  max-width: 690px;
+frontend/src\features\discover\components\LeadershipPage.module.css:125:@media (max-width: 900px) {
+frontend/src\features\discover\components\LeadershipPage.module.css:136:@media (max-width: 600px) {
+frontend/src\features\programmes\components\MasterProgrammesPage.tsx:52:          <Image src="/images/hero/campus-hero.jpg" alt="Không gian đào tạo và nghiên cứu tại Văn Lang" fill sizes="(max-width: 950px) 100vw, 44vw" />
+frontend/src\features\programmes\components\MasterProgrammesPage.tsx:75:            sizes="(max-width: 900px) 100vw, 40vw"
+frontend/src\features\discover\components\VisionMissionPage.module.css:59:  max-width: 1040px;
+frontend/src\features\discover\components\VisionMissionPage.module.css:117:  max-width: 820px;
+frontend/src\features\discover\components\VisionMissionPage.module.css:146:  margin-right: 20px;
+frontend/src\features\discover\components\VisionMissionPage.module.css:262:  max-width: 760px;
+frontend/src\features\discover\components\VisionMissionPage.module.css:290:  max-width: 1150px;
+frontend/src\features\discover\components\VisionMissionPage.module.css:380:@media (max-width: 1100px) {
+frontend/src\features\discover\components\VisionMissionPage.module.css:400:@media (max-width: 767px) {
+frontend/src\features\discover\components\VisionMissionPage.module.css:419:    max-width: 260px;
+frontend/src\features\discover\components\VisionMissionPage.module.css:553:  max-width: 64ch;
+frontend/src\features\discover\components\VisionMissionPage.module.css:579:  max-width: 64ch;
+frontend/src\features\discover\components\VisionMissionPage.module.css:595:@media (max-width: 767px) {
+frontend/src\features\discover\components\VisionMissionPage.module.css:607:  max-width: 920px;
+frontend/src\features\discover\components\VisionMissionPage.module.css:730:@media (max-width: 767px) {
+frontend/src\features\discover\components\VisionMissionPage.module.css:788:  max-width: 64ch;
+frontend/src\features\discover\components\VisionMissionPage.module.css:793:  max-width: 64ch;
+frontend/src\features\discover\components\VisionMissionPage.module.css:803:@media (max-width: 767px) {
+frontend/src\features\discover\components\LeadershipPage.tsx:46:                <Image src={index % 2 === 0 ? "/images/programmers/pic_pro.jpg" : "/images/hero/campus-hero.jpg"} alt={`${title} tại VGG`} fill sizes="(max-width: 800px) 100vw, 54vw" />
+frontend/src\features\discover\components\LeadershipPage.tsx:48:              <figure><Image src="/images/hero/campus-hero.jpg" alt={`Không gian ${title}`} fill sizes="(max-width: 800px) 50vw, 27vw" /></figure>
+frontend/src\features\discover\components\LeadershipPage.tsx:49:              <figure><Image src="/images/programmers/pic_pro.jpg" alt={`Cộng đồng ${title}`} fill sizes="(max-width: 800px) 50vw, 27vw" /></figure>
+frontend/src\features\discover\components\VisionMissionPage.tsx:38:        <Image src="/images/hero/campus-hero.jpg" alt="Không gian học thuật tại khuôn viên Văn Lang" fill sizes="(max-width: 767px) 100vw, 44vw" />
+frontend/src\features\discover\components\VisionMissionPage.tsx:45:      <figure className={styles.missionMedia} data-reveal><Image src="/images/programmers/pic_pro.jpg" alt="Học viên Văn Lang trong ngày tốt nghiệp" fill sizes="(max-width: 767px) 100vw, 44vw" /></figure>
+frontend/src\features\discover\components\VisionMissionPage.tsx:57:        <figure><Image src="/images/programmers/pic_pro.jpg" alt="Cộng đồng học viên sau đại học Văn Lang" fill sizes="(max-width: 767px) 100vw, 38vw" /></figure>
+frontend/src\features\discover\components\DiscoverSubpageVM.tsx:109:            sizes="(max-width: 767px) 100vw, 44vw"
+frontend/src\features\discover\components\DiscoverSubpageVM.tsx:139:              sizes="(max-width: 767px) 100vw, 44vw"
+frontend/src\features\discover\components\DiscoverSubpageVM.tsx:164:                    sizes="(max-width: 767px) 100vw, 44vw"
+frontend/src\features\discover\components\DiscoverSubpageVM.tsx:181:                    sizes="(max-width: 767px) 100vw, 44vw"
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:33:  max-width: 830px;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:102:  max-width: none;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:110:  max-width: 66ch;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:190:  padding-left: 72px;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:203:  max-width: 850px;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:262:  max-width: 17ch;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:269:  max-width: 16ch;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:275:  max-width: 65ch;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:380:@media (max-width: 1100px) {
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:389:    max-width: none;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:393:    max-width: 76ch;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:407:    padding-left: 52px;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:421:@media (max-width: 760px) {
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:431:    padding-left: 42px;
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:438:@media (max-width: 620px) {
+frontend/src\features\programmes\components\MasterProgrammesPage.module.css:446:    max-width: 25ch;
+frontend/src\features\home\components\News.tsx:54:                  sizes="(max-width: 900px) 100vw, 33vw"
+frontend/src\features\home\components\ProgrammeCatalog.tsx:97:            sizes="(max-width: 900px) 100vw, 50vw"
+frontend/src\features\discover\components\WhyVGGPage.tsx:104:                  sizes="(max-width: 767px) 100vw, 44vw"
+frontend/src\features\discover\components\WhyVGGPage.tsx:128:                  sizes="(max-width: 767px) 100vw, 44vw"
+frontend/src\features\home\components\Header.tsx:144:                sizes="(max-width: 900px) 0px, 42vw"
+frontend/src\features\home\components\Research.tsx:25:          sizes="(max-width: 900px) 100vw, 50vw"
+frontend/src\app\home.css:82:  padding-left: 50px;
+frontend/src\app\home.css:83:  padding-right: 36px;
+frontend/src\app\home.css:86:  max-width: 620px;
+frontend/src\app\home.css:127:  padding-left: 24px;
+frontend/src\app\home.css:128:  padding-right: 24px;
+frontend/src\app\home.css:141:@media (max-width: 700px) {
+frontend/src\app\home.css:147:    padding-left: 38px;
+frontend/src\app\home.css:148:    padding-right: 28px;
+frontend/src\app\home.css:155:    padding-left: 16px;
+frontend/src\app\home.css:156:    padding-right: 16px;
+frontend/src\app\home.css:219:  padding-left: 5vw;
+frontend/src\app\home.css:436:  max-width: 360px;
+frontend/src\app\home.css:469:  margin-right: 17px;
+frontend/src\app\home.css:473:  margin-left: 17px;
+frontend/src\app\home.css:530:@media (max-width: 1250px) and (min-width: 901px) {
+frontend/src\app\home.css:532:    padding-right: 2vw;
+frontend/src\app\home.css:549:    max-width: 190px;
+frontend/src\app\home.css:647:  max-width: 900px;
+frontend/src\app\home.css:740:  max-width: 820px;
+frontend/src\app\home.css:749:  max-width: 560px;
+frontend/src\app\home.css:881:  max-width: 850px;
+frontend/src\app\home.css:906:  max-width: 560px;
+frontend/src\app\home.css:971:@media (max-width: 700px) {
+frontend/src\app\home.css:1171:  max-width: 650px;
+frontend/src\app\home.css:1186:  max-width: 620px;
+frontend/src\app\home.css:1259:  max-width: 800px;
+frontend/src\app\home.css:1275:  max-width: 520px;
+frontend/src\app\home.css:1347:  max-width: 330px;
+frontend/src\app\home.css:1470:  max-width: 520px;
+frontend/src\app\home.css:1612:  max-width: 620px;
+frontend/src\app\home.css:1646:  margin-right: 28px;
+frontend/src\app\home.css:1680:  max-width: 470px;
+frontend/src\app\home.css:1710:  max-width: 220px;
+frontend/src\app\home.css:1744:  max-width: 540px;
+frontend/src\app\home.css:1753:  max-width: 520px;
+frontend/src\app\home.css:1825:  max-width: 450px;
+frontend/src\app\home.css:1905:  max-width: 720px;
+frontend/src\app\home.css:2196:  max-width: 480px;
+frontend/src\app\home.css:2204:  max-width: 680px;
+frontend/src\app\home.css:2215:  max-width: 490px;
+frontend/src\app\home.css:2689:@media (max-width: 900px) {
+frontend/src\app\home.css:2816:@media (max-width: 600px) {
+frontend/src\app\home.css:2954:    padding-left: 6vw;
+frontend/src\app\home.css:2958:    max-width: 155px;
+frontend/src\app\home.css:2978:    max-width: 185px;
+frontend/src\app\home.css:2987:    padding-left: 6vw;
+frontend/src\app\home.css:2988:    padding-right: 6vw;
+frontend/src\app\home.css:3109:@media (max-width: 900px) {
+frontend/src\app\home.css:3254:    margin-left: 8px;
+frontend/src\app\home.css:3351:  margin-left: auto;
+frontend/src\app\home.css:3432:  max-width: 680px;
+frontend/src\app\home.css:3439:  max-width: 620px;
+frontend/src\app\home.css:3452:  margin-left: auto;
+frontend/src\app\home.css:3593:  padding-left: 14px;
+frontend/src\app\home.css:3620:  margin-right: 8px;
+frontend/src\app\home.css:3626:  margin-left: 8px;
+frontend/src\app\home.css:3641:  padding-left: 16px;
+frontend/src\app\home.css:3704:@media (max-width: 900px) {
+frontend/src\app\home.css:3714:@media (max-width: 600px) {
+frontend/src\app\home.css:3771:  padding-right: 18px;
+frontend/src\app\home.css:3779:@media (max-width: 760px) {
+frontend/src\app\home.css:3794:@media (max-width: 900px) {
+frontend/src\app\home.css:3812:@media (max-width: 600px) {
+frontend/src\app\home.css:3823:    max-width: 320px;
+frontend/src\app\home.css:3850:@media (max-width: 1050px) {
+frontend/src\app\home.css:3865:@media (max-width: 600px) {
+frontend/src\app\home.css:3927:    margin-right: 0;
+frontend/src\app\home.css:3972:@media (max-width: 900px) {
+frontend/src\app\home.css:3978:    max-width: none;
+frontend/src\app\home.css:4012:@media (max-width: 600px) {
+frontend/src\app\home.css:4014:    max-width: none;
+frontend/src\app\home.css:4020:    max-width: 190px;
+frontend/src\app\home.css:4031:    max-width: 100%;
+frontend/src\app\home.css:4066:@media (max-width: 380px) {
+frontend/src\app\home.css:4068:    max-width: 180px;
+frontend/src\app\home.css:4074:    max-width: 170px;
+frontend/src\app\home.css:4091:  max-width: 1000px;
+frontend/src\app\home.css:4125:  padding-left: 22px;
+frontend/src\app\home.css:4129:  max-width: 1000px;
+frontend/src\app\home.css:4213:  max-width: 650px;
+frontend/src\app\home.css:4274:@media (max-width: 760px) {
+frontend/src\app\home.css:4300:@media (max-width: 760px) {
+frontend/src\app\globals.css:21:  --container-padding: clamp(24px, 7vw, 112px);
+frontend/src\app\globals.css:82:  max-width: min(22ch, 100%);
+frontend/src\app\globals.css:88:  max-width: 68ch;
+frontend/src\app\globals.css:100:  max-width: 60ch;
+frontend/src\app\globals.css:188:@media (max-width: 767px) {
+frontend/src\app\globals.css:272:  max-width: 780px;
+frontend/src\app\globals.css:276:  max-width: 560px;
+frontend/src\app\globals.css:330:  max-width: 1200px;
+frontend/src\app\globals.css:353:  padding-left: 5vw;
+frontend/src\app\globals.css:380:  max-width: 1150px;
+frontend/src\app\globals.css:409:@media (max-width: 800px) {
+frontend/src\app\globals.css:520:@media (max-width: 599px) {
+frontend/src\app\globals.css:652:  max-width: 900px;
+frontend/src\app\globals.css:673:  max-width: 620px;
+frontend/src\app\globals.css:744:  padding-left: 25px;
+frontend/src\app\globals.css:820:  max-width: 460px;
+frontend/src\app\globals.css:967:  max-width: 520px;
+frontend/src\app\globals.css:1040:@media (max-width: 900px) {
+frontend/src\app\globals.css:1094:@media (max-width: 600px) {
+frontend/src\app\globals.css:1384:  max-width: 520px;
+frontend/src\app\globals.css:1684:@media (max-width: 1200px) {
+frontend/src\app\globals.css:1703:@media (max-width: 900px) {
+frontend/src\app\globals.css:1715:    margin-left: auto;
+frontend/src\app\globals.css:1775:@media (max-width: 600px) {
+frontend/src\app\globals.css:1830:  padding-left: 3vw;
+frontend/src\app\globals.css:1834:  max-width: 350px;
+frontend/src\app\globals.css:2063:  max-width: 355px;
+frontend/src\app\globals.css:2093:@media (max-width: 1200px) {
+frontend/src\app\globals.css:2096:    max-width: 260px;
+frontend/src\app\globals.css:2105:@media (max-width: 900px) {
+frontend/src\app\globals.css:2112:    max-width: 240px;
+frontend/src\app\globals.css:2124:@media (max-width: 600px) {
+frontend/src\app\globals.css:2127:    max-width: 205px;
+frontend/src\app\globals.css:2177:  max-width: 100%;
+frontend/src\app\globals.css:2214:  margin-left: auto;
+frontend/src\app\globals.css:2233:  max-width: 900px;
+frontend/src\app\globals.css:2348:  padding-left: 35px;
+frontend/src\app\globals.css:2383:  max-width: 850px;
+frontend/src\app\globals.css:2472:  margin-left: 40px;
+frontend/src\app\globals.css:2474:@media (max-width: 1100px) {
+frontend/src\app\globals.css:2488:@media (max-width: 800px) {
+frontend/src\app\globals.css:2583:  margin-left: 35px;
+frontend/src\app\globals.css:2585:@media (max-width: 850px) {
+frontend/src\app\globals.css:2611:  max-width: 650px;
+frontend/src\app\globals.css:2620:@media (max-width: 900px) {
+frontend/src\app\globals.css:2626:    max-width: 100%;
+frontend/src\app\globals.css:2668:  max-width: none;
+frontend/src\app\globals.css:2670:  margin-left: calc(50% - 50vw);
+frontend/src\app\globals.css:2704:  max-width: 1080px;
+frontend/src\app\globals.css:2742:  max-width: 1360px;
+frontend/src\app\globals.css:2941:@media (max-width: 800px) {
+frontend/src\app\globals.css:3063:  max-width: 100%;
+frontend/src\app\globals.css:3070:  max-width: 100%;
+frontend/src\app\globals.css:3269:@media (max-width: 1100px) {
+frontend/src\app\globals.css:3280:@media (max-width: 760px) {
+frontend/src\app\globals.css:3418:@media (max-width: 900px) {
+frontend/src\app\globals.css:3464:  padding-left: var(--site-gutter);
+frontend/src\app\globals.css:3465:  padding-right: var(--site-gutter);
+frontend/src\app\globals.css:3469:  padding-left: var(--site-gutter);
+frontend/src\app\globals.css:3470:  padding-right: var(--site-gutter);
+frontend/src\app\globals.css:3474:@media (max-width: 1100px) {
+frontend/src\app\globals.css:3536:@media (max-width: 900px) {
+frontend/src\app\globals.css:3542:@media (max-width: 900px) {
+frontend/src\app\globals.css:3568:@media (max-width: 760px) {
+frontend/src\app\globals.css:3595:    max-width: 100%;
+frontend/src\app\globals.css:3605:    padding-left: var(--site-gutter);
+frontend/src\app\globals.css:3606:    padding-right: var(--site-gutter);
+frontend/src\app\globals.css:3636:    padding-left: 22px;
+frontend/src\app\globals.css:3714:@media (max-width: 420px) {
+frontend/src\app\globals.css:3820:  max-width: 930px;
+frontend/src\app\globals.css:3826:  max-width: 900px;
+frontend/src\app\globals.css:3834:  max-width: 750px;
+frontend/src\app\globals.css:3881:  max-width: 800px;
+frontend/src\app\globals.css:3897:@media (max-width: 800px) {
+frontend/src\app\globals.css:3981:  max-width: 970px;
+frontend/src\app\globals.css:4131:  max-width: 800px;
+frontend/src\app\globals.css:4227:@media (max-width: 1000px) {
+frontend/src\app\globals.css:4240:@media (max-width: 800px) {
+frontend/src\app\globals.css:4307:  padding-left: 5vw;
+frontend/src\app\globals.css:4326:  max-width: 310px;
+frontend/src\app\globals.css:4376:  max-width: 900px;
+frontend/src\app\globals.css:4380:  max-width: 900px;
+frontend/src\app\globals.css:4388:  max-width: 780px;
+frontend/src\app\globals.css:4514:@media (max-width: 1200px) and (min-width: 901px) {
+frontend/src\app\globals.css:4525:@media (max-width: 900px) {
+frontend/src\app\globals.css:4547:@media (max-width: 600px) {
+frontend/src\app\globals.css:4549:    padding-left: 6vw;
+frontend/src\app\globals.css:4607:  max-width: 285px;
+frontend/src\app\globals.css:4639:  max-width: 650px;
+frontend/src\app\globals.css:4663:  max-width: 590px;
+frontend/src\app\globals.css:4834:@media (max-width: 900px) {
+frontend/src\app\globals.css:4840:    max-width: 240px;
+frontend/src\app\globals.css:4857:@media (max-width: 600px) {
+frontend/src\app\globals.css:4952:  max-width: 850px;
+frontend/src\app\globals.css:4966:  max-width: 630px;
+frontend/src\app\globals.css:5134:  max-width: 340px;
+frontend/src\app\globals.css:5142:  max-width: 380px;
+frontend/src\app\globals.css:5196:  max-width: 600px;
+frontend/src\app\globals.css:5349:  max-width: 480px;
+frontend/src\app\globals.css:5421:@media (max-width: 1100px) {
+frontend/src\app\globals.css:5453:@media (max-width: 760px) {
+frontend/src\app\globals.css:5474:    padding-left: 6vw;
+frontend/src\app\globals.css:5475:    padding-right: 6vw;
+frontend/src\app\globals.css:5496:    padding-right: 0;
+frontend/src\app\globals.css:5584:  max-width: 700px;
+frontend/src\app\globals.css:5861:@media (max-width: 900px) {
+frontend/src\app\globals.css:5884:@media (max-width: 700px) {
+frontend/src\app\globals.css:5927:    padding-right: 18px;
+frontend/src\app\globals.css:6000:  max-width: 800px;
+frontend/src\app\globals.css:6006:  max-width: 620px;
+frontend/src\app\globals.css:6013:  padding-left: 7vw;
+frontend/src\app\globals.css:6014:  padding-right: 7vw;
+frontend/src\app\globals.css:6018:  max-width: 760px;
+frontend/src\app\globals.css:6021:  max-width: 680px;
+frontend/src\app\globals.css:6023:@media (max-width: 900px) {
+frontend/src\app\globals.css:6026:    padding-left: 6vw;
+frontend/src\app\globals.css:6027:    padding-right: 6vw;
+frontend/src\app\globals.css:6034:  max-width: 960px;
+frontend/src\app\globals.css:6042:  max-width: 820px;
+frontend/src\app\globals.css:6059:@media (max-width: 900px) {
+frontend/src\app\globals.css:6069:@media (max-width: 600px) {
+frontend/src\app\globals.css:6092:  max-width: 760px;
+frontend/src\app\globals.css:6123:  max-width: 600px;
+frontend/src\app\globals.css:6131:  max-width: 1280px;
+frontend/src\app\globals.css:6250:  padding-right: 6px;
+frontend/src\app\globals.css:6278:@media (max-width: 768px) {
+frontend/src\app\globals.css:6345:  max-width: 1500px;
+frontend/src\app\globals.css:6363:  max-width: 950px;
+frontend/src\app\globals.css:6403:  max-width: 620px;
+frontend/src\app\globals.css:6463:  max-width: 1500px;
+frontend/src\app\globals.css:7058:  margin-right: 2px;
+frontend/src\app\globals.css:7126:  padding-right: 0;
+frontend/src\app\globals.css:7328:  max-width: 100%;
+frontend/src\app\globals.css:7354:  padding-left: 14px;
+frontend/src\app\globals.css:7462:  padding-left: 14px;
+frontend/src\app\globals.css:7490:  margin-right: 9px;
+frontend/src\app\globals.css:7496:  margin-left: 8px;
+frontend/src\app\globals.css:7511:  padding-left: 17px;
+frontend/src\app\globals.css:7525:@media (max-width: 700px) {
+frontend/src\app\globals.css:7580:  margin-right: 18px;
+frontend/src\app\globals.css:7743:@media (max-width: 1250px) {
+frontend/src\app\globals.css:7762:@media (max-width: 950px) {
+frontend/src\app\globals.css:7794:@media (max-width: 680px) {
+frontend/src\app\globals.css:7841:    padding-right: 0;
+frontend/src\app\globals.css:7882:    margin-right: 0;
+frontend/src\app\globals.css:7943:  max-width: min(22ch, 100%) !important;
+frontend/src\app\globals.css:7965:  max-width: 18ch;
+frontend/src\app\globals.css:8003:@media (max-width: 767px) {
+frontend/src\app\globals.css:8013:@media (max-width: 900px) {
+frontend/src\app\globals.css:8018:@media (max-width: 767px) {
+frontend/src\app\globals.css:8027:@media (max-width: 767px) {
+frontend/src\app\(public)\discover\page.tsx:33:            sizes="(max-width: 800px) 92vw, 76vw"
+frontend/src\app\(public)\discover\page.tsx:84:              sizes="(max-width: 800px) 92vw, 52vw"
+frontend/src\app\(public)\discover\page.tsx:115:              sizes="(max-width: 800px) 92vw, 52vw"
+frontend/src\app\(public)\discover\page.tsx:146:              sizes="(max-width: 800px) 92vw, 52vw"
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:51:  left: var(--container-padding);
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:73:  padding: 160px var(--container-padding) 62px;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:84:  max-width: none;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:86:  padding-left: 24px;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:99:  max-width: 52ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:139:  padding: clamp(72px, 8vw, 112px) var(--container-padding);
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:143:  max-width: 14ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:154:  max-width: 58ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:188:  max-width: 13ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:194:  max-width: 53ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:206:  padding: clamp(64px, 7vw, 96px) var(--container-padding);
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:221:  max-width: 17ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:260:  padding: clamp(72px, 9vw, 128px) var(--container-padding);
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:274:  max-width: 14ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:280:  max-width: 53ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:361:  max-width: none;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:370:  max-width: 42ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:412:  padding: clamp(64px, 8vw, 108px) var(--container-padding);
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:438:  max-width: 59ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:479:  padding: clamp(72px, 9vw, 128px) var(--container-padding);
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:487:  max-width: 12ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:493:  max-width: 45ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:556:  max-width: 13ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:562:  max-width: 48ch;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:595:@media (max-width: 900px) {
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:649:@media (max-width: 600px) {
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:665:    max-width: none;
+frontend/src\app\(public)\admissions\AdmissionsPage.module.css:666:    padding-left: 16px;
+frontend/src\app\(public)\admissions\page.tsx:101:            sizes="(max-width: 800px) 100vw, 56vw"
+frontend/src\app\(public)\admissions\page.tsx:156:              <Image src={programme.image} alt={programme.title} fill sizes="(max-width: 800px) 100vw, 33vw" />
+frontend/src\app\(public)\admissions\page.tsx:182:            <Image src="/images/programmers/pic_pro.jpg" alt="Học viên VGG trong môi trường học tập" fill sizes="(max-width: 800px) 100vw, 50vw" />
+frontend/src\app\(public)\admissions\page.tsx:198:            <Image src="/images/hero/campus-hero.jpg" alt="Không gian học tập tại Trường Đại học Văn Lang" fill sizes="(max-width: 800px) 100vw, 50vw" />

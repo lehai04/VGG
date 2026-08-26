@@ -63,7 +63,14 @@ export const menuGroups: readonly MenuGroup[] = [
     intro:
       "VGG kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",
     items: discoverSections.map((item) => item.title),
-    itemsEn: ["Introduction", "Vision & Mission", "Leadership", "Why VGG", "Rankings & Achievements", "Contact"],
+    itemsEn: [
+      "Introduction",
+      "Vision & Mission",
+      "Leadership",
+      "Why VGG",
+      "Rankings & Achievements",
+      "Contact",
+    ],
     image:
       "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1800&q=86",
   },
@@ -82,7 +89,13 @@ export const menuGroups: readonly MenuGroup[] = [
       "Executive Education",
       "Chương trình Quốc tế",
     ],
-    itemsEn: ["Flagship Master's Programmes", "Master's Programmes", "Doctoral Programmes", "Executive Education", "International Programmes"],
+    itemsEn: [
+      "Flagship Master's Programmes",
+      "Master's Programmes",
+      "Doctoral Programmes",
+      "Executive Education",
+      "International Programmes",
+    ],
     image:
       "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1800&q=86",
   },
@@ -98,20 +111,26 @@ export const menuGroups: readonly MenuGroup[] = [
       "Học phí",
       "Học bổng & Hỗ trợ tài chính",
       "Quy trình nộp hồ sơ",
-        "Các mốc thời gian",
+      "Các mốc thời gian",
     ],
-      itemsEn: ["Admission Requirements", "Tuition Fees", "Scholarships & Financial Aid", "Application Process", "Key Dates"],
+    itemsEn: [
+      "Admission Requirements",
+      "Tuition Fees",
+      "Scholarships & Financial Aid",
+      "Application Process",
+      "Key Dates",
+    ],
     image:
       "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=86",
   },
   {
     slug: "research",
-    en: "Research & Innovation",
-    vi: "Nghiên cứu & Đổi mới",
+    en: "Research & Global Opportunities",
+    vi: "Nghiên cứu khoa học & Cơ hội quốc tế",
     kicker: "Knowledge for real-world impact",
-    headline: "Nghiên cứu để giải quyết vấn đề thực tiễn.",
+    headline: "Nghiên cứu chuyên sâu. Kết nối tri thức toàn cầu.",
     intro:
-      "VGG kết nối nhà khoa học, doanh nghiệp và cộng đồng để kiến tạo các giải pháp có giá trị.",
+      "VGG kết nối nhà khoa học, doanh nghiệp, cộng đồng và mạng lưới đối tác quốc tế để kiến tạo tri thức, giải pháp thực tiễn và những cơ hội học tập vượt ra ngoài biên giới.",
     items: [
       "Các cụm nghiên cứu",
       "Dự án nghiên cứu",
@@ -119,8 +138,27 @@ export const menuGroups: readonly MenuGroup[] = [
       "Hội thảo & Sự kiện khoa học",
       "Đổi mới sáng tạo",
       "Hợp tác doanh nghiệp",
+      "Trao đổi sinh viên",
+      "Dual Degree",
+      "Thực tập Quốc tế",
+      "Study Tour",
+      "Overseas Immersion",
+      "Đối tác toàn cầu",
     ],
-    itemsEn: ["Research Clusters", "Research Projects", "Publications", "Conferences & Academic Events", "Innovation", "Industry Collaboration"],
+    itemsEn: [
+      "Research Clusters",
+      "Research Projects",
+      "Publications",
+      "Conferences & Academic Events",
+      "Innovation",
+      "Industry Collaboration",
+      "Student Exchange",
+      "Dual Degree",
+      "International Internships",
+      "Study Tour",
+      "Overseas Immersion",
+      "Global Partners",
+    ],
     image:
       "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1800&q=86",
   },
@@ -140,7 +178,14 @@ export const menuGroups: readonly MenuGroup[] = [
       "Overseas Immersion",
       "Đối tác toàn cầu",
     ],
-    itemsEn: ["Student Exchange", "Dual Degree", "International Internships", "Study Tour", "Overseas Immersion", "Global Partners"],
+    itemsEn: [
+      "Student Exchange",
+      "Dual Degree",
+      "International Internships",
+      "Study Tour",
+      "Overseas Immersion",
+      "Global Partners",
+    ],
     image:
       "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1800&q=86",
   },
@@ -159,7 +204,13 @@ export const menuGroups: readonly MenuGroup[] = [
       "Cựu học viên",
       "Câu chuyện thành công",
     ],
-    itemsEn: ["Student Support", "Career Development", "Learning Resources", "Alumni", "Success Stories"],
+    itemsEn: [
+      "Student Support",
+      "Career Development",
+      "Learning Resources",
+      "Alumni",
+      "Success Stories",
+    ],
     image:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=86",
   },
@@ -223,6 +274,9 @@ export function findGroup(slug: string): MenuGroup | undefined {
   return menuGroups.find((group) => group.slug === slug);
 }
 
+/** Navigation chính: Cơ hội quốc tế đã được gộp vào nhóm Nghiên cứu. */
+export const navigationGroups = menuGroups.filter((group) => group.slug !== "global");
+
 export type SectionSubpage = {
   slug: string;
   title: string;
@@ -231,13 +285,39 @@ export type SectionSubpage = {
   summary: string;
 };
 
-const subpageSlugs: Record<string, string[]> = {
+export const subpageSlugs: Record<string, string[]> = {
   programmes: ["flagship", "thac-si", "tien-si", "executive-education", "quoc-te"],
-    admissions: ["yeu-cau", "hoc-phi", "hoc-bong", "nop-ho-so", "moc-thoi-gian"],
-  research: ["cum-nghien-cuu", "du-an", "cong-bo", "hoi-thao", "doi-moi-sang-tao", "hop-tac-doanh-nghiep"],
+  admissions: ["yeu-cau", "hoc-phi", "hoc-bong", "nop-ho-so", "moc-thoi-gian"],
+  research: [
+    "cum-nghien-cuu",
+    "du-an",
+    "cong-bo",
+    "hoi-thao",
+    "doi-moi-sang-tao",
+    "hop-tac-doanh-nghiep",
+    "trao-doi",
+    "dual-degree",
+    "thuc-tap",
+    "study-tour",
+    "overseas-immersion",
+    "doi-tac",
+  ],
   global: ["trao-doi", "dual-degree", "thuc-tap", "study-tour", "overseas-immersion", "doi-tac"],
-  "student-success": ["ho-tro-hoc-vien", "phat-trien-su-nghiep", "tai-nguyen-hoc-tap", "cuu-hoc-vien", "cau-chuyen-thanh-cong"],
-  news: ["tin-tuc", "su-kien", "seminar-webinar", "thong-cao-bao-chi", "thu-vien-hinh-anh", "video"],
+  "student-success": [
+    "ho-tro-hoc-vien",
+    "phat-trien-su-nghiep",
+    "tai-nguyen-hoc-tap",
+    "cuu-hoc-vien",
+    "cau-chuyen-thanh-cong",
+  ],
+  news: [
+    "tin-tuc",
+    "su-kien",
+    "seminar-webinar",
+    "thong-cao-bao-chi",
+    "thu-vien-hinh-anh",
+    "video",
+  ],
   resources: ["bieu-mau", "chinh-sach-quy-dinh", "tai-lieu", "lich-hoc-thuat", "faq"],
 };
 
@@ -256,7 +336,105 @@ export const sectionSubpages: Record<string, SectionSubpage[]> = Object.fromEntr
     ]),
 );
 
+export type UnifiedDetailBlock = {
+  title: string;
+  text?: string;
+  points?: readonly string[];
+};
+
+/** Nội dung đầy đủ hiển thị trong các accordion của trang tổng hợp. */
+export const unifiedSectionDetails: Record<string, readonly UnifiedDetailBlock[]> = {
+  "admissions/yeu-cau": [
+    {
+      title: "Trình độ đào tạo",
+      text: "Đã tốt nghiệp đại học hoặc đủ điều kiện được công nhận tốt nghiệp đại học (hoặc có trình độ tương đương trở lên) theo quy định của Bộ Giáo dục và Đào tạo.",
+    },
+    {
+      title: "Ngành đào tạo",
+      text: "Có bằng tốt nghiệp đại học thuộc ngành phù hợp với ngành đăng ký dự tuyển. Trường hợp tốt nghiệp ngành khác có thể phải học bổ sung kiến thức theo quy định của Trường Đại học Văn Lang trước khi tham gia chương trình đào tạo. Văn bằng do cơ sở giáo dục nước ngoài cấp phải được công nhận theo quy định hiện hành.",
+    },
+    {
+      title: "Điều kiện ngoại ngữ",
+      text: "Đáp ứng yêu cầu về năng lực ngoại ngữ theo Quy chế tuyển sinh trình độ thạc sĩ của Bộ Giáo dục và Đào tạo, bao gồm một trong các điều kiện sau:",
+      points: [
+        "Có chứng chỉ ngoại ngữ đạt trình độ tương đương Bậc 3 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam còn hiệu lực.",
+        "Có bằng tốt nghiệp đại học ngành ngôn ngữ nước ngoài.",
+        "Tốt nghiệp chương trình đại học toàn thời gian bằng tiếng nước ngoài và văn bằng được công nhận theo quy định.",
+        "Đạt yêu cầu đánh giá năng lực tiếng Anh đầu vào do Trường Đại học Văn Lang tổ chức (đối với các trường hợp áp dụng).",
+      ],
+    },
+    {
+      title: "Điều kiện khác",
+      text: "Ứng viên không trong thời gian thi hành kỷ luật từ mức cảnh cáo trở lên hoặc không trong thời gian thi hành án hình sự; đồng thời đáp ứng các quy định tuyển sinh hiện hành của Trường Đại học Văn Lang và Bộ Giáo dục và Đào tạo.",
+    },
+  ],
+  "admissions/hoc-bong": [
+    {
+      title: "Học bổng Tài năng 100%",
+      text: "Hỗ trợ lên đến 100% học phí dựa trên thành tích nổi bật ở bậc Đại học và thành tích công bố khoa học ở bậc Thạc sĩ.",
+    },
+    {
+      title: "Học bổng 30%",
+      text: "Hỗ trợ 30% học phí toàn khóa dành cho thương binh, bệnh binh và người khuyết tật.",
+    },
+    {
+      title: "Học bổng 10%",
+      text: "Hỗ trợ 10% học phí toàn khóa dành cho cựu sinh viên Văn Lang; vợ, chồng hoặc anh, chị, em ruột cùng theo học; người dân tộc thiểu số; và con thương binh, bệnh binh.",
+    },
+    {
+      title: "Ưu đãi học phí 5%",
+      text: "Giảm thêm 5% trên mức học phí thực đóng khi thanh toán toàn bộ học phí trong một lần. Chính sách áp dụng đối với học viên có mức học bổng dưới 30%.",
+    },
+    {
+      title: "Học bổng Khuyến khích 5–10%",
+      points: [
+        "Hỗ trợ 10% học phí toàn khóa dành cho học viên theo học các ngành thuộc nhóm STEM.",
+        "Hỗ trợ 5% học phí toàn khóa dành cho học viên là nữ, người dân tộc thiểu số, người khuyết tật, thương binh hoặc bệnh binh.",
+      ],
+    },
+  ],
+  "admissions/nop-ho-so": [
+    {
+      title: "Khám phá chương trình",
+      text: "Tìm hiểu chương trình đào tạo, yêu cầu tuyển sinh và lựa chọn chương trình phù hợp. Đối với chương trình Tiến sĩ, ứng viên được khuyến khích xác định định hướng nghiên cứu và lĩnh vực chuyên môn phù hợp trước khi nộp hồ sơ.",
+    },
+    {
+      title: "Nộp hồ sơ",
+      text: "Hoàn thành hồ sơ đăng ký theo yêu cầu của chương trình. Đối với chương trình Tiến sĩ, hồ sơ cần có đề cương nghiên cứu và minh chứng về năng lực nghiên cứu theo quy định.",
+    },
+    {
+      title: "Kiểm tra điều kiện đầu vào",
+      text: "Viện Sau đại học đánh giá điều kiện đầu vào, năng lực học thuật, trình độ ngoại ngữ và mức độ phù hợp của ứng viên với chương trình đào tạo. Trong một số trường hợp, ứng viên có thể được yêu cầu hoàn thành các học phần bổ sung kiến thức hoặc đáp ứng thêm điều kiện ngoại ngữ trước khi được công nhận đủ điều kiện xét tuyển.",
+    },
+    {
+      title: "Đánh giá tuyển sinh",
+      text: "Tùy theo chương trình, ứng viên có thể tham gia phỏng vấn, đánh giá năng lực hoặc các hình thức đánh giá khác. Đối với chương trình Tiến sĩ, ứng viên cần trình bày đề cương nghiên cứu; quá trình này tập trung vào tiềm năng nghiên cứu và sự phù hợp với định hướng học thuật của chương trình.",
+    },
+    {
+      title: "Thông báo kết quả tuyển sinh",
+      text: "Kết quả tuyển sinh sẽ được thông báo chính thức đến ứng viên. Đối với các hồ sơ trúng tuyển, Viện Sau đại học sẽ gửi hướng dẫn nhập học và các bước tiếp theo.",
+    },
+    {
+      title: "Nhập học",
+      text: "Sau khi hoàn tất thủ tục nhập học, học viên chính thức trở thành học viên cao học hoặc nghiên cứu sinh của Trường Đại học Văn Lang và bắt đầu hành trình học tập, nghiên cứu và phát triển nghề nghiệp trong môi trường học thuật quốc tế.",
+    },
+  ],
+  "admissions/moc-thoi-gian": [
+    {
+      title: "Các đợt dự tuyển và đăng ký học bổng",
+      text: "Trường Đại học Văn Lang tổ chức 3 đợt tuyển sinh sau đại học mỗi năm.",
+    },
+    {
+      title: "Đợt 3 / 2026",
+      points: [
+        "29/08/2026 — Hạn dành cho học viên đăng ký học bổng.",
+        "05/09/2026 — Hạn dành cho học viên không đăng ký học bổng.",
+      ],
+    },
+  ],
+};
+
 export function subpageHref(section: string, index: number) {
   const page = sectionSubpages[section]?.[index];
-  return page ? `/${section}/${page.slug}` : `/${section}`;
+  return page ? `/${section}#${page.slug}` : `/${section}`;
 }

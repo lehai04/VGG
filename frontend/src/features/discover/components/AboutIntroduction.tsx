@@ -34,7 +34,7 @@ export function AboutIntroduction() {
       <section className={styles.hero} aria-labelledby="about-title">
         <Image
           className={styles.heroImage}
-          src="/images/hero/campus-hero.jpg"
+          src="/images/pages/discover/content/campus.jpg"
           alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang"
           fill
           priority
@@ -64,10 +64,10 @@ export function AboutIntroduction() {
         </div>
         <div className={styles.introMedia} data-reveal>
           <figure className={styles.campusFrame}>
-            <Image src="/images/hero/campus-hero.jpg" alt="Không gian học tập tại Văn Lang" fill sizes="(max-width: 900px) 90vw, 44vw" />
+            <Image src="/images/pages/discover/content/campus.jpg" alt="Không gian học tập tại Văn Lang" fill sizes="(max-width: 900px) 90vw, 44vw" />
           </figure>
           <figure className={styles.studentFrame}>
-            <Image src="/images/programmers/pic_pro.jpg" alt="Học viên tốt nghiệp tại Văn Lang" fill sizes="(max-width: 900px) 48vw, 18vw" />
+            <Image src="/images/pages/discover/content/graduates.jpg" alt="Học viên tốt nghiệp tại Văn Lang" fill sizes="(max-width: 900px) 48vw, 18vw" />
           </figure>
         </div>
       </section>
@@ -96,7 +96,7 @@ export function AboutIntroduction() {
             ))}
           </ol>
           <figure data-reveal>
-            <Image src="/images/programmers/pic_pro.jpg" alt="Học viên Văn Lang trong ngày tốt nghiệp" fill sizes="(max-width: 900px) 90vw, 40vw" />
+            <Image src="/images/pages/discover/content/graduates.jpg" alt="Học viên Văn Lang trong ngày tốt nghiệp" fill sizes="(max-width: 900px) 90vw, 40vw" />
           </figure>
         </div>
       </section>
@@ -109,7 +109,7 @@ export function AboutIntroduction() {
           <blockquote>Tri thức trở nên có giá trị khi được chuyển hóa thành năng lực hành động.</blockquote>
         </div>
         <figure data-reveal>
-          <Image src="/images/programmers/pic_pro.jpg" alt="Niềm vui của học viên sau đại học" fill sizes="(max-width: 900px) 100vw, 46vw" />
+          <Image src="/images/pages/discover/content/graduates.jpg" alt="Niềm vui của học viên sau đại học" fill sizes="(max-width: 900px) 100vw, 46vw" />
         </figure>
       </section>
 
@@ -123,7 +123,7 @@ export function AboutIntroduction() {
         </div>
         <div className={styles.connectedContent}>
           <p data-reveal>Viện hướng đến xây dựng môi trường kết nối người học, giảng viên, chuyên gia, doanh nghiệp và cộng đồng học thuật; từ đó mở rộng trải nghiệm chuyên môn và năng lực nghề nghiệp.</p>
-          <figure data-reveal><Image src="/images/hero/campus-hero.jpg" alt="Hệ sinh thái học tập tại Văn Lang" fill sizes="(max-width: 900px) 90vw, 48vw" /></figure>
+          <figure data-reveal><Image src="/images/pages/discover/content/campus.jpg" alt="Hệ sinh thái học tập tại Văn Lang" fill sizes="(max-width: 900px) 90vw, 48vw" /></figure>
           <aside data-reveal><strong>18–24 tháng</strong><span>Thời gian đào tạo phổ biến, cùng hoạt động hỗ trợ xuyên suốt hành trình học tập.</span></aside>
         </div>
       </section>

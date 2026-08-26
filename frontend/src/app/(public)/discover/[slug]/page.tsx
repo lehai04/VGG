@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
-import { AboutIntroduction } from "@/features/discover/components/AboutIntroduction";
 import { VisionMissionPage } from "@/features/discover/components/VisionMissionPage";
 import { LeadershipPage } from "@/features/discover/components/LeadershipPage";
 import { ContactPage } from "@/features/discover/components/ContactPage";
@@ -154,7 +153,7 @@ export default async function DiscoverDetail({ params }: { params: Promise<{ slu
   const { slug } = await params;
   const page = pages[slug as PageSlug];
   if (!page) notFound();
-  if (slug === "gioi-thieu") return <AboutIntroduction />;
+  if (slug === "gioi-thieu") redirect("/discover");
   // Trang institutional statement có content model/layout riêng.
   if (slug === "tam-nhin-su-menh") return <VisionMissionPage />;
   if (slug === "lanh-dao") return <LeadershipPage />;
@@ -170,7 +169,7 @@ export default async function DiscoverDetail({ params }: { params: Promise<{ slu
       <SiteHeader compact />
       <section className="discover-detail-hero">
         <Image
-          src="/images/hero/campus-hero.jpg"
+          src="/images/pages/discover/content/campus.jpg"
           alt="Khuôn viên Trường Đại học Văn Lang"
           fill
           priority

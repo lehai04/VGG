@@ -12,13 +12,13 @@ const NEWS_ITEMS = [
     category: "HỌC THUẬT",
     date: "12.08.2026",
     title: "Hành trình nghiên cứu bắt đầu từ một câu hỏi có giá trị",
-    image: "/images/hero/campus-hero.jpg",
+    image: "/images/pages/home/sections/campus.jpg",
   },
   {
     category: "SỰ KIỆN",
     date: "06.08.2026",
     title: "Graduate Discovery Day — khám phá chương trình sau đại học",
-    image: "/images/hero/campus-hero.jpg",
+    image: "/images/pages/home/sections/campus.jpg",
   },
 ] as const;
 

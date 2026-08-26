@@ -51,15 +51,12 @@
   background: #fff;
 }
 .leaderProfile {
-  padding: clamp(56px, 6vw, 84px) var(--container-padding);
   display: grid;
   grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(40px, 5vw, 72px);
   align-items: start;
+  padding: clamp(56px, 6vw, 84px) var(--container-padding);
   background: #fff;
-}
-.leaderProfile + .leaderProfile {
-  border-top: 1px solid var(--color-line);
 }
 .profileCopy {
   position: sticky;
@@ -74,10 +71,23 @@
 }
 main:global(#main-content).page .profileCopy p {
   max-width: 690px;
-  margin: 22px 0 28px;
+  margin: 16px 0 34px;
+  color: var(--vlu-red);
+  font-size: clamp(16px, 1.25vw, 19px) !important;
+  font-weight: 700;
+  line-height: 1.4 !important;
+  text-transform: uppercase;
+  white-space: pre-line;
+}
+.profileCopy blockquote {
+  max-width: 680px;
+  margin: 0;
+  padding-left: 24px;
+  border-left: 3px solid var(--vlu-red);
   color: #272938;
-  font-size: clamp(18px, 1.4vw, 20px) !important;
-  line-height: 1.65 !important;
+  font-size: clamp(20px, 1.65vw, 26px);
+  font-style: italic;
+  line-height: 1.55;
 }
 .profileCopy a {
   width: max-content;
@@ -96,31 +106,99 @@ main:global(#main-content).page .profileCopy p {
   transform: translateY(-2px);
   background: var(--vlu-red-dark);
 }
-.profileGallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: min(430px, 30vw) min(220px, 15vw);
-  gap: 18px;
-}
-.profileGallery figure {
+.profileImage {
   position: relative;
-  margin: 0;
-  overflow: hidden;
-  border-radius: 14px;
-  background: #ecebe7;
+  width: min(100%, 360px);
+  aspect-ratio: 609 / 636;
+  margin: 0 auto;
+  background: transparent;
 }
-.profileMainImage {
-  grid-column: 1/3;
-}
-.profileGallery img {
-  object-fit: cover;
+.profileImage img {
+  object-fit: contain;
+  object-position: center;
   transition: transform 650ms var(--motion-ease);
 }
-.profileGallery figure:hover img {
-  transform: scale(1.03);
+.profileImage:hover img {
+  transform: scale(1.025);
 }
-.profileMainImage img {
-  object-position: center 35%;
+.facultyDirectory {
+  padding: clamp(64px, 7vw, 108px) var(--container-padding);
+  border-top: 1px solid var(--color-line);
+  background: #f6f7fb;
+}
+.facultyHeading {
+  width: 100%;
+  max-width: 1260px;
+  margin-inline: auto;
+  margin-bottom: clamp(38px, 5vw, 64px);
+}
+.facultyHeading h2 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(38px, 4.5vw, 66px);
+}
+.facultyGrid {
+  display: grid;
+  width: 100%;
+  max-width: 1260px;
+  margin-inline: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(42px, 5vw, 76px) clamp(28px, 4vw, 58px);
+}
+.facultyCard {
+  min-width: 0;
+}
+.facultyCard figure {
+  position: relative;
+  width: min(100%, 320px);
+  height: 220px;
+  margin: 0 0 24px;
+  overflow: hidden;
+  background: transparent;
+  transform: translateX(-38px);
+}
+.facultyCard figure img {
+  object-fit: contain;
+  transform: translateY(8px) scale(1.75);
+  transform-origin: 41% 48%;
+  transition: transform 420ms var(--motion-ease);
+}
+.facultyCard:hover figure img {
+  transform: translateY(6px) scale(1.78);
+}
+.facultyCard figure img.logisticImage {
+  transform: translateY(8px) scale(0.95);
+}
+.facultyCard:hover figure img.logisticImage {
+  transform: translateY(6px) scale(0.98);
+}
+.facultyCard h3 {
+  margin: 0 0 8px;
+  color: var(--lead-ink);
+  font-size: clamp(20px, 1.65vw, 27px);
+  line-height: 1.18;
+}
+main:global(#main-content).page .facultyCard p {
+  margin: 0 0 17px;
+  color: var(--lead-ink);
+  font-size: 16px !important;
+  font-weight: 700;
+  line-height: 1.35 !important;
+}
+.facultyCard a {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--vlu-red);
+  font-size: 13px;
+  font-weight: 800;
+}
+.facultyCard a span {
+  color: var(--lead-ink);
+  transition: transform 180ms ease;
+}
+.facultyCard a:hover span {
+  transform: translateX(4px);
 }
 @media (max-width: 900px) {
   .leaderProfile {
@@ -129,8 +207,15 @@ main:global(#main-content).page .profileCopy p {
   .profileCopy {
     position: static;
   }
-  .profileGallery {
-    grid-template-rows: 520px 250px;
+  .profileImage {
+    width: min(100%, 340px);
+    margin-inline: auto;
+  }
+  .facultyGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .facultyCard figure {
+    transform: none;
   }
 }
 @media (max-width: 600px) {
@@ -158,17 +243,30 @@ main:global(#main-content).page .profileCopy p {
   .profileCopy p {
     font-size: 17px;
   }
-  .profileGallery {
-    gap: 10px;
-    grid-template-rows: 300px 140px;
+  .profileCopy blockquote {
+    padding-left: 18px;
+    font-size: 19px;
   }
-  .profileGallery figure {
-    border-radius: 8px;
+  .facultyDirectory {
+    padding-inline: 24px;
+  }
+  .facultyGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 42px 18px;
+  }
+  .facultyCard figure {
+    margin-bottom: 18px;
+  }
+  .facultyCard h3 {
+    font-size: 19px;
+  }
+  main:global(#main-content).page .facultyCard p {
+    font-size: 14px !important;
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .profileCopy a,
-  .profileGallery img {
+  .profileImage img {
     transition: none;
   }
 }

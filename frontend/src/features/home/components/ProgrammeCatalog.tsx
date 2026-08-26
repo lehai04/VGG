@@ -91,7 +91,7 @@ export function ProgrammeCatalog() {
         {/* Ảnh đại diện cho khu vực chương trình đào tạo trên homepage. */}
         <div className="programmeCatalogVisual">
           <Image
-            src="/images/programmers/pic_pro.jpg"
+            src="/images/pages/home/sections/graduates.jpg"
             alt="Học viên trong chương trình đào tạo sau đại học"
             fill
             sizes="(max-width: 900px) 100vw, 50vw"

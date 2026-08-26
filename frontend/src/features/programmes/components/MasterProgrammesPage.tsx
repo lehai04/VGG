@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowDown, ArrowUpRight, CalendarDays, GraduationCap, WalletCards, Workflow } from "lucide-react";
+import { ArrowDown, ArrowUpRight, CircleCheck } from "lucide-react";
 import Link from "@/i18n/components/LocalizedLink";
 import { programmes } from "@/data/programmes";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
@@ -12,10 +12,10 @@ const masters = programmes.filter((programme) => programme.degree === "Thạc s�
 const fields = [...new Set(masters.map((programme) => programme.field))];
 
 const benefits = [
-  { icon: GraduationCap, title: "Phương thức xét tuyển linh hoạt", text: "Tuyển sinh theo hình thức xét tuyển với yêu cầu rõ ràng về trình độ chuyên môn và năng lực ngoại ngữ." },
-  { icon: CalendarDays, title: "Lộ trình tinh gọn", text: "Thời gian đào tạo từ 18 đến 24 tháng, giúp người học nâng cao chuyên môn mà vẫn duy trì nhịp độ sự nghiệp." },
-  { icon: Workflow, title: "Thời gian biểu linh hoạt", text: "Kế hoạch học tập phù hợp với người đang đi làm, tạo điều kiện cân bằng giữa học tập, công việc và cuộc sống." },
-  { icon: WalletCards, title: "Học bổng và hỗ trợ", text: "Nhiều chính sách học bổng và hỗ trợ tài chính giúp học viên chủ động hơn trên hành trình học tập chuyên sâu." },
+  { title: "Phương thức xét tuyển linh hoạt", text: "Tuyển sinh theo hình thức xét tuyển với yêu cầu rõ ràng về trình độ chuyên môn và năng lực ngoại ngữ." },
+  { title: "Lộ trình tinh gọn", text: "Thời gian đào tạo từ 18 đến 24 tháng, giúp người học nâng cao chuyên môn mà vẫn duy trì nhịp độ sự nghiệp." },
+  { title: "Thời gian biểu linh hoạt", text: "Kế hoạch học tập phù hợp với người đang đi làm, tạo điều kiện cân bằng giữa học tập, công việc và cuộc sống." },
+  { title: "Học bổng và hỗ trợ", text: "Nhiều chính sách học bổng và hỗ trợ tài chính giúp học viên chủ động hơn trên hành trình học tập chuyên sâu." },
 ] as const;
 
 export function MasterProgrammesPage() {
@@ -25,7 +25,7 @@ export function MasterProgrammesPage() {
       <SiteHeader compact />
 
       <section className={styles.hero} aria-labelledby="master-title">
-        <Image src="/images/programmers/pic_pro.jpg" alt="Học viên chương trình Thạc sĩ Văn Lang" fill priority sizes="100vw" />
+        <Image src="/images/pages/programmes/content/graduates.jpg" alt="Học viên chương trình Thạc sĩ Văn Lang" fill priority sizes="100vw" />
         <div className={styles.heroShade} />
         <div className={styles.heroCopy}>
           <p>VGG · MASTER PROGRAMMES</p>
@@ -49,7 +49,7 @@ export function MasterProgrammesPage() {
           </div>
         </div>
         <div className={styles.overviewMedia}>
-          <Image src="/images/hero/campus-hero.jpg" alt="Không gian đào tạo và nghiên cứu tại Văn Lang" fill sizes="(max-width: 950px) 100vw, 44vw" />
+          <Image src="/images/pages/programmes/content/campus.jpg" alt="Không gian đào tạo và nghiên cứu tại Văn Lang" fill sizes="(max-width: 950px) 100vw, 44vw" />
           <span>VGG · KNOWLEDGE IN PRACTICE</span>
         </div>
       </section>
@@ -69,7 +69,7 @@ export function MasterProgrammesPage() {
         </div>
         <div className={styles.quotePortrait}>
           <Image
-            src="/images/programmers/vgg-academic-leader.png"
+            src="/images/pages/programmes/content/academic-leader.avif"
             alt="Chân dung đại diện đội ngũ lãnh đạo học thuật"
             fill
             sizes="(max-width: 900px) 100vw, 40vw"
@@ -79,15 +79,13 @@ export function MasterProgrammesPage() {
 
       <section className={styles.why} aria-labelledby="why-master-title">
         <header data-reveal>
-          <p className={styles.eyebrow}>WHY VGG</p>
           <h2 id="why-master-title">Tại sao nên chọn chương trình Thạc sĩ tại VGG?</h2>
           <p>Một lộ trình được thiết kế cho người học muốn tiến xa hơn trong chuyên môn mà không tách rời thực tiễn nghề nghiệp.</p>
         </header>
         <div className={styles.benefits}>
-          {benefits.map(({ icon: Icon, title, text }, index) => (
+          {benefits.map(({ title, text }) => (
             <article key={title} data-reveal>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <Icon aria-hidden="true" />
+              <CircleCheck aria-hidden="true" />
               <h3>{title}</h3>
               <p>{text}</p>
             </article>

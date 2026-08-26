@@ -7,7 +7,8 @@
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
 import { useState } from "react";
-import { discoverSections, menuGroups, subpageHref } from "@/data/site";
+import { useRouter } from "next/navigation";
+import { discoverSections, navigationGroups, subpageHref } from "@/data/site";
 import { Header } from "@/features/home/components/Header";
 import { LanguageToggle } from "@/shared/components/layout/LanguageToggle";
 
@@ -43,9 +44,10 @@ function BrandLink({ className }: { className: string }) {
  * `compact` dùng header route trực tiếp; nhánh còn lại hỗ trợ mega menu đầy đủ.
  */
 export function SiteHeader({ compact = false }: { compact?: boolean }) {
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
-  const active = menuGroups.find((group) => group.slug === activeSlug);
+  const active = navigationGroups.find((group) => group.slug === activeSlug);
 
   if (compact)
     return (
@@ -76,23 +78,38 @@ export function SiteHeader({ compact = false }: { compact?: boolean }) {
           aria-label="Điều hướng chính"
           className={mobileOpen ? "main-menu open" : "main-menu"}
         >
-          {menuGroups.map((group) => (
-            <button
-              type="button"
-              key={group.slug}
-              aria-expanded={activeSlug === group.slug}
-              onClick={() => setActiveSlug(activeSlug === group.slug ? null : group.slug)}
-              className={activeSlug === group.slug ? "active" : ""}
-            >
-              <span>{group.en}</span>
-              <small>{group.vi}</small>
-            </button>
+          {navigationGroups.map((group) => (
+            group.slug === "discover" ? (
+              <button
+                type="button"
+                key={group.slug}
+                aria-expanded={activeSlug === group.slug}
+                onClick={() => setActiveSlug(activeSlug === group.slug ? null : group.slug)}
+                className={activeSlug === group.slug ? "active" : ""}
+              >
+                <span>{group.en}</span>
+                <small>{group.vi}</small>
+              </button>
+            ) : (
+              <button
+                type="button"
+                key={group.slug}
+                onClick={() => {
+                  setActiveSlug(null);
+                  setMobileOpen(false);
+                  router.push(`/${group.slug}`);
+                }}
+              >
+                <span>{group.en}</span>
+                <small>{group.vi}</small>
+              </button>
+            )
           ))}
         </nav>
         {active && (
           <div className="mega-menu">
             <div className="mega-title">
-              <p>{String(menuGroups.indexOf(active) + 1).padStart(2, "0")}</p>
+              <p>{String(navigationGroups.indexOf(active) + 1).padStart(2, "0")}</p>
               <h2>{active.en}</h2>
               <span>{active.vi}</span>
             </div>
@@ -102,7 +119,7 @@ export function SiteHeader({ compact = false }: { compact?: boolean }) {
                   key={item}
                   href={
                     active.slug === "discover"
-                      ? `/discover/${discoverSections[index].slug}`
+                      ? index === 0 ? "/discover" : `/discover/${discoverSections[index].slug}`
                       : subpageHref(active.slug, index)
                   }
                   onClick={() => {
