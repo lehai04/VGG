@@ -118,12 +118,20 @@
 }
 .overview figure {
   position: relative;
-  min-height: 420px;
+  width: min(100%, 480px);
+  min-height: 0;
+  aspect-ratio: 3 / 4;
+  justify-self: center;
   margin: 0;
   overflow: hidden;
   border-radius: var(--radius-md);
+  background: transparent;
 }
-.overview figure img { object-fit: cover; }
+.overview figure img {
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
 
 /* ?? Goals ?? */
 .goals { background: var(--paper); }
@@ -575,7 +583,7 @@
 /* ?? Responsive 900px ?? */
 @media (max-width:900px){
   .overview,.fields,.partners { grid-template-columns:1fr; }
-  .overview figure { min-height:420px; }
+  .overview figure { width:min(100%,480px); min-height:0; }
   .goals > div,.fieldGrid,.experts > div,.projectGrid,.publicationGrid { grid-template-columns:1fr 1fr; }
   .experts > header { flex-wrap:wrap; }
   .institutes > div { grid-template-columns:1fr 1fr; }
@@ -588,7 +596,7 @@
 /* ?? Responsive 600px ?? */
 @media (max-width:600px){
   .heroCopy { padding:130px var(--page-gutter) 88px; }
-  .overview figure { min-height:340px; }
+  .overview figure { width:min(100%,440px); min-height:0; }
   .goals > div,.fieldGrid,.experts > div,.projectGrid,.publicationGrid,.institutes > div { grid-template-columns:1fr; }
   .goals article { min-height:auto; }
   .fieldGrid a { min-height:280px; }

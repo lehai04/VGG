@@ -56,9 +56,9 @@ export const discoverSections = [
 export const menuGroups: readonly MenuGroup[] = [
   {
     slug: "discover",
-    en: "About Viện Sau Đại học",
+    en: "About Van Lang Institute Of Postgraduate Education",
     vi: "Về Viện Sau Đại học",
-    kicker: "Van Lang Global Graduate",
+    kicker: "Van Lang Institute Of Postgraduate Education",
     headline: "Khám phá một Viện Sau Đại học lấy người học làm trung tâm.",
     intro:
       "Viện Sau Đại học kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",

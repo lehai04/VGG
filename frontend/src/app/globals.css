@@ -85,14 +85,16 @@ h6 {
   font-size: var(--text-lg) !important;
   line-height: 1.4 !important;
 }
-.hero h1,
-.homeHero h1,
-.sub-hero h1,
-[class*="heroTitle"],
-[class*="HeroTitle"],
-[class*="hero"] h1 {
+main .hero h1,
+main .homeHero h1,
+main .sub-hero h1,
+main [class*="heroTitle"] h1,
+main [class*="HeroTitle"] h1,
+main [class*="hero"] h1,
+main [class*="Hero"] h1 {
   max-width: min(22ch, 100%);
   font-size: var(--heading-xl) !important;
+  font-weight: 900 !important;
   line-height: 1.5 !important;
   letter-spacing: -0.02em !important;
 }

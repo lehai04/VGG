@@ -18,7 +18,7 @@ export function DiscoverMore({ activeSlug = "gioi-thieu" }: { activeSlug?: strin
       </div>
     </div>
     <div className="discover-editorial-more-nav">
-      <h2>About Viện Sau Đại học</h2>
+      <h2>Về Viện Sau Đại học</h2>
       <nav aria-label={messages.common.discoverMore}>
         {discoverSections.map(({ title, slug }) => <Link className={slug === activeSlug ? "active" : ""} href={`/discover/${slug}`} key={slug}>{locale === "en" ? messages.discover[slug] : title}</Link>)}
       </nav>

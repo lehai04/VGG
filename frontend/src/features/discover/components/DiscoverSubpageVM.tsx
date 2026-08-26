@@ -32,15 +32,15 @@ const RANKINGS = [
     scope: "THẾ GIỚI",
     title: "QS World University Rankings 2026",
     copy: "Đồng thời đạt hạng 392 toàn cầu về danh tiếng học thuật.",
-    href: "https://www.vlu.edu.vn/about-us",
+    href: "https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-vao-top-1001-1200-dai-hoc-hang-dau-the-gioi-nam-2026",
     image: "/images/pages/discover/rank/2.jpg",
   },
   {
-    rank: "69",
+    rank: "51-100",
     scope: "THẾ GIỚI",
     title: "Art & Design · QS by Subject 2026",
     copy: "Một dấu ấn nổi bật của năng lực đào tạo sáng tạo và hội nhập quốc tế.",
-    href: "https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-thang-hang-top-401-600-the-gioi-ve-dong-gop-cho-phat-trien-ben-vung",
+    href: "https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-vao-top-100-truong-dao-tao-thiet-ke-hang-dau-the-gioi",
     image: "/images/pages/discover/rank/3.jpg",
   },
   {
@@ -48,7 +48,7 @@ const RANKINGS = [
     scope: "THẾ GIỚI",
     title: "THE Impact Rankings 2025",
     copy: "Ghi nhận đóng góp của Nhà trường đối với các mục tiêu phát triển bền vững.",
-    href: "https://www.vlu.edu.vn/about-us",
+    href: "https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-thang-hang-top-601-800-the-gioi-ve-tac-dong-doi-voi-su-phat-trien-ben-vung-toan-cau",
     image: "/images/pages/discover/rank/4.jpg",
   },
   {
@@ -64,7 +64,7 @@ const RANKINGS = [
     scope: "CHUẨN QUỐC TẾ",
     title: "QS Stars & FIBAA",
     copy: "Kiểm định cơ sở giáo dục góp phần khẳng định chất lượng đào tạo theo các chuẩn mực quốc tế.",
-    href: "https://www.vlu.edu.vn/about-us",
+    href: "https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-nhan-chung-nhan-qs-star-4-sao-va-chao-don-sinh-vien-khoa-27",
     image: "/images/pages/discover/rank/6.jpg",
   },
 ] as const;

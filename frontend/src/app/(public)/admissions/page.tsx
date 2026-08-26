@@ -23,22 +23,19 @@ const programmeOptions = [
     title: "Chương trình Thạc sĩ",
     description:
       "Dành cho người học muốn nâng cao năng lực chuyên môn, quản lý và khả năng ứng dụng tri thức vào thực tiễn nghề nghiệp.",
-    href: "/programmes/thac-si",
-    image: "/images/pages/admissions/content/graduates.jpg",
+    href: "https://www.vlu.edu.vn/academics/program/chuong-trinh-thac-si-tieng-viet",
   },
   {
     title: "Chương trình Tiến sĩ",
     description:
       "Dành cho những nhà nghiên cứu và chuyên gia muốn phát triển tri thức mới, năng lực học thuật và tác động chuyên sâu.",
-    href: "/programmes/tien-si",
-    image: "/images/pages/admissions/content/campus.jpg",
+    href: "https://www.vlu.edu.vn/academics/program/chuong-trinh-tien-si-tieng-viet",
   },
   {
     title: "Chương trình Quốc tế",
     description:
       "Mở rộng trải nghiệm học thuật toàn cầu thông qua chương trình hợp tác, mạng lưới đối tác và môi trường học tập quốc tế.",
-    href: "/programmes/quoc-te",
-    image: "/images/pages/admissions/content/graduates.jpg",
+    href: "https://www.vlu.edu.vn/academics/international-program",
   },
 ] as const;
 
@@ -51,7 +48,7 @@ export default function AdmissionsPage() {
       <section className={styles.hero} aria-labelledby="admissions-title">
         <Image
           className={styles.heroImage}
-          src="/images/pages/admissions/content/graduates.jpg"
+          src="/images/pages/admissions/content/banner.jpg"
           alt="Học viên Văn Lang trong ngày tốt nghiệp"
           fill
           priority
@@ -64,7 +61,6 @@ export default function AdmissionsPage() {
           <strong>Tuyển sinh</strong>
         </nav>
         <div className={styles.heroCopy}>
-          <p>Viện Sau Đại học ADMISSIONS · 2026</p>
           <h1 id="admissions-title">
             <span>Một bước gần hơn</span>
             <span>đến tương lai</span>
@@ -99,7 +95,7 @@ export default function AdmissionsPage() {
       <section className={styles.story} aria-labelledby="admission-story-title">
         <figure className={styles.storyMedia} data-reveal>
           <Image
-            src="/images/pages/admissions/content/campus.jpg"
+            src="/images/pages/admissions/content/1.PNG"
             alt="Không gian học thuật tại Trường Đại học Văn Lang"
             fill
             sizes="(max-width: 800px) 100vw, 56vw"
@@ -160,13 +156,6 @@ export default function AdmissionsPage() {
               data-reveal
               style={{ "--academic-delay": `${index * 80}ms` } as React.CSSProperties}
             >
-              <Image
-                src={programme.image}
-                alt={programme.title}
-                fill
-                sizes="(max-width: 800px) 100vw, 33vw"
-              />
-              <span className={styles.programmeShade} />
               <span className={styles.programmeNumber}>{String(index + 1).padStart(2, "0")}</span>
               <div>
                 <h3>{programme.title}</h3>
@@ -195,7 +184,7 @@ export default function AdmissionsPage() {
           </div>
           <div className={styles.financeMedia}>
             <Image
-              src="/images/pages/admissions/content/graduates.jpg"
+              src="/images/pages/admissions/content/2.jpg"
               alt="Học viên Viện Sau Đại học trong môi trường học tập"
               fill
               sizes="(max-width: 800px) 100vw, 50vw"
@@ -217,7 +206,7 @@ export default function AdmissionsPage() {
           </div>
           <div className={styles.financeMedia}>
             <Image
-              src="/images/pages/admissions/content/campus.jpg"
+              src="/images/pages/admissions/content/3.png"
               alt="Không gian học tập tại Trường Đại học Văn Lang"
               fill
               sizes="(max-width: 800px) 100vw, 50vw"

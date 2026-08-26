@@ -84,7 +84,7 @@ export function ResearchLanding() {
           <h2>Đặt nền móng cho những tác động truyền cảm hứng</h2>
           <p>Nền tảng của đổi mới nằm ở những khám phá mới. Thông qua các dự án nghiên cứu mang tính ứng dụng, những ý tưởng tiềm năng được cộng đồng Viện Sau Đại học đào sâu để phát triển thành phương pháp, kỹ thuật và giải pháp có thể đóng góp cải thiện xã hội.</p>
         </div>
-        <figure><Image src="/images/pages/research/content/academic-leader.avif" alt="Nhà nghiên cứu tại Văn Lang" fill sizes="(max-width: 800px) 100vw, 42vw" /></figure>
+        <figure><Image src="/images/pages/research/content/Cô Diệu.avif" alt="Nhà nghiên cứu tại Văn Lang" fill sizes="(max-width: 800px) 100vw, 42vw" /></figure>
       </section>
 
       <section className={styles.goals} id="goals">
