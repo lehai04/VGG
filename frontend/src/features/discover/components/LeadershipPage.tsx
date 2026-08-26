@@ -12,7 +12,7 @@ const leadershipProfiles = [
     name: "PGS.TS. NGUYỄN VĂN THÀNH",
     title: "Phó Viện Trưởng\nPhụ trách Viện Sau đại học\nTrường Đại học Văn Lang",
     quote: "Tại Trường Đại học Văn Lang, chúng tôi tin rằng giá trị lớn nhất của đào tạo sau đại học không chỉ nằm ở văn bằng, mà ở sự trưởng thành của người học. Đó là những con người có tư duy chiến lược; biết kết nối tri thức với công nghệ, dữ liệu và đổi mới sáng tạo; có năng lực nghiên cứu, phản biện và ra quyết định dựa trên bằng chứng; đồng thời tạo ra giá trị mới cho tổ chức và cộng đồng.",
-    image: "/images/pages/discover/content/campus.jpg",
+    image: "/images/pages/discover/leadership/logistic-transparent.png",
   },
 ] as const;
 
@@ -77,7 +77,7 @@ export function LeadershipPage() {
               <blockquote>“{profile.quote}”</blockquote>
             </div>
             <figure className={styles.profileImage} data-reveal>
-              <Image src={profile.image} alt="Không gian học thuật tại Trường Đại học Văn Lang" fill sizes="(max-width: 900px) 88vw, 46vw" />
+              <Image src={profile.image} alt={`Chân dung ${profile.name}`} fill sizes="(max-width: 900px) 88vw, 46vw" />
             </figure>
           </section>
         ))}
