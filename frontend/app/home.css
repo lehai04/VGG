@@ -14,36 +14,154 @@
 }
 
 /* Shared editorial accordion used by homepage content sections. */
-.home-page .editorialAccordion { width:100%; border-top:1px solid currentColor; border-color:color-mix(in srgb,currentColor 28%,transparent); }
-.home-page .editorialAccordionItem { border-bottom:1px solid color-mix(in srgb,currentColor 28%,transparent); transition:background-color 300ms ease,color 300ms ease; }
-.home-page .editorialAccordionItem > button { width:100%; min-height:76px; padding:0; display:grid; grid-template-columns:50px minmax(0,1fr) 36px; align-items:center; border:0; background:transparent; color:inherit; text-align:left; cursor:pointer; }
-.home-page .editorialAccordionItem > button > span { align-self:center; padding:0; color:inherit; opacity:.65; font-size:11px; font-weight:700; letter-spacing:.08em; }
-.home-page .editorialAccordionItem > button > strong { font-family:var(--font-display); font-size:clamp(16px,1.45vw,22px); font-weight:700; line-height:1.25; }
-.home-page .editorialAccordionItem > button > i { font-size:25px; font-weight:300; font-style:normal; line-height:1; text-align:right; transition:transform 300ms ease; }
-.home-page .editorialAccordionItem > button:hover > strong { opacity:.72; }
-.home-page .editorialAccordionItem > button:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
-.home-page .editorialAccordionPanel { display:grid; grid-template-rows:0fr; opacity:0; transition:grid-template-rows 340ms ease,opacity 280ms ease; }
-.home-page .editorialAccordionPanel > div { min-height:0; overflow:hidden; padding-left:50px; padding-right:36px; }
-.home-page .editorialAccordionPanel p { max-width:620px; margin:0 0 18px; color:inherit; opacity:.72; font-size:14px; line-height:1.7; }
-.home-page .editorialAccordionPanel a { display:inline-block; margin-bottom:28px; border-bottom:1px solid currentColor; color:inherit; font-size:12px; font-weight:700; text-decoration:none; }
-.home-page .editorialAccordionItem.isOpen { background:color-mix(in srgb,currentColor 5%,transparent); }
-.home-page .editorialAccordionItem.isOpen .editorialAccordionPanel { grid-template-rows:1fr; opacity:1; }
-.home-page .editorialAccordionItem.isOpen > button > i { transform:rotate(180deg); }
-.home-page .researchLinks > div,.home-page .admissionsSteps article,.home-page .studentServices article { min-height:0; display:block; }
-.home-page .studentServices.editorialAccordion { border-left:6px solid #db2639; border-top-color:#deddd8; }
-.home-page .studentServices .editorialAccordionItem { border-bottom-color:#deddd8; }
-.home-page .studentServices .editorialAccordionItem > button,.home-page .studentServices .editorialAccordionPanel { padding-left:24px; padding-right:24px; }
-.home-page .studentServices .editorialAccordionItem > button > span { color:#db2639; opacity:1; }
-.home-page .resourcesList.editorialAccordion { align-self:center; }
-.home-page .resourcesList .editorialAccordionItem > button > span { color:#ffd05a; opacity:1; }
-@media(max-width:700px){
-  .home-page .editorialAccordionItem > button { min-height:68px; grid-template-columns:38px minmax(0,1fr) 28px; }
-  .home-page .editorialAccordionPanel > div { padding-left:38px; padding-right:28px; }
-  .home-page .editorialAccordionPanel p { font-size:13px; }
-  .home-page .studentServices .editorialAccordionItem > button,.home-page .studentServices .editorialAccordionPanel { padding-left:16px; padding-right:16px; }
+.home-page .editorialAccordion {
+  width: 100%;
+  border-top: 1px solid currentColor;
+  border-color: color-mix(in srgb, currentColor 28%, transparent);
 }
-@media(prefers-reduced-motion:reduce){
-  .home-page .editorialAccordionItem,.home-page .editorialAccordionPanel,.home-page .editorialAccordionItem > button > i { transition:none; }
+.home-page .editorialAccordionItem {
+  border-bottom: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+.home-page .editorialAccordionItem > button {
+  width: 100%;
+  min-height: 76px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr) 36px;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.home-page .editorialAccordionItem > button > span {
+  align-self: center;
+  padding: 0;
+  color: inherit;
+  opacity: 0.65;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.home-page .editorialAccordionItem > button > strong {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 1.45vw, 22px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+.home-page .editorialAccordionItem > button > i {
+  font-size: 25px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1;
+  text-align: right;
+  transition: transform 300ms ease;
+}
+.home-page .editorialAccordionItem > button:hover > strong {
+  opacity: 0.72;
+}
+.home-page .editorialAccordionItem > button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+.home-page .editorialAccordionPanel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 340ms ease,
+    opacity 280ms ease;
+}
+.home-page .editorialAccordionPanel > div {
+  min-height: 0;
+  overflow: hidden;
+  padding-left: 50px;
+  padding-right: 36px;
+}
+.home-page .editorialAccordionPanel p {
+  max-width: 620px;
+  margin: 0 0 18px;
+  color: inherit;
+  opacity: 0.72;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.home-page .editorialAccordionPanel a {
+  display: inline-block;
+  margin-bottom: 28px;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.home-page .editorialAccordionItem.isOpen {
+  background: color-mix(in srgb, currentColor 5%, transparent);
+}
+.home-page .editorialAccordionItem.isOpen .editorialAccordionPanel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.home-page .editorialAccordionItem.isOpen > button > i {
+  transform: rotate(180deg);
+}
+.home-page .researchLinks > div,
+.home-page .admissionsSteps article,
+.home-page .studentServices article {
+  min-height: 0;
+  display: block;
+}
+.home-page .studentServices.editorialAccordion {
+  border-left: 6px solid #db2639;
+  border-top-color: #deddd8;
+}
+.home-page .studentServices .editorialAccordionItem {
+  border-bottom-color: #deddd8;
+}
+.home-page .studentServices .editorialAccordionItem > button,
+.home-page .studentServices .editorialAccordionPanel {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.home-page .studentServices .editorialAccordionItem > button > span {
+  color: #db2639;
+  opacity: 1;
+}
+.home-page .resourcesList.editorialAccordion {
+  align-self: center;
+}
+.home-page .resourcesList .editorialAccordionItem > button > span {
+  color: #ffd05a;
+  opacity: 1;
+}
+@media (max-width: 700px) {
+  .home-page .editorialAccordionItem > button {
+    min-height: 68px;
+    grid-template-columns: 38px minmax(0, 1fr) 28px;
+  }
+  .home-page .editorialAccordionPanel > div {
+    padding-left: 38px;
+    padding-right: 28px;
+  }
+  .home-page .editorialAccordionPanel p {
+    font-size: 13px;
+  }
+  .home-page .studentServices .editorialAccordionItem > button,
+  .home-page .studentServices .editorialAccordionPanel {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page .editorialAccordionItem,
+  .home-page .editorialAccordionPanel,
+  .home-page .editorialAccordionItem > button > i {
+    transition: none;
+  }
 }
 
 /* Header language toggle: override style của nút ngôn ngữ cũ. */
@@ -57,11 +175,13 @@
   height: auto;
   padding: 0;
   border: 0;
-  color: rgba(255,255,255,.55);
+  color: rgba(255, 255, 255, 0.55);
   background: transparent;
   font-size: inherit;
 }
-.home-page .topBarLinks .languageToggle button.active { color:#fff; }
+.home-page .topBarLinks .languageToggle button.active {
+  color: #fff;
+}
 
 .home-page,
 .home-page * {
@@ -3569,7 +3689,9 @@
   font-size: 12px;
   font-weight: 800;
   text-decoration: none;
-  transition: background-color 180ms ease, color 180ms ease;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 .home-page .programmeCourseActions a:first-child,
@@ -4064,17 +4186,110 @@
 }
 
 /* Dark compact variant for the home search panel. */
-.home-page .vgg-programme-finder { background: #fff; padding: 58px 7vw 66px; }
-.home-page .vgg-finder-heading > div > p { display: none; }
-.home-page .vgg-finder-heading h2 { color: #111; font-family: var(--font-body); font-size: clamp(30px, 3vw, 40px); font-weight: 500; }
-.home-page .vgg-finder-heading > label { margin-top: 16px; padding: 26px 46px 44px; border: 0; border-radius: 30px; background: #5e628c; box-shadow: none; }
-.home-page .vgg-finder-heading > label::before { content: "Tìm kiếm chương trình Thạc sĩ và Tiến sĩ phù hợp với định hướng học tập và phát triển chuyên môn của bạn tại Văn Lang."; display: block; max-width: 650px; margin: -78px auto 35px; color: #171717; font-size: 15px; line-height: 1.45; text-align: center; }
-.home-page .vgg-finder-heading > label > div { min-height: 63px; background: #21255e; box-shadow: none; }
-.home-page .vgg-finder-heading input { color: #fff; font-size: 18px; }.home-page .vgg-finder-heading input::placeholder { color: transparent; }
-.home-page .vgg-finder-heading > label > div::before { content: "⌕"; color: #fff; font-size: 34px; line-height: 1; }
-.home-page .vgg-finder-heading label button { min-height: 63px; padding: 0 26px; border-radius: 999px; background: #21255e; color: #fff; font-size: 17px; font-weight: 700; }
-.home-page .vgg-finder-workspace { margin: -47px auto 0; }.home-page .vgg-filter-sidebar { gap: 50px; padding: 0 46px 44px; border-radius: 0 0 30px 30px; background: #5e628c; }.home-page .vgg-filter-sidebar fieldset::after { padding: 17px 40px; background: #21255e; color: #fff; font-size: 19px; font-weight: 500; box-shadow: none; text-align: left; }.home-page .vgg-filter-sidebar fieldset:nth-of-type(1)::after { content: "Bậc đào tạo"; }.home-page .vgg-filter-sidebar fieldset:nth-of-type(2)::after { content: "Lĩnh vực"; }.home-page .vgg-filter-sidebar fieldset:nth-of-type(3)::after { content: "Khoa / Viện"; }
-@media (max-width: 760px) { .home-page .vgg-finder-heading > label { padding: 22px 20px 28px; }.home-page .vgg-finder-heading > label::before { margin: -74px auto 32px; font-size: 13px; }.home-page .vgg-filter-sidebar { gap: 12px; padding: 0 20px 28px; }.home-page .vgg-filter-sidebar fieldset::after { font-size: 16px; }.home-page .vgg-finder-workspace { margin: -30px auto 0; } }
+.home-page .vgg-programme-finder {
+  background: #fff;
+  padding: 58px 7vw 66px;
+}
+.home-page .vgg-finder-heading > div > p {
+  display: none;
+}
+.home-page .vgg-finder-heading h2 {
+  color: #111;
+  font-family: var(--font-body);
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 500;
+}
+.home-page .vgg-finder-heading > label {
+  margin-top: 16px;
+  padding: 26px 46px 44px;
+  border: 0;
+  border-radius: 30px;
+  background: #5e628c;
+  box-shadow: none;
+}
+.home-page .vgg-finder-heading > label::before {
+  content: "Tìm kiếm chương trình Thạc sĩ và Tiến sĩ phù hợp với định hướng học tập và phát triển chuyên môn của bạn tại Văn Lang.";
+  display: block;
+  max-width: 650px;
+  margin: -78px auto 35px;
+  color: #171717;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: center;
+}
+.home-page .vgg-finder-heading > label > div {
+  min-height: 63px;
+  background: #21255e;
+  box-shadow: none;
+}
+.home-page .vgg-finder-heading input {
+  color: #fff;
+  font-size: 18px;
+}
+.home-page .vgg-finder-heading input::placeholder {
+  color: transparent;
+}
+.home-page .vgg-finder-heading > label > div::before {
+  content: "⌕";
+  color: #fff;
+  font-size: 34px;
+  line-height: 1;
+}
+.home-page .vgg-finder-heading label button {
+  min-height: 63px;
+  padding: 0 26px;
+  border-radius: 999px;
+  background: #21255e;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+}
+.home-page .vgg-finder-workspace {
+  margin: -47px auto 0;
+}
+.home-page .vgg-filter-sidebar {
+  gap: 50px;
+  padding: 0 46px 44px;
+  border-radius: 0 0 30px 30px;
+  background: #5e628c;
+}
+.home-page .vgg-filter-sidebar fieldset::after {
+  padding: 17px 40px;
+  background: #21255e;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 500;
+  box-shadow: none;
+  text-align: left;
+}
+.home-page .vgg-filter-sidebar fieldset:nth-of-type(1)::after {
+  content: "Bậc đào tạo";
+}
+.home-page .vgg-filter-sidebar fieldset:nth-of-type(2)::after {
+  content: "Lĩnh vực";
+}
+.home-page .vgg-filter-sidebar fieldset:nth-of-type(3)::after {
+  content: "Khoa / Viện";
+}
+@media (max-width: 760px) {
+  .home-page .vgg-finder-heading > label {
+    padding: 22px 20px 28px;
+  }
+  .home-page .vgg-finder-heading > label::before {
+    margin: -74px auto 32px;
+    font-size: 13px;
+  }
+  .home-page .vgg-filter-sidebar {
+    gap: 12px;
+    padding: 0 20px 28px;
+  }
+  .home-page .vgg-filter-sidebar fieldset::after {
+    font-size: 16px;
+  }
+  .home-page .vgg-finder-workspace {
+    margin: -30px auto 0;
+  }
+}
 .home-page .vgg-results-toolbar {
   border: 0;
   padding: 0 2px 18px;
@@ -4102,6 +4317,16 @@
 }
 
 /* Keep accordion layout authoritative over legacy list selectors above. */
-.home-page .researchLinks > .editorialAccordionItem { min-height:0; display:block; }
-.home-page .resourcesList .editorialAccordionPanel a { min-height:0; display:inline-block; grid-template-columns:none; color:inherit; }
-.home-page .resourcesList .editorialAccordionItem > button > strong { font-size:clamp(16px,1.45vw,22px); }
+.home-page .researchLinks > .editorialAccordionItem {
+  min-height: 0;
+  display: block;
+}
+.home-page .resourcesList .editorialAccordionPanel a {
+  min-height: 0;
+  display: inline-block;
+  grid-template-columns: none;
+  color: inherit;
+}
+.home-page .resourcesList .editorialAccordionItem > button > strong {
+  font-size: clamp(16px, 1.45vw, 22px);
+}

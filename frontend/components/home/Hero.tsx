@@ -26,10 +26,9 @@ export function Hero() {
       </h1>
 
       <p>
-        Nơi tri thức, thực tiễn và đổi mới hội tụ — 18 chương trình Thạc sĩ và 01 chương trình Tiến
-        sĩ,
+        KIẾN TẠO ƯU THẾ TỪ TRI THỨC, DẪN ĐẦU BẰNG CHUYÊN MÔN.
         <br />
-        được thiết kế cho người học trong kỷ nguyên AI.
+        Chương trình Đào tạo Sau đại học Trường Đại học Văn Lang với 18 chương trình Thạc sĩ và 01 chương trình Tiến sĩ
       </p>
 
       <div className="heroActions">
