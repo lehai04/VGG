@@ -49,7 +49,7 @@ export default function AdmissionsPage() {
         <Image
           className={styles.heroImage}
           src="/images/pages/admissions/content/banner.jpg"
-          alt="Học viên Văn Lang trong ngày tốt nghiệp"
+          alt="Người học Văn Lang trong ngày tốt nghiệp"
           fill
           priority
           sizes="100vw"
@@ -184,7 +184,7 @@ export default function AdmissionsPage() {
           <div className={styles.financeMedia}>
             <Image
               src="/images/pages/admissions/content/2.jpg"
-              alt="Học viên Viện Sau Đại học trong môi trường học tập"
+              alt="Người học Viện Sau Đại học trong môi trường học tập"
               fill
               sizes="(max-width: 800px) 100vw, 50vw"
             />

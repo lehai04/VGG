@@ -17,7 +17,7 @@ export function Hero() {
       </div>
       <div className="heroOverlay" aria-hidden="true" />
 
-      <div className="eyebrow">CHƯƠNG TRÌNH SAU ĐẠI HỌC · 2026</div>
+      <div className="eyebrow">CHƯƠNG TRÌNH SAU ĐẠI HỌC</div>
       <h1>Nuôi dưỡng<br /><em>lãnh đạo đổi mới.</em></h1>
       <p>
         KIẾN TẠO ƯU THẾ TỪ TRI THỨC, DẪN ĐẦU BẰNG CHUYÊN MÔN.<br />
@@ -26,7 +26,7 @@ export function Hero() {
 
       <div className="heroActions">
         <a href="#programmes" className="primary vgg-cta-pill">Khám phá chương trình →</a>
-        <a className="vgg-cta-pill" href="#admissions">Tuyển sinh 2026 →</a>
+        <a className="vgg-cta-pill" href="#admissions">Tuyển sinh →</a>
       </div>
 
       <div className="heroStats">

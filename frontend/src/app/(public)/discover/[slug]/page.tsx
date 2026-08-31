@@ -6,9 +6,7 @@ import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { VisionMissionPage } from "@/features/discover/components/VisionMissionPage";
 import { LeadershipPage } from "@/features/discover/components/LeadershipPage";
 import { ContactPage } from "@/features/discover/components/ContactPage";
-import { WhyVGGPage } from "@/features/discover/components/WhyVGGPage";
 import { DiscoverSubpageVM } from "@/features/discover/components/DiscoverSubpageVM";
-import { DiscoverMore } from "@/features/discover/components/DiscoverMore";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 
@@ -27,7 +25,7 @@ const pages = {
       ],
       [
         "Cộng đồng cùng tiến bộ",
-        "Giảng viên, học viên, cựu học viên và đối tác tạo nên một mạng lưới trao đổi tri thức cởi mở, đa chiều.",
+        "Giảng viên, người học, cựu người học và đối tác tạo nên một mạng lưới trao đổi tri thức cởi mở, đa chiều.",
       ],
       [
         "Hành trình tạo tác động",
@@ -77,29 +75,8 @@ const pages = {
       ],
     ],
   },
-  "vi-sao-chon-vgg": {
-    number: "04",
-    title: "Vì sao chọn Viện Sau Đại học",
-    en: "Why Viện Sau Đại học",
-    headline: "Một lựa chọn được thiết kế cho tương lai.",
-    lead: "Tại Viện Sau Đại học, người học không chỉ tiếp nhận kiến thức mà còn phát triển cách tư duy, mạng lưới và sự tự tin để tiến xa hơn.",
-    sections: [
-      [
-        "Chương trình thiết thực",
-        "Nội dung chuyên sâu, cập nhật và kết nối chặt chẽ với bối cảnh nghề nghiệp.",
-      ],
-      [
-        "Trải nghiệm linh hoạt",
-        "Hành trình học tập được tổ chức để phù hợp với người học đang phát triển sự nghiệp.",
-      ],
-      [
-        "Mạng lưới rộng mở",
-        "Cơ hội gặp gỡ chuyên gia, đồng môn và đối tác trong một cộng đồng đa lĩnh vực.",
-      ],
-    ],
-  },
   "xep-hang-thanh-tuu": {
-    number: "05",
+    number: "04",
     title: "Xếp hạng & Thành tựu",
     en: "Recognition & Achievements",
     headline: "Mỗi dấu ấn là một bước tiến chung.",
@@ -115,19 +92,20 @@ const pages = {
       ],
       [
         "Thành tựu người học",
-        "Ghi nhận sự trưởng thành nghề nghiệp, đóng góp học thuật và tác động cộng đồng của học viên.",
+        "Ghi nhận sự trưởng thành nghề nghiệp, đóng góp học thuật và tác động cộng đồng của người học.",
       ],
     ],
   },
   "lien-he": {
-    number: "06",
+    number: "05",
     title: "Liên hệ",
     en: "Contact Viện Sau Đại học",
     headline: "Bắt đầu cuộc trò chuyện cùng Viện Sau Đại học.",
     lead: "Dù bạn đang tìm hiểu chương trình, chuẩn bị hồ sơ hay cần hỗ trợ trong hành trình học tập, đội ngũ Viện Sau Đại học luôn sẵn sàng lắng nghe.",
     sections: [
-      ["Email", "v.sdh@vlu.edu.vn"],
-      ["Điện thoại", "028 7101 6869 · 0988 48 68 69"],
+      ["Điện thoại", "0287 101 6869"],
+      ["Hotline/Zalo", "0988 48 6869"],
+      ["Email", "tuyensinh.sdh@vlu.edu.vn"],
       ["Địa chỉ", "Phòng A02.01, Tòa A, 69/68 Đặng Thùy Trâm, P. Bình Lợi Trung, TP.HCM"],
     ],
   },
@@ -151,6 +129,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
  */
 export default async function DiscoverDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (slug === "vi-sao-chon-vgg") redirect("/discover#vi-sao-chon-vgg");
   const page = pages[slug as PageSlug];
   if (!page) notFound();
   if (slug === "gioi-thieu") redirect("/discover");
@@ -158,7 +137,6 @@ export default async function DiscoverDetail({ params }: { params: Promise<{ slu
   if (slug === "tam-nhin-su-menh") return <VisionMissionPage />;
   if (slug === "lanh-dao") return <LeadershipPage />;
   if (slug === "lien-he") return <ContactPage />;
-  if (slug === "vi-sao-chon-vgg") return <WhyVGGPage />;
   // Các trang còn lại (xep-hang-thanh-tuu, lien-he) dùng layout editorial VisionMission.
   if (slug === "xep-hang-thanh-tuu") {
     return <DiscoverSubpageVM slug={slug} page={page} />;
@@ -221,7 +199,6 @@ export default async function DiscoverDetail({ params }: { params: Promise<{ slu
           Tìm hiểu tuyển sinh <span>→</span>
         </Link>
       </section>
-      <DiscoverMore activeSlug={slug} />
       <NextStepCTA />
       <SiteFooter />
     </main>

@@ -3,7 +3,6 @@ import { ArrowDown } from "lucide-react";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
-import { DiscoverMore } from "@/features/discover/components/DiscoverMore";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import styles from "./AboutIntroduction.module.css";
 
@@ -67,7 +66,7 @@ export function AboutIntroduction() {
             <Image src="/images/pages/discover/content/campus.jpg" alt="Không gian học tập tại Văn Lang" fill sizes="(max-width: 900px) 90vw, 44vw" />
           </figure>
           <figure className={styles.studentFrame}>
-            <Image src="/images/pages/discover/content/1.jpg" alt="Học viên tốt nghiệp tại Văn Lang" fill sizes="(max-width: 900px) 48vw, 18vw" />
+            <Image src="/images/pages/discover/content/1.jpg" alt="Người học tốt nghiệp tại Văn Lang" fill sizes="(max-width: 900px) 48vw, 18vw" />
           </figure>
         </div>
       </section>
@@ -96,7 +95,7 @@ export function AboutIntroduction() {
             ))}
           </ol>
           <figure data-reveal>
-            <Image src="/images/pages/discover/content/1.jpg" alt="Học viên Văn Lang trong ngày tốt nghiệp" fill sizes="(max-width: 900px) 90vw, 40vw" />
+            <Image src="/images/pages/discover/content/1.jpg" alt="Người học Văn Lang trong ngày tốt nghiệp" fill sizes="(max-width: 900px) 90vw, 40vw" />
           </figure>
         </div>
       </section>
@@ -109,7 +108,7 @@ export function AboutIntroduction() {
           <blockquote>Tri thức trở nên có giá trị khi được chuyển hóa thành năng lực hành động.</blockquote>
         </div>
         <figure data-reveal>
-          <Image src="/images/pages/discover/content/1.jpg" alt="Niềm vui của học viên sau đại học" fill sizes="(max-width: 900px) 100vw, 46vw" />
+          <Image src="/images/pages/discover/content/1.jpg" alt="Niềm vui của người học sau đại học" fill sizes="(max-width: 900px) 100vw, 46vw" />
         </figure>
       </section>
 
@@ -129,8 +128,6 @@ export function AboutIntroduction() {
       </section>
 
       {/* Kế thừa nguyên section tư vấn và logic form đang dùng trên các trang con khác. */}
-      {/* Kế thừa section điều hướng chung của nhóm trang About Viện Sau Đại học. */}
-      <DiscoverMore activeSlug="gioi-thieu" />
       <NextStepCTA />
       <SiteFooter />
     </main>

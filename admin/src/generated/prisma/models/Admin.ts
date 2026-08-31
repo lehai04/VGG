@@ -310,6 +310,7 @@ export type AdminWhereInput = {
   sessions?: Prisma.SessionListRelationFilter
   auditLogs?: Prisma.AuditLogListRelationFilter
   targetAuditLogs?: Prisma.AuditLogListRelationFilter
+  passwordResetTokens?: Prisma.PasswordResetTokenListRelationFilter
 }
 
 export type AdminOrderByWithRelationInput = {
@@ -335,6 +336,7 @@ export type AdminOrderByWithRelationInput = {
   sessions?: Prisma.SessionOrderByRelationAggregateInput
   auditLogs?: Prisma.AuditLogOrderByRelationAggregateInput
   targetAuditLogs?: Prisma.AuditLogOrderByRelationAggregateInput
+  passwordResetTokens?: Prisma.PasswordResetTokenOrderByRelationAggregateInput
 }
 
 export type AdminWhereUniqueInput = Prisma.AtLeast<{
@@ -363,6 +365,7 @@ export type AdminWhereUniqueInput = Prisma.AtLeast<{
   sessions?: Prisma.SessionListRelationFilter
   auditLogs?: Prisma.AuditLogListRelationFilter
   targetAuditLogs?: Prisma.AuditLogListRelationFilter
+  passwordResetTokens?: Prisma.PasswordResetTokenListRelationFilter
 }, "id" | "username">
 
 export type AdminOrderByWithAggregationInput = {
@@ -432,6 +435,7 @@ export type AdminCreateInput = {
   sessions?: Prisma.SessionCreateNestedManyWithoutAdminInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   targetAuditLogs?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutAdminInput
 }
 
 export type AdminUncheckedCreateInput = {
@@ -455,6 +459,7 @@ export type AdminUncheckedCreateInput = {
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutAdminInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   targetAuditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutAdminInput
 }
 
 export type AdminUpdateInput = {
@@ -478,6 +483,7 @@ export type AdminUpdateInput = {
   sessions?: Prisma.SessionUpdateManyWithoutAdminNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   targetAuditLogs?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminUncheckedUpdateInput = {
@@ -501,6 +507,7 @@ export type AdminUncheckedUpdateInput = {
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutAdminNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   targetAuditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminCreateManyInput = {
@@ -821,6 +828,20 @@ export type AdminUpdateOneWithoutTargetAuditLogsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.AdminUpdateToOneWithWhereWithoutTargetAuditLogsInput, Prisma.AdminUpdateWithoutTargetAuditLogsInput>, Prisma.AdminUncheckedUpdateWithoutTargetAuditLogsInput>
 }
 
+export type AdminCreateNestedOneWithoutPasswordResetTokensInput = {
+  create?: Prisma.XOR<Prisma.AdminCreateWithoutPasswordResetTokensInput, Prisma.AdminUncheckedCreateWithoutPasswordResetTokensInput>
+  connectOrCreate?: Prisma.AdminCreateOrConnectWithoutPasswordResetTokensInput
+  connect?: Prisma.AdminWhereUniqueInput
+}
+
+export type AdminUpdateOneRequiredWithoutPasswordResetTokensNestedInput = {
+  create?: Prisma.XOR<Prisma.AdminCreateWithoutPasswordResetTokensInput, Prisma.AdminUncheckedCreateWithoutPasswordResetTokensInput>
+  connectOrCreate?: Prisma.AdminCreateOrConnectWithoutPasswordResetTokensInput
+  upsert?: Prisma.AdminUpsertWithoutPasswordResetTokensInput
+  connect?: Prisma.AdminWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AdminUpdateToOneWithWhereWithoutPasswordResetTokensInput, Prisma.AdminUpdateWithoutPasswordResetTokensInput>, Prisma.AdminUncheckedUpdateWithoutPasswordResetTokensInput>
+}
+
 export type AdminCreateWithoutCreatedAdminsInput = {
   id?: string
   username: string
@@ -841,6 +862,7 @@ export type AdminCreateWithoutCreatedAdminsInput = {
   sessions?: Prisma.SessionCreateNestedManyWithoutAdminInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   targetAuditLogs?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutAdminInput
 }
 
 export type AdminUncheckedCreateWithoutCreatedAdminsInput = {
@@ -863,6 +885,7 @@ export type AdminUncheckedCreateWithoutCreatedAdminsInput = {
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutAdminInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   targetAuditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutAdminInput
 }
 
 export type AdminCreateOrConnectWithoutCreatedAdminsInput = {
@@ -890,6 +913,7 @@ export type AdminCreateWithoutCreatedByInput = {
   sessions?: Prisma.SessionCreateNestedManyWithoutAdminInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   targetAuditLogs?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutAdminInput
 }
 
 export type AdminUncheckedCreateWithoutCreatedByInput = {
@@ -912,6 +936,7 @@ export type AdminUncheckedCreateWithoutCreatedByInput = {
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutAdminInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   targetAuditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutAdminInput
 }
 
 export type AdminCreateOrConnectWithoutCreatedByInput = {
@@ -955,6 +980,7 @@ export type AdminUpdateWithoutCreatedAdminsInput = {
   sessions?: Prisma.SessionUpdateManyWithoutAdminNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   targetAuditLogs?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminUncheckedUpdateWithoutCreatedAdminsInput = {
@@ -977,6 +1003,7 @@ export type AdminUncheckedUpdateWithoutCreatedAdminsInput = {
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutAdminNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   targetAuditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminUpsertWithWhereUniqueWithoutCreatedByInput = {
@@ -1037,6 +1064,7 @@ export type AdminCreateWithoutRoleInput = {
   sessions?: Prisma.SessionCreateNestedManyWithoutAdminInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   targetAuditLogs?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutAdminInput
 }
 
 export type AdminUncheckedCreateWithoutRoleInput = {
@@ -1059,6 +1087,7 @@ export type AdminUncheckedCreateWithoutRoleInput = {
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutAdminInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   targetAuditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutAdminInput
 }
 
 export type AdminCreateOrConnectWithoutRoleInput = {
@@ -1107,6 +1136,7 @@ export type AdminCreateWithoutSessionsInput = {
   createdAdmins?: Prisma.AdminCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   targetAuditLogs?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutAdminInput
 }
 
 export type AdminUncheckedCreateWithoutSessionsInput = {
@@ -1129,6 +1159,7 @@ export type AdminUncheckedCreateWithoutSessionsInput = {
   createdAdmins?: Prisma.AdminUncheckedCreateNestedManyWithoutCreatedByInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   targetAuditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutAdminInput
 }
 
 export type AdminCreateOrConnectWithoutSessionsInput = {
@@ -1167,6 +1198,7 @@ export type AdminUpdateWithoutSessionsInput = {
   createdAdmins?: Prisma.AdminUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   targetAuditLogs?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminUncheckedUpdateWithoutSessionsInput = {
@@ -1189,6 +1221,7 @@ export type AdminUncheckedUpdateWithoutSessionsInput = {
   createdAdmins?: Prisma.AdminUncheckedUpdateManyWithoutCreatedByNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   targetAuditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminCreateWithoutAuditLogsInput = {
@@ -1211,6 +1244,7 @@ export type AdminCreateWithoutAuditLogsInput = {
   createdAdmins?: Prisma.AdminCreateNestedManyWithoutCreatedByInput
   sessions?: Prisma.SessionCreateNestedManyWithoutAdminInput
   targetAuditLogs?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutAdminInput
 }
 
 export type AdminUncheckedCreateWithoutAuditLogsInput = {
@@ -1233,6 +1267,7 @@ export type AdminUncheckedCreateWithoutAuditLogsInput = {
   createdAdmins?: Prisma.AdminUncheckedCreateNestedManyWithoutCreatedByInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutAdminInput
   targetAuditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutAdminInput
 }
 
 export type AdminCreateOrConnectWithoutAuditLogsInput = {
@@ -1260,6 +1295,7 @@ export type AdminCreateWithoutTargetAuditLogsInput = {
   createdAdmins?: Prisma.AdminCreateNestedManyWithoutCreatedByInput
   sessions?: Prisma.SessionCreateNestedManyWithoutAdminInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutAdminInput
 }
 
 export type AdminUncheckedCreateWithoutTargetAuditLogsInput = {
@@ -1282,6 +1318,7 @@ export type AdminUncheckedCreateWithoutTargetAuditLogsInput = {
   createdAdmins?: Prisma.AdminUncheckedCreateNestedManyWithoutCreatedByInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutAdminInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutAdminInput
 }
 
 export type AdminCreateOrConnectWithoutTargetAuditLogsInput = {
@@ -1320,6 +1357,7 @@ export type AdminUpdateWithoutAuditLogsInput = {
   createdAdmins?: Prisma.AdminUpdateManyWithoutCreatedByNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutAdminNestedInput
   targetAuditLogs?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminUncheckedUpdateWithoutAuditLogsInput = {
@@ -1342,6 +1380,7 @@ export type AdminUncheckedUpdateWithoutAuditLogsInput = {
   createdAdmins?: Prisma.AdminUncheckedUpdateManyWithoutCreatedByNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutAdminNestedInput
   targetAuditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminUpsertWithoutTargetAuditLogsInput = {
@@ -1375,6 +1414,7 @@ export type AdminUpdateWithoutTargetAuditLogsInput = {
   createdAdmins?: Prisma.AdminUpdateManyWithoutCreatedByNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutAdminNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminUncheckedUpdateWithoutTargetAuditLogsInput = {
@@ -1397,6 +1437,115 @@ export type AdminUncheckedUpdateWithoutTargetAuditLogsInput = {
   createdAdmins?: Prisma.AdminUncheckedUpdateManyWithoutCreatedByNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutAdminNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutAdminNestedInput
+}
+
+export type AdminCreateWithoutPasswordResetTokensInput = {
+  id?: string
+  username: string
+  passwordHash: string
+  fullName: string
+  email?: string | null
+  phone?: string | null
+  status?: $Enums.AdminStatus
+  mustChangePassword?: boolean
+  failedLoginAttempts?: number
+  lockedUntil?: Date | string | null
+  lastLoginAt?: Date | string | null
+  passwordChangedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  role: Prisma.RoleCreateNestedOneWithoutAdminsInput
+  createdBy?: Prisma.AdminCreateNestedOneWithoutCreatedAdminsInput
+  createdAdmins?: Prisma.AdminCreateNestedManyWithoutCreatedByInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutAdminInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  targetAuditLogs?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+}
+
+export type AdminUncheckedCreateWithoutPasswordResetTokensInput = {
+  id?: string
+  username: string
+  passwordHash: string
+  fullName: string
+  email?: string | null
+  phone?: string | null
+  roleId: string
+  status?: $Enums.AdminStatus
+  mustChangePassword?: boolean
+  failedLoginAttempts?: number
+  lockedUntil?: Date | string | null
+  lastLoginAt?: Date | string | null
+  passwordChangedAt?: Date | string | null
+  createdById?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  createdAdmins?: Prisma.AdminUncheckedCreateNestedManyWithoutCreatedByInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutAdminInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  targetAuditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+}
+
+export type AdminCreateOrConnectWithoutPasswordResetTokensInput = {
+  where: Prisma.AdminWhereUniqueInput
+  create: Prisma.XOR<Prisma.AdminCreateWithoutPasswordResetTokensInput, Prisma.AdminUncheckedCreateWithoutPasswordResetTokensInput>
+}
+
+export type AdminUpsertWithoutPasswordResetTokensInput = {
+  update: Prisma.XOR<Prisma.AdminUpdateWithoutPasswordResetTokensInput, Prisma.AdminUncheckedUpdateWithoutPasswordResetTokensInput>
+  create: Prisma.XOR<Prisma.AdminCreateWithoutPasswordResetTokensInput, Prisma.AdminUncheckedCreateWithoutPasswordResetTokensInput>
+  where?: Prisma.AdminWhereInput
+}
+
+export type AdminUpdateToOneWithWhereWithoutPasswordResetTokensInput = {
+  where?: Prisma.AdminWhereInput
+  data: Prisma.XOR<Prisma.AdminUpdateWithoutPasswordResetTokensInput, Prisma.AdminUncheckedUpdateWithoutPasswordResetTokensInput>
+}
+
+export type AdminUpdateWithoutPasswordResetTokensInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  fullName?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumAdminStatusFieldUpdateOperationsInput | $Enums.AdminStatus
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
+  lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordChangedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  role?: Prisma.RoleUpdateOneRequiredWithoutAdminsNestedInput
+  createdBy?: Prisma.AdminUpdateOneWithoutCreatedAdminsNestedInput
+  createdAdmins?: Prisma.AdminUpdateManyWithoutCreatedByNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutAdminNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  targetAuditLogs?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+}
+
+export type AdminUncheckedUpdateWithoutPasswordResetTokensInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  username?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  fullName?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  roleId?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumAdminStatusFieldUpdateOperationsInput | $Enums.AdminStatus
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
+  lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  passwordChangedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdAdmins?: Prisma.AdminUncheckedUpdateManyWithoutCreatedByNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutAdminNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  targetAuditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
 }
 
 export type AdminCreateManyCreatedByInput = {
@@ -1437,6 +1586,7 @@ export type AdminUpdateWithoutCreatedByInput = {
   sessions?: Prisma.SessionUpdateManyWithoutAdminNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   targetAuditLogs?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminUncheckedUpdateWithoutCreatedByInput = {
@@ -1459,6 +1609,7 @@ export type AdminUncheckedUpdateWithoutCreatedByInput = {
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutAdminNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   targetAuditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminUncheckedUpdateManyWithoutCreatedByInput = {
@@ -1517,6 +1668,7 @@ export type AdminUpdateWithoutRoleInput = {
   sessions?: Prisma.SessionUpdateManyWithoutAdminNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   targetAuditLogs?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminUncheckedUpdateWithoutRoleInput = {
@@ -1539,6 +1691,7 @@ export type AdminUncheckedUpdateWithoutRoleInput = {
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutAdminNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   targetAuditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutAdminNestedInput
 }
 
 export type AdminUncheckedUpdateManyWithoutRoleInput = {
@@ -1569,6 +1722,7 @@ export type AdminCountOutputType = {
   sessions: number
   auditLogs: number
   targetAuditLogs: number
+  passwordResetTokens: number
 }
 
 export type AdminCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1576,6 +1730,7 @@ export type AdminCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.
   sessions?: boolean | AdminCountOutputTypeCountSessionsArgs
   auditLogs?: boolean | AdminCountOutputTypeCountAuditLogsArgs
   targetAuditLogs?: boolean | AdminCountOutputTypeCountTargetAuditLogsArgs
+  passwordResetTokens?: boolean | AdminCountOutputTypeCountPasswordResetTokensArgs
 }
 
 /**
@@ -1616,6 +1771,13 @@ export type AdminCountOutputTypeCountTargetAuditLogsArgs<ExtArgs extends runtime
   where?: Prisma.AuditLogWhereInput
 }
 
+/**
+ * AdminCountOutputType without action
+ */
+export type AdminCountOutputTypeCountPasswordResetTokensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PasswordResetTokenWhereInput
+}
+
 
 export type AdminSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1640,6 +1802,7 @@ export type AdminSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   sessions?: boolean | Prisma.Admin$sessionsArgs<ExtArgs>
   auditLogs?: boolean | Prisma.Admin$auditLogsArgs<ExtArgs>
   targetAuditLogs?: boolean | Prisma.Admin$targetAuditLogsArgs<ExtArgs>
+  passwordResetTokens?: boolean | Prisma.Admin$passwordResetTokensArgs<ExtArgs>
   _count?: boolean | Prisma.AdminCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["admin"]>
 
@@ -1712,6 +1875,7 @@ export type AdminInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   sessions?: boolean | Prisma.Admin$sessionsArgs<ExtArgs>
   auditLogs?: boolean | Prisma.Admin$auditLogsArgs<ExtArgs>
   targetAuditLogs?: boolean | Prisma.Admin$targetAuditLogsArgs<ExtArgs>
+  passwordResetTokens?: boolean | Prisma.Admin$passwordResetTokensArgs<ExtArgs>
   _count?: boolean | Prisma.AdminCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type AdminIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1732,6 +1896,7 @@ export type $AdminPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     sessions: Prisma.$SessionPayload<ExtArgs>[]
     auditLogs: Prisma.$AuditLogPayload<ExtArgs>[]
     targetAuditLogs: Prisma.$AuditLogPayload<ExtArgs>[]
+    passwordResetTokens: Prisma.$PasswordResetTokenPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2150,6 +2315,7 @@ export interface Prisma__AdminClient<T, Null = never, ExtArgs extends runtime.Ty
   sessions<T extends Prisma.Admin$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Admin$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   auditLogs<T extends Prisma.Admin$auditLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Admin$auditLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AuditLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   targetAuditLogs<T extends Prisma.Admin$targetAuditLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Admin$targetAuditLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AuditLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  passwordResetTokens<T extends Prisma.Admin$passwordResetTokensArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Admin$passwordResetTokensArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PasswordResetTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2708,6 +2874,30 @@ export type Admin$targetAuditLogsArgs<ExtArgs extends runtime.Types.Extensions.I
   take?: number
   skip?: number
   distinct?: Prisma.AuditLogScalarFieldEnum | Prisma.AuditLogScalarFieldEnum[]
+}
+
+/**
+ * Admin.passwordResetTokens
+ */
+export type Admin$passwordResetTokensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PasswordResetToken
+   */
+  select?: Prisma.PasswordResetTokenSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PasswordResetToken
+   */
+  omit?: Prisma.PasswordResetTokenOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PasswordResetTokenInclude<ExtArgs> | null
+  where?: Prisma.PasswordResetTokenWhereInput
+  orderBy?: Prisma.PasswordResetTokenOrderByWithRelationInput | Prisma.PasswordResetTokenOrderByWithRelationInput[]
+  cursor?: Prisma.PasswordResetTokenWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PasswordResetTokenScalarFieldEnum | Prisma.PasswordResetTokenScalarFieldEnum[]
 }
 
 /**

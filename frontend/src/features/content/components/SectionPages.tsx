@@ -44,7 +44,7 @@ export function SectionLanding({ section }: { section: string }) {
       <CmsPublishedItems section={section} />
       <section className="academic-feature" data-reveal>
         <div>
-          <p>Viện Sau Đại học PERSPECTIVE / 2026</p>
+          <p>Viện Sau Đại học PERSPECTIVE</p>
           <h2>
             Chuẩn quốc tế.
             <br />

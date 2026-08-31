@@ -220,21 +220,9 @@
   position: relative;
   background: var(--navy);
   color: #fff;
-  overflow: hidden;
 }
-.chapterNumber {
-  position: absolute;
-  right: 2vw;
-  top: 4vw;
-  color: rgba(255, 255, 255, 0.055);
-  font: 800 clamp(150px, 22vw, 340px)/0.8 var(--font-display);
-}
-.philosophyHead {
-  position: relative;
-  z-index: 1;
-}
-.philosophyHead .eyebrow {
-  color: #ff858c;
+.philosophy .eyebrow {
+  color: #f15a67;
 }
 .philosophyStatement {
   margin: clamp(70px, 10vw, 140px) 0;

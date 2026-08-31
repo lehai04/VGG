@@ -7,7 +7,6 @@ export const LOCK_MINUTES = 15;
 export const ROLE_CODES = {
   SUPER_ADMIN: "SUPER_ADMIN",
   LEVEL_2: "ADMIN_LEVEL_2",
-  LEVEL_3: "ADMIN_LEVEL_3",
 } as const;
 
 export const ADMIN_PERMISSIONS = [

@@ -6,9 +6,14 @@ import { PublicationsSearch, type PublicationItem } from "./PublicationsSearch";
 import { ResearchGateway } from "./ResearchLanding";
 import styles from "./ResearchPublicationsPage.module.css";
 
+const displayYear = (value: string | null | undefined) => {
+  const year = new Date(value || Date.now()).getFullYear();
+  return year === 2026 ? "" : year.toString();
+};
+
 const fallback: PublicationItem[] = [
-  { id:"r1", title:"Giải pháp phát triển bền vững gắn với quản trị và kinh tế tuần hoàn", field:"Kinh doanh & Phát triển bền vững", author:"Nhóm nghiên cứu Viện Sau Đại học", year:"2026", type:"Đang triển khai", language:"Vietnamese", abstract:"Dự án xây dựng mô hình quản trị tài nguyên và tăng trưởng có trách nhiệm phù hợp với doanh nghiệp Việt Nam." },
-  { id:"r2", title:"Ứng dụng dữ liệu nâng cao chất lượng môi trường đô thị", field:"Công nghệ & Môi trường", author:"Viện nghiên cứu Viện Sau Đại học", year:"2026", type:"Hợp tác doanh nghiệp", language:"Vietnamese", abstract:"Ứng dụng dữ liệu và công nghệ số để theo dõi, phân tích và đề xuất giải pháp cải thiện môi trường đô thị." },
+  { id:"r1", title:"Giải pháp phát triển bền vững gắn với quản trị và kinh tế tuần hoàn", field:"Kinh doanh & Phát triển bền vững", author:"Nhóm nghiên cứu Viện Sau Đại học", year:"", type:"Đang triển khai", language:"Vietnamese", abstract:"Dự án xây dựng mô hình quản trị tài nguyên và tăng trưởng có trách nhiệm phù hợp với doanh nghiệp Việt Nam." },
+  { id:"r2", title:"Ứng dụng dữ liệu nâng cao chất lượng môi trường đô thị", field:"Công nghệ & Môi trường", author:"Viện nghiên cứu Viện Sau Đại học", year:"", type:"Hợp tác doanh nghiệp", language:"Vietnamese", abstract:"Ứng dụng dữ liệu và công nghệ số để theo dõi, phân tích và đề xuất giải pháp cải thiện môi trường đô thị." },
   { id:"r3", title:"Kết nối nghiên cứu với nhu cầu phát triển của cộng đồng", field:"Nghiên cứu liên ngành", author:"Trần Công Minh", year:"2025", type:"Đang triển khai", language:"Vietnamese", abstract:"Kết nối giảng viên, người học và đối tác địa phương trong các sáng kiến tạo tác động xã hội có thể đo lường." },
   { id:"r4", title:"Không gian sáng tạo cho bảo tồn và phát huy bản sắc địa phương", field:"Văn hóa & Sáng tạo", author:"Nhóm nghiên cứu Sáng tạo", year:"2025", type:"Trong nước", language:"Vietnamese", abstract:"Thử nghiệm các phương pháp thiết kế và truyền thông nhằm đưa giá trị văn hóa bản địa đến gần hơn với công chúng." },
   { id:"r5", title:"Mô hình đô thị thông minh thích ứng với biến đổi khí hậu", field:"Công nghệ & Kỹ thuật", author:"Viện Công nghệ Viện Sau Đại học", year:"2024", type:"Quốc tế", language:"English", abstract:"Phát triển mô hình tích hợp dữ liệu, hạ tầng và hành vi cộng đồng cho đô thị có khả năng thích ứng cao." },
@@ -24,7 +29,7 @@ async function getProjects(): Promise<PublicationItem[]> {
     const payload=await response.json();
     const posts=(payload.data?.posts??[]).filter((post:{category?:string})=>post.category==="RESEARCH_PROJECT");
     if (!posts.length) return fallback;
-    return posts.map((post:{id:string;title:string;excerpt?:string|null;publishedAt?:string|null;createdAt?:string;author?:{name?:string}})=>({ id:post.id,title:post.title,field:post.excerpt||"Dự án nghiên cứu Viện Sau Đại học",author:post.author?.name||"Nhóm nghiên cứu Viện Sau Đại học",year:new Date(post.publishedAt||post.createdAt||Date.now()).getFullYear().toString(),type:"Dự án nghiên cứu",language:"Vietnamese",abstract:"Dự án kết nối năng lực học thuật với nhu cầu thực tế nhằm tạo ra những giải pháp có giá trị cho cộng đồng." }));
+    return posts.map((post:{id:string;title:string;excerpt?:string|null;publishedAt?:string|null;createdAt?:string;author?:{name?:string}})=>({ id:post.id,title:post.title,field:post.excerpt||"Dự án nghiên cứu Viện Sau Đại học",author:post.author?.name||"Nhóm nghiên cứu Viện Sau Đại học",year:displayYear(post.publishedAt||post.createdAt),type:"Dự án nghiên cứu",language:"Vietnamese",abstract:"Dự án kết nối năng lực học thuật với nhu cầu thực tế nhằm tạo ra những giải pháp có giá trị cho cộng đồng." }));
   } catch { return fallback; }
 }
 

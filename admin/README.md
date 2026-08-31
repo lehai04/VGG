@@ -4,12 +4,13 @@
 
 ## Khởi tạo
 
-1. Sao chép `.env.example` thành `.env` và cấu hình `DATABASE_URL`.
-2. Chạy `npm run prisma:deploy --workspace=admin`.
-3. Điền `INITIAL_ADMIN_USERNAME`, `INITIAL_ADMIN_PASSWORD`, `INITIAL_ADMIN_NAME`.
-4. Chạy `npm run admin:bootstrap --workspace=admin` đúng một lần.
-5. Xóa các biến `INITIAL_ADMIN_*` khỏi môi trường sau khi bootstrap.
-6. Chạy `npm run dev:admin` và mở `http://localhost:3001/admin/login`.
+1. Sao chép `admin/.env.example` thành `admin/.env.local` và cấu hình `DATABASE_URL`.
+2. Sao chép `backend/.env.example` thành `backend/.env`; hai ứng dụng phải dùng cùng `DATABASE_URL`.
+3. Từ thư mục gốc, chạy `npm run db:deploy`.
+4. Điền `INITIAL_ADMIN_USERNAME`, `INITIAL_ADMIN_PASSWORD`, `INITIAL_ADMIN_NAME` trong `backend/.env`.
+5. Chạy `npm run db:bootstrap-admin` đúng một lần.
+6. Xóa các biến `INITIAL_ADMIN_*` khỏi môi trường sau khi bootstrap.
+7. Chạy `npm run dev:backend` và `npm run dev:admin`, sau đó mở `http://localhost:3001/admin/login`.
 
 Super Admin đầu tiên luôn có `must_change_password = true`.
 

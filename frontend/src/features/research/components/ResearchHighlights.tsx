@@ -43,8 +43,26 @@ export async function ResearchHighlights() {
       <div className={styles.projectHead}><h3>Dự án khoa học</h3><Link href="https://www.vlu.edu.vn/research/projects/search">Xem tất cả dự án <ArrowUpRight /></Link></div>
       <div className={styles.projectGrid}>{projects.map((post) => <article key={post.id} className={styles.projectCard}><div className={styles.projectImage} style={{ backgroundImage: `url("${post.coverImage || "/images/pages/research/content/campus.jpg"}")` }} /><h3><Link href={`/news/${post.slug}`}>{post.title}</Link></h3>{post.excerpt && <p>{post.excerpt}</p>}</article>)}</div>
       <div className={styles.publicationBlock}>
-        <div className={styles.publicationHead}><h3>Công bố khoa học</h3><Link href="https://www.vlu.edu.vn/research/publications/search">Xem tất cả công bố <ArrowUpRight /></Link></div>
-        <div className={styles.projectGrid}>{publications.map((post, index) => <article key={post.id} className={styles.projectCard}><div className={styles.projectImage} style={{ backgroundImage: `url("${post.coverImage || "/images/pages/research/content/campus.jpg"}")` }} /><h3><Link href={publicationLinks[index]}>{post.title}</Link></h3>{post.excerpt && <p>{post.excerpt}</p>}</article>)}</div>
+        <div className={styles.publicationHead}>
+          <h3>Công bố khoa học</h3>
+          <Link href="https://www.vlu.edu.vn/research/publications/search">
+            Xem tất cả công bố <ArrowUpRight />
+          </Link>
+        </div>
+        <div className={styles.publicationTextList}>
+          {publications.map((post, index) => (
+            <article key={post.id} className={styles.publicationTextCard}>
+              <span className={styles.publicationTag}>CÔNG BỐ KHOA HỌC · 0{index + 1}</span>
+              <h3>
+                <Link href={publicationLinks[index]}>{post.title}</Link>
+              </h3>
+              {post.excerpt && <p>{post.excerpt}</p>}
+              <Link href={publicationLinks[index]} className={styles.publicationReadMore}>
+                Xem chi tiết <ArrowUpRight />
+              </Link>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

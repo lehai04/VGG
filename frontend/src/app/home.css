@@ -527,7 +527,7 @@
   font-weight: 600;
 }
 
-@media (max-width: 1250px) and (min-width: 901px) {
+@media (max-width: 1250px) and (min-width: 1101px) {
   .home-page .header {
     padding-right: 2vw;
   }
@@ -538,11 +538,11 @@
   }
 
   .home-page .navTitle {
-    font-size: 8px;
+    font-size: 11px; /* was 8px — illegible at this range */
   }
 
   .home-page .navSubtitle {
-    font-size: 7px;
+    font-size: 9px; /* was 7px — illegible at this range */
   }
 
   .home-page .brandLogo {
@@ -895,7 +895,7 @@
   position: sticky;
   top: 108px;
   width: 100%;
-  height: calc(100vh - 108px);
+  height: calc(100dvh - 108px);
   min-height: 0;
   aspect-ratio: auto;
   margin: 0;
@@ -1064,7 +1064,7 @@
 @media (min-width: 701px) and (max-width: 900px) {
   .home-page .immersiveVideo {
     top: 114px;
-    height: calc(100vh - 114px);
+    height: calc(100dvh - 114px);
   }
 }
 
@@ -1594,11 +1594,20 @@
 }
 
 .home-page .programmeArcStat strong {
-  margin-top: 24px;
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  width: 100%;
+  margin: 0;
+  transform: translateX(-50%);
   color: #ffffff;
-  font-size: 56px;
-  line-height: 0.86;
-  letter-spacing: -0.06em;
+  font-family: var(--font-body);
+  font-size: 64px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  text-align: center;
 }
 
 .home-page .programmeArcLabel {
@@ -1612,9 +1621,9 @@
 .home-page .programmeArcLabel text {
   fill: #ffffff;
   font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0;
+  font-size: 11px;
+  font-weight: 450;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -1636,7 +1645,8 @@
 
 .home-page .programmeCatalogVisual {
   position: relative;
-  min-height: 416px;
+  min-height: 420px;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 18px;
@@ -1645,7 +1655,7 @@
 
 .home-page .programmeCatalogImage {
   object-fit: cover;
-  object-position: center;
+  object-position: 22% 20%;
 }
 
 .home-page .programmeFieldGrid {
@@ -1960,7 +1970,7 @@
 }
 
 /* =========================================================
-   08. DỊCH VỤ VÀ HÀNH TRÌNH HỌC VIÊN
+   08. DỊCH VỤ VÀ HÀNH TRÌNH NGƯỜI HỌC
    ========================================================= */
 .home-page .studentSuccess {
   position: relative;
@@ -2065,7 +2075,7 @@
    09. TIN TỨC VÀ SỰ KIỆN
    ========================================================= */
 .home-page .newsSection {
-  padding: 78px var(--page-gutter) 84px;
+  padding: clamp(72px, 7vw, 112px) var(--page-gutter) clamp(82px, 8vw, 124px);
   border-bottom: 5px solid #db2639;
   background: #ffffff;
   color: #20213e;
@@ -2079,7 +2089,7 @@
 }
 
 .home-page .newsHeading p {
-  margin: 0 0 24px;
+  margin: 0 0 16px;
   color: #111633;
   font-size: 10px;
   font-weight: 700;
@@ -2089,7 +2099,7 @@
 .home-page .newsHeading h2 {
   margin: 0;
   font-size: clamp(48px, 4.8vw, 76px);
-  font-weight: 600;
+  font-weight: 650;
   line-height: 1.05;
   letter-spacing: -4px;
 }
@@ -2111,23 +2121,32 @@
 }
 
 .home-page .newsGrid {
-  margin-top: 62px;
+  margin-top: 52px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 2vw, 30px);
 }
-.home-page .newsCard { grid-column: span 2; }
-.home-page .newsCard:nth-child(4),
-.home-page .newsCard:nth-child(5) { grid-column: span 3; }
 
 .home-page .newsCard {
   display: flex;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e4e5ea;
+  border-radius: 14px;
   flex-direction: column;
+  background: #fff;
+  box-shadow: 0 7px 24px rgba(22, 25, 54, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-page .newsCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 42px rgba(22, 25, 54, 0.13);
 }
 
 .home-page .newsMedia {
   position: relative;
-  height: 265px;
+  height: clamp(220px, 19vw, 300px);
   overflow: hidden;
   background: #ffffff;
 }
@@ -2157,28 +2176,39 @@
   letter-spacing: 1px;
 }
 
-.home-page .newsCardText .newsMedia > span {
-  top: 14px;
-  left: 14px;
-}
-
 .home-page .newsCard > small {
-  margin-top: 19px;
+  margin: 22px 24px 0;
   color: #637173;
   font-size: 9px;
 }
 
 .home-page .newsCard h3 {
-  margin: 12px 0 18px;
+  margin: 11px 24px 0;
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: clamp(18px, 1.45vw, 23px);
   font-weight: 700;
   line-height: 1.45;
 }
 
-.home-page .newsCard > a {
+.home-page .newsCard > p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 14px 24px 0;
+  color: #687174;
+  font-size: 13px;
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.home-page .newsCard > .newsReadMore {
   width: fit-content;
-  margin-top: auto;
+  margin: auto 24px 24px;
+  padding-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #db2639;
   font-size: 11px;
   font-weight: 700;
 }
@@ -2442,7 +2472,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 0;
   grid-column: 1 / -1;
   justify-self: center;
   width: min(100%, 210px);
@@ -2457,6 +2487,7 @@
   font-weight: 800;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  text-align: center;
   cursor: pointer;
   transition:
     background-color 180ms ease,
@@ -2468,11 +2499,6 @@
   background: #c91d31;
   box-shadow: 0 20px 38px rgba(223, 34, 54, 0.3);
   transform: translateY(-2px);
-}
-
-.home-page .consultationFields button span {
-  font-size: 15px;
-  line-height: 1;
 }
 
 .home-page .consultationFields button:disabled {
@@ -2794,17 +2820,6 @@
   .home-page .newsGrid {
     grid-template-columns: 1fr 1fr;
   }
-  .home-page .newsCard,
-  .home-page .newsCard:nth-child(4),
-  .home-page .newsCard:nth-child(5) {
-    grid-column: auto;
-  }
-  .home-page .newsCard:first-child {
-    grid-column: 1 / -1;
-  }
-  .home-page .newsCard:first-child .newsMedia {
-    height: 130px;
-  }
   .home-page .studentSuccess {
     grid-template-columns: 1fr;
     gap: 55px;
@@ -2866,7 +2881,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    max-height: calc(100vh - 150px);
+    max-height: calc(100dvh - 150px);
     overflow-y: auto;
   }
   .home-page .nav.open {
@@ -2938,16 +2953,7 @@
     grid-template-columns: 1fr;
     gap: 44px;
   }
-  .home-page .newsCard:first-child {
-    grid-column: auto;
-  }
-  .home-page .newsCard,
-  .home-page .newsCard:nth-child(4),
-  .home-page .newsCard:nth-child(5) {
-    grid-column: auto;
-  }
-  .home-page .newsMedia,
-  .home-page .newsCard:first-child .newsMedia {
+  .home-page .newsMedia {
     height: 230px;
   }
   .home-page .studentSuccess {
@@ -3959,6 +3965,25 @@
   .home-page .consultationFields {
     grid-template-columns: 1fr;
   }
+
+  .home-page .consultationBlock {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .home-page .consultationIntro,
+  .home-page .consultationFields,
+  .home-page .consultationFormHead {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .home-page .consultationFormHead {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .home-page .consultationFormHead small {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 1050px) {
@@ -3978,7 +4003,11 @@
 
 @media (max-width: 600px) {
   .home-page .programmeCatalogShowcase {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-page .programmeCatalogShowcase > * {
+    min-width: 0;
   }
 
   .home-page .programmeCatalogLead {
@@ -3991,7 +4020,8 @@
   }
 
   .home-page .programmeCatalogVisual {
-    min-height: 300px;
+    min-height: 320px;
+    aspect-ratio: 16 / 10;
     border: 1px solid rgba(255, 255, 255, 0.16);
   }
 
@@ -4010,17 +4040,13 @@
   }
 
   .home-page .programmeArcStat strong {
-    margin-top: 20px;
-    font-size: 48px;
+    top: 19px;
+    font-size: 54px;
   }
 
   .home-page .programmeArcLabel {
     width: 100%;
     height: 100%;
-  }
-
-  .home-page .programmeArcLabel text {
-    font-size: 9.5px;
   }
 
   .home-page .programmeFieldGrid {
@@ -4080,9 +4106,6 @@
 }
 
 /* Final responsive safeguards (kept last to normalize later component rules). */
-.home-page {
-  overflow-x: clip;
-}
 @media (max-width: 900px) {
   .home-page .topBar {
     height: 32px;
@@ -4322,14 +4345,15 @@
   box-shadow: none;
 }
 .home-page .vgg-finder-heading > label::before {
-  content: "Tìm kiếm chương trình Thạc sĩ và Tiến sĩ phù hợp với định hướng học tập và phát triển chuyên môn của bạn tại Văn Lang.";
+  content: "Tìm kiếm chương trình phù hợp với định hướng học tập và phát triển chuyên môn của bạn tại Văn Lang.";
   display: block;
-  max-width: 650px;
+  max-width: none;
   margin: -78px auto 35px;
   color: #171717;
   font-size: 15px;
   line-height: 1.45;
   text-align: center;
+  white-space: nowrap;
 }
 .home-page .vgg-finder-heading > label > div {
   min-height: 63px;
@@ -4392,6 +4416,7 @@
   .home-page .vgg-finder-heading > label::before {
     margin: -74px auto 32px;
     font-size: 13px;
+    white-space: normal;
   }
   .home-page .vgg-filter-sidebar {
     gap: 12px;
@@ -4460,4 +4485,99 @@
 .home-page .consultationBlock {
   padding-left: var(--page-gutter);
   padding-right: var(--page-gutter);
+}
+
+/* Chuyển sang drawer trước khi các nhãn tiếng Việt dài làm tràn header. */
+@media (max-width: 1100px) {
+  .home-page .header {
+    height: 82px;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+  .home-page .menuButton {
+    order: -1;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(31, 34, 81, 0.18);
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  .home-page .menuButtonIcon {
+    width: 20px;
+    display: grid;
+    gap: 4px;
+  }
+  .home-page .menuButtonIcon i {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 180ms ease, opacity 180ms ease;
+  }
+  .home-page .menuButton[aria-expanded="true"] .menuButtonIcon i:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .home-page .menuButton[aria-expanded="true"] .menuButtonIcon i:nth-child(2) {
+    opacity: 0;
+  }
+  .home-page .menuButton[aria-expanded="true"] .menuButtonIcon i:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+  .home-page .brand {
+    margin-right: auto;
+  }
+  .home-page .nav,
+  .home-page .nav.open {
+    position: fixed;
+    z-index: 110;
+    top: 114px;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: min(330px, 88vw);
+    max-height: none;
+    padding: 20px 18px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-top: 1px solid #e6e2dc;
+    background: #fff;
+    box-shadow: 18px 20px 38px rgba(31, 34, 81, 0.18);
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-105%);
+    transition: transform 220ms ease, opacity 180ms ease, visibility 220ms;
+  }
+  .home-page .nav.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .home-page .nav > a:not(.navCta) {
+    min-height: 58px;
+    padding: 18px 10px;
+    justify-content: flex-start;
+    border-bottom: 1px solid #e9e7e2;
+  }
+  .home-page .navTitle {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page .brandLogo {
+    max-width: min(185px, calc(100vw - 110px));
+  }
 }

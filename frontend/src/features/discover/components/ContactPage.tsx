@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { ArrowUpRight, Clock3, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ArrowUpRight, Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { FooterIcon } from "@/shared/components/layout/footer/FooterIcon";
 import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
-import { DiscoverMore } from "@/features/discover/components/DiscoverMore";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import styles from "./ContactPage.module.css";
 
@@ -62,8 +61,9 @@ export function ContactPage() {
               Gọi trực tiếp khi bạn cần trao đổi nhanh với chuyên viên tư vấn. Chúng tôi hỗ trợ về ngành học, điều kiện dự tuyển và quy trình nộp hồ sơ. Thông tin của bạn được tiếp nhận cẩn thận và bảo mật. Những câu hỏi chuyên sâu sẽ được kết nối đúng đơn vị phụ trách. Hãy chuẩn bị nội dung để buổi tư vấn hiệu quả hơn.
             </p>
             <div className={styles.phoneLinks}>
-              <a href="tel:02871016869"><Phone aria-hidden="true" /><span><small>Đào tạo</small>028 7101 6869</span></a>
-              <a href="tel:0988486869"><Phone aria-hidden="true" /><span><small>Tuyển sinh</small>0988 48 68 69</span></a>
+              <a href="tel:+842871016869"><Phone aria-hidden="true" /><span><small>Điện thoại</small>0287 101 6869</span></a>
+              <a href="tel:+84988486869"><MessageCircle aria-hidden="true" /><span><small>Hotline/Zalo</small>0988 48 6869</span></a>
+              <a href="mailto:tuyensinh.sdh@vlu.edu.vn"><Mail aria-hidden="true" /><span><small>Email</small>tuyensinh.sdh@vlu.edu.vn</span></a>
             </div>
           </article>
         </div>
@@ -89,7 +89,6 @@ export function ContactPage() {
         </div>
       </section>
 
-      <DiscoverMore activeSlug="lien-he" />
       <NextStepCTA />
       <SiteFooter />
     </main>

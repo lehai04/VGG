@@ -22,7 +22,7 @@
 
 .heading h2 {
   margin: 17px 0 15px;
-  font-size: clamp(45px, 5vw, 72px);
+  font-size: clamp(30px, 5vw, 72px);
   line-height: 1;
   letter-spacing: -0.05em;
 }
@@ -222,7 +222,7 @@
     margin-bottom: 34px;
   }
   .heading h2 {
-    font-size: 42px;
+    font-size: clamp(28px, 9vw, 42px);
   }
   .diagram {
     grid-template-columns: 1fr;

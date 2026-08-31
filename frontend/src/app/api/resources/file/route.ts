@@ -6,6 +6,21 @@ function safeFileName(value: string) {
   return value.replace(/[\r\n"\\/]/g, "_").slice(0, 180) || "tai-lieu";
 }
 
+function contentTypeFor(name: string, fallback: string | null) {
+  const extension = name.toLowerCase().match(/\.[a-z0-9]+$/)?.[0];
+  const known: Record<string, string> = {
+    ".pdf": "application/pdf",
+    ".doc": "application/msword",
+    ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    ".xls": "application/vnd.ms-excel",
+    ".xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".png": "image/png",
+  };
+  return (extension && known[extension]) || fallback || "application/octet-stream";
+}
+
 export async function GET(request: NextRequest) {
   const source = request.nextUrl.searchParams.get("url");
   const name = safeFileName(request.nextUrl.searchParams.get("name") ?? "tai-lieu");
@@ -27,7 +42,7 @@ export async function GET(request: NextRequest) {
         { status: upstream.status || 502 },
       );
     const headers = new Headers();
-    headers.set("content-type", upstream.headers.get("content-type") ?? "application/octet-stream");
+    headers.set("content-type", contentTypeFor(name, upstream.headers.get("content-type")));
     headers.set(
       "content-disposition",
       `${download ? "attachment" : "inline"}; filename*=UTF-8''${encodeURIComponent(name)}`,

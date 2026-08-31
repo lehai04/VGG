@@ -4,7 +4,6 @@ import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
-import { DiscoverMore } from "@/features/discover/components/DiscoverMore";
 import styles from "./DiscoverSubpageVM.module.css";
 
 interface PageData {
@@ -22,7 +21,7 @@ const RANKINGS = [
   {
     rank: "251",
     scope: "CHÂU Á",
-    title: "QS Asia University Rankings 2026",
+    title: "QS Asia University Rankings",
     copy: "Văn Lang vươn lên vị trí 251, vượt qua 83,6% cơ sở giáo dục được xếp hạng trong khu vực.",
     href: "https://www.vlu.edu.vn/news/qs-asia-ranking-2026-truong-dai-hoc-van-lang-thang-hang-251-dai-hoc-hang-dau-chau-a",
     image: "/images/pages/discover/rank/1.jpg",
@@ -30,7 +29,7 @@ const RANKINGS = [
   {
     rank: "1001–1200",
     scope: "THẾ GIỚI",
-    title: "QS World University Rankings 2026",
+    title: "QS World University Rankings",
     copy: "Đồng thời đạt hạng 392 toàn cầu về danh tiếng học thuật.",
     href: "https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-vao-top-1001-1200-dai-hoc-hang-dau-the-gioi-nam-2026",
     image: "/images/pages/discover/rank/2.jpg",
@@ -38,7 +37,7 @@ const RANKINGS = [
   {
     rank: "51-100",
     scope: "THẾ GIỚI",
-    title: "Art & Design · QS by Subject 2026",
+    title: "Art & Design · QS by Subject",
     copy: "Một dấu ấn nổi bật của năng lực đào tạo sáng tạo và hội nhập quốc tế.",
     href: "https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-vao-top-100-truong-dao-tao-thiet-ke-hang-dau-the-gioi",
     image: "/images/pages/discover/rank/3.jpg",
@@ -54,7 +53,7 @@ const RANKINGS = [
   {
     rank: "781",
     scope: "THẾ GIỚI · 247 CHÂU Á",
-    title: "QS Sustainability Rankings 2026",
+    title: "QS Sustainability Rankings",
     copy: "Lần đầu góp mặt, Văn Lang đứng hạng 7 Việt Nam về phát triển bền vững.",
     href: "https://www.vlu.edu.vn/news/truong-dai-hoc-van-lang-dat-thu-hang-781-the-gioi-ve-dai-hoc-phat-trien-ben-vung",
     image: "/images/pages/discover/rank/5.jpg",
@@ -171,7 +170,7 @@ function RankingsContent() {
             rộng kết nối toàn cầu.
           </p>
           <a href="/vi/student-success">
-            Xem hoạt động học viên <ArrowUpRight aria-hidden="true" />
+            Xem hoạt động người học <ArrowUpRight aria-hidden="true" />
           </a>
         </div>
       </section>
@@ -184,7 +183,7 @@ function ContactValue({ label, value }: { label: string; value: string }) {
   if (label === "Email") {
     return <a href={`mailto:${value}`}>{value}</a>;
   }
-  if (label === "Điện thoại") {
+  if (label === "Điện thoại" || label === "Hotline/Zalo") {
     const first = value.split("·")[0].trim();
     return <a href={`tel:${first.replace(/\s/g, "")}`}>{value}</a>;
   }
@@ -333,7 +332,6 @@ export function DiscoverSubpageVM({ slug, page }: { slug: string; page: PageData
         </>
       )}
 
-      <DiscoverMore activeSlug={slug} />
       <NextStepCTA />
       <SiteFooter />
     </main>

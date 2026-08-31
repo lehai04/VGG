@@ -36,19 +36,9 @@ export const discoverSections = [
     summary: "Gặp gỡ đội ngũ định hướng hành trình học thuật tại Viện Sau Đại học.",
   },
   {
-    slug: "vi-sao-chon-vgg",
-    title: "Vì sao chọn Viện Sau Đại học",
-    summary: "Những khác biệt làm nên trải nghiệm sau đại học tại Văn Lang.",
-  },
-  {
     slug: "xep-hang-thanh-tuu",
     title: "Xếp hạng & Thành tựu",
     summary: "Các dấu ấn từ cộng đồng học thuật và người học Viện Sau Đại học.",
-  },
-  {
-    slug: "lien-he",
-    title: "Liên hệ",
-    summary: "Kết nối với đội ngũ Viện Sau Đại học để được tư vấn và hỗ trợ.",
   },
 ] as const;
 
@@ -67,9 +57,7 @@ export const menuGroups: readonly MenuGroup[] = [
       "Introduction",
       "Vision & Mission",
       "Leadership",
-      "Why Viện Sau Đại học",
       "Rankings & Achievements",
-      "Contact",
     ],
     image:
       "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1800&q=86",
@@ -192,16 +180,16 @@ export const menuGroups: readonly MenuGroup[] = [
   {
     slug: "student-success",
     en: "Student Success",
-    vi: "Hành trình học viên",
+    vi: "Hành trình người học",
     kicker: "Supported at every step",
-    headline: "Thành công của học viên là trung tâm.",
+    headline: "Thành công của người học là trung tâm.",
     intro:
       "Hệ sinh thái hỗ trợ học tập, nghề nghiệp và kết nối doanh nghiệp đồng hành xuyên suốt hành trình.",
     items: [
-      "Dịch vụ hỗ trợ học viên",
+      "Dịch vụ hỗ trợ người học",
       "Phát triển sự nghiệp",
       "Tài nguyên học tập",
-      "Cựu học viên",
+      "Cựu người học",
       "Câu chuyện thành công",
     ],
     itemsEn: [
@@ -383,13 +371,13 @@ export const unifiedSectionDetails: Record<string, readonly UnifiedDetailBlock[]
     },
     {
       title: "Ưu đãi học phí 5%",
-      text: "Giảm thêm 5% trên mức học phí thực đóng khi thanh toán toàn bộ học phí trong một lần. Chính sách áp dụng đối với học viên có mức học bổng dưới 30%.",
+      text: "Giảm thêm 5% trên mức học phí thực đóng khi thanh toán toàn bộ học phí trong một lần. Chính sách áp dụng đối với người học có mức học bổng dưới 30%.",
     },
     {
       title: "Học bổng Khuyến khích 5–10%",
       points: [
-        "Hỗ trợ 10% học phí toàn khóa dành cho học viên theo học các ngành thuộc nhóm STEM.",
-        "Hỗ trợ 5% học phí toàn khóa dành cho học viên là nữ, người dân tộc thiểu số, người khuyết tật, thương binh hoặc bệnh binh.",
+        "Hỗ trợ 10% học phí toàn khóa dành cho người học theo học các ngành thuộc nhóm STEM.",
+        "Hỗ trợ 5% học phí toàn khóa dành cho người học là nữ, người dân tộc thiểu số, người khuyết tật, thương binh hoặc bệnh binh.",
       ],
     },
   ],
@@ -416,7 +404,7 @@ export const unifiedSectionDetails: Record<string, readonly UnifiedDetailBlock[]
     },
     {
       title: "Nhập học",
-      text: "Sau khi hoàn tất thủ tục nhập học, học viên chính thức trở thành học viên cao học hoặc nghiên cứu sinh của Trường Đại học Văn Lang và bắt đầu hành trình học tập, nghiên cứu và phát triển nghề nghiệp trong môi trường học thuật quốc tế.",
+      text: "Sau khi hoàn tất thủ tục nhập học, người học chính thức trở thành người học cao học hoặc nghiên cứu sinh của Trường Đại học Văn Lang và bắt đầu hành trình học tập, nghiên cứu và phát triển nghề nghiệp trong môi trường học thuật quốc tế.",
     },
   ],
   "admissions/moc-thoi-gian": [
@@ -425,10 +413,10 @@ export const unifiedSectionDetails: Record<string, readonly UnifiedDetailBlock[]
       text: "Trường Đại học Văn Lang tổ chức 3 đợt tuyển sinh sau đại học mỗi năm.",
     },
     {
-      title: "Đợt 3 / 2026",
+      title: "Đợt 3",
       points: [
-        "29/08/2026 — Hạn dành cho học viên đăng ký học bổng.",
-        "05/09/2026 — Hạn dành cho học viên không đăng ký học bổng.",
+        "29/08 — Hạn dành cho người học đăng ký học bổng.",
+        "05/09 — Hạn dành cho người học không đăng ký học bổng.",
       ],
     },
   ],

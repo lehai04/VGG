@@ -5,6 +5,20 @@
 */
 :root {
   /* Mở rộng khoảng 113px mỗi bên (xấp xỉ 3cm ở 96dpi) trên desktop lớn. */
+  --font-inter: var(
+    --font-inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif
+  );
+  --font-heading: var(--font-inter);
+  --font-body: var(--font-inter);
+  --font-navigation: var(--font-inter);
+  --font-display: var(--font-heading);
   --container-max-width: 1546px;
   --page-padding-desktop: 60px;
   --page-padding-laptop: 48px;
@@ -41,9 +55,61 @@
   --cream: var(--vlu-pale);
 }
 
+/* Responsive foundation: keeps legacy layouts inside every viewport without
+   changing their visual language. Component styles can still opt into scrolling. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+img,
+video,
+canvas,
+svg,
+iframe {
+  max-width: 100%;
+}
+main,
+main > *,
+main section,
+main article {
+  min-width: 0;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --page-gutter: var(--page-padding-laptop);
+  }
+}
+@media (max-width: 900px) {
+  :root {
+    --page-gutter: var(--page-padding-tablet);
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --page-gutter: var(--page-padding-mobile);
+  }
+}
+@media (max-width: 380px) {
+  :root {
+    --page-gutter: var(--page-padding-small-mobile);
+  }
+}
+
 /* Viện Sau Đại học typography design system — semantic scale shared by every public page. */
 html {
   font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 body,
 input,
@@ -51,6 +117,7 @@ textarea,
 select,
 button {
   font-family: var(--font-body);
+  overflow-wrap: break-word;
 }
 h1,
 h2,
@@ -63,6 +130,7 @@ h6 {
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
 h1 {
   font-size: var(--heading-lg) !important;
@@ -587,7 +655,9 @@ body {
   color: #fff;
   font-size: 20px;
   font-style: normal;
-  transition: transform 200ms ease, color 200ms ease;
+  transition:
+    transform 200ms ease,
+    color 200ms ease;
 }
 
 .academic-unified-sections details[open] summary i {
@@ -660,7 +730,10 @@ body {
   border: 1px solid rgb(255 255 255 / 22%);
   border-radius: 8px;
   background: rgb(255 255 255 / 5%);
-  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
 }
 
 .academic-unified-detail-grid.is-process article:hover {
@@ -749,7 +822,9 @@ body {
   background: #df2038;
   font-size: 14px;
   font-weight: 750;
-  transition: background-color 180ms ease, transform 180ms ease;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
 }
 
 .academic-unified-cta:hover {
@@ -878,8 +953,8 @@ body {
   background: transparent;
   font-size: clamp(42px, 4.5vw, 66px);
   font-weight: 800;
-  line-height: .82;
-  letter-spacing: -.05em;
+  line-height: 0.82;
+  letter-spacing: -0.05em;
   white-space: nowrap;
 }
 
@@ -1082,7 +1157,7 @@ em {
   font-weight: 700;
 }
 .hero {
-  min-height: calc(100vh - 88px);
+  min-height: calc(100dvh - 88px);
   position: relative;
   color: #fff;
   background: url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=88")
@@ -1757,7 +1832,7 @@ footer > div > small {
   padding-bottom: 8px;
 }
 .vgg-hero {
-  min-height: calc(100vh - 138px);
+  min-height: calc(100dvh - 138px);
   background-image: url("https://vgs.edu.vn/_next/image?q=100&url=https%3A%2F%2Fvgs.edu.vn%2Fapi%2Fmedia%2Ffile%2Fstaff-hero.jpg%3F2026-03-15T02%253A35%253A18.430Z&w=1920");
 }
 .vgg-hero .hero-content {
@@ -1912,28 +1987,6 @@ footer > div > small {
   font: 700 16px/1 var(--font-display);
   color: #f3c18b;
 }
-.sticky-actions {
-  position: fixed;
-  z-index: 35;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(980px, 92vw);
-  background: #fff;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.16);
-  border-top: 3px solid #a51317;
-}
-.sticky-actions a {
-  text-align: center;
-  padding: 13px 8px;
-  border-right: 1px solid #ddd8cd;
-}
-.sticky-actions a:last-child {
-  border: 0;
-}
-
 .zalo-float {
   position: fixed;
   right: 22px;
@@ -1966,70 +2019,6 @@ footer > div > small {
   color: #ffffff;
   box-shadow: 0 8px 28px rgba(12, 68, 142, 0.3);
   transition: transform 180ms ease;
-}
-
-.chatbot-float {
-  position: fixed;
-  right: 22px;
-  bottom: 180px;
-  z-index: 1000;
-  width: 62px;
-  height: 62px;
-  display: grid;
-  place-items: center;
-  border: 3px solid #ffffff;
-  border-radius: 50%;
-  background: var(--vlu-blue);
-  color: #ffffff;
-  box-shadow: 0 8px 28px rgba(21, 27, 67, 0.32);
-  transition: transform 180ms ease;
-}
-
-.chatbot-float::after {
-  content: "";
-  position: absolute;
-  right: 2px;
-  bottom: 0;
-  width: 14px;
-  height: 14px;
-  border: 3px solid #ffffff;
-  border-top: 0;
-  border-left: 0;
-  border-radius: 0 0 12px 0;
-  background: var(--vlu-blue);
-  transform: rotate(18deg);
-}
-
-.chatbot-float > span {
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-}
-
-.chatbot-float > b {
-  position: absolute;
-  right: 72px;
-  width: max-content;
-  padding: 10px 13px;
-  border-radius: 8px;
-  background: #ffffff;
-  color: var(--vlu-blue);
-  font-size: 11px;
-  box-shadow: 0 8px 24px rgba(21, 27, 67, 0.16);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(8px);
-  transition: 180ms ease;
-}
-
-.chatbot-float:hover {
-  transform: translateY(-3px);
-}
-
-.chatbot-float:hover > b,
-.chatbot-float:focus-visible > b {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .facebook-float > span {
@@ -2117,18 +2106,6 @@ footer > div > small {
     transform: scale(1.22);
   }
 }
-.sticky-actions b {
-  display: block;
-  font-size: 10px;
-  color: #9e1518;
-}
-.sticky-actions span {
-  display: block;
-  font-size: 9px;
-  color: #566562;
-  margin-top: 3px;
-  text-transform: uppercase;
-}
 footer {
   padding-bottom: 105px;
 }
@@ -2212,16 +2189,6 @@ footer {
   .resource-band {
     grid-template-columns: 1fr;
   }
-  .sticky-actions {
-    width: 100%;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .sticky-actions b {
-    font-size: 8px;
-  }
-  .sticky-actions span {
-    display: none;
-  }
 }
 @media (max-width: 600px) {
   .vgg-brand b {
@@ -2240,9 +2207,6 @@ footer {
   .programme-tabs button {
     white-space: nowrap;
   }
-  .sticky-actions a {
-    padding: 12px 2px;
-  }
   .resource-band {
     padding: 75px 6vw;
   }
@@ -2254,8 +2218,7 @@ h2,
 h3,
 .button,
 .main-menu button,
-.gateway b,
-.sticky-actions b {
+.gateway b {
   font-family: var(--font-display);
   font-weight: 800;
 }
@@ -2281,7 +2244,7 @@ em {
   padding-left: 3vw;
 }
 .vgg-brand {
-  min-width: 330px;
+  min-width: min(330px, 100%);
   max-width: 350px;
   height: 90px;
   padding: 9px 0;
@@ -2517,29 +2480,6 @@ footer {
   width: 100%;
   height: auto;
   display: block;
-}
-.sticky-actions {
-  border-top: 5px solid var(--vlu-red);
-  box-shadow: 0 -12px 35px rgba(31, 34, 81, 0.22);
-}
-.sticky-actions a {
-  transition:
-    background 0.18s,
-    color 0.18s;
-}
-.sticky-actions a:first-child {
-  background: var(--vlu-red);
-}
-.sticky-actions a:first-child b,
-.sticky-actions a:first-child span {
-  color: #fff;
-}
-.sticky-actions a:hover {
-  background: var(--vlu-blue);
-}
-.sticky-actions a:hover b,
-.sticky-actions a:hover span {
-  color: #fff;
 }
 @media (max-width: 1200px) {
   .vgg-brand {
@@ -2965,7 +2905,7 @@ footer {
     right: 0;
     display: flex;
     flex-direction: column;
-    max-height: calc(100vh - 78px);
+    max-height: calc(100dvh - 78px);
     overflow-y: auto;
     background: #ffffff;
     box-shadow: 0 18px 32px rgba(31, 34, 81, 0.16);
@@ -3080,7 +3020,6 @@ footer {
 
 /* About Viện Sau Đại học */
 .discover-editorial {
-  overflow-x: clip;
   background: #fff;
   color: #171717;
 }
@@ -3115,10 +3054,10 @@ footer {
 .discover-editorial-cover {
   --cover-inset: 7vw;
   position: relative;
-  width: 100vw;
-  max-width: none;
+  width: 100%;
+  max-width: 100%;
   height: clamp(560px, 48vw, 720px);
-  margin-left: calc(50% - 50vw);
+  margin-left: 0;
   overflow: hidden;
   clip-path: inset(0 var(--cover-inset) round 22px 22px 0 0);
   animation: discover-cover-expand linear both;
@@ -3176,6 +3115,36 @@ footer {
   font-size: 19px;
   line-height: 1.75;
 }
+
+.discover-editorial-reasons article {
+  padding-top: 22px;
+  border-top: 1px solid rgba(32, 37, 80, 0.2);
+}
+
+.discover-editorial-reasons article > span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--vlu-red);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.discover-editorial-reasons h3 {
+  margin: 0 0 18px;
+  color: var(--vlu-blue);
+  font-family: var(--font-body);
+  font-size: clamp(24px, 2.1vw, 32px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.discover-editorial-reasons article p {
+  color: #4f5365;
+  font-size: 17px;
+  line-height: 1.7;
+}
 .discover-editorial-intro > a,
 .discover-editorial-copy > a {
   width: fit-content;
@@ -3194,8 +3163,8 @@ footer {
   margin: 0 auto;
   padding: 120px 4vw 140px;
   display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 8vw;
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  gap: clamp(52px, 5vw, 82px);
   align-items: start;
   border-top: 1px solid #d9d6d0;
 }
@@ -3230,41 +3199,47 @@ footer {
   font-size: 11px;
   font-weight: 700;
 }
+.discover-editorial-chapter-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin: clamp(40px, 4vw, 58px) 0 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e9eaed;
+  box-shadow: 0 16px 38px rgba(31, 34, 81, 0.1);
+  animation: discover-content-reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 12% cover 34%;
+}
+.discover-editorial-chapter-media img {
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.discover-editorial-chapter-media:hover img {
+  transform: scale(1.025);
+}
+.discover-editorial-chapter-media.campus-crop img {
+  object-position: 62% center;
+}
+.discover-editorial-chapter-body {
+  padding-top: clamp(24px, 2.2vw, 34px);
+}
 .discover-editorial-chapter-body > p {
   margin: 0 0 36px;
   color: #333;
   font-family: var(--font-body);
-  font-size: 18px;
-  line-height: 1.72;
+  font-size: clamp(18px, 1.25vw, 20px) !important;
+  line-height: 1.76 !important;
 }
 .discover-editorial-chapter-body blockquote {
   margin: 45px 0;
   padding: 5px 0 5px 30px;
   border-left: 6px solid #ddd;
   font-family: var(--font-body);
-  font-size: clamp(25px, 2.3vw, 35px);
+  font-size: clamp(27px, 2.4vw, 37px);
   font-style: italic;
   line-height: 1.4;
-}
-.discover-editorial-chapter-body figure {
-  position: relative;
-  min-height: 620px;
-  margin: 55px 0 0;
-  overflow: hidden;
-  border-radius: 18px;
-  animation: discover-content-reveal linear both;
-  animation-timeline: view();
-  animation-range: entry 12% cover 34%;
-}
-.discover-editorial-chapter-body figure img {
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-.discover-editorial-chapter-body figure:hover img {
-  transform: scale(1.025);
-}
-.discover-editorial-chapter-body figure.campus-crop img {
-  object-position: 62% center;
 }
 @keyframes discover-content-reveal {
   from {
@@ -3428,14 +3403,20 @@ footer {
   .discover-editorial-chapter-heading a {
     margin-top: 30px;
   }
+  .discover-editorial-chapter-body {
+    padding-top: 0;
+  }
+  .discover-editorial-chapter-media {
+    width: min(100%, 680px);
+    aspect-ratio: 16 / 10;
+    margin-top: 34px;
+    border-radius: 16px;
+  }
   .discover-editorial-chapter-body > p {
-    font-size: 17px;
+    font-size: 17px !important;
   }
   .discover-editorial-chapter-body blockquote {
     font-size: 24px;
-  }
-  .discover-editorial-chapter-body figure {
-    min-height: 440px;
   }
   .discover-editorial-more-scene {
     min-height: 650px;
@@ -3477,7 +3458,7 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .discover-editorial-cover,
   .discover-editorial-cover img,
-  .discover-editorial-chapter-body figure,
+  .discover-editorial-chapter-media,
   .discover-editorial-more-card {
     animation: none;
   }
@@ -3536,12 +3517,11 @@ footer {
 }
 
 html {
-  overflow-x: clip;
   scroll-padding-top: 150px;
 }
 
 body {
-  min-width: 320px;
+  min-width: 0;
   overflow-wrap: break-word;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -3594,7 +3574,7 @@ textarea {
 }
 .university-footer-contact {
   display: grid;
-  grid-template-columns: 1.45fr repeat(4, 1fr);
+  grid-template-columns: 1.45fr repeat(3, 1fr);
   gap: clamp(20px, 3vw, 54px);
   align-items: center;
   padding: 38px 0;
@@ -3730,33 +3710,6 @@ textarea {
   flex-wrap: wrap;
   gap: 20px;
 }
-.scroll-to-top {
-  position: fixed;
-  right: 22px;
-  bottom: 320px;
-  z-index: 1001;
-  display: grid;
-  width: 52px;
-  height: 52px;
-  place-items: center;
-  border: 2px solid #fff;
-  border-radius: 9999px;
-  background: #df2236;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 0 9px 24px rgba(116, 12, 25, 0.35);
-  transition:
-    transform 200ms ease,
-    background 200ms ease;
-}
-.scroll-to-top svg {
-  width: 22px;
-  height: 22px;
-}
-.scroll-to-top:hover {
-  background: #ba1629;
-  transform: scale(1.08);
-}
 @media (max-width: 1100px) {
   .university-footer-contact {
     grid-template-columns: 1.4fr 1fr 1fr;
@@ -3800,18 +3753,12 @@ textarea {
   .university-footer-bottom nav {
     gap: 15px;
   }
-  .scroll-to-top {
-    right: 12px;
-    bottom: 134px;
-    width: 48px;
-    height: 48px;
-  }
 }
 
 .apply-now-float {
   position: fixed;
   right: 20px;
-  bottom: 258px;
+  bottom: 180px;
   z-index: 1001;
   display: flex;
   min-width: 150px;
@@ -3907,16 +3854,14 @@ textarea {
   }
 }
 @media (max-width: 900px) {
-  .vgg-footer-row,
-  .vgg-footer-copyright {
-    min-width: 1050px;
-  }
+  /* Legacy .vgg-footer-row / .vgg-footer-copyright removed — no longer in component tree.
+     Removed min-width: 1050px that forced horizontal overflow on mobile. */
   .apply-now-float {
     right: 12px;
-    bottom: 76px;
-    min-width: 126px;
-    min-height: 46px;
-    padding: 0 18px;
+    bottom: calc(72px + env(safe-area-inset-bottom));
+    min-width: 120px;
+    min-height: 44px;
+    padding: 0 16px;
     font-size: 10px;
   }
 }
@@ -3927,6 +3872,28 @@ textarea {
   }
   .apply-now-float::before {
     animation: none;
+  }
+}
+
+/* Keep the global actions visible without letting them cover the leadership portrait. */
+@media (min-width: 901px) {
+  body.leadership-portrait-in-view .apply-now-float,
+  body.leadership-portrait-in-view .facebook-float,
+  body.leadership-portrait-in-view .zalo-float {
+    right: auto;
+    left: 22px;
+  }
+  body.leadership-portrait-in-view .apply-now-float {
+    left: 20px;
+  }
+}
+@media (max-width: 900px) {
+  body.leadership-portrait-in-view .apply-now-float,
+  body.leadership-portrait-in-view .facebook-float,
+  body.leadership-portrait-in-view .zalo-float {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
@@ -4031,7 +3998,6 @@ footer {
 }
 
 @media (max-width: 900px) {
-  .chatbot-float,
   .facebook-float,
   .zalo-float {
     width: 52px;
@@ -4046,10 +4012,6 @@ footer {
   .facebook-float {
     right: 74px;
   }
-  .chatbot-float {
-    right: 136px;
-  }
-  .chatbot-float > b,
   .facebook-float > b,
   .zalo-float > b {
     display: none;
@@ -4162,7 +4124,6 @@ footer {
     width: min(100%, 315px);
   }
 
-  .chatbot-float,
   .facebook-float,
   .zalo-float {
     right: 10px;
@@ -4178,13 +4139,6 @@ footer {
     right: 66px;
     bottom: calc(12px + env(safe-area-inset-bottom));
   }
-  .chatbot-float {
-    right: 122px;
-    bottom: calc(12px + env(safe-area-inset-bottom));
-  }
-  .chatbot-float > span {
-    font-size: 12px;
-  }
   .facebook-float > span {
     margin-top: 5px;
     font-size: 29px;
@@ -4192,7 +4146,6 @@ footer {
   .zalo-float > span {
     font-size: 12px;
   }
-  .chatbot-float > b,
   .facebook-float > b,
   .zalo-float > b {
     display: none;
@@ -4434,7 +4387,7 @@ footer {
 }
 .discover-hero {
   position: relative;
-  min-height: calc(100vh - 136px);
+  min-height: calc(100dvh - 136px);
   overflow: hidden;
   color: #fff;
 }
@@ -4454,7 +4407,7 @@ footer {
 .discover-hero-copy {
   position: relative;
   z-index: 1;
-  min-height: calc(100vh - 136px);
+  min-height: calc(100dvh - 136px);
   padding: 11vh 7vw 7vh;
   display: flex;
   flex-direction: column;
@@ -5298,13 +5251,6 @@ main:not(.subpage) .mega-menu {
   font-weight: 700;
   text-transform: none;
 }
-.sticky-actions {
-  border-top: 2px solid var(--vlu-red);
-}
-.sticky-actions b {
-  font-size: 9px;
-  font-weight: 700;
-}
 
 /* Subpages use the same restrained VLU hierarchy. */
 .sub-hero h1 {
@@ -6051,6 +5997,25 @@ main:not(.subpage) .mega-menu {
     grid-column: 1;
     width: 100%;
   }
+  .vgg-pd__intro-copy,
+  .vgg-pd__lead {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .vgg-pd__intro h2 {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Long Vietnamese labels in the programme directory must wrap on small screens. */
+@media (max-width: 680px) {
+  .vgg-pd__intro h2 {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 }
 
 /* Defer off-screen layout and paint work while preserving an estimated page height. */
@@ -6525,7 +6490,7 @@ main:not(.subpage) .mega-menu {
   min-height: 650px;
 }
 .not-found {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-content: center;
   justify-items: start;
@@ -6627,7 +6592,7 @@ main:not(.subpage) .mega-menu {
 }
 
 .programme-search-heading {
-  max-width: 760px;
+  max-width: 960px;
   margin: 0 auto 42px;
   text-align: center;
 }
@@ -6659,11 +6624,12 @@ main:not(.subpage) .mega-menu {
 }
 
 .programme-search-heading p {
-  max-width: 600px;
+  max-width: none;
   margin: 0 auto;
   color: #5c6073;
   font-size: 16px;
   line-height: 1.65;
+  white-space: nowrap;
 }
 
 .programme-search-panel {
@@ -6825,6 +6791,7 @@ main:not(.subpage) .mega-menu {
 
   .programme-search-heading p {
     font-size: 15px;
+    white-space: normal;
   }
 
   .programme-search-panel {
@@ -6841,7 +6808,12 @@ main:not(.subpage) .mega-menu {
   }
 
   .programme-search-filters {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .programme-search-filters > * {
+    width: 100%;
+    min-width: 0;
   }
 
   .programme-search-panel-head {
@@ -7779,9 +7751,9 @@ main:not(.subpage) .mega-menu {
   grid-template-columns:
     58px
     minmax(280px, 1fr)
-    72px
-    125px
-    140px
+    88px
+    145px
+    165px
     36px;
 
   align-items: center;
@@ -7863,24 +7835,6 @@ main:not(.subpage) .mega-menu {
   transform: translateX(2px);
 }
 
-.vgg-pd-card__main p {
-  max-width: 100%;
-
-  margin: 0;
-
-  overflow: hidden;
-
-  color: #989ba6;
-
-  font-size: 9px;
-
-  line-height: 1.4;
-
-  white-space: nowrap;
-
-  text-overflow: ellipsis;
-}
-
 /* =========================================================
    STAT
    ========================================================= */
@@ -7888,9 +7842,9 @@ main:not(.subpage) .mega-menu {
 .vgg-pd-card__stat {
   min-width: 0;
 
-  min-height: 49px;
+  min-height: 64px;
 
-  padding-left: 14px;
+  padding-left: 18px;
 
   display: flex;
 
@@ -7906,7 +7860,7 @@ main:not(.subpage) .mega-menu {
 
   color: var(--vgg-pd-blue);
 
-  font-size: 11px;
+  font-size: 15px;
 
   font-weight: 900;
 
@@ -7918,11 +7872,11 @@ main:not(.subpage) .mega-menu {
 }
 
 .vgg-pd-card__stat span {
-  margin-top: 5px;
+  margin-top: 7px;
 
   color: #a0a2aa;
 
-  font-size: 6px;
+  font-size: 8px;
 
   font-weight: 800;
 
@@ -7931,7 +7885,7 @@ main:not(.subpage) .mega-menu {
 
 .vgg-pd-card__tuition strong {
   color: var(--vgg-pd-red);
-  font-size: 10px;
+  font-size: 13px;
   white-space: normal;
 }
 
@@ -7990,20 +7944,12 @@ main:not(.subpage) .mega-menu {
 
 /* Nội dung học thuật mở bằng nút chevron của từng chương trình. */
 .vgg-pd-card__intro {
+  width: 100%;
+  max-width: none;
   margin: 0 0 12px;
   color: #12162f;
   font-size: clamp(15px, 1.2vw, 18px);
   line-height: 1.65;
-}
-
-.vgg-pd-card__intro-en {
-  margin: 0 0 28px;
-  padding-left: 14px;
-  border-left: 1px solid #e3213b;
-  color: #9f1d2e;
-  font-size: 13px;
-  font-style: italic;
-  line-height: 1.6;
 }
 
 .vgg-pd-card__content-grid {
@@ -8061,6 +8007,142 @@ main:not(.subpage) .mega-menu {
   color: #e3213b;
 }
 
+.vgg-pd-card__curriculum {
+  margin: 36px 0 30px;
+  padding-top: 30px;
+  border-top: 1px solid #dfe1e7;
+}
+
+.vgg-pd-card__curriculum > header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.vgg-pd-card__curriculum > header > span {
+  color: var(--vgg-pd-red);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.vgg-pd-card__curriculum > header p {
+  max-width: none;
+  margin: 0 0 4px;
+  color: #9296a3;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.vgg-pd-card__curriculum > header h4 {
+  margin: 0;
+  color: var(--vgg-pd-blue);
+  font-size: clamp(22px, 2.2vw, 32px) !important;
+  line-height: 1.1;
+}
+
+.vgg-pd-card__curriculum > header > strong {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #fff0f2;
+  color: var(--vgg-pd-red);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.vgg-pd-card__curriculum-groups {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  border-top: 1px solid #dfe1e7;
+  border-left: 1px solid #dfe1e7;
+}
+
+.vgg-pd-card__curriculum-groups > section {
+  min-width: 0;
+  border-right: 1px solid #dfe1e7;
+  border-bottom: 1px solid #dfe1e7;
+  background: #fff;
+}
+
+.vgg-pd-card__curriculum-groups h5 {
+  display: flex;
+  margin: 0;
+  padding: 14px 16px;
+  align-items: center;
+  gap: 10px;
+  background: var(--vgg-pd-blue);
+  color: #fff;
+  font-size: 13px !important;
+  line-height: 1.3;
+}
+
+.vgg-pd-card__curriculum-groups h5 span {
+  color: #f45b6d;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+.vgg-pd-card__curriculum-groups ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vgg-pd-card__curriculum-groups li {
+  display: grid;
+  min-height: 54px;
+  padding: 11px 16px;
+  grid-template-columns: 26px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #eceef2;
+  color: #242940;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.vgg-pd-card__course-number {
+  align-self: start;
+  padding-top: 2px;
+  color: var(--vgg-pd-red);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.vgg-pd-card__course-name {
+  min-width: 0;
+}
+
+.vgg-pd-card__curriculum-groups li:last-child {
+  border-bottom: 0;
+}
+
+.vgg-pd-card__curriculum-groups li div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.vgg-pd-card__curriculum-groups li small {
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: #f2f3f6;
+  color: #777c89;
+  font-size: 7px;
+  font-weight: 850;
+}
+
+.vgg-pd-card__curriculum-groups li b {
+  color: var(--vgg-pd-red);
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
 @media (max-width: 700px) {
   .vgg-pd-card__content-grid {
     grid-template-columns: 1fr;
@@ -8074,6 +8156,30 @@ main:not(.subpage) .mega-menu {
   .vgg-pd-card__content-grid h4 small {
     display: block;
     margin: 4px 0 0 18px;
+  }
+
+  .vgg-pd-card__curriculum > header {
+    grid-template-columns: auto 1fr;
+  }
+
+  .vgg-pd-card__curriculum > header > strong {
+    grid-column: 2;
+    width: fit-content;
+  }
+
+  .vgg-pd-card__curriculum-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .vgg-pd-card__curriculum-groups li {
+    align-items: start;
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 7px;
+  }
+
+  .vgg-pd-card__curriculum-groups li div {
+    grid-column: 2;
+    justify-content: flex-start;
   }
 }
 
@@ -8433,10 +8539,16 @@ main:not(.subpage) .mega-menu {
     width: 100%;
   }
 }
-/* Global paragraph alignment: keep all authored copy flush on both edges. */
-p {
-  text-align: justify !important;
-  text-justify: inter-word;
+/* Paragraph alignment: justify long-form editorial copy on desktop;  on mobile
+   and inside UI components (nav, cards, forms, tables) use left-align to prevent
+   rivers of whitespace on narrow viewports and short Vietnamese strings. */
+@media (min-width: 768px) {
+  main article p:not([class]),
+  .article-body p:not([class]),
+  .news-body p:not([class]) {
+    text-align: justify;
+    text-justify: inter-word;
+  }
 }
 
 /* Final normalization layer for legacy page-specific CSS. */
@@ -8501,9 +8613,10 @@ footer h3,
   min-width: 0;
 }
 .resourcesContact.consultationOnly .consultationIntro h2 {
-  max-width: 18ch;
-  font-size: clamp(2rem, 3vw, 2.5rem) !important;
-  line-height: 1.12 !important;
+  max-width: 28ch;
+  font-size: clamp(2rem, 3.2vw, 2.75rem) !important;
+  line-height: 1.15 !important;
+  text-wrap: balance;
 }
 .site-footer h2,
 footer h2,
@@ -8609,13 +8722,44 @@ section p + p {
   padding-right: var(--page-gutter);
 }
 
-.university-footer > :is(
-  .university-footer-contact,
-  .university-footer-divider,
-  .university-footer-content,
-  .university-footer-bottom
-) {
+.university-footer
+  > :is(
+    .university-footer-contact,
+    .university-footer-divider,
+    .university-footer-content,
+    .university-footer-bottom
+  ) {
   width: 100%;
   max-width: var(--container-max-width);
   margin-inline: auto;
+}
+
+/* Final small-screen corrections for the programme hero. Older desktop rules
+   deliberately use nowrap; mobile must allow Vietnamese titles to wrap. */
+@media (max-width: 760px) {
+  .programmes-hero-copy {
+    padding-inline: 0;
+  }
+  .programmes-hero h1 {
+    max-width: 100%;
+    padding-left: 16px;
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+    line-height: 1.12 !important;
+    overflow-wrap: anywhere;
+  }
+  .programmes-hero h1 span,
+  .programmes-hero h1 em {
+    white-space: normal;
+  }
+  .programmes-hero-lead {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .vgg-pd__intro h2 {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 }

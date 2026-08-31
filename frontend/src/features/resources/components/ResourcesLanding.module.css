@@ -60,7 +60,7 @@
 }
 .heroCopy h1 {
   margin: 0;
-  font-size: clamp(3.8rem, 7.2vw, 7.2rem);
+  font-size: clamp(2.25rem, 7.2vw, 7.2rem);
   font-weight: 900;
   letter-spacing: -0.055em;
   line-height: 0.9;
@@ -382,6 +382,40 @@
 .empty button {
   margin-top: 12px;
 }
+.pagination {
+  display: flex;
+  margin-top: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.pagination button {
+  display: inline-flex;
+  min-width: 42px;
+  height: 42px;
+  border: 1px solid #d9dde4;
+  border-radius: 9px;
+  padding: 0 13px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #fff;
+  color: #454a58;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.pagination button:hover,
+.pagination .activePage {
+  border-color: #e31e36;
+  background: #e31e36;
+  color: #fff;
+}
+.pagination button:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
 .modalBackdrop {
   position: fixed;
   z-index: 1200;
@@ -395,7 +429,7 @@
 .modal {
   display: grid;
   width: min(1100px, 100%);
-  height: min(820px, 90vh);
+  height: min(820px, 90dvh);
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
   border-radius: 16px;
@@ -497,6 +531,9 @@
   .heroCopy {
     padding-bottom: 50px;
   }
+  .heroCopy h1 {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
   .intro {
     gap: 20px;
   }
@@ -538,7 +575,9 @@
     padding: 10px;
   }
   .modal {
-    height: 94vh;
+    width: calc(100% - 12px);
+    height: auto;
+    max-height: 90dvh;
   }
   .modal footer {
     align-items: flex-start;
@@ -546,5 +585,32 @@
   }
   .modal footer a {
     width: 100%;
+  }
+
+  .breadcrumb,
+  .heroCopy,
+  .explorer {
+    width: auto;
+    max-width: none;
+    margin-inline: 16px;
+  }
+  .card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 20px;
+    overflow: hidden;
+  }
+  .cardBody,
+  .card dl,
+  .card dd {
+    min-width: 0;
+  }
+  .card h3,
+  .card dd {
+    overflow-wrap: anywhere;
+  }
+  .pagination button span {
+    display: none;
   }
 }

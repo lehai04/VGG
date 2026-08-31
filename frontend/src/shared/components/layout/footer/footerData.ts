@@ -11,14 +11,8 @@ export const contactItems = [
     href: "mailto:tuyensinh.sdh@vlu.edu.vn",
     icon: "mail",
   },
-  { label: "Đào tạo", value: "098.848 6869", href: "tel:+8498848 6869", icon: "book" },
-  { label: "Tuyển sinh", value: "098.848 6869", href: "tel:+8498848 6869", icon: "phone" },
-  {
-    label: "Hỗ trợ Sinh viên (Call Center)",
-    value: "028.7106.1111",
-    href: "tel:+842871061111",
-    icon: "headset",
-  },
+  { label: "Điện thoại", value: "0287 101 6869", href: "tel:+842871016869", icon: "phone" },
+  { label: "Hotline/Zalo", value: "0988 48 6869", href: "tel:+84988486869", icon: "zalo" },
 ] as const;
 
 export const aboutLinks = [
@@ -31,7 +25,7 @@ export const aboutLinks = [
 export const quickLinks = [
   { label: "Trang chủ", href: "/" },
   ...navigationGroups.map((group) => ({ label: group.vi, href: `/${group.slug}` })),
-  { label: "Liên hệ", href: "/discover/lien-he" },
+  { label: "Liên hệ", href: "/admissions#consultation" },
 ] as const;
 
 export const socialLinks = [

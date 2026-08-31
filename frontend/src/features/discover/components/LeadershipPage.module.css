@@ -36,7 +36,7 @@
 }
 .heroTitle h1 {
   margin: 20px 0 12px;
-  font-size: clamp(65px, 8vw, 118px);
+  font-size: clamp(38px, 8vw, 118px);
   line-height: 0.85;
   text-transform: uppercase;
 }
@@ -51,171 +51,71 @@
   background: #fff;
 }
 .leaderProfile {
+  width: min(100%, 1500px);
+  margin-inline: auto;
   display: grid;
-  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(40px, 5vw, 72px);
-  align-items: start;
-  padding: clamp(56px, 6vw, 84px) var(--container-padding);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(64px, 5vw, 96px);
+  align-items: center;
+  padding: clamp(72px, 6.5vw, 100px) clamp(48px, 4vw, 72px);
   background: #fff;
 }
 .profileCopy {
-  position: sticky;
-  top: 140px;
+  min-width: 0;
 }
 .profileCopy h2 {
-  max-width: 680px;
+  max-width: 620px;
   margin: 0;
-  font-size: clamp(48px, 5vw, 78px);
-  font-weight: 400;
-  line-height: 1;
+  color: var(--lead-ink);
+  font-size: clamp(48px, 4vw, 58px) !important;
+  font-weight: 700 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.025em !important;
 }
 main:global(#main-content).page .profileCopy p {
-  max-width: 690px;
-  margin: 16px 0 34px;
+  max-width: 620px;
+  margin: 20px 0 36px;
   color: var(--vlu-red);
-  font-size: clamp(16px, 1.25vw, 19px) !important;
+  font-size: clamp(20px, 1.55vw, 24px) !important;
   font-weight: 700;
-  line-height: 1.4 !important;
-  text-transform: uppercase;
+  line-height: 1.45 !important;
+  text-align: left !important;
   white-space: pre-line;
 }
 .profileCopy blockquote {
-  max-width: 680px;
+  position: relative;
+  max-width: 650px;
   margin: 0;
-  padding-left: 24px;
+  padding: 8px 0 8px 30px;
   border-left: 3px solid var(--vlu-red);
   color: #272938;
-  font-size: clamp(20px, 1.65vw, 26px);
-  font-style: italic;
-  line-height: 1.55;
-}
-.profileCopy a {
-  width: max-content;
-  display: inline-flex;
-  padding: 12px 20px;
-  border-radius: 999px;
-  color: #fff;
-  background: var(--vlu-red);
-  font-size: 14px;
-  font-weight: 700;
-  transition:
-    background 260ms ease,
-    transform 260ms ease;
-}
-.profileCopy a:hover {
-  transform: translateY(-2px);
-  background: var(--vlu-red-dark);
+  font-size: clamp(20px, 1.5vw, 24px);
+  font-style: normal;
+  line-height: 1.7;
+  text-align: left;
 }
 .profileImage {
   position: relative;
-  width: min(100%, 360px);
-  aspect-ratio: 609 / 636;
+  width: min(100%, 620px);
+  aspect-ratio: 2076 / 1857;
   margin: 0 auto;
-  background: transparent;
+  overflow: hidden;
+  border-radius: clamp(16px, 1.4vw, 22px);
+  box-shadow: 0 18px 44px rgba(23, 29, 69, 0.12);
 }
 .profileImage img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  transition: transform 650ms var(--motion-ease);
-}
-.profileImage:hover img {
-  transform: scale(1.025);
-}
-.facultyDirectory {
-  padding: clamp(64px, 7vw, 108px) var(--container-padding);
-  border-top: 1px solid var(--color-line);
-  background: #f6f7fb;
-}
-.facultyHeading {
-  width: 100%;
-  max-width: 1260px;
-  margin-inline: auto;
-  margin-bottom: clamp(38px, 5vw, 64px);
-}
-.facultyHeading h2 {
-  max-width: 760px;
-  margin: 0;
-  font-size: clamp(38px, 4.5vw, 66px);
-}
-.facultyGrid {
-  display: grid;
-  width: 100%;
-  max-width: 1260px;
-  margin-inline: auto;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(42px, 5vw, 76px) clamp(28px, 4vw, 58px);
-}
-.facultyCard {
-  min-width: 0;
-}
-.facultyCard figure {
-  position: relative;
-  width: min(100%, 320px);
-  height: 220px;
-  margin: 0 0 24px;
-  overflow: hidden;
-  background: transparent;
-  transform: translateX(-38px);
-}
-.facultyCard figure img {
-  object-fit: contain;
-  transform: translateY(8px) scale(1.75);
-  transform-origin: 41% 48%;
-  transition: transform 420ms var(--motion-ease);
-}
-.facultyCard:hover figure img {
-  transform: translateY(6px) scale(1.78);
-}
-.facultyCard figure img.logisticImage {
-  transform: translateY(8px) scale(0.95);
-}
-.facultyCard:hover figure img.logisticImage {
-  transform: translateY(6px) scale(0.98);
-}
-.facultyCard h3 {
-  margin: 0 0 8px;
-  color: var(--lead-ink);
-  font-size: clamp(20px, 1.65vw, 27px);
-  line-height: 1.18;
-}
-main:global(#main-content).page .facultyCard p {
-  margin: 0 0 17px;
-  color: var(--lead-ink);
-  font-size: 16px !important;
-  font-weight: 700;
-  line-height: 1.35 !important;
-}
-.facultyCard a {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  color: var(--vlu-red);
-  font-size: 13px;
-  font-weight: 800;
-}
-.facultyCard a span {
-  color: var(--lead-ink);
-  transition: transform 180ms ease;
-}
-.facultyCard a:hover span {
-  transform: translateX(4px);
 }
 @media (max-width: 900px) {
   .leaderProfile {
     grid-template-columns: 1fr;
-  }
-  .profileCopy {
-    position: static;
+    gap: 42px;
+    padding: 64px clamp(24px, 6vw, 48px) 76px;
   }
   .profileImage {
-    width: min(100%, 340px);
+    width: min(100%, 520px);
     margin-inline: auto;
-  }
-  .facultyGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .facultyCard figure {
-    transform: none;
   }
 }
 @media (max-width: 600px) {
@@ -228,45 +128,21 @@ main:global(#main-content).page .facultyCard p {
     bottom: 48px;
   }
   .heroTitle h1 {
-    font-size: 54px;
+    font-size: clamp(36px, 14vw, 54px);
   }
   .heroTitle span {
     font-size: 12px;
   }
   .leaderProfile {
-    padding: 48px 24px 58px;
-    gap: 32px;
+    padding: 52px 20px 64px;
+    gap: 34px;
   }
   .profileCopy h2 {
-    font-size: 48px;
-  }
-  .profileCopy p {
-    font-size: 17px;
+    font-size: clamp(38px, 12vw, 48px) !important;
   }
   .profileCopy blockquote {
-    padding-left: 18px;
+    padding-left: 22px;
     font-size: 19px;
-  }
-  .facultyDirectory {
-    padding-inline: 24px;
-  }
-  .facultyGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 42px 18px;
-  }
-  .facultyCard figure {
-    margin-bottom: 18px;
-  }
-  .facultyCard h3 {
-    font-size: 19px;
-  }
-  main:global(#main-content).page .facultyCard p {
-    font-size: 14px !important;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .profileCopy a,
-  .profileImage img {
-    transition: none;
+    line-height: 1.68;
   }
 }

@@ -4,14 +4,15 @@ import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 import { DiscoverMore } from "@/features/discover/components/DiscoverMore";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
+import { LeadershipFloatingGuard } from "./LeadershipFloatingGuard";
 import styles from "./LeadershipPage.module.css";
 
 const leadershipProfiles = [
   {
     name: "PGS.TS. NGUYỄN VĂN THÀNH",
-    title: "Phó Viện Trưởng\nPhụ trách Viện Sau đại học\nTrường Đại học Văn Lang",
+    title: "Phó Viện Trưởng\nPhụ trách Viện Sau Đại học\nTrường Đại học Văn Lang",
     quote: "Tại Trường Đại học Văn Lang, chúng tôi tin rằng giá trị lớn nhất của đào tạo sau đại học không chỉ nằm ở văn bằng, mà ở sự trưởng thành của người học. Đó là những con người có tư duy chiến lược; biết kết nối tri thức với công nghệ, dữ liệu và đổi mới sáng tạo; có năng lực nghiên cứu, phản biện và ra quyết định dựa trên bằng chứng; đồng thời tạo ra giá trị mới cho tổ chức và cộng đồng.",
-    image: "/images/pages/discover/leadership/logistic-transparent.png",
+    image: "/images/pages/discover/leadership/thay2.png",
   },
 ] as const;
 
@@ -19,6 +20,7 @@ export function LeadershipPage() {
   return (
     <main className={`subpage ${styles.page}`} id="main-content">
       <RevealOnScroll />
+      <LeadershipFloatingGuard />
       <SiteHeader compact />
 
       {/* Hero giữ nguyên ngôn ngữ hình ảnh của nhóm trang Discover hiện tại. */}
@@ -41,8 +43,14 @@ export function LeadershipPage() {
               <p>{profile.title}</p>
               <blockquote>“{profile.quote}”</blockquote>
             </div>
-            <figure className={styles.profileImage} data-reveal>
-              <Image src={profile.image} alt={`Chân dung ${profile.name}`} fill sizes="(max-width: 900px) 88vw, 46vw" />
+            <figure className={styles.profileImage} data-leadership-portrait data-reveal>
+              <Image
+                src={profile.image}
+                alt={`Chân dung ${profile.name}`}
+                fill
+                quality={95}
+                sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 900px) 520px, (max-width: 1280px) 44vw, 620px"
+              />
             </figure>
           </section>
         ))}

@@ -168,7 +168,7 @@ export function ResourcesConsultation({ showResources = true }: { showResources?
             </select>
           </label>
           <button className="vgg-cta-pill" type="submit" disabled={isSubmitting}>
-            {isSubmitting ? cta.submitting : cta.submit} <span>→</span>
+            {isSubmitting ? cta.submitting : cta.submit}
           </button>
           {/* aria-live thông báo kết quả gửi form cho cả người dùng bàn phím và trình đọc màn hình. */}
           <p className="consultationMessage" aria-live="polite">

@@ -53,7 +53,7 @@ const steps = [
     short: "Bắt đầu hành trình mới",
     icon: GraduationCap,
     content:
-      "Sau khi hoàn tất thủ tục nhập học, học viên chính thức trở thành học viên cao học hoặc nghiên cứu sinh của Trường Đại học Văn Lang và bắt đầu hành trình học tập, nghiên cứu, phát triển nghề nghiệp trong môi trường học thuật quốc tế.",
+      "Sau khi hoàn tất thủ tục nhập học, người học chính thức trở thành người học cao học hoặc nghiên cứu sinh của Trường Đại học Văn Lang và bắt đầu hành trình học tập, nghiên cứu, phát triển nghề nghiệp trong môi trường học thuật quốc tế.",
   },
 ] as const;
 

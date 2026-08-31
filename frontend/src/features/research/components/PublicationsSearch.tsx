@@ -14,7 +14,7 @@ export function PublicationsSearch({ publications, titleFirst="Khám phá tất 
   const [open,setOpen] = useState<FilterKey|null>(null);
   const [mobileFilters,setMobileFilters] = useState(false);
   const [selected,setSelected] = useState<Partial<Record<FilterKey,string>>>({});
-  const options = useMemo(() => Object.fromEntries((Object.keys(labels) as FilterKey[]).map(key => [key,[...new Set(publications.map(item => item[key]))].sort()])),[publications]) as Record<FilterKey,string[]>;
+  const options = useMemo(() => Object.fromEntries((Object.keys(labels) as FilterKey[]).map(key => [key,[...new Set(publications.map(item => item[key]).filter(Boolean))].sort()])),[publications]) as Record<FilterKey,string[]>;
   const results = useMemo(() => publications.filter(item => {
     const needle=query.trim().toLocaleLowerCase("vi");
     const matchesText=!needle || `${item.title} ${item.abstract} ${item.author} ${item.field}`.toLocaleLowerCase("vi").includes(needle);
@@ -36,7 +36,7 @@ export function PublicationsSearch({ publications, titleFirst="Khám phá tất 
     <div className={styles.resultsPane}>
       <div className={styles.searchRow}><label><span className={styles.visuallyHidden}>{searchPlaceholder}</span><input value={query} onChange={e=>setQuery(e.target.value)} placeholder={searchPlaceholder}/><Search /></label><button className={styles.mobileFilterButton} type="button" onClick={()=>setMobileFilters(v=>!v)} aria-label="Bộ lọc"><Filter /></button></div>
       <p className={styles.resultCount}>Hiển thị {results.length} {resultLabel}</p>
-      <div className={styles.resultList}>{results.map(item => <article key={item.id}><p>{item.field}</p><h2>{item.title}</h2><span>{item.abstract}</span><div className={styles.meta}><b>{item.author}</b><time>{item.year}</time></div></article>)}{!results.length&&<div className={styles.empty}><Search/><h2>Không tìm thấy công bố phù hợp</h2><button type="button" onClick={reset}>Xóa bộ lọc</button></div>}</div>
+      <div className={styles.resultList}>{results.map(item => <article key={item.id}><p>{item.field}</p><h2>{item.title}</h2><span>{item.abstract}</span><div className={styles.meta}><b>{item.author}</b>{item.year && <time>{item.year}</time>}</div></article>)}{!results.length&&<div className={styles.empty}><Search/><h2>Không tìm thấy công bố phù hợp</h2><button type="button" onClick={reset}>Xóa bộ lọc</button></div>}</div>
     </div>
   </section>;
 }

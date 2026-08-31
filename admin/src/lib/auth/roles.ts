@@ -2,9 +2,8 @@ import { prisma } from "@/lib/db";
 import { ADMIN_PERMISSIONS, ROLE_CODES } from "./constants";
 
 export const roleSeeds = [
-  { code: ROLE_CODES.SUPER_ADMIN, name: "QTV Bậc 1 – Super Admin", level: 1 },
-  { code: ROLE_CODES.LEVEL_2, name: "QTV Bậc 2", level: 2 },
-  { code: ROLE_CODES.LEVEL_3, name: "QTV Bậc 3", level: 3 },
+  { code: ROLE_CODES.SUPER_ADMIN, name: "QTV Cấp 1 – Super Admin", level: 1 },
+  { code: ROLE_CODES.LEVEL_2, name: "QTV Cấp 2", level: 2 },
 ] as const;
 
 export async function ensureRolesAndPermissions() {

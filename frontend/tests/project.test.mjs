@@ -22,6 +22,16 @@ test("consultation endpoint forwards to the real backend service", async () => {
   assert.match(source, /\/api\/public\/consultations/);
   assert.match(source, /status:\s*502/);
 });
+test("visit analytics degrades safely when the backend is unavailable", async () => {
+  const source = await readFile(
+    new URL("../src/app/api/analytics/visit/route.ts", import.meta.url),
+    "utf8",
+  );
+  assert.match(source, /try\s*{/);
+  assert.match(source, /catch\s*{/);
+  assert.match(source, /AbortSignal\.timeout/);
+  assert.match(source, /status:\s*502/);
+});
 test("top-level section routes expose independently editable pages", async () => {
   for (const section of [
     "discover",

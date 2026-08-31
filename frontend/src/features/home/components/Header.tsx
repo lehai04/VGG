@@ -42,7 +42,8 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
 
   // Chỉ Về Viện Sau Đại học còn trang con. Các nhóm khác đi thẳng tới trang tổng hợp duy nhất.
   const submenuHref = (slug: string, index: number) => {
-    if (slug === "discover") return index === 0 ? "/discover" : `/discover/${discoverSections[index].slug}`;
+    if (slug === "discover")
+      return index === 0 ? "/discover" : `/discover/${discoverSections[index].slug}`;
     return subpageHref(slug, index);
   };
 
@@ -62,6 +63,20 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
       document.removeEventListener("keydown", closeFromKeyboard);
     };
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
 
   return (
     <>
@@ -85,6 +100,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
               alt="Viện Sau đại học Văn Lang"
               width={270}
               height={96}
+              priority
               onError={(event) => {
                 event.currentTarget.style.display = "none";
               }}
@@ -99,14 +115,24 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
 
           <button
             className="menuButton"
-            onClick={() => setOpen(!open)}
+            type="button"
+            onClick={() => setOpen((current) => !current)}
             aria-expanded={open}
-            aria-label="Mở menu điều hướng"
+            aria-controls="mobile-primary-navigation"
+            aria-label={open ? "Đóng menu điều hướng" : "Mở menu điều hướng"}
           >
-            {open ? messages.navigation.close : messages.navigation.menu} <i>{open ? "×" : "+"}</i>
+            <span className="menuButtonIcon" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+            </span>
           </button>
 
-          <nav className={open ? "nav open" : "nav"} aria-label="Điều hướng chính">
+          <nav
+            id="mobile-primary-navigation"
+            className={open ? "nav open" : "nav"}
+            aria-label="Điều hướng chính"
+          >
             {MENU_ITEMS.map((item, index) => (
               <Link
                 href={itemHref(item.slug)}
@@ -120,8 +146,13 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
                 }
                 onClick={(event) => {
                   if (item.slug === "discover") {
+                    if (window.matchMedia("(max-width: 1100px)").matches) {
+                      setOpen(false);
+                      setActiveMenu(null);
+                      return;
+                    }
                     event.preventDefault();
-                    setActiveMenu((current) => current === index ? null : index);
+                    setActiveMenu((current) => (current === index ? null : index));
                     return;
                   }
                   setActiveMenu(null);
@@ -146,7 +177,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
                 src="/images/pages/home/sections/campus.jpg"
                 alt="Khuôn viên Trường Đại học Văn Lang"
                 fill
-                sizes="(max-width: 900px) 0px, 42vw"
+                sizes="(max-width: 1100px) 0px, 42vw"
               />
             </div>
 
@@ -159,7 +190,10 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
                 </Link>
               </div>
 
-              <nav className="megaVluLinks" aria-label={`${messages.navigation.overview} ${locale === "en" ? activeItem.english : activeItem.vietnamese}`}>
+              <nav
+                className="megaVluLinks"
+                aria-label={`${messages.navigation.overview} ${locale === "en" ? activeItem.english : activeItem.vietnamese}`}
+              >
                 {(locale === "en" ? activeItem.linksEn : activeItem.links).map((link, index) => (
                   <Link
                     href={submenuHref(activeItem.slug, index)}
@@ -179,7 +213,8 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
                   {locale === "en" ? "Learner-centered." : "Lấy người học làm trung tâm."}
                 </strong>
                 <Link href="/discover" onClick={() => setActiveMenu(null)}>
-                  {locale === "en" ? "Explore Viện Sau Đại học" : "Khám phá Viện Sau Đại học"} <span>→</span>
+                  {locale === "en" ? "Explore Viện Sau Đại học" : "Khám phá Viện Sau Đại học"}{" "}
+                  <span>→</span>
                 </Link>
               </aside>
             </div>
@@ -189,4 +224,3 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
     </>
   );
 }
-

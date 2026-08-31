@@ -40,7 +40,7 @@
 }
 .heroCopy h1 {
   margin: 0;
-  font-size: clamp(68px, 9vw, 142px);
+  font-size: clamp(40px, 9vw, 142px);
   line-height: 0.8;
   letter-spacing: -0.065em;
 }
@@ -630,7 +630,7 @@
     min-height: 590px;
   }
   .heroCopy h1 {
-    font-size: 64px;
+    font-size: clamp(40px, 13vw, 64px);
   }
   .heroCopy > span {
     max-width: 25ch;

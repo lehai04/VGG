@@ -56,7 +56,7 @@
 .heroCopy h1 {
   max-width: 1050px;
   margin: 28px 0 30px;
-  font-size: clamp(60px, 7.5vw, 112px);
+  font-size: clamp(40px, 7.5vw, 112px);
   line-height: 0.91;
   letter-spacing: -0.058em;
 }
@@ -136,7 +136,8 @@
 }
 
 .introMedia {
-  min-height: clamp(340px, 30vw, 450px);
+  min-height: clamp(380px, 34vw, 500px);
+  aspect-ratio: 4 / 3;
   position: relative;
   margin: 0;
   overflow: hidden;
@@ -153,6 +154,7 @@
 
 .introMedia img {
   object-fit: cover;
+  object-position: center 12%;
   transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -278,6 +280,7 @@
 .paymentMedia {
   width: 100%;
   min-height: clamp(430px, 36vw, 570px);
+  aspect-ratio: 4 / 3;
   position: relative;
   margin: 0;
   overflow: hidden;
@@ -294,6 +297,7 @@
 
 .paymentMedia img {
   object-fit: cover;
+  object-position: center 15%;
   transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -489,7 +493,7 @@
     padding: 150px 20px 85px;
   }
   .heroCopy h1 {
-    font-size: 52px;
+    font-size: clamp(38px, 13vw, 52px);
     line-height: 0.98;
   }
   .scrollCue {
@@ -510,7 +514,8 @@
     gap: 28px;
   }
   .introMedia {
-    min-height: 280px;
+    min-height: 320px;
+    aspect-ratio: 16 / 10;
     border-radius: 14px;
   }
   .intro h2,
@@ -531,6 +536,7 @@
   }
   .paymentMedia {
     min-height: 340px;
+    aspect-ratio: 16 / 10;
     border-radius: 14px;
   }
   .paymentCopy h2 {

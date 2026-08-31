@@ -3,6 +3,8 @@
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 
+import Link from "next/link";
+
 export function LoginForm() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
@@ -29,10 +31,34 @@ export function LoginForm() {
   }
 
   return <form className="form-stack" onSubmit={submit}>
-    <label className="field">Tên đăng nhập<input name="username" autoComplete="username" minLength={3} maxLength={50} required autoFocus /></label>
-    <label className="field">Mật khẩu<div className="password-field"><input name="password" type={showPassword ? "text" : "password"} autoComplete="current-password" maxLength={128} required /><button className="password-toggle" type="button" onClick={() => setShowPassword((value) => !value)} aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}>{showPassword ? "Ẩn" : "Hiện"}</button></div></label>
+    <label className="field">
+      Email VLU hoặc Tên đăng nhập
+      <input
+        name="username"
+        autoComplete="username"
+        minLength={3}
+        maxLength={190}
+        placeholder="ten.ho@vlu.edu.vn hoặc username"
+        required
+        autoFocus
+      />
+    </label>
+    <label className="field">
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <span>Mật khẩu</span>
+        <Link href="/admin/forgot-password" style={{ color: "#b91c1c", fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}>
+          Quên mật khẩu?
+        </Link>
+      </div>
+      <div className="password-field">
+        <input name="password" type={showPassword ? "text" : "password"} autoComplete="current-password" maxLength={128} required />
+        <button className="password-toggle" type="button" onClick={() => setShowPassword((value) => !value)} aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}>
+          {showPassword ? "Ẩn" : "Hiện"}
+        </button>
+      </div>
+    </label>
     <label className="check-field"><input name="remember" type="checkbox" /> Ghi nhớ đăng nhập</label>
-    <p className="form-message" role="alert" aria-live="polite">{message}</p>
+    {message && <p className="form-message" role="alert" aria-live="polite">{message}</p>}
     <button className="primary-button" type="submit" disabled={loading}>{loading ? "ĐANG ĐĂNG NHẬP…" : "ĐĂNG NHẬP"}</button>
   </form>;
 }

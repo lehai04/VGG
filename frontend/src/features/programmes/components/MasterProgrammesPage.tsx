@@ -15,7 +15,7 @@ const benefits = [
   { title: "Phương thức xét tuyển linh hoạt", text: "Tuyển sinh theo hình thức xét tuyển với yêu cầu rõ ràng về trình độ chuyên môn và năng lực ngoại ngữ." },
   { title: "Lộ trình tinh gọn", text: "Thời gian đào tạo từ 18 đến 24 tháng, giúp người học nâng cao chuyên môn mà vẫn duy trì nhịp độ sự nghiệp." },
   { title: "Thời gian biểu linh hoạt", text: "Kế hoạch học tập phù hợp với người đang đi làm, tạo điều kiện cân bằng giữa học tập, công việc và cuộc sống." },
-  { title: "Học bổng và hỗ trợ", text: "Nhiều chính sách học bổng và hỗ trợ tài chính giúp học viên chủ động hơn trên hành trình học tập chuyên sâu." },
+  { title: "Học bổng và hỗ trợ", text: "Nhiều chính sách học bổng và hỗ trợ tài chính giúp người học chủ động hơn trên hành trình học tập chuyên sâu." },
 ] as const;
 
 export function MasterProgrammesPage() {
@@ -25,7 +25,7 @@ export function MasterProgrammesPage() {
       <SiteHeader compact />
 
       <section className={styles.hero} aria-labelledby="master-title">
-        <Image src="/images/pages/programmes/content/graduates.jpg" alt="Học viên chương trình Thạc sĩ Văn Lang" fill priority sizes="100vw" />
+        <Image src="/images/pages/programmes/content/graduates.jpg" alt="Người học chương trình Thạc sĩ Văn Lang" fill priority sizes="100vw" />
         <div className={styles.heroShade} />
         <div className={styles.heroCopy}>
           <p>Viện Sau Đại học · MASTER PROGRAMMES</p>

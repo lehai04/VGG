@@ -157,9 +157,75 @@ export async function cmsRoutes(app: FastifyInstance) {
 
   app.get("/api/admin/news", async (request, reply) => { if (!await guard(request, reply, "news.view")) return; return ok(reply, { posts: await prisma.newsPost.findMany({ orderBy: { updatedAt: "desc" }, include: { author: { select: { fullName: true } } } }) }); });
   app.get("/api/admin/news/:id", async (request, reply) => { if (!await guard(request, reply, "news.view")) return; const { id } = z.object({ id: z.string() }).parse(request.params); const post = await prisma.newsPost.findUnique({ where: { id }, include: { author: { select: { fullName: true } } } }); if (!post) return fail(reply, 404, "Không tìm thấy bài viết.", "NEWS_NOT_FOUND"); return ok(reply, { post }); });
-  app.post("/api/admin/news", async (request, reply) => { const admin = await guard(request, reply, "news.create"); if (!admin) return; const input = newsInput.parse(request.body); const uniqueSlug = await availableNewsSlug(input.slug); const post = await prisma.newsPost.create({ data: { ...input, slug: uniqueSlug, authorId: admin.id, publishedAt: input.status === "PUBLISHED" ? (input.publishedAt ?? new Date()) : null } }); return reply.code(201).send({ success: true, data: { post }, message: "Đã lưu bài viết." }); });
-  app.put("/api/admin/news/:id", async (request, reply) => { if (!await guard(request, reply, "news.update")) return; const { id } = z.object({ id: z.string() }).parse(request.params); const input = newsInput.parse(request.body); const current = await prisma.newsPost.findUnique({ where: { id }, select: { publishedAt: true } }); if (!current) return fail(reply, 404, "Không tìm thấy bài viết.", "NEWS_NOT_FOUND"); const uniqueSlug = await availableNewsSlug(input.slug, id); const post = await prisma.newsPost.update({ where: { id }, data: { ...input, slug: uniqueSlug, publishedAt: input.status === "PUBLISHED" ? (input.publishedAt ?? current.publishedAt ?? new Date()) : null } }); return ok(reply, { post }, "Đã cập nhật bài viết."); });
-  app.delete("/api/admin/news/:id", async (request, reply) => { if (!await guard(request, reply, "news.delete")) return; const { id } = z.object({ id: z.string() }).parse(request.params); await prisma.newsPost.update({ where: { id }, data: { status: "ARCHIVED" } }); return ok(reply, {}, "Đã lưu trữ bài viết."); });
+  app.post("/api/admin/news", async (request, reply) => {
+    const admin = await guard(request, reply, "news.create");
+    if (!admin) return;
+    const input = newsInput.parse(request.body);
+    const uniqueSlug = await availableNewsSlug(input.slug);
+    const post = await prisma.newsPost.create({
+      data: {
+        ...input,
+        slug: uniqueSlug,
+        authorId: admin.id,
+        publishedAt: input.status === "PUBLISHED" ? (input.publishedAt ?? new Date()) : null,
+      },
+    });
+    await prisma.auditLog.create({
+      data: {
+        action: "NEWS_CREATED",
+        actorAdminId: admin.id,
+        targetType: "news",
+        targetId: post.id,
+        metadata: { title: post.title, slug: post.slug, category: post.category },
+      },
+    }).catch(() => null);
+    return reply.code(201).send({ success: true, data: { post }, message: "Đã lưu bài viết." });
+  });
+
+  app.put("/api/admin/news/:id", async (request, reply) => {
+    if (!await guard(request, reply, "news.update")) return;
+    const { id } = z.object({ id: z.string() }).parse(request.params);
+    const admin = await authenticateRequest(request);
+    const input = newsInput.parse(request.body);
+    const current = await prisma.newsPost.findUnique({ where: { id }, select: { publishedAt: true } });
+    if (!current) return fail(reply, 404, "Không tìm thấy bài viết.", "NEWS_NOT_FOUND");
+    const uniqueSlug = await availableNewsSlug(input.slug, id);
+    const post = await prisma.newsPost.update({
+      where: { id },
+      data: {
+        ...input,
+        slug: uniqueSlug,
+        publishedAt: input.status === "PUBLISHED" ? (input.publishedAt ?? current.publishedAt ?? new Date()) : null,
+      },
+    });
+    await prisma.auditLog.create({
+      data: {
+        action: "NEWS_UPDATED",
+        actorAdminId: admin?.id,
+        targetType: "news",
+        targetId: post.id,
+        metadata: { title: post.title, slug: post.slug, status: post.status },
+      },
+    }).catch(() => null);
+    return ok(reply, { post }, "Đã cập nhật bài viết.");
+  });
+
+  app.delete("/api/admin/news/:id", async (request, reply) => {
+    if (!await guard(request, reply, "news.delete")) return;
+    const { id } = z.object({ id: z.string() }).parse(request.params);
+    const admin = await authenticateRequest(request);
+    const post = await prisma.newsPost.update({ where: { id }, data: { status: "ARCHIVED" } });
+    await prisma.auditLog.create({
+      data: {
+        action: "NEWS_DELETED",
+        actorAdminId: admin?.id,
+        targetType: "news",
+        targetId: id,
+        metadata: { title: post.title, slug: post.slug },
+      },
+    }).catch(() => null);
+    return ok(reply, {}, "Đã lưu trữ bài viết.");
+  });
 
   app.get("/api/admin/resources", async (request, reply) => {
     if (!await guard(request, reply, "resources.view")) return;
@@ -171,10 +237,84 @@ export async function cmsRoutes(app: FastifyInstance) {
     ]);
     return ok(reply, { resources, pagination: { page: query.page, limit: query.limit, total, totalPages: Math.ceil(total / query.limit) } });
   });
+
   app.get("/api/admin/resources/:id", async (request, reply) => { if (!await guard(request, reply, "resources.view")) return; const { id } = z.object({ id: z.string() }).parse(request.params); const resource = await prisma.resourceFile.findUnique({ where: { id }, include: { category: true, author: { select: { fullName: true } } } }); if (!resource) return fail(reply, 404, "Không tìm thấy tài nguyên.", "RESOURCE_NOT_FOUND"); return ok(reply, { resource }); });
-  app.post("/api/admin/resources", async (request, reply) => { const admin = await guard(request, reply, "resources.create"); if (!admin) return; const input = resourceInput.parse(request.body); const category = await prisma.resourceCategory.findUnique({ where: { id: input.categoryId }, select: { id: true } }); if (!category) return fail(reply, 400, "Danh mục không tồn tại.", "RESOURCE_CATEGORY_NOT_FOUND"); const resourceSlug = await availableResourceSlug(input.title); const resource = await prisma.resourceFile.create({ data: { ...input, slug: resourceSlug, authorId: admin.id, publishedAt: input.status === "PUBLISHED" ? new Date() : null } }); return reply.code(201).send({ success: true, data: { resource }, message: "Đã thêm tài nguyên." }); });
-  app.put("/api/admin/resources/:id", async (request, reply) => { if (!await guard(request, reply, "resources.update")) return; const { id } = z.object({ id: z.string() }).parse(request.params); const input = resourceInput.parse(request.body); const current = await prisma.resourceFile.findUnique({ where: { id }, select: { id: true, publishedAt: true } }); if (!current) return fail(reply, 404, "Không tìm thấy tài nguyên.", "RESOURCE_NOT_FOUND"); const category = await prisma.resourceCategory.findUnique({ where: { id: input.categoryId }, select: { id: true } }); if (!category) return fail(reply, 400, "Danh mục không tồn tại.", "RESOURCE_CATEGORY_NOT_FOUND"); const resourceSlug = await availableResourceSlug(input.title, id); const resource = await prisma.resourceFile.update({ where: { id }, data: { ...input, slug: resourceSlug, publishedAt: input.status === "PUBLISHED" ? (current.publishedAt ?? new Date()) : null } }); return ok(reply, { resource }, "Đã cập nhật tài nguyên."); });
-  app.delete("/api/admin/resources/:id", async (request, reply) => { if (!await guard(request, reply, "resources.delete")) return; const { id } = z.object({ id: z.string() }).parse(request.params); const existing = await prisma.resourceFile.findUnique({ where: { id }, select: { id: true } }); if (!existing) return fail(reply, 404, "Không tìm thấy tài nguyên.", "RESOURCE_NOT_FOUND"); await prisma.resourceFile.delete({ where: { id } }); return ok(reply, {}, "Đã xóa tài nguyên."); });
+
+  app.post("/api/admin/resources", async (request, reply) => {
+    const admin = await guard(request, reply, "resources.create");
+    if (!admin) return;
+    const input = resourceInput.parse(request.body);
+    const category = await prisma.resourceCategory.findUnique({ where: { id: input.categoryId }, select: { id: true } });
+    if (!category) return fail(reply, 400, "Danh mục không tồn tại.", "RESOURCE_CATEGORY_NOT_FOUND");
+    const resourceSlug = await availableResourceSlug(input.title);
+    const resource = await prisma.resourceFile.create({
+      data: {
+        ...input,
+        slug: resourceSlug,
+        authorId: admin.id,
+        publishedAt: input.status === "PUBLISHED" ? new Date() : null,
+      },
+    });
+    await prisma.auditLog.create({
+      data: {
+        action: "RESOURCE_CREATED",
+        actorAdminId: admin.id,
+        targetType: "resource",
+        targetId: resource.id,
+        metadata: { title: resource.title, fileName: resource.fileName },
+      },
+    }).catch(() => null);
+    return reply.code(201).send({ success: true, data: { resource }, message: "Đã thêm tài nguyên." });
+  });
+
+  app.put("/api/admin/resources/:id", async (request, reply) => {
+    if (!await guard(request, reply, "resources.update")) return;
+    const { id } = z.object({ id: z.string() }).parse(request.params);
+    const admin = await authenticateRequest(request);
+    const input = resourceInput.parse(request.body);
+    const current = await prisma.resourceFile.findUnique({ where: { id }, select: { id: true, publishedAt: true } });
+    if (!current) return fail(reply, 404, "Không tìm thấy tài nguyên.", "RESOURCE_NOT_FOUND");
+    const category = await prisma.resourceCategory.findUnique({ where: { id: input.categoryId }, select: { id: true } });
+    if (!category) return fail(reply, 400, "Danh mục không tồn tại.", "RESOURCE_CATEGORY_NOT_FOUND");
+    const resourceSlug = await availableResourceSlug(input.title, id);
+    const resource = await prisma.resourceFile.update({
+      where: { id },
+      data: {
+        ...input,
+        slug: resourceSlug,
+        publishedAt: input.status === "PUBLISHED" ? (current.publishedAt ?? new Date()) : null,
+      },
+    });
+    await prisma.auditLog.create({
+      data: {
+        action: "RESOURCE_UPDATED",
+        actorAdminId: admin?.id,
+        targetType: "resource",
+        targetId: resource.id,
+        metadata: { title: resource.title, fileName: resource.fileName },
+      },
+    }).catch(() => null);
+    return ok(reply, { resource }, "Đã cập nhật tài nguyên.");
+  });
+
+  app.delete("/api/admin/resources/:id", async (request, reply) => {
+    if (!await guard(request, reply, "resources.delete")) return;
+    const { id } = z.object({ id: z.string() }).parse(request.params);
+    const admin = await authenticateRequest(request);
+    const existing = await prisma.resourceFile.findUnique({ where: { id }, select: { id: true, title: true } });
+    if (!existing) return fail(reply, 404, "Không tìm thấy tài nguyên.", "RESOURCE_NOT_FOUND");
+    await prisma.resourceFile.delete({ where: { id } });
+    await prisma.auditLog.create({
+      data: {
+        action: "RESOURCE_DELETED",
+        actorAdminId: admin?.id,
+        targetType: "resource",
+        targetId: id,
+        metadata: { title: existing.title },
+      },
+    }).catch(() => null);
+    return ok(reply, {}, "Đã xóa tài nguyên.");
+  });
 
   app.get("/api/admin/resource-categories", async (request, reply) => { if (!await guard(request, reply, "resources.view")) return; const categories = await prisma.resourceCategory.findMany({ orderBy: { name: "asc" }, include: { _count: { select: { resources: true } } } }); return ok(reply, { categories }); });
   app.post("/api/admin/resource-categories", async (request, reply) => { if (!await guard(request, reply, "resources.create")) return; const input = resourceCategoryInput.parse(request.body); const duplicate = await prisma.resourceCategory.findFirst({ where: { name: { equals: input.name, mode: "insensitive" } }, select: { id: true } }); if (duplicate) return fail(reply, 409, "Tên danh mục đã tồn tại.", "RESOURCE_CATEGORY_DUPLICATE"); const category = await prisma.resourceCategory.create({ data: input }); return reply.code(201).send({ success: true, data: { category }, message: "Đã thêm danh mục." }); });

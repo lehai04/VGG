@@ -5,7 +5,6 @@ import { FooterBottom } from "./footer/FooterBottom";
 import { FooterAbout, FooterQuickLinks, FooterSocial } from "./footer/FooterColumns";
 import { FooterContact } from "./footer/FooterContact";
 import { FooterLocation } from "./footer/FooterLocation";
-import { ScrollToTop } from "./footer/ScrollToTop";
 import { useLocale } from "@/i18n/components/LocaleProvider";
 
 /** Footer duy nhất, được chia nhỏ theo từng vùng nội dung để tái sử dụng toàn site. */
@@ -25,15 +24,11 @@ export function SiteFooter() {
   );
 }
 
-/** Cụm nút nổi (AI, Facebook, Apply, Zalo, cuộn lên) — được RootLayout gắn 1 lần. */
+/** Cụm nút nổi (Facebook, Apply, Zalo) — được RootLayout gắn 1 lần. */
 export function StickyActions() {
   const { locale, messages } = useLocale();
   return (
     <>
-      <Link className="chatbot-float" href="/#consultation" aria-label="Mở khu vực tư vấn Viện Sau Đại học">
-        <span>AI</span>
-        <b>{locale === "en" ? "Chat with Viện Sau Đại học" : "Chat với Viện Sau Đại học"}</b>
-      </Link>
       <a
         className="facebook-float"
         href="https://www.facebook.com/saudaihoc.vlu"
@@ -44,7 +39,11 @@ export function StickyActions() {
         <span>f</span>
         <b>Facebook Văn Lang</b>
       </a>
-      <Link className="apply-now-float" href="/admissions" aria-label="Nộp hồ sơ ngay">
+      <Link
+        className="apply-now-float"
+        href="https://tuyensinh.vlu.edu.vn/xet-tuyen/thac-si/"
+        aria-label="Nộp hồ sơ ngay"
+      >
         <span>{messages.common.applyNow}</span>
       </Link>
       <a
@@ -57,7 +56,6 @@ export function StickyActions() {
         <span>Zalo</span>
         <b>{locale === "en" ? "Admissions contact" : "Liên hệ tuyển sinh"}</b>
       </a>
-      <ScrollToTop />
     </>
   );
 }

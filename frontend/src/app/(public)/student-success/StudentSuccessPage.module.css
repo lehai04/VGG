@@ -42,8 +42,8 @@
 }
 .heroCopy h1 {
   margin: 0 0 26px;
-  font-size: clamp(58px, 7.2vw, 108px);
-  line-height: 1.5 !important;
+  font-size: clamp(36px, 7.2vw, 108px);
+  line-height: 1.15 !important;
   letter-spacing: -0.04em;
   text-transform: uppercase !important;
 }
@@ -70,8 +70,8 @@
 .statement h2 {
   margin: 0 0 42px;
   max-width: 760px;
-  font-size: clamp(58px, 7vw, 104px);
-  line-height: 0.92;
+  font-size: clamp(32px, 7vw, 104px);
+  line-height: 1.05;
   text-transform: uppercase;
 }
 .statement span {
@@ -377,7 +377,7 @@
     padding: 110px 24px 52px;
   }
   .heroCopy h1 {
-    font-size: 52px;
+    font-size: clamp(30px, 9.5vw, 46px);
   }
   .statement {
     margin: 0;
@@ -386,7 +386,7 @@
     border-radius: 0;
   }
   .statement h2 {
-    font-size: 48px;
+    font-size: clamp(28px, 9vw, 42px);
   }
   .zigzag {
     padding: 40px 24px;

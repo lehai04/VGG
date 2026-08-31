@@ -46,12 +46,14 @@ export function ImmersiveVideo() {
     // của trình duyệt chặn, vẫn phát hình ở chế độ tắt tiếng và mở tiếng ngay sau
     // tương tác đầu tiên của người dùng.
     video.muted = false;
-    setIsMuted(false);
-    void video.play().catch(() => {
-      video.muted = true;
-      setIsMuted(true);
-      void video.play();
-    });
+    void video
+      .play()
+      .then(() => setIsMuted(false))
+      .catch(() => {
+        video.muted = true;
+        setIsMuted(true);
+        void video.play();
+      });
   }, [hasLoaded, shouldPlay]);
 
   useEffect(() => {

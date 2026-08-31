@@ -4,7 +4,6 @@ import { RevealOnScroll } from "@/shared/components/ui";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
-import { DiscoverMore } from "@/features/discover/components/DiscoverMore";
 import styles from "./VisionMissionPage.module.css";
 
 const vision = "Trở thành đơn vị đào tạo sau đại học tiên phong trong kết nối tri thức học thuật với thực tiễn nghề nghiệp, mở rộng mạng lưới học thuật – doanh nghiệp và phát triển nguồn nhân lực có năng lực tạo ra giá trị cho xã hội.";
@@ -18,7 +17,7 @@ export function VisionMissionPage() {
 
     {/* Hero có sequence load riêng; ảnh priority để tránh layout shift ở vùng đầu trang. */}
     <section className={styles.hero} aria-labelledby="vision-mission-title">
-      <Image className={styles.heroImage} src="/images/pages/discover/Vision/1.avif" alt="Không gian học thuật tại Trường Đại học Văn Lang" fill priority sizes="100vw" />
+      <Image className={styles.heroImage} src="/images/pages/discover/Vision/1.jpg" alt="Không gian học thuật tại Trường Đại học Văn Lang" fill priority sizes="100vw" />
       <div className={styles.heroOverlay} />
       <div className={styles.heroCopy}>
         <p>VAN LANG UNIVERSITY · GRADUATE SCHOOL</p>
@@ -54,12 +53,11 @@ export function VisionMissionPage() {
       <div className={styles.philosophyBottom}>
         <p data-reveal>Viện Sau Đại học hướng đến mô hình giáo dục lấy người học làm trung tâm, trong đó quá trình giảng dạy không chỉ truyền đạt kiến thức mà còn khuyến khích tư duy độc lập, khám phá và ứng dụng. Nội dung đào tạo được kết nối với các vấn đề thực tiễn, hoạt động nghiên cứu và kinh nghiệm nghề nghiệp, giúp người học chuyển hóa tri thức thành năng lực hành động và những giá trị có ý nghĩa cho tổ chức, cộng đồng và xã hội.</p>
         {/* Ảnh luôn hiển thị; không gắn reveal để tránh bị giữ opacity khi section vào viewport nhanh. */}
-        <figure><Image src="/images/pages/discover/Vision/1.avif" alt="Trải nghiệm học tập của cộng đồng học viên Văn Lang" fill sizes="(max-width: 767px) 100vw, 38vw" /></figure>
+        <figure><Image src="/images/pages/discover/Vision/4.jpg" alt="Trải nghiệm học tập của cộng đồng người học Văn Lang" fill loading="eager" sizes="(max-width: 767px) 100vw, 38vw" /></figure>
       </div>
     </section>
 
     {/* Closing kế thừa form tư vấn chuẩn của homepage, không nhân đôi logic gửi API. */}
-    <DiscoverMore activeSlug="tam-nhin-su-menh" />
     <NextStepCTA />
     <SiteFooter />
   </main>;

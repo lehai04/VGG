@@ -47,3 +47,8 @@ export type Session = Prisma.SessionModel
  * 
  */
 export type AuditLog = Prisma.AuditLogModel
+/**
+ * Model PasswordResetToken
+ * 
+ */
+export type PasswordResetToken = Prisma.PasswordResetTokenModel

@@ -4,9 +4,9 @@
 .heroOverlay { position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,rgba(22,27,65,.95),rgba(22,27,65,.3)); }
 .heroTitle { position:absolute; left:var(--container-padding); right:var(--container-padding); bottom:70px; }
 .heroTitle p,.index { margin:0; font-size:11px; font-weight:800; letter-spacing:.19em; text-transform:uppercase; }
-.heroTitle h1 { margin:20px 0 12px; font-size:clamp(62px,7.4vw,110px); line-height:.88; text-transform:uppercase; }
+.heroTitle h1 { margin:20px 0 12px; font-size:clamp(40px,7.4vw,110px); line-height:.88; text-transform:uppercase; }
 .heroTitle span { color:#ef8793; font-size:14px; font-weight:800; letter-spacing:.17em; text-transform:uppercase; }
-.clusterProfile { padding:clamp(52px,5.5vw,78px) var(--container-padding); display:grid; grid-template-columns:minmax(320px,.9fr) minmax(0,1.1fr); gap:clamp(40px,5vw,72px); align-items:start; }
+.clusterProfile { padding:clamp(52px,5.5vw,78px) var(--container-padding); display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:clamp(40px,5vw,72px); align-items:start; }
 .clusterProfile + .clusterProfile { border-top:1px solid var(--color-line); }
 .clusterCopy { position:sticky; top:140px; }
 .index { margin-bottom:18px; color:var(--vlu-red); }
@@ -20,5 +20,5 @@ main.page .clusterCopy > p:not(.index) { max-width:690px; margin:22px 0 28px; co
 .clusterGallery img { object-fit:cover; transition:transform 650ms var(--motion-ease); }
 .clusterGallery figure:hover img { transform:scale(1.03); }
 @media (max-width:900px) { .clusterProfile { grid-template-columns:1fr; } .clusterCopy { position:static; } .clusterGallery { grid-template-rows:520px 250px; } }
-@media (max-width:600px) { .hero { height:520px; } .heroTitle { left:24px; right:24px; bottom:48px; } .heroTitle h1 { font-size:50px; } .heroTitle span { font-size:12px; } .clusterProfile { padding:44px 24px 54px; gap:30px; } .clusterCopy h2 { font-size:44px; } .clusterGallery { gap:10px; grid-template-rows:300px 140px; } .clusterGallery figure { border-radius:8px; } }
+@media (max-width:600px) { .hero { height:520px; } .heroTitle { left:24px; right:24px; bottom:48px; } .heroTitle h1 { font-size:clamp(32px,11vw,50px); } .heroTitle span { font-size:12px; } .clusterProfile { padding:44px 24px 54px; gap:30px; } .clusterCopy h2 { font-size:44px; } .clusterGallery { gap:10px; grid-template-rows:300px 140px; } .clusterGallery figure { border-radius:8px; } }
 @media (prefers-reduced-motion:reduce) { .clusterCopy a,.clusterGallery img { transition:none; } }

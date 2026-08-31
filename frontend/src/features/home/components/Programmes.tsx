@@ -29,7 +29,7 @@ export function Programmes() {
             <p>
               Chương trình
               <br />
-              Thạc sĩ năm 2026
+              Thạc sĩ
             </p>
           </article>
           <article>

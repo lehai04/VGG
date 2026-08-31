@@ -28,28 +28,25 @@ const HIGHLIGHTS = [
   {
     num: "03",
     title: "Đồng hành đến cùng",
-    copy: "Đội ngũ tư vấn Viện Sau Đại học sẵn sàng hỗ trợ từ bước tìm hiểu đầu tiên đến khi bạn chính thức trở thành học viên.",
+    copy: "Đội ngũ tư vấn Viện Sau Đại học sẵn sàng hỗ trợ từ bước tìm hiểu đầu tiên đến khi bạn chính thức trở thành người học.",
   },
 ] as const;
 
 const ADMISSION_ROUNDS = [
   {
     round: "Đợt 01",
-    year: "2026",
     scholarship: "08/12/2025",
     regular: "15/12/2025",
   },
   {
     round: "Đợt 02",
-    year: "2026",
-    scholarship: "08/04/2026",
-    regular: "15/04/2026",
+    scholarship: "08/04",
+    regular: "15/04",
   },
   {
     round: "Đợt 03",
-    year: "2026",
-    scholarship: "29/08/2026",
-    regular: "05/09/2026",
+    scholarship: "29/08",
+    regular: "05/09",
   },
 ] as const;
 
@@ -177,7 +174,7 @@ export function AdmissionsSubpage({ slug }: { slug: string }) {
           aria-labelledby="important-dates-title"
         >
           <header className={styles.datesHead} data-reveal>
-            <p className={styles.eyebrow}>ADMISSIONS CALENDAR · 2026</p>
+            <p className={styles.eyebrow}>ADMISSIONS CALENDAR</p>
             <h2 id="important-dates-title">Các mốc thời gian quan trọng</h2>
             <div className={styles.intakeFrequency}>
               <CalendarDays aria-hidden="true" />
@@ -195,19 +192,16 @@ export function AdmissionsSubpage({ slug }: { slug: string }) {
               >
                 <header>
                   <span>{item.round}</span>
-                  <strong>{item.year}</strong>
                 </header>
                 <div className={styles.milestone}>
                   <GraduationCap aria-hidden="true" />
                   <span>Đăng ký học bổng</span>
-                  <time dateTime={item.scholarship.split("/").reverse().join("-")}>
-                    {item.scholarship}
-                  </time>
+                  <time>{item.scholarship}</time>
                 </div>
                 <div className={styles.milestone}>
                   <CalendarDays aria-hidden="true" />
                   <span>Không đăng ký học bổng</span>
-                  <time dateTime={item.regular.split("/").reverse().join("-")}>{item.regular}</time>
+                  <time>{item.regular}</time>
                 </div>
               </article>
             ))}
@@ -218,7 +212,7 @@ export function AdmissionsSubpage({ slug }: { slug: string }) {
           <figure className={styles.quoteMedia} data-reveal>
             <Image
               src={MEDIA[(index + 1) % MEDIA.length]}
-              alt="Cộng đồng học viên Viện Sau Đại học"
+              alt="Cộng đồng người học Viện Sau Đại học"
               fill
               sizes="(max-width: 767px) 100vw, 44vw"
             />

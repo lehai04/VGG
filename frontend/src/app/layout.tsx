@@ -2,9 +2,9 @@
  * Root layout — bọc mọi page.
  * - Dùng bộ font sans-serif toàn hệ thống từ globals.css
  * - Metadata mặc định (SEO); page con ghi đè title/description
- * - StickyActions (AI / Facebook / Zalo / Apply) hiện trên mọi trang
+ * - StickyActions (Facebook / Zalo / Apply) hiện trên mọi trang
  */
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -14,7 +14,19 @@ import { LocaleProvider } from "@/i18n/components/LocaleProvider";
 import { defaultLocale, isLocale } from "@/lib/i18n";
 import { VisitTracker } from "@/shared/analytics/components/VisitTracker";
 
-const inter = localFont({ src: "./fonts/Inter-Variable.ttf", weight: "400 700", display: "swap", variable: "--font-inter" });
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
+const inter = localFont({
+  src: "./fonts/Inter-Variable.ttf",
+  weight: "100 900",
+  display: "swap",
+  variable: "--font-inter",
+  fallback: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+});
 
 // Metadata nền tảng được mọi route kế thừa; từng page chỉ cần ghi đè title/description riêng.
 const baseMetadata: Metadata = {
@@ -33,13 +45,13 @@ const baseMetadata: Metadata = {
     siteName: "Van Lang Global Graduate",
     title: "Viện Sau Đại học Văn Lang",
     description:
-      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ học viên Viện Sau Đại học.",
+      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ người học Viện Sau Đại học.",
   },
   twitter: {
     card: "summary",
     title: "Viện Sau Đại học Văn Lang",
     description:
-      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ học viên Viện Sau Đại học.",
+      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ người học Viện Sau Đại học.",
   },
   icons: {
     icon: "/favicon.svg",

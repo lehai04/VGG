@@ -56,7 +56,7 @@
 }
 .sectionHeading {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   column-gap: clamp(40px, 6vw, 88px);
   align-items: end;
   margin-bottom: clamp(42px, 5vw, 68px);

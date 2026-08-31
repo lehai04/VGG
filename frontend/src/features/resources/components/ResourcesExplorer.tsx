@@ -20,6 +20,7 @@ const formatSize = (bytes: number) =>
   bytes >= 1048576
     ? `${(bytes / 1048576).toFixed(1)} MB`
     : `${Math.max(1, Math.round(bytes / 1024))} KB`;
+const ITEMS_PER_PAGE = 5;
 
 export function ResourcesExplorer({ resources }: { resources: PublicResource[] }) {
   const [query, setQuery] = useState("");
@@ -27,6 +28,7 @@ export function ResourcesExplorer({ resources }: { resources: PublicResource[] }
   const [category, setCategory] = useState("ALL");
   const [type, setType] = useState("ALL");
   const [preview, setPreview] = useState<PublicResource | null>(null);
+  const [page, setPage] = useState(1);
   const categories = useMemo(
     () => Array.from(new Map(resources.map((item) => [item.category.id, item.category])).values()),
     [resources],
@@ -55,11 +57,14 @@ export function ResourcesExplorer({ resources }: { resources: PublicResource[] }
       );
     });
   }, [resources, appliedQuery, category, type]);
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  const visibleResources = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
   const fileEndpoint = (item: PublicResource, download = false) =>
     `/api/resources/file?url=${encodeURIComponent(item.fileUrl)}&name=${encodeURIComponent(item.fileName)}${download ? "&download=1" : ""}`;
   function search(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setAppliedQuery(query);
+    setPage(1);
   }
   return (
     <>
@@ -85,7 +90,10 @@ export function ResourcesExplorer({ resources }: { resources: PublicResource[] }
             <span>Danh mục</span>
             <select
               value={category}
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => {
+                setCategory(e.target.value);
+                setPage(1);
+              }}
               aria-label="Lọc theo danh mục"
             >
               <option value="ALL">Tất cả danh mục</option>
@@ -101,7 +109,10 @@ export function ResourcesExplorer({ resources }: { resources: PublicResource[] }
             <span>Loại tài nguyên</span>
             <select
               value={type}
-              onChange={(e) => setType(e.target.value)}
+              onChange={(e) => {
+                setType(e.target.value);
+                setPage(1);
+              }}
               aria-label="Lọc theo loại tài nguyên"
             >
               <option value="ALL">Tất cả loại tài nguyên</option>
@@ -128,7 +139,7 @@ export function ResourcesExplorer({ resources }: { resources: PublicResource[] }
         </div>
         {filtered.length ? (
           <div className={styles.list}>
-            {filtered.map((item) => (
+            {visibleResources.map((item) => (
               <article className={styles.card} key={item.id}>
                 <div className={styles.fileIcon}>
                   <FileText />
@@ -195,11 +206,41 @@ export function ResourcesExplorer({ resources }: { resources: PublicResource[] }
                 setAppliedQuery("");
                 setCategory("ALL");
                 setType("ALL");
+                setPage(1);
               }}
             >
               Xóa bộ lọc
             </button>
           </div>
+        )}
+        {totalPages > 1 && (
+          <nav className={styles.pagination} aria-label="Phân trang tài nguyên">
+            <button
+              type="button"
+              disabled={page === 1}
+              onClick={() => setPage((current) => Math.max(1, current - 1))}
+            >
+              ‹ <span>Trước</span>
+            </button>
+            {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
+              <button
+                type="button"
+                className={pageNumber === page ? styles.activePage : undefined}
+                aria-current={pageNumber === page ? "page" : undefined}
+                onClick={() => setPage(pageNumber)}
+                key={pageNumber}
+              >
+                {pageNumber}
+              </button>
+            ))}
+            <button
+              type="button"
+              disabled={page === totalPages}
+              onClick={() => setPage((current) => Math.min(totalPages, current + 1))}
+            >
+              <span>Sau</span> ›
+            </button>
+          </nav>
         )}
       </section>
       {preview && (

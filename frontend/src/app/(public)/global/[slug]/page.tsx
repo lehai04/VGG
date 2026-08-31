@@ -1,2 +1,6 @@
 import { redirect } from "next/navigation";
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) { redirect(`/research#${(await params).slug}`); }
+import { localizedRedirectPath } from "@/lib/serverLocale";
+
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  redirect(await localizedRedirectPath(`/research#${(await params).slug}`));
+}

@@ -53,13 +53,13 @@ const encouragement = [
   {
     rate: "10%",
     title: "Nhóm ngành STEM",
-    copy: "Hỗ trợ 10% học phí toàn khóa cho học viên theo học các ngành thuộc nhóm STEM.",
+    copy: "Hỗ trợ 10% học phí toàn khóa cho người học theo học các ngành thuộc nhóm STEM.",
     icon: FlaskConical,
   },
   {
     rate: "5%",
     title: "Khuyến khích đa dạng",
-    copy: "Dành cho học viên nữ, người dân tộc thiểu số, người khuyết tật, thương binh hoặc bệnh binh.",
+    copy: "Dành cho người học nữ, người dân tộc thiểu số, người khuyết tật, thương binh hoặc bệnh binh.",
     icon: HeartHandshake,
   },
 ] as const;
@@ -122,7 +122,7 @@ export function ScholarshipsPage() {
         <figure className={styles.introMedia} data-reveal>
           <Image
             src="/images/pages/admissions/content/graduates.jpg"
-            alt="Học viên Văn Lang trong hành trình học tập và phát triển"
+            alt="Người học Văn Lang trong hành trình học tập và phát triển"
             fill
             sizes="(max-width: 900px) 100vw, 46vw"
           />
@@ -174,7 +174,7 @@ export function ScholarshipsPage() {
           </h2>
           <p>
             Giảm thêm 5% trên mức học phí thực đóng khi thanh toán toàn bộ học phí trong một lần.
-            Chính sách áp dụng với học viên đang hưởng mức học bổng dưới 30%.
+            Chính sách áp dụng với người học đang hưởng mức học bổng dưới 30%.
           </p>
         </div>
       </section>

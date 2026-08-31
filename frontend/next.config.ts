@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
     root: join(process.cwd(), ".."),
   },
   images: {
+    qualities: [75, 95],
     remotePatterns: [
       {
         protocol: "https",

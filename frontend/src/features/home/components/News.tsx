@@ -1,5 +1,50 @@
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
 import { categoryLabel, getNewsPosts } from "@/features/news/data";
-/** HOMEPAGE: đúng 5 bài đã xuất bản gần nhất từ News API. */
-export async function News(){const posts=await getNewsPosts({limit:5});return <section className="newsSection" id="news"><div className="newsHeading"><div><p>NEWS &amp; EVENTS · TIN TỨC &amp; SỰ KIỆN</p><h2>Dòng chảy<br/><em>Văn Lang.</em></h2></div><Link href="/news">Xem thêm <span>↗</span></Link></div><div className="newsGrid">{posts.map((post)=><article className="newsCard" key={post.id}><Link className="newsMedia" href={`/news/${post.slug}`}><Image src={post.coverImage||"/images/pages/news/content/banner.jpg"} unoptimized={post.coverImage?.startsWith("/uploads/")} alt={post.title} fill sizes="(max-width:900px) 100vw,33vw"/><span>{categoryLabel(post.category)}</span></Link><small>{post.publishedAt?new Date(post.publishedAt).toLocaleDateString("vi-VN"):"Mới cập nhật"}</small><h3>{post.title}</h3><Link href={`/news/${post.slug}`}>Đọc thêm →</Link></article>)}</div></section>}
+
+/** Ba bài đã xuất bản gần nhất trên trang chủ. */
+export async function News() {
+  const posts = await getNewsPosts({ limit: 3 });
+
+  return (
+    <section className="newsSection" id="news">
+      <div className="newsHeading">
+        <div>
+          <p>NEWS &amp; EVENTS</p>
+          <h2>
+            Tin tức <em>&amp; Sự kiện</em>
+          </h2>
+        </div>
+        <Link href="/news">
+          Xem thêm <span>↗</span>
+        </Link>
+      </div>
+      <div className="newsGrid">
+        {posts.map((post) => (
+          <article className="newsCard" key={post.id}>
+            <Link className="newsMedia" href={`/news/${post.slug}`}>
+              <Image
+                src={post.coverImage || "/images/pages/news/content/banner.jpg"}
+                unoptimized={post.coverImage?.startsWith("/uploads/")}
+                alt={post.title}
+                fill
+                sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw"
+              />
+              <span>{categoryLabel(post.category)}</span>
+            </Link>
+            <small>
+              {post.publishedAt
+                ? new Date(post.publishedAt).toLocaleDateString("vi-VN")
+                : "Mới cập nhật"}
+            </small>
+            <h3>{post.title}</h3>
+            {post.excerpt && <p>{post.excerpt}</p>}
+            <Link className="newsReadMore" href={`/news/${post.slug}`}>
+              Đọc bài viết <span>→</span>
+            </Link>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}

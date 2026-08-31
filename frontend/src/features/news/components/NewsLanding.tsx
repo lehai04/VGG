@@ -4,7 +4,7 @@ import Link from "@/i18n/components/LocalizedLink";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
-import { categoryLabel, newsCategories, type NewsPost } from "../data";
+import { categoryLabel, newsCategories, type NewsPagination, type NewsPost } from "../data";
 import styles from "./NewsLanding.module.css";
 
 export function NewsLanding({
@@ -12,16 +12,25 @@ export function NewsLanding({
   newestPostId,
   activeCategory,
   query,
+  pagination,
 }: {
   posts: NewsPost[];
   newestPostId?: string;
   activeCategory?: string;
   query?: string;
+  pagination: NewsPagination;
 }) {
   const categoryHref = (value?: string) => {
     const params = new URLSearchParams();
     if (value) params.set("category", value);
     if (query) params.set("q", query);
+    return `/news${params.size ? `?${params}` : ""}`;
+  };
+  const pageHref = (page: number) => {
+    const params = new URLSearchParams();
+    if (activeCategory) params.set("category", activeCategory);
+    if (query) params.set("q", query);
+    if (page > 1) params.set("page", String(page));
     return `/news${params.size ? `?${params}` : ""}`;
   };
   return (
@@ -84,7 +93,7 @@ export function NewsLanding({
             <p>{activeCategory ? categoryLabel(activeCategory) : "Tất cả bài viết"}</p>
             <h2 id="news-results">{query ? `Kết quả cho “${query}”` : "Bài viết mới nhất"}</h2>
           </div>
-          <span>{posts.length} bài viết</span>
+          <span>{pagination.total} bài viết</span>
         </header>
         {posts.length ? (
           <div className={styles.grid}>
@@ -128,6 +137,36 @@ export function NewsLanding({
             <p>Hãy thử từ khóa khác hoặc chọn “Tất cả” để xem những nội dung mới nhất.</p>
             <Link href="/news">Xem tất cả bài viết</Link>
           </div>
+        )}
+        {pagination.totalPages > 1 && (
+          <nav className={styles.pagination} aria-label="Phân trang tin tức">
+            <Link
+              className={pagination.page === 1 ? styles.disabledPage : undefined}
+              href={pageHref(Math.max(1, pagination.page - 1))}
+              aria-disabled={pagination.page === 1}
+            >
+              ‹ <span>Trước</span>
+            </Link>
+            {Array.from({ length: pagination.totalPages }, (_, index) => index + 1).map((page) => (
+              <Link
+                className={page === pagination.page ? styles.activePage : undefined}
+                href={pageHref(page)}
+                aria-current={page === pagination.page ? "page" : undefined}
+                key={page}
+              >
+                {page}
+              </Link>
+            ))}
+            <Link
+              className={
+                pagination.page === pagination.totalPages ? styles.disabledPage : undefined
+              }
+              href={pageHref(Math.min(pagination.totalPages, pagination.page + 1))}
+              aria-disabled={pagination.page === pagination.totalPages}
+            >
+              <span>Sau</span> ›
+            </Link>
+          </nav>
         )}
       </section>
       <SiteFooter />

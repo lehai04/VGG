@@ -6,16 +6,14 @@ function CurvedLabel({ children, pathId }: { children: string; pathId: string })
   return (
     <svg className="programmeArcLabel" viewBox="0 0 140 140" role="img" aria-label={children}>
       <defs>
-        {/* Đường quadratic hạ thấp để chữ bám sát viền tròn nhưng không bị cắt. */}
-        <path id={pathId} d="M 10 100 Q 70 164 130 100" />
+        {/* Đường cong đồng tâm với đáy chữ U, đủ rộng để nhãn không bị nén hoặc cắt. */}
+        <path id={pathId} d="M 7 101 Q 70 161 133 101" />
       </defs>
       <text>
         <textPath
           href={`#${pathId}`}
           startOffset="50%"
           textAnchor="middle"
-          textLength="116"
-          lengthAdjust="spacingAndGlyphs"
         >
           {children}
         </textPath>
@@ -92,7 +90,7 @@ export function ProgrammeCatalog() {
         <div className="programmeCatalogVisual">
           <Image
             src="/images/pages/home/sections/graduates.jpg"
-            alt="Học viên trong chương trình đào tạo sau đại học"
+            alt="Người học trong chương trình đào tạo sau đại học"
             fill
             sizes="(max-width: 900px) 100vw, 50vw"
             className="programmeCatalogImage"
@@ -104,7 +102,7 @@ export function ProgrammeCatalog() {
           <div className="programmeCatalogNumbers">
             <h2 className="programmeArcStat programmeArcStatMasters" id="programme-catalog-title">
               <strong>18</strong>
-              <CurvedLabel pathId="masters-arc">Chương trình Thạc sĩ 2026</CurvedLabel>
+              <CurvedLabel pathId="masters-arc">Chương trình Thạc sĩ</CurvedLabel>
             </h2>
             <div className="programmeArcStat programmeArcStatFields">
               <strong>05</strong>

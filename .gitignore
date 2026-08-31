@@ -13,3 +13,8 @@ backend/generated/
 backend/src/generated/
 backend/dist/
 frontend/public/uploads/
+database_backup*.sql
+*.sql.gz
+/backups/
+*.zip
+*.sha256

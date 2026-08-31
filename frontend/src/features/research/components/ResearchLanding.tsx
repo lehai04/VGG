@@ -15,7 +15,38 @@ const goals = [
   { title: "Đa dạng và quốc tế hóa", text: "Mở rộng hợp tác với các đối tác trong và ngoài nước thông qua dự án, hội nghị, hội thảo và trao đổi chuyên môn." },
 ] as const;
 
-const fields = ["Kinh doanh & Quản trị", "Công nghệ & Kỹ thuật", "Môi trường & Phát triển bền vững", "Du lịch & Dịch vụ", "Thiết kế & Truyền thông", "Khoa học xã hội & Nhân văn"] as const;
+const researchFields = [
+  {
+    name: "Quản trị kinh doanh",
+    image: "/images/pages/research/content/qtkd.avif",
+    href: "/research/cum-nghien-cuu",
+  },
+  {
+    name: "Công nghệ & Kỹ thuật",
+    image: "/images/pages/research/content/congnghekythuat.avif",
+    href: "/research/cum-nghien-cuu",
+  },
+  {
+    name: "Môi trường & Phát triển bền vững",
+    image: "/images/pages/research/content/moitruong.avif",
+    href: "/research/doi-moi-sang-tao",
+  },
+  {
+    name: "Dịch vụ & Du lịch",
+    image: "/images/pages/research/content/dulich.avif",
+    href: "/research/cum-nghien-cuu",
+  },
+  {
+    name: "Thiết kế & Truyền thông",
+    image: "/images/pages/research/content/thietke.avif",
+    href: "/research/cum-nghien-cuu",
+  },
+  {
+    name: "Khoa học Xã hội & Nhân văn",
+    image: "/images/pages/research/content/xhnv.avif",
+    href: "/research/cum-nghien-cuu",
+  },
+] as const;
 
 const researchLinks = [
   { label: "Tổng quan", href: "/research" }, { label: "Các cụm nghiên cứu", href: "/research/cum-nghien-cuu" },
@@ -74,11 +105,11 @@ export function ResearchLanding() {
           <span>Cộng đồng Viện Sau Đại học tiếp cận các vấn đề từ nhiều lĩnh vực để tạo ra góc nhìn liên ngành và những kết quả có giá trị cho xã hội.</span>
         </header>
         <div className={styles.fieldGrid}>
-          {fields.map((field, index) => (
-            <Link href={index === 2 ? "/research/doi-moi-sang-tao" : "/research/cum-nghien-cuu"} key={field} data-reveal>
-              <Image src={index % 2 ? "/images/pages/research/content/graduates.jpg" : "/images/pages/research/content/campus.jpg"} alt={field} fill sizes="(max-width: 700px) 100vw, 33vw" />
+          {researchFields.map((field, index) => (
+            <Link href={field.href} key={field.name} data-reveal>
+              <Image src={field.image} alt={field.name} fill sizes="(max-width: 700px) 100vw, 33vw" />
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{field}</h3>
+              <h3>{field.name}</h3>
               <ArrowUpRight />
             </Link>
           ))}
@@ -98,7 +129,7 @@ export function ResearchLanding() {
       <section className={styles.industryNetwork} aria-labelledby="industry-network-title">
         <div className={styles.industryRedRail} aria-hidden="true" />
         <figure className={styles.industryPhoto} data-reveal>
-          <Image src="/images/pages/research/content/graduates.jpg" alt="Người học Viện Sau Đại học kết nối với chuyên gia và doanh nghiệp" fill sizes="(max-width: 800px) 100vw, 34vw" />
+          <Image src="/images/pages/research/content/hoptac.JPG" alt="Đối tác doanh nghiệp và hợp tác chiến lược tại Viện Sau Đại học" fill sizes="(max-width: 900px) 100vw, 55vw" />
           <figcaption>Chương trình đào tạo<br />đảm bảo tính thực tiễn cao</figcaption>
         </figure>
         <div className={styles.industryContent} data-reveal>

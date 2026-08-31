@@ -29,7 +29,7 @@ export default function ProgrammeSearch() {
         <h2 id="programme-search-title">Tìm chương trình <em>phù hợp với bạn.</em></h2>
 
         <p>
-          Tìm kiếm chương trình Thạc sĩ và Tiến sĩ phù hợp với định hướng học tập và phát triển chuyên môn của bạn tại Văn Lang.
+          Tìm kiếm chương trình phù hợp với định hướng học tập và phát triển chuyên môn của bạn tại Văn Lang.
         </p>
       </div>
 

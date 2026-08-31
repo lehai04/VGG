@@ -7,9 +7,9 @@ const RESEARCH_IMAGE_SRC = "/images/pages/home/sections/campus.jpg";
 // Danh sách các hướng nghiên cứu nổi bật.
 const RESEARCH_LINKS = [
   { title:"Hướng nghiên cứu trọng điểm", description:"Khám phá các hướng nghiên cứu tập trung vào những vấn đề có ý nghĩa đối với xã hội, môi trường và sự phát triển bền vững.", linkLabel:"Khám phá lĩnh vực nghiên cứu", href:"/research/cum-nghien-cuu" },
-  { title:"Dự án & công bố", description:"Tổng hợp các dự án, công trình và kết quả nghiên cứu tiêu biểu được triển khai bởi giảng viên và học viên.", linkLabel:"Tìm hiểu hoạt động nghiên cứu", href:"/research/du-an" },
+  { title:"Dự án & công bố", description:"Tổng hợp các dự án, công trình và kết quả nghiên cứu tiêu biểu được triển khai bởi giảng viên và người học.", linkLabel:"Tìm hiểu hoạt động nghiên cứu", href:"/research/du-an" },
   { title:"Hợp tác nghiên cứu", description:"Kết nối nhà trường với doanh nghiệp, tổ chức và các đối tác học thuật trong nước và quốc tế.", linkLabel:"Xem cơ hội hợp tác", href:"/research/hop-tac-doanh-nghiep" },
-  { title:"Phòng thí nghiệm & cơ sở nghiên cứu", description:"Hệ thống không gian nghiên cứu và cơ sở vật chất hỗ trợ học tập, thử nghiệm và phát triển các ý tưởng mới.", linkLabel:"Tìm hiểu thêm", href:"/research/doi-moi-sang-tao" },
+  { title:"Cơ sở nghiên cứu", description:"Hệ thống không gian nghiên cứu và cơ sở vật chất hỗ trợ học tập, thử nghiệm và phát triển các ý tưởng mới.", linkLabel:"Tìm hiểu thêm", href:"/research/doi-moi-sang-tao" },
 ] as const;
 
 /** HOMEPAGE SECTION: Tổng quan nghiên cứu, đổi mới và các hướng nghiên cứu chính. */

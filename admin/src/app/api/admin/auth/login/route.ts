@@ -25,7 +25,15 @@ export async function POST(request: NextRequest) {
     return errorResponse(error instanceof Error && "issues" in error ? validationMessage(error as never) : "Dữ liệu không hợp lệ.", 400);
   }
 
-  const admin = await prisma.admin.findUnique({ where: { username: input.username }, include: { role: true } });
+  const admin = await prisma.admin.findFirst({
+    where: {
+      OR: [
+        { username: input.username },
+        { email: { equals: input.username, mode: "insensitive" } },
+      ],
+    },
+    include: { role: true },
+  });
   const passwordMatches = await verifyPassword(admin?.passwordHash || DUMMY_HASH, input.password).catch(() => false);
   const now = new Date();
 

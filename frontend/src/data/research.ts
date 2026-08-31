@@ -91,7 +91,7 @@ export const researchSubpages: readonly ResearchSubpageData[] = [
       },
       {
         index: "02",
-        title: "Học viên là đồng nghiên cứu",
+        title: "Người học là đồng nghiên cứu",
         body: "Chương trình thạc sĩ và tiến sĩ của Viện Sau Đại học tích hợp nghiên cứu thực tiễn vào chương trình học — người học không quan sát mà trực tiếp tham gia tạo ra tri thức mới.",
       },
       {
@@ -134,7 +134,7 @@ export const researchSubpages: readonly ResearchSubpageData[] = [
       {
         index: "03",
         title: "Hỗ trợ xuất bản",
-        body: "Từ viết đề xuất đến biên tập ngôn ngữ học thuật, Viện Sau Đại học cung cấp hỗ trợ toàn diện để giảng viên và học viên có thể công bố tốt nhất có thể.",
+        body: "Từ viết đề xuất đến biên tập ngôn ngữ học thuật, Viện Sau Đại học cung cấp hỗ trợ toàn diện để giảng viên và người học có thể công bố tốt nhất có thể.",
       },
     ],
     quote:
@@ -161,7 +161,7 @@ export const researchSubpages: readonly ResearchSubpageData[] = [
       {
         index: "01",
         title: "Viện Sau Đại học Annual Research Forum",
-        body: "Sự kiện học thuật lớn nhất năm của Viện Sau Đại học — tập hợp nhà nghiên cứu, doanh nghiệp, nhà hoạch định chính sách và học viên xung quanh các chủ đề nghiên cứu trọng điểm.",
+        body: "Sự kiện học thuật lớn nhất năm của Viện Sau Đại học — tập hợp nhà nghiên cứu, doanh nghiệp, nhà hoạch định chính sách và người học xung quanh các chủ đề nghiên cứu trọng điểm.",
       },
       {
         index: "02",
@@ -171,7 +171,7 @@ export const researchSubpages: readonly ResearchSubpageData[] = [
       {
         index: "03",
         title: "Workshop & Masterclass",
-        body: "Các workshop chuyên sâu về phương pháp nghiên cứu, kỹ năng viết học thuật và trình bày khoa học — được thiết kế đặc biệt cho học viên sau đại học.",
+        body: "Các workshop chuyên sâu về phương pháp nghiên cứu, kỹ năng viết học thuật và trình bày khoa học — được thiết kế đặc biệt cho người học sau đại học.",
       },
     ],
     quote:
@@ -198,17 +198,17 @@ export const researchSubpages: readonly ResearchSubpageData[] = [
       {
         index: "01",
         title: "Viện Sau Đại học Innovation Hub",
-        body: "Không gian co-working và lab thực hành — nơi học viên, giảng viên và doanh nghiệp cùng thử nghiệm ý tưởng, phát triển prototype và kết nối với nhà đầu tư.",
+        body: "Không gian co-working và lab thực hành — nơi người học, giảng viên và doanh nghiệp cùng thử nghiệm ý tưởng, phát triển prototype và kết nối với nhà đầu tư.",
       },
       {
         index: "02",
         title: "Design Thinking & Lean Research",
-        body: "Phương pháp luận đổi mới được tích hợp vào chương trình học — học viên học cách xác định vấn đề thực sự, thử nghiệm nhanh và lặp để đến giải pháp hiệu quả nhất.",
+        body: "Phương pháp luận đổi mới được tích hợp vào chương trình học — người học học cách xác định vấn đề thực sự, thử nghiệm nhanh và lặp để đến giải pháp hiệu quả nhất.",
       },
       {
         index: "03",
         title: "Startup Launchpad",
-        body: "Chương trình ươm tạo dành riêng cho học viên Viện Sau Đại học — cung cấp mentorship, kết nối đối tác và cơ hội trình bày trước cộng đồng startup và quỹ đầu tư.",
+        body: "Chương trình ươm tạo dành riêng cho người học Viện Sau Đại học — cung cấp mentorship, kết nối đối tác và cơ hội trình bày trước cộng đồng startup và quỹ đầu tư.",
       },
     ],
     quote:
@@ -244,8 +244,8 @@ export const researchSubpages: readonly ResearchSubpageData[] = [
       },
       {
         index: "03",
-        title: "Học viên là cầu nối",
-        body: "Nhiều học viên Viện Sau Đại học đang làm việc tại doanh nghiệp đối tác — mang tri thức học thuật vào thực tiễn và mang thách thức thực tiễn trở lại phòng học.",
+        title: "Người học là cầu nối",
+        body: "Nhiều người học Viện Sau Đại học đang làm việc tại doanh nghiệp đối tác — mang tri thức học thuật vào thực tiễn và mang thách thức thực tiễn trở lại phòng học.",
       },
     ],
     quote:

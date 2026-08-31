@@ -5,10 +5,10 @@ import { contactItems } from "./footerData";
 import { FooterIcon } from "./FooterIcon";
 import { useLocale } from "@/i18n/components/LocaleProvider";
 
-/** Hàng trên cùng footer: logo + email / đào tạo / tuyển sinh / call center. */
+/** Hàng trên cùng footer: logo + email / điện thoại / Hotline-Zalo. */
 export function FooterContact() {
   const { locale } = useLocale();
-  const englishLabels = ["Email", "Academic Affairs", "Admissions", "Student Support (Call Center)"];
+  const englishLabels = ["Email", "Phone", "Hotline/Zalo"];
   return (
     <section className="university-footer-contact">
       <div className="university-footer-logo">

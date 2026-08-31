@@ -37,7 +37,7 @@ export function SubpageDetail({ section, slug }: { section: string; slug: string
       <section className="detail-facts" data-reveal>
         <article><strong>01</strong><h3>Thông tin minh bạch</h3><p>Nội dung được tổ chức mạch lạc để bạn nhanh chóng xác định bước tiếp theo.</p></article>
         <article><strong>02</strong><h3>Trải nghiệm linh hoạt</h3><p>Lộ trình phù hợp với người học đang phát triển chuyên môn và sự nghiệp.</p></article>
-        <article><strong>03</strong><h3>Kết nối thực tiễn</h3><p>Tiếp cận giảng viên, chuyên gia, doanh nghiệp và mạng lưới học viên Viện Sau Đại học.</p></article>
+        <article><strong>03</strong><h3>Kết nối thực tiễn</h3><p>Tiếp cận giảng viên, chuyên gia, doanh nghiệp và mạng lưới người học Viện Sau Đại học.</p></article>
       </section>
       <section className="detail-quote" data-reveal><p>Viện Sau Đại học / PERSPECTIVE</p><blockquote>“Tri thức chỉ thật sự có ý nghĩa khi giúp con người tiến xa hơn và tạo ra thay đổi tích cực.”</blockquote></section>
       <section className="detail-next" data-reveal>

@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
+import { localizedRedirectPath } from "@/lib/serverLocale";
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  redirect(`/admissions#${slug}`);
+  redirect(await localizedRedirectPath(`/admissions#${slug}`));
 }
