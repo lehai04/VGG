@@ -449,6 +449,10 @@ main:global(#main-content).page .financeCopy p {
   object-fit: cover;
   transition: transform 0.55s var(--motion-ease);
 }
+
+.financeRow:nth-child(2) .financeMedia img {
+  object-position: center top;
+}
 .financeRow:hover .financeMedia img {
   transform: scale(1.025);
 }
