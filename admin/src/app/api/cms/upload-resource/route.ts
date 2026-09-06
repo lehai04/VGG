@@ -1,11 +1,11 @@
 import { getCurrentAdmin } from "@/lib/auth/session";
-import { uploadResourceFile } from "@/lib/cloudinary";
+import { uploadResourceFile } from "@/lib/storage";
 import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
 const MAX_FILE_SIZE_MB = Number(
-  process.env.CLOUDINARY_MAX_RESOURCE_FILE_MB ?? 10,
+  process.env.STORAGE_MAX_RESOURCE_FILE_MB ?? 25,
 );
 const MAX_FILE_SIZE = MAX_FILE_SIZE_MB * 1024 * 1024;
 const allowedTypes: Record<string, string[]> = {
@@ -91,7 +91,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         success: false,
-        message: `File có dung lượng ${(file.size / 1024 / 1024).toFixed(1)} MB, vượt giới hạn ${MAX_FILE_SIZE_MB} MB của Cloudinary.`,
+        message: `File có dung lượng ${(file.size / 1024 / 1024).toFixed(1)} MB, vượt giới hạn ${MAX_FILE_SIZE_MB} MB.`,
       },
       { status: 413 },
     );
@@ -116,17 +116,17 @@ export async function POST(request: Request) {
     );
 
   try {
-    const uploaded = await uploadResourceFile(buffer, file.name);
+    const uploaded = await uploadResourceFile(buffer, file.name, canonicalTypes[extension]);
     return NextResponse.json({
       success: true,
       data: {
         url: uploaded.url,
-        publicId: uploaded.publicId,
+        objectKey: uploaded.objectKey,
         fileName: file.name,
         fileType: canonicalTypes[extension],
         fileSize: file.size,
       },
-      message: "Đã tải file lên Cloudinary.",
+      message: "Đã tải file lên kho nội bộ.",
     });
   } catch (error) {
     console.error("Resource upload failed", error);
@@ -135,7 +135,7 @@ export async function POST(request: Request) {
         ? error.message
         : typeof error === "object" && error && "message" in error
           ? String(error.message)
-          : "Cloudinary không phản hồi.";
+          : "Kho lưu trữ nội bộ không phản hồi.";
     return NextResponse.json(
       { success: false, message: `Tải file thất bại: ${detail}` },
       { status: 502 },

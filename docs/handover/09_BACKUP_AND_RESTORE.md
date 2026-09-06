@@ -28,12 +28,31 @@ Thêm dòng lệnh sau vào cuối file (tự động chạy lúc 02:00 sáng v�
 
 ---
 
-## 2. Sao Lưu Tệp Tin & Media (Media & File Backup)
+## 2. Sao Lưu MinIO Media
 
-Nếu hệ thống lưu trữ tệp tin đính kèm cục bộ (PDF biểu mẫu, hình ảnh bài viết):
+Ảnh bài viết và tài liệu được lưu trong volume MinIO. Sao lưu database **không bao gồm** các file này; IT phải sao lưu cả hai trong cùng một lịch:
 ```bash
-# Nén toàn bộ thư mục upload của Frontend và Backend
-tar -czvf /var/backups/vgg-platform/media_backup_$(date +%Y%m%d_%H%M%S).tar.gz /var/www/vgg-platform/frontend/public/uploads /var/www/vgg-platform/backend/uploads 2>/dev/null || true
+cd /var/www/vgg-platform
+MINIO_CONTAINER=$(docker compose ps -q minio)
+docker run --rm --volumes-from "$MINIO_CONTAINER" \
+  -v /var/backups/vgg-platform:/backup alpine \
+  tar -czf /backup/minio_backup_$(date +%Y%m%d_%H%M%S).tar.gz -C /data .
+```
+
+Kiểm tra file backup bằng `tar -tzf <file>`. Nên lưu một bản sao trên NAS/backup server nội bộ khác máy chủ ứng dụng.
+
+### Phục hồi MinIO
+
+> Thao tác này ghi vào kho media. Dừng admin và backend, đồng thời chụp snapshot volume hiện tại trước khi phục hồi.
+
+```bash
+cd /var/www/vgg-platform
+docker compose stop minio
+MINIO_CONTAINER=$(docker compose ps -aq minio)
+docker run --rm --volumes-from "$MINIO_CONTAINER" \
+  -v /var/backups/vgg-platform:/backup alpine \
+  sh -c 'rm -rf /data/* && tar -xzf /backup/minio_backup_YYYYMMDD_HHMMSS.tar.gz -C /data'
+docker compose start minio
 ```
 
 ---
@@ -88,4 +107,4 @@ curl -f http://127.0.0.1:4000/health
 * **Bản sao lưu hàng ngày (Daily):** Giữ lại trong vòng 7 - 14 ngày gần nhất.
 * **Bản sao lưu hàng tuần (Weekly):** Giữ lại 4 tuần gần nhất.
 * **Bản sao lưu hàng tháng (Monthly):** Giữ lại 3 tháng gần nhất.
-* **Lưu trữ ngoài máy chủ (Off-site Backup):** Khuyến khích IT định kỳ đồng bộ các file `.sql.gz` ra máy chủ lưu trữ chuyên dụng hoặc Cloud Storage.
+* **Lưu trữ ngoài máy chủ ứng dụng:** Đồng bộ cả `.sql.gz` và `minio_backup_*.tar.gz` sang NAS hoặc máy chủ backup nội bộ riêng.

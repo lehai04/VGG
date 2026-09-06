@@ -17,7 +17,7 @@
 - **Core:** React 19.2.8, TypeScript 5.9.3
 - **CSS Strategy:** Pure CSS & CSS Modules (no Tailwind CSS, custom design tokens in `globals.css` & `home.css`)
 - **Icons:** `lucide-react` (v1.33.0)
-- **Image Optimization:** `next/image` with `sharp` (v0.35.3) & remote patterns for Cloudinary / Unsplash
+- **Image Optimization:** `next/image` with `sharp` (v0.35.3); CMS media được phục vụ qua proxy nội bộ `/api/media/*`
 - **State & Form Management:** React standard hooks (`useState`, `useMemo`, `useRef`), Native `FormData`
 - **I18n:** Custom locale middleware rewrite (`/vi`, `/en`), `LocaleProvider`, `LocalizedLink`
 
@@ -26,7 +26,7 @@
 - **Core:** React 19.2.8, TypeScript 5.9.3
 - **ORM / DB Access:** Prisma Client 7.9.1 with `@prisma/adapter-pg` (PostgreSQL)
 - **Auth Engine:** Argon2id password hashing, opaque session token in HTTP-only `vgg_admin_session` cookie
-- **CMS Document & Asset Processing:** `mammoth` (Word .docx parser), `sanitize-html`, Cloudinary SDK (`cloudinary`)
+- **CMS Document & Asset Processing:** `mammoth` (Word .docx parser), `sanitize-html`, MinIO SDK (`minio`)
 
 ### Backend API Service (`backend/`)
 - **Runtime:** Node.js (>=22.13.0)
@@ -105,7 +105,7 @@ vgg-demo-vercel/
 │   │   │   ├── admin/        # /admin/login, /admin/change-password, /admin/(protected)/*
 │   │   │   └── api/          # /api/admin/auth/*, /api/admin/users/*, /api/cms/*, /api/cms/upload-*
 │   │   ├── components/       # Admin UI modules (cms, users, consultations, dashboard, layout)
-│   │   └── lib/              # Auth, session, RBAC, DB client, Cloudinary helpers
+│   │   └── lib/              # Auth, session, RBAC, DB client, MinIO storage helpers
 │   └── prisma/               # Admin Prisma schema and config
 ├── backend/                  # Fastify Backend API Service (Port 4000)
 │   ├── src/
@@ -145,7 +145,7 @@ vgg-demo-vercel/
 ### Public Frontend API Routes
 - `POST /api/consultations`: Proxy forwards consultation form submissions to backend `/api/public/consultations`.
 - `POST /api/analytics/visit`: Proxy forwards page visit logs to backend `/api/public/visits` (safely degrades on error).
-- `GET /api/resources/file`: Secure file proxy to download or stream Cloudinary PDF/document assets.
+- `GET /api/resources/file`: Secure file proxy to download or stream tài liệu từ MinIO nội bộ.
 
 ### Admin Portal Routes (`admin/`)
 - `/admin/login`: Admin authentication page.
@@ -153,7 +153,7 @@ vgg-demo-vercel/
 - `/admin/dashboard`: Metrics & chart analytics (active staff, visits, consultations, applications).
 - `/admin/users`: User management & RBAC (create staff, lock/unlock, reset password, change roles).
 - `/admin/news`: News article CMS (Rich text editor, Word docx import, cover image upload, publish/draft/archive).
-- `/admin/resources`: Resource document CMS (upload PDF/DOC/XLS to Cloudinary, category management).
+- `/admin/resources`: Resource document CMS (upload PDF/DOC/XLS vào MinIO nội bộ, category management).
 - `/admin/consultations`: Consultation CRM (view leads, update status NEW / CONTACTING / COMPLETED, assign staff).
 - `/admin/applications`: Student application overview.
 - `/admin/website`: Site content key-value JSON CMS.
@@ -264,7 +264,7 @@ Defined in `backend/prisma/schema.prisma` with models:
 7. `ConsultationNote`: Internal notes per consultation lead.
 8. `ConsultationHistory`: Status transition audit trail per consultation lead.
 9. `NewsPost`: Articles with localized content, status (`DRAFT`, `PUBLISHED`, `ARCHIVED`), categories, and sanitized HTML.
-10. `ResourceFile`: Digital documents with metadata (issue date, issuing organization, document number), Cloudinary URL, file type, file size.
+10. `ResourceFile`: Digital documents with metadata (issue date, issuing organization, document number), internal media URL, file type, file size.
 11. `ResourceCategory`: Categories grouping resources.
 12. `SiteContent`: Key-value JSON CMS store for localized page blocks.
 13. `PageVisit`: Best-effort page view analytics tracking path, locale, visitor ID, timestamp.
@@ -291,7 +291,7 @@ Defined in `backend/prisma/schema.prisma` with models:
 `User fills Form` ➔ `Client POST /api/consultations` (Honeypot + Validation) ➔ `Frontend Next.js Route` ➔ `Internal Fetch POST http://localhost:4000/api/public/consultations` ➔ `Zod Validation` ➔ `Prisma Database Transaction (Consultation + ConsultationHistory + AuditLog)` ➔ `Success Response (201)` ➔ `UI Success State displayed`.
 
 ### B. Admin News / Resource Publishing
-`Admin Author in Admin UI` ➔ `Word .docx Upload or Manual RichText Form` ➔ `Mammoth .docx parse & Cloudinary image upload` ➔ `HTML Sanitization (sanitize-html)` ➔ `Admin POST /api/cms/news` ➔ `Backend /api/admin/news` (Session cookie auth + `news.create` check) ➔ `Prisma NewsPost created` ➔ `Available to Public via Next.js ISR/SSR on /news`.
+`Admin Author in Admin UI` ➔ `Word .docx Upload or Manual RichText Form` ➔ `Mammoth .docx parse & MinIO image upload` ➔ `HTML Sanitization (sanitize-html)` ➔ `Admin POST /api/cms/news` ➔ `Backend /api/admin/news` (Session cookie auth + `news.create` check) ➔ `Prisma NewsPost created` ➔ `Available to Public via Next.js ISR/SSR on /news`.
 
 ---
 
@@ -301,7 +301,7 @@ Defined in `backend/prisma/schema.prisma` with models:
   - Hero & Section Imagery: Structured per route in `frontend/public/images/pages/<feature>/content/` and `hero/`
   - Banner Video: `frontend/public/video/video-banner.webm`
 - **Cloud-hosted Assets:**
-  - Remote Cloudinary domain: `res.cloudinary.com` configured in `next.config.ts` remotePatterns.
+  - Media CMS: đường dẫn nội bộ `/api/media/*`, proxy an toàn tới bucket MinIO private.
   - Unsplash allowed in remotePatterns.
 
 ---
@@ -342,7 +342,7 @@ Defined in `backend/prisma/schema.prisma` with models:
 | `ADMIN_APP_URL` | Admin origin for CORS | `backend`, `admin` |
 | `BACKEND_INTERNAL_URL` | Internal backend URL for Next.js server-side fetches | `frontend`, `admin` |
 | `ALLOWED_ORIGINS` | Comma-separated list of allowed origins | `frontend` |
-| `CLOUDINARY_URL` / `CLOUDINARY_*` | Cloudinary API keys for image & file storage | `admin` |
+| `STORAGE_*` | Endpoint, bucket và credential MinIO nội bộ | `admin`, `backend` |
 | `INITIAL_ADMIN_USERNAME` | Bootstrap Super Admin username | `backend/prisma/bootstrap-admin.ts` |
 | `INITIAL_ADMIN_PASSWORD` | Bootstrap Super Admin password | `backend/prisma/bootstrap-admin.ts` |
 | `INITIAL_ADMIN_NAME` | Bootstrap Super Admin display name | `backend/prisma/bootstrap-admin.ts` |

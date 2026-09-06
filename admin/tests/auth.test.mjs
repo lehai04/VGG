@@ -107,3 +107,13 @@ test("password reset token security: cryptographically strong, hashed in DB, exp
   assert.equal(isValidToken(expiredExpiresAt, null), false, "Expired token is rejected");
   assert.equal(isValidToken(validExpiresAt, new Date()), false, "Used token is rejected (single-use)");
 });
+
+test("CMS media uses private on-premise MinIO instead of Cloudinary", async () => {
+  const pkg = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
+  assert.equal(pkg.dependencies.cloudinary, undefined);
+  assert.ok(pkg.dependencies.minio);
+  const storage = await readFile(new URL("../src/lib/storage.ts", import.meta.url), "utf8");
+  assert.match(storage, /STORAGE_ENDPOINT/);
+  assert.match(storage, /\/api\/media\//);
+  assert.doesNotMatch(storage, /cloudinary/i);
+});

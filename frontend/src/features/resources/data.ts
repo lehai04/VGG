@@ -1,3 +1,5 @@
+import { demoResources } from "./demo-resources";
+
 export type ResourceCategory = { id: string; name: string };
 export type PublicResource = {
   id: string;
@@ -30,6 +32,7 @@ export const documentTypeLabels: Record<string, string> = {
   GUIDELINE: "Hướng dẫn",
 };
 export async function getPublicResources(): Promise<PublicResource[]> {
+  if (process.env.VGG_DEMO_RESOURCES !== "false") return demoResources;
   const backend = process.env.BACKEND_INTERNAL_URL ?? process.env.NEXT_PUBLIC_BACKEND_URL;
   if (!backend) return [];
   try {

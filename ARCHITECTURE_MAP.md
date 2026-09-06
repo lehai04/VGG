@@ -20,7 +20,7 @@ flowchart TD
         AdminUI["Admin UI: /admin/*\n(Dashboard, News, Resources,\nConsultations, Users, Website)"]
         AdminAuthApi["Admin Auth Route Handlers\n(/api/admin/auth/*, /api/admin/users/*)"]
         AdminCmsProxy["Admin CMS Proxy\n(/api/cms/[...path])"]
-        WordUpload["Word Import & File Upload\n(Mammoth + Cloudinary SDK)"]
+        WordUpload["Word Import & File Upload\n(Mammoth + MinIO SDK)"]
     end
 
     subgraph BE ["Backend Service (Fastify - Port 4000)"]
@@ -33,7 +33,7 @@ flowchart TD
     subgraph DB ["Data & Storage Layer"]
         PG[("PostgreSQL 17 Database\n(Prisma ORM)")]
         Redis[("Redis 7 (Cache/Queue)")]
-        Cloudinary[("Cloudinary Media Cloud\n(Images / PDF / Documents)")]
+        MinIO[("MinIO On-Premise Storage\n(Images / PDF / Documents)")]
     end
 
     Client -->|HTTP 3000| Proxy
@@ -47,7 +47,7 @@ flowchart TD
     AdminUI --> WordUpload
 
     AdminAuthApi -->|Direct Prisma Query| PG
-    WordUpload -->|Upload Files| Cloudinary
+    WordUpload -->|Upload Files| MinIO
     AdminCmsProxy -->|Internal HTTP with Cookie| FastifyApp
 
     FastifyApp --> AuthMod
@@ -135,7 +135,7 @@ sequenceDiagram
 ```mermaid
 flowchart TD
     subgraph AdminAction ["Admin CMS Publishing"]
-        A1["Admin writes article or uploads .docx"] --> A2["Mammoth extracts HTML & Cloudinary uploads embedded images"]
+        A1["Admin writes article or uploads .docx"] --> A2["Mammoth extracts HTML & MinIO stores embedded images"]
         A2 --> A3["Sanitize HTML (sanitize-html)"]
         A3 --> A4["Admin submits POST /api/admin/news (Status: PUBLISHED / DRAFT)"]
         A4 --> A5["Fastify Backend validates with Zod & generates unique slug"]
@@ -144,7 +144,7 @@ flowchart TD
 
     subgraph ResourcePublishing ["Resource Document Upload"]
         R1["Admin uploads PDF/DOC/XLS"] --> R2["Validate file signature & size <= 10MB"]
-        R2 --> R3["Upload to Cloudinary (raw file type)"]
+        R2 --> R3["Upload to private MinIO bucket"]
         R3 --> R4["Post metadata to /api/admin/resources"]
         R4 --> R5["Prisma saves to resource_files table"]
     end

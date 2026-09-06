@@ -49,7 +49,7 @@
 | **Database & ORM**| PostgreSQL 17, Prisma ORM 7.9.1 (`@prisma/adapter-pg`) | Lưu trữ dữ liệu quan hệ, quan hệ toàn vẹn, indexing |
 | **Authentication** | Argon2id (m=64MB, t=3, p=1), SHA-256 Session Tokens, HttpOnly Cookies | Bảo mật đăng nhập, phiên làm việc an toàn |
 | **Cache & Queue** | Redis 7 (tùy chọn qua Docker Compose) | Cache session và hàng đợi xử lý |
-| **File Storage** | Local Persistent Storage / S3-compatible (MinIO/Cloudinary) | Lưu trữ hình ảnh và tệp tài liệu biểu mẫu |
+| **File Storage** | MinIO on-premise (S3-compatible) | Lưu trữ hình ảnh và tệp tài liệu biểu mẫu trong hạ tầng trường |
 
 ---
 

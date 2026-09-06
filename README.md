@@ -47,7 +47,7 @@ Toàn bộ tài liệu chi tiết cho IT / DevOps được lưu trữ tại thư
 ## 2. Hướng dẫn Khởi động Nhanh (Local Development)
 
 ```bash
-# Bước 1: Khởi động Cơ sở dữ liệu
+# Bước 1: Khởi động PostgreSQL và MinIO nội bộ
 docker compose up -d
 
 # Bước 2: Cài đặt Dependencies

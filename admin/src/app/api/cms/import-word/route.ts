@@ -1,5 +1,5 @@
 import { getCurrentAdmin } from "@/lib/auth/session";
-import { uploadNewsImage } from "@/lib/cloudinary";
+import { uploadNewsImage } from "@/lib/storage";
 import mammoth from "mammoth";
 import { NextResponse } from "next/server";
 import sanitizeHtml from "sanitize-html";
@@ -27,7 +27,8 @@ export async function POST(request: Request) {
       styleMap: ["p[style-name='Title'] => h2:fresh", "p[style-name='Heading 1'] => h2:fresh", "p[style-name='Heading 2'] => h3:fresh", "p[style-name='Heading 3'] => h4:fresh"],
       convertImage: mammoth.images.imgElement(async (image) => {
         const buffer = Buffer.from(await image.read("base64"), "base64");
-        const uploaded = await uploadNewsImage(buffer, "vgg/news/word");
+        const extension = image.contentType?.split("/")[1]?.replace("jpeg", "jpg") || "png";
+        const uploaded = await uploadNewsImage(buffer, "news/word", extension);
         return { src: uploaded.url };
       }),
     },

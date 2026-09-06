@@ -35,7 +35,7 @@
    - Cập nhật `compose.yaml` sử dụng cú pháp `${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}` để bắt buộc cấu hình mật khẩu mạnh tại môi trường production.
 3. **Tinh Gọn Docker Compose Production:**
    - Loại bỏ các dịch vụ không sử dụng trong mã nguồn hiện tại (Redis, MinIO) khỏi production compose, chỉ giữ lại PostgreSQL 17.
-   - Xác định rõ Cloudinary là dịch vụ lưu trữ media/PDF chính thức cho CMS.
+   - MinIO on-premise là kho lưu trữ media/PDF chính thức cho CMS.
 4. **Chuẩn Hóa Lệnh Sao Lưu & Kiểm Tra Sức Khỏe:**
    - Chuyển toàn bộ câu lệnh backup sang dạng portable: `docker compose exec -T postgres ...`.
    - Chuẩn hóa lệnh healthcheck thành: `curl -f http://127.0.0.1:4000/health`.
@@ -59,7 +59,7 @@
 ### B. Cổng Quản Trị Nội Dung & Vận Hành (Admin CMS Portal)
 1. **Bảng Điều Khiển Tổng Quan (Dashboard Analytics):** Thống kê số lượng lượt truy cập 30 ngày, số hồ sơ tư vấn mới, bài viết và nhân sự hoạt động.
 2. **Quản Lý Bài Viết & Sự Kiện (News CMS):** Soạn thảo bài viết, hỗ trợ nhập từ file Word (.docx), bộ lọc lọc mã độc HTML (`sanitize-html`), quản lý trạng thái Bản nháp / Đã xuất bản / Lưu trữ.
-3. **Quản Lý Tài Liệu Biểu Mẫu (Resources CMS):** Phân loại văn bản chỉ đạo, văn bản thực thi, brochure, quy chế đào tạo, tải lên và quản lý tệp PDF qua Cloudinary.
+3. **Quản Lý Tài Liệu Biểu Mẫu (Resources CMS):** Phân loại văn bản chỉ đạo, văn bản thực thi, brochure, quy chế đào tạo, tải lên và quản lý tệp PDF qua MinIO nội bộ.
 4. **Quản Lý Lịch Tư Vấn Tuyển Sinh (Consultations):** Tiếp nhận đơn từ website công khai, phân công cán bộ phụ trách, cập nhật trạng thái xử lý (*Mới*, *Đang liên hệ*, *Đã hoàn thành*) và lưu vết lịch sử tương tác.
 5. **Hệ Thống Thông Báo Thời Gian Thực (Realtime Activity Notifications):** Chuông thông báo tự động cập nhật mọi thao tác quản trị viên.
 

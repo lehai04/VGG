@@ -1,3 +1,5 @@
+import { getDemoNewsPosts } from "./demo-posts";
+
 export const newsCategories = [
   { value: "ADMISSIONS", label: "Tuyển sinh" },
   { value: "VAN_LANG_UNIVERSITY", label: "Trường Đại học Văn Lang" },
@@ -15,6 +17,7 @@ export type NewsPost = {
   coverImage: string | null;
   publishedAt: string | null;
   authorName: string | null;
+  externalUrl?: string;
   author?: { fullName: string };
 };
 export type NewsPagination = { page: number; limit: number; total: number; totalPages: number };
@@ -24,6 +27,9 @@ export function categoryLabel(category: string) {
 export async function getNewsPosts(
   options: { category?: string; limit?: number; q?: string } = {},
 ) {
+  if (process.env.VGG_DEMO_NEWS !== "false") {
+    return getDemoNewsPosts(options).slice(0, options.limit ?? 30);
+  }
   const backend = process.env.BACKEND_INTERNAL_URL;
   if (!backend) return [];
   try {
@@ -46,6 +52,13 @@ export async function getPaginatedNewsPosts(options: {
   page: number;
   q?: string;
 }) {
+  if (process.env.VGG_DEMO_NEWS !== "false") {
+    const posts = getDemoNewsPosts(options);
+    return {
+      posts: posts.slice((options.page - 1) * options.limit, options.page * options.limit),
+      pagination: { page: options.page, limit: options.limit, total: posts.length, totalPages: Math.ceil(posts.length / options.limit) },
+    };
+  }
   const backend = process.env.BACKEND_INTERNAL_URL;
   const empty = {
     posts: [] as NewsPost[],

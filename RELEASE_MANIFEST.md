@@ -36,10 +36,10 @@ Các file migration nằm tại `backend/prisma/migrations/` và được tự �
 
 - **PostgreSQL Database:** `DATABASE_URL=postgresql://vgg:<GENERATE_STRONG_DATABASE_PASSWORD>@127.0.0.1:5433/vgg`
 - **Môi trường thực thi:** `NODE_ENV=production`
-- **Cloudinary Storage (Bắt buộc cho CMS upload ảnh/PDF):**
-  - `CLOUDINARY_CLOUD_NAME=<YOUR_CLOUDINARY_CLOUD_NAME>`
-  - `CLOUDINARY_API_KEY=<YOUR_CLOUDINARY_API_KEY>`
-  - `CLOUDINARY_API_SECRET=<YOUR_CLOUDINARY_API_SECRET>`
+- **MinIO nội bộ (Bắt buộc cho CMS upload ảnh/PDF):**
+  - `STORAGE_ENDPOINT=127.0.0.1`
+  - `STORAGE_BUCKET=vgg-media`
+  - `STORAGE_ACCESS_KEY` / `STORAGE_SECRET_KEY` (tài khoản ứng dụng, không dùng MinIO root)
 - **Khởi tạo Super Admin:**
   - `INITIAL_ADMIN_USERNAME=admin`
   - `INITIAL_ADMIN_PASSWORD=<INITIAL_SUPER_ADMIN_PASSWORD>`

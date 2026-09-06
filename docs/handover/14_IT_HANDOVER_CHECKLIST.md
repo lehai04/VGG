@@ -22,7 +22,7 @@
 - [ ] Đã tạo file `.env` (root) với cấu hình mật khẩu PostgreSQL mạnh cho Docker.
 - [ ] Đã tạo file `backend/.env` với mật khẩu Database và thông tin khởi tạo Super Admin an toàn.
 - [ ] Đã tạo file `frontend/.env.local` với cấu hình URL nội bộ và allowed origins.
-- [ ] Đã tạo file `admin/.env.local` với cấu hình chuỗi kết nối Database, backend URL và API Cloudinary.
+- [ ] Đã tạo file `admin/.env.local` với cấu hình Database, backend URL và credential MinIO nội bộ.
 - [ ] Đã xác nhận không có bất kỳ secret/mật khẩu mặc định nào bị để lộ.
 
 ---

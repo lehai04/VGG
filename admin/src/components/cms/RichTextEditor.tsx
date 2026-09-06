@@ -44,31 +44,92 @@ export function RichTextEditor({ value, onChange, onImportedExcerpt }: Props) {
     finally { setImporting(false); event.target.value = ""; }
   }
 
-  async function uploadClipboardImage(file: File) {
-    setUploadingImage(true); setNotice("Đang tải ảnh vừa dán lên Cloudinary…");
+  async function uploadImageFile(file: File) {
     const body = new FormData(); body.append("file", file);
+    const response = await fetch("/api/cms/upload-image", { method: "POST", body });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.message || "Không thể tải ảnh vừa dán.");
+    return result.data.url as string;
+  }
+
+  async function uploadClipboardImage(file: File) {
+    setUploadingImage(true); setNotice("Đang tải ảnh vừa dán lên kho nội bộ…");
     try {
-      const response = await fetch("/api/cms/upload-image", { method: "POST", body });
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.message || "Không thể tải ảnh vừa dán.");
-      run("insertImage", result.data.url);
+      run("insertImage", await uploadImageFile(file));
       setNotice("Đã tải và chèn ảnh từ clipboard.");
     } catch (error) { setNotice(error instanceof Error ? error.message : "Không thể tải ảnh vừa dán."); }
     finally { setUploadingImage(false); }
   }
 
-  function handlePaste(event: ClipboardEvent<HTMLDivElement>) {
+  async function handlePaste(event: ClipboardEvent<HTMLDivElement>) {
     const html = event.clipboardData.getData("text/html");
-    const image = Array.from(event.clipboardData.files).find((file) => file.type.startsWith("image/"));
-    if (image && !html) {
+    const images = Array.from(event.clipboardData.files).filter((file) => file.type.startsWith("image/"));
+    if (images.length > 0 && !html) {
       event.preventDefault();
-      void uploadClipboardImage(image);
+      void uploadClipboardImage(images[0]);
       return;
     }
-    window.setTimeout(() => {
+    if (!html) {
+      window.setTimeout(() => onChange(editorRef.current?.innerHTML ?? ""), 0);
+      return;
+    }
+
+    event.preventDefault();
+    const selection = window.getSelection();
+    const savedRange = selection?.rangeCount ? selection.getRangeAt(0).cloneRange() : null;
+    const documentFragment = new DOMParser().parseFromString(html, "text/html");
+    documentFragment.querySelectorAll("script, style, link, meta, iframe, object, embed").forEach((node) => node.remove());
+    documentFragment.querySelectorAll("*").forEach((node) => {
+      Array.from(node.attributes).forEach((attribute) => {
+        if (attribute.name.toLowerCase().startsWith("on")) node.removeAttribute(attribute.name);
+      });
+    });
+
+    const pastedImages = Array.from(documentFragment.querySelectorAll("img"));
+    pastedImages.forEach((image) => {
+      const srcset = image.getAttribute("srcset")?.split(",")[0]?.trim().split(/\s+/)[0];
+      const source = image.getAttribute("src") || image.getAttribute("data-src") || image.getAttribute("data-original") || image.getAttribute("data-lazy-src") || srcset;
+      if (source) image.setAttribute("src", source);
+      ["srcset", "data-src", "data-original", "data-lazy-src", "loading"].forEach((name) => image.removeAttribute(name));
+    });
+
+    setUploadingImage(true);
+    setNotice("Đang xử lý nội dung và tải ảnh vừa dán…");
+    try {
+      for (let index = 0; index < pastedImages.length; index += 1) {
+        const image = pastedImages[index];
+        const clipboardFile = images[index];
+        if (clipboardFile) {
+          image.setAttribute("src", await uploadImageFile(clipboardFile));
+          continue;
+        }
+        const source = image.getAttribute("src") ?? "";
+        if (source.startsWith("data:image/")) {
+          const blob = await (await fetch(source)).blob();
+          const extension = blob.type.split("/")[1] || "png";
+          image.setAttribute("src", await uploadImageFile(new File([blob], `clipboard.${extension}`, { type: blob.type })));
+        }
+      }
+      for (let index = pastedImages.length; index < images.length; index += 1) {
+        const image = documentFragment.createElement("img");
+        image.src = await uploadImageFile(images[index]);
+        image.alt = "Ảnh trong nội dung bài viết";
+        documentFragment.body.append(image);
+      }
+
+      editorRef.current?.focus();
+      if (savedRange && selection) {
+        selection.removeAllRanges();
+        selection.addRange(savedRange);
+      }
+      document.execCommand("insertHTML", false, documentFragment.body.innerHTML);
       onChange(editorRef.current?.innerHTML ?? "");
-      setNotice(html ? "Đã dán nội dung và giữ định dạng từ trang nguồn." : "Đã dán nội dung.");
-    }, 0);
+      setNotice(images.length || pastedImages.some((image) => image.src.startsWith("data:")) ? "Đã dán nội dung và lưu ảnh vào kho nội bộ." : "Đã dán nội dung và giữ các định dạng được hỗ trợ.");
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : "Không thể xử lý nội dung vừa dán.");
+    } finally {
+      setUploadingImage(false);
+    }
   }
 
   return <div className="rich-editor">

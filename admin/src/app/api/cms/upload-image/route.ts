@@ -1,5 +1,5 @@
 import { getCurrentAdmin } from "@/lib/auth/session";
-import { uploadNewsImage } from "@/lib/cloudinary";
+import { uploadNewsImage } from "@/lib/storage";
 import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
@@ -32,10 +32,10 @@ export async function POST(request: Request) {
   if (!extension) return NextResponse.json({ success: false, message: "Chỉ hỗ trợ ảnh JPG, PNG, WebP hoặc AVIF hợp lệ." }, { status: 415 });
 
   try {
-    const uploaded = await uploadNewsImage(buffer);
-    return NextResponse.json({ success: true, data: uploaded, message: "Đã tải ảnh lên Cloudinary." });
+    const uploaded = await uploadNewsImage(buffer, "news", extension);
+    return NextResponse.json({ success: true, data: uploaded, message: "Đã tải ảnh lên kho nội bộ." });
   } catch (error) {
-    console.error("Cloudinary upload failed", error);
-    return NextResponse.json({ success: false, message: "Không thể tải ảnh lên Cloudinary." }, { status: 502 });
+    console.error("Internal storage upload failed", error);
+    return NextResponse.json({ success: false, message: "Không thể tải ảnh lên kho nội bộ." }, { status: 502 });
   }
 }

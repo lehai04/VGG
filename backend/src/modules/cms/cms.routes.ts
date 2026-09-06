@@ -5,6 +5,7 @@ import sanitizeHtml from "sanitize-html";
 import { prisma } from "../../shared/database/prisma.js";
 import { authenticateRequest } from "../auth/auth.service.js";
 import { fail, ok } from "../../shared/http/response.js";
+import { mediaBucket, mediaStorage } from "../../shared/storage/minio.js";
 
 const status = z.enum(["DRAFT", "PUBLISHED", "ARCHIVED"]);
 const slug = z.string().trim().min(2).max(190).regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
@@ -73,7 +74,7 @@ const resourceInput = z.object({
   documentNumber: z.string().trim().max(100).optional().nullable(),
   issueDate: z.coerce.date().optional().nullable(),
   issuingOrganization: z.string().trim().max(250).optional().nullable(),
-  fileUrl: z.string().url().max(1000),
+  fileUrl: z.string().max(1000).refine((value) => value.startsWith("/api/media/"), "Đường dẫn file phải thuộc kho nội bộ."),
   fileName: z.string().trim().min(1).max(255),
   fileType: z.string().trim().refine((value) => allowedResourceFiles.has(value), "Định dạng file không được hỗ trợ."),
   fileSize: z.coerce.number().int().positive().max(50 * 1024 * 1024),
@@ -123,6 +124,20 @@ async function availableResourceSlug(title: string, excludeId?: string) {
 }
 
 export async function cmsRoutes(app: FastifyInstance) {
+  app.get("/api/public/media/*", async (request, reply) => {
+    const key = (request.params as { "*": string })["*"] ?? "";
+    if (!key || key.includes("..") || key.startsWith("/")) return fail(reply, 400, "Đường dẫn file không hợp lệ.", "INVALID_MEDIA_PATH");
+    try {
+      const stat = await mediaStorage.statObject(mediaBucket, key);
+      const stream = await mediaStorage.getObject(mediaBucket, key);
+      reply.header("Content-Type", String(stat.metaData["content-type"] ?? "application/octet-stream"));
+      reply.header("Content-Length", stat.size);
+      reply.header("Cache-Control", String(stat.metaData["cache-control"] ?? "public, max-age=300"));
+      return reply.send(stream);
+    } catch {
+      return fail(reply, 404, "Không tìm thấy file.", "MEDIA_NOT_FOUND");
+    }
+  });
   app.get("/api/public/news", async (request, reply) => {
     const query = z.object({ category: newsCategory.optional(), q: z.string().trim().max(100).optional(), locale: z.enum(["vi", "en"]).default("vi"), limit: z.coerce.number().int().min(1).max(100).default(30), page: z.coerce.number().int().min(1).default(1) }).parse(request.query);
     const where = { status: "PUBLISHED" as const, locale: query.locale, ...(query.category ? { category: query.category } : {}), ...(query.q ? { OR: [{ title: { contains: query.q, mode: "insensitive" as const } }, { excerpt: { contains: query.q, mode: "insensitive" as const } }] } : {}) };

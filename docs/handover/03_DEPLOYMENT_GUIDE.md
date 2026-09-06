@@ -50,7 +50,7 @@ cp frontend/.env.example frontend/.env.local
 cp admin/.env.example admin/.env.local
 ```
 
-> **LƯU Ý QUAN TRỌNG:** Mở các file `.env` vừa tạo và điền thông tin bí mật thực tế của môi trường Production (Mật khẩu Database, Tên miền thực tế, Mật khẩu khởi tạo Super Admin, Khóa Cloudinary). Tham khảo tài liệu `04_ENVIRONMENT_VARIABLES.md`.
+> **LƯU Ý QUAN TRỌNG:** Mở các file `.env` vừa tạo và điền thông tin bí mật thực tế của môi trường Production (Mật khẩu Database, tên miền, mật khẩu Super Admin và credential MinIO). Tham khảo tài liệu `04_ENVIRONMENT_VARIABLES.md`.
 
 ---
 

@@ -98,11 +98,11 @@ export function NewsLanding({
         {posts.length ? (
           <div className={styles.grid}>
             {posts.map((post) => (
-              <Link href={`/news/${post.slug}`} key={post.id} data-reveal>
+              <Link href={post.externalUrl ?? `/news/${post.slug}`} target={post.externalUrl ? "_blank" : undefined} rel={post.externalUrl ? "noopener noreferrer" : undefined} key={post.id} data-reveal>
                 <figure>
                   <Image
                     src={post.coverImage || "/images/pages/news/content/banner.jpg"}
-                    unoptimized={post.coverImage?.startsWith("/uploads/")}
+                    unoptimized={Boolean(post.externalUrl) || post.coverImage?.startsWith("/uploads/")}
                     alt={post.title}
                     fill
                     sizes="(max-width:760px) 100vw,33vw"

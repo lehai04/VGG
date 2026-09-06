@@ -1,0 +1,21 @@
+erDiagram
+ ROLE ||--o{ ADMIN : assigns
+ ROLE ||--o{ ROLE_PERMISSION : grants
+ PERMISSION ||--o{ ROLE_PERMISSION : maps
+ ADMIN ||--o{ SESSION : owns
+ ADMIN ||--o{ NEWS_POST : authors
+ ADMIN ||--o{ RESOURCE_FILE : authors
+ RESOURCE_CATEGORY ||--o{ RESOURCE_FILE : groups
+ ADMIN ||--o{ SITE_CONTENT : authors
+ ADMIN ||--o{ CONSULTATION : assigned
+ CONSULTATION ||--o{ CONSULTATION_NOTE : has
+ CONSULTATION ||--o{ CONSULTATION_HISTORY : tracks
+ ADMIN ||--o{ AUDIT_LOG : acts
+ ADMIN ||--o{ PASSWORD_RESET_TOKEN : receives
+ ROLE { string id PK string code int level }
+ ADMIN { string id PK string username string status string roleId FK }
+ NEWS_POST { string id PK string slug string status string authorId FK }
+ RESOURCE_FILE { string id PK string slug string categoryId FK string fileUrl string status }
+ CONSULTATION { string id PK string email string phone string status string assignedAdminId FK }
+ APPLICATION { string id PK string email string phone string status }
+ PAGE_VISIT { string id PK string path string locale datetime createdAt }

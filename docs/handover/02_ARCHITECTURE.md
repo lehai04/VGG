@@ -22,7 +22,7 @@ flowchart TD
     subgraph DataStorage["TẦNG LƯU TRỮ DỮ LIỆU"]
         Postgres[("PostgreSQL 17 Database<br/>• 25+ Indices<br/>• Foreign Key Cascades<br/>• Audit Logs & Sessions")]
         Redis[("Redis 7 (Optional)<br/>• Session Cache & Rate Limit")]
-        Storage["Storage (MinIO / Local / Cloudinary)<br/>• PDF, DOCX, Media Assets"]
+        Storage["MinIO On-Premise Storage<br/>• PDF, DOCX, Media Assets"]
     end
 
     User -->|HTTPS :443| Nginx

@@ -13,7 +13,7 @@
   - **Admin:** Next.js 16.3.1 (Cổng CMS & Quản lý Nhân sự — Port `3001`).
   - **Backend API:** Fastify 5.2.1 (REST API lõi — Port `4000`).
   - **Database:** PostgreSQL 17 (Prisma ORM — Port nội bộ `127.0.0.1:5433`).
-  - **Media Storage:** Cloudinary Cloud Media SDK (Ảnh bài viết & PDF biểu mẫu).
+  - **Media Storage:** MinIO on-premise, bucket private (ảnh bài viết và tài liệu).
 
 ---
 
@@ -67,10 +67,13 @@ DATABASE_URL=postgresql://vgg:<GENERATE_STRONG_DATABASE_PASSWORD>@127.0.0.1:5433
 BACKEND_INTERNAL_URL=http://127.0.0.1:4000
 ADMIN_ALLOWED_ORIGINS=https://admin-vgg.vlu.edu.vn
 
-# Cloudinary Storage Configuration (BẮT BUỘC cho tính năng tải ảnh bài viết & PDF)
-CLOUDINARY_CLOUD_NAME=<YOUR_CLOUDINARY_CLOUD_NAME>
-CLOUDINARY_API_KEY=<YOUR_CLOUDINARY_API_KEY>
-CLOUDINARY_API_SECRET=<YOUR_CLOUDINARY_API_SECRET>
+# MinIO nội bộ (BẮT BUỘC cho tính năng tải ảnh bài viết & PDF)
+STORAGE_ENDPOINT=127.0.0.1
+STORAGE_PORT=9000
+STORAGE_USE_SSL=false
+STORAGE_BUCKET=vgg-media
+STORAGE_ACCESS_KEY=vgg_platform_app
+STORAGE_SECRET_KEY=<GENERATE_SEPARATE_APP_PASSWORD>
 
 # Optional SMTP Email Configuration (Dành cho gửi email đặt lại mật khẩu)
 SMTP_HOST=smtp.gmail.com

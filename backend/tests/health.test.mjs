@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 process.env.DATABASE_URL ||= "postgresql://vgg:vgg_local_password@localhost:5432/vgg";
+process.env.STORAGE_ACCESS_KEY ||= "vgg_test_storage";
+process.env.STORAGE_SECRET_KEY ||= "vgg_test_storage_password";
 const { buildApp } = await import("../dist/app.js");
 
 test("health endpoint starts without requiring a database connection", async () => {
