@@ -17,6 +17,7 @@ export function StrategicPartnersCarousel() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const dragState = useRef({ pointerId: 0, startX: 0, scrollLeft: 0 });
   const draggingRef = useRef(false);
+  const pausedRef = useRef(false);
   const [dragging, setDragging] = useState(false);
 
   useEffect(() => {
@@ -25,12 +26,17 @@ export function StrategicPartnersCarousel() {
 
     let frame = 0;
     let previousTime = performance.now();
+    // Keep fractional pixels between frames: scrollLeft can be rounded by the browser.
+    let position = carousel.scrollLeft;
     const animate = (time: number) => {
       const elapsed = Math.min(time - previousTime, 40);
       previousTime = time;
-      if (!draggingRef.current) {
-        carousel.scrollLeft += elapsed * 0.035;
-        if (carousel.scrollLeft >= carousel.scrollWidth / 2) carousel.scrollLeft -= carousel.scrollWidth / 2;
+      if (!draggingRef.current && !pausedRef.current) {
+        const loopWidth = carousel.scrollWidth / 2;
+        position = loopWidth > 0 ? (position + elapsed * 0.045) % loopWidth : 0;
+        carousel.scrollLeft = position;
+      } else {
+        position = carousel.scrollLeft;
       }
       frame = requestAnimationFrame(animate);
     };
@@ -48,7 +54,12 @@ export function StrategicPartnersCarousel() {
       ref={carouselRef}
       className={`${styles.partnerCarousel} ${dragging ? styles.partnerCarouselDragging : ""}`}
       data-reveal
+      tabIndex={0}
       aria-label="Danh sách đối tác chiến lược. Kéo ngang để xem thêm."
+      onMouseEnter={() => { pausedRef.current = true; }}
+      onMouseLeave={() => { pausedRef.current = false; }}
+      onFocus={() => { pausedRef.current = true; }}
+      onBlur={() => { pausedRef.current = false; }}
       onPointerDown={(event) => {
         const carousel = carouselRef.current;
         if (!carousel) return;
