@@ -8465,6 +8465,8 @@ main:not(.subpage) .mega-menu {
     height: auto;
 
     max-height: 430px;
+
+    overflow-y: auto;
   }
 
   .vgg-pd__results {
