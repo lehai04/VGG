@@ -36,21 +36,21 @@ export function AdminNotifications() {
     try {
       const res = await fetch("/api/admin/notifications?limit=25");
       if (res.ok) {
-        const data = await res.json() as { notifications: NotificationItem[] };
+        const data = (await res.json()) as { notifications: NotificationItem[] };
         setNotifications(data.notifications || []);
       }
     } catch {
-      // Background poll silently fails without breaking UI
+      // Silently ignore
     }
   };
 
   useEffect(() => {
     let isMounted = true;
-    const load = async () => {
+    const poll = async () => {
       try {
         const res = await fetch("/api/admin/notifications?limit=25");
         if (res.ok && isMounted) {
-          const data = await res.json() as { notifications: NotificationItem[] };
+          const data = (await res.json()) as { notifications: NotificationItem[] };
           setNotifications(data.notifications || []);
         }
       } catch {
@@ -58,13 +58,15 @@ export function AdminNotifications() {
       }
     };
 
-    void load();
-    const interval = setInterval(load, 12000); // 12s realtime polling
+    void poll();
+    const interval = setInterval(poll, 12000);
     return () => {
       isMounted = false;
       clearInterval(interval);
     };
   }, []);
+
+
 
   // Handle click outside to close dropdown
   useEffect(() => {

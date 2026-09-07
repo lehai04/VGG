@@ -1,14 +1,8 @@
-import Image from "next/image";
-import Link from "@/i18n/components/LocalizedLink";
 import { notFound, redirect } from "next/navigation";
-import { SiteFooter } from "@/shared/components/layout/SiteFooter";
-import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { VisionMissionPage } from "@/features/discover/components/VisionMissionPage";
 import { LeadershipPage } from "@/features/discover/components/LeadershipPage";
 import { ContactPage } from "@/features/discover/components/ContactPage";
 import { DiscoverSubpageVM } from "@/features/discover/components/DiscoverSubpageVM";
-import { NextStepCTA } from "@/features/content/components/NextStepCTA";
-import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 
 // CONTENT MODEL: Nội dung riêng của từng trang con; tất cả cùng dùng template render bên dưới.
 const pages = {
@@ -137,71 +131,8 @@ export default async function DiscoverDetail({ params }: { params: Promise<{ slu
   if (slug === "tam-nhin-su-menh") return <VisionMissionPage />;
   if (slug === "lanh-dao") return <LeadershipPage />;
   if (slug === "lien-he") return <ContactPage />;
-  // Các trang còn lại (xep-hang-thanh-tuu, lien-he) dùng layout editorial VisionMission.
-  if (slug === "xep-hang-thanh-tuu") {
-    return <DiscoverSubpageVM slug={slug} page={page} />;
-  }
-  return (
-    <main className="subpage discover-detail" id="main-content">
-      <RevealOnScroll />
-      <SiteHeader compact />
-      <section className="discover-detail-hero">
-        <Image
-          src="/images/pages/discover/content/campus.jpg"
-          alt="Khuôn viên Trường Đại học Văn Lang"
-          fill
-          priority
-          sizes="100vw"
-        />
-        <div className="discover-detail-overlay" />
-        <div className="discover-detail-title">
-          <p>DISCOVER Viện Sau Đại học · {page.number}</p>
-          <h1>{page.title}</h1>
-          <span>{page.en}</span>
-        </div>
-      </section>
-      <nav className="discover-detail-trail">
-        <Link href="/">Trang chủ</Link>
-        <span>／</span>
-        <Link href="/discover">Về Viện Sau Đại học</Link>
-        <span>／</span>
-        <b>{page.title}</b>
-      </nav>
-      <section className="discover-detail-body">
-        <aside>
-          <p>DISCOVER Viện Sau Đại học</p>
-          {Object.entries(pages).map(([key, item]) => (
-            <Link className={key === slug ? "active" : ""} href={`/discover/${key}`} key={key}>
-              <span>{item.number}</span>
-              {item.title}
-            </Link>
-          ))}
-        </aside>
-        <article>
-          <p className="discover-detail-eyebrow">{page.en.toUpperCase()}</p>
-          <h2>{page.headline}</h2>
-          <p className="discover-detail-lead">{page.lead}</p>
-          <div className="discover-detail-sections">
-            {page.sections.map(([title, copy], index) => (
-              <section key={title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{title}</h3>
-                <p>{copy}</p>
-              </section>
-            ))}
-          </div>
-        </article>
-      </section>
-      <section className="discover-detail-next">
-        <p>TIẾP TỤC KHÁM PHÁ</p>
-        <h2>Kiến tạo bước tiến tiếp theo cùng Viện Sau Đại học.</h2>
-        <Link href="/admissions">
-          Tìm hiểu tuyển sinh <span>→</span>
-        </Link>
-      </section>
-      <NextStepCTA />
-      <SiteFooter />
-    </main>
-  );
+  if (slug === "xep-hang-thanh-tuu") return <DiscoverSubpageVM slug={slug} page={page} />;
+  notFound();
 }
+
 

@@ -1766,6 +1766,281 @@
   font-weight: 600;
   line-height: 1.35;
 }
+
+/* ==========================================================================
+   HOMEPAGE: ĐIỀU KIỆN TỐT NGHIỆP (GRADUATION REQUIREMENTS)
+   ========================================================================== */
+.home-page .programmeGraduation {
+  margin-top: clamp(48px, 6vw, 68px);
+  padding: clamp(28px, 3.5vw, 44px);
+  border: 1px solid #e7e5df;
+  border-top: 3px solid #202550;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff 0%, #f9f8f5 100%);
+  box-shadow: 0 16px 40px -12px rgba(16, 21, 62, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-page .programmeGraduationHeader {
+  margin-bottom: 28px;
+}
+
+.home-page .programmeGraduationKicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #db2639;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.home-page .programmeGraduationKickerIcon {
+  color: #db2639;
+  flex-shrink: 0;
+}
+
+.home-page .programmeGraduationTitle {
+  margin: 0 0 10px;
+  color: #10153e;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.home-page .programmeGraduationTitle em {
+  color: #db2639;
+  font-style: normal;
+}
+
+.home-page .programmeGraduationSubtitle {
+  margin: 0;
+  max-width: 680px;
+  color: #555d67;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.home-page .programmeGraduationGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.home-page .programmeGraduationCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 22px;
+  border-radius: 14px;
+  border: 1px solid #e5e4de;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(16, 21, 62, 0.03);
+  transition:
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.28s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-page .programmeGraduationCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px -8px rgba(16, 21, 62, 0.1);
+    border-color: #cbd5e1;
+  }
+}
+
+.home-page .programmeGraduationCard--special {
+  border-top: 3px solid #db2639;
+  background: linear-gradient(180deg, #ffffff 0%, #fffafa 100%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-page .programmeGraduationCard--special:hover {
+    border-color: #fca5a5;
+    border-top-color: #db2639;
+    box-shadow: 0 18px 36px -8px rgba(219, 38, 57, 0.12);
+  }
+}
+
+.home-page .programmeGraduationCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.home-page .programmeGraduationCardBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-page .programmeGraduationStep {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: #eef2f6;
+  color: #1e293b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.home-page .programmeGraduationCard--special .programmeGraduationStep {
+  background: rgba(219, 38, 57, 0.1);
+  color: #db2639;
+}
+
+.home-page .programmeGraduationCategory {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #64748b;
+}
+
+.home-page .programmeGraduationCard--special .programmeGraduationCategory {
+  color: #db2639;
+}
+
+.home-page .programmeGraduationCardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #202550;
+  border: 1px solid #edf2f7;
+}
+
+.home-page .programmeGraduationCard--special .programmeGraduationCardIcon {
+  background: #fff5f5;
+  color: #db2639;
+  border-color: #fee2e2;
+}
+
+.home-page .programmeGraduationCardBody {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.home-page .programmeGraduationMetric {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.home-page .programmeGraduationMetricValue {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: #10153e;
+  line-height: 1;
+}
+
+.home-page .programmeGraduationCard--special .programmeGraduationMetricValue {
+  color: #db2639;
+}
+
+.home-page .programmeGraduationMetricLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+
+.home-page .programmeGraduationCardTitle {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #10153e;
+  line-height: 1.35;
+}
+
+.home-page .programmeGraduationCardText {
+  margin: 0 0 18px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #475569;
+  flex-grow: 1;
+}
+
+.home-page .programmeGraduationCardFooter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px dashed #e2e8f0;
+  margin-top: auto;
+}
+
+.home-page .programmeGraduationStatusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  flex-shrink: 0;
+}
+
+.home-page .programmeGraduationCard--special .programmeGraduationStatusDot {
+  background: #db2639;
+}
+
+.home-page .programmeGraduationStatusText {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 1080px) {
+  .home-page .programmeGraduationGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page .programmeGraduation {
+    margin-top: 36px;
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  .home-page .programmeGraduationGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .home-page .programmeGraduationCard {
+    padding: 20px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .programmeGraduationCard {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 .home-page .section {
   padding: 120px 5vw;
 }

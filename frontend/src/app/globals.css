@@ -3924,14 +3924,12 @@ textarea {
 }
 
 .sub-hero,
-.programmes-hero,
-.discover-detail-hero {
+.programmes-hero {
   isolation: isolate;
 }
 
 .sub-hero-copy,
-.programmes-hero-copy,
-.discover-detail-title {
+.programmes-hero-copy {
   width: min(100%, var(--site-content));
 }
 
@@ -4075,16 +4073,14 @@ footer {
   .sub-hero-copy > span {
     font-size: 13px;
   }
-  .breadcrumb,
-  .discover-detail-trail {
+  .breadcrumb {
     padding-left: var(--site-gutter);
     padding-right: var(--site-gutter);
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: none;
   }
-  .breadcrumb::-webkit-scrollbar,
-  .discover-detail-trail::-webkit-scrollbar {
+  .breadcrumb::-webkit-scrollbar {
     display: none;
   }
 
@@ -4210,218 +4206,6 @@ footer {
   }
   .sub-logo img {
     height: 52px;
-  }
-}
-
-.discover-detail {
-  background: #f4f1ea;
-  color: var(--vlu-blue);
-}
-.discover-detail-hero {
-  position: relative;
-  height: 610px;
-  overflow: hidden;
-  color: #fff;
-}
-.discover-detail-hero > img {
-  object-fit: cover;
-}
-.discover-detail-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(22, 27, 65, 0.94), rgba(22, 27, 65, 0.28));
-}
-.discover-detail-title {
-  position: absolute;
-  z-index: 1;
-  left: 7vw;
-  right: 7vw;
-  bottom: 70px;
-}
-.discover-detail-title p,
-.discover-detail-eyebrow,
-.discover-detail-next > p {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-}
-.discover-detail-title h1 {
-  margin: 20px 0 12px;
-  font-size: clamp(65px, 8vw, 118px);
-  line-height: 0.86;
-  letter-spacing: -0.06em;
-  text-transform: uppercase;
-}
-.discover-detail-title span {
-  color: #ef8793;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.discover-detail-trail {
-  padding: 18px 7vw;
-  display: flex;
-  gap: 12px;
-  border-bottom: 1px solid #ddd9d2;
-  background: #fff;
-  color: #7a7988;
-  font-size: 11px;
-}
-.discover-detail-trail b {
-  color: var(--vlu-red);
-}
-.discover-detail-body {
-  padding: 110px 7vw 130px;
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 8vw;
-}
-.discover-detail-body aside {
-  position: sticky;
-  top: 160px;
-  align-self: start;
-}
-.discover-detail-body aside > p {
-  margin: 0 0 25px;
-  color: #8a8791;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-}
-.discover-detail-body aside a {
-  padding: 15px 4px;
-  display: grid;
-  grid-template-columns: 35px 1fr;
-  border-top: 1px solid #d5d1ca;
-  color: #777684;
-  font-size: 12px;
-}
-.discover-detail-body aside a:last-child {
-  border-bottom: 1px solid #d5d1ca;
-}
-.discover-detail-body aside a.active {
-  color: var(--vlu-red);
-  font-weight: 800;
-}
-.discover-detail-body article {
-  max-width: 930px;
-}
-.discover-detail-eyebrow {
-  color: var(--vlu-red);
-}
-.discover-detail-body article > h2 {
-  max-width: 900px;
-  margin: 28px 0 38px;
-  font-size: clamp(52px, 6vw, 90px);
-  line-height: 0.94;
-  letter-spacing: -0.055em;
-  text-transform: uppercase;
-}
-.discover-detail-lead {
-  max-width: 750px;
-  margin: 0 0 85px;
-  color: #575969;
-  font-size: 21px;
-  line-height: 1.7;
-}
-.discover-detail-sections {
-  border-top: 1px solid #cbc8c2;
-}
-.discover-detail-sections section {
-  min-height: 220px;
-  padding: 35px 0;
-  display: grid;
-  grid-template-columns: 70px 0.75fr 1fr;
-  gap: 28px;
-  border-bottom: 1px solid #cbc8c2;
-}
-.discover-detail-sections span {
-  color: var(--vlu-red);
-  font-size: 20px;
-  font-weight: 800;
-}
-.discover-detail-sections h3 {
-  margin: 0;
-  font-size: 27px;
-  line-height: 1.15;
-}
-.discover-detail-sections p {
-  margin: 0;
-  color: #696a78;
-  font-size: 16px;
-  line-height: 1.7;
-}
-.discover-detail-next {
-  padding: 100px 7vw;
-  display: grid;
-  grid-template-columns: 200px 1fr auto;
-  gap: 5vw;
-  align-items: end;
-  background: var(--vlu-blue);
-  color: #fff;
-}
-.discover-detail-next > p {
-  align-self: start;
-  color: #ef8793;
-}
-.discover-detail-next h2 {
-  max-width: 800px;
-  margin: 0;
-  font-size: clamp(45px, 5vw, 75px);
-  line-height: 0.98;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-}
-.discover-detail-next a {
-  padding: 19px 22px;
-  display: flex;
-  gap: 40px;
-  background: var(--vlu-red);
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-@media (max-width: 800px) {
-  .discover-detail-hero {
-    height: 520px;
-  }
-  .discover-detail-title {
-    left: 6vw;
-    right: 6vw;
-    bottom: 50px;
-  }
-  .discover-detail-title h1 {
-    font-size: 51px;
-  }
-  .discover-detail-body {
-    padding: 70px 6vw 85px;
-    grid-template-columns: 1fr;
-  }
-  .discover-detail-body aside {
-    position: static;
-    display: none;
-  }
-  .discover-detail-body article > h2 {
-    font-size: 43px;
-  }
-  .discover-detail-lead {
-    margin-bottom: 55px;
-    font-size: 18px;
-  }
-  .discover-detail-sections section {
-    grid-template-columns: 45px 1fr;
-  }
-  .discover-detail-sections p {
-    grid-column: 2;
-  }
-  .discover-detail-next {
-    padding: 75px 6vw;
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .discover-detail-next h2 {
-    font-size: 43px;
   }
 }
 
@@ -8156,8 +7940,39 @@ main:not(.subpage) .mega-menu {
   letter-spacing: 0.08em;
 }
 
+.vgg-pd-card__curriculum-sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: #798196;
+}
+
+.vgg-pd-card__group-header {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.vgg-pd-card__group-en {
+  font-size: 11px;
+  font-weight: 500;
+  color: #8b92a2;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
 .vgg-pd-card__course-name {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vgg-pd-card__course-en {
+  font-size: 11px;
+  color: #707584;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .vgg-pd-card__curriculum-groups li:last-child {
@@ -8765,10 +8580,6 @@ section p + p {
   .discover-editorial-intro,
   .discover-editorial-chapter,
   .discover-editorial-more-nav,
-  .discover-detail-title,
-  .discover-detail-trail,
-  .discover-detail-body,
-  .discover-detail-next,
   .programmes-hero,
   .programmes-intro,
   .programme-pathways,

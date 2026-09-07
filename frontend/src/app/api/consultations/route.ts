@@ -13,8 +13,7 @@ export async function POST(request: NextRequest) {
     });
     const payload = await response.json() as { message?: string };
     return NextResponse.json({ message: payload.message || (response.ok ? "Gửi yêu cầu thành công." : "Không thể gửi yêu cầu.") }, { status: response.status });
-  } catch (error) {
-    console.error("Consultation backend unavailable", error);
+  } catch {
     return NextResponse.json({ message: "Hệ thống đang bận. Vui lòng thử lại sau." }, { status: 502 });
   }
 }

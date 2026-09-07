@@ -64,19 +64,20 @@
   min-width: 0;
 }
 .profileCopy h2 {
-  max-width: 620px;
+  max-width: none;
   margin: 0;
   color: var(--lead-ink);
-  font-size: clamp(48px, 4vw, 58px) !important;
+  font-size: 40px !important;
   font-weight: 700 !important;
-  line-height: 1.08 !important;
-  letter-spacing: -0.025em !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.015em !important;
+  white-space: nowrap;
 }
 main:global(#main-content).page .profileCopy p {
-  max-width: 620px;
-  margin: 20px 0 36px;
+  max-width: none;
+  margin: 14px 0 28px;
   color: var(--vlu-red);
-  font-size: clamp(20px, 1.55vw, 24px) !important;
+  font-size: clamp(16px, 1.2vw, 19px) !important;
   font-weight: 700;
   line-height: 1.45 !important;
   text-align: left !important;
@@ -139,11 +140,181 @@ main:global(#main-content).page .profileCopy p {
     gap: 34px;
   }
   .profileCopy h2 {
-    font-size: clamp(38px, 12vw, 48px) !important;
+    font-size: clamp(16.5px, 4.8vw, 21px) !important;
+    white-space: nowrap;
+  }
+  main:global(#main-content).page .profileCopy p {
+    font-size: clamp(14px, 3.8vw, 16px) !important;
+    margin: 12px 0 20px;
   }
   .profileCopy blockquote {
     padding-left: 22px;
     font-size: 19px;
     line-height: 1.68;
+  }
+}
+
+/* Khối Trưởng các bộ phận chuyên trách (5 vị trí) */
+.deptSection {
+  padding: clamp(64px, 6vw, 96px) clamp(24px, 4vw, 72px);
+  background: #f8fafc;
+  border-top: 1px solid #edf2f7;
+}
+.deptContainer {
+  width: min(100%, 1460px);
+  margin-inline: auto;
+}
+.deptHeader {
+  max-width: 720px;
+  margin-bottom: clamp(32px, 3.5vw, 48px);
+}
+.deptEyebrow {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--vlu-red, #d92d20);
+  margin-bottom: 8px;
+}
+.deptHeader h2 {
+  font-size: clamp(28px, 2.8vw, 40px) !important;
+  font-weight: 700 !important;
+  color: var(--lead-ink, #171d45);
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 12px !important;
+}
+.deptHeader p {
+  font-size: clamp(15px, 1.1vw, 16.5px);
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+.deptGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+.deptCard {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  box-shadow: 0 4px 14px rgba(23, 29, 69, 0.04);
+}
+.deptCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(22, 27, 65, 0.22);
+  box-shadow: 0 16px 32px rgba(23, 29, 69, 0.09);
+}
+.deptPhotoSlot {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+}
+.deptPhotoSlot img {
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.35s ease;
+}
+.deptCard:hover .deptPhotoSlot img {
+  transform: scale(1.03);
+}
+.photoPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+.avatarSvg {
+  width: 52px;
+  height: 52px;
+  opacity: 0.82;
+}
+.photoUploadHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(4px);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+.deptCardInfo {
+  padding: 14px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+.deptCardName {
+  margin: 0 !important;
+  font-size: clamp(15px, 1.05vw, 17px) !important;
+  font-weight: 700 !important;
+  color: var(--lead-ink, #171d45);
+  line-height: 1.35 !important;
+  letter-spacing: -0.01em !important;
+}
+.deptCardRole {
+  margin: 6px 0 0 !important;
+  font-size: clamp(12.5px, 0.88vw, 13.5px) !important;
+  font-weight: 600 !important;
+  color: var(--vlu-red, #d92d20) !important;
+  line-height: 1.45 !important;
+}
+@media (max-width: 1280px) {
+  .deptGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+@media (max-width: 992px) {
+  .deptGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+@media (max-width: 680px) {
+  .deptGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .deptCard {
+    padding: 10px;
+  }
+  .avatarSvg {
+    width: 44px;
+    height: 44px;
+  }
+  .photoUploadHint {
+    font-size: 10.5px;
+    padding: 3px 8px;
+  }
+}
+@media (max-width: 440px) {
+  .deptGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .deptCard {
+    max-width: 280px;
+    margin-inline: auto;
   }
 }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
+import { Award, BookCheck, FileText, GraduationCap, Languages } from "lucide-react";
 
 /** Nhãn SVG chạy theo đường cong ở phần bầu dưới của mỗi thẻ thống kê. */
 function CurvedLabel({ children, pathId }: { children: string; pathId: string }) {
@@ -81,6 +82,53 @@ const MASTER_FIELDS = [
   },
 ] as const;
 
+interface GraduationRequirement {
+  category: string;
+  title: string;
+  desc: string;
+  icon: typeof BookCheck;
+  highlight: string;
+  highlightLabel: string;
+  isSpecial?: boolean;
+}
+
+const GRADUATION_REQUIREMENTS: GraduationRequirement[] = [
+  {
+    category: "Quy chế chung",
+    title: "Chương trình đào tạo",
+    desc: "Hoàn thành chương trình đào tạo theo quy định.",
+    icon: BookCheck,
+    highlight: "100%",
+    highlightLabel: "Khối lượng đào tạo",
+  },
+  {
+    category: "Chuẩn ngoại ngữ",
+    title: "Năng lực tiếng Anh",
+    desc: "Đạt chuẩn đầu ra về năng lực tiếng Anh theo quy định của Trường Đại học Văn Lang.",
+    icon: Languages,
+    highlight: "Chuẩn VLU",
+    highlightLabel: "Khung năng lực ngoại ngữ",
+  },
+  {
+    category: "Mỹ thuật Ứng dụng",
+    title: "Công bố khoa học",
+    desc: "Đối với ngành Mỹ thuật Ứng dụng: Có tối thiểu 02 công bố khoa học được đăng trên tạp chí khoa học hoặc trong kỷ yếu hội nghị trong nước/quốc tế.",
+    icon: Award,
+    highlight: "≥ 02",
+    highlightLabel: "Công bố khoa học",
+    isSpecial: true,
+  },
+  {
+    category: "Quan hệ Công chúng",
+    title: "Công bố khoa học",
+    desc: "Đối với ngành Quan hệ Công chúng: Có tối thiểu 01 công bố khoa học được đăng trên tạp chí khoa học hoặc trong kỷ yếu hội nghị trong nước/quốc tế.",
+    icon: FileText,
+    highlight: "≥ 01",
+    highlightLabel: "Công bố khoa học",
+    isSpecial: true,
+  },
+];
+
 /** HOMEPAGE SECTION: Danh mục các nhóm chương trình và liên kết sang /programmes. */
 export function ProgrammeCatalog() {
   return (
@@ -147,6 +195,58 @@ export function ProgrammeCatalog() {
             </details>
           </article>
         ))}
+      </div>
+
+      {/* Mục Điều kiện tốt nghiệp */}
+      <div className="programmeGraduation" aria-labelledby="graduation-requirements-title">
+        <div className="programmeGraduationHeader">
+          <div className="programmeGraduationKicker">
+            <GraduationCap className="programmeGraduationKickerIcon" size={18} aria-hidden="true" />
+            <span>GRADUATION REQUIREMENTS · ĐIỀU KIỆN TỐT NGHIỆP</span>
+          </div>
+          <h3 id="graduation-requirements-title" className="programmeGraduationTitle">
+            Điều kiện <em>tốt nghiệp</em>
+          </h3>
+          <p className="programmeGraduationSubtitle">
+            Quy định điều kiện hoàn thành khóa học và chuẩn đầu ra áp dụng cho học viên sau đại học tại Trường Đại học Văn Lang.
+          </p>
+        </div>
+
+        <div className="programmeGraduationGrid">
+          {GRADUATION_REQUIREMENTS.map((req, idx) => {
+            const IconComponent = req.icon;
+            return (
+              <article
+                key={idx}
+                className={`programmeGraduationCard ${req.isSpecial ? "programmeGraduationCard--special" : ""}`}
+              >
+                <div className="programmeGraduationCardTop">
+                  <div className="programmeGraduationCardBadge">
+                    <span className="programmeGraduationStep">0{idx + 1}</span>
+                    <span className="programmeGraduationCategory">{req.category}</span>
+                  </div>
+                  <div className="programmeGraduationCardIcon">
+                    <IconComponent size={20} strokeWidth={1.8} aria-hidden="true" />
+                  </div>
+                </div>
+
+                <div className="programmeGraduationCardBody">
+                  <div className="programmeGraduationMetric">
+                    <span className="programmeGraduationMetricValue">{req.highlight}</span>
+                    <span className="programmeGraduationMetricLabel">{req.highlightLabel}</span>
+                  </div>
+                  <h4 className="programmeGraduationCardTitle">{req.title}</h4>
+                  <p className="programmeGraduationCardText">{req.desc}</p>
+                </div>
+
+                <div className="programmeGraduationCardFooter">
+                  <span className="programmeGraduationStatusDot" />
+                  <span className="programmeGraduationStatusText">Tiêu chuẩn bắt buộc</span>
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </div>
 
       <Link className="programmeCatalogCta vgg-cta-pill" href="/programmes">

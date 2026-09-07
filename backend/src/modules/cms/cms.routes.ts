@@ -159,12 +159,27 @@ export async function cmsRoutes(app: FastifyInstance) {
 
   app.get("/api/admin/dashboard", async (request, reply) => {
     if (!await guard(request, reply, "dashboard.view")) return;
-    const since = new Date(Date.now() - 30 * 86_400_000);
+    const query = z.object({
+      from: z.string().optional(),
+      to: z.string().optional(),
+    }).parse(request.query);
+
+    const now = new Date();
+    const safeSince = (query.from && !isNaN(new Date(query.from).getTime()))
+      ? new Date(query.from)
+      : new Date(now.getTime() - 30 * 86_400_000);
+    const safeUntil = (query.to && !isNaN(new Date(query.to).getTime()))
+      ? new Date(new Date(query.to).setHours(23, 59, 59, 999))
+      : now;
+
     const [staff, visits, consultations, applications, visitSeries, consultationSeries, applicationSeries] = await Promise.all([
-      prisma.admin.count({ where: { status: "ACTIVE" } }), prisma.pageVisit.count(), prisma.consultation.count(), prisma.application.count(),
-      prisma.$queryRaw<Array<{ day: Date; count: bigint }>>`SELECT date_trunc('day', created_at) AS day, count(*)::bigint AS count FROM page_visits WHERE created_at >= ${since} GROUP BY 1 ORDER BY 1`,
-      prisma.$queryRaw<Array<{ day: Date; count: bigint }>>`SELECT date_trunc('day', created_at) AS day, count(*)::bigint AS count FROM consultations WHERE created_at >= ${since} GROUP BY 1 ORDER BY 1`,
-      prisma.$queryRaw<Array<{ day: Date; count: bigint }>>`SELECT date_trunc('day', created_at) AS day, count(*)::bigint AS count FROM applications WHERE created_at >= ${since} GROUP BY 1 ORDER BY 1`,
+      prisma.admin.count({ where: { status: "ACTIVE" } }),
+      prisma.pageVisit.count(),
+      prisma.consultation.count(),
+      prisma.application.count(),
+      prisma.$queryRaw<Array<{ day: Date; count: bigint }>>`SELECT date_trunc('day', created_at) AS day, count(*)::bigint AS count FROM page_visits WHERE created_at >= ${safeSince} AND created_at <= ${safeUntil} GROUP BY 1 ORDER BY 1`,
+      prisma.$queryRaw<Array<{ day: Date; count: bigint }>>`SELECT date_trunc('day', created_at) AS day, count(*)::bigint AS count FROM consultations WHERE created_at >= ${safeSince} AND created_at <= ${safeUntil} GROUP BY 1 ORDER BY 1`,
+      prisma.$queryRaw<Array<{ day: Date; count: bigint }>>`SELECT date_trunc('day', created_at) AS day, count(*)::bigint AS count FROM applications WHERE created_at >= ${safeSince} AND created_at <= ${safeUntil} GROUP BY 1 ORDER BY 1`,
     ]);
     const serialize = (rows: Array<{ day: Date; count: bigint }>) => rows.map((row) => ({ date: row.day, count: Number(row.count) }));
     return ok(reply, { totals: { staff, visits, consultations, applications }, visitSeries: serialize(visitSeries), consultationSeries: serialize(consultationSeries), applicationSeries: serialize(applicationSeries), updatedAt: new Date() });
