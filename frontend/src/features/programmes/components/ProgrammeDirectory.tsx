@@ -9,6 +9,7 @@ import {
   programmeOrientations,
   programmes,
   getProgrammeTuition,
+  getProgrammeGraduationRequirements,
   type ProgrammeDegree,
   type ProgrammeField,
   type ProgrammeOrientation,
@@ -278,6 +279,7 @@ export default function ProgrammeDirectory() {
                           ["01", "Đặc điểm nổi bật", details.highlights],
                           ["02", "Năng lực đầu ra", details.outcomes],
                           ["03", "Triển vọng nghề nghiệp", details.careers],
+                          ["04", "Điều kiện tốt nghiệp", getProgrammeGraduationRequirements(programme)],
                         ].map(([number, title, items]) => (
                           <section key={number as string}>
                             <h4>
@@ -299,12 +301,7 @@ export default function ProgrammeDirectory() {
                             <span>{curriculum.number}</span>
                             <div>
                               <p>NỘI DUNG CHƯƠNG TRÌNH</p>
-                              <h4>
-                                {curriculum.title}
-                                {curriculum.subtitle && (
-                                  <small className="vgg-pd-card__curriculum-sub"> · {curriculum.subtitle}</small>
-                                )}
-                              </h4>
+                              <h4>{curriculum.title}</h4>
                             </div>
                             <strong>{programme.credits} tín chỉ</strong>
                           </header>
@@ -341,6 +338,7 @@ export default function ProgrammeDirectory() {
                           </div>
                         </section>
                       ))}
+
 
                       <div className="vgg-pd-card__detail-grid">
                         <div>

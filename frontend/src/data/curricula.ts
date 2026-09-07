@@ -1647,7 +1647,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "khoa-hoc-moi-truong") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo",
         subtitle: "Curriculum",
         groups: [
@@ -1677,7 +1677,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
 
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -1702,7 +1702,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
         ],
       },
       {
-        number: "05",
+        number: "06",
         title: "Chương trình đào tạo nghiên cứu",
         subtitle: "Research curriculum",
         groups: [
@@ -1730,7 +1730,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "kinh-doanh-thuong-mai") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -1762,7 +1762,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "tai-chinh-ngan-hang") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -1800,7 +1800,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
         ],
       },
       {
-        number: "05",
+        number: "06",
         title: "Chương trình đào tạo nghiên cứu",
         subtitle: "Research curriculum",
         groups: [
@@ -1838,7 +1838,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "ke-toan") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -1870,7 +1870,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "quan-tri-du-lich") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -1897,7 +1897,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
         ],
       },
       {
-        number: "05",
+        number: "06",
         title: "Chương trình đào tạo nghiên cứu",
         subtitle: "Research curriculum",
         groups: [
@@ -1929,7 +1929,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "quan-tri-khach-san") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -1956,7 +1956,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
         ],
       },
       {
-        number: "05",
+        number: "06",
         title: "Chương trình đào tạo nghiên cứu",
         subtitle: "Research curriculum",
         groups: [
@@ -1988,7 +1988,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "luat-kinh-te") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -2015,7 +2015,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "ngon-ngu-anh") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -2044,7 +2044,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
         ],
       },
       {
-        number: "05",
+        number: "06",
         title: "Chương trình đào tạo nghiên cứu",
         subtitle: "Research curriculum",
         groups: [
@@ -2078,7 +2078,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "quan-he-cong-chung") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -2107,7 +2107,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
         ],
       },
       {
-        number: "05",
+        number: "06",
         title: "Chương trình đào tạo nghiên cứu",
         subtitle: "Research curriculum",
         groups: [
@@ -2179,7 +2179,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
 
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -2195,7 +2195,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
         ],
       },
       {
-        number: "05",
+        number: "06",
         title: "Chương trình đào tạo nghiên cứu",
         subtitle: "Research curriculum",
         groups: [
@@ -2223,7 +2223,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
 
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -2262,7 +2262,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
         ],
       },
       {
-        number: "05",
+        number: "06",
         title: "Chương trình đào tạo nghiên cứu",
         subtitle: "Research curriculum",
         groups: [
@@ -2306,12 +2306,12 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "ky-thuat-xay-dung") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         groups: [{ title: "Nội dung chương trình", courses: civilEngineeringAppliedCourses }],
       },
       {
-        number: "05",
+        number: "06",
         title: "Chương trình đào tạo nghiên cứu",
         groups: [{ title: "Nội dung chương trình", courses: civilEngineeringResearchCourses }],
       },
@@ -2321,7 +2321,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "kien-truc") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         groups: [
           {
@@ -2341,7 +2341,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "my-thuat-ung-dung") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         subtitle: "Applied curriculum",
         groups: [
@@ -2378,7 +2378,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "ly-luan-lich-su-my-thuat") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo nghiên cứu",
         subtitle: "Research curriculum",
         groups: [
@@ -2410,7 +2410,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.id === "cong-nghe-sinh-hoc") {
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo nghiên cứu",
         groups: [
           {
@@ -2452,7 +2452,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
 
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         groups: [
           ...sharedGroups,
@@ -2467,7 +2467,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
         ],
       },
       {
-        number: "05",
+        number: "06",
         title: "Chương trình đào tạo nghiên cứu",
         groups: [
           ...sharedGroups,
@@ -2492,7 +2492,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
 
     return [
       {
-        number: "04",
+        number: "05",
         title: "Chương trình đào tạo ứng dụng",
         groups: [
           ...sharedGroups,
@@ -2517,7 +2517,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
         ],
       },
       {
-        number: "05",
+        number: "06",
         title: "Chương trình đào tạo nghiên cứu",
         groups: [
           ...sharedGroups,
@@ -2562,7 +2562,7 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
 
   return [
     {
-      number: "04",
+      number: "05",
       title: "Chương trình đào tạo",
       groups: [
         {

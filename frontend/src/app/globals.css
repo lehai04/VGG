@@ -7787,8 +7787,7 @@ main:not(.subpage) .mega-menu {
   gap: 28px 42px;
 }
 
-.vgg-pd-card__content-grid section:last-child {
-  grid-column: 1 / -1;
+.vgg-pd-card__content-grid section:nth-child(n + 3) {
   padding-top: 24px;
   border-top: 1px solid #e1e3e9;
 }
@@ -8006,10 +8005,6 @@ main:not(.subpage) .mega-menu {
   .vgg-pd-card__content-grid {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-
-  .vgg-pd-card__content-grid section:last-child {
-    grid-column: auto;
   }
 
   .vgg-pd-card__content-grid h4 small {

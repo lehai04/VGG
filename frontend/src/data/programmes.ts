@@ -56,6 +56,26 @@ export type Programme = {
   intake: string;
 };
 
+/** Điều kiện chung và yêu cầu công bố khoa học riêng theo đúng ngành. */
+export function getProgrammeGraduationRequirements(programme: Programme): string[] {
+  const requirements = [
+    "Hoàn thành chương trình đào tạo theo quy định.",
+    "Đạt chuẩn đầu ra về năng lực tiếng Anh theo quy định của Trường Đại học Văn Lang.",
+  ];
+
+  if (programme.id === "my-thuat-ung-dung") {
+    requirements.push(
+      "Đối với ngành Mỹ thuật Ứng dụng: Có tối thiểu 02 công bố khoa học được đăng trên tạp chí khoa học hoặc trong kỷ yếu hội nghị trong nước/quốc tế.",
+    );
+  } else if (programme.id === "quan-he-cong-chung") {
+    requirements.push(
+      "Đối với ngành Quan hệ Công chúng: Có tối thiểu 01 công bố khoa học được đăng trên tạp chí khoa học hoặc trong kỷ yếu hội nghị trong nước/quốc tế.",
+    );
+  }
+
+  return requirements;
+}
+
 /** Học phí toàn khóa theo danh mục tuyển sinh do Viện Sau Đại học công bố. */
 export function getProgrammeTuition(programme: Programme) {
   if (programme.degree === "Tiến sĩ") return "145.000.000 VNĐ";
