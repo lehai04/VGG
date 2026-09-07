@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, DragEvent, FormEvent, useMemo, useState } from "react";
+import { ChangeEvent, DragEvent, FormEvent, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -121,6 +121,31 @@ export function ResourceManager({
     name: string;
   } | null>(null);
   const pageSize = 10;
+
+  const overlayOpen = drawerOpen || categoryDrawer || Boolean(preview) || Boolean(confirming);
+  useEffect(() => {
+    if (!overlayOpen) return;
+    const mobile = window.matchMedia("(width < 1024px)");
+    const previousOverflow = document.body.style.overflow;
+    const syncScroll = () => {
+      document.body.style.overflow = mobile.matches ? "hidden" : previousOverflow;
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape" || !mobile.matches) return;
+      setDrawerOpen(false);
+      setCategoryDrawer(false);
+      setPreview(null);
+      setConfirming(null);
+    };
+    syncScroll();
+    mobile.addEventListener("change", syncScroll);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      mobile.removeEventListener("change", syncScroll);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [overlayOpen]);
 
   const filtered = useMemo(
     () =>

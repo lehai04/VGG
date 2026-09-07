@@ -186,7 +186,7 @@ export function AdminUserActions({
 
       {/* KHỐI 1: CHỈNH SỬA THÔNG TIN & PHÂN QUYỀN */}
       <section className="admin-card" style={{ padding: "28px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
+        <div className="account-card-heading" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
           <div>
             <h2 style={{ margin: 0, fontSize: "1.15rem", fontWeight: 800, color: "#18181b" }}>
               {isEditing ? "Chỉnh sửa thông tin & Phân quyền" : "Thông tin định danh & Phân quyền"}
@@ -278,7 +278,7 @@ export function AdminUserActions({
             </div>
           </form>
         ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "18px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "18px", overflowWrap: "anywhere" }}>
             <div>
               <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Họ và tên</span>
               <p style={{ margin: "4px 0 0", fontSize: "0.95rem", fontWeight: 700, color: "#18181b" }}>{user.fullName}</p>
@@ -315,7 +315,7 @@ export function AdminUserActions({
 
       {/* KHỐI 2: KHÓA / MỞ KHÓA & RESET MẬT KHẨU & XÓA TÀI KHOẢN */}
       {isSuperAdmin && (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px" }}>
+        <div className="account-actions-grid" style={{ display: "grid", gridTemplateColumns: "var(--account-actions-columns, repeat(auto-fit, minmax(320px, 1fr)))", gap: "24px" }}>
           {/* KHÓA / KÍCH HOẠT */}
           <section className="admin-card" style={{ padding: "24px" }}>
             <h3 style={{ margin: "0 0 8px", fontSize: "1rem", fontWeight: 800, color: "#18181b" }}>
@@ -390,7 +390,7 @@ export function AdminUserActions({
               border: "1px solid #fed7d7",
             }}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div className="account-card-heading" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
                 <h3 style={{ margin: 0, fontSize: "1rem", fontWeight: 800, color: "#991b1b" }}>
                   Vùng nguy hiểm: Xóa tài khoản nhân sự
@@ -423,7 +423,7 @@ export function AdminUserActions({
                 <p style={{ margin: "0 0 12px", fontWeight: 700, color: "#991b1b", fontSize: "0.95rem" }}>
                   ⚠️ Xác nhận xóa: Bạn có chắc chắn muốn xóa vĩnh viễn tài khoản &ldquo;{user.fullName}&rdquo; ({user.username})?
                 </p>
-                <div style={{ display: "flex", gap: "10px" }}>
+                <div className="account-card-heading" style={{ display: "flex", gap: "10px" }}>
                   <button
                     type="button"
                     className="primary-button"

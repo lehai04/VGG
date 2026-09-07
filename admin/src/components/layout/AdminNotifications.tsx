@@ -163,7 +163,7 @@ export function AdminNotifications() {
             overflow: "hidden",
             display: "flex",
             flexDirection: "column",
-            maxHeight: "520px",
+            maxHeight: "var(--notifications-max-height, 520px)",
           }}
         >
           {/* Header */}

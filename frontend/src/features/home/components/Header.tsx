@@ -50,7 +50,10 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
   // Mega menu chỉ mở bằng click và đóng bằng click bên ngoài hoặc phím Escape.
   useEffect(() => {
     const closeFromOutside = (event: MouseEvent) => {
-      if (!headerRef.current?.contains(event.target as Node)) setActiveMenu(null);
+      if (!headerRef.current?.contains(event.target as Node)) {
+        setActiveMenu(null);
+        if (window.matchMedia("(width < 1024px)").matches) setOpen(false);
+      }
     };
     const closeFromKeyboard = (event: KeyboardEvent) => {
       if (event.key === "Escape") setActiveMenu(null);
@@ -69,12 +72,29 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") {
+        setOpen(false);
+        headerRef.current?.querySelector<HTMLButtonElement>(".menuButton")?.focus();
+      }
+      if (event.key === "Tab" && window.matchMedia("(width < 1024px)").matches) {
+        const first = headerRef.current?.querySelector<HTMLButtonElement>(".menuButton");
+        const links = headerRef.current?.querySelectorAll<HTMLAnchorElement>(".nav a");
+        const last = links?.[links.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault(); last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault(); first?.focus();
+        }
+      }
     };
+    const mobile = window.matchMedia("(width < 1024px)");
+    const closeOnResize = () => setOpen(false);
+    mobile.addEventListener("change", closeOnResize);
     document.addEventListener("keydown", closeOnEscape);
     return () => {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", closeOnEscape);
+      mobile.removeEventListener("change", closeOnResize);
     };
   }, [open]);
 
@@ -93,7 +113,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
 
       <div className="headerShell" ref={headerRef}>
         <header className="header">
-          <Link className="brand" href="/" aria-label="Trang chủ Viện Sau Đại học">
+          <Link className="brand" href="/" aria-label="Trang chủ Viện Sau Đại học" onClick={() => { setOpen(false); setActiveMenu(null); }}>
             <Image
               className="brandLogo"
               src={LOGO_SRC}

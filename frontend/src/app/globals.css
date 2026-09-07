@@ -8676,17 +8676,18 @@ section p + p {
     width: 100%;
   }
 }
-@media (max-width: 767px) {
-  .hero h1,
-  .homeHero h1,
-  .sub-hero h1,
-  [class*="heroTitle"],
-  [class*="HeroTitle"],
-  [class*="hero"] h1,
-  .detail-hero-copy h1,
-  .sub-hero-copy h1 {
-    font-size: clamp(2rem, 8.5vw, 2.25rem) !important;
-    line-height: 1.08 !important;
+@media (width < 1024px) {
+  main .hero h1,
+  main .homeHero h1,
+  main .sub-hero h1,
+  main [class*="heroTitle"] h1,
+  main [class*="HeroTitle"] h1,
+  main [class*="hero"] h1,
+  main [class*="Hero"] h1,
+  main .detail-hero-copy h1,
+  main .sub-hero-copy h1 {
+    font-size: clamp(2rem, 6vw, 3rem) !important;
+    line-height: 1.12 !important;
   }
 }
 
@@ -8736,7 +8737,7 @@ section p + p {
 
 /* Final small-screen corrections for the programme hero. Older desktop rules
    deliberately use nowrap; mobile must allow Vietnamese titles to wrap. */
-@media (max-width: 760px) {
+@media (width < 1024px) {
   .programmes-hero-copy {
     padding-inline: 0;
   }
@@ -8761,5 +8762,32 @@ section p + p {
     max-width: 100%;
     white-space: normal;
     overflow-wrap: anywhere;
+  }
+}
+
+/* Keep desktop composition intact; give tablet filters room to shrink. */
+@media (width < 1024px) {
+  .programme-search-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .programme-search-filter-label {
+    grid-column: 1 / -1;
+  }
+  .programme-search-filters > * {
+    min-width: 0;
+    width: 100%;
+  }
+  .programmes-hero-copy {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .programmes-label {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .programme-search-filters {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

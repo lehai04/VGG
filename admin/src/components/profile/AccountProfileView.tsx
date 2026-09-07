@@ -101,13 +101,13 @@ export function AccountProfileView({ admin }: AccountProfileProps) {
   }
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: "28px", marginTop: "24px" }}>
+    <div className="account-profile-grid" style={{ display: "grid", gridTemplateColumns: "var(--account-profile-columns, repeat(auto-fit, minmax(360px, 1fr)))", gap: "28px", marginTop: "24px" }}>
       {/* CỘT 1: THÔNG TIN TÀI KHOẢN & PHÂN QUYỀN */}
       <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
         <section className="admin-card" style={{ padding: "28px" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px", paddingBottom: "16px", borderBottom: "1px solid #e4e4e7" }}>
+          <div className="account-card-heading" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px", paddingBottom: "16px", borderBottom: "1px solid #e4e4e7" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-              <div style={{ width: "56px", height: "56px", borderRadius: "50%", background: "#b91c1c", color: "#fff", display: "grid", placeItems: "center", fontSize: "1.4rem", fontWeight: 800 }}>
+              <div className="account-profile-avatar" style={{ width: "56px", height: "56px", borderRadius: "50%", background: "#b91c1c", color: "#fff", display: "grid", placeItems: "center", fontSize: "1.4rem", fontWeight: 800 }}>
                 {admin.fullName.slice(0, 1).toUpperCase()}
               </div>
               <div>

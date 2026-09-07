@@ -1,5 +1,5 @@
 "use client";
-import { type FormEvent, useMemo, useState } from "react";
+import { type FormEvent, useEffect, useMemo, useState } from "react";
 import {
   Building2,
   CalendarDays,
@@ -28,6 +28,28 @@ export function ResourcesExplorer({ resources }: { resources: PublicResource[] }
   const [category, setCategory] = useState("ALL");
   const [type, setType] = useState("ALL");
   const [preview, setPreview] = useState<PublicResource | null>(null);
+  useEffect(() => {
+    if (!preview) return;
+    const mobile = window.matchMedia("(width < 1024px)");
+    const previousOverflow = document.body.style.overflow;
+    const trigger = document.activeElement as HTMLElement | null;
+    const syncScroll = () => {
+      document.body.style.overflow = mobile.matches ? "hidden" : previousOverflow;
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && mobile.matches) setPreview(null);
+    };
+    syncScroll();
+    if (mobile.matches) document.querySelector<HTMLButtonElement>('[role="dialog"] button')?.focus();
+    mobile.addEventListener("change", syncScroll);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      mobile.removeEventListener("change", syncScroll);
+      document.removeEventListener("keydown", closeOnEscape);
+      if (mobile.matches) trigger?.focus();
+    };
+  }, [preview]);
   const [page, setPage] = useState(1);
   const categories = useMemo(
     () => Array.from(new Map(resources.map((item) => [item.category.id, item.category])).values()),

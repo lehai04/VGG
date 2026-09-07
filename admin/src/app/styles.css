@@ -2152,10 +2152,7 @@ textarea {
   max-width: 100%;
 }
 
-@media (max-width: 850px) {
-  body {
-    overflow-x: clip;
-  }
+@media (width < 1024px) {
   .admin-shell {
     display: block;
     min-width: 0;
@@ -2173,9 +2170,11 @@ textarea {
     overflow-y: auto;
     transform: translateX(-105%);
     transition: transform 220ms ease;
+    visibility: hidden;
   }
   .menu-open .admin-sidebar {
     transform: translateX(0);
+    visibility: visible;
   }
   .admin-sidebar-backdrop {
     position: fixed;
@@ -2394,5 +2393,116 @@ textarea {
 @media (max-width: 760px) {
   .consultation-summary {
     grid-template-columns: 1fr;
+  }
+}
+
+/* These overrides deliberately stop below desktop (1024px). */
+@media (width < 1024px) {
+  .account-profile-grid {
+    --account-profile-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+  }
+  .account-actions-grid {
+    --account-actions-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  }
+  .account-profile-grid,
+  .account-actions-grid,
+  .account-card-heading {
+    overflow-wrap: anywhere;
+  }
+  .account-profile-grid > *,
+  .account-actions-grid > *,
+  .account-card-heading > *,
+  .account-card-heading > div > div,
+  .field {
+    min-width: 0;
+  }
+  .account-card-heading {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .account-card-heading > button,
+  .account-profile-avatar {
+    flex-shrink: 0;
+  }
+  .account-profile-grid .form-stack {
+    overflow-wrap: anywhere;
+  }
+  .admin-topbar {
+    --notifications-max-height: min(520px, calc(100dvh - 90px));
+  }
+  .admin-topbar > strong {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .admin-sidebar__mobile-head > button,
+  .admin-menu-toggle,
+  .admin-nav a {
+    min-height: 44px;
+  }
+  .admin-sidebar__mobile-head > button,
+  .admin-menu-toggle {
+    min-width: 44px;
+  }
+  .admin-table-wrap,
+  .resource-table-scroll {
+    max-width: 100%;
+    overscroll-behavior-inline: contain;
+  }
+  .resource-overlay {
+    z-index: 1100;
+  }
+  .resource-drawer {
+    max-height: 100dvh;
+    overscroll-behavior: contain;
+  }
+  .resource-preview,
+  .resource-confirm {
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+  }
+  .resource-drawer footer,
+  .resource-preview > header,
+  .live-status,
+  .admin-breadcrumb {
+    flex-wrap: wrap;
+  }
+  .field input,
+  .field select,
+  .field textarea,
+  .resource-toolbar input,
+  .resource-toolbar select {
+    min-width: 0;
+    max-width: 100%;
+    min-height: 44px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .account-profile-grid,
+  .account-actions-grid {
+    --account-profile-columns: minmax(0, 1fr);
+    --account-actions-columns: minmax(0, 1fr);
+  }
+  .dashboard-page {
+    padding: 16px;
+  }
+  .line-bars {
+    gap: 2px;
+    overflow-x: auto;
+  }
+  .line-bars__item {
+    min-width: 5px;
+  }
+}
+
+@media (width < 1024px) and (prefers-reduced-motion: reduce) {
+  .admin-sidebar,
+  .line-bars__item i {
+    transition: none;
+  }
+  .live-status i {
+    animation: none;
   }
 }

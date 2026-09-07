@@ -499,7 +499,21 @@
   color: #6f7480;
   font-size: 0.75rem;
 }
-@media (max-width: 950px) {
+@media (width < 1024px) {
+  .modal {
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    grid-template-rows: auto minmax(160px, 1fr) auto;
+  }
+  .modal header button {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+  }
+  .modal footer {
+    flex-wrap: wrap;
+  }
   .intro {
     grid-template-columns: 1fr;
   }

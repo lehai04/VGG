@@ -577,7 +577,7 @@ main:global(#main-content).page .supportCopy > p:not(.eyebrow) {
   transform: none;
 }
 
-@media (max-width: 900px) {
+@media (width < 1024px) {
   .story,
   .support {
     grid-template-columns: 1fr;
@@ -585,6 +585,11 @@ main:global(#main-content).page .supportCopy > p:not(.eyebrow) {
   .heroCopy {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+  .heroCopy h1 span,
+  .introduction h2 {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
   .heroCopy > p {
     margin-bottom: 0;
