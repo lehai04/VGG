@@ -101,7 +101,7 @@
 .intro {
   padding: clamp(40px, 4.5vw, 64px) var(--page-gutter);
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: clamp(48px, 6vw, 96px);
   align-items: start;
   background: var(--paper);
@@ -487,17 +487,17 @@
 
 @media (max-width: 620px) {
   .hero {
-    min-height: 700px;
+    min-height: clamp(520px, 78svh, 680px);
   }
   .heroCopy {
-    padding: 150px 20px 85px;
+    padding: 150px var(--page-gutter) 85px;
   }
   .heroCopy h1 {
     font-size: clamp(38px, 13vw, 52px);
     line-height: 0.98;
   }
   .scrollCue {
-    right: 20px;
+    right: var(--page-gutter);
     bottom: 26px;
   }
   .breadcrumb,
@@ -506,8 +506,8 @@
   .payment,
   .encouragement,
   .closing {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: var(--page-gutter);
+    padding-left: var(--page-gutter);
   }
   .intro {
     grid-template-columns: 1fr;

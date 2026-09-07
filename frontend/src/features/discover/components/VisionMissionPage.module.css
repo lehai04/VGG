@@ -106,7 +106,7 @@
   min-height: 900px;
   padding: clamp(90px, 10vw, 150px) 7vw;
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
   gap: clamp(60px, 8vw, 130px);
   align-items: center;
 }
@@ -189,7 +189,7 @@
 }
 .mission {
   padding-block: clamp(100px, 11vw, 170px);
-  grid-template-columns: minmax(360px, 0.86fr) minmax(0, 1.14fr);
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
   background: var(--red);
   color: #fff;
 }
@@ -717,7 +717,7 @@
   line-height: 0.98;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .heroCopy h1 {
     font-size: clamp(44px, 13vw, 56px);
   }
@@ -790,7 +790,7 @@ main.page .philosophy .philosophyBottom.philosophyBottom > p {
 .page .mission blockquote { margin-top: 36px; padding-top: 26px; }
 .page .philosophyStatement { margin: clamp(34px, 4.5vw, 58px) 0; }
 .page .philosophyStatement p { padding-block: 8px; }
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .page .story { padding-block: 48px !important; gap: 30px; }
   .page .philosophy { padding-block: 52px !important; }
 }

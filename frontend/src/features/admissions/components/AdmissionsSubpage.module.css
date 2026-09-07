@@ -792,7 +792,7 @@
     );
   }
   .heroCopy {
-    padding: 150px 20px 90px;
+    padding: 150px var(--page-gutter) 90px;
   }
   .heroCopy h1 {
     font-size: clamp(30px, 10.5vw, 52px);
@@ -801,12 +801,12 @@
     font-size: 16px;
   }
   .scrollCue {
-    right: 20px;
+    right: var(--page-gutter);
     bottom: 28px;
   }
   .overview {
     grid-template-columns: 1fr;
-    padding: 58px 20px;
+    padding: 58px var(--page-gutter);
     min-height: 0;
     gap: 40px;
   }
@@ -818,14 +818,14 @@
     border-radius: 10px;
   }
   .highlights {
-    padding: 64px 20px;
+    padding: 64px var(--page-gutter);
   }
   .highlightsGrid {
     grid-template-columns: 1fr;
   }
   .quote {
     grid-template-columns: 1fr;
-    padding: 64px 20px;
+    padding: 64px var(--page-gutter);
     gap: 44px;
   }
   .quoteMedia {
@@ -839,7 +839,7 @@
     font-size: 26px;
   }
   .dates {
-    padding: 58px 20px;
+    padding: 58px var(--page-gutter);
     gap: 38px;
   }
   .datesHead h2 {
@@ -865,7 +865,7 @@
   }
   .dateCards article {
     min-height: 0;
-    padding: 24px 52px 24px 20px;
+    padding: 24px 52px 24px var(--page-gutter);
     grid-template-columns: 72px 1fr;
     gap: 18px;
   }
@@ -874,7 +874,7 @@
     font-size: 54px;
   }
   .navStrip {
-    padding: 52px 20px;
+    padding: 52px var(--page-gutter);
   }
   .navList {
     grid-template-columns: 1fr 1fr;

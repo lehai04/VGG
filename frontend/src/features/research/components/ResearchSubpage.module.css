@@ -441,7 +441,7 @@
 ══════════════════════════════════ */
 @media (max-width: 600px) {
   .heroCopy {
-    padding: 90px 24px 56px;
+    padding: 90px var(--page-gutter) 56px;
     min-height: 380px;
   }
   .hero h1 {
@@ -453,6 +453,20 @@
 
   .statsSection {
     grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 420px) {
+    .statsSection {
+      grid-template-columns: 1fr;
+    }
+    .statCell {
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+      padding: 32px var(--page-gutter);
+    }
+    .statCell:last-child {
+      border-bottom: 0;
+    }
   }
 
   .highlightItem {

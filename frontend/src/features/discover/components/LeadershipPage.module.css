@@ -5,7 +5,7 @@
 }
 .hero {
   position: relative;
-  height: 610px;
+  min-height: clamp(520px, 70svh, 610px);
   isolation: isolate;
   overflow: hidden;
   color: #fff;
@@ -120,12 +120,13 @@ main:global(#main-content).page .profileCopy p {
 }
 @media (max-width: 600px) {
   .hero {
-    height: 520px;
+    min-height: clamp(440px, 70svh, 520px);
+    height: auto;
   }
   .heroTitle {
-    left: 24px;
-    right: 24px;
-    bottom: 48px;
+    left: var(--page-gutter);
+    right: var(--page-gutter);
+    bottom: 44px;
   }
   .heroTitle h1 {
     font-size: clamp(36px, 14vw, 54px);
@@ -134,7 +135,7 @@ main:global(#main-content).page .profileCopy p {
     font-size: 12px;
   }
   .leaderProfile {
-    padding: 52px 20px 64px;
+    padding: 52px var(--page-gutter) 64px;
     gap: 34px;
   }
   .profileCopy h2 {

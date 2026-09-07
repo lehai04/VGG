@@ -331,7 +331,8 @@
 }
 .moreNav h2 {
   margin: 0;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
   font-size: 36px;
 }
 .moreNav nav {
@@ -374,14 +375,14 @@
     min-height: 560px;
   }
   .heroCopy {
-    padding: 110px 24px 52px;
+    padding: 110px var(--page-gutter) 52px;
   }
   .heroCopy h1 {
     font-size: clamp(30px, 9.5vw, 46px);
   }
   .statement {
     margin: 0;
-    padding: 58px 24px;
+    padding: 58px var(--page-gutter);
     min-height: 500px;
     border-radius: 0;
   }
@@ -389,7 +390,7 @@
     font-size: clamp(28px, 9vw, 42px);
   }
   .zigzag {
-    padding: 40px 24px;
+    padding: 40px var(--page-gutter);
     gap: 24px;
   }
   .zigzag figure {
@@ -406,7 +407,7 @@
   }
   .experience,
   .moments {
-    padding: 54px 24px;
+    padding: 54px var(--page-gutter);
   }
   .moments > div {
     grid-template-columns: 1fr;
@@ -416,21 +417,21 @@
   .moments figure:nth-child(n) { grid-column: auto; grid-row: auto; }
   .community {
     min-height: 520px;
-    padding: 60px 24px;
+    padding: 60px var(--page-gutter);
   }
   .community h2 {
     font-size: 48px;
   }
   .moreScene {
     min-height: 540px;
-    padding: 30px 24px;
+    padding: 30px var(--page-gutter);
     align-items: flex-end;
   }
   .moreCard {
     padding: 25px 21px;
   }
   .moreNav {
-    padding: 30px 24px;
+    padding: 30px var(--page-gutter);
   }
   .moreNav h2 {
     font-size: 30px;

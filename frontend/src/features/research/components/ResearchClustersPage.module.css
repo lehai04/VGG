@@ -1,5 +1,5 @@
 .page { --ink:#171d45; color:var(--ink); background:#fff; }
-.hero { position:relative; height:610px; isolation:isolate; overflow:hidden; color:#fff; background:var(--ink); }
+.hero { position:relative; min-height:clamp(520px,70svh,610px); isolation:isolate; overflow:hidden; color:#fff; background:var(--ink); }
 .hero > img { z-index:-2; object-fit:cover; }
 .heroOverlay { position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,rgba(22,27,65,.95),rgba(22,27,65,.3)); }
 .heroTitle { position:absolute; left:var(--container-padding); right:var(--container-padding); bottom:70px; }
@@ -20,5 +20,5 @@ main.page .clusterCopy > p:not(.index) { max-width:690px; margin:22px 0 28px; co
 .clusterGallery img { object-fit:cover; transition:transform 650ms var(--motion-ease); }
 .clusterGallery figure:hover img { transform:scale(1.03); }
 @media (max-width:900px) { .clusterProfile { grid-template-columns:1fr; } .clusterCopy { position:static; } .clusterGallery { grid-template-rows:520px 250px; } }
-@media (max-width:600px) { .hero { height:520px; } .heroTitle { left:24px; right:24px; bottom:48px; } .heroTitle h1 { font-size:clamp(32px,11vw,50px); } .heroTitle span { font-size:12px; } .clusterProfile { padding:44px 24px 54px; gap:30px; } .clusterCopy h2 { font-size:44px; } .clusterGallery { gap:10px; grid-template-rows:300px 140px; } .clusterGallery figure { border-radius:8px; } }
+@media (max-width:600px) { .hero { min-height:clamp(440px,70svh,520px); height:auto; } .heroTitle { left:var(--page-gutter); right:var(--page-gutter); bottom:44px; } .heroTitle h1 { font-size:clamp(32px,11vw,50px); } .heroTitle span { font-size:12px; } .clusterProfile { padding:44px var(--page-gutter) 54px; gap:30px; } .clusterCopy h2 { font-size:44px; } .clusterGallery { gap:10px; grid-template-rows:300px 140px; } .clusterGallery figure { border-radius:8px; } }
 @media (prefers-reduced-motion:reduce) { .clusterCopy a,.clusterGallery img { transition:none; } }

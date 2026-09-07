@@ -66,6 +66,7 @@ html,
 body {
   width: 100%;
   max-width: 100%;
+  overflow-x: clip;
 }
 img,
 video,
@@ -211,6 +212,18 @@ a[class*="cta"],
 a[class*="Cta"] {
   white-space: nowrap;
   text-wrap: nowrap;
+}
+@media (max-width: 600px) {
+  button,
+  [role="button"],
+  .vgg-cta-pill,
+  a[class*="button"],
+  a[class*="Button"],
+  a[class*="cta"],
+  a[class*="Cta"] {
+    white-space: normal;
+    text-wrap: balance;
+  }
 }
 [class*="eyebrow"],
 [class*="Eyebrow"],
@@ -3858,11 +3871,20 @@ textarea {
      Removed min-width: 1050px that forced horizontal overflow on mobile. */
   .apply-now-float {
     right: 12px;
-    bottom: calc(72px + env(safe-area-inset-bottom));
+    bottom: calc(72px + env(safe-area-inset-bottom, 0px));
     min-width: 120px;
     min-height: 44px;
     padding: 0 16px;
     font-size: 10px;
+  }
+}
+@media (max-height: 500px) and (max-width: 900px) {
+  .apply-now-float {
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    right: 124px;
+    min-height: 40px;
+    min-width: 100px;
+    padding: 0 12px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4152,6 +4174,28 @@ footer {
   }
   .zalo-float::after {
     inset: -5px;
+  }
+}
+
+@media (max-height: 500px) and (max-width: 760px) {
+  .facebook-float,
+  .zalo-float {
+    width: 40px;
+    height: 40px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+  .zalo-float {
+    right: 10px;
+  }
+  .facebook-float {
+    right: 56px;
+  }
+  .facebook-float > span {
+    font-size: 22px;
+    margin-top: 2px;
+  }
+  .zalo-float > span {
+    font-size: 10px;
   }
 }
 

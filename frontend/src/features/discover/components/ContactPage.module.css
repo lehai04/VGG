@@ -7,7 +7,7 @@
 
 .hero {
   position: relative;
-  height: 610px;
+  min-height: clamp(520px, 70svh, 610px);
   isolation: isolate;
   overflow: hidden;
   color: #fff;
@@ -190,7 +190,7 @@ main:global(#main-content).page .visitCopy > p:not(.eyebrow) {
 
 .visitSection {
   display: grid;
-  grid-template-columns: minmax(360px, 1fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
   gap: clamp(48px, 7vw, 104px);
   align-items: center;
   padding: clamp(64px, 7vw, 96px) var(--container-padding);
@@ -274,11 +274,12 @@ main:global(#main-content).page .visitCopy > p:not(.eyebrow) {
 }
 @media (max-width: 600px) {
   .hero {
-    height: 520px;
+    min-height: clamp(440px, 70svh, 520px);
+    height: auto;
   }
   .heroTitle {
-    left: 24px;
-    right: 24px;
+    left: var(--page-gutter);
+    right: var(--page-gutter);
     bottom: 48px;
   }
   .heroTitle span {
@@ -286,7 +287,7 @@ main:global(#main-content).page .visitCopy > p:not(.eyebrow) {
   }
   .remoteSection,
   .visitSection {
-    padding: 48px 24px 58px;
+    padding: 48px var(--page-gutter) 58px;
   }
   .sectionHeading > span {
     font-size: 17px;

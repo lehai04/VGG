@@ -4565,12 +4565,16 @@
     background: #fff;
     box-shadow: 18px 20px 38px rgba(31, 34, 81, 0.18);
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    pointer-events: none;
     visibility: hidden;
     opacity: 0;
     transform: translateX(-105%);
     transition: transform 220ms ease, opacity 180ms ease, visibility 220ms;
   }
   .home-page .nav.open {
+    pointer-events: auto;
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
