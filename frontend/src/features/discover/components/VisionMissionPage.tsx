@@ -4,6 +4,7 @@ import { RevealOnScroll } from "@/shared/components/ui";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
+import { DiscoverMore } from "@/features/discover/components/DiscoverMore";
 import styles from "./VisionMissionPage.module.css";
 
 const vision = "Trở thành đơn vị đào tạo sau đại học tiên phong trong kết nối tri thức học thuật với thực tiễn nghề nghiệp, mở rộng mạng lưới học thuật – doanh nghiệp và phát triển nguồn nhân lực có năng lực tạo ra giá trị cho xã hội.";
@@ -58,6 +59,7 @@ export function VisionMissionPage() {
     </section>
 
     {/* Closing kế thừa form tư vấn chuẩn của homepage, không nhân đôi logic gửi API. */}
+    <DiscoverMore activeSlug="tam-nhin-su-menh" />
     <NextStepCTA />
     <SiteFooter />
   </main>;

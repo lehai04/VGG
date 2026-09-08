@@ -9,6 +9,7 @@ import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 import { WhyChooseSection } from "@/features/discover/components/WhyChooseSection";
+import { DiscoverMore } from "@/features/discover/components/DiscoverMore";
 
 export const metadata = {
   title: "Viện Sau Đại học | Về Viện Sau Đại học",
@@ -131,6 +132,8 @@ export default function DiscoverPage() {
           </p>
         </div>
       </section>
+
+      <DiscoverMore activeSlug="gioi-thieu" />
 
       <NextStepCTA />
 

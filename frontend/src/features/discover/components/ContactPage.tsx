@@ -5,6 +5,7 @@ import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { FooterIcon } from "@/shared/components/layout/footer/FooterIcon";
 import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
+import { DiscoverMore } from "@/features/discover/components/DiscoverMore";
 import styles from "./ContactPage.module.css";
 
 const socialLinks = [
@@ -89,6 +90,7 @@ export function ContactPage() {
         </div>
       </section>
 
+      <DiscoverMore activeSlug="lien-he" />
       <NextStepCTA />
       <SiteFooter />
     </main>

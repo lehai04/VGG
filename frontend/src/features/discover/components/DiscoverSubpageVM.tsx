@@ -4,6 +4,7 @@ import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
+import { DiscoverMore } from "@/features/discover/components/DiscoverMore";
 import styles from "./DiscoverSubpageVM.module.css";
 
 interface PageData {
@@ -332,6 +333,7 @@ export function DiscoverSubpageVM({ slug, page }: { slug: string; page: PageData
         </>
       )}
 
+      <DiscoverMore activeSlug={slug} />
       <NextStepCTA />
       <SiteFooter />
     </main>
