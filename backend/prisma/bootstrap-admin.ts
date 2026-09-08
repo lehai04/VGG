@@ -15,6 +15,7 @@ const permissions = [
   "media.view", "media.upload", "media.delete",
   "admins.view", "admins.create", "admins.update", "admins.disable", "admins.reset_password", "admins.change_role", "admins.delete",
   "permissions.manage", "audit.view",
+  "settings.view", "settings.update", "settings.security", "settings.logs",
 ] as const;
 
 async function main() {

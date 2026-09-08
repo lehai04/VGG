@@ -17,6 +17,10 @@ export const ADMIN_PERMISSIONS = [
   "admins.reset_password",
   "admins.change_role",
   "admins.delete",
+  "settings.view",
+  "settings.update",
+  "settings.security",
+  "settings.logs",
 ] as const;
 
 export type AdminPermission = (typeof ADMIN_PERMISSIONS)[number];

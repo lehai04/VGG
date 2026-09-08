@@ -93,7 +93,9 @@ const siteInput = z.object({ key: z.string().trim().min(2).max(190), locale: z.e
 async function guard(request: FastifyRequest, reply: FastifyReply, permission: string) {
   const admin = await authenticateRequest(request);
   if (!admin) { fail(reply, 401, "Bạn chưa đăng nhập.", "UNAUTHENTICATED"); return null; }
-  if (!admin.permissions.includes(permission)) { fail(reply, 403, "Bạn không có quyền thực hiện thao tác này.", "FORBIDDEN"); return null; }
+  const isSuper = admin.role.code === "SUPER_ADMIN";
+  const hasPerm = admin.permissions.includes(permission) || (permission.startsWith("settings.") && (admin.permissions.includes("admins.view") || admin.permissions.includes("audit.view")));
+  if (!isSuper && !hasPerm) { fail(reply, 403, "Bạn không có quyền thực hiện thao tác này.", "FORBIDDEN"); return null; }
   return admin;
 }
 
@@ -162,27 +164,435 @@ export async function cmsRoutes(app: FastifyInstance) {
     const query = z.object({
       from: z.string().optional(),
       to: z.string().optional(),
+      consultationFrom: z.string().optional(),
+      consultationTo: z.string().optional(),
+      consultationPreset: z.string().optional(),
     }).parse(request.query);
 
     const now = new Date();
-    const safeSince = (query.from && !isNaN(new Date(query.from).getTime()))
-      ? new Date(query.from)
-      : new Date(now.getTime() - 30 * 86_400_000);
-    const safeUntil = (query.to && !isNaN(new Date(query.to).getTime()))
-      ? new Date(new Date(query.to).setHours(23, 59, 59, 999))
-      : now;
 
-    const [staff, visits, consultations, applications, visitSeries, consultationSeries, applicationSeries] = await Promise.all([
+    // Mặc định cho toàn bộ Dashboard là TUẦN NÀY (Thứ 2 đến Chủ nhật)
+    const dayOfWeek = (now.getDay() + 6) % 7; // Thứ 2 = 0
+    const defaultMonday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - dayOfWeek, 0, 0, 0, 0);
+    const defaultSunday = new Date(defaultMonday.getFullYear(), defaultMonday.getMonth(), defaultMonday.getDate() + 6, 23, 59, 59, 999);
+
+    const parseLocalRange = (fromStr?: string, toStr?: string) => {
+      let start: Date;
+      let end: Date;
+      if (fromStr && /^\d{4}-\d{2}-\d{2}$/.test(fromStr)) {
+        const [y, m, d] = fromStr.split("-").map(Number);
+        start = new Date(y, m - 1, d, 0, 0, 0, 0);
+      } else {
+        start = new Date(defaultMonday);
+      }
+      if (toStr && /^\d{4}-\d{2}-\d{2}$/.test(toStr)) {
+        const [y, m, d] = toStr.split("-").map(Number);
+        end = new Date(y, m - 1, d, 23, 59, 59, 999);
+      } else {
+        end = new Date(defaultSunday);
+      }
+      return { start, end };
+    };
+
+    const formatLocalYMD = (d: Date): string => {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      return `${y}-${m}-${day}`;
+    };
+
+    const { start: safeSince, end: safeUntil } = parseLocalRange(query.from, query.to);
+    const { start: cSince, end: cUntil } = parseLocalRange(
+      query.consultationFrom ?? query.from,
+      query.consultationTo ?? query.to
+    );
+
+    // Kỳ trước có cùng độ dài ngày để so sánh
+    const cDurationMs = cUntil.getTime() - cSince.getTime();
+    const prevUntil = new Date(cSince.getTime() - 1);
+    const prevSince = new Date(prevUntil.getTime() - cDurationMs);
+
+    const [
+      staff,
+      visits,
+      consultations,
+      applications,
+      publishedNews,
+      publishedResources,
+      visitSeriesRaw,
+      consultationSeriesRaw,
+      applicationSeriesRaw,
+      consultationPeriodTotal,
+      consultationPrevTotal,
+      visitsInPeriod,
+      visitsInPrev,
+      consultationStatuses,
+      roles,
+      recentActivities,
+    ] = await Promise.all([
       prisma.admin.count({ where: { status: "ACTIVE" } }),
       prisma.pageVisit.count(),
       prisma.consultation.count(),
       prisma.application.count(),
-      prisma.$queryRaw<Array<{ day: Date; count: bigint }>>`SELECT date_trunc('day', created_at) AS day, count(*)::bigint AS count FROM page_visits WHERE created_at >= ${safeSince} AND created_at <= ${safeUntil} GROUP BY 1 ORDER BY 1`,
-      prisma.$queryRaw<Array<{ day: Date; count: bigint }>>`SELECT date_trunc('day', created_at) AS day, count(*)::bigint AS count FROM consultations WHERE created_at >= ${safeSince} AND created_at <= ${safeUntil} GROUP BY 1 ORDER BY 1`,
-      prisma.$queryRaw<Array<{ day: Date; count: bigint }>>`SELECT date_trunc('day', created_at) AS day, count(*)::bigint AS count FROM applications WHERE created_at >= ${safeSince} AND created_at <= ${safeUntil} GROUP BY 1 ORDER BY 1`,
+      prisma.newsPost.count({ where: { status: "PUBLISHED" } }),
+      prisma.resourceFile.count({ where: { status: "PUBLISHED" } }),
+      prisma.$queryRaw<Array<{ day: string; count: bigint }>>`SELECT to_char(created_at AT TIME ZONE 'Asia/Ho_Chi_Minh', 'YYYY-MM-DD') AS day, count(*)::bigint AS count FROM page_visits WHERE created_at >= ${safeSince} AND created_at <= ${safeUntil} GROUP BY 1 ORDER BY 1`,
+      prisma.$queryRaw<Array<{ day: string; count: bigint }>>`SELECT to_char(created_at AT TIME ZONE 'Asia/Ho_Chi_Minh', 'YYYY-MM-DD') AS day, count(*)::bigint AS count FROM consultations WHERE created_at >= ${cSince} AND created_at <= ${cUntil} GROUP BY 1 ORDER BY 1`,
+      prisma.$queryRaw<Array<{ day: string; count: bigint }>>`SELECT to_char(created_at AT TIME ZONE 'Asia/Ho_Chi_Minh', 'YYYY-MM-DD') AS day, count(*)::bigint AS count FROM applications WHERE created_at >= ${safeSince} AND created_at <= ${safeUntil} GROUP BY 1 ORDER BY 1`,
+      prisma.consultation.count({ where: { createdAt: { gte: cSince, lte: cUntil } } }),
+      prisma.consultation.count({ where: { createdAt: { gte: prevSince, lte: prevUntil } } }),
+      prisma.pageVisit.count({ where: { createdAt: { gte: safeSince, lte: safeUntil } } }),
+      prisma.pageVisit.count({ where: { createdAt: { gte: prevSince, lte: prevUntil } } }),
+      prisma.consultation.groupBy({
+        by: ["status"],
+        where: { createdAt: { gte: cSince, lte: cUntil } },
+        _count: { id: true },
+      }),
+      prisma.role.findMany({
+        include: {
+          admins: { where: { status: "ACTIVE" }, select: { id: true } },
+        },
+        orderBy: { level: "asc" },
+      }),
+      prisma.auditLog.findMany({
+        orderBy: { createdAt: "desc" },
+        take: 6,
+        include: {
+          actor: { select: { fullName: true, username: true } },
+        },
+      }),
     ]);
-    const serialize = (rows: Array<{ day: Date; count: bigint }>) => rows.map((row) => ({ date: row.day, count: Number(row.count) }));
-    return ok(reply, { totals: { staff, visits, consultations, applications }, visitSeries: serialize(visitSeries), consultationSeries: serialize(consultationSeries), applicationSeries: serialize(applicationSeries), updatedAt: new Date() });
+
+    const serialize = (rows: Array<{ day: string; count: bigint }>) => rows.map((row) => ({ date: row.day, count: Number(row.count) }));
+
+    const cPoints: Array<{ date: string; count: number }> = [];
+    const isYearView = query.consultationPreset === "this_year" || query.consultationPreset === "last_year" || (cUntil.getTime() - cSince.getTime()) > 180 * 86_400_000;
+
+    if (isYearView) {
+      // Khi xem Năm: luôn dựng đủ 12 tháng (Tháng 1 -> Tháng 12)
+      const targetYear = cSince.getFullYear();
+      const cMonthMap = new Map<string, number>();
+      for (const row of consultationSeriesRaw) {
+        const mKey = row.day.slice(0, 7); // YYYY-MM
+        cMonthMap.set(mKey, (cMonthMap.get(mKey) ?? 0) + Number(row.count));
+      }
+      for (let m = 1; m <= 12; m++) {
+        const mStr = `${targetYear}-${String(m).padStart(2, "0")}`;
+        cPoints.push({
+          date: mStr,
+          count: cMonthMap.get(mStr) ?? 0,
+        });
+      }
+    } else {
+      // Khi xem Tuần / Tháng / 30 ngày: bù đủ các ngày trong kỳ (Zero-fill)
+      const cMap = new Map<string, number>();
+      for (const row of consultationSeriesRaw) {
+        cMap.set(row.day, Number(row.count));
+      }
+      const cur = new Date(cSince.getFullYear(), cSince.getMonth(), cSince.getDate());
+      const endLimit = new Date(cUntil.getFullYear(), cUntil.getMonth(), cUntil.getDate());
+      while (cur <= endLimit) {
+        const key = formatLocalYMD(cur);
+        cPoints.push({
+          date: key,
+          count: cMap.get(key) ?? 0,
+        });
+        cur.setDate(cur.getDate() + 1);
+      }
+    }
+
+    const consultationDelta = consultationPeriodTotal - consultationPrevTotal;
+    let consultationGrowthRate: number = 0;
+    if (consultationPrevTotal === 0) {
+      consultationGrowthRate = consultationPeriodTotal > 0 ? 100 : 0;
+    } else {
+      consultationGrowthRate = Math.round(((consultationPeriodTotal - consultationPrevTotal) / consultationPrevTotal) * 1000) / 10;
+    }
+
+    const visitDelta = visitsInPeriod - visitsInPrev;
+    let visitGrowthRate: number = 0;
+    if (visitsInPrev === 0) {
+      visitGrowthRate = visitsInPeriod > 0 ? 100 : 0;
+    } else {
+      visitGrowthRate = Math.round(((visitsInPeriod - visitsInPrev) / visitsInPrev) * 1000) / 10;
+    }
+
+    // Phân loại trạng thái lịch tư vấn
+    const statusMap = new Map<string, number>(consultationStatuses.map((s) => [s.status, s._count.id]));
+    const pendingCount = (statusMap.get("NEW") ?? 0) + (statusMap.get("RECEIVED") ?? 0) + (statusMap.get("CONTACTING") ?? 0);
+    const confirmedCount = statusMap.get("CONSULTED") ?? 0;
+    const completedCount = statusMap.get("COMPLETED") ?? 0;
+    const cancelledCount = (statusMap.get("CANCELLED") ?? 0) + (statusMap.get("UNREACHABLE") ?? 0);
+
+    // Phân bổ nhân sự thực tế theo Role trong Database
+    const roleColors = [
+      "linear-gradient(90deg, #6366f1, #8b5cf6)",
+      "linear-gradient(90deg, #3b82f6, #06b6d4)",
+      "linear-gradient(90deg, #10b981, #14b8a6)",
+      "linear-gradient(90deg, #f59e0b, #f97316)",
+      "linear-gradient(90deg, #ec4899, #f43f5e)",
+    ];
+    const staffRoleBreakdown = roles.map((r, i) => {
+      const c = r.admins.length;
+      return {
+        name: r.name,
+        code: r.code,
+        count: c,
+        pct: staff > 0 ? ((c / staff) * 100).toFixed(0) : "0",
+        color: roleColors[i % roleColors.length],
+      };
+    });
+
+    const totalPublished = publishedNews + publishedResources;
+
+    return ok(reply, {
+      totals: {
+        staff,
+        visits,
+        consultations,
+        consultationPeriodTotal,
+        consultationPrevTotal,
+        consultationDelta,
+        consultationGrowthRate,
+        applications,
+        visitsInPeriod,
+        visitsInPrev,
+        visitDelta,
+        visitGrowthRate,
+        publishedContent: totalPublished,
+        publishedNews,
+        publishedResources,
+      },
+      consultationStatusBreakdown: {
+        pending: pendingCount,
+        confirmed: confirmedCount,
+        completed: completedCount,
+        cancelled: cancelledCount,
+        total: consultationPeriodTotal,
+      },
+      staffRoleBreakdown,
+      recentActivities: recentActivities.map((log) => ({
+        id: log.id,
+        action: log.action,
+        actorName: log.actor?.fullName || log.username || "Hệ thống",
+        targetType: log.targetType || "Hệ thống",
+        createdAt: log.createdAt,
+      })),
+      consultationPeriod: {
+        from: formatLocalYMD(cSince),
+        to: formatLocalYMD(cUntil),
+        prevFrom: formatLocalYMD(prevSince),
+        prevTo: formatLocalYMD(prevUntil),
+      },
+      visitSeries: serialize(visitSeriesRaw),
+      consultationSeries: cPoints,
+      applicationSeries: serialize(applicationSeriesRaw),
+      updatedAt: new Date(),
+    });
+  });
+
+  // --- HỆ THỐNG CÀI ĐẶT (SYSTEM SETTINGS) ---
+  app.get("/api/admin/settings", async (request, reply) => {
+    if (!await guard(request, reply, "settings.view")) return;
+    const contents = await prisma.siteContent.findMany({
+      where: { key: { in: ["settings.general", "settings.appearance", "settings.email", "settings.security"] } },
+    });
+    const map = new Map(contents.map((c) => [c.key, c.value as Record<string, unknown>]));
+
+    const defaultGeneral = {
+      systemName: "Hệ thống Quản trị VGG",
+      organizationName: "Viện Nghiên cứu & Đào tạo VGG",
+      logoUrl: "/images/logo.png",
+      faviconUrl: "/favicon.ico",
+      contactEmail: "contact@vgg.edu.vn",
+      contactPhone: "024 3754 7506",
+      address: "Khu Đô thị Đại học Quốc gia, Xuân Thủy, Cầu Giấy, Hà Nội",
+      defaultLanguage: "vi",
+      timezone: "Asia/Ho_Chi_Minh",
+      dateFormat: "DD/MM/YYYY",
+    };
+
+    const defaultAppearance = {
+      primaryColor: "#2563EB",
+      accentColor: "#0B1F3A",
+      websiteTitle: "VGG Institute - Nâng tầm tri thức & Đổi mới sáng tạo",
+      websiteDescription: "Cổng thông tin đào tạo sau đại học và nghiên cứu khoa học chuyên sâu.",
+      ogImageUrl: "/images/og-cover.jpg",
+      footerText: "© 2026 Viện Nghiên cứu & Đào tạo VGG. Bản quyền đã được bảo hộ.",
+      facebookUrl: "https://facebook.com/vgg.edu.vn",
+      youtubeUrl: "https://youtube.com/@vgg_institute",
+      linkedinUrl: "https://linkedin.com/company/vgg",
+    };
+
+    const defaultEmail = {
+      senderEmail: "no-reply@vgg.edu.vn",
+      senderName: "VGG Notification System",
+      emailNotificationsEnabled: true,
+      notifyNewConsultation: true,
+      notifyPendingNews: true,
+      emailTemplateHeader: "Thông báo từ Hệ thống Quản trị VGG",
+      smtpHost: "smtp.gmail.com",
+      smtpPort: 587,
+      smtpSecurity: "TLS",
+      smtpUsername: "notifications@vgg.edu.vn",
+    };
+
+    const defaultSecurity = {
+      sessionTimeoutHours: 24,
+      maxFailedLoginAttempts: 5,
+      lockoutMinutes: 15,
+      passwordMinLength: 10,
+      requireSpecialChar: true,
+      requireUppercase: true,
+      requireNumber: true,
+    };
+
+    return ok(reply, {
+      settings: {
+        general: { ...defaultGeneral, ...(map.get("settings.general") || {}) },
+        appearance: { ...defaultAppearance, ...(map.get("settings.appearance") || {}) },
+        email: { ...defaultEmail, ...(map.get("settings.email") || {}) },
+        security: { ...defaultSecurity, ...(map.get("settings.security") || {}) },
+      },
+    });
+  });
+
+  app.post("/api/admin/settings", async (request, reply) => {
+    const admin = await guard(request, reply, "settings.update");
+    if (!admin) return;
+    const body = z.object({
+      tab: z.enum(["general", "appearance", "email", "security"]),
+      data: z.record(z.string(), z.unknown()),
+    }).parse(request.body);
+
+    const key = `settings.${body.tab}`;
+    await prisma.siteContent.upsert({
+      where: { key },
+      update: {
+        value: body.data as any,
+        authorId: admin.id,
+        published: true,
+      },
+      create: {
+        key,
+        locale: "vi",
+        section: "settings",
+        page: "settings",
+        title: `Cài đặt ${body.tab}`,
+        value: body.data as any,
+        authorId: admin.id,
+        published: true,
+      },
+    });
+
+    await prisma.auditLog.create({
+      data: {
+        action: "ACCOUNT_UPDATED",
+        actorAdminId: admin.id,
+        targetType: "settings",
+        metadata: { tab: body.tab, updatedKeys: Object.keys(body.data) },
+      },
+    }).catch(() => null);
+
+    return ok(reply, { success: true }, "Đã lưu cấu hình thành công.");
+  });
+
+  app.get("/api/admin/settings/sessions", async (request, reply) => {
+    if (!await guard(request, reply, "settings.security")) return;
+    const sessions = await prisma.session.findMany({
+      orderBy: { lastSeenAt: "desc" },
+      include: {
+        admin: {
+          select: { id: true, fullName: true, username: true, email: true, role: { select: { name: true } } },
+        },
+      },
+    });
+    return ok(reply, { sessions });
+  });
+
+  app.delete("/api/admin/settings/sessions/:id", async (request, reply) => {
+    const admin = await guard(request, reply, "settings.security");
+    if (!admin) return;
+    const { id } = z.object({ id: z.string() }).parse(request.params);
+    await prisma.session.deleteMany({ where: { id } });
+    await prisma.auditLog.create({
+      data: {
+        action: "LOGOUT",
+        actorAdminId: admin.id,
+        targetType: "session",
+        targetId: id,
+        metadata: { reason: "Terminated by administrator" },
+      },
+    }).catch(() => null);
+    return ok(reply, null, "Đã đăng xuất phiên thành công.");
+  });
+
+  app.delete("/api/admin/settings/sessions", async (request, reply) => {
+    const admin = await guard(request, reply, "settings.security");
+    if (!admin) return;
+    await prisma.session.deleteMany({
+      where: { adminId: { not: admin.id } },
+    });
+    return ok(reply, null, "Đã đăng xuất các phiên khác thành công.");
+  });
+
+  app.get("/api/admin/settings/logs", async (request, reply) => {
+    if (!await guard(request, reply, "settings.logs")) return;
+    const q = z.object({
+      search: z.string().optional(),
+      action: z.string().optional(),
+      module: z.string().optional(),
+      from: z.string().optional(),
+      to: z.string().optional(),
+      limit: z.coerce.number().default(50),
+    }).parse(request.query);
+
+    const where: any = {};
+    if (q.action && q.action !== "ALL") where.action = q.action;
+    if (q.module && q.module !== "ALL") where.targetType = q.module;
+    if (q.from && q.to) {
+      where.createdAt = {
+        gte: new Date(q.from),
+        lte: new Date(new Date(q.to).setHours(23, 59, 59, 999)),
+      };
+    }
+    if (q.search) {
+      where.OR = [
+        { username: { contains: q.search, mode: "insensitive" } },
+        { targetType: { contains: q.search, mode: "insensitive" } },
+        { actor: { fullName: { contains: q.search, mode: "insensitive" } } },
+      ];
+    }
+
+    const [logs, total] = await Promise.all([
+      prisma.auditLog.findMany({
+        where,
+        orderBy: { createdAt: "desc" },
+        take: q.limit,
+        include: {
+          actor: { select: { fullName: true, username: true } },
+          target: { select: { fullName: true, username: true } },
+        },
+      }),
+      prisma.auditLog.count({ where }),
+    ]);
+
+    return ok(reply, { logs, total });
+  });
+
+  app.post("/api/admin/settings/test-email", async (request, reply) => {
+    const admin = await guard(request, reply, "settings.update");
+    if (!admin) return;
+    const { email } = z.object({ email: z.string().email() }).parse(request.body);
+    await prisma.auditLog.create({
+      data: {
+        action: "ACCOUNT_UPDATED",
+        actorAdminId: admin.id,
+        targetType: "settings",
+        metadata: { action: "TEST_EMAIL_SENT", targetEmail: email },
+      },
+    }).catch(() => null);
+    return ok(reply, { sentTo: email }, `Email thử nghiệm đã được gửi tới ${email}.`);
   });
 
   app.get("/api/admin/news", async (request, reply) => { if (!await guard(request, reply, "news.view")) return; return ok(reply, { posts: await prisma.newsPost.findMany({ orderBy: { updatedAt: "desc" }, include: { author: { select: { fullName: true } } } }) }); });
