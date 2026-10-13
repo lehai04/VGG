@@ -9,8 +9,8 @@ import styles from "./LeadershipPage.module.css";
 
 const leadershipProfiles = [
   {
-    name: "PGS.TS. NGUYỄN VĂN THÀNH",
-    title: "Phó Viện Trưởng phụ trách Viện Sau Đại học\nTrường Đại học Văn Lang",
+    name: "PGS. TS. Nguyễn Văn Thành",
+    title: "Phó Viện trưởng Phụ trách Viện Sau Đại học",
     quote: "Tại Trường Đại học Văn Lang, chúng tôi tin rằng giá trị lớn nhất của đào tạo sau đại học không chỉ nằm ở văn bằng, mà ở sự trưởng thành của người học. Đó là những con người có tư duy chiến lược; biết kết nối tri thức với công nghệ, dữ liệu và đổi mới sáng tạo; có năng lực nghiên cứu, phản biện và ra quyết định dựa trên bằng chứng; đồng thời tạo ra giá trị mới cho tổ chức và cộng đồng.",
     image: "/images/pages/discover/leadership/thay2.png",
   },
@@ -25,34 +25,34 @@ export interface DepartmentLeader {
 /* Thêm thông tin lãnh đạo */
 const departmentHeads: DepartmentLeader[] = [
   {
-    id: "tuyen-sinh-truyen-thong",
-    name: "Đang cập nhật",
-    role: "Trưởng bộ phận tuyển sinh và truyền thông",
-    image: "/images/pages/discover/leadership/Lanh đạo 2.png",
-  },
-  {
-    id: "cham-soc-hoc-vien",
-    name: "Đang cập nhật",
-    role: "Trưởng bộ phận chăm sóc học viên",
-    image: "/images/pages/discover/leadership/Lanh đạo 2.png",
+    id: "dao-tao-tien-si",
+    name: "TS. Huỳnh Tấn Lợi",
+    role: "Trưởng Bộ phận Phát triển chương trình Tiến sĩ và Quốc tế",
+    image: "/images/pages/discover/leadership/huynh-tan-loi-portrait.png",
   },
   {
     id: "dao-tao-thac-si",
-    name: "Đang cập nhật",
-    role: "Trưởng bộ phận phụ trách chương trình Đào tạo Thạc sĩ",
-    image: "/images/pages/discover/leadership/Lanh đạo 2.png",
+    name: "ThS. Nguyễn Viết Tịnh",
+    role: "Trưởng Bộ phận Phát triển chương trình Thạc sĩ",
+    image: "/images/pages/discover/leadership/nguyen-viet-tinh-portrait.png",
   },
   {
-    id: "dao-tao-tien-si",
-    name: "Đang cập nhật",
-    role: "Trưởng bộ phận phụ trách chương trình Đào tạo Tiến sĩ",
-    image: "/images/pages/discover/leadership/Lanh đạo 2.png",
+    id: "thanh-cong-nguoi-hoc",
+    name: "ThS. Phạm Quốc Anh",
+    role: "Trưởng Bộ phận Thành công người học",
+    image: "/images/pages/discover/leadership/pham-quoc-anh-portrait.png",
   },
   {
-    id: "crm-he-thong",
-    name: "Đang cập nhật",
-    role: "Trưởng bộ phận phụ trách CRM và Hệ thống",
-    image: "/images/pages/discover/leadership/Lanh đạo 2.png",
+    id: "chuyen-doi-so-quan-tri-du-lieu",
+    name: "ThS. Tống Chí Thông",
+    role: "Phụ trách Chuyển đổi số và Quản trị dữ liệu",
+    image: "/images/pages/discover/leadership/tong-chi-thong-portrait.png",
+  },
+  {
+    id: "tuyen-sinh-truyen-thong",
+    name: "Cô Nguyễn Thu Hiền",
+    role: "Trưởng Bộ phận Tuyển sinh và Truyền thông",
+    image: "/images/pages/discover/leadership/nguyen-thu-hien-portrait.png",
   },
 ];
 
@@ -101,7 +101,7 @@ export function LeadershipPage() {
         <div className={styles.deptContainer}>
           <div className={styles.deptHeader} data-reveal>
             <span className={styles.deptEyebrow}>BAN ĐIỀU HÀNH & QUẢN LÝ CHUYÊN TRÁCH</span>
-            <h2 id="dept-leadership-title">Trưởng các bộ phận Viện Sau Đại học</h2>
+            <h2 id="dept-leadership-title">Đội ngũ phụ trách các bộ phận Viện Sau Đại học</h2>
             <p>
               Đội ngũ phụ trách các mảng công tác trọng tâm đồng hành và hỗ trợ toàn diện cho học viên,
               nghiên cứu sinh trong suốt quá trình đào tạo và phát triển học thuật.
@@ -117,8 +117,8 @@ export function LeadershipPage() {
                       src={leader.image}
                       alt={`Chân dung ${leader.name} - ${leader.role}`}
                       fill
-                      quality={90}
-                      sizes="(max-width: 680px) 50vw, (max-width: 1280px) 25vw, 20vw"
+                      quality={95}
+                      sizes="(max-width: 440px) 260px, (max-width: 680px) 50vw, (max-width: 992px) 33vw, (max-width: 1280px) 25vw, 20vw"
                     />
                   ) : (
                     <div className={styles.photoPlaceholder} title="Vị trí hình ảnh chân dung">

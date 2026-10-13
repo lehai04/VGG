@@ -257,6 +257,7 @@ main:global(#main-content).page .profileCopy p {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 .deptCardInfo {
+  container-type: inline-size;
   padding: 14px 4px 4px;
   display: flex;
   flex-direction: column;
@@ -264,9 +265,10 @@ main:global(#main-content).page .profileCopy p {
   text-align: center;
   flex: 1;
 }
-.deptCardName {
+main:global(#main-content).page .deptCardName {
   margin: 0 !important;
-  font-size: clamp(15px, 1.05vw, 17px) !important;
+  font-size: min(17px, 7.5cqw) !important;
+  white-space: nowrap;
   font-weight: 700 !important;
   color: var(--lead-ink, #171d45);
   line-height: 1.35 !important;
