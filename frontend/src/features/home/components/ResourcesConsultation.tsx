@@ -22,7 +22,7 @@ const RESOURCES = [
  * Khối tài nguyên + tư vấn dùng trên homepage; trang con có thể ẩn tài nguyên
  * để kế thừa nguyên form “Sẵn sàng cho bước tiến mới” mà không lặp logic/API.
  */
-export function ResourcesConsultation({ showResources = true }: { showResources?: boolean }) {
+export function ResourcesConsultation({ showResources = true, initialProgramme = "" }: { showResources?: boolean; initialProgramme?: string }) {
   const { messages } = useLocale();
   const cta = messages.cta;
   // Thông báo trạng thái gửi form cho người dùng.
@@ -156,7 +156,7 @@ export function ResourcesConsultation({ showResources = true }: { showResources?
           </label>
           <label>
             {cta.programme}
-            <select name="programme" defaultValue="" required>
+            <select name="programme" defaultValue={initialProgramme} required>
               <option value="" disabled>
                 {cta.chooseProgramme}
               </option>

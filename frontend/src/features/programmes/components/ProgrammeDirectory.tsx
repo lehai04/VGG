@@ -16,12 +16,13 @@ import {
 } from "@/data/programmes";
 import { getProgrammeCurricula, getProgrammeDetails } from "@/data/curricula";
 
+/** Chuẩn hóa bản dùng để so khớp, không sửa tên chương trình hiển thị.
+ * NFD tách dấu tổ hợp; đ/Đ cần xử lý riêng vì không bị tách thành d bởi NFD. */
 function normalizeText(value: string) {
   return value
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/đ/g, "d")
-    .replace(/Đ/g, "D")
+    .replace(/đ/gi, "d")
     .toLowerCase();
 }
 
@@ -33,6 +34,8 @@ export default function ProgrammeDirectory() {
   const [sort, setSort] = useState<"az" | "za">("az");
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
+  // Chỉ đọc query string lúc component mount; đây là giá trị khởi tạo từ form trang chủ.
+  // Bộ lọc thay đổi sau đó nằm trong state, không tự đồng bộ ngược lên URL.
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
       const params = new URLSearchParams(window.location.search);
@@ -44,13 +47,17 @@ export default function ProgrammeDirectory() {
       setFields(programmeFields.includes(nextField as ProgrammeField) ? [nextField as ProgrammeField] : []);
       setOrientations(programmeOrientations.includes(nextOrientation as ProgrammeOrientation) ? [nextOrientation as ProgrammeOrientation] : []);
     });
+    // Hủy callback nếu component rời trang trước frame kế tiếp.
     return () => window.cancelAnimationFrame(frame);
   }, []);
 
+  // Functional update dùng state mới nhất; tạo mảng mới để React nhận ra thay đổi.
   const toggle = <T,>(set: React.Dispatch<React.SetStateAction<T[]>>, value: T) => {
     set((current) => current.includes(value) ? current.filter((item) => item !== value) : [...current, value]);
   };
 
+  // Các nhóm lọc kết hợp AND; nhiều giá trị trong cùng một nhóm kết hợp OR.
+  // Nhóm rỗng không giới hạn kết quả. useMemo chỉ tính lại khi đầu vào thay đổi.
   const filteredProgrammes = useMemo(() => {
     const query = normalizeText(keyword.trim());
     const result = programmes.filter((p) => {
@@ -60,17 +67,20 @@ export default function ProgrammeDirectory() {
       const keywordMatch = !query || searchText.includes(query);
       const degreeMatch = degrees.length === 0 || degrees.includes(p.degree);
       const fieldMatch = fields.length === 0 || fields.includes(p.field);
-      const orientationMatch = orientations.length === 0 || orientations.includes(p.orientation);
+      const orientationMatch = orientations.length === 0 || (p.orientations ?? [p.orientation]).some(value => orientations.includes(value));
       return keywordMatch && degreeMatch && fieldMatch && orientationMatch;
     });
 
-    return [...result].sort((a, b) =>
+    // filter() đã tạo mảng riêng nên sort trực tiếp không đảo thứ tự nguồn programmes.
+    // localeCompare với vi giữ quy tắc sắp xếp tên tiếng Việt.
+    return result.sort((a, b) =>
       sort === "za" ? b.title.localeCompare(a.title, "vi") : a.title.localeCompare(b.title, "vi")
     );
   }, [keyword, degrees, fields, orientations, sort]);
 
   const activeFilterCount = degrees.length + fields.length + orientations.length;
 
+  // Reset cả tìm kiếm, bộ lọc, thứ tự và thẻ đang mở để trở về trạng thái ban đầu.
   const clearAll = () => {
     setKeyword("");
     setDegrees([]);
@@ -92,6 +102,8 @@ export default function ProgrammeDirectory() {
     ...orientations.map((value) => ({ type: "orientation" as const, value })),
   ];
 
+  // Số đếm lấy từ toàn bộ programmes, không phải danh sách đã lọc.
+  // Giữ quy tắc này khi sửa UI để tránh làm số lượng cạnh checkbox đổi ý nghĩa.
   const filterSections = [
     {
       title: "Bậc đào tạo",
@@ -112,7 +124,7 @@ export default function ProgrammeDirectory() {
       items: programmeOrientations,
       selected: orientations,
       toggleItem: (val: string) => toggle(setOrientations, val as ProgrammeOrientation),
-      count: (val: string) => programmes.filter((p) => p.orientation === val).length,
+      count: (val: string) => programmes.filter((p) => (p.orientations ?? [p.orientation]).some(value => value === val)).length,
     },
   ];
 
@@ -241,7 +253,7 @@ export default function ProgrammeDirectory() {
                         <span>{programme.degree}</span>
                         <span>{programme.field}</span>
                       </div>
-                      <h3>{programme.title}</h3>
+                      <h3><Link href={`/programmes/${programme.id}`}>{programme.title}</Link></h3>
                     </div>
 
                     <div className="vgg-pd-card__stat">
@@ -259,7 +271,11 @@ export default function ProgrammeDirectory() {
                       <span>HỌC PHÍ TOÀN KHÓA</span>
                     </div>
 
-                    <button
+                    {programme.id === "logistics" ? <Link
+                      href={`/programmes/${programme.id}`}
+                      className="vgg-pd-card__toggle"
+                      aria-label={`Khám phá ngành ${programme.title}`}
+                    ><ArrowUpRight size={18} /></Link> : <button
                       type="button"
                       className="vgg-pd-card__toggle"
                       aria-expanded={expanded}
@@ -267,7 +283,7 @@ export default function ProgrammeDirectory() {
                       onClick={() => setExpandedId(expanded ? null : programme.id)}
                     >
                       <ChevronDown size={18} />
-                    </button>
+                    </button>}
                   </div>
 
                   {expanded && (

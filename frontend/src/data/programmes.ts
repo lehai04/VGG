@@ -44,10 +44,14 @@ export type Programme = {
 
   title: string;
   englishTitle: string;
+  /** Ảnh nền banner ngành, dùng đường dẫn trong public hoặc URL đã được cấu hình. */
+  bannerImage?: string;
+  bannerPosition?: string;
 
   degree: ProgrammeDegree;
   field: ProgrammeField;
   orientation: ProgrammeOrientation;
+  orientations?: readonly ProgrammeOrientation[];
 
   credits: number;
   duration: string;
@@ -359,6 +363,7 @@ export const programmes: Programme[] = [
 
   {
     id: "logistics",
+    orientations: ["Ứng dụng", "Nghiên cứu"],
     code: "S-10",
 
     title:
@@ -376,7 +381,7 @@ export const programmes: Programme[] = [
 
     credits: 60,
 
-    duration: "18–24 tháng",
+    duration: "24 tháng",
 
     studyMode: "Linh hoạt",
 
