@@ -67,7 +67,7 @@ export default function ProgrammeDirectory() {
       const keywordMatch = !query || searchText.includes(query);
       const degreeMatch = degrees.length === 0 || degrees.includes(p.degree);
       const fieldMatch = fields.length === 0 || fields.includes(p.field);
-      const orientationMatch = orientations.length === 0 || (p.orientations ?? [p.orientation]).some(value => orientations.includes(value));
+      const orientationMatch = orientations.length === 0 || (p.orientations ?? [p.orientation]).some(value => orientations.some(selected => selected === value));
       return keywordMatch && degreeMatch && fieldMatch && orientationMatch;
     });
 
@@ -257,7 +257,7 @@ export default function ProgrammeDirectory() {
                     </div>
 
                     <div className="vgg-pd-card__stat">
-                      <strong>{programme.credits}</strong>
+                      <strong>{programme.creditsLabel ?? programme.credits}</strong>
                       <span>TÍN CHỈ</span>
                     </div>
 
@@ -286,7 +286,10 @@ export default function ProgrammeDirectory() {
                     </button>}
                   </div>
 
-                  {expanded && (
+                  {expanded && programme.detailsPending && (
+                    <div className="vgg-pd-card__details"><p className="vgg-pd-card__intro">Thông tin chi tiết ngành {programme.title} đang được cập nhật.</p></div>
+                  )}
+                  {expanded && !programme.detailsPending && (
                     <div className="vgg-pd-card__details">
                       <p className="vgg-pd-card__intro">{details.intro}</p>
 
@@ -319,7 +322,7 @@ export default function ProgrammeDirectory() {
                               <p>NỘI DUNG CHƯƠNG TRÌNH</p>
                               <h4>{curriculum.title}</h4>
                             </div>
-                            <strong>{programme.credits} tín chỉ</strong>
+                            <strong>{programme.creditsLabel ?? programme.credits} tín chỉ</strong>
                           </header>
 
                           <div className="vgg-pd-card__curriculum-groups">

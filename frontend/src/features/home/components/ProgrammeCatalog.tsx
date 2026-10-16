@@ -42,6 +42,7 @@ const MASTER_FIELDS = [
       "Kỹ thuật Môi trường",
       "Quản lý Tài nguyên và Môi trường",
       "Công nghệ Sinh học",
+      "Công nghệ thông tin",
       "Kiến trúc",
       "Kỹ thuật Xây dựng",
       "Kỹ thuật Ô tô",
@@ -54,7 +55,7 @@ const MASTER_FIELDS = [
     english: "Business & Management",
     description:
       "Nền tảng quản trị vững chắc, tư duy chiến lược linh hoạt và năng lực tạo giá trị trong nền kinh tế mới.",
-    programmes: ["Quản trị Kinh doanh", "Kinh doanh Thương mại", "Tài chính Ngân hàng", "Kế toán"],
+    programmes: ["Quản trị Kinh doanh", "Kinh doanh Thương mại", "Tài chính Ngân hàng", "Kế toán", "Marketing"],
   },
   {
     code: "TH",
@@ -149,7 +150,7 @@ export function ProgrammeCatalog() {
           {/* Ba số liệu chính dùng chung component nhãn cong để bảo đảm đồng bộ. */}
           <div className="programmeCatalogNumbers">
             <h2 className="programmeArcStat programmeArcStatMasters" id="programme-catalog-title">
-              <strong>18</strong>
+              <strong>20</strong>
               <CurvedLabel pathId="masters-arc">Chương trình Thạc sĩ</CurvedLabel>
             </h2>
             <div className="programmeArcStat programmeArcStatFields">

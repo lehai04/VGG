@@ -7,7 +7,7 @@ import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import styles from "./AboutIntroduction.module.css";
 
 const stats = [
-  ["18", "Chương trình Thạc sĩ"],
+  ["20", "Chương trình Thạc sĩ"],
   ["01", "Chương trình Tiến sĩ"],
   ["05", "Nhóm ngành đào tạo"],
   ["18–24", "Tháng đào tạo phổ biến"],

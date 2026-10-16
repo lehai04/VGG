@@ -25,7 +25,7 @@ export function Programmes() {
       <div className="graduateStats" aria-label="Thống kê chương trình đào tạo">
         <div className="graduateStatsGrid">
           <article>
-            <CountUp end={18} />
+            <CountUp end={20} />
             <p>
               Chương trình
               <br />

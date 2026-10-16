@@ -30,7 +30,7 @@ export function MasterProgrammesPage() {
         <div className={styles.heroCopy}>
           <p>Viện Sau Đại học · MASTER PROGRAMMES</p>
           <h1 id="master-title">Chương trình<br />Thạc sĩ</h1>
-          <span>18 chương trình · 05 khối ngành · 18–24 tháng</span>
+          <span>20 chương trình · 05 khối ngành · 18–24 tháng</span>
         </div>
         <a className={styles.scroll} href="#master-overview" aria-label="Xem tổng quan"><ArrowDown /></a>
       </section>
@@ -45,7 +45,7 @@ export function MasterProgrammesPage() {
           <h2>Phát triển chiều sâu chuyên môn.</h2>
           <div className={styles.overviewText}>
             <p>Chương trình Sau đại học tại Văn Lang không ngừng được cập nhật theo định hướng gắn kết học thuật với thực tiễn. Với lộ trình đào tạo từ 18 đến 24 tháng, mỗi ngành học mang đến mục tiêu phát triển và cơ hội nghề nghiệp rõ ràng.</p>
-            <p>Viện Sau Đại học hiện triển khai 18 chương trình Thạc sĩ thuộc 05 khối ngành, trang bị cho người học năng lực chuyên môn nâng cao, tư duy nghiên cứu, khả năng giải quyết vấn đề và nền tảng để phát triển sự nghiệp bền vững.</p>
+            <p>Viện Sau Đại học hiện triển khai 20 chương trình Thạc sĩ thuộc 05 khối ngành, trang bị cho người học năng lực chuyên môn nâng cao, tư duy nghiên cứu, khả năng giải quyết vấn đề và nền tảng để phát triển sự nghiệp bền vững.</p>
           </div>
         </div>
         <div className={styles.overviewMedia}>
@@ -62,7 +62,7 @@ export function MasterProgrammesPage() {
             cấp nguồn nhân lực chất lượng cao, đáp ứng yêu cầu từ các nhà tuyển
             dụng trong và ngoài nước. Chương trình sau đại học trang bị nền tảng
             vững chắc cho các nhà quản lý, chuyên gia, nhà nghiên cứu và giảng
-            viên tương lai. Đến nay, Viện Sau Đại học đã triển khai 18 chương trình Thạc sĩ
+            viên tương lai. Đến nay, Viện Sau Đại học đã triển khai 20 chương trình Thạc sĩ
             thuộc nhiều lĩnh vực chuyên sâu.
           </blockquote>
           <p><strong>Ban lãnh đạo Viện Sau Đại học</strong><small>Viện Sau đại học · Trường Đại học Văn Lang</small></p>
@@ -96,7 +96,7 @@ export function MasterProgrammesPage() {
       <section className={styles.directory} aria-labelledby="master-directory-title">
         <header data-reveal>
           <p className={styles.eyebrow}>NGÀNH ĐÀO TẠO</p>
-          <h2 id="master-directory-title">Khám phá 18 ngành Thạc sĩ</h2>
+          <h2 id="master-directory-title">Khám phá 20 ngành Thạc sĩ</h2>
         </header>
         <div className={styles.fieldGroups}>
           {fields.map((field, fieldIndex) => (

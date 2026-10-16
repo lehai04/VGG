@@ -38,7 +38,7 @@ export function ProgrammesLanding() {
 
         <div className="programmes-hero-stats" aria-label="Thông tin tổng quan chương trình">
           <div>
-            <strong>18</strong>
+            <strong>20</strong>
             <span>Chương trình<br />Thạc sĩ</span>
           </div>
           <div>

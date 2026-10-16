@@ -14,7 +14,7 @@ main.page .hero h1 { font-size:clamp(36px,4.7vw,68px)!important; font-family:var
 .page .heroLead { color:#fff; font-size:20px!important; max-width:680px; line-height:1.65; }
 .primary { display:inline-flex; align-items:center; justify-content:center; gap:18px; padding:16px 22px; background:#df1738; color:#fff!important; text-decoration:none; font-weight:700; font-size:14px; margin-top:22px; }
 .primary:hover { background:#b8102c; }
-.facts { background:rgba(9,17,32,.35); display:grid; grid-template-columns:repeat(4,1fr); margin:32px 0 0; border-top:1px solid #ffffff30; padding:28px 0; gap:24px; }
+.facts { background:rgba(9,17,32,.35); display:grid; grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,1.5fr); margin:32px 0 0; border-top:1px solid #ffffff30; padding:28px 0; gap:24px; }
 .facts dt { color:#b6c1d6; font-size:12px; margin-bottom:8px; }
 .facts dd { font-size:17px; margin:0; font-weight:650; }
 .sectionNav { position:sticky; top:80px; z-index:15; display:flex; justify-content:center; gap:32px; background:#fff; border-bottom:1px solid #dfe3ea; padding:20px 24px; overflow-x:auto; }
@@ -90,6 +90,7 @@ main.page .hero h1 { font-size:clamp(36px,4.7vw,68px)!important; font-family:var
   .heroOverlay { background:rgba(9,17,32,.7); }
   .page .heroLead { font-size:17px!important; }
   .facts { grid-template-columns:1fr 1fr; }
+  .facts .tuition { grid-column:1 / -1; }
   .sectionNav { justify-content:flex-start; gap:22px; top:70px; }
   .page .section { padding:58px 24px; }
   .flowGrid,.researchGrid { grid-template-columns:1fr; gap:20px; }

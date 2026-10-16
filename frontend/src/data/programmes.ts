@@ -50,10 +50,12 @@ export type Programme = {
 
   degree: ProgrammeDegree;
   field: ProgrammeField;
-  orientation: ProgrammeOrientation;
+  orientation: ProgrammeOrientation | "Đang cập nhật";
   orientations?: readonly ProgrammeOrientation[];
 
   credits: number;
+  creditsLabel?: string;
+  detailsPending?: boolean;
   duration: string;
 
   studyMode: string;
@@ -94,6 +96,35 @@ export function getProgrammeTuition(programme: Programme) {
    ========================================================= */
 
 export const programmes: Programme[] = [
+  {
+    id: "cong-nghe-thong-tin",
+    code: "S-19",
+    title: "Công nghệ thông tin",
+    englishTitle: "Master of Information Technology",
+    degree: "Thạc sĩ",
+    field: "Kỹ thuật, Môi trường & Công nghệ",
+    orientation: "Đang cập nhật",
+    credits: 60,
+    creditsLabel: "45 hoặc 60",
+    duration: "18–24 tháng",
+    studyMode: "Đang cập nhật",
+    intake: "Đang cập nhật",
+    detailsPending: true,
+  },
+  {
+    id: "marketing",
+    code: "S-20",
+    title: "Marketing",
+    englishTitle: "Master of Marketing",
+    degree: "Thạc sĩ",
+    field: "Kinh doanh & Quản lý",
+    orientation: "Đang cập nhật",
+    credits: 60,
+    duration: "24 tháng",
+    studyMode: "Đang cập nhật",
+    intake: "Đang cập nhật",
+    detailsPending: true,
+  },
   /* ==============================
      TIẾN SĨ
      ============================== */

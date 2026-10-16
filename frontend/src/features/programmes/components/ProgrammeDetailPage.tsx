@@ -5,13 +5,33 @@ import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { ResourcesConsultation } from "@/features/home/components/ResourcesConsultation";
 import { getProgrammeCurricula, getProgrammeDetails } from "@/data/curricula";
-import { type Programme, getProgrammeGraduationRequirements } from "@/data/programmes";
+import { type Programme, getProgrammeTuition, getProgrammeGraduationRequirements } from "@/data/programmes";
 import { logisticsContent as logistics } from "../logistics";
 import styles from "./ProgrammeDetailPage.module.css";
 import { CareerProspects } from "./CareerProspects";
 import { ProgrammeCurriculum } from "./ProgrammeCurriculum";
 
 export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
+  if (programme.detailsPending) {
+    return (
+      <main className={`subpage ${styles.page}`} id="main-content">
+        <SiteHeader compact />
+        <section className={styles.section} aria-labelledby="programme-title">
+          <Link href="/programmes">Chương trình đào tạo</Link>
+          <p className={styles.eyebrow}>{programme.degree}</p>
+          <h1 id="programme-title">{programme.title}</h1>
+          <p>Thông tin chi tiết ngành {programme.title} đang được cập nhật.</p>
+          <dl>
+            <div><dt>Tín chỉ</dt><dd>{programme.creditsLabel ?? programme.credits}</dd></div>
+            <div><dt>Thời gian</dt><dd>{programme.duration}</dd></div>
+            <div><dt>Học phí toàn khóa</dt><dd>{getProgrammeTuition(programme)}</dd></div>
+          </dl>
+        </section>
+        <ResourcesConsultation showResources={false} initialProgramme={programme.title} />
+        <SiteFooter />
+      </main>
+    );
+  }
   const isLogistics = programme.id === "logistics";
   const details = getProgrammeDetails(programme);
   const curricula = getProgrammeCurricula(programme);
@@ -47,6 +67,7 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
           <div><dt>Thời gian</dt><dd>{programme.duration}</dd></div>
           <div><dt>Định hướng</dt><dd>{isLogistics ? "Ứng dụng & Nghiên cứu" : programme.orientation}</dd></div>
           <div><dt>Tuyển sinh</dt><dd>{isLogistics ? "Xét tuyển hồ sơ" : programme.intake}</dd></div>
+          <div className={styles.tuition}><dt>Học phí toàn khóa</dt><dd>{getProgrammeTuition(programme)}</dd></div>
         </dl>
       </section>
       <nav className={styles.sectionNav} aria-label="Nội dung ngành học">

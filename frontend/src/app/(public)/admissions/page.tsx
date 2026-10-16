@@ -13,7 +13,7 @@ const group = findGroup("admissions")!;
 export const metadata = { title: group.vi, description: group.intro };
 
 const admissionsStats = [
-  ["18", "chương trình thạc sĩ"],
+  ["20", "chương trình thạc sĩ"],
   ["01", "chương trình tiến sĩ"],
   ["07", "nhóm thông tin hỗ trợ"],
 ] as const;
@@ -82,7 +82,7 @@ export default function AdmissionsPage() {
         <div>
           <h3>Bạn đang quan tâm điều gì?</h3>
           <p>
-            18 chương trình thạc sĩ và 01 chương trình tiến sĩ mở ra nhiều lựa chọn để bạn phát
+            20 chương trình thạc sĩ và 01 chương trình tiến sĩ mở ra nhiều lựa chọn để bạn phát
             triển chuyên môn từ chính kinh nghiệm, sở thích và thế mạnh của mình. Nếu bạn chưa xác
             định được lộ trình, đội ngũ tư vấn Viện Sau Đại học sẽ giúp bạn tìm ra hướng đi phù hợp.
           </p>
