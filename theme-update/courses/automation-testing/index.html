@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VGG Automation Testing Bootcamp 7 ngày - lý thuyết, giải thích code, thực hành VGG, quiz tự chấm" />
+  <title>VGG AutoTest Bootcamp — 7 Days · VI/EN</title>
+  <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="../../theme.css"><script src="../../theme.js"></script></head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">V</div>
+        <div>
+          <strong>VGG AutoTest</strong>
+          <span>7-Day Bootcamp</span>
+        </div>
+      </div>
+
+      <div class="progress-card">
+        <div class="progress-top">
+          <span>Tiến độ khóa học</span>
+          <strong id="progressText">0%</strong>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <small id="progressMeta">0/8 chặng hoàn thành</small>
+      </div>
+
+      <nav class="course-nav" id="courseNav"></nav>
+
+      <div class="sidebar-note">
+        <strong>Nguyên tắc học</strong>
+        <p>Học đúng thứ tự: lý thuyết → hiểu code → chạy thật → tự làm → quiz. Mỗi đoạn code đều có giải thích và Expected Result.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Mở menu">☰</button>
+        <div>
+          <span class="eyebrow" id="headerEyebrow">BOOTCAMP</span>
+          <h1 id="headerTitle">Automation Testing cấp tốc</h1>
+        </div>
+        <div class="top-actions"><div class="language-controls" role="group" aria-label="Language mode"><button class="lang-btn" data-lang="vi">VI</button><button class="lang-btn active" data-lang="bi">VI + EN</button><button class="lang-btn" data-lang="en">EN</button></div><button class="ghost-btn" id="resetBtn">Đặt lại tiến độ</button></div>
+      </header>
+
+      <section id="content"></section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

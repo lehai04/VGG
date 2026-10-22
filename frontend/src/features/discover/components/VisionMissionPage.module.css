@@ -14,7 +14,6 @@
   font-family: var(--font-display);
 }
 .hero {
-  min-height: clamp(680px, 88svh, 920px);
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -56,11 +55,7 @@
   animation: heroFadeUp 0.65s 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 .heroCopy h1 {
-  max-width: 1040px;
   margin: 0;
-  font-size: clamp(58px, 8vw, 118px);
-  line-height: 0.84;
-  letter-spacing: -0.055em;
 }
 .heroCopy h1 span {
   display: block;
@@ -103,11 +98,8 @@
   animation: scrollCue 1.8s ease-in-out infinite;
 }
 .story {
-  min-height: 900px;
   padding: clamp(90px, 10vw, 150px) 7vw;
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
-  gap: clamp(60px, 8vw, 130px);
   align-items: center;
 }
 .vision {
@@ -188,8 +180,6 @@
   letter-spacing: 0.17em;
 }
 .mission {
-  padding-block: clamp(100px, 11vw, 170px);
-  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
   background: var(--red);
   color: #fff;
 }
@@ -388,9 +378,6 @@
   }
 }
 @media (max-width: 767px) {
-  .hero {
-    min-height: 80svh;
-  }
   .heroImage {
     object-position: 62% center;
   }
@@ -425,7 +412,6 @@
     min-height: 0;
     padding: 72px 20px;
     grid-template-columns: 1fr;
-    gap: 52px;
   }
   .storyCopy h2,
   .philosophyHead h2 {
@@ -526,14 +512,6 @@
 .heroCopy {
   padding-top: clamp(130px, 14vh, 180px);
   padding-bottom: clamp(68px, 9vh, 96px);
-}
-.story {
-  min-height: 0;
-  padding-block: clamp(56px, 6vw, 80px);
-  gap: clamp(36px, 5vw, 68px);
-}
-.mission {
-  padding-block: clamp(60px, 6.5vw, 84px);
 }
 .storyCopy h2,
 .philosophyHead h2 {

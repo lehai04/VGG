@@ -9,18 +9,25 @@ import { authRoutes } from "./modules/auth/auth.routes.js";
 import { consultationRoutes } from "./modules/consultations/consultations.routes.js";
 import { cmsRoutes } from "./modules/cms/cms.routes.js";
 
+/** Lắp ráp backend: cấu hình HTTP → plugin → endpoint sức khỏe → module nghiệp vụ.
+ * Hàm chỉ tạo app; server.ts chịu trách nhiệm listen trên host/port đã cấu hình. */
 export async function buildApp() {
+  // bodyLimit giới hạn body ở 1.000.000 byte; maxParamLength giới hạn tham số route.
+  // trustProxy=true dùng thông tin proxy, cần đối chiếu cấu hình reverse proxy khi triển khai.
   const app = Fastify({
     logger: true,
     trustProxy: true,
     bodyLimit: 1_000_000,
     routerOptions: { maxParamLength: 300 },
   });
+  // Đăng ký plugin trước route để các handler dùng được cookie và cấu hình bảo vệ.
   await app.register(helmet);
   await app.register(cookie);
   await app.register(cors, { origin: [env.PUBLIC_APP_URL, env.ADMIN_APP_URL], credentials: true, methods: ["GET", "POST", "PUT", "PATCH", "DELETE"] });
+  // global:false không giới hạn mọi route; route cần giới hạn phải cấu hình riêng.
   await app.register(rateLimit, { global: false });
 
+  // /health chỉ xác nhận tiến trình trả lời; /ready mới thử truy vấn PostgreSQL.
   app.get("/health", async () => ({ success: true, data: { status: "ok" }, message: "" }));
   app.get("/ready", async (_request, reply) => {
     try { await prisma.$queryRaw`SELECT 1`; return { success: true, data: { database: "ready" }, message: "" }; }
@@ -30,7 +37,9 @@ export async function buildApp() {
   await app.register(authRoutes);
   await app.register(consultationRoutes);
   await app.register(cmsRoutes);
+  // Ghi lỗi chi tiết phía server, nhưng lỗi 5xx chỉ trả thông báo chung cho client.
   app.setErrorHandler((error: FastifyError, request, reply) => { request.log.error(error); const status = error.statusCode && error.statusCode >= 400 ? error.statusCode : 500; reply.code(status).send({ success: false, message: status < 500 ? error.message : "Hệ thống đang bận.", code: "INTERNAL_ERROR" }); });
+  // Khi app đóng có kiểm soát, giải phóng client database dùng chung.
   app.addHook("onClose", () => prisma.$disconnect());
   return app;
 }

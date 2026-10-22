@@ -1,0 +1,15 @@
+flowchart LR
+  Public[Khách truy cập] --> Portal[Cổng thông tin VI/EN]
+  Public --> Consult[Gửi yêu cầu tư vấn]
+  Public --> Download[Xem tin & tải tài nguyên]
+  L2[QTV Cấp 2] --> Dashboard
+  L2 --> News[Quản lý tin/ảnh]
+  L2 --> Resources[Quản lý tài nguyên]
+  L2 --> CRM[Xử lý tư vấn]
+  SA[Super Admin] --> Dashboard
+  SA --> News
+  SA --> Resources
+  SA --> CRM
+  SA --> Users[Quản lý tài khoản & quyền]
+  SA --> Audit[Nhật ký]
+  note[Đường nét thể hiện hành vi quan sát được; quyền chi tiết cần baseline] -.-> News

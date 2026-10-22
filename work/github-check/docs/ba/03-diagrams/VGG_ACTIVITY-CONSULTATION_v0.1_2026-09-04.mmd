@@ -1,0 +1,13 @@
+flowchart TD
+ A[Khách mở biểu mẫu] --> B[Nhập thông tin]
+ B --> C{Validation / rate limit}
+ C -- Không đạt --> D[Thông báo lỗi, không tạo lead]
+ C -- Đạt --> E[Tạo Consultation: NEW]
+ E --> F[Cán bộ có quyền xem danh sách]
+ F --> G[Phân công / ghi chú]
+ G --> H{Chuyển trạng thái hợp lệ?}
+ H -- Không --> I[Từ chối và giữ trạng thái]
+ H -- Có --> J[Cập nhật + ConsultationHistory]
+ J --> K{Đã kết thúc?}
+ K -- Chưa --> G
+ K -- Có --> L[COMPLETED/UNREACHABLE/CANCELLED]

@@ -1,17 +1,8 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-
-interface NotificationItem {
-  id: string;
-  action: string;
-  actorName: string;
-  targetName?: string;
-  title: string;
-  icon: string;
-  category: string;
-  createdAt: string;
-}
+import Link from "next/link";
+import { NotificationDetailModal, NotificationDetail } from "@/components/notifications/NotificationDetailModal";
 
 function timeAgo(dateString: string): string {
   const seconds = Math.floor((Date.now() - new Date(dateString).getTime()) / 1000);
@@ -27,7 +18,8 @@ function timeAgo(dateString: string): string {
 
 export function AdminNotifications() {
   const [isOpen, setIsOpen] = useState(false);
-  const [notifications, setNotifications] = useState<NotificationItem[]>([]);
+  const [notifications, setNotifications] = useState<NotificationDetail[]>([]);
+  const [selectedNotification, setSelectedNotification] = useState<NotificationDetail | null>(null);
   const [lastChecked, setLastChecked] = useState(0);
   const [activeTab, setActiveTab] = useState<"all" | "users" | "cms" | "consultations">("all");
   const panelRef = useRef<HTMLDivElement>(null);
@@ -36,7 +28,7 @@ export function AdminNotifications() {
     try {
       const res = await fetch("/api/admin/notifications?limit=25");
       if (res.ok) {
-        const data = (await res.json()) as { notifications: NotificationItem[] };
+        const data = (await res.json()) as { notifications: NotificationDetail[] };
         setNotifications(data.notifications || []);
       }
     } catch {
@@ -50,7 +42,7 @@ export function AdminNotifications() {
       try {
         const res = await fetch("/api/admin/notifications?limit=25");
         if (res.ok && isMounted) {
-          const data = (await res.json()) as { notifications: NotificationItem[] };
+          const data = (await res.json()) as { notifications: NotificationDetail[] };
           setNotifications(data.notifications || []);
         }
       } catch {
@@ -177,6 +169,7 @@ export function AdminNotifications() {
               alignItems: "center",
               justifyContent: "space-between",
               background: "#fafafa",
+              flexShrink: 0,
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
@@ -221,15 +214,17 @@ export function AdminNotifications() {
             style={{
               display: "flex",
               borderBottom: "1px solid #f4f4f5",
-              padding: "6px 12px",
+              padding: "8px 12px",
               gap: "6px",
               background: "#fff",
               overflowX: "auto",
+              flexShrink: 0,
+              alignItems: "center",
             }}
           >
             {[
               { id: "all", label: "Tất cả" },
-              { id: "users", label: "Nhân sự" },
+              { id: "users", label: "Quản trị viên" },
               { id: "cms", label: "Nội dung" },
               { id: "consultations", label: "Tư vấn" },
             ].map((tab) => (
@@ -238,7 +233,7 @@ export function AdminNotifications() {
                 type="button"
                 onClick={() => setActiveTab(tab.id as any)}
                 style={{
-                  padding: "4px 10px",
+                  padding: "5px 11px",
                   borderRadius: "6px",
                   border: "none",
                   background: activeTab === tab.id ? "#b91c1c" : "#f4f4f5",
@@ -247,6 +242,7 @@ export function AdminNotifications() {
                   fontWeight: activeTab === tab.id ? 700 : 500,
                   cursor: "pointer",
                   whiteSpace: "nowrap",
+                  flexShrink: 0,
                 }}
               >
                 {tab.label}
@@ -255,7 +251,7 @@ export function AdminNotifications() {
           </div>
 
           {/* List of items */}
-          <div style={{ overflowY: "auto", flex: 1, padding: "8px" }}>
+          <div style={{ overflowY: "auto", flex: 1, minHeight: 0, padding: "8px" }}>
             {filteredNotifications.length === 0 ? (
               <div style={{ padding: "32px 16px", textAlign: "center", color: "#a1a1aa", fontSize: "0.85rem" }}>
                 Chưa có hoạt động nào được ghi nhận.
@@ -264,6 +260,7 @@ export function AdminNotifications() {
               filteredNotifications.map((item) => (
                 <div
                   key={item.id}
+                  onClick={() => setSelectedNotification(item)}
                   style={{
                     padding: "10px 12px",
                     borderRadius: "8px",
@@ -274,8 +271,9 @@ export function AdminNotifications() {
                     gap: "10px",
                     alignItems: "flex-start",
                     transition: "background 0.15s ease",
+                    cursor: "pointer",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "#fcfcfc")}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "#f8fafc")}
                   onMouseLeave={(e) => (e.currentTarget.style.background = "#ffffff")}
                 >
                   <span style={{ fontSize: "1.2rem", marginTop: "2px", flexShrink: 0 }}>{item.icon}</span>
@@ -296,8 +294,41 @@ export function AdminNotifications() {
               ))
             )}
           </div>
+
+          {/* Footer: Link to full notifications page */}
+          <div
+            style={{
+              padding: "10px 14px",
+              borderTop: "1px solid #f1f5f9",
+              background: "#fafafa",
+              textAlign: "center",
+              flexShrink: 0,
+            }}
+          >
+            <Link
+              href="/admin/notifications"
+              onClick={() => setIsOpen(false)}
+              style={{
+                fontSize: "0.8rem",
+                fontWeight: 600,
+                color: "#2563eb",
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
+              }}
+            >
+              Xem tất cả thông báo trong trang riêng →
+            </Link>
+          </div>
         </div>
       )}
+
+      {/* Modal chi tiết thông báo */}
+      <NotificationDetailModal
+        notification={selectedNotification}
+        onClose={() => setSelectedNotification(null)}
+      />
     </div>
   );
 }

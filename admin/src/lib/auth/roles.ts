@@ -4,6 +4,7 @@ import { ADMIN_PERMISSIONS, ROLE_CODES } from "./constants";
 export const roleSeeds = [
   { code: ROLE_CODES.SUPER_ADMIN, name: "QTV Cấp 1 – Super Admin", level: 1 },
   { code: ROLE_CODES.LEVEL_2, name: "QTV Cấp 2", level: 2 },
+  { code: ROLE_CODES.LEVEL_3, name: "QTV Cấp 3 – CTV Sinh viên", level: 3 },
 ] as const;
 
 export async function ensureRolesAndPermissions() {
@@ -20,13 +21,32 @@ export async function ensureRolesAndPermissions() {
     roleSeeds.map((role) => prisma.role.upsert({ where: { code: role.code }, update: role, create: role })),
   );
   const superAdmin = roles.find((role) => role.code === ROLE_CODES.SUPER_ADMIN);
+  const level2 = roles.find((role) => role.code === ROLE_CODES.LEVEL_2);
+  const level3 = roles.find((role) => role.code === ROLE_CODES.LEVEL_3);
   if (!superAdmin) throw new Error("Không thể khởi tạo vai trò Super Admin.");
+
   await prisma.rolePermission.createMany({
     data: permissions
       .filter((permission) => permission.code !== "admins.delete")
       .map((permission) => ({ roleId: superAdmin.id, permissionId: permission.id })),
     skipDuplicates: true,
   });
+
+  const standardPermissions = permissions.filter(
+    (permission) => !permission.code.startsWith("admins.") && !permission.code.startsWith("settings.")
+  );
+  if (level2) {
+    await prisma.rolePermission.createMany({
+      data: standardPermissions.map((permission) => ({ roleId: level2.id, permissionId: permission.id })),
+      skipDuplicates: true,
+    });
+  }
+  if (level3) {
+    await prisma.rolePermission.createMany({
+      data: standardPermissions.map((permission) => ({ roleId: level3.id, permissionId: permission.id })),
+      skipDuplicates: true,
+    });
+  }
   return roles;
 }
 

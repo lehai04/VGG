@@ -80,7 +80,12 @@ export default async function NewsDetailPage({ params }: Props) {
               <>
                 <div>
                   {recent.map((item) => (
-                    <Link href={`/news/${item.slug}`} key={item.id}>
+                    <Link
+                      href={item.externalUrl ?? `/news/${item.slug}`}
+                      target={item.externalUrl ? "_blank" : undefined}
+                      rel={item.externalUrl ? "noopener noreferrer" : undefined}
+                      key={item.id}
+                    >
                       <figure>
                         <Image
                           src={item.coverImage || "/images/pages/news/content/banner.jpg"}

@@ -2,35 +2,42 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { validatePassword, validateConfirmPassword } from "@/lib/validation/rules";
+import { ValidatedInput } from "@/components/common/ValidatedInput";
+import { PasswordChecklistInput } from "@/components/common/PasswordChecklistInput";
 
 export function ResetPasswordForm({ token }: { token: string }) {
-  const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
 
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [forceTouched, setForceTouched] = useState(false);
+
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setLoading(true);
+    setForceTouched(true);
     setMessage("");
-    const data = new FormData(event.currentTarget);
-    const password = String(data.get("password") ?? "");
-    const confirmPassword = String(data.get("confirmPassword") ?? "");
 
-    if (password !== confirmPassword) {
-      setLoading(false);
-      return setMessage("Mật khẩu xác nhận không khớp.");
+    const pRes = validatePassword(password);
+    if (!pRes.isValid) {
+      return setMessage(pRes.message);
     }
 
+    const cpRes = validateConfirmPassword(password, confirmPassword);
+    if (!cpRes.isValid) {
+      return setMessage(cpRes.message);
+    }
+
+    setLoading(true);
     try {
       const response = await fetch("/api/admin/auth/reset-password", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ token, password, confirmPassword }),
       });
-      const result = await response.json() as { message?: string };
+      const result = (await response.json()) as { message?: string };
       if (!response.ok) {
         setIsSuccess(false);
         return setMessage(result.message || "Không thể đặt lại mật khẩu.");
@@ -77,46 +84,32 @@ export function ResetPasswordForm({ token }: { token: string }) {
 
   return (
     <form className="form-stack" onSubmit={submit}>
-      <label className="field">
-        Mật khẩu mới
-        <div className="password-field">
-          <input
-            name="password"
-            type={showPassword ? "text" : "password"}
-            autoComplete="new-password"
-            minLength={8}
-            maxLength={128}
-            placeholder="Tối thiểu 8 ký tự, gồm chữ hoa, thường & số"
-            required
-            autoFocus
-          />
-          <button
-            className="password-toggle"
-            type="button"
-            onClick={() => setShowPassword((v) => !v)}
-            aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
-          >
-            {showPassword ? "Ẩn" : "Hiện"}
-          </button>
-        </div>
-      </label>
+      <PasswordChecklistInput
+        label="Mật khẩu mới"
+        name="password"
+        value={password}
+        onChange={(val) => setPassword(val)}
+        placeholder="Nhập mật khẩu mới..."
+        required
+        forceTouched={forceTouched}
+      />
 
-      <label className="field">
-        Xác nhận mật khẩu mới
-        <input
-          name="confirmPassword"
-          type={showPassword ? "text" : "password"}
-          autoComplete="new-password"
-          minLength={8}
-          maxLength={128}
-          placeholder="Nhập lại mật khẩu mới"
-          required
-        />
-      </label>
+      <ValidatedInput
+        label="Xác nhận mật khẩu mới"
+        name="confirmPassword"
+        type="password"
+        value={confirmPassword}
+        onChange={(val) => setConfirmPassword(val)}
+        autoComplete="new-password"
+        placeholder="Nhập lại mật khẩu mới..."
+        required
+        forceTouched={forceTouched}
+        validator={(val) => validateConfirmPassword(password, val)}
+      />
 
       {message && <p className="form-message" role="alert" aria-live="polite">{message}</p>}
 
-      <button className="primary-button" type="submit" disabled={loading}>
+      <button className="primary-button" type="submit" disabled={loading} style={{ marginTop: "8px" }}>
         {loading ? "ĐANG CẬP NHẬT…" : "ĐẶT LẠI MẬT KHẨU"}
       </button>
 

@@ -653,7 +653,25 @@ export async function cmsRoutes(app: FastifyInstance) {
   app.delete("/api/admin/news/:id", async (request, reply) => {
     if (!await guard(request, reply, "news.delete")) return;
     const { id } = z.object({ id: z.string() }).parse(request.params);
+    const query = z.object({ permanent: z.enum(["true", "false"]).optional() }).parse(request.query);
     const admin = await authenticateRequest(request);
+    const existing = await prisma.newsPost.findUnique({ where: { id } });
+    if (!existing) return fail(reply, 404, "Không tìm thấy bài viết.", "NEWS_NOT_FOUND");
+
+    if (query.permanent === "true") {
+      await prisma.newsPost.delete({ where: { id } });
+      await prisma.auditLog.create({
+        data: {
+          action: "NEWS_DELETED",
+          actorAdminId: admin?.id,
+          targetType: "news",
+          targetId: id,
+          metadata: { title: existing.title, slug: existing.slug, permanent: true },
+        },
+      }).catch(() => null);
+      return ok(reply, {}, "Đã xóa vĩnh viễn bài viết.");
+    }
+
     const post = await prisma.newsPost.update({ where: { id }, data: { status: "ARCHIVED" } });
     await prisma.auditLog.create({
       data: {
@@ -665,6 +683,42 @@ export async function cmsRoutes(app: FastifyInstance) {
       },
     }).catch(() => null);
     return ok(reply, {}, "Đã lưu trữ bài viết.");
+  });
+
+  app.post("/api/admin/news/bulk-delete", async (request, reply) => {
+    if (!await guard(request, reply, "news.delete")) return;
+    const { ids, permanent } = z.object({
+      ids: z.array(z.string()).min(1),
+      permanent: z.boolean().optional(),
+    }).parse(request.body);
+    const admin = await authenticateRequest(request);
+
+    if (permanent) {
+      const deleted = await prisma.newsPost.deleteMany({ where: { id: { in: ids } } });
+      await prisma.auditLog.create({
+        data: {
+          action: "NEWS_DELETED",
+          actorAdminId: admin?.id,
+          targetType: "news",
+          metadata: { count: deleted.count, ids, permanent: true },
+        },
+      }).catch(() => null);
+      return ok(reply, { count: deleted.count }, `Đã xóa vĩnh viễn ${deleted.count} bài viết.`);
+    }
+
+    const updated = await prisma.newsPost.updateMany({
+      where: { id: { in: ids } },
+      data: { status: "ARCHIVED" },
+    });
+    await prisma.auditLog.create({
+      data: {
+        action: "NEWS_DELETED",
+        actorAdminId: admin?.id,
+        targetType: "news",
+        metadata: { count: updated.count, ids },
+      },
+    }).catch(() => null);
+    return ok(reply, { count: updated.count }, `Đã lưu trữ ${updated.count} bài viết.`);
   });
 
   app.get("/api/admin/resources", async (request, reply) => {

@@ -71,6 +71,15 @@ function IconProfile() {
   );
 }
 
+function IconNotifications() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+    </svg>
+  );
+}
+
 function IconSettings() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -107,8 +116,10 @@ export function AdminShell({
   }, []);
 
   // Xử lý Escape và focus trap cho drawer
+  // Xử lý Escape và scroll lock cho drawer khi ở màn hình nhỏ
   useEffect(() => {
     if (!drawerOpen) return;
+    if (typeof window !== "undefined" && window.innerWidth > 900) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
@@ -122,6 +133,12 @@ export function AdminShell({
     };
   }, [drawerOpen]);
 
+  const handleMobileNavClick = () => {
+    if (typeof window !== "undefined" && window.innerWidth <= 900) {
+      setDrawerOpen(false);
+    }
+  };
+
   const can = (permission: string) =>
     admin.role.code === "SUPER_ADMIN" || admin.permissionCodes.includes(permission);
 
@@ -132,7 +149,7 @@ export function AdminShell({
 
   return (
     <div className="vgg-admin-layout">
-      {/* Off-canvas Drawer Navigation */}
+      {/* Off-canvas Drawer Navigation (Chỉ hiện khi ở màn hình nhỏ) */}
       <div className={`vgg-drawer-backdrop ${drawerOpen ? "is-open" : ""}`} onClick={() => setDrawerOpen(false)} />
       
       <aside
@@ -145,7 +162,7 @@ export function AdminShell({
           <Link
             className="admin-sidebar__brand"
             href="/admin/dashboard"
-            onClick={() => setDrawerOpen(false)}
+            onClick={handleMobileNavClick}
             title="VGG ADMIN - Bảng điều khiển"
           >
             <div className="admin-brand-icon">V</div>
@@ -166,7 +183,7 @@ export function AdminShell({
         </div>
 
         {/* Hệ thống Menu Navigation */}
-        <nav className="admin-nav" onClick={() => setDrawerOpen(false)}>
+        <nav className="admin-nav" onClick={handleMobileNavClick}>
           <Link
             href="/admin/dashboard"
             className={`admin-nav-link ${pathname === "/admin/dashboard" ? "active" : ""}`}
@@ -188,13 +205,49 @@ export function AdminShell({
           )}
 
           {can("news.view") && (
-            <Link
-              href="/admin/news"
-              className={`admin-nav-link ${pathname.startsWith("/admin/news") ? "active" : ""}`}
-            >
-              <span className="nav-icon"><IconNews /></span>
-              <span className="nav-text">Tin tức</span>
-            </Link>
+            <div className="admin-nav-submenu-group" style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "12px",
+                  padding: "10px 14px 4px",
+                  color: "rgba(255, 255, 255, 0.9)",
+                  fontSize: "0.88rem",
+                  fontWeight: 600,
+                  userSelect: "none",
+                }}
+              >
+                <span className="nav-icon"><IconNews /></span>
+                <span className="nav-text">Tin tức &amp; Sự kiện</span>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "2px", paddingLeft: "24px" }}>
+                <Link
+                  href="/admin/news/create"
+                  className={`admin-nav-link ${pathname === "/admin/news/create" ? "active" : ""}`}
+                  style={{
+                    padding: "7px 12px",
+                    fontSize: "0.82rem",
+                    gap: "8px",
+                  }}
+                >
+                  <span style={{ fontSize: "12px", opacity: 0.85 }}>✍️</span>
+                  <span className="nav-text">Đăng tin</span>
+                </Link>
+                <Link
+                  href="/admin/news"
+                  className={`admin-nav-link ${pathname === "/admin/news" ? "active" : ""}`}
+                  style={{
+                    padding: "7px 12px",
+                    fontSize: "0.82rem",
+                    gap: "8px",
+                  }}
+                >
+                  <span style={{ fontSize: "12px", opacity: 0.85 }}>📑</span>
+                  <span className="nav-text">Danh sách tin</span>
+                </Link>
+              </div>
+            </div>
           )}
 
           {can("resources.view") && (
@@ -216,6 +269,14 @@ export function AdminShell({
               <span className="nav-text">Lịch tư vấn</span>
             </Link>
           )}
+
+          <Link
+            href="/admin/notifications"
+            className={`admin-nav-link ${pathname.startsWith("/admin/notifications") ? "active" : ""}`}
+          >
+            <span className="nav-icon"><IconNotifications /></span>
+            <span className="nav-text">Thông báo</span>
+          </Link>
 
           <div className="nav-group-heading">TÀI KHOẢN</div>
 

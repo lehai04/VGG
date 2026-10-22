@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { passwordSchema } from "./password";
 import { ROLE_CODES } from "./constants";
+import { validateAdminEmailByRole } from "./email-rules";
 
 export const usernameSchema = z
   .string()
@@ -56,11 +57,11 @@ export const changePasswordSchema = z
 
 export const createAdminSchema = z
   .object({
-    fullName: z.string().trim().min(2).max(120),
+    fullName: z.string().trim().min(2, "Họ và tên tối thiểu 2 ký tự.").max(120),
     username: usernameSchema,
     email: z.union([z.string().trim().email("Email không hợp lệ."), z.literal("")]).optional(),
     phone: z.string().trim().max(30).optional(),
-    roleCode: z.enum([ROLE_CODES.SUPER_ADMIN, ROLE_CODES.LEVEL_2]),
+    roleCode: z.enum([ROLE_CODES.SUPER_ADMIN, ROLE_CODES.LEVEL_2, ROLE_CODES.LEVEL_3]),
     password: passwordSchema,
     confirmPassword: z.string(),
     status: z.enum(["ACTIVE", "INACTIVE"]).default("ACTIVE"),
@@ -69,15 +70,38 @@ export const createAdminSchema = z
   .refine((value) => value.password === value.confirmPassword, {
     message: "Mật khẩu xác nhận không khớp.",
     path: ["confirmPassword"],
+  })
+  .superRefine((data, ctx) => {
+    const emailResult = validateAdminEmailByRole(data.email, data.roleCode);
+    if (!emailResult.ok) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: emailResult.message || "Email không hợp lệ theo quy định của vai trò.",
+        path: ["email"],
+      });
+    }
   });
 
-export const updateAdminSchema = z.object({
-  fullName: z.string().trim().min(2).max(120).optional(),
-  username: usernameSchema.optional(),
-  email: z.union([z.string().trim().email("Email không hợp lệ."), z.literal(""), z.null()]).optional(),
-  phone: z.union([z.string().trim().max(30), z.null()]).optional(),
-  roleCode: z.enum([ROLE_CODES.SUPER_ADMIN, ROLE_CODES.LEVEL_2]).optional(),
-});
+export const updateAdminSchema = z
+  .object({
+    fullName: z.string().trim().min(2).max(120).optional(),
+    username: usernameSchema.optional(),
+    email: z.union([z.string().trim().email("Email không hợp lệ."), z.literal(""), z.null()]).optional(),
+    phone: z.union([z.string().trim().max(30), z.null()]).optional(),
+    roleCode: z.enum([ROLE_CODES.SUPER_ADMIN, ROLE_CODES.LEVEL_2, ROLE_CODES.LEVEL_3]).optional(),
+  })
+  .superRefine((data, ctx) => {
+    if (data.roleCode) {
+      const emailResult = validateAdminEmailByRole(data.email, data.roleCode);
+      if (!emailResult.ok) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: emailResult.message || "Email không hợp lệ theo quy định của vai trò.",
+          path: ["email"],
+        });
+      }
+    }
+  });
 
 export const updateProfileSchema = z.object({
   fullName: z.string().trim().min(2, "Họ và tên tối thiểu 2 ký tự.").max(120),
@@ -88,7 +112,7 @@ export const updateProfileSchema = z.object({
 
 export const updateStatusSchema = z.object({ status: z.enum(["ACTIVE", "INACTIVE"]) });
 export const updateRoleSchema = z.object({
-  roleCode: z.enum([ROLE_CODES.SUPER_ADMIN, ROLE_CODES.LEVEL_2]),
+  roleCode: z.enum([ROLE_CODES.SUPER_ADMIN, ROLE_CODES.LEVEL_2, ROLE_CODES.LEVEL_3]),
 });
 export const resetPasswordSchema = z
   .object({ password: passwordSchema, confirmPassword: z.string() })

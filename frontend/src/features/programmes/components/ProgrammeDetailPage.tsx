@@ -131,9 +131,10 @@ interface AudienceItem {
 // Real photographs: Unsplash License (linked in the task notes) and official VLU media.
 const logisticsPhotos = {
   hero: "https://images.unsplash.com/photo-1564035105550-e1f02aa8556b?auto=format&fit=crop&w=2400&q=85",
-  port: "https://images.unsplash.com/photo-1606964212858-c215029db704?auto=format&fit=crop&w=1200&q=85",
   warehouse: "https://images.unsplash.com/photo-1764795850513-fa8a469a4600?auto=format&fit=crop&w=1200&q=85",
-  truck: "https://images.unsplash.com/photo-1778629794381-d3ae4a54311c?auto=format&fit=crop&w=1200&q=85",
+  factory: "https://images.unsplash.com/photo-1589793463357-5fb813435467?auto=format&fit=crop&w=1200&q=85",
+  careerGrowth: "https://images.unsplash.com/photo-1758876021840-0209f3bd38f4?auto=format&fit=crop&w=1200&q=85",
+  lecturer: "https://images.unsplash.com/photo-1758270704851-adff797a2010?auto=format&fit=crop&w=1200&q=85",
   portTruck: "https://images.unsplash.com/photo-1774929108280-652f82f21d9f?auto=format&fit=crop&w=1200&q=85",
   campus: "/images/pages/programmes/logistics/campus-vlu.jpg",
 };
@@ -145,17 +146,17 @@ const logisticsAudience: AudienceItem[] = [
     text: "Những người đang làm việc trong vận tải, kho bãi, xuất nhập khẩu, phân phối, mua hàng và quản lý chuỗi cung ứng.",
   },
   {
-    image: logisticsPhotos.port,
+    image: logisticsPhotos.factory,
     title: "Nhân sự trong lĩnh vực sản xuất và kinh doanh",
     text: "Những người muốn phát triển năng lực hoạch định, tối ưu vận hành, quản trị cung ứng và nâng cao hiệu quả hoạt động doanh nghiệp.",
   },
   {
-    image: logisticsPhotos.truck,
+    image: logisticsPhotos.careerGrowth,
     title: "Người mong muốn chuyển hướng hoặc phát triển nghề nghiệp",
     text: "Người tốt nghiệp đại học ở các lĩnh vực phù hợp, có định hướng chuyển sang Logistics và quản lý chuỗi cung ứng hoặc đảm nhận những vị trí yêu cầu chuyên môn cao hơn.",
   },
   {
-    image: logisticsPhotos.portTruck,
+    image: logisticsPhotos.lecturer,
     title: "Người có định hướng nghiên cứu và giảng dạy",
     text: "Những người mong muốn phát triển năng lực nghiên cứu khoa học, tham gia giảng dạy đại học hoặc chuẩn bị cho lộ trình học tập ở trình độ tiến sĩ.",
   },
@@ -315,7 +316,7 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
     ? logisticsAudience
     : (details.outcomes && details.outcomes.length > 0
         ? details.outcomes.map((f: string, i: number) => ({
-            image: [logisticsPhotos.warehouse, logisticsPhotos.port, logisticsPhotos.truck, logisticsPhotos.portTruck][i % 4],
+            image: [logisticsPhotos.warehouse, logisticsPhotos.factory, logisticsPhotos.careerGrowth, logisticsPhotos.lecturer][i % 4],
             title: `Nhóm đối tượng ${i + 1}`,
             text: f,
           }))
@@ -543,7 +544,7 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
                     alt={item.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    style={{ objectFit: "cover", transition: "transform 0.3s ease" }}
+                    style={{ objectFit: "cover", objectPosition: "center center", transition: "transform 0.3s ease" }}
                   />
                 </div>
                 <div className={styles.audienceBody}>

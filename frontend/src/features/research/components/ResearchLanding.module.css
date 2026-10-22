@@ -249,8 +249,8 @@
   padding-inline: var(--page-gutter);
   background: var(--white);
   color: var(--ink);
+  padding-bottom: 38px;
 }
-.achievements { padding-bottom: 38px; }
 .achievements > h2 { margin: 0 0 38px; font-size: clamp(36px,3.6vw,52px); line-height: 1.06; letter-spacing: -.028em; }
 .projectHead,.publicationHead {
   display: flex;

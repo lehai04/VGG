@@ -21,7 +21,8 @@ const permissions = [
 async function main() {
   const roleSeeds = [
     { code: "SUPER_ADMIN", name: "QTV Cấp 1 – Super Admin", level: 1 },
-    { code: "ADMIN_LEVEL_2", name: "QTV Cấp 2", level: 2 },
+    { code: "ADMIN_LEVEL_2", name: "QTV Cấp 2 – Nhân viên trường", level: 2 },
+    { code: "ADMIN_LEVEL_3", name: "QTV Cấp 3 – CTV Sinh viên", level: 3 },
   ];
 
   const roles = await Promise.all(
@@ -36,6 +37,7 @@ async function main() {
 
   const superRole = roles.find((role) => role.code === "SUPER_ADMIN")!;
   const level2Role = roles.find((role) => role.code === "ADMIN_LEVEL_2")!;
+  const level3Role = roles.find((role) => role.code === "ADMIN_LEVEL_3")!;
 
   // Super Admin gets ALL permissions
   await prisma.rolePermission.createMany({
@@ -43,12 +45,15 @@ async function main() {
     skipDuplicates: true,
   });
 
-  // Level 2 gets all permissions EXCEPT admins.* and permissions.*
-  const level2Permissions = permissionRows.filter(
+  // Level 2 & Level 3 get all permissions EXCEPT admins.*, permissions.*, audit.*
+  const standardPermissions = permissionRows.filter(
     (p) => !p.code.startsWith("admins.") && !p.code.startsWith("permissions.") && !p.code.startsWith("audit.")
   );
   await prisma.rolePermission.createMany({
-    data: level2Permissions.map((p) => ({ roleId: level2Role.id, permissionId: p.id })),
+    data: [
+      ...standardPermissions.map((p) => ({ roleId: level2Role.id, permissionId: p.id })),
+      ...standardPermissions.map((p) => ({ roleId: level3Role.id, permissionId: p.id })),
+    ],
     skipDuplicates: true,
   });
 

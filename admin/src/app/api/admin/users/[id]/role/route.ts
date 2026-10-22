@@ -7,6 +7,7 @@ import { isLastActiveSuperAdmin } from "@/lib/auth/roles";
 import { isTrustedMutation, requestContext } from "@/lib/auth/request";
 import { errorResponse, validationMessage } from "@/lib/auth/responses";
 import { updateRoleSchema } from "@/lib/auth/schemas";
+import { validateAdminEmailByRole } from "@/lib/auth/email-rules";
 
 export async function PATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!isTrustedMutation(request)) return errorResponse("Nguồn gửi không được phép.", 403);
@@ -20,6 +21,15 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
   if (!target) return errorResponse("Không tìm thấy tài khoản.", 404);
   if (target.role.code === ROLE_CODES.SUPER_ADMIN && input.roleCode !== ROLE_CODES.SUPER_ADMIN && await isLastActiveSuperAdmin(id))
     return errorResponse("Không thể hạ quyền Super Admin hoạt động cuối cùng.", 409);
+
+  const emailCheck = validateAdminEmailByRole(target.email, input.roleCode);
+  if (!emailCheck.ok) {
+    return errorResponse(
+      emailCheck.message || "Email hiện tại không phù hợp với quy chuẩn của vai trò mới. Vui lòng cập nhật email nhân sự trước khi thay đổi vai trò.",
+      400
+    );
+  }
+
   const role = await prisma.role.findUnique({ where: { code: input.roleCode } });
   if (!role) return errorResponse("Vai trò không hợp lệ.", 400);
   await prisma.$transaction([

@@ -16,12 +16,16 @@ export type ValidationResult =
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phonePattern = /^[0-9+ ()-]{9,20}$/;
 
+/** Trả lỗi đầu tiên theo đúng thứ tự phía dưới. Không tự đổi regex sang validator
+ * email/phone khác vì tập giá trị được chấp nhận có thể thay đổi.
+ * allowedProgrammes là danh sách tên hợp lệ do nơi gọi cung cấp, không tự fetch tại đây. */
 export function validateConsultation(
   value: unknown,
   allowedProgrammes: readonly string[],
 ): ValidationResult {
   if (!value || typeof value !== "object")
     return { success: false, message: "Dữ liệu không hợp lệ." };
+  // Cast chỉ phục vụ TypeScript; từng trường vẫn phải kiểm tra typeof tại runtime.
   const input = value as Record<string, unknown>;
   const name = typeof input.name === "string" ? input.name.trim() : "";
   const phone = typeof input.phone === "string" ? input.phone.trim() : "";
@@ -37,6 +41,7 @@ export function validateConsultation(
     return { success: false, message: "Email không hợp lệ." };
   if (!allowedProgrammes.includes(programme))
     return { success: false, message: "Vui lòng chọn một chương trình hợp lệ." };
+  // Hỗ trợ giá trị form "yes" và boolean true; các giá trị truthy khác đều bị từ chối.
   if (input.consent !== "yes" && input.consent !== true)
     return { success: false, message: "Bạn cần đồng ý để VGG liên hệ tư vấn." };
   return { success: true, data: { name, phone, email, programme, consent: true } };

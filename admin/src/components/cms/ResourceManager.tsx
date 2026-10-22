@@ -159,9 +159,10 @@ export function ResourceManager({
     [resources, query, categoryFilter, typeFilter, documentFilter],
   );
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const currentPage = Math.min(page, totalPages);
   const paged = filtered.slice(
-    (Math.min(page, totalPages) - 1) * pageSize,
-    Math.min(page, totalPages) * pageSize,
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize,
   );
   const isDocument =
     form.resourceType === "DIRECTIVE_DOCUMENT" ||
@@ -553,7 +554,7 @@ export function ResourceManager({
                 ← Trước
               </button>
               <span>
-                Trang {Math.min(page, totalPages)} / {totalPages}
+                Trang {currentPage} / {totalPages}
               </span>
               <button
                 disabled={page >= totalPages}

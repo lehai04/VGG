@@ -71,12 +71,12 @@ export function ForgotPasswordForm() {
       ) : (
         <form className="form-stack" onSubmit={submit}>
           <label className="field">
-            Email Văn Lang (VLU)
+            Email tài khoản
             <input
               name="email"
               type="email"
               autoComplete="email"
-              placeholder="ten.ho@vlu.edu.vn"
+              placeholder="ha.nt@vlu.edu.vn hoặc ha.mssv@vanlanguni.edu.vn"
               required
               autoFocus
             />

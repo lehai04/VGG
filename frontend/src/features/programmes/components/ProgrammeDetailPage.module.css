@@ -448,7 +448,7 @@
 .audienceImageWrap {
   position: relative;
   width: 100%;
-  height: 190px;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
 }
 

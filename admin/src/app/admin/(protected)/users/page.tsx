@@ -21,7 +21,7 @@ export default async function AdminUsersPage() {
           <span className="eyebrow">HỆ THỐNG / QUẢN TRỊ NHÂN SỰ</span>
           <h1>Danh sách Nhân sự & Quản trị viên</h1>
           <p style={{ margin: "4px 0 0", color: "#71717a", fontSize: "0.9rem" }}>
-            Quản lý tài khoản, phân quyền vai trò (Super Admin / QTV Cấp 2) và theo dõi hoạt động nhân sự.
+            Quản lý tài khoản, phân quyền vai trò (Super Admin / QTV Cấp 2 / QTV Cấp 3) và theo dõi hoạt động nhân sự.
           </p>
         </div>
         {current.permissionCodes.includes("admins.create") && (
@@ -50,7 +50,7 @@ export default async function AdminUsersPage() {
           <thead>
             <tr>
               <th>Nhân sự</th>
-              <th>Email VLU</th>
+              <th>Email</th>
               <th>Số điện thoại</th>
               <th>Vai trò phân quyền</th>
               <th>Trạng thái</th>
@@ -81,8 +81,18 @@ export default async function AdminUsersPage() {
                       borderRadius: "12px",
                       fontSize: "0.78rem",
                       fontWeight: 700,
-                      background: admin.role.level === 1 ? "#fee2e2" : "#f4f4f5",
-                      color: admin.role.level === 1 ? "#991b1b" : "#3f3f46",
+                      background:
+                        admin.role.level === 1
+                          ? "#fee2e2"
+                          : admin.role.level === 2
+                          ? "#dbeafe"
+                          : "#e0f2fe",
+                      color:
+                        admin.role.level === 1
+                          ? "#991b1b"
+                          : admin.role.level === 2
+                          ? "#1e40af"
+                          : "#0369a1",
                     }}
                   >
                     {admin.role.name}

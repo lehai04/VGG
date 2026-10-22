@@ -17,6 +17,13 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "vluwebmedia.s3.ap-southeast-1.amazonaws.com",
+        port: "",
+        pathname: "/**",
+        search: "",
+      },
+      {
+        protocol: "https",
         hostname: "images.unsplash.com",
       },
     ],

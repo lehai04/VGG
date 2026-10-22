@@ -3,6 +3,15 @@
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import {
+  validatePhone,
+  validateUsername,
+  validateAdminEmail,
+  validatePassword,
+  validateConfirmPassword,
+} from "@/lib/validation/rules";
+import { ValidatedInput } from "@/components/common/ValidatedInput";
+import { PasswordChecklistInput } from "@/components/common/PasswordChecklistInput";
 
 interface AdminUserDetail {
   id: string;
@@ -36,23 +45,56 @@ export function AdminUserActions({
   const [isSuccess, setIsSuccess] = useState(false);
 
   const [isEditing, setIsEditing] = useState(false);
+  const [editRole, setEditRole] = useState(user.role.code);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+
+  // States cho form chỉnh sửa
+  const [editFullName, setEditFullName] = useState(user.fullName);
+  const [editUsername, setEditUsername] = useState(user.username);
+  const [editEmail, setEditEmail] = useState(user.email || "");
+  const [editPhone, setEditPhone] = useState(user.phone || "");
+  const [editForceTouched, setEditForceTouched] = useState(false);
+
+  // States cho form cấp lại mật khẩu
+  const [resetPassword, setResetPassword] = useState("");
+  const [resetConfirmPassword, setResetConfirmPassword] = useState("");
+  const [resetForceTouched, setResetForceTouched] = useState(false);
 
   const isSelf = user.id === currentAdminId;
 
   async function handleUpdateInfo(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setLoading(true);
+    setEditForceTouched(true);
     setMessage("");
     setIsSuccess(false);
-    const data = new FormData(event.currentTarget);
 
+    const uRes = validateUsername(editUsername);
+    if (!uRes.isValid) {
+      setIsSuccess(false);
+      return setMessage(uRes.message);
+    }
+
+    const emailCheck = validateAdminEmail(editEmail, editRole);
+    if (!emailCheck.isValid) {
+      setIsSuccess(false);
+      return setMessage(emailCheck.message);
+    }
+
+    if (editPhone) {
+      const pRes = validatePhone(editPhone);
+      if (!pRes.isValid) {
+        setIsSuccess(false);
+        return setMessage(pRes.message);
+      }
+    }
+
+    setLoading(true);
     const body = {
-      fullName: String(data.get("fullName") || "").trim(),
-      username: String(data.get("username") || "").trim(),
-      email: String(data.get("email") || "").trim(),
-      phone: String(data.get("phone") || "").trim(),
-      roleCode: data.get("roleCode") ? String(data.get("roleCode")) : undefined,
+      fullName: editFullName.trim(),
+      username: editUsername.trim(),
+      email: editEmail.trim(),
+      phone: editPhone.trim(),
+      roleCode: editRole,
     };
 
     try {
@@ -61,7 +103,7 @@ export function AdminUserActions({
         headers: { "content-type": "application/json" },
         body: JSON.stringify(body),
       });
-      const result = await response.json() as { message?: string };
+      const result = (await response.json()) as { message?: string };
       if (!response.ok) {
         setIsSuccess(false);
         return setMessage(result.message || "Không thể cập nhật nhân sự.");
@@ -137,26 +179,41 @@ export function AdminUserActions({
 
   async function handleResetPassword(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setLoading(true);
+    setResetForceTouched(true);
     setMessage("");
-    const data = new FormData(event.currentTarget);
+
+    const pRes = validatePassword(resetPassword);
+    if (!pRes.isValid) {
+      setIsSuccess(false);
+      return setMessage(pRes.message);
+    }
+
+    const cpRes = validateConfirmPassword(resetPassword, resetConfirmPassword);
+    if (!cpRes.isValid) {
+      setIsSuccess(false);
+      return setMessage(cpRes.message);
+    }
+
+    setLoading(true);
     try {
       const response = await fetch(`/api/admin/users/${user.id}/reset-password`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
-          password: data.get("password"),
-          confirmPassword: data.get("confirmPassword"),
+          password: resetPassword,
+          confirmPassword: resetConfirmPassword,
         }),
       });
-      const result = await response.json() as { message?: string };
+      const result = (await response.json()) as { message?: string };
       if (!response.ok) {
         setIsSuccess(false);
         return setMessage(result.message || "Không thể reset mật khẩu.");
       }
       setIsSuccess(true);
       setMessage(result.message || "Đã cấp lại mật khẩu tạm thời thành công.");
-      (event.target as HTMLFormElement).reset();
+      setResetPassword("");
+      setResetConfirmPassword("");
+      setResetForceTouched(false);
     } catch {
       setIsSuccess(false);
       setMessage("Lỗi kết nối.");
@@ -209,56 +266,83 @@ export function AdminUserActions({
 
         {isEditing ? (
           <form className="form-grid" onSubmit={handleUpdateInfo}>
-            <label className="field">
-              Họ và tên *
-              <input
-                name="fullName"
-                defaultValue={user.fullName}
-                minLength={2}
-                maxLength={120}
-                required
-              />
-            </label>
+            <ValidatedInput
+              label="Họ và tên"
+              name="fullName"
+              value={editFullName}
+              onChange={(val) => setEditFullName(val)}
+              required
+              forceTouched={editForceTouched}
+              validator={(val) =>
+                val.trim().length >= 2
+                  ? { isValid: true, message: "" }
+                  : { isValid: false, message: "Vui lòng nhập họ và tên (tối thiểu 2 ký tự)." }
+              }
+            />
 
-            <label className="field">
-              Tên đăng nhập *
-              <input
-                name="username"
-                defaultValue={user.username}
-                minLength={3}
-                maxLength={50}
-                pattern="[A-Za-z0-9._-]+"
-                required
-              />
-            </label>
+            <ValidatedInput
+              label="Tên đăng nhập"
+              name="username"
+              value={editUsername}
+              onChange={(val) => setEditUsername(val)}
+              required
+              forceTouched={editForceTouched}
+              validator={validateUsername}
+              hint="Tối thiểu 6 ký tự, không chứa dấu cách"
+            />
 
-            <label className="field">
-              Email Văn Lang (VLU) *
-              <input
+            <div className="full">
+              <ValidatedInput
+                label={
+                  editRole === "ADMIN_LEVEL_3"
+                    ? "Email CTV Sinh viên"
+                    : editRole === "ADMIN_LEVEL_2"
+                    ? "Email Nhân viên Văn Lang (VLU)"
+                    : "Email Quản trị viên (VLU)"
+                }
                 name="email"
                 type="email"
-                defaultValue={user.email || ""}
-                placeholder="ten.ho@vlu.edu.vn"
-                maxLength={190}
+                value={editEmail}
+                onChange={(val) => setEditEmail(val)}
+                placeholder={
+                  editRole === "ADMIN_LEVEL_3"
+                    ? "ha.221a01001@vanlanguni.vn"
+                    : "ha.nt@vlu.edu.vn"
+                }
                 required
+                forceTouched={editForceTouched}
+                validator={(val) => validateAdminEmail(val, editRole)}
+                hint={
+                  editRole === "ADMIN_LEVEL_3"
+                    ? "Cấu trúc: ten.mssv@vanlanguni.vn (Ví dụ: ha.221a01001@vanlanguni.vn)"
+                    : "Cấu trúc: ten.holot@vlu.edu.vn (Ví dụ: ha.nt@vlu.edu.vn)"
+                }
               />
-            </label>
+            </div>
 
-            <label className="field">
-              Số điện thoại
-              <input
-                name="phone"
-                type="tel"
-                defaultValue={user.phone || ""}
-                placeholder="0901234567"
-                maxLength={30}
-              />
-            </label>
+            <ValidatedInput
+              label="Số điện thoại"
+              name="phone"
+              type="tel"
+              value={editPhone}
+              onChange={(val) => setEditPhone(val)}
+              placeholder="0901234567"
+              forceTouched={editForceTouched}
+              validator={(val) => validatePhone(val, false)}
+              hint="Gồm 10 chữ số tự nhiên bắt đầu bằng số 0"
+            />
 
             <label className="field full">
               Vai trò / Cấp bậc quản trị *
-              <select name="roleCode" defaultValue={user.role.code} required disabled={!isSuperAdmin}>
-                <option value="ADMIN_LEVEL_2">QTV Cấp 2 (Quản lý Nội dung, Tài nguyên & Tư vấn)</option>
+              <select
+                name="roleCode"
+                value={editRole}
+                onChange={(e) => setEditRole(e.target.value)}
+                required
+                disabled={!isSuperAdmin}
+              >
+                <option value="ADMIN_LEVEL_2">QTV Cấp 2 – Nhân viên trường (Nội dung, Tài nguyên, Tư vấn)</option>
+                <option value="ADMIN_LEVEL_3">QTV Cấp 3 – CTV Sinh viên (Nội dung, Tài nguyên, Tư vấn)</option>
                 <option value="SUPER_ADMIN">QTV Cấp 1 – Super Admin (Toàn quyền hệ thống & Nhân sự)</option>
               </select>
             </label>
@@ -299,8 +383,30 @@ export function AdminUserActions({
             </div>
             <div>
               <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Vai trò phân quyền</span>
-              <p style={{ margin: "4px 0 0", fontSize: "0.95rem", fontWeight: 700, color: "#991b1b" }}>
-                {user.role.name}
+              <p style={{ margin: "4px 0 0" }}>
+                <span
+                  style={{
+                    display: "inline-block",
+                    padding: "3px 8px",
+                    borderRadius: "12px",
+                    fontSize: "0.82rem",
+                    fontWeight: 700,
+                    background:
+                      user.role.level === 1
+                        ? "#fee2e2"
+                        : user.role.level === 2
+                        ? "#dbeafe"
+                        : "#e0f2fe",
+                    color:
+                      user.role.level === 1
+                        ? "#991b1b"
+                        : user.role.level === 2
+                        ? "#1e40af"
+                        : "#0369a1",
+                  }}
+                >
+                  {user.role.name}
+                </span>
               </p>
             </div>
             <div>
@@ -347,32 +453,32 @@ export function AdminUserActions({
               Cấp lại mật khẩu tạm thời
             </h3>
             <form className="form-stack" onSubmit={handleResetPassword}>
-              <label className="field">
-                Mật khẩu mới
-                <input
-                  name="password"
-                  type="password"
-                  minLength={8}
-                  maxLength={128}
-                  placeholder="Tối thiểu 8 ký tự"
-                  required
-                />
-              </label>
-              <label className="field">
-                Xác nhận mật khẩu
-                <input
-                  name="confirmPassword"
-                  type="password"
-                  minLength={8}
-                  maxLength={128}
-                  placeholder="Nhập lại mật khẩu"
-                  required
-                />
-              </label>
+              <PasswordChecklistInput
+                label="Mật khẩu mới"
+                name="password"
+                value={resetPassword}
+                onChange={(val) => setResetPassword(val)}
+                placeholder="Nhập mật khẩu mới..."
+                required
+                forceTouched={resetForceTouched}
+              />
+
+              <ValidatedInput
+                label="Xác nhận mật khẩu"
+                name="confirmPassword"
+                type="password"
+                value={resetConfirmPassword}
+                onChange={(val) => setResetConfirmPassword(val)}
+                placeholder="Nhập lại mật khẩu mới..."
+                required
+                forceTouched={resetForceTouched}
+                validator={(val) => validateConfirmPassword(resetPassword, val)}
+              />
+
               <button
                 type="submit"
                 className="secondary-button danger-button"
-                style={{ width: "100%", padding: "10px" }}
+                style={{ width: "100%", padding: "10px", marginTop: "6px" }}
                 disabled={loading}
               >
                 {loading ? "ĐANG XỬ LÝ…" : "CẬP NHẬT MẬT KHẨU MỚI"}

@@ -27,70 +27,58 @@ export function categoryLabel(category: string) {
 export async function getNewsPosts(
   options: { category?: string; limit?: number; q?: string } = {},
 ) {
-  if (process.env.VGG_DEMO_NEWS !== "false") {
-    return getDemoNewsPosts(options).slice(0, options.limit ?? 30);
-  }
-  const backend = process.env.BACKEND_INTERNAL_URL;
-  if (!backend) return [];
-  try {
-    const params = new URLSearchParams({ locale: "vi", limit: String(options.limit ?? 30) });
-    if (options.category) params.set("category", options.category);
-    if (options.q) params.set("q", options.q);
-    const response = await fetch(`${backend}/api/public/news?${params}`, {
-      next: { revalidate: 60 },
-    });
-    if (!response.ok) throw new Error();
-    const payload = (await response.json()) as { data: { posts: NewsPost[] } };
-    return payload.data.posts;
-  } catch {
-    return [];
-  }
+  const { posts } = await getPaginatedNewsPosts({ ...options, page: 1, limit: options.limit ?? 30 });
+  return posts;
 }
+
+/** Published CMS posts come first; demo cards remain available after them. */
 export async function getPaginatedNewsPosts(options: {
   category?: string;
   limit: number;
   page: number;
   q?: string;
 }) {
-  if (process.env.VGG_DEMO_NEWS !== "false") {
-    const posts = getDemoNewsPosts(options);
-    return {
-      posts: posts.slice((options.page - 1) * options.limit, options.page * options.limit),
-      pagination: { page: options.page, limit: options.limit, total: posts.length, totalPages: Math.ceil(posts.length / options.limit) },
-    };
-  }
+  const demos = process.env.VGG_DEMO_NEWS !== "false" ? getDemoNewsPosts(options) : [];
   const backend = process.env.BACKEND_INTERNAL_URL;
-  const empty = {
-    posts: [] as NewsPost[],
-    pagination: { page: 1, limit: options.limit, total: 0, totalPages: 0 },
-  };
-  if (!backend) return empty;
-  try {
-    const params = new URLSearchParams({
-      locale: "vi",
-      limit: String(options.limit),
-      page: String(options.page),
-    });
-    if (options.category) params.set("category", options.category);
-    if (options.q) params.set("q", options.q);
-    const response = await fetch(`${backend}/api/public/news?${params}`, {
-      next: { revalidate: 60 },
-    });
-    if (!response.ok) throw new Error();
-    const payload = (await response.json()) as {
-      data: { posts: NewsPost[]; pagination: NewsPagination };
-    };
-    return payload.data;
-  } catch {
-    return empty;
+  let posts: NewsPost[] = [];
+  let backendTotal = 0;
+  if (backend) {
+    try {
+      const params = new URLSearchParams({
+        locale: "vi",
+        limit: String(options.limit),
+        page: String(options.page),
+      });
+      if (options.category) params.set("category", options.category);
+      if (options.q) params.set("q", options.q);
+      const response = await fetch(`${backend}/api/public/news?${params}`, {
+        cache: "no-store",
+      });
+      if (!response.ok) throw new Error(`News API returned ${response.status}`);
+      const payload = (await response.json()) as {
+        data: { posts: NewsPost[]; pagination: NewsPagination };
+      };
+      posts = payload.data.posts;
+      backendTotal = payload.data.pagination.total;
+    } catch {
+      // Keep the existing demo cards available when the CMS cannot be reached.
+    }
   }
+  const start = (options.page - 1) * options.limit;
+  const demoStart = Math.max(0, start - backendTotal);
+  const remaining = Math.max(0, options.limit - posts.length);
+  const total = backendTotal + demos.length;
+  return {
+    posts: [...posts, ...demos.slice(demoStart, demoStart + remaining)],
+    pagination: { page: options.page, limit: options.limit, total, totalPages: Math.ceil(total / options.limit) },
+  };
 }
 export async function getNewsPost(slug: string) {
   const backend = process.env.BACKEND_INTERNAL_URL;
   if (!backend) return null;
   try {
     const response = await fetch(`${backend}/api/public/news/${encodeURIComponent(slug)}`, {
-      next: { revalidate: 60 },
+      cache: "no-store",
     });
     if (!response.ok) return null;
     const payload = (await response.json()) as { data: { post: NewsPost } };

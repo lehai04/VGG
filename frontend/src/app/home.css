@@ -328,9 +328,6 @@
 }
 
 @media (min-width: 901px) {
-  .home-page .nav {
-    transform: translateX(2.5vw);
-  }
 }
 
 .home-page .nav > a:not(.navCta) {
@@ -1662,9 +1659,6 @@
   margin-top: 42px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 2px;
-  background: #d8d7d1;
-  border: 1px solid #d8d7d1;
 }
 
 .home-page .programmeField {
@@ -2708,33 +2702,128 @@
   white-space: nowrap;
 }
 
+.home-page .consultationFields .consultationField,
 .home-page .consultationFields label {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  color: #41465f;
+  gap: 6px;
+  color: #334155;
   font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.home-page .consultationFields .consultationLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  gap: 4px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.home-page .consultationFields .consultationRequired {
+  color: #ef4444;
   font-weight: 700;
-  letter-spacing: 0.04em;
+}
+
+.home-page .consultationFields .consultationInputWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .home-page .consultationFields input,
 .home-page .consultationFields select {
   width: 100%;
-  border: 0;
-  border-bottom: 1px solid #afb2bc;
-  border-radius: 0;
+  height: 48px;
+  min-height: 48px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
   outline: none;
-  padding: 2px 0 13px;
-  background: transparent;
-  color: #111735;
+  padding: 0 16px;
+  background: #ffffff;
+  color: #0f172a;
   font: inherit;
-  font-size: 11px;
+  font-size: 14px;
+  font-weight: 500;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.home-page .consultationFields input:hover,
+.home-page .consultationFields select:hover {
+  border-color: #94a3b8;
 }
 
 .home-page .consultationFields input:focus,
 .home-page .consultationFields select:focus {
-  border-bottom-color: var(--resource-red);
+  border-color: var(--resource-red);
+  box-shadow: 0 0 0 3px rgba(223, 34, 54, 0.12);
+}
+
+.home-page .consultationFields select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding-right: 42px;
+}
+
+.home-page .consultationFields .consultationSelectArrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.home-page .consultationFields select:focus ~ .consultationSelectArrow {
+  color: var(--resource-red);
+}
+
+.home-page .consultationFields .consultationStatusIcon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.home-page .consultationFields .consultationErrorMessage {
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 5px;
+  line-height: 1.35;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.home-page .consultationFields input.is-valid,
+.home-page .consultationFields select.is-valid {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.home-page .consultationFields input.is-invalid,
+.home-page .consultationFields select.is-invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
 }
 
 .home-page .consultationFields .form-honeypot {
@@ -2746,11 +2835,13 @@
 }
 
 .home-page .consultationFields input::placeholder {
-  color: #777b8c;
+  color: #9ca3af;
+  font-size: 14px;
 }
 
 .home-page .consultationFields select option {
   color: #151936;
+  padding: 8px;
 }
 
 .home-page .consultationFields button {
@@ -2787,22 +2878,128 @@
   transform: translateY(-2px);
 }
 
-.home-page .consultationFields button:disabled {
-  cursor: wait;
-  opacity: 0.7;
-}
-
-.home-page .consultationMessage {
+.home-page .consultationFeedbackBanner {
   grid-column: 1 / -1;
-  align-self: center;
-  margin: 0;
-  color: #30364f;
-  font-size: 11px;
-  line-height: 1.45;
+  width: 100%;
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin: 4px 0 8px;
+  box-sizing: border-box;
+  animation: feedbackSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: all 0.3s ease;
 }
 
-.home-page .consultationMessage:empty {
-  display: none;
+@keyframes feedbackSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.home-page .consultationFeedbackBanner.success {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1.5px solid #34d399;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.2), 0 4px 10px -2px rgba(16, 185, 129, 0.12);
+}
+
+.home-page .consultationFeedbackBanner.error {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border: 1.5px solid #f87171;
+  box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.15);
+}
+
+.home-page .consultationFeedbackBanner.submitting {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1.5px solid #cbd5e1;
+}
+
+.home-page .consultationFeedbackBanner .feedbackContent {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.home-page .consultationFeedbackBanner .feedbackIcon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-page .consultationFeedbackBanner .feedbackIcon.success {
+  background: #10b981;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+}
+
+.home-page .consultationFeedbackBanner .feedbackIcon.error {
+  background: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
+}
+
+.home-page .consultationFeedbackBanner .feedbackSpinner {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--resource-red);
+}
+
+.home-page .consultationFeedbackBanner .feedbackSpinner svg {
+  animation: feedbackSpin 1s linear infinite;
+}
+
+@keyframes feedbackSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.home-page .consultationFeedbackBanner .feedbackText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.home-page .consultationFeedbackBanner.success .feedbackTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #065f46;
+  line-height: 1.3;
+}
+
+.home-page .consultationFeedbackBanner.success .feedbackDesc {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #047857;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.home-page .consultationFeedbackBanner.error .feedbackDesc {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #b91c1c;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.home-page .consultationFeedbackBanner.submitting .feedbackDesc {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #475569;
+  line-height: 1.4;
+  margin: 0;
 }
 
 .home-page .consultationPrivacy {
@@ -3158,16 +3355,10 @@
   .home-page .nav {
     display: none;
     position: absolute;
-    top: 104px;
-    left: 4vw;
-    right: 4vw;
-    background: #f3f0e7;
     color: var(--ink);
-    padding: 28px;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    max-height: calc(100dvh - 150px);
     overflow-y: auto;
   }
   .home-page .nav.open {
@@ -3515,11 +3706,6 @@
 @media (max-width: 900px) {
   .home-page .header {
     height: 72px;
-  }
-
-  .home-page .nav {
-    top: 72px;
-    max-height: calc(100dvh - 104px);
   }
 }
 

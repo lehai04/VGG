@@ -207,7 +207,7 @@ function KpiRow({ totals }: { totals: DashboardData["totals"] }) {
     },
     {
       id: "staff",
-      title: "Nhân sự",
+      title: "Quản trị viên",
       colorClass: "kpi-icon--purple",
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -218,7 +218,7 @@ function KpiRow({ totals }: { totals: DashboardData["totals"] }) {
         </svg>
       ),
       value: totals.staff !== undefined ? totals.staff.toLocaleString("vi-VN") : "0",
-      unit: "nhân sự",
+      unit: "quản trị viên",
       growthRate: 0,
       delta: 0,
       comparisonText: "so với tuần trước",
@@ -668,44 +668,63 @@ function VisitsChartCard({
 // ----------------------------------------------------
 // SECTION 7: PHÂN BỔ NHÂN SỰ (5 CỘT)
 // ----------------------------------------------------
-function StaffDistributionCard({ total }: { total: number }) {
-  // 4 Nhóm chuẩn theo yêu cầu tham chiếu
+function StaffDistributionCard({
+  total,
+  breakdown,
+}: {
+  total: number;
+  breakdown?: DashboardData["staffRoleBreakdown"];
+}) {
   const groups = useMemo(() => {
-    // Phân bổ mẫu theo tỷ lệ thực tế từ tổng số nhân sự
-    const g1Count = Math.max(1, Math.round(total * 0.35));
-    const g2Count = Math.max(0, Math.round(total * 0.25));
-    const g3Count = Math.max(0, Math.round(total * 0.2));
-    const g4Count = Math.max(0, total - g1Count - g2Count - g3Count);
+    // 3 nhóm phân quyền chuẩn: Super admin, QTV cấp 2, QTV cấp 3
+    const roleMeta = [
+      { code: "SUPER_ADMIN", name: "Super admin", color: "#7C3AED" }, // Tím
+      { code: "ADMIN_LEVEL_2", name: "QTV cấp 2", color: "#2563EB" }, // Xanh dương
+      { code: "ADMIN_LEVEL_3", name: "QTV cấp 3", color: "#10B981" }, // Xanh ngọc
+    ];
 
-    const calcPct = (c: number) => (total > 0 ? ((c / total) * 100).toFixed(0) : "0");
+    if (breakdown && breakdown.length > 0) {
+      return roleMeta.map((role) => {
+        const found = breakdown.find(
+          (b) =>
+            b.code === role.code ||
+            (role.code === "SUPER_ADMIN" && (b.code?.includes("SUPER") || b.name?.toLowerCase().includes("super"))) ||
+            (role.code === "ADMIN_LEVEL_2" && (b.code?.includes("LEVEL_2") || b.name?.toLowerCase().includes("cấp 2") || b.name?.toLowerCase().includes("cap 2"))) ||
+            (role.code === "ADMIN_LEVEL_3" && (b.code?.includes("LEVEL_3") || b.name?.toLowerCase().includes("cấp 3") || b.name?.toLowerCase().includes("cap 3")))
+        );
+        const count = found ? found.count : 0;
+        const pct = total > 0 ? ((count / total) * 100).toFixed(0) : "0";
+        return {
+          name: role.name,
+          count,
+          pct,
+          color: role.color,
+        };
+      });
+    }
 
+    // Mặc định: gán toàn bộ nhân sự hiện có vào Super admin
     return [
       {
-        name: "Ban Giám hiệu & Quản trị hệ thống",
-        count: g1Count,
-        pct: calcPct(g1Count),
-        color: "#7C3AED", // Tím
+        name: "Super admin",
+        count: total,
+        pct: total > 0 ? "100" : "0",
+        color: "#7C3AED",
       },
       {
-        name: "Quản lý chương trình & Khảo thí",
-        count: g2Count,
-        pct: calcPct(g2Count),
-        color: "#2563EB", // Xanh dương
+        name: "QTV cấp 2",
+        count: 0,
+        pct: "0",
+        color: "#2563EB",
       },
       {
-        name: "Ban Tư vấn & Tuyển sinh thạc sĩ",
-        count: g3Count,
-        pct: calcPct(g3Count),
-        color: "#10B981", // Xanh ngọc
-      },
-      {
-        name: "Biên tập & Xuất bản tin tức CMS",
-        count: g4Count,
-        pct: calcPct(g4Count),
-        color: "#F59E0B", // Cam
+        name: "QTV cấp 3",
+        count: 0,
+        pct: "0",
+        color: "#10B981",
       },
     ];
-  }, [total]);
+  }, [total, breakdown]);
 
   return (
     <article className="vgg-card vgg-card--staff">
@@ -721,12 +740,12 @@ function StaffDistributionCard({ total }: { total: number }) {
           </div>
           <div>
             <h3 className="vgg-card-title">Phân bổ nhân sự</h3>
-            <span className="vgg-card-sub">Cơ cấu nhân sự & phân quyền (Dạng cột ngang)</span>
+            <span className="vgg-card-sub">Cơ cấu Quản trị viên & phân quyền (Dạng cột ngang)</span>
           </div>
         </div>
       </header>
 
-      {/* 4 dòng tiến trình */}
+      {/* Dòng tiến trình 3 cấp bậc QTV */}
       <div className="vgg-staff-rows">
         {groups.map((grp) => (
           <div key={grp.name} className="vgg-staff-row">
@@ -737,7 +756,7 @@ function StaffDistributionCard({ total }: { total: number }) {
               <div
                 className="vgg-staff-fill"
                 style={{
-                  width: `${Math.max(6, Number(grp.pct))}%`,
+                  width: grp.count > 0 ? `${Math.max(6, Number(grp.pct))}%` : "0%",
                   background: grp.color,
                 }}
               />
@@ -1132,7 +1151,7 @@ export function RealtimeDashboard({
           />
         </div>
         <div className="vgg-col-5">
-          <StaffDistributionCard total={data.totals.staff} />
+          <StaffDistributionCard total={data.totals.staff} breakdown={data.staffRoleBreakdown} />
         </div>
       </section>
 

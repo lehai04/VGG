@@ -114,7 +114,7 @@ export function NewsManager({ posts, authorName }: { posts: NewsPost[]; authorNa
             <label className="field">Ngày đăng *<input type="date" value={form.publishedAt} onChange={(event) => update("publishedAt", event.target.value)} required /></label>
             <label className="field full">Nội dung tóm tắt *<textarea value={form.excerpt} onChange={(event) => update("excerpt", event.target.value)} rows={4} minLength={10} maxLength={1000} required placeholder="Nội dung ngắn hiển thị trên thẻ và trang danh sách" /></label>
             <label className="field full">Ảnh đại diện
-              <span className="cover-upload-control"><input type="file" accept="image/jpeg,image/png,image/webp,image/avif,.avif" onChange={uploadCover} disabled={uploadingImage} /><b>{uploadingImage ? "ĐANG TẢI ẢNH…" : form.coverImage ? "ĐỔI ẢNH TỪ MÁY" : "CHỌN ẢNH TỪ MÁY"}</b><small>JPG, PNG, WebP hoặc AVIF · tối đa 8 MB</small></span>
+              <span className="cover-upload-control"><input type="file" accept="image/jpeg,image/png,image/webp,image/avif,.avif" aria-describedby="news-cover-size-hint" onChange={uploadCover} disabled={uploadingImage} /><b>{uploadingImage ? "ĐANG TẢI ẢNH…" : form.coverImage ? "ĐỔI ẢNH TỪ MÁY" : "CHỌN ẢNH TỪ MÁY"}</b><small id="news-cover-size-hint">Khuyến nghị: 1600 × 900 px (tỷ lệ 16:9, ảnh ngang).</small><small>Đặt chủ thể ở giữa, tránh chữ sát mép vì ảnh có thể được cắt theo khung hiển thị.</small><small>JPG, PNG, WebP hoặc AVIF · tối đa 8 MB</small></span>
             </label>
           </div>
         </div>

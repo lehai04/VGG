@@ -23,6 +23,10 @@
   box-sizing: border-box;
   font-family: inherit;
 }
+html {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
 body {
   margin: 0;
   min-height: 100vh;
@@ -319,14 +323,17 @@ a {
 }
 
 .vgg-main-wrapper {
+  margin-left: 280px;
+  width: calc(100% - 280px);
+  min-height: 100vh;
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
-/* Off-canvas Drawer */
+/* Fixed Sidebar Navigation */
 .vgg-drawer-backdrop {
+  display: none;
   position: fixed;
   inset: 0;
   background: rgba(11, 31, 58, 0.45);
@@ -335,10 +342,6 @@ a {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s ease, visibility 0.2s ease;
-}
-.vgg-drawer-backdrop.is-open {
-  opacity: 1;
-  visibility: visible;
 }
 
 .vgg-sidebar-drawer {
@@ -349,16 +352,60 @@ a {
   background: #0b1f3a;
   color: #ffffff;
   z-index: 1050;
-  transform: translateX(-100%);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: none;
   padding: 20px 16px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  box-shadow: 10px 0 30px rgba(11, 31, 58, 0.3);
+  box-shadow: 2px 0 12px rgba(11, 31, 58, 0.08);
 }
-.vgg-sidebar-drawer.is-open {
-  transform: translateX(0);
+
+.admin-sidebar-close-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.vgg-hamburger-btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .vgg-main-wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .vgg-drawer-backdrop {
+    display: block;
+  }
+
+  .vgg-drawer-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .vgg-sidebar-drawer {
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 10px 0 30px rgba(11, 31, 58, 0.3);
+  }
+
+  .vgg-sidebar-drawer.is-open {
+    transform: translateX(0);
+  }
+
+  .admin-sidebar-close-btn {
+    display: block;
+  }
+
+  .vgg-hamburger-btn {
+    display: flex;
+  }
 }
 
 .admin-sidebar__head {
@@ -407,6 +454,7 @@ a {
   color: #94a3b8;
 }
 .admin-sidebar-close-btn {
+  display: none;
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.85);
@@ -547,10 +595,10 @@ a {
   gap: 14px;
 }
 .vgg-hamburger-btn {
+  display: none;
   background: transparent;
   border: none;
   color: var(--navy, #0b1f3a);
-  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -649,6 +697,15 @@ a {
 
 .vgg-main-content {
   width: 100%;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 24px 32px 48px;
+}
+
+@media (max-width: 900px) {
+  .vgg-main-content {
+    padding: 16px;
+  }
 }
 
 /* ============================================================
@@ -657,7 +714,7 @@ a {
 .vgg-dashboard-container {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 16px 20px 32px;
+  padding: 0 0 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1881,7 +1938,9 @@ textarea {
 
 /* News CMS */
 .news-admin-page {
-  max-width: 1480px;
+  max-width: 1560px;
+  width: 100%;
+  margin: 0 auto;
 }
 .news-admin-layout {
   display: grid;
@@ -2110,6 +2169,8 @@ textarea {
   border: 1px solid var(--admin-border);
   border-radius: 12px;
   background: #fff;
+  display: flex;
+  flex-direction: column;
 }
 .rich-editor:focus-within {
   border-color: var(--admin-accent);
@@ -2117,8 +2178,8 @@ textarea {
 }
 .rich-editor__toolbar {
   position: sticky;
-  top: 64px;
-  z-index: 18;
+  top: 60px;
+  z-index: 20;
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
@@ -2126,7 +2187,7 @@ textarea {
   border-bottom: 1px solid var(--admin-border);
   border-radius: 11px 11px 0 0;
   background: rgba(247, 248, 250, 0.98);
-  box-shadow: 0 5px 14px rgba(18, 28, 48, 0.09);
+  box-shadow: 0 4px 12px rgba(18, 28, 48, 0.06);
   backdrop-filter: blur(8px);
 }
 .rich-editor__toolbar button,
@@ -2152,17 +2213,41 @@ textarea {
   font-weight: 800;
 }
 .rich-editor__surface {
-  min-height: 420px;
+  min-height: 380px;
+  max-height: 580px;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 24px 28px;
   outline: none;
   color: #202635;
   font-size: 1rem;
   line-height: 1.7;
+  cursor: text;
+  scroll-behavior: smooth;
+  overscroll-behavior: auto;
+}
+.rich-editor__surface::-webkit-scrollbar {
+  width: 6px;
+}
+.rich-editor__surface::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+.rich-editor__surface::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.rich-editor__surface::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 .rich-editor__surface:empty::before {
   color: #9aa1ac;
   content: attr(data-placeholder);
   pointer-events: none;
+}
+.rich-editor__surface * {
+  user-select: text !important;
+  -webkit-user-select: text !important;
 }
 .rich-editor__surface h2 {
   margin: 1.2em 0 0.5em;
@@ -2202,6 +2287,8 @@ textarea {
   border-top: 1px solid var(--admin-border);
   color: var(--admin-muted);
   font-size: 0.7rem;
+  background: #fafbfc;
+  border-radius: 0 0 11px 11px;
 }
 
 /* Resource management */
@@ -5810,4 +5897,140 @@ textarea {
     opacity: 1;
   }
 }
+
+/* ==============================================================================
+   Single Sign-On (SSO) Styles
+   ============================================================================== */
+.sso-section {
+  margin-bottom: 8px;
+}
+
+.sso-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sso-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #1e293b;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.sso-button:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.sso-button:active {
+  transform: translateY(0);
+}
+
+.sso-button svg {
+  flex-shrink: 0;
+}
+
+.sso-button--microsoft:hover {
+  border-color: #0078d4;
+}
+
+.sso-button--google:hover {
+  border-color: #4285f4;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  margin: 18px 0;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  gap: 12px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #e2e8f0;
+}
+
+.sso-mock-card {
+  background: #f1f5f9;
+  border: 1px dashed #94a3b8;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.sso-mock-card h4 {
+  margin: 0 0 6px 0;
+  font-size: 0.86rem;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sso-mock-card p {
+  margin: 0 0 12px 0;
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.sso-mock-quick-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.sso-mock-quick-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sso-mock-quick-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.sso-mock-quick-btn span.badge {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  color: #475569;
+  font-weight: 600;
+}
+
 
