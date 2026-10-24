@@ -84,7 +84,7 @@ function RankingsContent() {
           <p className={styles.eyebrow}>XẾP HẠNG & THÀNH TỰU</p>
           <h2>
             Nền tảng chất lượng.
-            <br />
+            {" "}
             <em>Dấu ấn toàn cầu.</em>
           </h2>
           <p>
@@ -144,37 +144,6 @@ function RankingsContent() {
         </div>
       </section>
 
-      <section className={styles.learnerImpact} aria-labelledby="learner-impact-heading">
-        <div className={styles.learnerImpactMedia} data-reveal>
-          <Image
-            src="/images/pages/discover/content/1.jpg"
-            alt="Cộng đồng người học sau đại học Văn Lang"
-            fill
-            sizes="(max-width: 767px) 100vw, 43vw"
-          />
-          <span>
-            HỌC THUẬT
-            <br />· CỘNG ĐỒNG
-          </span>
-        </div>
-        <div className={styles.learnerImpactCopy} data-reveal>
-          <p className={styles.eyebrow}>KHỐI 02 · NGƯỜI HỌC SAU ĐẠI HỌC</p>
-          <h2 id="learner-impact-heading">Thành tựu được viết tiếp bởi người học.</h2>
-          <p>
-            Giá trị của đào tạo sau đại học không chỉ được phản ánh qua các bảng xếp hạng, mà còn
-            hiện diện trong hành trình học tập, nghiên cứu và phát triển nghề nghiệp của mỗi học
-            viên.
-          </p>
-          <p>
-            Từ trải nghiệm học thuật tại Hàn Quốc, Đài Loan đến các giải thưởng thiết kế trong nước
-            và quốc tế, người học Văn Lang từng bước đưa tri thức chuyên môn vào thực tiễn và mở
-            rộng kết nối toàn cầu.
-          </p>
-          <a href="/vi/student-success">
-            Xem hoạt động người học <ArrowUpRight aria-hidden="true" />
-          </a>
-        </div>
-      </section>
     </>
   );
 }

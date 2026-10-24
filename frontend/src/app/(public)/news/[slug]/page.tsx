@@ -1,43 +1,91 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowUpRight, CalendarDays, UserRound } from "lucide-react";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { localizedRedirectPath } from "@/lib/serverLocale";
+import { legacyNewsHref } from "@/features/news/links";
 import Link from "@/i18n/components/LocalizedLink";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { categoryLabel, getNewsPost, getNewsPosts } from "@/features/news/data";
 import { NewsShare } from "@/features/news/components/NewsShare";
 import styles from "@/features/news/components/NewsDetail.module.css";
+import { headers } from "next/headers";
+import { defaultLocale, isLocale } from "@/lib/i18n";
 
 type Props = { params: Promise<{ slug: string }> };
+function canonicalNewsUrl(post: { canonicalUrl?: string | null; slug: string }, locale: string) {
+  const base = process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn";
+  const fallback = new URL(`/${locale}/news/${post.slug}`, base).toString();
+  try {
+    const requested = new URL(post.canonicalUrl || fallback, base);
+    return requested.origin === new URL(base).origin ? requested.toString() : fallback;
+  } catch { return fallback; }
+}
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getNewsPost((await params).slug);
-  return post
-    ? {
-        title: post.title,
-        description: post.excerpt,
-        openGraph: {
-          title: post.title,
-          description: post.excerpt ?? undefined,
-          images: post.coverImage ? [post.coverImage] : undefined,
-        },
-      }
-    : {};
+  if (!post) return {};
+  const requestHeaders = await headers();
+  const headerLocale = requestHeaders.get("x-vgg-locale");
+  const locale = isLocale(headerLocale) ? headerLocale : defaultLocale;
+  const url = canonicalNewsUrl(post, locale);
+  const image = post.ogImage || post.coverImage;
+  return {
+    title: post.metaTitle || post.title,
+    description: post.metaDescription || post.excerpt || undefined,
+    alternates: { canonical: url },
+    robots: {
+      index: post.robotsIndex !== false,
+      follow: post.robotsFollow !== false,
+      googleBot: { index: post.robotsIndex !== false, follow: post.robotsFollow !== false, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+    },
+    openGraph: {
+      type: "article",
+      locale: locale === "vi" ? "vi_VN" : "en_US",
+      siteName: "Van Lang Global Graduate",
+      url,
+      title: post.ogTitle || post.metaTitle || post.title,
+      description: post.ogDescription || post.metaDescription || post.excerpt || undefined,
+      images: image ? [{ url: image, alt: post.ogImageAlt || post.coverImageAlt || post.title }] : undefined,
+      publishedTime: post.publishedAt || undefined,
+    },
+  };
 }
 
 export default async function NewsDetailPage({ params }: Props) {
-  const post = await getNewsPost((await params).slug);
-  if (!post) notFound();
+  const { slug } = await params;
+  const post = await getNewsPost(slug);
+  if (!post) {
+    const legacyHref = legacyNewsHref(slug);
+    if (legacyHref) redirect(await localizedRedirectPath(legacyHref));
+    notFound();
+  }
   const recent = (await getNewsPosts({ limit: 6 }))
     .filter((item) => item.slug !== post.slug)
     .slice(0, 5);
   const date = post.publishedAt
     ? new Date(post.publishedAt).toLocaleDateString("vi-VN")
     : "Mới cập nhật";
+  const requestHeaders = await headers();
+  const headerLocale = requestHeaders.get("x-vgg-locale");
+  const locale = isLocale(headerLocale) ? headerLocale : defaultLocale;
+  const canonicalUrl = canonicalNewsUrl(post, locale);
+  const author = post.authorName || post.author?.fullName || "Viện Sau Đại học";
+  const publicBase = (process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn").replace(/\/$/, "");
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "NewsArticle", "@id": `${canonicalUrl}#article`, headline: post.title, description: post.metaDescription || post.excerpt || undefined, datePublished: post.publishedAt || undefined, dateModified: post.publishedAt || undefined, author: { "@type": "Person", name: author }, image: post.coverImage ? [new URL(post.coverImage, process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn").toString()] : undefined, mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl }, publisher: { "@type": "EducationalOrganization", name: "Viện Sau Đại học Văn Lang", url: process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn" } },
+      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Trang chủ", item: `${publicBase}/${locale}` }, { "@type": "ListItem", position: 2, name: "Tin tức", item: `${publicBase}/${locale}/news` }, { "@type": "ListItem", position: 3, name: post.title, item: canonicalUrl }] },
+      ...(post.customJsonLd ? [post.customJsonLd] : []),
+    ],
+  };
   return (
     <main className={styles.page} id="main-content">
       <SiteHeader compact />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <article>
+        <nav aria-label="Breadcrumb"><Link href="/">Trang chủ</Link> / <Link href="/news">Tin tức</Link> / <span>{post.title}</span></nav>
         <header className={styles.articleHeader}>
           <p>{categoryLabel(post.category)}</p>
           <h1>{post.title}</h1>
@@ -59,7 +107,7 @@ export default async function NewsDetailPage({ params }: Props) {
           <Image
             src={post.coverImage || "/images/pages/news/content/banner.jpg"}
             unoptimized={post.coverImage?.startsWith("/uploads/")}
-            alt={post.title}
+            alt={post.coverImageAlt || post.title}
             fill
             priority
             sizes="(max-width: 980px) 100vw, 1200px"
@@ -90,7 +138,7 @@ export default async function NewsDetailPage({ params }: Props) {
                         <Image
                           src={item.coverImage || "/images/pages/news/content/banner.jpg"}
                           unoptimized={item.coverImage?.startsWith("/uploads/")}
-                          alt={item.title}
+                          alt={item.coverImageAlt || item.title}
                           fill
                           sizes="150px"
                         />

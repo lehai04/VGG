@@ -81,7 +81,7 @@ export function PasswordChecklistInput({
   return (
     <div className={wrapperClassName} style={{ display: "flex", flexDirection: "column" }}>
       {label && (
-        <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1e293b", marginBottom: "6px" }}>
+        <span style={{ fontSize: "var(--text-14)", fontWeight: 600, color: "#1e293b", marginBottom: "6px" }}>
           {label} {required && <span style={{ color: "#ef4444" }}>*</span>}
         </span>
       )}
@@ -104,7 +104,7 @@ export function PasswordChecklistInput({
             borderRadius: "8px",
             border: `1.5px solid ${borderColor}`,
             boxShadow,
-            fontSize: "0.88rem",
+            fontSize: "var(--text-14)",
             color: "#0f172a",
             outline: "none",
             transition: "border-color 0.2s ease, box-shadow 0.2s ease",
@@ -156,7 +156,7 @@ export function PasswordChecklistInput({
             border: "none",
             cursor: "pointer",
             padding: "4px 8px",
-            fontSize: "0.78rem",
+            fontSize: "var(--text-12)",
             color: "#64748b",
             fontWeight: 600,
           }}
@@ -171,7 +171,7 @@ export function PasswordChecklistInput({
           role="alert"
           style={{
             color: "#ef4444",
-            fontSize: "0.78rem",
+            fontSize: "var(--text-12)",
             fontWeight: 500,
             marginTop: "5px",
             display: "flex",
@@ -204,7 +204,7 @@ export function PasswordChecklistInput({
               display: "flex",
               alignItems: "center",
               gap: "6px",
-              fontSize: "0.76rem",
+              fontSize: "var(--text-12)",
               color: item.met ? "#15803d" : "#94a3b8",
               fontWeight: item.met ? 600 : 400,
               transition: "color 0.2s ease",
@@ -218,7 +218,7 @@ export function PasswordChecklistInput({
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "0.68rem",
+                fontSize: "var(--text-10)",
                 background: item.met ? "#dcfce7" : "#e2e8f0",
                 color: item.met ? "#16a34a" : "#94a3b8",
                 flexShrink: 0,

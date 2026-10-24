@@ -15,8 +15,8 @@
 .heading > p {
   margin: 0;
   color: #b31329;
-  font-size: 10px;
-  font-weight: 850;
+  font-size: var(--text-10);
+  font-weight: 700;
   letter-spacing: 0.2em;
 }
 
@@ -29,7 +29,7 @@
 
 .heading > span {
   color: #5f6270;
-  font-size: 16px;
+  font-size: var(--text-16);
 }
 
 .diagram {
@@ -89,8 +89,8 @@
 .stepNumber {
   align-self: flex-start;
   color: #aeb1bd;
-  font-size: 9px;
-  font-weight: 850;
+  font-size: var(--text-10);
+  font-weight: 700;
   letter-spacing: 0.16em;
 }
 
@@ -122,14 +122,14 @@
 }
 
 .diagram strong {
-  font-size: 15px;
+  font-size: var(--text-14);
   line-height: 1.25;
 }
 
 .diagram small {
   margin-top: 8px;
   color: #777a86;
-  font-size: 11px;
+  font-size: var(--text-10);
   line-height: 1.4;
 }
 
@@ -175,8 +175,8 @@
 
 .detail span {
   color: #ff8794;
-  font-size: 9px;
-  font-weight: 850;
+  font-size: var(--text-10);
+  font-weight: 700;
   letter-spacing: 0.18em;
 }
 
@@ -190,7 +190,7 @@
   max-width: 1050px;
   margin: 0;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 16px;
+  font-size: var(--text-16);
   line-height: 1.72;
 }
 

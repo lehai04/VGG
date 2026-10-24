@@ -38,7 +38,7 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
             / {admin.username}
           </span>
           <h1>{admin.fullName}</h1>
-          <p style={{ margin: "4px 0 0", color: "#71717a", fontSize: "0.9rem" }}>
+          <p style={{ margin: "4px 0 0", color: "#71717a", fontSize: "var(--text-14)" }}>
             Hồ sơ tài khoản và phân quyền quản trị trong hệ thống VGG Platform.
           </p>
         </div>

@@ -5,5 +5,5 @@ import { ResourcesConsultation } from "@/features/home/components/ResourcesConsu
  * Kế thừa nguyên thiết kế, nội dung và logic form tư vấn hiện có.
  */
 export function NextStepCTA() {
-  return <ResourcesConsultation showResources={false} />;
+  return <ResourcesConsultation />;
 }

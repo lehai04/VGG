@@ -49,13 +49,13 @@ export function ForgotPasswordForm() {
             color: "#166534",
           }}
         >
-          <strong style={{ display: "block", marginBottom: "8px", fontSize: "1rem" }}>
+          <strong style={{ display: "block", marginBottom: "8px", fontSize: "var(--text-16)" }}>
             ✓ Yêu cầu đã được tiếp nhận
           </strong>
-          <p style={{ margin: "0 0 12px", fontSize: "0.9rem", lineHeight: 1.5 }}>
+          <p style={{ margin: "0 0 12px", fontSize: "var(--text-14)", lineHeight: 1.5 }}>
             {message}
           </p>
-          <p style={{ margin: "0 0 16px", fontSize: "0.82rem", color: "#4b5563", lineHeight: 1.4 }}>
+          <p style={{ margin: "0 0 16px", fontSize: "var(--text-14)", color: "#4b5563", lineHeight: 1.4 }}>
             Vui lòng kiểm tra hộp thư đến (bao gồm cả thư mục Spam/Thư rác). Nếu không nhận được email hoặc cần hỗ trợ khẩn cấp, vui lòng liên hệ trực tiếp <strong>Super Admin</strong> hoặc <strong>Bộ phận Quản trị Hệ thống IT</strong>.
           </p>
           <div style={{ marginTop: "16px" }}>
@@ -86,7 +86,7 @@ export function ForgotPasswordForm() {
             {loading ? "ĐANG XỬ LÝ…" : "GỬI YÊU CẦU ĐẶT LẠI MẬT KHẨU"}
           </button>
           <div style={{ textAlign: "center", marginTop: "12px" }}>
-            <Link href="/admin/login" style={{ color: "#71717a", fontSize: "0.85rem", textDecoration: "none" }}>
+            <Link href="/admin/login" style={{ color: "#71717a", fontSize: "var(--text-14)", textDecoration: "none" }}>
               ← Quay lại Đăng nhập
             </Link>
           </div>

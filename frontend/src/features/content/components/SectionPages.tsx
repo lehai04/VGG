@@ -47,7 +47,7 @@ export function SectionLanding({ section }: { section: string }) {
           <p>Viện Sau Đại học PERSPECTIVE</p>
           <h2>
             Chuẩn quốc tế.
-            <br />
+            {" "}
             Lấy người học làm trung tâm.
           </h2>
         </div>
@@ -62,19 +62,19 @@ export function SectionLanding({ section }: { section: string }) {
   );
 }
 
-export function UnifiedSectionContent({ section }: { section: string }) {
+export function UnifiedSectionContent({ section, anchorOverrides = {} }: { section: string; anchorOverrides?: Record<string, string> }) {
   const group = findGroup(section);
   if (!group) return null;
   return (
     <section className="academic-unified-sections" aria-label={`Nội dung ${group.vi}`}>
       <header className="academic-unified-intro" data-reveal>
         <p>{group.en.toUpperCase()} · {group.vi.toUpperCase()}</p>
-        <h2>Sẵn sàng cho<br />bước tiến mới.</h2>
+        <h2>Sẵn sàng cho{" "}bước tiến mới.</h2>
         <span>{group.intro}</span>
       </header>
       <div className="academic-unified-list">
         {(sectionSubpages[section] ?? []).map((page, index) => (
-          <details id={page.slug} key={page.slug} data-reveal>
+          <details id={anchorOverrides[page.slug] ?? page.slug} key={page.slug} data-reveal>
             <summary>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <strong>{page.title}</strong>

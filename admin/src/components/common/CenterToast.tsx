@@ -113,7 +113,7 @@ export function CenterToast({
           <h3
             style={{
               margin: 0,
-              fontSize: "1.2rem",
+              fontSize: "var(--text-20)",
               fontWeight: 700,
               color: isSuccess ? "#065f46" : isError ? "#991b1b" : "#0f172a",
             }}
@@ -123,7 +123,7 @@ export function CenterToast({
           <p
             style={{
               margin: "8px 0 0",
-              fontSize: "0.95rem",
+              fontSize: "var(--text-16)",
               color: "#334155",
               lineHeight: 1.5,
             }}
@@ -142,7 +142,7 @@ export function CenterToast({
             color: "#ffffff",
             border: "none",
             borderRadius: "999px",
-            fontSize: "0.85rem",
+            fontSize: "var(--text-14)",
             fontWeight: 600,
             cursor: "pointer",
             boxShadow: "0 2px 8px rgba(0,0,0,0.12)",

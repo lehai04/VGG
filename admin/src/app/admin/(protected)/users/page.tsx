@@ -20,7 +20,7 @@ export default async function AdminUsersPage() {
         <div>
           <span className="eyebrow">HỆ THỐNG / QUẢN TRỊ NHÂN SỰ</span>
           <h1>Danh sách Nhân sự & Quản trị viên</h1>
-          <p style={{ margin: "4px 0 0", color: "#71717a", fontSize: "0.9rem" }}>
+          <p style={{ margin: "4px 0 0", color: "#71717a", fontSize: "var(--text-14)" }}>
             Quản lý tài khoản, phân quyền vai trò (Super Admin / QTV Cấp 2 / QTV Cấp 3) và theo dõi hoạt động nhân sự.
           </p>
         </div>
@@ -36,7 +36,7 @@ export default async function AdminUsersPage() {
               justifyContent: "center",
               padding: "0 20px",
               minHeight: "44px",
-              fontSize: "0.88rem",
+              fontSize: "var(--text-14)",
               fontWeight: 700,
             }}
           >
@@ -79,7 +79,7 @@ export default async function AdminUsersPage() {
                       display: "inline-block",
                       padding: "3px 8px",
                       borderRadius: "12px",
-                      fontSize: "0.78rem",
+                      fontSize: "var(--text-12)",
                       fontWeight: 700,
                       background:
                         admin.role.level === 1
@@ -124,7 +124,7 @@ export default async function AdminUsersPage() {
                   <Link
                     href={`/admin/users/${admin.id}`}
                     className="secondary-button"
-                    style={{ padding: "4px 10px", fontSize: "0.8rem", textDecoration: "none" }}
+                    style={{ padding: "4px 10px", fontSize: "var(--text-12)", textDecoration: "none" }}
                   >
                     Chi tiết →
                   </Link>

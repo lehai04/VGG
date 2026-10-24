@@ -93,7 +93,7 @@ export function DeleteConfirmModal({
             id="delete-confirm-title"
             style={{
               margin: 0,
-              fontSize: "1.25rem",
+              fontSize: "var(--text-20)",
               fontWeight: 700,
               color: "#991b1b",
             }}
@@ -103,7 +103,7 @@ export function DeleteConfirmModal({
           <p
             style={{
               margin: "10px 0 0",
-              fontSize: "0.92rem",
+              fontSize: "var(--text-14)",
               color: "#475569",
               lineHeight: 1.55,
             }}
@@ -146,7 +146,7 @@ export function DeleteConfirmModal({
               color: "#334155",
               border: "1px solid #cbd5e1",
               borderRadius: "10px",
-              fontSize: "0.9rem",
+              fontSize: "var(--text-14)",
               fontWeight: 600,
               cursor: loading ? "not-allowed" : "pointer",
             }}
@@ -164,7 +164,7 @@ export function DeleteConfirmModal({
               color: "#ffffff",
               border: "none",
               borderRadius: "10px",
-              fontSize: "0.9rem",
+              fontSize: "var(--text-14)",
               fontWeight: 600,
               cursor: loading ? "wait" : "pointer",
               boxShadow: "0 4px 12px rgba(220, 38, 38, 0.3)",

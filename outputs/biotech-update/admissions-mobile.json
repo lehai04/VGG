@@ -1,0 +1,107 @@
+[
+  {
+    "id": "cong-nghe-thong-tin",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "marketing",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "khoa-hoc-moi-truong",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "ky-thuat-moi-truong",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "quan-ly-tai-nguyen-moi-truong",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "cong-nghe-sinh-hoc",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "ky-thuat-xay-dung",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "ky-thuat-o-to",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "quan-tri-kinh-doanh",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "kinh-doanh-thuong-mai",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "tai-chinh-ngan-hang",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "ke-toan",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "logistics",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "quan-tri-du-lich",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "quan-tri-khach-san",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "luat-kinh-te",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "quan-he-cong-chung",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "ngon-ngu-anh",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "kien-truc",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "my-thuat-ung-dung",
+    "cards": 2,
+    "overflow": false
+  },
+  {
+    "id": "ly-luan-lich-su-my-thuat",
+    "cards": 2,
+    "overflow": false
+  }
+]

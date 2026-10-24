@@ -1,0 +1,770 @@
+{
+  "checked": 121,
+  "present": 115,
+  "missing": [
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển: 500.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức: 1.200.000 đồng/môn",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn thi tiếng Anh đầu vào: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào: 750.000 đồng",
+      "present": false
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Thông tin cần biết trước khi đăng ký.",
+      "present": false
+    }
+  ],
+  "units": [
+    {
+      "section": null,
+      "tag": "h1",
+      "text": "Quan hệ công chúng",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Phát triển năng lực hoạch định chiến lược, quản trị truyền thông, sáng tạo nội dung và nghiên cứu quan hệ công chúng trong môi trường số.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h2",
+      "text": "Kiến thức chuyên sâu. Năng lực tạo tác động.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình kết nối lý thuyết truyền thông với thực hành chiến lược, quản trị danh tiếng, khủng hoảng, nội dung đa phương tiện và công chúng số. Người học rèn luyện năng lực phân tích dữ liệu, tư duy phản biện và quản lý chiến dịch trong bối cảnh truyền thông biến đổi nhanh.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Định hướng ứng dụng gắn với trải nghiệm quốc tế, thực tập doanh nghiệp và đề án tốt nghiệp. Định hướng nghiên cứu chú trọng phương pháp khoa học, nghiên cứu quan hệ công chúng và luận văn.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "figcaption",
+      "text": "Hoạt động học thuật · Trường Đại học Văn Lang",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Chiến lược truyền thông tích hợp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Hoạch định, phân bổ nguồn lực và đánh giá chiến dịch đa kênh.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Danh tiếng và khủng hoảng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phân tích rủi ro, quản trị danh tiếng và xử lý vấn đề truyền thông.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Nội dung và công nghệ",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Sản xuất nội dung đa phương tiện, khai thác nền tảng số và công nghệ mới.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Trải nghiệm nghề nghiệp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kết nối trải nghiệm quốc tế, thực tập doanh nghiệp và bài toán thực tế.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "summary",
+      "text": "Chuẩn đầu ra của chương trình",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h2",
+      "text": "Nền tảng phù hợp cho lộ trình sau đại học.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Điều kiện cụ thể được xác định trên cơ sở văn bằng, bảng điểm và định hướng đăng ký.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Miễn bổ sung: Quan hệ công chúng; Truyền thông đa phương tiện.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Báo chí và truyền thông: học Nhập môn Quan hệ công chúng, Lập kế hoạch Quan hệ công chúng, Kỹ năng viết cho Quan hệ công chúng — 3 tín chỉ/học phần.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Nhân văn, khoa học xã hội và hành vi: học thêm Tâm lý học truyền thông (tổng 12 tín chỉ). Nhóm ngành khác: học thêm Marketing căn bản (tổng 15 tín chỉ).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Định hướng nghiên cứu: tốt nghiệp từ loại Khá trở lên hoặc có công bố khoa học liên quan. Tuyển sinh bằng xét tuyển kết hợp phỏng vấn.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên Việt Nam cần đáp ứng ngoại ngữ đầu vào từ Bậc 3/6 hoặc minh chứng tương đương được Trường công nhận. Công dân nước ngoài học chương trình tiếng Việt cần đạt tiếng Việt từ Bậc 4 hoặc tốt nghiệp chương trình đào tạo bằng tiếng Việt.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h2",
+      "text": "Mở rộng vai trò chuyên môn và quản lý.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Quản trị truyền thông",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Quản lý phòng truyền thông, PR tại doanh nghiệp, tập đoàn và cơ quan nhà nước.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Tư vấn chiến lược",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tư vấn, hoạch định chính sách và chiến lược quan hệ công chúng.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Nội dung và sự kiện",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Sáng tạo nội dung, quảng cáo, mạng xã hội, báo chí, phát thanh, truyền hình và tổ chức sự kiện.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Nghiên cứu và giảng dạy",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Nghiên cứu, giảng dạy và tiếp tục học ở trình độ tiến sĩ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h2",
+      "text": "60–61 tín chỉ theo lộ trình rõ ràng.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "7 tín chỉ kiến thức chung; 10 tín chỉ cơ sở; 22 tín chỉ chuyên ngành bắt buộc; 12 tín chỉ tự chọn; 6 tín chỉ thực tập và 9 tín chỉ đề án.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Lộ trình mẫu: Ba học kỳ đầu hoàn thành khối học phần; học kỳ cuối gồm trải nghiệm quốc tế, thực tập doanh nghiệp và đề án.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81PHIL1013",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học Philosophy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81RESM7013",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp nghiên cứu khoa học · Research Methodology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81MTEC7083",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kỹ thuật truyền thông · Media Technologies",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81MEDL7043",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đạo đức, luật pháp và Quy định truyền thông · Media Law And Regulation",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81PRCA7053",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chiến lược Quan hệ Công chúng · Public Relations Campaign Planning and Execution",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81DIGI7103",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Truyền thông số · Digital Media and Public Relations",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81MEAU7113",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công chúng truyền thông · Media Audiences and Users",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81PRWR7173",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phát triển nội dung Quan hệ Công chúng · Public Relations Writing and Content Creation",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81CRIS7123",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị danh tiếng và khủng hoảng · Crisis and Reputation Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81MEDE7133",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị kinh tế truyền thông · Media Economics",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TEIC7142",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thực tập 1: Trải nghiệm quốc tế truyền thông",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81INTE7274",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thực tập 2: Thực tập tại doanh nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81COMM7063",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Truyền thông và lãnh đạo · Communications and Leadership",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81MLIT7073",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thẩm định tin tức · Media Literacy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81THEO7023",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Lý thuyết Quan hệ công chúng đương đại · Contemporary Public Relations Theory",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81GLOB7093",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Truyền thông toàn cầu · Global Communication Theories and Application",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81HEAL7203",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Truyền thông sức khoẻ Health Communication and Advocacy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81MDRE7143",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quan hệ giới truyền thông · Media Relations",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81EMPL7153",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quan hệ nội bộ và Nhà đầu tư · Employee and Investor Relations",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81PRNO7163",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quan hệ công chúng trong tổ chức Phi chính phủ · Public Relations and Advocacy for Nonprofit Organizations",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81ACDE7183",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thuyết trình chuyên nghiệp · Academic and professional presentation skills",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81PEBM7193",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị thương hiệu cá nhân · Personal Branding Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81CREM7233",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Truyền thông đa phương tiện · Creative Media Design & Expression",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "7 tín chỉ kiến thức chung; 12 tín chỉ cơ sở; 14 tín chỉ chuyên ngành bắt buộc; 15 tín chỉ tự chọn (chọn 5 học phần); 13 tín chỉ luận văn.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Lộ trình mẫu: Học phần được phân bổ theo lộ trình mẫu; giai đoạn cuối tập trung thực hiện và bảo vệ luận văn.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học · Philosophy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81RESP7033",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Nghiên cứu Quan hệ Công chúng · Research on Public Relations",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Trải nghiệm quốc tế Truyền thông",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Truyền thông sức khoẻ · Health Communication and Advocacy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81JOUR7213",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Báo chí · Understanding Journalism",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81ADVE7223",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quảng cáo và tiếp thị kỹ thuật số · Advertising and Promotion in the Digital Age",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81THES72415",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Luận văn tốt nghiệp Thesis",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "h2",
+      "text": "Chủ động chuẩn bị cho hành trình học.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "summary",
+      "text": "Các khoản thu riêng khi áp dụng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển: 500.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức: 1.200.000 đồng/môn",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn thi tiếng Anh đầu vào: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào: 750.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "35.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "40.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Chưa trừ học bổng, hỗ trợ và chưa gồm các khoản thu riêng.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Thông tin cần biết trước khi đăng ký.",
+      "present": false
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Chương trình tuyển sinh theo phương thức nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình xét tuyển hồ sơ; ngành Quan hệ công chúng có thêm bước phỏng vấn theo thông báo tuyển sinh năm 2027.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Có những định hướng nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình tuyển sinh theo định hướng ứng dụng · nghiên cứu trong kế hoạch năm 2027.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Ngành nào không phải học bổ sung?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Báo chí và truyền thông: học Nhập môn Quan hệ công chúng, Lập kế hoạch Quan hệ công chúng, Kỹ năng viết cho Quan hệ công chúng — 3 tín chỉ/học phần. Nhân văn, khoa học xã hội và hành vi: học thêm Tâm lý học truyền thông (tổng 12 tín chỉ). Nhóm ngành khác: học thêm Marketing căn bản (tổng 15 tín chỉ).",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phần bổ sung được xác định thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phí toàn khóa là bao nhiêu?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Học phí toàn khóa là 110.000.000 đồng, chia thành ba đợt 35.000.000 đồng, 35.000.000 đồng và 40.000.000 đồng.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Định hướng nghiên cứu yêu cầu gì?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Định hướng nghiên cứu: tốt nghiệp từ loại Khá trở lên hoặc có công bố khoa học liên quan. Tuyển sinh bằng xét tuyển kết hợp phỏng vấn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h2",
+      "text": "Bắt đầu từ mục tiêu học tập của bạn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Trao đổi về chương trình Quan hệ công chúng, điều kiện đầu vào và lộ trình đăng ký.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h3",
+      "text": "Trao đổi trực tiếp với Viện",
+      "present": true
+    }
+  ]
+}

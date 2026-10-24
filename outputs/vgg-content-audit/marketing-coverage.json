@@ -1,0 +1,1231 @@
+{
+  "checked": 204,
+  "present": 204,
+  "missing": [],
+  "units": [
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Trang chủ",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h1",
+      "text": "Marketing",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Phát triển tư duy chiến lược và năng lực nghiên cứu Marketing, kết nối dữ liệu, công nghệ và hiểu biết về khách hàng để giải quyết các vấn đề kinh doanh trong bối cảnh chuyển đổi số.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Tổng quan chương trình",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h2",
+      "text": "Thấu hiểu thị trường. Dẫn dắt chiến lược Marketing.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Marketing tại Văn Lang giúp người học phát triển kiến thức chuyên sâu, tư duy nghiên cứu và năng lực hoạch định chiến lược Marketing trong môi trường kinh doanh toàn cầu và chuyển đổi số.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Nội dung học tập kết nối Marketing bền vững, phân tích dữ liệu, chiến lược số và quản trị trải nghiệm khách hàng. Người học rèn luyện khả năng nhận diện vấn đề, đánh giá bằng chứng và xây dựng các giải pháp Marketing gắn với thực tiễn doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình được thiết kế theo định hướng nghiên cứu, chú trọng phương pháp nghiên cứu khoa học, chuyên đề Marketing và luận văn tốt nghiệp. Nền tảng này hỗ trợ phát triển chuyên môn trong quản trị, tư vấn, nghiên cứu và giảng dạy, đồng thời mở ra khả năng tiếp tục học tập ở trình độ cao hơn.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Văn bằng tốt nghiệp: Thạc sĩ Marketing — Master of Marketing.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "figcaption",
+      "text": "Trao đổi tại hội thảo Trade Marketing · Khoa Thương mại, Văn Lang Ảnh: Ngọc Duy / VLU ↗",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h3",
+      "text": "Học sâu. Nghiên cứu có cơ sở.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Định hướng nghiên cứu 24 tháng · 4 học kỳ 60 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Luận văn tốt nghiệp Nghiên cứu độc lập 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Điểm nổi bật của chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Chiến lược Marketing trong môi trường số",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kết nối tư duy Marketing bền vững với chiến lược số và đa kênh hợp nhất, giúp người học phân tích thị trường, thấu hiểu hành trình khách hàng và xây dựng giải pháp phù hợp với bối cảnh kinh doanh.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Ra quyết định dựa trên dữ liệu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Học phần Phân tích kinh doanh và dự báo phát triển tư duy định lượng và khả năng sử dụng dữ liệu để đánh giá nhu cầu, doanh số và hành vi khách hàng, hỗ trợ các quyết định Marketing có cơ sở.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Nghiên cứu gắn với thực tiễn doanh nghiệp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Chuyên đề nghiên cứu Marketing kết hợp seminar, phản biện học thuật và các đợt tìm hiểu thực tế tại doanh nghiệp. Người học từng bước phát triển vấn đề, thiết kế nghiên cứu và chuẩn bị cho luận văn tốt nghiệp 15 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Đạo đức và trách nhiệm trong Marketing",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Quyền riêng tư, quản trị dữ liệu, liêm chính học thuật và trách nhiệm xã hội được đặt cùng năng lực chuyên môn, hướng đến các quyết định Marketing có trách nhiệm và giá trị bền vững cho tổ chức, khách hàng và cộng đồng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "summary",
+      "text": "Chuẩn đầu ra chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Sáu chuẩn đầu ra bao quát kiến thức chuyên sâu, kỹ năng nghiên cứu và quản trị, cùng năng lực tự chủ và trách nhiệm nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phân tích và tích hợp kiến thức chuyên sâu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phân tích và tích hợp kiến thức nâng cao, chuyên sâu về Marketing, quản trị và tri thức liên ngành để đánh giá các vấn đề Marketing phức tạp trong bối cảnh toàn cầu.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Kết nối công nghệ, dữ liệu và đổi mới",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phân tích và tích hợp công nghệ, dữ liệu và các xu hướng mới nổi để phát triển các giải pháp Marketing đổi mới.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Thực hiện nghiên cứu Marketing nâng cao",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thực hiện nghiên cứu Marketing ở trình độ nâng cao nhằm phát triển tri thức và giải quyết các vấn đề chuyên sâu trong lĩnh vực Marketing.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Giao tiếp và dẫn dắt hoạt động chuyên môn",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Giao tiếp học thuật và nghề nghiệp hiệu quả, đồng thời quản trị và dẫn dắt hoạt động chuyên môn trong các bối cảnh Marketing phức tạp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Tự chủ, liêm chính và trách nhiệm xã hội",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thể hiện mức độ tự chủ cao, liêm chính học thuật, đạo đức nghề nghiệp và trách nhiệm xã hội trong nghiên cứu và thực hành Marketing.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Đổi mới sáng tạo và học tập suốt đời",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thể hiện năng lực đổi mới sáng tạo, tự định hướng và học tập suốt đời để phát triển chuyên môn và thích ứng với sự thay đổi của khoa học, công nghệ và môi trường kinh doanh.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình phù hợp với ai?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h2",
+      "text": "Nền tảng của bạn, bước học tiếp theo.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành học phù hợp và đáp ứng các điều kiện dự tuyển của chương trình.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người làm Marketing và kinh doanh",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Người mong muốn hệ thống hóa kiến thức, nâng cao năng lực phân tích và hoạch định chiến lược để phát triển chuyên môn hoặc đảm nhận vai trò quản lý Marketing, thương hiệu và bán hàng.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người hướng đến tư vấn và khởi nghiệp",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Người muốn phát triển khả năng đánh giá cơ hội thị trường, xây dựng giải pháp Marketing và vận dụng kiến thức vào hoạt động tư vấn hoặc dự án kinh doanh của mình.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người theo đuổi nghiên cứu và giảng dạy",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Người muốn rèn luyện phương pháp nghiên cứu, phát triển tư duy học thuật và chuẩn bị nền tảng cho công việc nghiên cứu, giảng dạy hoặc tiếp tục học tập ở trình độ cao hơn.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Ngành tốt nghiệp có phù hợp?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Người tốt nghiệp Marketing, Quản trị kinh doanh, Kinh doanh quốc tế, Kinh doanh thương mại và Thương mại điện tử không cần học bổ sung kiến thức. Các ngành liên quan và ngành khác được đối chiếu bảng điểm để xác định học phần cần bổ sung.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Phương thức tuyển sinh",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Xét tuyển. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Marketing.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Yêu cầu ngoại ngữ đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên, được minh chứng bằng một trong các hình thức công nhận trong thông báo tuyển sinh.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "Các hình thức minh chứng ngoại ngữ đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Có bằng tốt nghiệp đại học trở lên ngành ngôn ngữ nước ngoài hoặc từ chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Có văn bằng, chứng chỉ ngoại ngữ tương đương Bậc 3 trở lên, thuộc danh mục được công nhận và còn hiệu lực.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Đạt mức tương đương Bậc 3 trở lên qua kỳ đánh giá của Trường; hoặc hoàn thành chương trình đào tạo, bồi dưỡng ngoại ngữ do Trường tổ chức hoặc công nhận.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Có bằng tốt nghiệp đại học trở lên do Trường Đại học Văn Lang cấp trong thời hạn không quá 2 năm, đồng thời chương trình đã đáp ứng chuẩn đầu ra ngoại ngữ từ Bậc 3 trở lên.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học từ chương trình được giảng dạy bằng tiếng Việt.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Bổ sung kiến thức đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã học để xác định học phần cần bổ sung. Ứng viên phải hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "01. Không cần học bổ sung kiến thức",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Ngành tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Marketing (7340115)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Quản trị kinh doanh (7340101)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kinh doanh quốc tế (7340120)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kinh doanh thương mại (7340121)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Thương mại điện tử (7340122)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Yêu cầu bổ sung kiến thức",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "02. Xét miễn học phần tương đương, bổ sung phần còn thiếu",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Logistics và Quản lý chuỗi cung ứng (7340123/7510605)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Hệ thống thông tin quản lý (7340405)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Truyền thông đa phương tiện (7320104)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ truyền thông (7320106)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Quan hệ công chúng (7320108)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kinh tế học đại cương · 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Quản trị học · 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Marketing căn bản · 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Nguyên lý tài chính · 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "03. Ứng viên tốt nghiệp các ngành khác",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Những ngành không được liệt kê ở các nhóm trên.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Cơ hội nghề nghiệp và phát triển",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h2",
+      "text": "Phát triển chuyên môn. Mở rộng hướng nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Nền tảng Marketing chuyên sâu và năng lực nghiên cứu hỗ trợ người học phát triển trong quản trị doanh nghiệp, tư vấn, khởi nghiệp và môi trường học thuật.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Quản lý Marketing & kinh doanh",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Quản lý Marketing và thương hiệu",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phát triển theo hướng trưởng phòng hoặc giám đốc Marketing, quản lý nhãn hàng và các vai trò quản lý hoạt động Marketing tại doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Quản lý bán hàng",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phát triển chuyên môn để hướng đến các vị trí giám sát hoặc giám đốc bán hàng, gắn hoạt động thị trường với mục tiêu kinh doanh của tổ chức.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Tư vấn & khởi nghiệp",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Tư vấn chiến lược và thực thi Marketing",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tư vấn cho cá nhân và tổ chức trong việc xây dựng chiến lược, lựa chọn giải pháp và triển khai hoạt động Marketing.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Khởi nghiệp kinh doanh",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Vận dụng kiến thức về thị trường, khách hàng và Marketing để phát triển dự án kinh doanh độc lập.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Nghiên cứu & giảng dạy",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Nghiên cứu và giảng dạy Marketing",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phát triển theo hướng nghiên cứu tại các viện nghiên cứu hoặc giảng dạy tại cơ sở giáo dục và đào tạo, phù hợp với yêu cầu của từng đơn vị.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Tiếp tục học tập ở trình độ cao hơn",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Củng cố nền tảng học thuật và năng lực nghiên cứu để tiếp tục học tập, theo điều kiện dự tuyển của cơ sở đào tạo.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Khả năng đảm nhận từng vị trí phụ thuộc vào kinh nghiệm, năng lực cá nhân và yêu cầu của đơn vị tuyển dụng hoặc đào tạo.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Khung chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h2",
+      "text": "Định hướng nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "60 tín chỉ · 24 tháng · 4 học kỳ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h3",
+      "text": "Thông tin chung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Thời gian chuẩn",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "24 tháng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Kế hoạch học tập",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "4 học kỳ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Hình thức",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Chính quy tập trung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Ngôn ngữ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Luận văn 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "4 tín chỉ chung · 8 tín chỉ cơ sở · 33 tín chỉ nghiên cứu và chuyên ngành · 15 tín chỉ luận văn.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chương trình phát triển tư duy học thuật, năng lực thiết kế nghiên cứu và phân tích dữ liệu trong lĩnh vực Marketing. Hoạt động nghiên cứu trực tiếp chiếm 25 tín chỉ, gồm Phương pháp nghiên cứu khoa học, Chuyên đề nghiên cứu Marketing và Luận văn tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "I. Kiến thức chung 4 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học Philosophy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "II. Kiến thức cơ sở ngành 8 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chiến lược Marketing bền vững Sustainable Marketing Strategy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề - Phân tích kinh doanh và dự báo Business Analytics and Forecasting (Seminar)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "III. Kiến thức nghiên cứu và chuyên ngành 33 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 18 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề nghiên cứu Marketing Marketing Research Seminar Series",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp nghiên cứu khoa học Research Methodology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề - Chiến lược Marketing số và đa kênh hợp nhất Digital & Omnichannel Marketing Strategy (Seminar)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quyền riêng tư – Đạo đức – Quản trị dữ liệu Privacy, Ethics & Data Governance",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần tự chọn · 15 tín chỉ theo cơ cấu chương trình",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần tự chọn được đăng ký theo nhóm và kế hoạch đào tạo của chương trình. Danh mục dưới đây thể hiện các lựa chọn để người học phát triển nội dung quan tâm.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Nhóm tự chọn 1 · Chọn 1 trong 2 học phần",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Nghệ thuật kể chuyện trong truyền thông thương hiệu Storytelling in Brand Communications",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Marketing doanh nghiệp: Gắn kết chiến lược, quan hệ và học tập Business Marketing: Connecting Strategy, Relationships and Learning",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Nhóm tự chọn 2 · Chọn 2 trong 3 học phần",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ Marketing sáng tạo Creative Marketing Technology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chiến lược giá và quản trị doanh thu Pricing Strategy and Revenue Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Marketing khởi nghiệp Entrepreneurial Marketing",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Nhóm tự chọn 3 · Chọn 1 trong 2 học phần",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thiết kế trải nghiệm khách hàng Customer Experience Design",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Trí tuệ nhân tạo và dữ liệu lớn trong kinh doanh AI & Big Data in Business",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "IV. Luận văn tốt nghiệp 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Công trình nghiên cứu độc lập trong lĩnh vực Marketing",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Luận văn tốt nghiệp Master’s Thesis",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "Kế hoạch học tập theo từng học kỳ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Các học phần được bố trí trong ba học kỳ đầu; học kỳ IV tập trung thực hiện luận văn tốt nghiệp. Việc mở lớp và thời khóa biểu thực hiện theo kế hoạch đào tạo của Trường.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 1",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn · Chọn 1 trong 2 học phần",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 2",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn · Chọn 2 trong 3 học phần",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 3",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 4",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Hoàn thành chương trình",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Hoàn thành chương trình đào tạo; điểm mỗi học phần, điểm trung bình chung các học phần và điểm luận văn đạt từ 5,5/10 trở lên.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Hoàn thiện, nộp luận văn đã chỉnh sửa theo kết luận của hội đồng và thực hiện các yêu cầu lưu trữ, công bố theo quy định.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Đạt năng lực ngoại ngữ tương đương Bậc 4 trở lên trước thời điểm xét tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Đáp ứng các điều kiện về liêm chính học thuật và những quy định tốt nghiệp của Trường.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "h2",
+      "text": "Chủ động chuẩn bị cho hành trình học.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa được chia thành ba đợt thanh toán, giúp người học chủ động sắp xếp kế hoạch tài chính.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Các chính sách học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ. Người học chỉ được áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "summary",
+      "text": "Các khoản thu riêng khi áp dụng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển 500.000 đồng Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học 1.000.000 đồng Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức 1.200.000 đồng/môn Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn tập tiếng Anh đầu vào 1.000.000 đồng Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào 1.000.000 đồng Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Gia hạn chương trình 5% học phí toàn khóa/lần Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Hoạt động học tập thực tế, tham quan chuyên môn hoặc thực địa có thể phát sinh chi phí ngoài học phí toàn khóa; Khoa thông báo nội dung và chi phí trước khi triển khai. Điều kiện thu, hoàn trả và các khoản phát sinh thực hiện theo thông báo được ban hành.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "TUYỂN SINH THẠC SĨ 2027",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa · Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "31.500.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "27.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng. Ngày đến hạn thanh toán theo thông báo thu của Trường.",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h2",
+      "text": "Sẵn sàng cho bước học tiếp theo?",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Câu hỏi thường gặp",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Chương trình đào tạo theo định hướng nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Marketing được thiết kế theo định hướng nghiên cứu, gồm 60 tín chỉ, thời gian chuẩn 24 tháng với kế hoạch 4 học kỳ. Các học phần được bố trí trong ba học kỳ đầu; học kỳ IV tập trung vào luận văn tốt nghiệp 15 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Tôi cần đáp ứng điều kiện gì để dự tuyển?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp và hoàn thành học phần bổ sung kiến thức nếu được yêu cầu. Chương trình định hướng nghiên cứu yêu cầu hạng tốt nghiệp đại học từ khá trở lên hoặc có công bố khoa học liên quan. Ứng viên đồng thời đáp ứng yêu cầu ngoại ngữ đầu vào và các điều kiện dự tuyển của chương trình.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Tốt nghiệp ngành khác có thể dự tuyển Marketing không?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ứng viên tốt nghiệp ngành khác được đối chiếu văn bằng, bảng điểm và nội dung đã học. Phần bổ sung kiến thức tối đa 12 tín chỉ gồm Kinh tế học đại cương, Quản trị học, Marketing căn bản và Nguyên lý tài chính, mỗi học phần 3 tín chỉ. Có thể xét miễn học phần tương đương theo hồ sơ; cần hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Ngôn ngữ giảng dạy và yêu cầu ngoại ngữ là gì?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình giảng dạy bằng tiếng Việt. Yêu cầu ngoại ngữ đầu vào tương đương Bậc 3 trở lên; trước thời điểm xét tốt nghiệp, học viên cần đạt mức tương đương Bậc 4 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam. Hình thức minh chứng được đối chiếu theo quy định và thông báo của Trường.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Lịch học có phù hợp với người đang đi làm?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Lịch học dự kiến bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật. Thời khóa biểu chính thức được công bố theo từng học kỳ. Bạn có thể trao đổi với Viện để chủ động sắp xếp công việc và kế hoạch học tập.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phí và chính sách hỗ trợ được áp dụng như thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Học phí toàn khóa là 90.000.000 đồng, chia thành ba đợt: 31.500.000 đồng, 27.000.000 đồng và 31.500.000 đồng. Các khoản thu riêng được áp dụng theo từng trường hợp. Học bổng và hỗ trợ tài chính được xét theo điều kiện, hồ sơ và thông báo của Trường; người học chỉ áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h3",
+      "text": "Liên hệ tư vấn",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h2",
+      "text": "Bắt đầu từ mục tiêu của bạn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Marketing. Đội ngũ tư vấn sẽ hỗ trợ bạn tìm hiểu chương trình và chuẩn bị hồ sơ phù hợp.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "01 Tư vấn chương trình và định hướng học",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "02 Hướng dẫn học phí và chính sách hỗ trợ",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "03 Đối chiếu điều kiện và hồ sơ dự tuyển",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h3",
+      "text": "Trao đổi trực tiếp với Viện",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Viện Sau đại học · Trường Đại học Văn Lang 69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    }
+  ]
+}

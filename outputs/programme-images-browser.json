@@ -1,0 +1,338 @@
+[
+  {
+    "slug": "cong-nghe-thong-tin",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "cong-nghe-thong-tin",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "marketing",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "marketing",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "khoa-hoc-moi-truong",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "khoa-hoc-moi-truong",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "ky-thuat-moi-truong",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "ky-thuat-moi-truong",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "quan-ly-tai-nguyen-moi-truong",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "quan-ly-tai-nguyen-moi-truong",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "cong-nghe-sinh-hoc",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "cong-nghe-sinh-hoc",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "ky-thuat-xay-dung",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "ky-thuat-xay-dung",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "ky-thuat-o-to",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "ky-thuat-o-to",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "quan-tri-kinh-doanh",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "quan-tri-kinh-doanh",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "kinh-doanh-thuong-mai",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "kinh-doanh-thuong-mai",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "tai-chinh-ngan-hang",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "tai-chinh-ngan-hang",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "ke-toan",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "ke-toan",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "logistics",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "logistics",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "quan-tri-du-lich",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "quan-tri-du-lich",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "quan-tri-khach-san",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "quan-tri-khach-san",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "luat-kinh-te",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 2
+  },
+  {
+    "slug": "luat-kinh-te",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 2
+  },
+  {
+    "slug": "quan-he-cong-chung",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "quan-he-cong-chung",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "ngon-ngu-anh",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "ngon-ngu-anh",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 1
+  },
+  {
+    "slug": "kien-truc",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "kien-truc",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "my-thuat-ung-dung",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "my-thuat-ung-dung",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "ly-luan-lich-su-my-thuat",
+    "width": 320,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  },
+  {
+    "slug": "ly-luan-lich-su-my-thuat",
+    "width": 1440,
+    "alts": true,
+    "h1": 1,
+    "overflow": false,
+    "pictures": 3
+  }
+]

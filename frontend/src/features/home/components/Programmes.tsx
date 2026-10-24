@@ -5,19 +5,18 @@ export function Programmes() {
   return (
     // Tổng quan Viện Sau Đại học gồm phần giới thiệu và số liệu nổi bật.
     <section className="overview" id="about">
-      <div className="overviewFeature" id="programmes">
+      <div className="overviewFeature">
         <div className="overviewIntro">
           <div className="overviewCopy">
             <p>Viện Sau Đại học · VAN LANG GLOBAL GRADUATE</p>
             <h2>
-              Tri thức. Thực tiễn.
-              <br />
-              <em>Đổi mới sáng tạo.</em>
+              Nâng tầm tri thức,
+              {" "}
+              <em>Chủ động dẫn đầu.</em>
             </h2>
           </div>
           <p className="overviewDescription">
-            Viện Sau Đại học kết nối tri thức chuyên sâu với thực tiễn nghề nghiệp, nuôi dưỡng tư duy nghiên cứu
-            và năng lực lãnh đạo để người học tạo ra những giá trị tích cực cho cộng đồng.
+            Tại Viện Sau đại học Trường Đại học Văn Lang, mỗi hành trình học tập là cơ hội để đào sâu tri thức, mở rộng tư duy và phát triển năng lực lãnh đạo. Gắn kết đào tạo với nghiên cứu và thực tiễn nghề nghiệp, Viện đồng hành cùng người học chuyển hóa ý tưởng thành giải pháp, tạo nên những bước tiến trong sự nghiệp và những đóng góp thiết thực cho cộng đồng.
           </p>
         </div>
       </div>
@@ -41,20 +40,8 @@ export function Programmes() {
             </p>
           </article>
           <article>
-            <CountUp end={5} />
-            <p>
-              Nhóm ngành
-              <br />
-              đào tạo đa lĩnh vực
-            </p>
-          </article>
-          <article>
-            <CountUp end={3} />
-            <p>
-              Chương trình Thạc sĩ
-              <br />
-              đạt kiểm định quốc gia
-            </p>
+            <CountUp end={1} />
+            <p>Chương trình<br />liên kết quốc tế</p>
           </article>
         </div>
       </div>

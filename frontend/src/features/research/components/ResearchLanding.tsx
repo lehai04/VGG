@@ -66,7 +66,7 @@ export function ResearchLanding() {
         <div className={styles.heroShade} />
         <div className={styles.heroCopy} data-reveal>
           <p>RESEARCH &amp; GLOBAL OPPORTUNITIES · Viện Sau Đại học</p>
-          <h1>Nghiên cứu khoa học<br />&amp; Hợp tác quốc tế</h1>
+          <h1>Nghiên cứu khoa học{" "}&amp; Hợp tác quốc tế</h1>
           <span>Viện Sau Đại học phát triển tri thức mới, giải pháp thực tiễn và kết nối người học với các chương trình, đối tác cùng trải nghiệm học thuật trên phạm vi toàn cầu.</span>
         </div>
         <a href="#overview" className={styles.heroDown} aria-label="Xem nội dung"><ArrowDown /></a>
@@ -126,7 +126,7 @@ export function ResearchLanding() {
         <StrategicPartnersCarousel />
       </section>
 
-      <section className={styles.industryNetwork} aria-labelledby="industry-network-title">
+      <section id="hop-tac-doanh-nghiep" className={styles.industryNetwork} aria-labelledby="industry-network-title">
         <div className={styles.industryRedRail} aria-hidden="true" />
         <figure className={styles.industryPhoto} data-reveal>
           <Image src="/images/pages/research/content/hoptac.JPG" alt="Đối tác doanh nghiệp và hợp tác chiến lược tại Viện Sau Đại học" fill sizes="(max-width: 900px) 100vw, 55vw" />

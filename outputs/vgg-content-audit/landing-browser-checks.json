@@ -1,0 +1,83 @@
+[
+  {
+    "route": "/",
+    "footer": true,
+    "h1": [
+      "Nâng tầm tri thứcChủ động dẫn đầu."
+    ],
+    "header": true,
+    "overflow": false
+  },
+  {
+    "route": "/discover",
+    "footer": true,
+    "h1": [
+      "Vì sao học sau đại học tại Văn Lang?"
+    ],
+    "header": true,
+    "overflow": false
+  },
+  {
+    "route": "/programmes",
+    "footer": true,
+    "h1": [
+      "CHỌN CHƯƠNG TRÌNH HỌCCHO BƯỚC TIẾN TIẾP THEO"
+    ],
+    "header": true,
+    "overflow": false
+  },
+  {
+    "route": "/admissions",
+    "footer": true,
+    "h1": [
+      "Một bước gần hơnđến tương laibạn mong muốn"
+    ],
+    "header": true,
+    "overflow": false
+  },
+  {
+    "route": "/research",
+    "footer": true,
+    "h1": [
+      "Nghiên cứu khoa học& Hợp tác quốc tế"
+    ],
+    "header": true,
+    "overflow": false
+  },
+  {
+    "route": "/global",
+    "footer": true,
+    "h1": [
+      "Nghiên cứu khoa học& Hợp tác quốc tế"
+    ],
+    "header": true,
+    "overflow": false
+  },
+  {
+    "route": "/student-success",
+    "footer": true,
+    "h1": [
+      "HỌC SÂU HƠN.KẾT NỐI XA HƠN."
+    ],
+    "header": true,
+    "overflow": false
+  },
+  {
+    "route": "/news",
+    "footer": true,
+    "h1": [
+      "TIN TỨC & SỰ KIỆN"
+    ],
+    "header": true,
+    "overflow": false
+  },
+  {
+    "route": "/resources",
+    "footer": true,
+    "h1": [
+      "TÀI NGUYÊN"
+    ],
+    "header": true,
+    "overflow": false
+  }
+]

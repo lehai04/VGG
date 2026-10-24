@@ -1,0 +1,121 @@
+{
+  "responsiveChecks": [
+    {
+      "missingLoadedImages": [],
+      "overflow": false,
+      "path": "/vi",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "missingLoadedImages": [],
+      "overflow": false,
+      "path": "/vi/programmes",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "missingLoadedImages": [],
+      "overflow": false,
+      "path": "/vi/discover/tam-nhin-su-menh",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "missingLoadedImages": [],
+      "overflow": false,
+      "path": "/vi",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "missingLoadedImages": [],
+      "overflow": false,
+      "path": "/vi/programmes",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "missingLoadedImages": [],
+      "overflow": false,
+      "path": "/vi/discover/tam-nhin-su-menh",
+      "scrollWidth": 375,
+      "width": 390
+    }
+  ],
+  "moreResponsive": [
+    {
+      "departmentCards": 5,
+      "overflow": false,
+      "path": "/vi/discover/lanh-dao",
+      "rankingCards": 0,
+      "width": 390
+    },
+    {
+      "departmentCards": 0,
+      "overflow": false,
+      "path": "/vi/discover/xep-hang-thanh-tuu",
+      "rankingCards": 6,
+      "width": 390
+    },
+    {
+      "departmentCards": 5,
+      "overflow": false,
+      "path": "/vi/discover/lanh-dao",
+      "rankingCards": 0,
+      "width": 768
+    },
+    {
+      "departmentCards": 0,
+      "overflow": false,
+      "path": "/vi/discover/xep-hang-thanh-tuu",
+      "rankingCards": 6,
+      "width": 768
+    }
+  ],
+  "routeChecks": [
+    {
+      "departmentCards": 20,
+      "h1": "LÃNH ĐẠO",
+      "overflow": false,
+      "path": "/vi/discover/lanh-dao",
+      "rankCards": 0,
+      "removed": 0,
+      "width": 1440
+    },
+    {
+      "departmentCards": 0,
+      "h1": "XẾP HẠNG & THÀNH TỰU",
+      "overflow": false,
+      "path": "/vi/discover/xep-hang-thanh-tuu",
+      "rankCards": 36,
+      "removed": 0,
+      "width": 1440
+    },
+    {
+      "departmentCards": 0,
+      "h1": "NÂNG TẦM TRI THỨC\nCHỦ ĐỘNG DẪN ĐẦU.",
+      "overflow": false,
+      "path": "/vi",
+      "rankCards": 0,
+      "removed": 0,
+      "width": 1440
+    }
+  ],
+  "formValidation": {
+    "phone": "is-invalid",
+    "email": "is-invalid"
+  },
+  "consultationApi": {
+    "status": 502,
+    "message": "Hệ thống đang bận. Vui lòng thử lại sau."
+  },
+  "search": {
+    "keyword": "logistics",
+    "count": 1
+  },
+  "filters": {
+    "doctoral": 1,
+    "engineering": 8
+  }
+}

@@ -14,7 +14,7 @@ export default async function SecurityPage() {
         <div>
           <span className="eyebrow">ADMINISTRATION / ACCOUNT</span>
           <h1>Tài khoản của tôi</h1>
-          <p style={{ margin: "6px 0 0", color: "#71717a", fontSize: "0.9rem" }}>
+          <p style={{ margin: "6px 0 0", color: "#71717a", fontSize: "var(--text-14)" }}>
             Quản lý thông tin định danh, phân quyền nhân sự và thiết lập bảo mật mật khẩu.
           </p>
         </div>

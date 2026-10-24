@@ -115,7 +115,7 @@ export default async function NotificationsPage() {
         <div>
           <span className="eyebrow">HỆ THỐNG / THÔNG BÁO HOẠT ĐỘNG</span>
           <h1>Trung tâm thông báo & Nhật ký hoạt động</h1>
-          <p style={{ margin: "4px 0 0", color: "#64748b", fontSize: "0.9rem" }}>
+          <p style={{ margin: "4px 0 0", color: "#64748b", fontSize: "var(--text-14)" }}>
             Theo dõi tất cả sự kiện, thay đổi phân quyền nhân sự, đăng nhập, và tác vụ quản trị theo thời gian thực.
           </p>
         </div>

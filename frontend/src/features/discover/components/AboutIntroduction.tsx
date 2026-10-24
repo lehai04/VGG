@@ -85,7 +85,7 @@ export function AboutIntroduction() {
       <section className={styles.areas}>
         <header data-reveal>
           <p className={styles.kicker}>ACADEMIC AREAS</p>
-          <h2>05 nhóm ngành.<br /><em>Nhiều hướng đi.</em></h2>
+          <h2>05 nhóm ngành.{" "}<em>Nhiều hướng đi.</em></h2>
           <p>Các lĩnh vực đào tạo được phát triển trên nền tảng liên ngành và gắn với nhu cầu chuyển động của xã hội.</p>
         </header>
         <div className={styles.areaBody}>
@@ -103,7 +103,7 @@ export function AboutIntroduction() {
       <section className={styles.approach}>
         <div className={styles.approachCopy} data-reveal>
           <p className={styles.kicker}>ACADEMIC × PRACTICAL</p>
-          <h2>Không chỉ học để biết.<br /><em>Học để vận dụng.</em></h2>
+          <h2>Không chỉ học để biết.{" "}<em>Học để vận dụng.</em></h2>
           <p>Các chương trình kết nối nền tảng học thuật với thực tiễn nghề nghiệp, phát triển năng lực nghiên cứu, tư duy phân tích và khả năng giải quyết vấn đề trong bối cảnh thực tế.</p>
           <blockquote>Tri thức trở nên có giá trị khi được chuyển hóa thành năng lực hành động.</blockquote>
         </div>

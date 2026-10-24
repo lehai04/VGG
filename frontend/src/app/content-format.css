@@ -1,0 +1,45 @@
+/* Public content formatting shared by all routes, including imported admissions content.
+   Keep controls, navigation, table values and footer layouts in their own components. */
+:root
+  body
+  main
+  :is(p, li):not(
+    :where(
+      header *,
+      nav *,
+      footer *,
+      form *,
+      button *,
+      [role="tablist"] *,
+      [role="status"],
+      [role="alert"],
+      .visually-hidden,
+      .sr-only
+    )
+  ) {
+  text-align: justify !important;
+  text-align-last: start;
+  text-justify: inter-word;
+  text-indent: 0 !important;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-wrap: wrap;
+}
+
+/* A heading and its copy use the same starting edge inside content cards. */
+:root body main article :is(h2, h3, h4, h5, h6):not(:where(header *, nav *, footer *)),
+:root body main section :is(h3, h4, h5, h6):not(:where(header *, nav *, footer *, form *)) {
+  text-align: start;
+  text-indent: 0;
+}
+
+/* Paragraphs share an edge without changing deliberate column widths or list markers. */
+:root body main section p:not(:where(header *, nav *, footer *, form *, button *)) {
+  margin-inline: 0;
+}
+
+/* Lists keep a single hanging indent; nested items retain their own level. */
+:root body main :is(ul, ol):not(:where(header *, nav *, footer *, form *, [role="tablist"] *)) {
+  text-indent: 0;
+}

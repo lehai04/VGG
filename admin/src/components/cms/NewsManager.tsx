@@ -21,6 +21,17 @@ type NewsPost = {
   excerpt: string | null;
   content: string;
   coverImage: string | null;
+  coverImageAlt: string | null;
+  metaTitle: string | null;
+  metaDescription: string | null;
+  canonicalUrl: string | null;
+  robotsIndex: boolean;
+  robotsFollow: boolean;
+  ogTitle: string | null;
+  ogDescription: string | null;
+  ogImage: string | null;
+  ogImageAlt: string | null;
+  customJsonLd: Record<string, unknown> | null;
   status: string;
   publishedAt: string | null;
   authorName: string | null;
@@ -28,7 +39,7 @@ type NewsPost = {
   author: { fullName: string };
 };
 
-const emptyForm = { id: "", title: "", slug: "", category: "ADMISSIONS", authorName: "", excerpt: "", content: "", coverImage: "", publishedAt: new Date().toISOString().slice(0, 10), status: "DRAFT" };
+const emptyForm = { id: "", title: "", slug: "", category: "ADMISSIONS", authorName: "", excerpt: "", content: "", coverImage: "", coverImageAlt: "", metaTitle: "", metaDescription: "", canonicalUrl: "", robotsIndex: true, robotsFollow: true, ogTitle: "", ogDescription: "", ogImage: "", ogImageAlt: "", customJsonLd: "", publishedAt: new Date().toISOString().slice(0, 10), status: "DRAFT" };
 
 function slugify(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -53,7 +64,7 @@ export function NewsManager({ posts, authorName }: { posts: NewsPost[]; authorNa
   }
 
   function edit(post: NewsPost) {
-    setForm({ id: post.id, title: post.title, slug: post.slug, category: post.category, authorName: post.authorName ?? post.author.fullName, excerpt: post.excerpt ?? "", content: post.content, coverImage: post.coverImage ?? "", publishedAt: post.publishedAt?.slice(0, 10) ?? new Date().toISOString().slice(0, 10), status: post.status === "ARCHIVED" ? "DRAFT" : post.status });
+    setForm({ id: post.id, title: post.title, slug: post.slug, category: post.category, authorName: post.authorName ?? post.author.fullName, excerpt: post.excerpt ?? "", content: post.content, coverImage: post.coverImage ?? "", coverImageAlt: post.coverImageAlt ?? "", metaTitle: post.metaTitle ?? "", metaDescription: post.metaDescription ?? "", canonicalUrl: post.canonicalUrl ?? "", robotsIndex: post.robotsIndex, robotsFollow: post.robotsFollow, ogTitle: post.ogTitle ?? "", ogDescription: post.ogDescription ?? "", ogImage: post.ogImage ?? "", ogImageAlt: post.ogImageAlt ?? "", customJsonLd: post.customJsonLd ? JSON.stringify(post.customJsonLd, null, 2) : "", publishedAt: post.publishedAt?.slice(0, 10) ?? new Date().toISOString().slice(0, 10), status: post.status === "ARCHIVED" ? "DRAFT" : post.status });
     setMessage("");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -63,7 +74,10 @@ export function NewsManager({ posts, authorName }: { posts: NewsPost[]; authorNa
     const submitter = (event.nativeEvent as SubmitEvent).submitter as HTMLButtonElement | null;
     const nextStatus = submitter?.value === "PUBLISHED" ? "PUBLISHED" : "DRAFT";
     setLoading(true); setMessage("");
-    const payload = { title: form.title, slug: form.slug, locale: "vi", category: form.category, authorName: form.authorName, excerpt: form.excerpt, content: form.content, coverImage: form.coverImage || null, publishedAt: form.publishedAt, status: nextStatus };
+    let customJsonLd: Record<string, unknown> | null = null;
+    try { customJsonLd = form.customJsonLd.trim() ? JSON.parse(form.customJsonLd) : null; if (customJsonLd !== null && (typeof customJsonLd !== "object" || Array.isArray(customJsonLd))) throw new Error("Schema phải là một đối tượng JSON."); }
+    catch (error) { setMessage(error instanceof Error ? error.message : "JSON-LD không hợp lệ."); setLoading(false); return; }
+    const payload = { title: form.title, slug: form.slug, locale: "vi", category: form.category, authorName: form.authorName, excerpt: form.excerpt, content: form.content, coverImage: form.coverImage || null, coverImageAlt: form.coverImageAlt || null, metaTitle: form.metaTitle || null, metaDescription: form.metaDescription || null, canonicalUrl: form.canonicalUrl || null, robotsIndex: form.robotsIndex, robotsFollow: form.robotsFollow, ogTitle: form.ogTitle || null, ogDescription: form.ogDescription || null, ogImage: form.ogImage || null, ogImageAlt: form.ogImageAlt || null, customJsonLd, publishedAt: form.publishedAt, status: nextStatus };
     try {
       const response = await fetch(`/api/cms/news${form.id ? `/${form.id}` : ""}`, { method: form.id ? "PUT" : "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
       const result = await response.json();
@@ -116,8 +130,21 @@ export function NewsManager({ posts, authorName }: { posts: NewsPost[]; authorNa
             <label className="field full">Ảnh đại diện
               <span className="cover-upload-control"><input type="file" accept="image/jpeg,image/png,image/webp,image/avif,.avif" aria-describedby="news-cover-size-hint" onChange={uploadCover} disabled={uploadingImage} /><b>{uploadingImage ? "ĐANG TẢI ẢNH…" : form.coverImage ? "ĐỔI ẢNH TỪ MÁY" : "CHỌN ẢNH TỪ MÁY"}</b><small id="news-cover-size-hint">Khuyến nghị: 1600 × 900 px (tỷ lệ 16:9, ảnh ngang).</small><small>Đặt chủ thể ở giữa, tránh chữ sát mép vì ảnh có thể được cắt theo khung hiển thị.</small><small>JPG, PNG, WebP hoặc AVIF · tối đa 8 MB</small></span>
             </label>
+            <label className="field full">Alt ảnh đại diện<input value={form.coverImageAlt} onChange={(event) => update("coverImageAlt", event.target.value)} maxLength={500} placeholder="Mô tả nội dung ảnh cho người dùng và công cụ tìm kiếm" /></label>
           </div>
         </div>
+        <details className="news-seo-settings"><summary>Thiết lập Technical SEO</summary><div className="form-grid news-meta-form">
+          <label className="field full">Meta title<input value={form.metaTitle} onChange={(event) => update("metaTitle", event.target.value)} maxLength={250} /></label>
+          <label className="field full">Meta description<textarea value={form.metaDescription} onChange={(event) => update("metaDescription", event.target.value)} maxLength={1000} rows={3} /></label>
+          <label className="field full">Canonical URL<input value={form.canonicalUrl} onChange={(event) => update("canonicalUrl", event.target.value)} maxLength={1000} placeholder="Mặc định theo URL của bài viết" /></label>
+          <label className="field">Robots index<select value={String(form.robotsIndex)} onChange={(event) => setForm((current) => ({ ...current, robotsIndex: event.target.value === "true" }))}><option value="true">index</option><option value="false">noindex</option></select></label>
+          <label className="field">Robots follow<select value={String(form.robotsFollow)} onChange={(event) => setForm((current) => ({ ...current, robotsFollow: event.target.value === "true" }))}><option value="true">follow</option><option value="false">nofollow</option></select></label>
+          <label className="field full">OG title<input value={form.ogTitle} onChange={(event) => update("ogTitle", event.target.value)} maxLength={250} /></label>
+          <label className="field full">OG description<textarea value={form.ogDescription} onChange={(event) => update("ogDescription", event.target.value)} maxLength={1000} rows={3} /></label>
+          <label className="field full">OG image URL<input value={form.ogImage} onChange={(event) => update("ogImage", event.target.value)} maxLength={1000} placeholder="Để trống để dùng ảnh đại diện" /></label>
+          <label className="field full">OG image alt<input value={form.ogImageAlt} onChange={(event) => update("ogImageAlt", event.target.value)} maxLength={500} /></label>
+          <label className="field full">JSON-LD tùy chỉnh<textarea value={form.customJsonLd} onChange={(event) => update("customJsonLd", event.target.value)} rows={8} placeholder='{"@type":"..."}' /></label>
+        </div><small>Schema phải là JSON object, tối đa 20 KB. Chỉ nhập dữ liệu đúng với nội dung bài viết.</small></details>
         <label className="rich-editor-label">Nội dung chi tiết *</label>
         <RichTextEditor value={form.content} onChange={(value) => update("content", value)} onImportedExcerpt={(value) => { if (!form.excerpt) update("excerpt", value); }} />
         <p className={`form-message${message.startsWith("Đã") || message.includes("xuất bản") ? " success" : ""}`}>{message}</p>

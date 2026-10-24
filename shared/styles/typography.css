@@ -1,0 +1,259 @@
+/* Maison Neue typography: Font_Family_Size.png supplied by the user. */
+@font-face {
+  font-family: "Maison Neue";
+  src: url("/fonts/maison-neue/MaisonNeue-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Maison Neue";
+  src: url("/fonts/maison-neue/MaisonNeue-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Maison Neue";
+  src: url("/fonts/maison-neue/MaisonNeue-Demi.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Maison Neue";
+  src: url("/fonts/maison-neue/MaisonNeue-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Maison Neue";
+  src: url("/fonts/maison-neue/MaisonNeue-BookItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Maison Neue";
+  src: url("/fonts/maison-neue/MaisonNeue-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: "Maison Neue", Arial, sans-serif;
+  --font-inter: var(--font-sans);
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-sans);
+  --font-navigation: var(--font-sans);
+  --font-display: var(--font-sans);
+  --weight-book: 400;
+  --weight-medium: 500;
+  --weight-demi: 600;
+  --weight-bold: 700;
+  --type-h1: 56px;
+  --type-h2: 48px;
+  --type-h3: 32px;
+  --type-h4: 28px;
+  --type-h5: 24px;
+  --type-h6: 22px;
+  --text-20: 20px;
+  --text-18: 18px;
+  --text-16: 16px;
+  --text-14: 14px;
+  --text-12: 12px;
+  --text-10: 10px;
+  --text-lg: var(--text-20);
+  --text-md: var(--text-16);
+  --text-sm: var(--text-14);
+  --text-xs: var(--text-12);
+  --heading-xl: var(--type-h1);
+  --heading-lg: var(--type-h1);
+  --heading-md: var(--type-h2);
+  --heading-sm: var(--type-h3);
+}
+html body {
+  font-family: var(--font-sans);
+  font-size: var(--text-16);
+  font-weight: var(--weight-book);
+}
+body :is(button, input, select, textarea, optgroup) {
+  font-family: var(--font-sans);
+}
+:root body h1 {
+  font-size: var(--type-h1) !important;
+  line-height: 1.12 !important;
+}
+:root body h2 {
+  font-size: var(--type-h2) !important;
+  line-height: 1.16 !important;
+}
+:root body h3 {
+  font-size: var(--type-h3) !important;
+  line-height: 1.22 !important;
+}
+:root body h4 {
+  font-size: var(--type-h4) !important;
+  line-height: 1.25 !important;
+}
+:root body h5 {
+  font-size: var(--type-h5) !important;
+  line-height: 1.3 !important;
+}
+:root body h6 {
+  font-size: var(--type-h6) !important;
+  line-height: 1.35 !important;
+}
+:root body :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
+  overflow-wrap: anywhere;
+}
+/* Explicit Book variants for editorial headings. */
+:root body :is(h1, h2, h3, h4, h5, h6).type-book {
+  font-weight: 400 !important;
+}
+.type-italic {
+  font-style: italic;
+}
+@media (max-width: 1023px) {
+  :root {
+    --type-h1: 48px;
+    --type-h2: 36px;
+    --type-h3: 28px;
+    --type-h4: 24px;
+    --type-h5: 24px;
+    --type-h6: 22px;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --type-h1: 36px;
+    --type-h2: 28px;
+    --type-h3: 24px;
+    --type-h4: 22px;
+    --type-h5: 22px;
+    --type-h6: 20px;
+  }
+}
+@media (max-width: 374px) {
+  :root {
+    --type-h1: 32px;
+    --type-h2: 28px;
+    --type-h3: 24px;
+  }
+}
+/* Footer headings are navigation labels, using the body text scale. */
+:root body :is(footer, .university-footer) :is(h2, h3, h4) {
+  font-size: var(--text-20) !important;
+  line-height: 1.4 !important;
+}
+
+/* Optional reusable classes for CMS/editorial content. */
+.type-h1 {
+  font-size: var(--type-h1);
+  line-height: 1.2;
+  font-weight: 700;
+}
+.type-h2 {
+  font-size: var(--type-h2);
+  line-height: 1.2;
+  font-weight: 700;
+}
+.type-h3 {
+  font-size: var(--type-h3);
+  line-height: 1.2;
+  font-weight: 700;
+}
+.type-h4 {
+  font-size: var(--type-h4);
+  line-height: 1.2;
+  font-weight: 700;
+}
+.type-h5 {
+  font-size: var(--type-h5);
+  line-height: 1.2;
+  font-weight: 700;
+}
+.type-h6 {
+  font-size: var(--type-h6);
+  line-height: 1.2;
+  font-weight: 700;
+}
+.text-20 {
+  font-size: var(--text-20);
+}
+.text-18 {
+  font-size: var(--text-18);
+}
+.text-16 {
+  font-size: var(--text-16);
+}
+.text-14 {
+  font-size: var(--text-14);
+}
+.text-12 {
+  font-size: var(--text-12);
+}
+.text-10 {
+  font-size: var(--text-10);
+}
+.weight-book {
+  font-weight: 400;
+}
+.weight-medium {
+  font-weight: 500;
+}
+.weight-demi {
+  font-weight: 600;
+}
+.weight-bold {
+  font-weight: 700;
+}
+
+/* Card/list titles have a compact role independent of section heading size. */
+:root body .type-card-title {
+  font-size: 22px !important;
+  line-height: 1.4 !important;
+  max-width: 100% !important;
+}
+:root body .type-list-title {
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  max-width: 100% !important;
+}
+:root body :is(h1, h2, h3, h4, h5, h6, p) {
+  text-wrap: wrap !important;
+  word-break: normal;
+  overflow-wrap: break-word !important;
+  max-width: 100%;
+}
+:root body :is(h1, h2, h3, h4, h5, h6) {
+  max-width: 100% !important;
+}
+@media (max-width: 767px) {
+  :root body .type-card-title {
+    font-size: 20px !important;
+  }
+  :root body .type-list-title {
+    font-size: 24px !important;
+  }
+}
+
+/* Header labels stay compact across the shared navigation. */
+:root body .home-page .nav > a,
+:root body .home-page .navTitle,
+:root body .vgg-header nav a {
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+:root body .home-page .topbar,
+:root body .utility {
+  font-size: 12px !important;
+}
+
+/* Compact titles beside the career icons. */
+:root body .type-career-title {font-size:24px!important;line-height:1.35!important;}
+@media(max-width:767px){:root body .type-career-title {font-size:20px!important;}}

@@ -36,10 +36,10 @@ function safeBaseName(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z0-9._-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 120) || "file";
 }
 
-export async function uploadNewsImage(buffer: Buffer, folder = "news", extension = "jpg") {
+export async function uploadNewsImage(buffer: Buffer, folder = "news", extension = "jpg", variant: string = randomUUID()) {
   const storage = client();
   await ensureBucket(storage);
-  const key = `${folder}/${new Date().toISOString().slice(0, 10)}/${randomUUID()}.${extension}`;
+  const key = `${folder}/${new Date().toISOString().slice(0, 10)}/${variant}.${extension}`;
   await storage.putObject(bucket, key, buffer, buffer.length, { "Content-Type": `image/${extension === "jpg" ? "jpeg" : extension}`, "Cache-Control": "public, max-age=31536000, immutable" });
   return { url: objectUrl(key), objectKey: key };
 }

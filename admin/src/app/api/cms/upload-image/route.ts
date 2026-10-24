@@ -1,5 +1,6 @@
 import { getCurrentAdmin } from "@/lib/auth/session";
 import { uploadNewsImage } from "@/lib/storage";
+import sharp from "sharp";
 import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
@@ -32,8 +33,18 @@ export async function POST(request: Request) {
   if (!extension) return NextResponse.json({ success: false, message: "Chỉ hỗ trợ ảnh JPG, PNG, WebP hoặc AVIF hợp lệ." }, { status: 415 });
 
   try {
-    const uploaded = await uploadNewsImage(buffer, "news", extension);
-    return NextResponse.json({ success: true, data: uploaded, message: "Đã tải ảnh lên kho nội bộ." });
+    const source = sharp(buffer, { limitInputPixels: 40_000_000, failOn: "error" }).rotate();
+    const dimensions = await source.metadata();
+    if (!dimensions.width || !dimensions.height) return NextResponse.json({ success: false, message: "Không đọc được kích thước ảnh." }, { status: 415 });
+    const imageId = crypto.randomUUID();
+    const widths = [...new Set([480, 960, 1440].filter((width) => width < dimensions.width!).concat(dimensions.width))];
+    const variants = await Promise.all(widths.map(async (width) => {
+      const output = await sharp(buffer, { limitInputPixels: 40_000_000, failOn: "error" }).rotate().resize({ width, withoutEnlargement: true }).webp({ quality: 82, effort: 4 }).toBuffer({ resolveWithObject: true });
+      const uploaded = await uploadNewsImage(output.data, "news", "webp", `${imageId}-${output.info.width}`);
+      return { ...uploaded, width: output.info.width, height: output.info.height };
+    }));
+    const largest = variants.reduce((best, item) => item.width > best.width ? item : best, variants[0]);
+    return NextResponse.json({ success: true, data: { ...largest, srcSet: variants.map((item) => `${item.url} ${item.width}w`).join(", "), sourceWidth: dimensions.width, sourceHeight: dimensions.height }, message: "Đã tối ưu ảnh sang WebP và tạo các kích thước responsive." });
   } catch (error) {
     console.error("Internal storage upload failed", error);
     return NextResponse.json({ success: false, message: "Không thể tải ảnh lên kho nội bộ." }, { status: 502 });

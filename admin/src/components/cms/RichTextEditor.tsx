@@ -3,6 +3,7 @@
 import { ChangeEvent, ClipboardEvent, useEffect, useRef, useState } from "react";
 
 type Props = { value: string; onChange: (value: string) => void; onImportedExcerpt: (value: string) => void };
+type UploadedImage = { url: string; srcSet: string; width: number; height: number };
 
 const tools = [
   ["undo", "↶", "Hoàn tác"], ["redo", "↷", "Làm lại"], ["bold", "B", "In đậm"],
@@ -131,8 +132,10 @@ export function RichTextEditor({ value, onChange, onImportedExcerpt }: Props) {
       const response = await fetch("/api/cms/import-word", { method: "POST", body });
       const result = await response.json();
       if (!response.ok) throw new Error(result.message || "Không thể nhập file Word.");
+      const imported = new DOMParser().parseFromString(result.data.html as string, "text/html");
+      imported.querySelectorAll("img").forEach((image) => { image.alt = imageAlt(image.alt); });
       isInternalChangeRef.current = false;
-      onChange(result.data.html);
+      onChange(imported.body.innerHTML);
       onImportedExcerpt(result.data.excerpt);
       setNotice(result.data.warnings?.length ? `Đã nhập Word; có ${result.data.warnings.length} cảnh báo định dạng.` : "Đã nhập nội dung Word thành công.");
     } catch (error) { setNotice(error instanceof Error ? error.message : "Không thể nhập file Word."); }
@@ -144,13 +147,26 @@ export function RichTextEditor({ value, onChange, onImportedExcerpt }: Props) {
     const response = await fetch("/api/cms/upload-image", { method: "POST", body });
     const result = await response.json();
     if (!response.ok) throw new Error(result.message || "Không thể tải ảnh vừa dán.");
-    return result.data.url as string;
+    return result.data as UploadedImage;
+  }
+
+  function imageAlt(current: string, filename = "") {
+    if (current.trim()) return current.trim();
+    return window.prompt("Nhập Alt Text mô tả ảnh (bắt buộc)", filename.replace(/\.[^.]+$/, ""))?.trim() || "Ảnh minh họa";
   }
 
   async function uploadClipboardImage(file: File) {
     setUploadingImage(true); setNotice("Đang tải ảnh vừa dán lên kho nội bộ…");
     try {
-      run("insertImage", await uploadImageFile(file));
+      const uploaded = await uploadImageFile(file);
+      run("insertImage", uploaded.url);
+      const image = editorRef.current?.querySelector(`img[src="${CSS.escape(uploaded.url)}"]`);
+      image?.setAttribute("alt", imageAlt("", file.name));
+      image?.setAttribute("srcset", uploaded.srcSet);
+      image?.setAttribute("sizes", "(max-width: 800px) 100vw, 785px");
+      image?.setAttribute("width", String(uploaded.width));
+      image?.setAttribute("height", String(uploaded.height));
+      onChange(editorRef.current?.innerHTML ?? "");
       setNotice("Đã tải và chèn ảnh từ clipboard.");
     } catch (error) { setNotice(error instanceof Error ? error.message : "Không thể tải ảnh vừa dán."); }
     finally { setUploadingImage(false); }
@@ -200,20 +216,37 @@ export function RichTextEditor({ value, onChange, onImportedExcerpt }: Props) {
         const image = pastedImages[index];
         const clipboardFile = images[index];
         if (clipboardFile) {
-          image.setAttribute("src", await uploadImageFile(clipboardFile));
+          const uploaded = await uploadImageFile(clipboardFile);
+          image.setAttribute("src", uploaded.url);
+          image.setAttribute("srcset", uploaded.srcSet);
+          image.setAttribute("sizes", "(max-width: 800px) 100vw, 785px");
+          image.setAttribute("width", String(uploaded.width));
+          image.setAttribute("height", String(uploaded.height));
+          image.setAttribute("alt", imageAlt(image.getAttribute("alt") ?? "", clipboardFile.name));
           continue;
         }
         const source = image.getAttribute("src") ?? "";
         if (source.startsWith("data:image/")) {
           const blob = await (await fetch(source)).blob();
           const extension = blob.type.split("/")[1] || "png";
-          image.setAttribute("src", await uploadImageFile(new File([blob], `clipboard.${extension}`, { type: blob.type })));
+          const uploaded = await uploadImageFile(new File([blob], `clipboard.${extension}`, { type: blob.type }));
+          image.setAttribute("src", uploaded.url);
+          image.setAttribute("srcset", uploaded.srcSet);
+          image.setAttribute("sizes", "(max-width: 800px) 100vw, 785px");
+          image.setAttribute("width", String(uploaded.width));
+          image.setAttribute("height", String(uploaded.height));
         }
+        image.setAttribute("alt", imageAlt(image.getAttribute("alt") ?? ""));
       }
       for (let index = pastedImages.length; index < images.length; index += 1) {
         const image = documentFragment.createElement("img");
-        image.src = await uploadImageFile(images[index]);
-        image.alt = "Ảnh trong nội dung bài viết";
+        const uploaded = await uploadImageFile(images[index]);
+        image.src = uploaded.url;
+        image.setAttribute("srcset", uploaded.srcSet);
+        image.setAttribute("sizes", "(max-width: 800px) 100vw, 785px");
+        image.width = uploaded.width;
+        image.height = uploaded.height;
+        image.alt = imageAlt("", images[index].name);
         documentFragment.body.append(image);
       }
 

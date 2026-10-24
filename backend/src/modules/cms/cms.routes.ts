@@ -1,6 +1,6 @@
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
-import type { Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import sanitizeHtml from "sanitize-html";
 import { prisma } from "../../shared/database/prisma.js";
 import { authenticateRequest } from "../auth/auth.service.js";
@@ -26,7 +26,7 @@ const cleanNewsHtml = (value: string) => sanitizeHtml(value, {
   allowedAttributes: {
     "*": ["style", "align"],
     a: ["href", "target", "rel"],
-    img: ["src", "alt", "width", "height"],
+    img: ["src", "srcset", "sizes", "alt", "width", "height"],
     font: ["color", "face", "size"],
     ol: ["start", "type"],
     ul: ["type"],
@@ -57,10 +57,48 @@ const cleanNewsHtml = (value: string) => sanitizeHtml(value, {
     },
   },
   allowedSchemes: ["http", "https", "mailto"],
-  transformTags: { a: sanitizeHtml.simpleTransform("a", { target: "_blank", rel: "noopener noreferrer" }) },
+  transformTags: { h1: (_tagName, attributes) => ({ tagName: "h2", attribs: attributes }), a: (_tagName, attributes) => {
+    const href = attributes.href ?? "";
+    let external = href.startsWith("//");
+    try {
+      const destination = new URL(href, process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn");
+      external ||= destination.origin !== new URL(process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn").origin;
+    } catch { /* Invalid links are removed by sanitize-html's allowed schemes. */ }
+    const shouldOpenNewTab = external || attributes.target === "_blank";
+    return { tagName: "a", attribs: shouldOpenNewTab ? { ...attributes, target: "_blank", rel: "noopener noreferrer" } : attributes };
+  } },
 }).trim();
 const newsContent = z.string().transform(cleanNewsHtml).refine((value) => sanitizeHtml(value, { allowedTags: [] }).trim().length >= 20, "Nội dung phải có ít nhất 20 ký tự.");
-const newsInput = z.object({ slug, locale: z.enum(["vi", "en"]).default("vi"), category: newsCategory.default("VAN_LANG_UNIVERSITY"), title: z.string().trim().min(2).max(250), authorName: z.string().trim().min(2).max(120), excerpt: z.string().trim().min(10).max(1000), content: newsContent, coverImage: imagePath.optional().nullable(), publishedAt: z.coerce.date().optional(), status: status.default("DRAFT") });
+const canonicalUrl = z.string().trim().max(1000).optional().nullable().refine((value) => {
+  if (!value) return true;
+  if (value.startsWith("/") && !value.startsWith("//")) return true;
+  try {
+    const target = new URL(value);
+    const site = new URL(process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn");
+    return target.protocol === "https:" && target.origin === site.origin;
+  } catch { return false; }
+}, "Canonical phải là đường dẫn trên website hoặc URL HTTPS cùng domain.");
+const customJsonLd = z.record(z.string(), z.unknown()).optional().nullable().refine((value) => !value || JSON.stringify(value).length <= 20_000, "Schema tùy chỉnh không được vượt quá 20 KB.");
+const siteSeoInput = z.object({
+  metaTitle: z.string().max(250).optional(), metaDescription: z.string().max(1000).optional(),
+  canonicalUrl: z.string().max(1000).optional(), robotsIndex: z.boolean().optional(), robotsFollow: z.boolean().optional(),
+  ogTitle: z.string().max(250).optional(), ogDescription: z.string().max(1000).optional(), ogImage: z.string().max(1000).optional(), ogImageAlt: z.string().max(500).optional(),
+  ogType: z.enum(["website", "article"]).optional(), hreflang: z.record(z.enum(["vi", "en", "x-default"]), z.string().max(1000)).optional(), customJsonLd: z.record(z.string(), z.unknown()).optional(),
+}).superRefine((value, context) => {
+  const checkSameSite = (key: string, candidate?: string) => {
+    if (!candidate) return;
+    try {
+      const base = new URL(process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn");
+      const url = new URL(candidate, base);
+      if (url.origin !== base.origin || (url.protocol !== "https:" && url.protocol !== "http:")) throw new Error();
+    } catch { context.addIssue({ code: "custom", path: [key], message: "URL phải trỏ tới cùng website." }); }
+  };
+  checkSameSite("canonicalUrl", value.canonicalUrl);
+  checkSameSite("ogImage", value.ogImage);
+  for (const [locale, url] of Object.entries(value.hreflang ?? {})) checkSameSite(`hreflang.${locale}`, url);
+  if (value.customJsonLd && JSON.stringify(value.customJsonLd).length > 20_000) context.addIssue({ code: "custom", path: ["customJsonLd"], message: "Schema tùy chỉnh không được vượt quá 20 KB." });
+});
+const newsInput = z.object({ slug, locale: z.enum(["vi", "en"]).default("vi"), category: newsCategory.default("VAN_LANG_UNIVERSITY"), title: z.string().trim().min(2).max(250), authorName: z.string().trim().min(2).max(120), excerpt: z.string().trim().min(10).max(1000), content: newsContent, coverImage: imagePath.optional().nullable(), coverImageAlt: z.string().trim().max(500).optional().nullable(), metaTitle: z.string().trim().max(250).optional().nullable(), metaDescription: z.string().trim().max(1000).optional().nullable(), canonicalUrl, robotsIndex: z.boolean().default(true), robotsFollow: z.boolean().default(true), ogTitle: z.string().trim().max(250).optional().nullable(), ogDescription: z.string().trim().max(1000).optional().nullable(), ogImage: imagePath.optional().nullable(), ogImageAlt: z.string().trim().max(500).optional().nullable(), customJsonLd, publishedAt: z.coerce.date().optional(), status: status.default("DRAFT") });
 const resourceType = z.enum(["DIRECTIVE_DOCUMENT", "EXECUTION_DOCUMENT", "BROCHURE", "PDF_DOCUMENT"]);
 const resourceDocumentType = z.enum(["REGULATION", "RULE", "PROCESS", "NOTICE", "GUIDELINE"]);
 const allowedResourceFiles = new Set(["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "image/jpeg", "image/png"]);
@@ -88,7 +126,11 @@ const resourceInput = z.object({
   if ((value.resourceType === "BROCHURE" || value.resourceType === "PDF_DOCUMENT") && value.fileType !== "application/pdf") context.addIssue({ code: "custom", path: ["fileType"], message: "Loại tài nguyên này chỉ chấp nhận file PDF." });
 });
 const resourceCategoryInput = z.object({ name: z.string().trim().min(1, "Tên danh mục không được để trống.").max(120) });
-const siteInput = z.object({ key: z.string().trim().min(2).max(190), locale: z.enum(["vi", "en"]).default("vi"), section: z.string().trim().min(1).max(100), page: z.string().trim().min(1).max(190), title: z.string().max(250).optional().nullable(), value: z.record(z.string(), z.unknown()), published: z.boolean().default(false) });
+const siteInput = z.object({ key: z.string().trim().min(2).max(190), locale: z.enum(["vi", "en"]).default("vi"), section: z.string().trim().min(1).max(100), page: z.string().trim().min(1).max(190), title: z.string().max(250).optional().nullable(), value: z.record(z.string(), z.unknown()), published: z.boolean().default(false) }).superRefine((input, context) => {
+  if (input.section !== "seo") return;
+  const parsed = siteSeoInput.safeParse(input.value);
+  if (!parsed.success) context.addIssue({ code: "custom", path: ["value"], message: `Cấu hình SEO không hợp lệ: ${parsed.error.issues.map((issue) => `${issue.path.join(".")}: ${issue.message}`).join("; ")}` });
+});
 
 async function guard(request: FastifyRequest, reply: FastifyReply, permission: string) {
   const admin = await authenticateRequest(request);
@@ -605,6 +647,7 @@ export async function cmsRoutes(app: FastifyInstance) {
     const post = await prisma.newsPost.create({
       data: {
         ...input,
+        customJsonLd: input.customJsonLd ? input.customJsonLd as Prisma.InputJsonValue : Prisma.JsonNull,
         slug: uniqueSlug,
         authorId: admin.id,
         publishedAt: input.status === "PUBLISHED" ? (input.publishedAt ?? new Date()) : null,
@@ -634,6 +677,7 @@ export async function cmsRoutes(app: FastifyInstance) {
       where: { id },
       data: {
         ...input,
+        customJsonLd: input.customJsonLd ? input.customJsonLd as Prisma.InputJsonValue : Prisma.JsonNull,
         slug: uniqueSlug,
         publishedAt: input.status === "PUBLISHED" ? (input.publishedAt ?? current.publishedAt ?? new Date()) : null,
       },

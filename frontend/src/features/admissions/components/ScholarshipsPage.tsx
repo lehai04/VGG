@@ -83,7 +83,7 @@ export function ScholarshipsPage() {
           <p>ADMISSIONS · FINANCIAL SUPPORT</p>
           <h1 id="scholarship-title">
             Học bổng
-            <br />& hỗ trợ tài chính
+            {" "}& hỗ trợ tài chính
           </h1>
           <span>Đầu tư cho tri thức. Đồng hành cùng những bước tiến dài.</span>
         </div>
@@ -110,7 +110,7 @@ export function ScholarshipsPage() {
           <p className={styles.sectionIndex}>01 / CƠ HỘI HỌC TẬP</p>
           <h2>
             Chi phí phù hợp.
-            <br />
+            {" "}
             <em>Cơ hội rộng mở.</em>
           </h2>
           <p>

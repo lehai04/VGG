@@ -1,0 +1,1471 @@
+{
+  "checked": 244,
+  "present": 244,
+  "missing": [],
+  "units": [
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Trang chủ",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h1",
+      "text": "Kỹ thuật ô tô",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Phát triển năng lực thiết kế, mô phỏng và tối ưu hóa hệ thống ô tô; tiếp cận công nghệ xe điện, pin và trí tuệ nhân tạo để giải quyết các bài toán kỹ thuật trong công nghiệp và nghiên cứu.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Tổng quan chương trình",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h2",
+      "text": "Hiểu sâu công nghệ. Phát triển giải pháp ô tô hiện đại.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Kỹ thuật ô tô tại Văn Lang kết nối nền tảng động lực học, tính toán và thiết kế với công nghệ xe điện, pin, quản lý năng lượng và các hệ thống ô tô hiện đại. Người học phát triển khả năng phân tích, mô hình hóa, tối ưu hóa và đề xuất giải pháp cho những bài toán kỹ thuật phức tạp.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Định hướng ứng dụng chú trọng giải quyết vấn đề trong sản xuất, vận hành, bảo trì, quản lý kỹ thuật và chất lượng. Định hướng nghiên cứu tập trung vào phương pháp nghiên cứu, thực nghiệm, mô phỏng và phát triển giải pháp công nghệ.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Danh mục tự chọn mở rộng sang vật liệu mới, nhiên liệu tái tạo, công nghệ tái chế, xe tự hành và giao thông thông minh. Người học lựa chọn học phần theo từng nhóm trong cơ cấu của định hướng đào tạo.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Văn bằng tốt nghiệp: Thạc sĩ Kỹ thuật ô tô Master of Automotive Engineering",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "figcaption",
+      "text": "Hoạt động thực hành tại xưởng Kỹ thuật Ô tô Nguồn: Trường Đại học Văn Lang ↗",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h3",
+      "text": "Hai định hướng. Cùng nền tảng kỹ thuật chuyên sâu.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Ứng dụng Chuyên đề · Thực tập · Đề án 18 tháng",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Nghiên cứu Hai chuyên đề · Luận văn 24 tháng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Điểm nổi bật của chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Hai định hướng theo mục tiêu phát triển",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Lựa chọn ứng dụng để nâng cao năng lực giải quyết bài toán nghề nghiệp, hoặc nghiên cứu để phát triển chuyên môn học thuật và tham gia các hoạt động R&D.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Xe điện, pin và quản lý năng lượng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Cả hai định hướng đều có học phần về công nghệ xe điện, xe lai, trạm sạc, công nghệ pin và quản lý năng lượng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Thiết kế, mô phỏng và tối ưu hóa",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phát triển nền tảng tính toán và đánh giá hệ thống ô tô qua phương pháp phần tử hữu hạn, động lực học nâng cao và tối ưu hóa thiết kế.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Kết nối với các hướng công nghệ mới",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Tiếp cận AI và Deep Learning, hệ thống nhúng, xe tự hành, giao thông thông minh và vật liệu mới qua các học phần theo từng định hướng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phát triển chuyên môn qua mô phỏng, thực nghiệm và thực hành",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Định hướng ứng dụng rèn luyện khả năng vận dụng các công cụ thiết kế, mô phỏng và công nghệ số để cải tiến giải pháp kỹ thuật. Định hướng nghiên cứu chú trọng thiết lập nghiên cứu thực nghiệm hoặc tính toán, xử lý và diễn giải kết quả, phát triển năng lực nghiên cứu và hợp tác chuyên môn.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "summary",
+      "text": "Mục tiêu phát triển năng lực",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Chương trình hướng đến phát triển kiến thức liên ngành, kỹ năng thiết kế và nghiên cứu, năng lực phối hợp cùng trách nhiệm nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phân tích và tối ưu hóa hệ thống",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kết nối kiến thức liên ngành để phân tích, thiết kế, tối ưu hóa và vận hành các hệ thống ô tô hiện đại.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Triển khai và cải tiến giải pháp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thiết kế, triển khai và cải tiến các giải pháp kỹ thuật, nghiên cứu trong bối cảnh công nghiệp 4.0.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Mô phỏng và giải quyết bài toán thực tiễn",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Vận dụng công cụ CAD/CAE/CFD, phối hợp dự án và công nghệ số để nâng cao năng suất, an toàn và độ tin cậy của phương tiện.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Nghiên cứu thực nghiệm và tính toán",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thiết lập và triển khai nghiên cứu, xử lý và diễn giải kết quả, phát triển khả năng viết và công bố khoa học.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Hợp tác và dẫn dắt chuyên môn",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phát triển khả năng phối hợp trong dự án kỹ thuật hoặc nghiên cứu đa ngành theo định hướng đào tạo.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Đạo đức và học tập suốt đời",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Duy trì trách nhiệm nghề nghiệp, sự trung thực và tinh thần chủ động học tập để thích ứng với thay đổi của ngành ô tô.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình phù hợp với ai?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h2",
+      "text": "Chọn hướng học phù hợp với mục tiêu của bạn.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành học phù hợp và đáp ứng các điều kiện dự tuyển của chương trình.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người làm kỹ thuật và công nghệ ô tô",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Mong muốn nâng cao năng lực thiết kế, mô phỏng, sản xuất, vận hành hoặc bảo trì các hệ thống ô tô hiện đại.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người hướng đến quản lý kỹ thuật",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Muốn phát triển chuyên môn để tham gia điều phối dự án, quản lý chất lượng và cải tiến hoạt động trong ngành ô tô.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người quan tâm nghiên cứu và R&D",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Muốn phát triển năng lực thực nghiệm, tính toán, mô hình hóa và nghiên cứu các hướng công nghệ mới.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Ngành tốt nghiệp có phù hợp?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Người tốt nghiệp Công nghệ kỹ thuật ô tô, Kỹ thuật ô tô hoặc Kỹ thuật cơ khí động lực không cần học bổ sung kiến thức. Các ngành gần trong danh mục học tối đa 9 tín chỉ; các ngành kỹ thuật khác được liệt kê học tối đa 15 tín chỉ. Nội dung cụ thể được xác định sau khi đối chiếu hồ sơ và bảng điểm. Ngành chưa có trong danh mục được Khoa chuyên môn rà soát để Nhà trường xem xét.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Phương thức tuyển sinh",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Xét tuyển. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Kỹ thuật ô tô.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Yêu cầu ngoại ngữ đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên, được minh chứng bằng một trong các hình thức công nhận trong thông báo tuyển sinh.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Văn bằng đại học do cơ sở nước ngoài cấp cần kèm minh chứng đã được công nhận theo quy định.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Điều kiện riêng của định hướng nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên tốt nghiệp đại học từ loại Khá trở lên hoặc có công bố khoa học liên quan đến lĩnh vực sẽ học tập, nghiên cứu.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "Các hình thức minh chứng ngoại ngữ đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Bằng đại học trở lên ngành ngôn ngữ nước ngoài hoặc chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Văn bằng, chứng chỉ tương đương Bậc 3 trở lên thuộc danh mục được công nhận và còn hiệu lực.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kết quả đánh giá tương đương Bậc 3 trở lên do Trường tổ chức; hoặc hoàn thành chương trình đào tạo, bồi dưỡng ngoại ngữ do Trường tổ chức hoặc công nhận.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Bằng đại học trở lên do Văn Lang cấp trong thời hạn không quá 2 năm, với chương trình đã đáp ứng chuẩn đầu ra ngoại ngữ từ Bậc 3 trở lên.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Bổ sung kiến thức đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã tích lũy để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "01. Các ngành không cần bổ sung kiến thức",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Ngành tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ kỹ thuật ô tô.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật ô tô.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật cơ khí động lực.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên vẫn phải đáp ứng đầy đủ các điều kiện dự tuyển của định hướng đăng ký.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "02. Các ngành gần · Tối đa 9 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Danh mục ngành gần",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ kỹ thuật cơ khí Công nghệ kỹ thuật cơ khí; Công nghệ kỹ thuật cơ điện tử; Công nghệ kỹ thuật nhiệt; Công nghệ kỹ thuật tàu thủy; Bảo dưỡng công nghiệp.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật cơ khí và cơ kỹ thuật Kỹ thuật cơ khí; Kỹ thuật cơ điện tử; Kỹ thuật nhiệt; Kỹ thuật công nghiệp; Kỹ thuật hệ thống công nghiệp; Kỹ thuật hàng không; Kỹ thuật tàu thủy.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Các học phần bổ sung kiến thức",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Động cơ đốt trong · 3 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Lý thuyết ô tô · 3 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Hệ thống điện - điện tử ô tô · 3 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Khối lượng bổ sung tối đa 9 tín chỉ. Các học phần cụ thể được xác định sau khi đối chiếu hồ sơ và bảng điểm của từng ứng viên.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "03. Các ngành kỹ thuật khác trong danh mục · Tối đa 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Danh mục ngành kỹ thuật khác",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ kỹ thuật kiến trúc và công trình xây dựng Công nghệ kỹ thuật kiến trúc; Công nghệ kỹ thuật xây dựng; Công nghệ kỹ thuật giao thông; Công nghệ kỹ thuật vật liệu xây dựng.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ kỹ thuật điện, điện tử và viễn thông Công nghệ kỹ thuật điện, điện tử; Công nghệ kỹ thuật điện tử - viễn thông; Công nghệ kỹ thuật điều khiển và tự động hóa.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ hóa học, vật liệu, luyện kim và môi trường Công nghệ kỹ thuật hóa học; Công nghệ vật liệu; Công nghệ kỹ thuật môi trường.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Quản lý công nghiệp Quản lý công nghiệp; Quản lý năng lượng; Kinh tế công nghiệp.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ dầu khí và khai thác Công nghệ dầu khí và khai thác dầu.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ kỹ thuật in Công nghệ kỹ thuật in.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật cơ khí và cơ kỹ thuật Cơ kỹ thuật; Kỹ thuật Robot; Kỹ thuật không gian; Kỹ thuật năng lượng; Kỹ thuật in; Kỹ thuật hàng hải.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật điện, điện tử và viễn thông Kỹ thuật điện; Thiết kế vi mạch; Kỹ thuật điện tử; Kỹ thuật rađa - dẫn đường; Kỹ thuật điện tử - viễn thông; Kỹ thuật mật mã; Kỹ thuật y sinh; Kỹ thuật điều khiển và tự động hóa.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật hóa học, vật liệu, luyện kim và môi trường Kỹ thuật hóa học; Kỹ thuật vật liệu; Kỹ thuật dệt, may; Kỹ thuật môi trường.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Vật lý kỹ thuật Vật lý kỹ thuật; Kỹ thuật hạt nhân.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật địa chất, địa vật lý và trắc địa Kỹ thuật địa chất; Kỹ thuật địa vật lý; Kỹ thuật trắc địa - bản đồ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật mỏ Kỹ thuật mỏ; Khai thác mỏ; Kỹ thuật dầu khí; Kỹ thuật tuyển khoáng.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kết cấu ô tô · 3 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Tính toán thiết kế ô tô · 3 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ chẩn đoán sửa chữa ô tô · 3 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Khối lượng bổ sung tối đa 15 tín chỉ dành cho các ngành được liệt kê ở trên. Các học phần cụ thể được xác định sau khi đối chiếu hồ sơ và bảng điểm của từng ứng viên.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Chưa tìm thấy ngành tốt nghiệp của bạn?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Khoa chuyên môn sẽ rà soát hồ sơ và đề xuất để Nhà trường xem xét điều kiện dự tuyển cùng yêu cầu bổ sung kiến thức. Liên hệ Viện để được đối chiếu ngành học và bảng điểm trước khi đăng ký.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Cơ hội nghề nghiệp và phát triển",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h2",
+      "text": "Vững chuyên môn kỹ thuật. Mở rộng hướng phát triển.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Nền tảng thiết kế, công nghệ và nghiên cứu hỗ trợ người học phát triển nghề nghiệp tại doanh nghiệp sản xuất, dịch vụ ô tô, đơn vị R&D và cơ sở giáo dục.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Thiết kế và phát triển kỹ thuật",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Thiết kế, mô phỏng và tối ưu hóa",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Vận dụng kiến thức chuyên sâu để phân tích, mô hình hóa, thiết kế và cải tiến các hệ thống ô tô hiện đại.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Phát triển giải pháp công nghệ",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tham gia các bài toán kỹ thuật liên quan đến xe điện, năng lượng, điều khiển và các hệ thống thông minh theo hướng chuyên môn.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Sản xuất, dịch vụ và quản lý",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Sản xuất, vận hành và dịch vụ ô tô",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Giải quyết vấn đề trong chế tạo, vận hành, bảo trì phương tiện; đề xuất giải pháp nâng cao năng suất, an toàn và độ tin cậy.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Quản lý chất lượng và dự án",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phát triển năng lực tổ chức, điều phối và cải tiến hoạt động kỹ thuật, chất lượng hoặc dự án trong ngành công nghiệp ô tô.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Nghiên cứu và phát triển học thuật",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Nghiên cứu và phát triển (R&D)",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tham gia nghiên cứu thực nghiệm, tính toán và phát triển công nghệ; phối hợp trong các dự án nghiên cứu đa ngành.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Giảng dạy và học tập nâng cao",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phát triển theo hướng giảng dạy tại cơ sở giáo dục hoặc tiếp tục học trình độ tiến sĩ khi đáp ứng các điều kiện của vị trí, chương trình.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Hướng phát triển và vị trí đảm nhiệm phụ thuộc vào nền tảng chuyên môn, kinh nghiệm, năng lực thực tế và yêu cầu của từng tổ chức.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Khung chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Cùng khối lượng 60 tín chỉ, mỗi định hướng có cơ cấu học phần, nhóm tự chọn và hình thức hoàn thành riêng. Chọn định hướng để xem chi tiết chương trình.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h3",
+      "text": "Thông tin chung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Thời gian đào tạo",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "18 tháng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Định hướng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Ứng dụng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Hình thức",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Chính quy tập trung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Ngôn ngữ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Học phần tự chọn",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "9 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Đề án · 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "6 tín chỉ chung + 18 tín chỉ cơ sở + 21 tín chỉ chuyên ngành + 15 tín chỉ chuyên đề, thực tập và đề án = 60 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Dành cho người muốn nâng cao khả năng thiết kế, triển khai và cải tiến giải pháp kỹ thuật trong sản xuất, vận hành và dịch vụ ô tô. Chương trình gồm 15 học phần, một chuyên đề, thực tập chuyên môn nâng cao và đề án tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "I. Kiến thức chung 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học Mác Lênin Philosophy of Marxism and Leninism",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp nghiên cứu khoa học Research Methodology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "II. Kiến thức cơ sở 18 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ chế tạo và lắp ráp ô tô hiện đại Advanced Automotive Manufacturing and Assembly Technology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp phần tử hữu hạn Finite Element Method (FEM)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Tính toán và tối ưu hóa thiết kế hệ thống ô tô Automotive Systems Design and Optimization",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Động lực học ô tô nâng cao Advanced Vehicle Dynamics",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kỹ thuật va chạm ô tô và phân tích an toàn Automotive Crash Engineering and Safety Analysis",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn kiến thức cơ sở",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chọn 1 trong 3 học phần · Tích lũy 3 tín chỉ. Mỗi học phần 3 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Mô phỏng và mô hình hóa trong thiết kế ô tô Modeling and Simulation in Automotive Design",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ chẩn đoán và sửa chữa ô tô hiện đại Advanced Automotive Diagnostics and Repair",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ tái chế và quản lý bền vững trong ngành ô tô Recycling and Sustainable Management in the Automotive Industry",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "III. Kiến thức chuyên ngành 21 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Mô phỏng và tối ưu hóa hệ thống động lực học ô tô Simulation and Optimization of Vehicle Dynamic Systems",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ pin và quản lý năng lượng trong xe điện Battery Technology and Energy Management in Electric Vehicles",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Vi xử lý và hệ thống nhúng trong ô tô Microprocessors and Embedded Systems in Automotive Applications",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ xe điện (EV), xe lai và trạm sạc Electric Vehicles (EVs), Hybrids, and Charging Station Technologies",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "AI và ứng dụng Deep Learning trong kỹ thuật ô tô AI and Deep Learning Applications in Automotive Engineering",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn 6 tín chỉ: chọn một học phần trong mỗi nhóm dưới đây.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn chuyên ngành 1",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chọn 1 trong 4 học phần · Tích lũy 3 tín chỉ. Mỗi học phần 3 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ vật liệu mới dùng trên ô tô Advanced Automotive Materials Technology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Nhiên liệu và năng lượng tái tạo trong giao thông vận tải Renewable Fuels and Sustainable Energy in Transportation",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Động học lưu chất tính toán (CFD) Computational Fluid Dynamics (CFD) in Vehicle Design",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản lý kỹ thuật và dịch vụ trong ngành công nghiệp ô tô Engineering and Service Management in the Automotive Industry",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn chuyên ngành 2",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Xe tự hành và các công nghệ liên quan Autonomous Vehicles Technologies",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Hệ thống giao thông thông minh và công nghệ kết nối Smart Transportation Systems and Connectivity Technologies",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Hệ thống điện - điện tử ô tô hiện đại Advanced Automotive Electrical and Electronic Systems",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "IV. Chuyên đề, thực tập và đề án tốt nghiệp 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề công nghệ mới trên ô tô Special Studies on Novel Automotive Technology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thực tập chuyên môn nâng cao Advanced Professional Internship",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đề án tốt nghiệp Capstone project",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần được triển khai theo kế hoạch đào tạo của Khoa. Lịch mở lớp, lựa chọn học phần tự chọn và thời khóa biểu được thông báo theo từng đợt.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Hoàn thành chương trình",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Tích lũy 60 tín chỉ theo cơ cấu chương trình, gồm chuyên đề công nghệ mới trên ô tô 3 tín chỉ, thực tập chuyên môn nâng cao 6 tín chỉ và đề án tốt nghiệp 6 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Hoàn thành thực tập và đề án theo yêu cầu; đáp ứng chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 và các điều kiện công nhận tốt nghiệp theo quy định của Trường.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "24 tháng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "12 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Luận văn · 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "6 tín chỉ chung + 15 tín chỉ cơ sở + 18 tín chỉ chuyên ngành + 6 tín chỉ chuyên đề nghiên cứu + 15 tín chỉ luận văn = 60 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Dành cho người muốn phát triển năng lực nghiên cứu thực nghiệm hoặc tính toán, mô hình hóa hệ thống và đề xuất hướng công nghệ mới. Chương trình gồm 13 học phần, hai chuyên đề nghiên cứu và luận văn tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "II. Kiến thức cơ sở 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 12 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "III. Kiến thức chuyên ngành 18 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 9 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn 9 tín chỉ: chọn một học phần trong mỗi nhóm dưới đây.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn chuyên ngành 3",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "IV. Chuyên đề nghiên cứu 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề cơ sở ngành Special Studies on Automotive Engineering",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "V. Luận văn tốt nghiệp 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Luận văn tốt nghiệp Graduation Thesis",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Tích lũy 60 tín chỉ theo cơ cấu chương trình, gồm chuyên đề cơ sở ngành 3 tín chỉ, chuyên đề công nghệ mới trên ô tô 3 tín chỉ và luận văn tốt nghiệp 15 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Hoàn thành chuyên đề và luận văn theo yêu cầu; đáp ứng chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 và các điều kiện công nhận tốt nghiệp theo quy định của Trường.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "h2",
+      "text": "Chủ động chuẩn bị cho hành trình học.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa được chia thành ba đợt thanh toán, giúp người học chủ động sắp xếp kế hoạch tài chính.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Các chính sách học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ. Người học chỉ được áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "summary",
+      "text": "Các khoản thu riêng khi áp dụng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển 500.000 đồng Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học 1.000.000 đồng Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức 1.200.000 đồng/môn Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn tập tiếng Anh đầu vào 1.000.000 đồng Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào 1.000.000 đồng Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Gia hạn chương trình 5% học phí toàn khóa/lần Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Hoạt động học tập thực tế, tham quan chuyên môn hoặc thực địa có thể phát sinh chi phí ngoài học phí toàn khóa; Khoa thông báo nội dung và chi phí trước khi triển khai. Điều kiện thu, hoàn trả và các khoản phát sinh thực hiện theo thông báo được ban hành.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "TUYỂN SINH THẠC SĨ 2027",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa · Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "29.750.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "25.500.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng. Ngày đến hạn thanh toán theo thông báo thu của Trường.",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h2",
+      "text": "Sẵn sàng cho bước học tiếp theo?",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Câu hỏi thường gặp",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Hai định hướng ứng dụng và nghiên cứu khác nhau thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Cả hai định hướng đều có 60 tín chỉ. Hướng ứng dụng tập trung giải quyết bài toán nghề nghiệp, gồm chuyên đề công nghệ mới 3 tín chỉ, thực tập chuyên môn nâng cao 6 tín chỉ và đề án tốt nghiệp 6 tín chỉ. Hướng nghiên cứu phát triển năng lực thực nghiệm, tính toán và nghiên cứu, gồm hai chuyên đề tổng 6 tín chỉ cùng luận văn tốt nghiệp 15 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Thời gian học và lịch học được bố trí như thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Thời gian đào tạo theo đề án tuyển sinh là 18 tháng đối với định hướng ứng dụng và 24 tháng đối với định hướng nghiên cứu. Lịch học được bố trí vào buổi tối các ngày trong tuần và/hoặc Thứ Bảy, Chủ nhật theo kế hoạch từng học kỳ. Thời khóa biểu chính thức do Trường công bố.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Điều kiện riêng khi đăng ký định hướng nghiên cứu là gì?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ngoài các điều kiện dự tuyển chung, ứng viên cần tốt nghiệp đại học từ loại Khá trở lên hoặc có công bố khoa học liên quan đến lĩnh vực sẽ học tập, nghiên cứu. Cả hai định hướng đều tuyển sinh bằng phương thức xét tuyển.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Tốt nghiệp ngành khác có thể dự tuyển không?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ứng viên các ngành gần trong danh mục bổ sung tối đa 9 tín chỉ; các ngành kỹ thuật khác được liệt kê bổ sung tối đa 15 tín chỉ. Nội dung cụ thể được xác định qua hồ sơ và bảng điểm. Với ngành ngoài danh mục, Khoa chuyên môn rà soát và đề xuất để Nhà trường xem xét, quyết định.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Yêu cầu ngoại ngữ đầu vào và đầu ra như thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ứng viên đáp ứng ngoại ngữ đầu vào tương đương Bậc 3/6 trở lên theo các hình thức công nhận trong thông báo tuyển sinh. Trước khi được công nhận tốt nghiệp, học viên cần đạt chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 theo quy định.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phí toàn khóa và cách đóng học phí ra sao?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt: 29.750.000 đồng, 25.500.000 đồng và 29.750.000 đồng. Mức này chưa trừ học bổng, hỗ trợ tài chính và chưa bao gồm các khoản thu riêng khi áp dụng. Thời hạn thanh toán được Trường thông báo cụ thể.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h3",
+      "text": "Liên hệ tư vấn",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h2",
+      "text": "Bắt đầu từ mục tiêu của bạn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Kỹ thuật ô tô. Đội ngũ tư vấn sẽ hỗ trợ bạn lựa chọn định hướng học tập và chuẩn bị hồ sơ phù hợp.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "01 Tư vấn chương trình và định hướng học",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "02 Hướng dẫn học phí và chính sách hỗ trợ",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "03 Đối chiếu điều kiện và hồ sơ dự tuyển",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h3",
+      "text": "Trao đổi trực tiếp với Viện",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Viện Sau đại học · Trường Đại học Văn Lang 69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    }
+  ]
+}

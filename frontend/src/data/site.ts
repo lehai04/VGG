@@ -237,6 +237,9 @@ export const menuGroups: readonly MenuGroup[] = [
 
 /** Danh sách ngành cho form tư vấn. Phải khớp option trong ResourcesConsultation. */
 export const programmes = [
+  "Marketing",
+  "Công nghệ thông tin",
+  "Khoa học Môi trường",
   "Quản trị Kinh doanh",
   "Kinh doanh Thương mại",
   "Tài chính - Ngân hàng",

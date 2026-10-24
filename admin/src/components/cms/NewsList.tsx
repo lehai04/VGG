@@ -18,6 +18,17 @@ export type NewsPostItem = {
   excerpt: string | null;
   content: string;
   coverImage: string | null;
+  coverImageAlt?: string | null;
+  metaTitle?: string | null;
+  metaDescription?: string | null;
+  canonicalUrl?: string | null;
+  robotsIndex?: boolean;
+  robotsFollow?: boolean;
+  ogTitle?: string | null;
+  ogDescription?: string | null;
+  ogImage?: string | null;
+  ogImageAlt?: string | null;
+  customJsonLd?: Record<string, unknown> | null;
   status: string;
   publishedAt: string | null;
   authorName: string | null;
@@ -191,7 +202,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
           <h2 style={{ margin: 0, fontSize: "1.45rem", fontWeight: 800, color: "#0f172a" }}>
             Danh sách Tin tức &amp; Sự kiện
           </h2>
-          <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "#64748b" }}>
+          <p style={{ margin: "4px 0 0", fontSize: "var(--text-14)", color: "#64748b" }}>
             Quản lý, tìm kiếm, xem trước và chỉnh sửa tất cả bài viết trên hệ thống.
           </p>
         </div>
@@ -207,7 +218,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
             color: "#ffffff",
             borderRadius: "10px",
             fontWeight: 700,
-            fontSize: "0.88rem",
+            fontSize: "var(--text-14)",
             textDecoration: "none",
             boxShadow: "0 4px 14px rgba(219, 38, 57, 0.28)",
             transition: "all 0.2s ease",
@@ -243,7 +254,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
             border: selectedCategory === "ALL" ? "1.5px solid #db2639" : "1px solid #cbd5e1",
             backgroundColor: selectedCategory === "ALL" ? "#db2639" : "#ffffff",
             color: selectedCategory === "ALL" ? "#ffffff" : "#475569",
-            fontSize: "0.84rem",
+            fontSize: "var(--text-14)",
             fontWeight: 700,
             cursor: "pointer",
             whiteSpace: "nowrap",
@@ -256,7 +267,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
             style={{
               padding: "1px 7px",
               borderRadius: "999px",
-              fontSize: "0.72rem",
+              fontSize: "var(--text-12)",
               backgroundColor: selectedCategory === "ALL" ? "rgba(255,255,255,0.25)" : "#f1f5f9",
               color: selectedCategory === "ALL" ? "#ffffff" : "#64748b",
             }}
@@ -281,7 +292,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
                 border: isSelected ? "1.5px solid #db2639" : "1px solid #cbd5e1",
                 backgroundColor: isSelected ? "#db2639" : "#ffffff",
                 color: isSelected ? "#ffffff" : "#475569",
-                fontSize: "0.84rem",
+                fontSize: "var(--text-14)",
                 fontWeight: 700,
                 cursor: "pointer",
                 whiteSpace: "nowrap",
@@ -294,7 +305,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
                 style={{
                   padding: "1px 7px",
                   borderRadius: "999px",
-                  fontSize: "0.72rem",
+                  fontSize: "var(--text-12)",
                   backgroundColor: isSelected ? "rgba(255,255,255,0.25)" : "#f1f5f9",
                   color: isSelected ? "#ffffff" : "#64748b",
                 }}
@@ -344,7 +355,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
               paddingRight: "14px",
               borderRadius: "8px",
               border: "1.5px solid #cbd5e1",
-              fontSize: "0.88rem",
+              fontSize: "var(--text-14)",
               color: "#0f172a",
               outline: "none",
             }}
@@ -352,7 +363,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ fontSize: "0.85rem", color: "#64748b", fontWeight: 600 }}>Quyền riêng tư:</span>
+          <span style={{ fontSize: "var(--text-14)", color: "#64748b", fontWeight: 600 }}>Quyền riêng tư:</span>
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
@@ -361,7 +372,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
               padding: "0 14px",
               borderRadius: "8px",
               border: "1.5px solid #cbd5e1",
-              fontSize: "0.88rem",
+              fontSize: "var(--text-14)",
               color: "#0f172a",
               backgroundColor: "#ffffff",
               cursor: "pointer",
@@ -391,7 +402,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <span style={{ fontSize: "0.9rem", fontWeight: 700, color: "#9f1239" }}>
+            <span style={{ fontSize: "var(--text-14)", fontWeight: 700, color: "#9f1239" }}>
               Đã chọn {selectedIds.length} bài viết
             </span>
             <button
@@ -400,7 +411,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
               style={{
                 background: "none",
                 border: "none",
-                fontSize: "0.82rem",
+                fontSize: "var(--text-14)",
                 color: "#64748b",
                 textDecoration: "underline",
                 cursor: "pointer",
@@ -423,7 +434,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
                   color: "#0f172a",
                   border: "1px solid #cbd5e1",
                   borderRadius: "8px",
-                  fontSize: "0.85rem",
+                  fontSize: "var(--text-14)",
                   fontWeight: 600,
                   textDecoration: "none",
                 }}
@@ -448,7 +459,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
                 color: "#ffffff",
                 border: "none",
                 borderRadius: "8px",
-                fontSize: "0.85rem",
+                fontSize: "var(--text-14)",
                 fontWeight: 600,
                 cursor: "pointer",
                 boxShadow: "0 2px 8px rgba(220, 38, 38, 0.25)",
@@ -480,7 +491,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
               width: "100%",
               borderCollapse: "collapse",
               textAlign: "left",
-              fontSize: "0.88rem",
+              fontSize: "var(--text-14)",
             }}
           >
             <thead>
@@ -489,7 +500,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
                   backgroundColor: "#f8fafc",
                   borderBottom: "1.5px solid #e2e8f0",
                   color: "#475569",
-                  fontSize: "0.78rem",
+                  fontSize: "var(--text-12)",
                   fontWeight: 700,
                   letterSpacing: "0.04em",
                   textTransform: "uppercase",
@@ -525,8 +536,8 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
                         <circle cx="11" cy="11" r="8" />
                         <line x1="21" y1="21" x2="16.65" y2="16.65" />
                       </svg>
-                      <strong style={{ fontSize: "1rem", color: "#1e293b" }}>Không tìm thấy bài viết nào</strong>
-                      <span style={{ fontSize: "0.85rem" }}>Hãy thử thay đổi từ khóa tìm kiếm hoặc chọn tag chuyên mục khác.</span>
+                      <strong style={{ fontSize: "var(--text-16)", color: "#1e293b" }}>Không tìm thấy bài viết nào</strong>
+                      <span style={{ fontSize: "var(--text-14)" }}>Hãy thử thay đổi từ khóa tìm kiếm hoặc chọn tag chuyên mục khác.</span>
                     </div>
                   </td>
                 </tr>
@@ -587,7 +598,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
                             onClick={() => setPreviewPost(post)}
                             style={{
                               color: "#0f172a",
-                              fontSize: "0.92rem",
+                              fontSize: "var(--text-14)",
                               fontWeight: 700,
                               cursor: "pointer",
                               lineHeight: 1.4,
@@ -595,7 +606,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
                           >
                             {post.title}
                           </strong>
-                          <span style={{ fontSize: "0.78rem", color: "#64748b" }}>
+                          <span style={{ fontSize: "var(--text-12)", color: "#64748b" }}>
                             /{post.slug}
                           </span>
                         </div>
@@ -608,7 +619,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
                             display: "inline-block",
                             padding: "4px 10px",
                             borderRadius: "6px",
-                            fontSize: "0.76rem",
+                            fontSize: "var(--text-12)",
                             fontWeight: 700,
                             backgroundColor: "#fee2e2",
                             color: "#b91c1c",
@@ -638,7 +649,7 @@ export function NewsList({ posts: initialPosts }: { posts: NewsPostItem[] }) {
                             gap: "4px",
                             padding: "4px 10px",
                             borderRadius: "999px",
-                            fontSize: "0.75rem",
+                            fontSize: "var(--text-12)",
                             fontWeight: 700,
                             whiteSpace: "nowrap",
                             backgroundColor: isPublished ? "#dcfce7" : isDraft ? "#fef3c7" : "#f1f5f9",

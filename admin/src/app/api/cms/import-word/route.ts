@@ -3,6 +3,7 @@ import { uploadNewsImage } from "@/lib/storage";
 import mammoth from "mammoth";
 import { NextResponse } from "next/server";
 import sanitizeHtml from "sanitize-html";
+import sharp from "sharp";
 
 export const runtime = "nodejs";
 
@@ -27,15 +28,23 @@ export async function POST(request: Request) {
       styleMap: ["p[style-name='Title'] => h2:fresh", "p[style-name='Heading 1'] => h2:fresh", "p[style-name='Heading 2'] => h3:fresh", "p[style-name='Heading 3'] => h4:fresh"],
       convertImage: mammoth.images.imgElement(async (image) => {
         const buffer = Buffer.from(await image.read("base64"), "base64");
-        const extension = image.contentType?.split("/")[1]?.replace("jpeg", "jpg") || "png";
-        const uploaded = await uploadNewsImage(buffer, "news/word", extension);
-        return { src: uploaded.url };
+        const metadata = await sharp(buffer, { limitInputPixels: 40_000_000, failOn: "error" }).metadata();
+        if (!metadata.width || !metadata.height) throw new Error("Không đọc được kích thước ảnh nhúng trong Word.");
+        const imageId = crypto.randomUUID();
+        const widths = [...new Set([480, 960, 1440].filter((width) => width < metadata.width!).concat(metadata.width))];
+        const variants = await Promise.all(widths.map(async (width) => {
+          const output = await sharp(buffer, { limitInputPixels: 40_000_000, failOn: "error" }).rotate().resize({ width, withoutEnlargement: true }).webp({ quality: 82, effort: 4 }).toBuffer({ resolveWithObject: true });
+          const uploaded = await uploadNewsImage(output.data, "news/word", "webp", `${imageId}-${output.info.width}`);
+          return { ...uploaded, width: output.info.width, height: output.info.height };
+        }));
+        const largest = variants.reduce((best, item) => item.width > best.width ? item : best, variants[0]);
+        return { src: largest.url, srcset: variants.map((item) => `${item.url} ${item.width}w`).join(", "), sizes: "(max-width: 800px) 100vw, 785px", width: String(largest.width), height: String(largest.height), alt: "" };
       }),
     },
   );
   const html = sanitizeHtml(result.value, {
     allowedTags,
-    allowedAttributes: { a: ["href", "target", "rel"], img: ["src", "alt"], th: ["colspan", "rowspan"], td: ["colspan", "rowspan"] },
+    allowedAttributes: { a: ["href", "target", "rel"], img: ["src", "srcset", "sizes", "width", "height", "alt"], th: ["colspan", "rowspan"], td: ["colspan", "rowspan"] },
     allowedSchemes: ["http", "https", "mailto"],
     transformTags: { a: sanitizeHtml.simpleTransform("a", { target: "_blank", rel: "noopener noreferrer" }) },
   }).trim();

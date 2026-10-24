@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
 import {
   ArrowRight,
-  ArrowUpRight,
-  Award,
   BookOpen,
   Briefcase,
   Building2,
@@ -34,43 +32,64 @@ import {
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { ResourcesConsultation } from "@/features/home/components/ResourcesConsultation";
-import { getProgrammeCurricula, getProgrammeDetails } from "@/data/curricula";
 import {
-  type Programme,
-  getProgrammeTuition,
-} from "@/data/programmes";
-import { logisticsContent } from "../logistics";
+  getProgrammeCurricula,
+  getCurriculumOrientation,
+  getCurriculumGraduationProject,
+} from "@/data/curricula";
+import { type Programme, getProgrammeTuition } from "@/data/programmes";
 import styles from "./ProgrammeDetailPage.module.css";
+import { ProgrammeCurriculumGroups } from "./ProgrammeCurriculumGroups";
+import {
+  ProgrammeAdmissions,
+  ProgrammeCompletion,
+  ProgrammeFees,
+  ProgrammeSemesterPlan,
+} from "./ProgrammeSupplementaryContent";
+import { programmeSharedContent } from "@/data/programmes/shared-content";
 
 /* ──────────────────────────────────────────────────────────────
    Pending page — shown when details are not yet ready
    ────────────────────────────────────────────────────────────── */
 function PendingPage({ programme }: { programme: Programme }) {
   return (
-    <main className={`subpage ${styles.page}`} id="main-content">
+    <main className={`subpage ${styles.page}`} data-programme={programme.id} id="main-content">
       <SiteHeader compact />
-      <div className={styles.container} style={{ padding: "80px 24px" }}>
+      <div className={`${styles.container} ${styles.pendingContainer}`}>
         <p className={styles.heroDegree}>{programme.degree}</p>
-        <h1 className={styles.heroTitle} style={{ color: "#0f172a" }}>{programme.title}</h1>
-        <p style={{ fontSize: "16px", color: "#64748b", margin: "20px 0 30px" }}>
-          Thông tin chi tiết ngành {programme.title} đang được cập nhật.
+        <h1 className={styles.heroTitle} data-pending="true">
+          {programme.title}
+        </h1>
+        <p className={styles.pendingSummary}>
+          {programme.summary ?? `Thông tin chi tiết ngành ${programme.title} đang được cập nhật.`}
         </p>
-        <div style={{ display: "flex", gap: "24px", marginBottom: "40px" }}>
+        <div className={styles.pendingFacts}>
           <div>
-            <div style={{ fontSize: "12px", color: "#94a3b8" }}>Tín chỉ</div>
-            <strong style={{ fontSize: "16px" }}>{programme.creditsLabel ?? programme.credits}</strong>
+            <div className={styles.pendingFactLabel}>
+              {programmeSharedContent.facts.pendingCredits}
+            </div>
+            <strong className={styles.pendingFactValue}>
+              {programme.creditsLabel ?? programme.credits}
+            </strong>
           </div>
           <div>
-            <div style={{ fontSize: "12px", color: "#94a3b8" }}>Thời gian</div>
-            <strong style={{ fontSize: "16px" }}>{programme.duration}</strong>
+            <div className={styles.pendingFactLabel}>
+              {programmeSharedContent.facts.pendingDuration}
+            </div>
+            <strong className={styles.pendingFactValue}>{programme.duration}</strong>
           </div>
           <div>
-            <div style={{ fontSize: "12px", color: "#94a3b8" }}>Học phí toàn khóa</div>
-            <strong style={{ fontSize: "16px" }}>{getProgrammeTuition(programme)}</strong>
+            <div className={styles.pendingFactLabel}>
+              {programmeSharedContent.facts.pendingTuition}
+            </div>
+            <strong className={styles.pendingFactValue}>{getProgrammeTuition(programme)}</strong>
           </div>
         </div>
       </div>
-      <ResourcesConsultation showResources={false} initialProgramme={programme.title} />
+      <ResourcesConsultation
+        initialProgramme={programme.title}
+        intro={programme.pageContent?.consultation.formIntro}
+      />
       <SiteFooter />
     </main>
   );
@@ -84,13 +103,15 @@ function SectionHeader({ index, title }: { index: string; title: string }) {
     <div className={styles.sectionHeader}>
       <span className={styles.sectionIndex}>{index}</span>
       <span className={styles.sectionDivider} aria-hidden="true" />
-      <h2 className={styles.sectionTitle}>{title}</h2>
+      <h2 id={`sec-${index}-title`} className={styles.sectionTitle}>
+        {title}
+      </h2>
     </div>
   );
 }
 
 /* ──────────────────────────────────────────────────────────────
-   Static Logistics specific data sets matching reference design
+   Presentation types shared by every programme
    ────────────────────────────────────────────────────────────── */
 
 interface HighlightItem {
@@ -99,282 +120,146 @@ interface HighlightItem {
   text: string;
 }
 
-const logisticsHighlights: HighlightItem[] = [
-  {
-    Icon: GitFork,
-    title: "Hai định hướng đào tạo linh hoạt",
-    text: "Ứng dụng và nghiên cứu, đáp ứng những mục tiêu phát triển khác nhau.",
-  },
-  {
-    Icon: TrendingUp,
-    title: "Kiến thức gắn với thực tiễn",
-    text: "Chú trọng giải quyết các vấn đề thực tế trong Logistics và chuỗi cung ứng.",
-  },
-  {
-    Icon: Cpu,
-    title: "Tiếp cận công nghệ và xu hướng mới",
-    text: "Tích hợp phân tích dữ liệu, chuyển đổi số và phát triển bền vững trong chương trình.",
-  },
-  {
-    Icon: Users,
-    title: "Đội ngũ giảng viên và mạng lưới doanh nghiệp",
-    text: "Giảng viên giàu kinh nghiệm cùng cơ hội học tập, kết nối và trải nghiệm thực tế.",
-  },
-];
-
 interface AudienceItem {
-  image: string;
+  imageSource?: string;
+  image?: string;
+  alt?: string;
   title: string;
   text: string;
 }
 
-// Real photographs: Unsplash License (linked in the task notes) and official VLU media.
-const logisticsPhotos = {
-  hero: "https://images.unsplash.com/photo-1564035105550-e1f02aa8556b?auto=format&fit=crop&w=2400&q=85",
-  warehouse: "https://images.unsplash.com/photo-1764795850513-fa8a469a4600?auto=format&fit=crop&w=1200&q=85",
-  factory: "https://images.unsplash.com/photo-1589793463357-5fb813435467?auto=format&fit=crop&w=1200&q=85",
-  careerGrowth: "https://images.unsplash.com/photo-1758876021840-0209f3bd38f4?auto=format&fit=crop&w=1200&q=85",
-  lecturer: "https://images.unsplash.com/photo-1758270704851-adff797a2010?auto=format&fit=crop&w=1200&q=85",
-  portTruck: "https://images.unsplash.com/photo-1774929108280-652f82f21d9f?auto=format&fit=crop&w=1200&q=85",
-  campus: "/images/pages/programmes/logistics/campus-vlu.jpg",
-};
-
-const logisticsAudience: AudienceItem[] = [
-  {
-    image: logisticsPhotos.warehouse,
-    title: "Chuyên viên và nhà quản lý trong lĩnh vực Logistics",
-    text: "Những người đang làm việc trong vận tải, kho bãi, xuất nhập khẩu, phân phối, mua hàng và quản lý chuỗi cung ứng.",
-  },
-  {
-    image: logisticsPhotos.factory,
-    title: "Nhân sự trong lĩnh vực sản xuất và kinh doanh",
-    text: "Những người muốn phát triển năng lực hoạch định, tối ưu vận hành, quản trị cung ứng và nâng cao hiệu quả hoạt động doanh nghiệp.",
-  },
-  {
-    image: logisticsPhotos.careerGrowth,
-    title: "Người mong muốn chuyển hướng hoặc phát triển nghề nghiệp",
-    text: "Người tốt nghiệp đại học ở các lĩnh vực phù hợp, có định hướng chuyển sang Logistics và quản lý chuỗi cung ứng hoặc đảm nhận những vị trí yêu cầu chuyên môn cao hơn.",
-  },
-  {
-    image: logisticsPhotos.lecturer,
-    title: "Người có định hướng nghiên cứu và giảng dạy",
-    text: "Những người mong muốn phát triển năng lực nghiên cứu khoa học, tham gia giảng dạy đại học hoặc chuẩn bị cho lộ trình học tập ở trình độ tiến sĩ.",
-  },
-];
-
 interface CareerRoleItem {
+  group?: string;
   Icon: LucideIcon;
   title: string;
   sub: string;
 }
-
-const logisticsCareers: CareerRoleItem[] = [
-  {
-    Icon: Network,
-    title: "Quản lý chuỗi cung ứng",
-    sub: "Supply Chain Manager, Supply Chain Planning Manager",
-  },
-  {
-    Icon: Building2,
-    title: "Quản lý mua hàng và sản xuất",
-    sub: "Procurement Manager, Production Planning Manager",
-  },
-  {
-    Icon: Truck,
-    title: "Quản lý Logistics",
-    sub: "Logistics Manager, Transportation Manager",
-  },
-  {
-    Icon: TrendingUp,
-    title: "Phân tích và tư vấn",
-    sub: "Supply Chain Analyst, Logistics Consultant",
-  },
-  {
-    Icon: Warehouse,
-    title: "Quản lý vận hành",
-    sub: "Operations Manager, Warehouse Manager",
-  },
-  {
-    Icon: GraduationCap,
-    title: "Nghiên cứu và giảng dạy",
-    sub: "Nghiên cứu viên, giảng viên, học tiếp tiến sĩ",
-  },
-];
 
 interface FaqQuestion {
   question: string;
   answer: string;
 }
 
-const logisticsFaqs: FaqQuestion[] = [
-  {
-    question: "Điều kiện tuyển sinh là gì?",
-    answer:
-      "Chương trình tuyển sinh theo hình thức xét tuyển hồ sơ. Ứng viên tốt nghiệp Đại học ngành đúng, phù hợp hoặc ngành gần với ngành đăng ký dự tuyển (có thể cần bổ sung kiến thức theo quy định) và đạt chuẩn đầu vào tiếng Anh của Trường Đại học Văn Lang.",
-  },
-  {
-    question: "Chương trình có học bổng không?",
-    answer:
-      "Trường Đại học Văn Lang có nhiều chính sách học bổng đa dạng từ 10% đến 30% học phí toàn khóa dành cho cựu sinh viên Văn Lang, cán bộ công tác tại các đơn vị đối tác, con thương binh - bệnh binh và học viên có thành tích xuất sắc, cùng chính sách ưu đãi giảm thêm khi đóng học phí một lần.",
-  },
-  {
-    question: "Lịch học được sắp xếp như thế nào?",
-    answer:
-      "Lịch học được bố trí linh hoạt ngoài giờ hành chính (buổi tối trong tuần và cả ngày Thứ Bảy, Chủ Nhật) nhằm tạo điều kiện thuận lợi tối đa cho học viên vừa đi làm vừa nâng cao trình độ chuyên môn.",
-  },
-  {
-    question: "Khác biệt giữa hai định hướng là gì?",
-    answer:
-      "Định hướng ứng dụng chú trọng giải quyết bài toán vận hành thực tế tại doanh nghiệp, kết thúc bằng Đề án tốt nghiệp. Định hướng nghiên cứu tập trung sâu vào phương pháp luận khoa học, năng lực phân tích học thuật và chuẩn bị cho học viên học tiếp lên bậc Tiến sĩ, kết thúc bằng Luận văn tốt nghiệp.",
-  },
-];
-
 /* ──────────────────────────────────────────────────────────────
    Main Component: ProgrammeDetailPage
    ────────────────────────────────────────────────────────────── */
 export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
-  if (programme.detailsPending) {
-    return <PendingPage programme={programme} />;
-  }
-
-  const isLogistics = programme.id === "logistics";
-  const details = getProgrammeDetails(programme);
+  const pageContent = programme.pageContent;
   const curricula = getProgrammeCurricula(programme);
 
   // Active track state for Section 05 ("ung-dung" = 0, "nghien-cuu" = 1)
   const [activeTrackIndex, setActiveTrackIndex] = useState<number>(0);
-  const [openModules, setOpenModules] = useState<Record<number, boolean>>({});
 
-  const toggleModule = (index: number) => {
-    setOpenModules((prev) => ({ ...prev, [index]: !prev[index] }));
-  };
+  if (programme.detailsPending) {
+    return <PendingPage programme={programme} />;
+  }
+
+  if (!pageContent) {
+    return <PendingPage programme={programme} />;
+  }
 
   /* ── 01. Dynamic Fact ribbon items ───────────────────────── */
   const quickFacts = [
     {
       Icon: GraduationCap,
-      label: "Trình độ",
+      label: pageContent.facts.degree,
       value: programme.degree,
     },
     {
       Icon: FileText,
-      label: "Mã ngành",
-      value: isLogistics ? "8340101" : programme.code,
+      label: pageContent.facts.code,
+      value: pageContent.facts.displayCode ?? programme.code,
     },
     {
       Icon: Clock,
-      label: "Thời gian đào tạo",
-      value: isLogistics ? "Theo CTĐT" : programme.duration,
+      label: pageContent.facts.duration,
+      value: pageContent.facts.displayDuration ?? programme.duration,
     },
     {
       Icon: GitFork,
-      label: "Định hướng",
-      value: programme.orientations && programme.orientations.length > 1
-        ? `${String(programme.orientations.length).padStart(2, "0")} định hướng`
-        : programme.orientation,
+      label: pageContent.facts.orientation,
+      value:
+        programme.orientations && programme.orientations.length > 1
+          ? `${String(programme.orientations.length).padStart(2, "0")} ${pageContent.facts.orientationUnit}`
+          : programme.orientation,
     },
     {
       Icon: Calendar,
-      label: "Lịch học",
-      value: "Ngoài giờ hành chính",
+      label: pageContent.facts.schedule,
+      value: programme.schedule ?? pageContent.facts.fallbackSchedule,
     },
     {
       Icon: CreditCard,
-      label: "Học phí",
-      value: isLogistics ? "Theo thông báo" : getProgrammeTuition(programme),
+      label: pageContent.facts.tuition,
+      value: pageContent.facts.displayTuition ?? getProgrammeTuition(programme),
     },
   ];
 
   /* ── 02. Overview content ────────────────────────────────── */
-  const overviewParagraphs = isLogistics
-    ? [
-        "Chương trình Thạc sĩ Logistics và Quản lý chuỗi cung ứng của Trường Đại học Văn Lang được thiết kế nhằm phát triển kiến thức chuyên sâu, tư duy chiến lược và năng lực quản trị trong lĩnh vực Logistics và chuỗi cung ứng.",
-        "Chương trình trang bị cho người học khả năng phân tích, hoạch định, tổ chức và tối ưu hóa các hoạt động Logistics và chuỗi cung ứng; đồng thời tiếp cận các xu hướng mới như chuyển đổi số, phân tích dữ liệu, ứng dụng công nghệ và phát triển bền vững.",
-        "Với hai định hướng đào tạo: ứng dụng và nghiên cứu, chương trình tạo điều kiện để người học lựa chọn lộ trình phù hợp với mục tiêu phát triển nghề nghiệp, nâng cao năng lực quản trị hoặc tiếp tục nghiên cứu chuyên sâu.",
-      ]
-    : [
-        details.intro,
-        ...(details.highlights.length > 0
-          ? [details.highlights.join(" ")]
-          : ["Chương trình đào tạo chất lượng cao tại Viện Sau Đại học Văn Lang."]),
-      ];
+  const overviewParagraphs = pageContent.section01.overview;
 
   /* ── 03. Highlights ──────────────────────────────────────── */
-  const highlightsList: HighlightItem[] = isLogistics
-    ? logisticsHighlights
-    : details.highlights.map((h, i) => {
-        const fallbackIcons = [GitFork, TrendingUp, Cpu, Users];
-        return {
-          Icon: fallbackIcons[i % fallbackIcons.length],
-          title: `Đặc điểm nổi bật ${i + 1}`,
-          text: h,
-        };
-      });
+  const highlightIcons = [GitFork, TrendingUp, Cpu, Users];
+  const highlightsList: HighlightItem[] = pageContent.section02.highlights.map((item, i) => ({
+    Icon: highlightIcons[i % highlightIcons.length],
+    ...item,
+  }));
 
   /* ── 04. Audience ────────────────────────────────────────── */
-  const audienceList: AudienceItem[] = isLogistics
-    ? logisticsAudience
-    : (details.outcomes && details.outcomes.length > 0
-        ? details.outcomes.map((f: string, i: number) => ({
-            image: [logisticsPhotos.warehouse, logisticsPhotos.factory, logisticsPhotos.careerGrowth, logisticsPhotos.lecturer][i % 4],
-            title: `Nhóm đối tượng ${i + 1}`,
-            text: f,
-          }))
-        : logisticsAudience);
+  const audienceList: readonly AudienceItem[] = pageContent.section03.audience;
 
   /* ── 05. Careers ─────────────────────────────────────────── */
-  const careersList: CareerRoleItem[] = isLogistics
-    ? logisticsCareers
-    : details.careers.map((c, i) => {
-        const icons = [Network, Building2, Truck, TrendingUp, Warehouse, GraduationCap];
-        return {
-          Icon: icons[i % icons.length],
-          title: c,
-          sub: `Hướng đi và vai trò chuyên môn trong ngành ${programme.title}`,
-        };
-      });
+  const careerIcons = [Network, Building2, Truck, TrendingUp, Warehouse, GraduationCap];
+  const careersList: CareerRoleItem[] = pageContent.section04.careers.map((item, i) => ({
+    Icon: careerIcons[i % careerIcons.length],
+    ...item,
+  }));
 
   /* ── 06. Curriculum tracks & selected track data ─────────── */
   const availableTracks = curricula.length > 0 ? curricula : [];
   const currentTrack = availableTracks[activeTrackIndex] ?? availableTracks[0];
+  const usesDefaultTags =
+    pageContent.section01.tags.length === 2 &&
+    pageContent.section01.tags.every(
+      (tag, index) => tag === programmeSharedContent.overview.tags[index],
+    );
+  const overviewTags = usesDefaultTags
+    ? [...new Set(availableTracks.map((track) => getCurriculumOrientation(programme, track)))]
+    : pageContent.section01.tags;
 
-  const orientationName =
-    activeTrackIndex === 1 ? "Định hướng nghiên cứu" : "Định hướng ứng dụng";
-
+  const orientationIndex =
+    getCurriculumOrientation(programme, currentTrack) === "Nghiên cứu" ? 1 : 0;
   const graduationProjectName =
-    activeTrackIndex === 1 ? "Luận văn tốt nghiệp" : "Đề án tốt nghiệp";
-
-  const curriculumIntroText = isLogistics
-    ? activeTrackIndex === 1
-      ? "Định hướng nghiên cứu tập trung vào phương pháp luận khoa học, năng lực phân tích sâu và kỹ năng nghiên cứu độc lập nhằm giải quyết các vấn đề học thuật và chiến lược chuỗi cung ứng."
-      : "Định hướng ứng dụng trang bị kiến thức chuyên sâu và kỹ năng thực hành nhằm nâng cao năng lực quản trị, giải quyết các vấn đề thực tiễn trong lĩnh vực Logistics và chuỗi cung ứng."
-    : `Chương trình ${orientationName} ngành ${programme.title} được xây dựng theo chuẩn quốc tế, đáp ứng linh hoạt mục tiêu phát triển chuyên môn của người học.`;
+    getCurriculumGraduationProject(currentTrack) ??
+    pageContent.section05.graduationProjects[orientationIndex] ??
+    pageContent.section05.graduationProjects[0];
+  const curriculumIntroText =
+    currentTrack?.intro ??
+    pageContent.section05.curriculumIntro[orientationIndex] ??
+    pageContent.section05.curriculumIntro[0];
+  const generalFacts = [
+    {
+      label: pageContent.section05.creditsLabel,
+      value:
+        pageContent.section05.trackCredits?.[activeTrackIndex] ??
+        `${programme.credits} ${pageContent.section05.creditUnit}`,
+    },
+    ...(currentTrack?.generalFacts ??
+      pageContent.section05.generalFacts ?? [
+        {
+          label: pageContent.section05.durationLabel,
+          value: pageContent.section05.trackDurations?.[activeTrackIndex] ?? programme.duration,
+        },
+        { label: pageContent.section05.studyModeLabel, value: programme.studyMode },
+        { label: pageContent.section05.graduationLabel, value: graduationProjectName },
+      ]),
+  ];
 
   /* ── 07. FAQs ────────────────────────────────────────────── */
-  const faqsList: FaqQuestion[] = isLogistics
-    ? logisticsFaqs
-    : logisticsContent.faq.length > 0
-    ? logisticsContent.faq
-    : [
-        {
-          question: "Điều kiện tuyển sinh là gì?",
-          answer:
-            "Tuyển sinh theo hình thức xét tuyển hồ sơ tốt nghiệp đại học ngành đúng, phù hợp hoặc ngành gần và đáp ứng chuẩn tiếng Anh đầu vào theo quy định.",
-        },
-        {
-          question: "Chương trình có học bổng không?",
-          answer:
-            "Trường Đại học Văn Lang có nhiều chính sách học bổng hấp dẫn từ 10% đến 30% dành cho cựu sinh viên, đối tượng chính sách và học viên xuất sắc.",
-        },
-        {
-          question: "Lịch học được sắp xếp như thế nào?",
-          answer:
-            "Lịch học được sắp xếp ngoài giờ hành chính vào các buổi tối trong tuần hoặc cuối tuần nhằm tạo điều kiện thuận lợi cho học viên vừa học vừa làm.",
-        },
-      ];
+  const faqsList: readonly FaqQuestion[] = pageContent.faq.faqs;
 
   return (
-    <main className={`subpage ${styles.page}`} id="main-content">
+    <main className={`subpage ${styles.page}`} data-programme={programme.id} id="main-content">
       <SiteHeader compact />
 
       {/* ────────────────────────────────────────────────────────
@@ -383,8 +268,12 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
       <section className={styles.hero} aria-labelledby="programme-title">
         <Image
           className={styles.heroBackground}
-          src={isLogistics ? logisticsPhotos.hero : (programme.bannerImage || logisticsPhotos.hero)}
-          alt={`Ngành ${programme.title} - Đại học Văn Lang`}
+          src={
+            pageContent.hero.heroImage ||
+            programme.bannerImage ||
+            programmeSharedContent.hero.fallbackImage
+          }
+          alt={pageContent.hero.imageAlt ?? `Ngành ${programme.title} - Đại học Văn Lang`}
           fill
           priority
           sizes="100vw"
@@ -394,38 +283,30 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
         <div className={styles.heroInner}>
           {/* Subtle slogan watermark on the right */}
           <div className={styles.heroSloganWatermark} aria-hidden="true">
-            <span>CONNECT</span>
-            <span>PEOPLE</span>
-            <span>&amp; NEW OPPORTUNITIES</span>
-            <span>FOR A BETTER</span>
-            <span>{isLogistics ? "SUPPLY CHAIN" : "FUTURE"}</span>
+            {programmeSharedContent.hero.sloganLines.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+            <span>{pageContent.hero.heroSlogan ?? programmeSharedContent.hero.fallbackSlogan}</span>
           </div>
 
           <div className={styles.heroContent}>
             <span className={styles.heroDegree}>{programme.degree.toUpperCase()}</span>
             <h1 id="programme-title" className={styles.heroTitle}>
-              {isLogistics ? (
-                <>
-                  Logistics và
-                  <br />
-                  Quản lý chuỗi cung ứng
-                </>
-              ) : (
-                programme.title
-              )}
+              {(pageContent.hero.heroTitle ?? programme.title).split("\n").map((line, index) => (
+                <React.Fragment key={line}>
+                  {index > 0 && " "}
+                  {line}
+                </React.Fragment>
+              ))}
             </h1>
-            <p className={styles.heroLead}>
-              {isLogistics
-                ? "Kiến tạo năng lực quản trị chuỗi cung ứng hiện đại dưới góc nhìn toàn cầu, từ tri thức đến thực tiễn."
-                : (details.intro || "Phát triển chuyên môn sâu và năng lực quản trị chiến lược tại Viện Sau Đại học Văn Lang.")}
-            </p>
+            <p className={styles.heroLead}>{pageContent.hero.heroLead}</p>
 
             <div className={styles.heroCtas}>
-              <a className={styles.btnPrimary} href="#consultation">
-                Đăng ký tư vấn <ArrowRight size={17} aria-hidden="true" />
+              <a className={styles.btnPrimary} href={pageContent.hero.consultation.href}>
+                {pageContent.hero.consultation.text} <ArrowRight size={17} aria-hidden="true" />
               </a>
-              <Link className={styles.btnSecondary} href="/admissions">
-                Tìm hiểu tuyển sinh <ArrowRight size={17} aria-hidden="true" />
+              <Link className={styles.btnSecondary} href={pageContent.hero.admissions.href}>
+                {pageContent.hero.admissions.text} <ArrowRight size={17} aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -436,73 +317,152 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
           QUICK INFO FACTS BAR
           ──────────────────────────────────────────────────────── */}
       <div className={styles.factsBarWrapper}>
-        <div className={styles.factsBar}>
-          {quickFacts.map(({ Icon, label, value }) => (
-            <div key={label} className={styles.factItem}>
-              <div className={styles.factIcon} aria-hidden="true">
-                <Icon size={20} strokeWidth={1.8} />
-              </div>
-              <div className={styles.factContent}>
-                <span className={styles.factLabel}>{label}</span>
-                <span className={styles.factValue}>{value}</span>
-              </div>
-            </div>
-          ))}
+        <div
+          className={`${styles.factsBar} ${pageContent.facts.quickFactsDetailed ? styles.factsBarDetailed : ""}`}
+        >
+          {pageContent.facts.quickFactsDetailed
+            ? pageContent.facts.quickFactsDetailed.map(({ label, value, detail }) => {
+                const Icon =
+                  (
+                    {
+                      "Mã ngành": FileText,
+                      "Mã chương trình": FileText,
+                      "Định hướng": GitFork,
+                      "Khối lượng": BookOpen,
+                      "Thời gian chuẩn": Clock,
+                      "Khối lượng chương trình": BookOpen,
+                      "Thời gian đào tạo": Clock,
+                      "Định hướng đào tạo": GitFork,
+                      "Hình thức đào tạo": GraduationCap,
+                      "Ngôn ngữ đào tạo": Users,
+                      "Học phí toàn khóa": CreditCard,
+                    } satisfies Record<string, LucideIcon>
+                  )[label] ?? BookOpen;
+                return (
+                  <div key={label} className={styles.factItem}>
+                    <div className={styles.factIcon} aria-hidden="true">
+                      <Icon size={20} strokeWidth={1.8} />
+                    </div>
+                    <div className={styles.factContent}>
+                      <span className={styles.factLabel}>{label}</span>
+                      <span className={styles.factValue}>{value}</span>
+                      {detail && <span className={styles.factDetail}>{detail}</span>}
+                    </div>
+                  </div>
+                );
+              })
+            : quickFacts.map(({ Icon, label, value }) => (
+                <div key={label} className={styles.factItem}>
+                  <div className={styles.factIcon} aria-hidden="true">
+                    <Icon size={20} strokeWidth={1.8} />
+                  </div>
+                  <div className={styles.factContent}>
+                    <span className={styles.factLabel}>{label}</span>
+                    <span className={styles.factValue}>{value}</span>
+                  </div>
+                </div>
+              ))}
         </div>
       </div>
+
+      <nav className={styles.sectionNav} aria-label="Nội dung chương trình">
+        {[
+          ["tong-quan", "Tổng quan"],
+          ["diem-noi-bat", "Điểm nổi bật"],
+          [
+            "doi-tuong",
+            pageContent.section03.audienceHeading === "Năng lực phát triển qua chương trình"
+              ? "Năng lực"
+              : "Đối tượng",
+          ],
+          ["nghe-nghiep", "Hướng phát triển"],
+          ["chuong-trinh", "Chương trình"],
+          ["hoc-phi", "Học phí"],
+          ["faq", "Câu hỏi thường gặp"],
+        ].map(([id, label]) => (
+          <a href={`#${id}`} key={id}>
+            {label}
+          </a>
+        ))}
+      </nav>
 
       {/* ────────────────────────────────────────────────────────
           01 / TỔNG QUAN CHƯƠNG TRÌNH
           ──────────────────────────────────────────────────────── */}
       <section id="tong-quan" className={styles.sectionOverview} aria-labelledby="sec-01-title">
         <div className={styles.container}>
-          <SectionHeader index="01" title="Tổng quan chương trình" />
+          <SectionHeader
+            index={pageContent.section01.sectionNumber}
+            title={pageContent.section01.overviewTitle}
+          />
 
-          <div className={styles.overviewGrid}>
+          <div
+            className={styles.overviewGrid}
+            data-no-media={pageContent.section01.overviewImage === null}
+          >
             <div className={styles.overviewCopy}>
+              {pageContent.section01.headline && (
+                <h3 className={styles.contentHeadline}>{pageContent.section01.headline}</h3>
+              )}
               {overviewParagraphs.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
 
-              <a
-                className={styles.btnDownloadOutline}
-                href="#consultation"
-                aria-label="Tải brochure chương trình đào tạo"
-              >
-                <Download size={17} aria-hidden="true" />
-                <span>Tải brochure chương trình</span>
-                <Download size={17} aria-hidden="true" />
-              </a>
+              {pageContent.section01.focusAreas && (
+                <ul className={styles.focusAreas}>
+                  {pageContent.section01.focusAreas.map((area) => (
+                    <li key={area}>{area}</li>
+                  ))}
+                </ul>
+              )}
+              {pageContent.section01.link && (
+                <a
+                  className={styles.btnDownloadOutline}
+                  href={pageContent.section01.link.href}
+                  aria-label={pageContent.section01.link.ariaLabel}
+                >
+                  <ArrowRight size={17} aria-hidden="true" />
+                  <span>{pageContent.section01.link.text}</span>
+                </a>
+              )}
             </div>
 
-            <div className={styles.overviewMedia}>
-              <div className={styles.overviewImageWrap}>
-                <Image
-                  src={isLogistics ? logisticsPhotos.campus : "/images/pages/programmes/logistics/campus-building.jpg"}
-                  alt="Trường Đại học Văn Lang cơ sở Đặng Thùy Trâm"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 45vw"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div className={styles.overviewRibbon}>
-                <h3 className={styles.ribbonTitle}>Hai định hướng đào tạo</h3>
-                <div className={styles.ribbonItems}>
-                  <div className={styles.ribbonItem}>
-                    <span className={styles.ribbonBadge} aria-hidden="true">
-                      <Target size={16} />
-                    </span>
-                    <span>Ứng dụng</span>
+            {(pageContent.section01.overviewImage !== null ||
+              pageContent.section01.tags.length > 0) && (
+              <div className={styles.overviewMedia}>
+                {pageContent.section01.overviewImage !== null && (
+                  <div className={styles.overviewImageWrap}>
+                    <Image
+                      src={
+                        pageContent.section01.overviewImage ?? pageContent.section01.imageFallback
+                      }
+                      alt={pageContent.section01.imageAlt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 45vw"
+                      className={styles.overviewPhoto}
+                    />
                   </div>
-                  <div className={styles.ribbonItem}>
-                    <span className={styles.ribbonBadge} aria-hidden="true">
-                      <FlaskConical size={16} />
-                    </span>
-                    <span>Nghiên cứu</span>
+                )}
+                {pageContent.section01.tags.length > 0 && (
+                  <div className={styles.overviewRibbon}>
+                    <h3 className={styles.ribbonTitle}>{pageContent.section01.ribbonTitle}</h3>
+                    <div className={styles.ribbonItems}>
+                      {overviewTags.map((tag, index) => {
+                        const Icon = index === 0 ? Target : FlaskConical;
+                        return (
+                          <div className={styles.ribbonItem} key={tag}>
+                            <span className={styles.ribbonBadge} aria-hidden="true">
+                              <Icon size={16} />
+                            </span>
+                            <span>{tag}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
@@ -510,21 +470,63 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
       {/* ────────────────────────────────────────────────────────
           02 / ĐIỂM NỔI BẬT CỦA CHƯƠNG TRÌNH
           ──────────────────────────────────────────────────────── */}
-      <section id="diem-noi-bat" className={styles.sectionHighlights} aria-labelledby="sec-02-title">
+      <section
+        id="diem-noi-bat"
+        className={styles.sectionHighlights}
+        aria-labelledby="sec-02-title"
+      >
         <div className={styles.container}>
-          <SectionHeader index="02" title="Điểm nổi bật của chương trình" />
+          <SectionHeader
+            index={pageContent.section02.sectionNumber}
+            title={pageContent.section02.heading}
+          />
 
           <div className={styles.highlightGrid}>
-            {highlightsList.map(({ Icon, title, text }) => (
+            {highlightsList.slice(0, 3).map(({ Icon, title, text }) => (
               <article key={title} className={styles.highlightCard}>
                 <div className={styles.highlightIconBox} aria-hidden="true">
                   <Icon size={24} strokeWidth={1.8} />
                 </div>
-                <h3 className={styles.highlightTitle}>{title}</h3>
+                <h3 className={`${styles.highlightTitle} type-card-title`}>{title}</h3>
                 <p className={styles.highlightText}>{text}</p>
               </article>
             ))}
           </div>
+          {highlightsList.length > 3 && (
+            <details className={styles.moreHighlights}>
+              <summary>Xem thêm điểm nổi bật ({highlightsList.length - 3})</summary>
+              <div className={styles.highlightGrid}>
+                {highlightsList.slice(3).map(({ Icon, title, text }) => (
+                  <article key={title} className={styles.highlightCard}>
+                    <div className={styles.highlightIconBox} aria-hidden="true">
+                      <Icon size={24} strokeWidth={1.8} />
+                    </div>
+                    <h3 className={`${styles.highlightTitle} type-card-title`}>{title}</h3>
+                    <p className={styles.highlightText}>{text}</p>
+                  </article>
+                ))}
+              </div>
+            </details>
+          )}
+
+          {pageContent.section02.learningOutcomes && (
+            <details className={styles.outcomesPanel} open>
+              <summary className={styles.outcomesHeading}>
+                <span>{pageContent.section02.outcomesHeading}</span>
+                <span className={styles.outcomesToggle} aria-hidden="true" />
+              </summary>
+              <p className={styles.outcomesIntro}>{pageContent.section02.learningOutcomes.intro}</p>
+              <div className={styles.outcomesGrid}>
+                {pageContent.section02.learningOutcomes.items.map((outcome) => (
+                  <article className={styles.outcomeItem} key={`${outcome.code}-${outcome.title}`}>
+                    <span className={styles.outcomeCode}>{outcome.code}</span>
+                    {outcome.title && <h3>{outcome.title}</h3>}
+                    <p>{outcome.text}</p>
+                  </article>
+                ))}
+              </div>
+            </details>
+          )}
         </div>
       </section>
 
@@ -533,27 +535,52 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
           ──────────────────────────────────────────────────────── */}
       <section id="doi-tuong" className={styles.sectionAudience} aria-labelledby="sec-03-title">
         <div className={styles.container}>
-          <SectionHeader index="03" title="Chương trình phù hợp với ai?" />
+          <SectionHeader
+            index={pageContent.section03.sectionNumber}
+            title={pageContent.section03.audienceHeading}
+          />
 
+          {pageContent.section03.headline && (
+            <h3 className={styles.contentHeadline}>{pageContent.section03.headline}</h3>
+          )}
+          {pageContent.section03.intro?.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          {pageContent.section03.illustration && (
+            <figure className={styles.audienceIllustration}>
+              <div className={styles.audienceIllustrationImage}>
+                <Image
+                  src={pageContent.section03.illustration.src}
+                  alt={pageContent.section03.illustration.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 80vw"
+                  className={styles.audiencePhoto}
+                />
+              </div>
+            </figure>
+          )}
           <div className={styles.audienceGrid}>
             {audienceList.map((item, idx) => (
               <article key={idx} className={styles.audienceCard}>
-                <div className={styles.audienceImageWrap}>
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    style={{ objectFit: "cover", objectPosition: "center center", transition: "transform 0.3s ease" }}
-                  />
-                </div>
+                {item.image && (
+                  <div className={styles.audienceImageWrap}>
+                    <Image
+                      src={item.image}
+                      alt={item.alt ?? item.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className={styles.audiencePhoto}
+                    />
+                  </div>
+                )}
                 <div className={styles.audienceBody}>
-                  <h3 className={styles.audienceTitle}>{item.title}</h3>
+                  <h3 className={`${styles.audienceTitle} type-card-title`}>{item.title}</h3>
                   <p className={styles.audienceText}>{item.text}</p>
                 </div>
               </article>
             ))}
           </div>
+          <ProgrammeAdmissions blocks={pageContent.section03.requirements} />
         </div>
       </section>
 
@@ -563,192 +590,136 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
       <section id="nghe-nghiep" className={styles.sectionCareers} aria-labelledby="sec-04-title">
         <Image
           className={styles.careersBackground}
-          src={isLogistics ? logisticsPhotos.portTruck : logisticsPhotos.hero}
+          src={
+            pageContent.section04.careerImage ||
+            programme.bannerImage ||
+            pageContent.hero.heroImage ||
+            programmeSharedContent.hero.fallbackImage
+          }
           alt=""
           fill
           sizes="100vw"
           aria-hidden="true"
         />
         <div className={styles.container}>
-          <SectionHeader index="04" title="Cơ hội nghề nghiệp và phát triển" />
+          <SectionHeader
+            index={pageContent.section04.sectionNumber}
+            title={pageContent.section04.careerHeading}
+          />
 
+          {pageContent.section04.headline && (
+            <h3 className={styles.contentHeadline}>{pageContent.section04.headline}</h3>
+          )}
+          {pageContent.section04.intro && <p>{pageContent.section04.intro}</p>}
           <div className={styles.careersLayout}>
             <div className={styles.careersGrid}>
-              {careersList.map(({ Icon, title, sub }, idx) => (
+              {careersList.map(({ Icon, title, sub, group }, idx) => (
                 <div key={idx} className={styles.careerCard}>
-                  <div className={styles.careerIconBox} aria-hidden="true"><Icon size={30} strokeWidth={1.8} /></div>
+                  <div className={styles.careerIconBox} aria-hidden="true">
+                    <Icon size={30} strokeWidth={1.8} />
+                  </div>
                   <div className={styles.careerCopy}>
-                    <h3 className={styles.careerTitle}>{title}</h3>
+                    {group && <p className={styles.careerGroup}>{group}</p>}
+                    <h3 className={`${styles.careerTitle} type-career-title`}>{title}</h3>
                     <p className={styles.careerSub}>{sub}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+          {pageContent.section04.note && <p>{pageContent.section04.note}</p>}
         </div>
       </section>
 
       {/* ────────────────────────────────────────────────────────
           05 / KHUNG CHƯƠNG TRÌNH ĐÀO TẠO
           ──────────────────────────────────────────────────────── */}
-      <section id="chuong-trinh" className={styles.sectionCurriculum} aria-labelledby="sec-05-title">
+      <section
+        id="chuong-trinh"
+        className={styles.sectionCurriculum}
+        aria-labelledby="sec-05-title"
+      >
         <div className={styles.container}>
-          <SectionHeader index="05" title="Khung chương trình đào tạo" />
+          <SectionHeader
+            index={pageContent.section05.sectionNumber}
+            title={pageContent.section05.heading}
+          />
 
-          {/* Orientation switcher tabs */}
-          <div className={styles.curriculumTabs}>
-            <button
-              type="button"
-              className={`${styles.curriculumTab} ${activeTrackIndex === 0 ? styles.curriculumTabActive : ""}`}
-              onClick={() => setActiveTrackIndex(0)}
-            >
-              <Briefcase size={18} aria-hidden="true" />
-              <span>Định hướng ứng dụng</span>
-            </button>
-            <button
-              type="button"
-              className={`${styles.curriculumTab} ${activeTrackIndex === 1 ? styles.curriculumTabActive : ""}`}
-              onClick={() => setActiveTrackIndex(1)}
-            >
-              <BookOpen size={18} aria-hidden="true" />
-              <span>Định hướng nghiên cứu</span>
-            </button>
+          <div className={styles.curriculumTabs} aria-label="Định hướng chương trình">
+            {availableTracks.map((track, index) => (
+              <button
+                type="button"
+                key={track.title}
+                className={`${styles.curriculumTab} ${activeTrackIndex === index ? styles.curriculumTabActive : ""}`}
+                aria-pressed={activeTrackIndex === index}
+                onClick={() => setActiveTrackIndex(index)}
+              >
+                {getCurriculumOrientation(programme, track) === "Nghiên cứu" ? (
+                  <BookOpen size={18} aria-hidden="true" />
+                ) : (
+                  <Briefcase size={18} aria-hidden="true" />
+                )}
+                <span>{track.title}</span>
+              </button>
+            ))}
           </div>
 
           <div className={styles.curriculumLayout}>
             {/* Left: General Information card */}
             <aside className={styles.infoCard}>
-              <h3 className={styles.infoCardTitle}>Thông tin chung</h3>
+              <h3 className={styles.infoCardTitle}>{pageContent.section05.generalInformation}</h3>
               <div className={styles.infoList}>
-                <div className={styles.infoItem}>
-                  <FileText className={styles.infoIcon} size={20} aria-hidden="true" />
-                  <div>
-                    <div className={styles.infoItemTitle}>Tổng số tín chỉ</div>
-                    <div className={styles.infoItemValue}>
-                      {isLogistics ? "Theo CTĐT (60 TC)" : `${programme.credits} tín chỉ`}
+                {generalFacts.map((fact) => (
+                  <div className={styles.infoItem} key={fact.label}>
+                    <FileText className={styles.infoIcon} size={20} aria-hidden="true" />
+                    <div>
+                      <div className={styles.infoItemTitle}>{fact.label}</div>
+                      <div className={styles.infoItemValue}>{fact.value}</div>
                     </div>
                   </div>
-                </div>
-
-                <div className={styles.infoItem}>
-                  <Clock className={styles.infoIcon} size={20} aria-hidden="true" />
-                  <div>
-                    <div className={styles.infoItemTitle}>Thời gian đào tạo</div>
-                    <div className={styles.infoItemValue}>
-                      {isLogistics ? "Theo CTĐT (24 tháng)" : programme.duration}
-                    </div>
-                  </div>
-                </div>
-
-                <div className={styles.infoItem}>
-                  <Building2 className={styles.infoIcon} size={20} aria-hidden="true" />
-                  <div>
-                    <div className={styles.infoItemTitle}>Hình thức học</div>
-                    <div className={styles.infoItemValue}>Ngoài giờ hành chính</div>
-                  </div>
-                </div>
-
-                <div className={styles.infoItem}>
-                  <Award className={styles.infoIcon} size={20} aria-hidden="true" />
-                  <div>
-                    <div className={styles.infoItemTitle}>Hình thức tốt nghiệp</div>
-                    <div className={styles.infoItemValue}>{graduationProjectName}</div>
-                  </div>
-                </div>
+                ))}
               </div>
             </aside>
 
             {/* Right: Modules Accordion */}
             <div className={styles.curriculumRight}>
+              {currentTrack?.subtitle && <p>{currentTrack.subtitle}</p>}
               <p className={styles.curriculumIntro}>{curriculumIntroText}</p>
 
-              <div className={styles.moduleList}>
-                {currentTrack && currentTrack.groups && currentTrack.groups.length > 0 ? (
-                  currentTrack.groups.map((group, gIdx) => {
-                    const totalCredits = group.courses.reduce((sum, c) => sum + (c.credits || 0), 0);
-                    const isOpen = !!openModules[gIdx];
-
-                    return (
-                      <div key={group.title} className={styles.moduleCard}>
-                        <div
-                          className={styles.moduleHeader}
-                          onClick={() => toggleModule(gIdx)}
-                          role="button"
-                          tabIndex={0}
-                          onKeyDown={(e) => {
-                            if (e.key === "Enter" || e.key === " ") {
-                              e.preventDefault();
-                              toggleModule(gIdx);
-                            }
-                          }}
-                          aria-expanded={isOpen}
-                        >
-                          <div className={styles.moduleTitleRow}>
-                            <ChevronRight
-                              size={18}
-                              style={{
-                                transform: isOpen ? "rotate(90deg)" : "rotate(0deg)",
-                                transition: "transform 0.2s ease",
-                                color: "#8b1d2c",
-                              }}
-                              aria-hidden="true"
-                            />
-                            <span>{group.title}</span>
-                          </div>
-
-                          <div className={styles.moduleCredits}>
-                            <span className={styles.moduleToggleBtn}>
-                              {isOpen ? "Thu gọn" : "Xem chi tiết →"}
-                            </span>
-                            {totalCredits > 0 && <span>{totalCredits} tín chỉ</span>}
-                          </div>
-                        </div>
-
-                        {isOpen && (
-                          <div className={styles.moduleBody}>
-                            <ul className={styles.courseList}>
-                              {group.courses.map((course, cIdx) => (
-                                <li key={cIdx} className={styles.courseItem}>
-                                  <div>
-                                    <span className={styles.courseName}>{course.name}</span>
-                                    {course.elective && (
-                                      <span className={styles.courseElectiveTag}>Tự chọn</span>
-                                    )}
-                                  </div>
-                                  {course.credits && (
-                                    <span className={styles.courseCredit}>
-                                      {course.credits} TC
-                                    </span>
-                                  )}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })
-                ) : (
-                  <div className={styles.moduleCard}>
-                    <div className={styles.moduleHeader}>
-                      <span>Nội dung chương trình đang được cập nhật</span>
-                    </div>
-                  </div>
-                )}
-              </div>
+              {(currentTrack?.notes ?? pageContent.section05.notes)?.map((note) => (
+                <p key={note}>{note}</p>
+              ))}
+              <ProgrammeCurriculumGroups
+                key={currentTrack?.title}
+                groups={currentTrack?.groups ?? []}
+              />
+              <ProgrammeSemesterPlan
+                programme={programme}
+                track={currentTrack}
+                key={`plan-${currentTrack?.title}`}
+              />
+              <ProgrammeCompletion programme={programme} track={currentTrack} />
 
               <a
                 className={styles.btnDownloadOutline}
-                href="#consultation"
-                style={{ marginTop: "14px" }}
+                href={pageContent.section05.link.href}
+                data-curriculum-download={
+                  /\.pdf(?:[?#]|$)/i.test(pageContent.section05.link.href) || undefined
+                }
               >
-                <Download size={17} aria-hidden="true" />
-                <span>Xem khung chương trình chi tiết (PDF)</span>
+                {/\.pdf(?:[?#]|$)/i.test(pageContent.section05.link.href) ? (
+                  <Download size={17} aria-hidden="true" />
+                ) : (
+                  <ArrowRight size={17} aria-hidden="true" />
+                )}
+                <span>{pageContent.section05.link.text}</span>
               </a>
             </div>
           </div>
         </div>
       </section>
+
+      <ProgrammeFees programme={programme} />
 
       {/* ────────────────────────────────────────────────────────
           CALL TO ACTION BANNER
@@ -757,17 +728,17 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
         <div className={styles.ctaBanner}>
           <div className={styles.ctaContent}>
             <h2>
-              Sẵn sàng cho bước tiến mới
-              <br />
-              trong sự nghiệp của bạn?
+              {pageContent.consultation.ctaHeading.map((line, index) => (
+                <React.Fragment key={line}>
+                  {index > 0 && " "}
+                  {line}
+                </React.Fragment>
+              ))}
             </h2>
-            <p>
-              Đăng ký tư vấn để được cung cấp thông tin chi tiết về chương trình, điều kiện tuyển sinh
-              và lộ trình học tập.
-            </p>
+            <p>{pageContent.consultation.ctaBody}</p>
           </div>
-          <a className={styles.ctaButton} href="#consultation">
-            <span>Đăng ký tư vấn ngay</span>
+          <a className={styles.ctaButton} href={pageContent.consultation.href}>
+            <span>{pageContent.consultation.text}</span>
             <ArrowRight size={18} aria-hidden="true" />
           </a>
         </div>
@@ -783,10 +754,10 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
             <div>
               <div className={styles.faqColHeader}>
                 <h2 id="sec-faq-title" className={styles.faqColTitle}>
-                  Câu hỏi thường gặp
+                  {pageContent.faq.heading}
                 </h2>
-                <a className={styles.faqViewAllLink} href="#consultation">
-                  Xem tất cả →
+                <a className={styles.faqViewAllLink} href={pageContent.faq.link.href}>
+                  {pageContent.faq.link.text}
                 </a>
               </div>
 
@@ -805,7 +776,13 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
 
             {/* Right: Contact Information Card */}
             <aside className={styles.contactCard}>
-              <h3 className={styles.contactCardTitle}>Liên hệ tư vấn</h3>
+              <h3 className={styles.contactCardTitle}>{programmeSharedContent.contact.heading}</h3>
+              <p className={styles.contactItemValue}>
+                Điện thoại:{" "}
+                <a href={programmeSharedContent.contact.officePhoneHref}>
+                  {programmeSharedContent.contact.officePhone}
+                </a>
+              </p>
 
               <div className={styles.contactItemList}>
                 <div className={styles.contactItem}>
@@ -813,9 +790,13 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
                     <Phone size={18} />
                   </div>
                   <div className={styles.contactItemBody}>
-                    <span className={styles.contactItemLabel}>Hotline tư vấn</span>
+                    <span className={styles.contactItemLabel}>
+                      {programmeSharedContent.contact.phoneLabel}
+                    </span>
                     <span className={styles.contactItemValue}>
-                      <a href="tel:02871059999">(028) 7105 9999 - Ext: XXXX</a>
+                      <a href={programmeSharedContent.contact.phoneHref}>
+                        {programmeSharedContent.contact.phone}
+                      </a>
                     </span>
                   </div>
                 </div>
@@ -825,9 +806,13 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
                     <Mail size={18} />
                   </div>
                   <div className={styles.contactItemBody}>
-                    <span className={styles.contactItemLabel}>Email hỗ trợ</span>
+                    <span className={styles.contactItemLabel}>
+                      {programmeSharedContent.contact.emailLabel}
+                    </span>
                     <span className={styles.contactItemValue}>
-                      <a href="mailto:saudaihoc@vlu.edu.vn">saudaihoc@vlu.edu.vn</a>
+                      <a href={programmeSharedContent.contact.emailHref}>
+                        {programmeSharedContent.contact.email}
+                      </a>
                     </span>
                   </div>
                 </div>
@@ -837,14 +822,29 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
                     <MapPin size={18} />
                   </div>
                   <div className={styles.contactItemBody}>
-                    <span className={styles.contactItemLabel}>Địa chỉ làm việc</span>
+                    <span className={styles.contactItemLabel}>
+                      {programmeSharedContent.contact.addressLabel}
+                    </span>
                     <span className={styles.contactItemValue}>
-                      Viện Sau đại học - Trường Đại học Văn Lang
+                      {programmeSharedContent.contact.institution}
                       <br />
-                      69/68 Đặng Thùy Trâm, Phường 13, Quận Bình Thạnh, TP. HCM
+                      {programmeSharedContent.contact.address}
                     </span>
                   </div>
                 </div>
+              </div>
+              <div className={styles.contactActions}>
+                {(
+                  pageContent.consultation.contactActions ?? [
+                    { text: "Gọi tư vấn ↗", href: programmeSharedContent.contact.phoneHref },
+                    { text: "Gửi email ↗", href: programmeSharedContent.contact.emailHref },
+                    { text: "Hướng dẫn đăng ký dự tuyển ↗", href: "/admissions" },
+                  ]
+                ).map((action) => (
+                  <Link href={action.href} key={action.href}>
+                    {action.text}
+                  </Link>
+                ))}
               </div>
             </aside>
           </div>
@@ -854,9 +854,10 @@ export function ProgrammeDetailPage({ programme }: { programme: Programme }) {
       {/* ────────────────────────────────────────────────────────
           CONSULTATION SECTION & FOOTER (Preserved as required)
           ──────────────────────────────────────────────────────── */}
-      <div id="consultation">
-        <ResourcesConsultation showResources={false} initialProgramme={programme.title} />
-      </div>
+      <ResourcesConsultation
+        initialProgramme={programme.title}
+        intro={programme.pageContent?.consultation.formIntro}
+      />
       <SiteFooter />
     </main>
   );

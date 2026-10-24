@@ -54,7 +54,7 @@
   right: -0.035em;
   bottom: -0.34em;
   color: transparent;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-sans);
   font-size: clamp(300px, 36vw, 690px);
   font-weight: 700;
   line-height: 1;
@@ -93,10 +93,10 @@
   text-transform: uppercase;
 }
 
-.heading h2 {
+.heading h1 {
   margin: 18px 0 16px;
   color: #171d45;
-  font-family: Georgia, "Times New Roman", serif !important;
+  font-family: var(--font-sans);
   font-size: clamp(52px, 5.2vw, 78px) !important;
   font-weight: 600 !important;
   line-height: 1.02 !important;
@@ -117,8 +117,8 @@
 }
 
 .headingMark b {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 13px;
+  font-family: var(--font-sans);
+  font-size: var(--text-12);
   font-weight: 700;
 }
 
@@ -228,7 +228,7 @@
   gap: 7px;
   color: #1f2251;
   font-size: clamp(12px, 0.85vw, 14px) !important;
-  font-weight: 750 !important;
+  font-weight: 700 !important;
   line-height: 1.3 !important;
   letter-spacing: 0.09em;
   text-align: left !important;
@@ -246,7 +246,7 @@
 
 :global(#vi-sao-chon-vgg) .category {
   font-size: clamp(12px, 0.85vw, 14px) !important;
-  font-weight: 750 !important;
+  font-weight: 700 !important;
   line-height: 1.3 !important;
 }
 
@@ -255,7 +255,7 @@
   margin: 0 0 16px;
   color: #171d45;
   font-size: clamp(23px, 1.65vw, 29px) !important;
-  font-weight: 650 !important;
+  font-weight: 700 !important;
   line-height: 1.24 !important;
   letter-spacing: -0.02em !important;
 }
@@ -298,7 +298,7 @@
   }
 
   .body {
-    font-size: 15px;
+    font-size: var(--text-14);
     line-height: 1.65;
   }
 }
@@ -327,11 +327,11 @@
   }
 
   .eyebrow p {
-    font-size: 13px;
+    font-size: var(--text-12);
     letter-spacing: 0.18em;
   }
 
-  .heading h2 {
+  .heading h1 {
     margin-top: 14px;
     font-size: clamp(42px, 12.5vw, 50px) !important;
   }
@@ -365,11 +365,11 @@
 
   .category {
     margin-bottom: 14px;
-    font-size: 11px !important;
+    font-size: var(--text-10) !important;
   }
 
   :global(#vi-sao-chon-vgg) .category {
-    font-size: 11px !important;
+    font-size: var(--text-10) !important;
   }
 
   .cardContent h3 {
@@ -393,7 +393,7 @@
   }
 
   .body {
-    font-size: 14.5px;
+    font-size: var(--text-14);
   }
 }
 

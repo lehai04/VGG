@@ -30,21 +30,16 @@ export function Research() {
       <div className="researchContent">
         <p className="researchEyebrow">RESEARCH &amp; INNOVATION</p>
         <h2>
-          Tri thức tạo nên
-          <br />
-          <em>tác động.</em>
+          Nghiên cứu từ thực tiễn
+          {" "}
+          <em>Đổi mới vì cộng đồng</em>
         </h2>
         <p className="researchDescription">
-          Người học làm việc cùng giảng viên, nhà nghiên cứu và doanh nghiệp để chuyển hóa vấn đề
-          thực tiễn thành dự án, công bố và giải pháp có giá trị.
+          Viện Sau đại học kết nối người học với giảng viên, nhà nghiên cứu và doanh nghiệp để cùng tìm lời giải cho những vấn đề thực tiễn, phát triển tri thức và đề xuất các giải pháp có giá trị ứng dụng.
         </p>
 
         <EditorialAccordion items={RESEARCH_LINKS} label="Các hướng nghiên cứu" className="researchLinks" />
 
-        <div className="researchFooter">
-          <span>Viện Sau Đại học RESEARCH ECOSYSTEM</span>
-          <b>Knowledge for real-world impact</b>
-        </div>
       </div>
     </section>
   );

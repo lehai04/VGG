@@ -1,0 +1,1337 @@
+{
+  "content": {
+    "hero": {
+      "heroLead": "Phát triển chuyên môn kế toán, kiểm toán và năng lực phân tích thông tin để hỗ trợ quyết định quản trị trong bối cảnh chuyển đổi số, hội nhập quốc tế và phát triển bền vững.",
+      "heroSlogan": "FUTURE",
+      "heroImage": "/images/pages/programmes/ke-toan/programme-hero.webp",
+      "imageAlt": "Hoạt động thực hành trên máy tính tại Trường Đại học Văn Lang",
+      "imageCredit": {
+        "text": "Không gian thực hành trên máy tính · Nguồn: Văn Lang ↗",
+        "href": "https://www.vlu.edu.vn/academics/majors/thac-si-ke-toan"
+      }
+    },
+    "facts": {
+      "quickFactsDetailed": [
+        {
+          "label": "Mã ngành",
+          "value": "340301",
+          "detail": "Mã chương trình: 8340301"
+        },
+        {
+          "label": "Khối lượng chương trình",
+          "value": "60 tín chỉ",
+          "detail": "24 tháng · 6 học kỳ"
+        },
+        {
+          "label": "Định hướng đào tạo",
+          "value": "Ứng dụng",
+          "detail": ""
+        },
+        {
+          "label": "Hình thức đào tạo",
+          "value": "Chính quy",
+          "detail": "Tập trung"
+        },
+        {
+          "label": "Ngôn ngữ đào tạo",
+          "value": "Tiếng Việt",
+          "detail": ""
+        },
+        {
+          "label": "Học phí toàn khóa",
+          "value": "85 triệu đồng",
+          "detail": ""
+        }
+      ]
+    },
+    "section01": {
+      "sectionNumber": "01",
+      "overviewTitle": "Tổng quan chương trình",
+      "headline": "Từ thông tin kế toán đến quyết định quản trị.",
+      "overview": [
+        "Chương trình Thạc sĩ Kế toán tại Văn Lang được thiết kế theo định hướng ứng dụng, kết nối kiến thức chuyên sâu về kế toán, kiểm toán và tài chính với yêu cầu thực tiễn của tổ chức. Người học phát triển khả năng phân tích thông tin, đánh giá vấn đề và đề xuất giải pháp có cơ sở phục vụ quản trị.",
+        "Nội dung học tập chú trọng báo cáo tài chính hợp nhất, kế toán quản trị, hệ thống thông tin kế toán, kiểm toán và báo cáo ESG. Các nhóm học phần tự chọn giúp người học mở rộng hướng tiếp cận về công nghệ số, thuế, kiểm soát, quản trị rủi ro và những lĩnh vực kế toán chuyên sâu.",
+        "Thông qua thực tập và đề án tốt nghiệp, người học vận dụng kiến thức vào hoạt động kế toán, kiểm toán tại doanh nghiệp; rèn luyện tư duy phản biện, kỹ năng tư vấn và tinh thần chịu trách nhiệm trước các quyết định chuyên môn.",
+        "Văn bằng tốt nghiệp: Thạc sĩ Kế toán Master of Accounting"
+      ],
+      "overviewImage": "/images/pages/programmes/ke-toan/programme-overview.webp",
+      "imageAlt": "Hướng dẫn thực hành tại phòng máy của Trường Đại học Văn Lang",
+      "imageCredit": {
+        "text": "Hướng dẫn thực hành tại phòng máy Nguồn: Trường Đại học Văn Lang ↗",
+        "href": "https://www.vlu.edu.vn/academics/majors/thac-si-ke-toan"
+      },
+      "focusAreas": [
+        "Kế toán & kiểm toán",
+        "Thông tin quản trị",
+        "Công nghệ số",
+        "ESG & bền vững"
+      ],
+      "ribbonTitle": "Gắn với thực tiễn nghề nghiệp.",
+      "tags": [
+        "Thực tập Vận dụng kiến thức tại đơn vị 6 tín chỉ",
+        "Đề án tốt nghiệp Giải quyết vấn đề chuyên môn 8 tín chỉ"
+      ],
+      "link": {
+        "text": "Khám phá khung chương trình",
+        "href": "#chuong-trinh",
+        "ariaLabel": "Khám phá khung chương trình Kế toán"
+      }
+    },
+    "section02": {
+      "sectionNumber": "02",
+      "highlights": [
+        {
+          "title": "Chuyên môn kế toán và kiểm toán nâng cao",
+          "text": "Kết nối lý thuyết với báo cáo tài chính hợp nhất, kế toán quản trị và các dịch vụ đảm bảo để phân tích những vấn đề phức tạp trong thực tiễn."
+        },
+        {
+          "title": "Tiếp cận kế toán trong môi trường số",
+          "text": "Học về hệ thống thông tin quản lý trong kế toán và lựa chọn các nội dung phù hợp về AI, dữ liệu lớn, blockchain hoặc an toàn thông tin."
+        },
+        {
+          "title": "Gắn thông tin tài chính với phát triển bền vững",
+          "text": "Học phần Báo cáo ESG và tạo lập giá trị tổ chức giúp người học tiếp cận đo lường, công bố thông tin phi tài chính và quản trị bền vững."
+        },
+        {
+          "title": "14 tín chỉ thực tập và đề án",
+          "text": "Thực tập 6 tín chỉ và đề án tốt nghiệp 8 tín chỉ tạo điều kiện vận dụng kiến thức, phân tích vấn đề thực tế và đề xuất giải pháp chuyên môn."
+        },
+        {
+          "title": "Học qua tình huống, phát triển năng lực thực hành",
+          "text": "Chương trình kết hợp giảng dạy trực tiếp, học tập tích cực và học kết hợp; tăng cường thảo luận tình huống, tham luận của chuyên gia doanh nghiệp, thực hành và làm việc nhóm. Người học rèn luyện cách phân tích vấn đề, trình bày quan điểm và vận dụng kiến thức vào bối cảnh nghề nghiệp."
+        }
+      ],
+      "learningOutcomes": {
+        "intro": "Sáu chuẩn đầu ra bao quát kiến thức chuyên sâu, kỹ năng phân tích và tư vấn, năng lực số cùng đạo đức và trách nhiệm nghề nghiệp.",
+        "items": [
+          {
+            "code": "PLO1",
+            "title": "Tư duy khoa học và phân tích bối cảnh",
+            "text": "Phân tích tư duy triết học và phương pháp luận khoa học nhằm vận dụng các luận điểm xã hội và kinh tế đương đại để giải quyết các vấn đề phức tạp trong lĩnh vực kế toán kiểm toán trong bối cảnh hội nhập và chuyển đổi số."
+          },
+          {
+            "code": "PLO2",
+            "title": "Tổng hợp thông tin cho quyết định quản trị",
+            "text": "Hệ thống hóa lý thuyết, chuẩn mực quốc tế để thiết kế và đề xuất các giải pháp phục vụ quản trị và ra quyết định."
+          },
+          {
+            "code": "PLO3",
+            "title": "Phát triển kỹ thuật và năng lực số",
+            "text": "Phát triển kỹ thuật chuyên môn và năng lực công nghệ số nhằm quản lý rủi ro, kiểm soát nội bộ, điều hành và ra quyết định chiến lược trong tổ chức."
+          },
+          {
+            "code": "PLO4",
+            "title": "Tư vấn, giao tiếp và làm việc nhóm",
+            "text": "Phát triển kỹ năng tư vấn, giao tiếp và làm việc nhóm chuyên nghiệp để truyền đạt thông tin và giải quyết mâu thuẫn hiệu quả trong môi trường làm việc đa dạng."
+          },
+          {
+            "code": "PLO5",
+            "title": "Đạo đức và trách nhiệm nghề nghiệp",
+            "text": "Hình thành đạo đức nghề nghiệp, chịu trách nhiệm trước các quyết định chuyên môn định hướng phát triển bền vững."
+          },
+          {
+            "code": "PLO6",
+            "title": "Học tập và thích ứng trong môi trường số",
+            "text": "Thể hiện tư duy số,  tinh thần cầu tiến và ý thức học tập suốt đời nhằm thích ứng với sự thay đổi nghề nghiệp trong bối cảnh toàn cầu hóa và chuyển đổi số."
+          }
+        ]
+      }
+    },
+    "section03": {
+      "sectionNumber": "03",
+      "audienceHeading": "Chương trình phù hợp với ai?",
+      "headline": "Từ nền tảng nghề nghiệp đến chuyên môn sâu.",
+      "intro": [
+        "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành học phù hợp và đáp ứng các điều kiện dự tuyển của chương trình."
+      ],
+      "audience": [
+        {
+          "title": "Người đang làm kế toán, kiểm toán",
+          "text": "Củng cố chuyên môn, cập nhật cách tiếp cận về báo cáo, kiểm toán và công nghệ để xử lý những vấn đề phức tạp trong công việc."
+        },
+        {
+          "title": "Người làm tài chính, kiểm soát và quản trị",
+          "text": "Phát triển khả năng khai thác thông tin kế toán, đánh giá rủi ro và đề xuất giải pháp hỗ trợ quản lý, điều hành tổ chức."
+        },
+        {
+          "title": "Người muốn phát triển chuyên môn sâu",
+          "text": "Mở rộng nền tảng nghề nghiệp trong bối cảnh chuyển đổi số, hội nhập quốc tế và yêu cầu công bố thông tin về phát triển bền vững."
+        }
+      ],
+      "requirements": [
+        {
+          "title": "Ngành tốt nghiệp có phù hợp?",
+          "paragraphs": [
+            "Người tốt nghiệp ngành Kế toán hoặc Kiểm toán không cần học bổ sung kiến thức. Các ngành liên quan trong danh mục được đối chiếu văn bằng, bảng điểm và nội dung đã học để xác định yêu cầu bổ sung."
+          ]
+        },
+        {
+          "title": "Phương thức tuyển sinh",
+          "paragraphs": [
+            "Xét tuyển. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Kế toán."
+          ]
+        },
+        {
+          "title": "Yêu cầu ngoại ngữ đầu vào",
+          "paragraphs": [
+            "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên, được minh chứng bằng một trong các hình thức công nhận trong thông báo tuyển sinh."
+          ]
+        },
+        {
+          "title": "Các hình thức minh chứng ngoại ngữ đầu vào",
+          "paragraphs": [
+            "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
+            "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+            "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt."
+          ],
+          "points": [
+            "Bằng đại học trở lên ngành ngôn ngữ nước ngoài hoặc chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
+            "Văn bằng, chứng chỉ tương đương Bậc 3 trở lên thuộc danh mục được công nhận và còn hiệu lực.",
+            "Kết quả đánh giá tương đương Bậc 3 trở lên do Trường tổ chức; hoặc hoàn thành chương trình đào tạo, bồi dưỡng ngoại ngữ do Trường tổ chức hoặc công nhận.",
+            "Bằng đại học trở lên do Văn Lang cấp trong thời hạn không quá 2 năm, với chương trình đã đáp ứng chuẩn đầu ra ngoại ngữ từ Bậc 3 trở lên."
+          ]
+        },
+        {
+          "title": "Bổ sung kiến thức đầu vào",
+          "paragraphs": [
+            "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã tích lũy để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+            "Các ngành liên quan trong danh mục bổ sung tối đa 12 tín chỉ, gồm 4 học phần, mỗi học phần 3 tín chỉ. Phần bổ sung kiến thức nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+            "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
+          ],
+          "groups": [
+            {
+              "title": "01. Kế toán và Kiểm toán · Không cần bổ sung kiến thức",
+              "paragraphs": [],
+              "groups": [
+                {
+                  "title": "Ngành tốt nghiệp",
+                  "paragraphs": [
+                    "Ứng viên vẫn phải đáp ứng đầy đủ các điều kiện dự tuyển của chương trình."
+                  ],
+                  "points": [
+                    "Kế toán.",
+                    "Kiểm toán."
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "02. Các ngành liên quan · Bổ sung tối đa 12 tín chỉ",
+              "paragraphs": [],
+              "groups": [
+                {
+                  "title": "Danh mục ngành liên quan",
+                  "paragraphs": [],
+                  "points": [
+                    "Kinh tế học Kinh tế học; Kinh tế chính trị; Kinh tế đầu tư; Kinh tế phát triển; Kinh tế quốc tế; Thống kê kinh tế; Toán kinh tế; Kinh tế số; Quản lý kinh tế.",
+                    "Khoa học chính trị Quản lý nhà nước; Quan hệ quốc tế.",
+                    "Kinh doanh Quản trị kinh doanh; Marketing; Bất động sản; Kinh doanh quốc tế; Kinh doanh thương mại; Thương mại điện tử.",
+                    "Tài chính - Ngân hàng - Bảo hiểm Tài chính - Ngân hàng; Bảo hiểm; Công nghệ tài chính.",
+                    "Quản trị - Quản lý Khoa học quản lý; Quản lý công; Quản trị nhân lực; Hệ thống thông tin quản lý; Quản trị văn phòng; Quản lý dự án."
+                  ]
+                },
+                {
+                  "title": "Các học phần bổ sung kiến thức",
+                  "paragraphs": [
+                    "Các học phần cần học được xác định theo hồ sơ từng ứng viên. Những nội dung đã hoàn thành ở bậc đại học được xem xét để công nhận tương đương theo kết quả đối chiếu."
+                  ],
+                  "points": [
+                    "Nguyên lý kế toán · 3 tín chỉ",
+                    "Kế toán tài chính · 3 tín chỉ",
+                    "Kế toán quản trị · 3 tín chỉ",
+                    "Kiểm toán và dịch vụ đảm bảo · 3 tín chỉ"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Chưa tìm thấy ngành tốt nghiệp của bạn?",
+              "paragraphs": [
+                "Các ngành ngoài danh mục được Khoa và Viện Sau đại học xem xét theo từng hồ sơ, trên cơ sở chương trình đã học, bảng điểm và quy định tuyển sinh. Liên hệ Viện để được đối chiếu điều kiện dự tuyển trước khi đăng ký."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "section04": {
+      "sectionNumber": "04",
+      "careerHeading": "Cơ hội nghề nghiệp và phát triển",
+      "headline": "Vững chuyên môn. Mở rộng hướng phát triển.",
+      "intro": "Năng lực kế toán, kiểm toán và phân tích thông tin tạo nền tảng để phát triển nghề nghiệp trong doanh nghiệp, đơn vị cung cấp dịch vụ, cơ sở nghiên cứu và giáo dục.",
+      "note": "Hướng phát triển và vị trí đảm nhiệm phụ thuộc vào nền tảng chuyên môn, kinh nghiệm, năng lực thực tế và yêu cầu của từng tổ chức.",
+      "careerImage": "/images/pages/programmes/ke-toan/programme-hero.webp",
+      "careers": [
+        {
+          "group": "Kế toán và quản lý tài chính",
+          "title": "Tổ chức hoạt động kế toán",
+          "sub": "Vận dụng kiến thức chuyên sâu để tổ chức cung cấp thông tin kế toán, lập và phân tích báo cáo phục vụ hoạt động của đơn vị."
+        },
+        {
+          "group": "Kế toán và quản lý tài chính",
+          "title": "Quản lý tài chính doanh nghiệp",
+          "sub": "Kết nối thông tin kế toán với phân tích tài chính để hỗ trợ quyết định, đánh giá hiệu quả và phát triển hoạt động của tổ chức."
+        },
+        {
+          "group": "Phân tích và tư vấn chuyên môn",
+          "title": "Phân tích kinh tế, tài chính và kế toán",
+          "sub": "Phân tích dữ liệu tài chính và phi tài chính, đánh giá vấn đề và đề xuất giải pháp phù hợp với bối cảnh doanh nghiệp."
+        },
+        {
+          "group": "Phân tích và tư vấn chuyên môn",
+          "title": "Dịch vụ và tư vấn kế toán",
+          "sub": "Phát triển năng lực tư vấn, cung cấp giải pháp kế toán và xử lý các vấn đề chuyên môn theo yêu cầu của công việc."
+        },
+        {
+          "group": "Nghiên cứu và phát triển học thuật",
+          "title": "Hợp tác nghiên cứu và giảng dạy",
+          "sub": "Tham gia hoạt động nghiên cứu, chia sẻ chuyên môn và giảng dạy tại các cơ sở có lĩnh vực kế toán, kiểm toán khi đáp ứng yêu cầu của vị trí."
+        },
+        {
+          "group": "Nghiên cứu và phát triển học thuật",
+          "title": "Tiếp tục học tập nâng cao",
+          "sub": "Củng cố nền tảng chuyên môn và phương pháp nghiên cứu để tiếp tục phát triển học thuật, dự tuyển trình độ tiến sĩ khi đáp ứng điều kiện."
+        }
+      ]
+    },
+    "section05": {
+      "sectionNumber": "05",
+      "curriculumIntro": [
+        "Chương trình gồm 42 tín chỉ bắt buộc và 18 tín chỉ tự chọn. Các học phần tự chọn chia thành 5 nhóm, giúp người học mở rộng chuyên môn theo cơ cấu của chương trình."
+      ],
+      "trackLabels": [
+        "Định hướng ứng dụng"
+      ],
+      "graduationProjects": [
+        "Đề án tốt nghiệp · 8 tín chỉ"
+      ],
+      "studyMode": "Chính quy tập trung",
+      "generalFacts": [
+        {
+          "label": "Thời gian chuẩn",
+          "value": "24 tháng"
+        },
+        {
+          "label": "Kế hoạch học tập",
+          "value": "6 học kỳ"
+        },
+        {
+          "label": "Hình thức",
+          "value": "Chính quy tập trung"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Thực tập",
+          "value": "6 tín chỉ"
+        },
+        {
+          "label": "Đề án tốt nghiệp",
+          "value": "8 tín chỉ"
+        }
+      ],
+      "notes": [
+        "7 tín chỉ chung · 9 tín chỉ cơ sở ngành · 30 tín chỉ chuyên ngành · 14 tín chỉ thực tập và đề án."
+      ],
+      "semesters": {
+        "heading": "Kế hoạch học tập theo từng học kỳ",
+        "intro": "Thời gian đào tạo chuẩn là 24 tháng, mỗi năm có 3 học kỳ chính. Lộ trình mẫu gồm 6 học kỳ: tích lũy kiến thức ở học kỳ 1–4, thực tập ở học kỳ 5 và thực hiện đề án tốt nghiệp ở học kỳ 6. Thời khóa biểu và việc mở lớp tự chọn được công bố theo kế hoạch đào tạo.",
+        "items": [
+          {
+            "title": "Học kỳ 1",
+            "subtitle": "Nền tảng và phương pháp nghiên cứu · 16 tín chỉ",
+            "groups": [
+              {
+                "title": "Học phần bắt buộc",
+                "totalCreditsLabel": "13 tín chỉ",
+                "description": [],
+                "courses": [
+                  {
+                    "name": "Triết học",
+                    "englishName": "Philosophy",
+                    "credits": 4
+                  },
+                  {
+                    "name": "Phương pháp nghiên cứu khoa học",
+                    "englishName": "Scientific Research Methods",
+                    "credits": 3
+                  },
+                  {
+                    "name": "Lý thuyết kế toán",
+                    "englishName": "Accounting Theory",
+                    "credits": 3
+                  },
+                  {
+                    "name": "Quản trị tài chính doanh nghiệp",
+                    "englishName": "Corporate Financial Management",
+                    "credits": 3
+                  }
+                ]
+              },
+              {
+                "title": "Kiến thức cơ sở tự chọn",
+                "totalCreditsLabel": "3 tín chỉ",
+                "description": [
+                  "Chọn 1 trong 4 học phần · 3 tín chỉ."
+                ],
+                "courses": [
+                  {
+                    "name": "Trí tuệ nhân tạo và dữ liệu lớn trong kinh doanh",
+                    "englishName": "Artificial Intelligence and Big Data in Business",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Công nghệ Blockchain và ứng dụng",
+                    "englishName": "Blockchain technology and applications",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "An toàn thông tin kế toán nâng cao",
+                    "englishName": "Advanced Accounting Information Security",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Đạo đức nghề nghiệp kế toán, kiểm toán trong môi trường số",
+                    "englishName": "Professional Ethics in Accounting and Auditing in the Digital Environment",
+                    "credits": 3,
+                    "elective": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Học kỳ 2",
+            "subtitle": "Kế toán và kiểm toán nâng cao · 12 tín chỉ",
+            "groups": [
+              {
+                "title": "Học phần bắt buộc",
+                "totalCreditsLabel": "12 tín chỉ",
+                "description": [],
+                "courses": [
+                  {
+                    "name": "Báo cáo tài chính hợp nhất nâng cao",
+                    "englishName": "Advanced Consolidated Financial Reporting",
+                    "credits": 3
+                  },
+                  {
+                    "name": "Kế toán quản trị nâng cao",
+                    "englishName": "Advanced Management Accounting",
+                    "credits": 3
+                  },
+                  {
+                    "name": "Hệ thống thông tin quản lý trong kế toán nâng cao",
+                    "englishName": "Advanced Management Information System in Accounting",
+                    "credits": 3
+                  },
+                  {
+                    "name": "Kiểm toán và các dịch vụ đảm bảo nâng cao",
+                    "englishName": "Advanced Auditing and Assurance Services",
+                    "credits": 3
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Học kỳ 3",
+            "subtitle": "ESG, kế toán chuyên sâu và thuế · 12 tín chỉ",
+            "groups": [
+              {
+                "title": "Học phần bắt buộc",
+                "totalCreditsLabel": "3 tín chỉ",
+                "description": [],
+                "courses": [
+                  {
+                    "name": "Báo cáo ESG và tạo lập giá trị tổ chức",
+                    "englishName": "ESG Reporting and Organizational Value Creation",
+                    "credits": 3
+                  }
+                ]
+              },
+              {
+                "title": "Nhóm kế toán chuyên sâu",
+                "totalCreditsLabel": "6 tín chỉ",
+                "description": [
+                  "Chọn 2 trong 4 học phần · 6 tín chỉ."
+                ],
+                "courses": [
+                  {
+                    "name": "Kế toán công nâng cao",
+                    "englishName": "Advanced Public Sector Accounting",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Kế toán phát triển bền vững",
+                    "englishName": "Sustainability Accounting",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Kế toán điều tra số",
+                    "englishName": "Digital Forensic Accounting",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Kế toán quốc tế nâng cao",
+                    "englishName": "Advanced International Accounting",
+                    "credits": 3,
+                    "elective": true
+                  }
+                ]
+              },
+              {
+                "title": "Nhóm thuế",
+                "totalCreditsLabel": "3 tín chỉ",
+                "description": [
+                  "Chọn 1 trong 3 học phần · 3 tín chỉ."
+                ],
+                "courses": [
+                  {
+                    "name": "Phân tích chính sách thuế",
+                    "englishName": "Business tax policy analysis",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Quản lý rủi ro tuân thủ thuế nâng cao",
+                    "englishName": "Advanced Tax Compliance Risk Management",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Quản trị rủi ro thuế trong môi trường số",
+                    "englishName": "Tax Risk Management in the Digital Environment",
+                    "credits": 3,
+                    "elective": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Học kỳ 4",
+            "subtitle": "Kiểm soát và quản trị doanh nghiệp · 6 tín chỉ",
+            "groups": [
+              {
+                "title": "Nhóm kiểm soát và kiểm toán",
+                "totalCreditsLabel": "3 tín chỉ",
+                "description": [
+                  "Chọn 1 trong 3 học phần · 3 tín chỉ."
+                ],
+                "courses": [
+                  {
+                    "name": "Kiểm soát nội bộ nâng cao",
+                    "englishName": "Advanced Internal Controls",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Kiểm soát quản lý",
+                    "englishName": "Management Control",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Kiểm toán hoạt động",
+                    "englishName": "Operational Auditing",
+                    "credits": 3,
+                    "elective": true
+                  }
+                ]
+              },
+              {
+                "title": "Nhóm quản trị doanh nghiệp",
+                "totalCreditsLabel": "3 tín chỉ",
+                "description": [
+                  "Chọn 1 trong 3 học phần · 3 tín chỉ."
+                ],
+                "courses": [
+                  {
+                    "name": "Sáp nhập, mua lại và tái cấu trúc doanh nghiệp",
+                    "englishName": "Mergers, Acquisitions, and Corporate Restructuring",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Quản trị chiến lược",
+                    "englishName": "Strategic management",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Quản trị rủi ro doanh nghiệp",
+                    "englishName": "Enterprise Risk Management",
+                    "credits": 3,
+                    "elective": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Học kỳ 5",
+            "subtitle": "Thực tập tại đơn vị · 6 tín chỉ",
+            "groups": [
+              {
+                "title": "Học phần bắt buộc",
+                "totalCreditsLabel": "6 tín chỉ",
+                "description": [],
+                "courses": [
+                  {
+                    "name": "Thực tập",
+                    "englishName": "Internship",
+                    "credits": 6
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Học kỳ 6",
+            "subtitle": "Thực hiện đề án tốt nghiệp · 8 tín chỉ",
+            "groups": [
+              {
+                "title": "Học phần bắt buộc",
+                "totalCreditsLabel": "8 tín chỉ",
+                "description": [],
+                "courses": [
+                  {
+                    "name": "Đề án tốt nghiệp",
+                    "englishName": "Graduation Project",
+                    "credits": 8
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "completion": {
+        "heading": "Hoàn thành chương trình",
+        "items": [
+          "Hoàn thành các học phần, thực tập và đề án tốt nghiệp; bảo vệ đề án đạt yêu cầu.",
+          "Đạt chuẩn ngoại ngữ tương đương Bậc 4/6 trở lên hoặc đáp ứng hình thức minh chứng tương đương theo quy định.",
+          "Hoàn thành các nghĩa vụ và đáp ứng đầy đủ điều kiện công nhận tốt nghiệp của Trường."
+        ]
+      }
+    },
+    "consultation": {
+      "ctaHeading": [
+        "Sẵn sàng cho bước học tiếp theo?"
+      ],
+      "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+      "formIntro": {
+        "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+        "titleLines": [
+          "Bắt đầu từ",
+          "mục tiêu của bạn."
+        ],
+        "body": "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Kế toán. Đội ngũ tư vấn sẽ hỗ trợ bạn tìm hiểu chương trình và chuẩn bị hồ sơ phù hợp.",
+        "benefits": [
+          "Tư vấn chương trình và định hướng học",
+          "Hướng dẫn học phí và chính sách hỗ trợ",
+          "Đối chiếu điều kiện và hồ sơ dự tuyển"
+        ],
+        "formTitle": "Trao đổi trực tiếp với Viện"
+      },
+      "contactActions": [
+        {
+          "text": "Gọi tư vấn ↗",
+          "href": "tel:0988486869"
+        },
+        {
+          "text": "Gửi email ↗",
+          "href": "mailto:tuyensinh.sdh@vlu.edu.vn"
+        },
+        {
+          "text": "Hướng dẫn đăng ký dự tuyển ↗",
+          "href": "/admissions"
+        }
+      ]
+    },
+    "faq": {
+      "faqs": [
+        {
+          "question": "Chương trình đào tạo theo định hướng nào?",
+          "answer": "Chương trình Thạc sĩ Kế toán theo định hướng ứng dụng, gồm 60 tín chỉ, thời gian chuẩn 24 tháng và kế hoạch 6 học kỳ. Nội dung kết nối kế toán, kiểm toán và tài chính với các vấn đề thực tiễn nghề nghiệp."
+        },
+        {
+          "question": "Tôi cần đáp ứng điều kiện gì để dự tuyển?",
+          "answer": "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp và đáp ứng yêu cầu ngoại ngữ đầu vào. Trường hợp được yêu cầu bổ sung kiến thức phải hoàn thành các học phần trước khi xét tuyển. Hồ sơ được xem xét theo quy chế và thông báo tuyển sinh của Trường."
+        },
+        {
+          "question": "Ngành nào được miễn bổ sung kiến thức?",
+          "answer": "Người tốt nghiệp ngành Kế toán hoặc Kiểm toán không cần học bổ sung kiến thức. Các ngành liên quan trong danh mục bổ sung tối đa 12 tín chỉ, theo kết quả đối chiếu hồ sơ. Ngành ngoài danh mục được Khoa và Viện xem xét theo từng trường hợp."
+        },
+        {
+          "question": "Bổ sung kiến thức gồm những học phần nào?",
+          "answer": "Danh mục gồm Nguyên lý kế toán, Kế toán tài chính, Kế toán quản trị, Kiểm toán và dịch vụ đảm bảo, mỗi học phần 3 tín chỉ. Các học phần cần học được xác định từ văn bằng, bảng điểm và nội dung đã tích lũy. Phần bổ sung kiến thức nằm ngoài 60 tín chỉ của chương trình thạc sĩ."
+        },
+        {
+          "question": "Các học phần tự chọn được đăng ký như thế nào?",
+          "answer": "Chương trình có 18 tín chỉ tự chọn, chia thành 5 nhóm. Học kỳ 1 chọn 1 trong 4 môn cơ sở. Học kỳ 3 chọn 2 trong 4 môn kế toán chuyên sâu và 1 trong 3 môn về thuế. Học kỳ 4 chọn 1 trong 3 môn kiểm soát, kiểm toán và 1 trong 3 môn quản trị doanh nghiệp. Mỗi môn 3 tín chỉ; việc mở lớp theo kế hoạch đào tạo."
+        },
+        {
+          "question": "Chương trình có thực tập và đề án tốt nghiệp không?",
+          "answer": "Có. Lộ trình mẫu bố trí học phần Thực tập 6 tín chỉ ở học kỳ 5 và Đề án tốt nghiệp 8 tín chỉ ở học kỳ 6. Người học vận dụng kiến thức vào thực tiễn, phân tích vấn đề và đề xuất giải pháp chuyên môn."
+        },
+        {
+          "question": "Ngôn ngữ giảng dạy và yêu cầu ngoại ngữ là gì?",
+          "answer": "Chương trình giảng dạy bằng tiếng Việt. Ngoại ngữ đầu vào yêu cầu mức tương đương Bậc 3 trở lên; chuẩn đầu ra là mức tương đương Bậc 4 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam. Hình thức minh chứng được đối chiếu theo quy định và thông báo của Trường."
+        },
+        {
+          "question": "Lịch học có phù hợp với người đang đi làm?",
+          "answer": "Lịch học dự kiến bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật, theo kế hoạch từng học kỳ. Thời khóa biểu chính thức do Trường công bố. Bạn có thể trao đổi với Viện để sắp xếp công việc, thời gian học, thực tập và thực hiện đề án."
+        },
+        {
+          "question": "Học phí và chính sách hỗ trợ được áp dụng như thế nào?",
+          "answer": "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt: 29.750.000 đồng, 25.500.000 đồng và 29.750.000 đồng. Các khoản thu riêng áp dụng theo từng trường hợp. Học bổng và hỗ trợ tài chính được xét theo điều kiện, hồ sơ và thông báo của Trường; chỉ áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn."
+        }
+      ]
+    },
+    "fees": {
+      "heading": "Chủ động chuẩn bị cho hành trình học.",
+      "intro": [
+        "Học phí toàn khóa được chia thành ba đợt thanh toán, giúp người học chủ động sắp xếp kế hoạch tài chính.",
+        "Các chính sách học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ. Người học chỉ được áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn."
+      ],
+      "intake": "TUYỂN SINH THẠC SĨ 2027",
+      "language": "Tiếng Việt",
+      "total": "85.000.000 đồng",
+      "installments": [
+        {
+          "label": "Đợt 1 · 35%",
+          "amount": "29.750.000 đồng"
+        },
+        {
+          "label": "Đợt 2 · 30%",
+          "amount": "25.500.000 đồng"
+        },
+        {
+          "label": "Đợt 3 · 35%",
+          "amount": "29.750.000 đồng"
+        }
+      ],
+      "additionalFees": [
+        {
+          "title": "Lệ phí xét tuyển",
+          "amount": "500.000 đồng",
+          "note": "Nộp minh chứng khi nộp hồ sơ dự tuyển."
+        },
+        {
+          "title": "Lệ phí nhập học",
+          "amount": "1.000.000 đồng",
+          "note": "Nộp cùng học phí đợt đầu."
+        },
+        {
+          "title": "Học bổ sung kiến thức",
+          "amount": "1.200.000 đồng/môn",
+          "note": "Áp dụng khi hồ sơ thuộc diện phải học bổ sung."
+        },
+        {
+          "title": "Ôn tập tiếng Anh đầu vào",
+          "amount": "1.000.000 đồng",
+          "note": "Đăng ký tự nguyện."
+        },
+        {
+          "title": "Thi tiếng Anh đầu vào",
+          "amount": "1.000.000 đồng",
+          "note": "Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi."
+        },
+        {
+          "title": "Gia hạn chương trình",
+          "amount": "5% học phí toàn khóa/lần",
+          "note": "Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn."
+        }
+      ],
+      "notes": [
+        "Hoạt động học tập thực tế, tham quan chuyên môn hoặc thực địa có thể phát sinh chi phí ngoài học phí toàn khóa; Khoa thông báo nội dung và chi phí trước khi triển khai. Điều kiện thu, hoàn trả và các khoản phát sinh thực hiện theo thông báo được ban hành.",
+        "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng. Ngày đến hạn thanh toán theo thông báo thu của Trường."
+      ]
+    }
+  },
+  "tracks": [
+    {
+      "number": "05",
+      "title": "Định hướng ứng dụng",
+      "orientation": "Ứng dụng",
+      "subtitle": "60 tín chỉ · 24 tháng · 6 học kỳ",
+      "graduationProject": "Đề án tốt nghiệp · 8 tín chỉ",
+      "intro": "Chương trình gồm 42 tín chỉ bắt buộc và 18 tín chỉ tự chọn. Các học phần tự chọn chia thành 5 nhóm, giúp người học mở rộng chuyên môn theo cơ cấu của chương trình.",
+      "generalFacts": [
+        {
+          "label": "Thời gian chuẩn",
+          "value": "24 tháng"
+        },
+        {
+          "label": "Kế hoạch học tập",
+          "value": "6 học kỳ"
+        },
+        {
+          "label": "Hình thức",
+          "value": "Chính quy tập trung"
+        },
+        {
+          "label": "Ngôn ngữ",
+          "value": "Tiếng Việt"
+        },
+        {
+          "label": "Thực tập",
+          "value": "6 tín chỉ"
+        },
+        {
+          "label": "Đề án tốt nghiệp",
+          "value": "8 tín chỉ"
+        }
+      ],
+      "notes": [
+        "7 tín chỉ chung · 9 tín chỉ cơ sở ngành · 30 tín chỉ chuyên ngành · 14 tín chỉ thực tập và đề án."
+      ],
+      "groups": [
+        {
+          "title": "I. Kiến thức chung",
+          "totalCreditsLabel": "7 tín chỉ",
+          "courses": [
+            {
+              "name": "Triết học",
+              "englishName": "Philosophy",
+              "credits": 4
+            },
+            {
+              "name": "Phương pháp nghiên cứu khoa học",
+              "englishName": "Scientific Research Methods",
+              "credits": 3
+            }
+          ],
+          "description": []
+        },
+        {
+          "title": "II. Kiến thức cơ sở ngành",
+          "totalCreditsLabel": "9 tín chỉ",
+          "courses": [],
+          "subgroups": [
+            {
+              "title": "Học phần bắt buộc · 6 tín chỉ",
+              "totalCreditsLabel": "6 tín chỉ",
+              "description": [],
+              "courses": [
+                {
+                  "name": "Lý thuyết kế toán",
+                  "englishName": "Accounting Theory",
+                  "credits": 3
+                },
+                {
+                  "name": "Quản trị tài chính doanh nghiệp",
+                  "englishName": "Corporate Financial Management",
+                  "credits": 3
+                }
+              ]
+            },
+            {
+              "title": "Học phần tự chọn · Học kỳ 1",
+              "totalCreditsLabel": "3 tín chỉ",
+              "description": [
+                "Chọn 1 trong 4 học phần · 3 tín chỉ."
+              ],
+              "courses": [
+                {
+                  "name": "Trí tuệ nhân tạo và dữ liệu lớn trong kinh doanh",
+                  "englishName": "Artificial Intelligence and Big Data in Business",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "Công nghệ Blockchain và ứng dụng",
+                  "englishName": "Blockchain technology and applications",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "An toàn thông tin kế toán nâng cao",
+                  "englishName": "Advanced Accounting Information Security",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "Đạo đức nghề nghiệp kế toán, kiểm toán trong môi trường số",
+                  "englishName": "Professional Ethics in Accounting and Auditing in the Digital Environment",
+                  "credits": 3,
+                  "elective": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "III. Kiến thức chuyên ngành",
+          "totalCreditsLabel": "30 tín chỉ",
+          "courses": [],
+          "subgroups": [
+            {
+              "title": "Học phần bắt buộc · 15 tín chỉ",
+              "totalCreditsLabel": "15 tín chỉ",
+              "description": [],
+              "courses": [
+                {
+                  "name": "Báo cáo tài chính hợp nhất nâng cao",
+                  "englishName": "Advanced Consolidated Financial Reporting",
+                  "credits": 3
+                },
+                {
+                  "name": "Kế toán quản trị nâng cao",
+                  "englishName": "Advanced Management Accounting",
+                  "credits": 3
+                },
+                {
+                  "name": "Hệ thống thông tin quản lý trong kế toán nâng cao",
+                  "englishName": "Advanced Management Information System in Accounting",
+                  "credits": 3
+                },
+                {
+                  "name": "Kiểm toán và các dịch vụ đảm bảo nâng cao",
+                  "englishName": "Advanced Auditing and Assurance Services",
+                  "credits": 3
+                },
+                {
+                  "name": "Báo cáo ESG và tạo lập giá trị tổ chức",
+                  "englishName": "ESG Reporting and Organizational Value Creation",
+                  "credits": 3
+                }
+              ]
+            },
+            {
+              "title": "01. Nhóm kế toán chuyên sâu · Học kỳ 3",
+              "totalCreditsLabel": "6 tín chỉ",
+              "description": [
+                "Học phần tự chọn · 15 tín chỉ",
+                "Chọn 5 học phần theo cơ cấu từng nhóm dưới đây. Mỗi học phần 3 tín chỉ; học viên lựa chọn đủ số môn của từng nhóm theo kế hoạch học tập.",
+                "Chọn 2 trong 4 học phần · 6 tín chỉ."
+              ],
+              "courses": [
+                {
+                  "name": "Kế toán công nâng cao",
+                  "englishName": "Advanced Public Sector Accounting",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "Kế toán phát triển bền vững",
+                  "englishName": "Sustainability Accounting",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "Kế toán điều tra số",
+                  "englishName": "Digital Forensic Accounting",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "Kế toán quốc tế nâng cao",
+                  "englishName": "Advanced International Accounting",
+                  "credits": 3,
+                  "elective": true
+                }
+              ]
+            },
+            {
+              "title": "02. Nhóm thuế · Học kỳ 3",
+              "totalCreditsLabel": "3 tín chỉ",
+              "description": [
+                "Chọn 1 trong 3 học phần · 3 tín chỉ."
+              ],
+              "courses": [
+                {
+                  "name": "Phân tích chính sách thuế",
+                  "englishName": "Business tax policy analysis",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "Quản lý rủi ro tuân thủ thuế nâng cao",
+                  "englishName": "Advanced Tax Compliance Risk Management",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "Quản trị rủi ro thuế trong môi trường số",
+                  "englishName": "Tax Risk Management in the Digital Environment",
+                  "credits": 3,
+                  "elective": true
+                }
+              ]
+            },
+            {
+              "title": "03. Nhóm kiểm soát và kiểm toán · Học kỳ 4",
+              "totalCreditsLabel": "3 tín chỉ",
+              "description": [
+                "Chọn 1 trong 3 học phần · 3 tín chỉ."
+              ],
+              "courses": [
+                {
+                  "name": "Kiểm soát nội bộ nâng cao",
+                  "englishName": "Advanced Internal Controls",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "Kiểm soát quản lý",
+                  "englishName": "Management Control",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "Kiểm toán hoạt động",
+                  "englishName": "Operational Auditing",
+                  "credits": 3,
+                  "elective": true
+                }
+              ]
+            },
+            {
+              "title": "04. Nhóm quản trị doanh nghiệp · Học kỳ 4",
+              "totalCreditsLabel": "3 tín chỉ",
+              "description": [
+                "Chọn 1 trong 3 học phần · 3 tín chỉ."
+              ],
+              "courses": [
+                {
+                  "name": "Sáp nhập, mua lại và tái cấu trúc doanh nghiệp",
+                  "englishName": "Mergers, Acquisitions, and Corporate Restructuring",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "Quản trị chiến lược",
+                  "englishName": "Strategic management",
+                  "credits": 3,
+                  "elective": true
+                },
+                {
+                  "name": "Quản trị rủi ro doanh nghiệp",
+                  "englishName": "Enterprise Risk Management",
+                  "credits": 3,
+                  "elective": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "IV. Thực tập và đề án tốt nghiệp",
+          "totalCreditsLabel": "14 tín chỉ",
+          "courses": [
+            {
+              "name": "Thực tập",
+              "englishName": "Internship",
+              "credits": 6
+            },
+            {
+              "name": "Đề án tốt nghiệp",
+              "englishName": "Graduation Project",
+              "credits": 8
+            }
+          ],
+          "description": [
+            "Thực tập và đề án theo định hướng ứng dụng"
+          ]
+        }
+      ],
+      "semesters": {
+        "heading": "Kế hoạch học tập theo từng học kỳ",
+        "intro": "Thời gian đào tạo chuẩn là 24 tháng, mỗi năm có 3 học kỳ chính. Lộ trình mẫu gồm 6 học kỳ: tích lũy kiến thức ở học kỳ 1–4, thực tập ở học kỳ 5 và thực hiện đề án tốt nghiệp ở học kỳ 6. Thời khóa biểu và việc mở lớp tự chọn được công bố theo kế hoạch đào tạo.",
+        "items": [
+          {
+            "title": "Học kỳ 1",
+            "subtitle": "Nền tảng và phương pháp nghiên cứu · 16 tín chỉ",
+            "groups": [
+              {
+                "title": "Học phần bắt buộc",
+                "totalCreditsLabel": "13 tín chỉ",
+                "description": [],
+                "courses": [
+                  {
+                    "name": "Triết học",
+                    "englishName": "Philosophy",
+                    "credits": 4
+                  },
+                  {
+                    "name": "Phương pháp nghiên cứu khoa học",
+                    "englishName": "Scientific Research Methods",
+                    "credits": 3
+                  },
+                  {
+                    "name": "Lý thuyết kế toán",
+                    "englishName": "Accounting Theory",
+                    "credits": 3
+                  },
+                  {
+                    "name": "Quản trị tài chính doanh nghiệp",
+                    "englishName": "Corporate Financial Management",
+                    "credits": 3
+                  }
+                ]
+              },
+              {
+                "title": "Kiến thức cơ sở tự chọn",
+                "totalCreditsLabel": "3 tín chỉ",
+                "description": [
+                  "Chọn 1 trong 4 học phần · 3 tín chỉ."
+                ],
+                "courses": [
+                  {
+                    "name": "Trí tuệ nhân tạo và dữ liệu lớn trong kinh doanh",
+                    "englishName": "Artificial Intelligence and Big Data in Business",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Công nghệ Blockchain và ứng dụng",
+                    "englishName": "Blockchain technology and applications",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "An toàn thông tin kế toán nâng cao",
+                    "englishName": "Advanced Accounting Information Security",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Đạo đức nghề nghiệp kế toán, kiểm toán trong môi trường số",
+                    "englishName": "Professional Ethics in Accounting and Auditing in the Digital Environment",
+                    "credits": 3,
+                    "elective": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Học kỳ 2",
+            "subtitle": "Kế toán và kiểm toán nâng cao · 12 tín chỉ",
+            "groups": [
+              {
+                "title": "Học phần bắt buộc",
+                "totalCreditsLabel": "12 tín chỉ",
+                "description": [],
+                "courses": [
+                  {
+                    "name": "Báo cáo tài chính hợp nhất nâng cao",
+                    "englishName": "Advanced Consolidated Financial Reporting",
+                    "credits": 3
+                  },
+                  {
+                    "name": "Kế toán quản trị nâng cao",
+                    "englishName": "Advanced Management Accounting",
+                    "credits": 3
+                  },
+                  {
+                    "name": "Hệ thống thông tin quản lý trong kế toán nâng cao",
+                    "englishName": "Advanced Management Information System in Accounting",
+                    "credits": 3
+                  },
+                  {
+                    "name": "Kiểm toán và các dịch vụ đảm bảo nâng cao",
+                    "englishName": "Advanced Auditing and Assurance Services",
+                    "credits": 3
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Học kỳ 3",
+            "subtitle": "ESG, kế toán chuyên sâu và thuế · 12 tín chỉ",
+            "groups": [
+              {
+                "title": "Học phần bắt buộc",
+                "totalCreditsLabel": "3 tín chỉ",
+                "description": [],
+                "courses": [
+                  {
+                    "name": "Báo cáo ESG và tạo lập giá trị tổ chức",
+                    "englishName": "ESG Reporting and Organizational Value Creation",
+                    "credits": 3
+                  }
+                ]
+              },
+              {
+                "title": "Nhóm kế toán chuyên sâu",
+                "totalCreditsLabel": "6 tín chỉ",
+                "description": [
+                  "Chọn 2 trong 4 học phần · 6 tín chỉ."
+                ],
+                "courses": [
+                  {
+                    "name": "Kế toán công nâng cao",
+                    "englishName": "Advanced Public Sector Accounting",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Kế toán phát triển bền vững",
+                    "englishName": "Sustainability Accounting",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Kế toán điều tra số",
+                    "englishName": "Digital Forensic Accounting",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Kế toán quốc tế nâng cao",
+                    "englishName": "Advanced International Accounting",
+                    "credits": 3,
+                    "elective": true
+                  }
+                ]
+              },
+              {
+                "title": "Nhóm thuế",
+                "totalCreditsLabel": "3 tín chỉ",
+                "description": [
+                  "Chọn 1 trong 3 học phần · 3 tín chỉ."
+                ],
+                "courses": [
+                  {
+                    "name": "Phân tích chính sách thuế",
+                    "englishName": "Business tax policy analysis",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Quản lý rủi ro tuân thủ thuế nâng cao",
+                    "englishName": "Advanced Tax Compliance Risk Management",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Quản trị rủi ro thuế trong môi trường số",
+                    "englishName": "Tax Risk Management in the Digital Environment",
+                    "credits": 3,
+                    "elective": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Học kỳ 4",
+            "subtitle": "Kiểm soát và quản trị doanh nghiệp · 6 tín chỉ",
+            "groups": [
+              {
+                "title": "Nhóm kiểm soát và kiểm toán",
+                "totalCreditsLabel": "3 tín chỉ",
+                "description": [
+                  "Chọn 1 trong 3 học phần · 3 tín chỉ."
+                ],
+                "courses": [
+                  {
+                    "name": "Kiểm soát nội bộ nâng cao",
+                    "englishName": "Advanced Internal Controls",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Kiểm soát quản lý",
+                    "englishName": "Management Control",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Kiểm toán hoạt động",
+                    "englishName": "Operational Auditing",
+                    "credits": 3,
+                    "elective": true
+                  }
+                ]
+              },
+              {
+                "title": "Nhóm quản trị doanh nghiệp",
+                "totalCreditsLabel": "3 tín chỉ",
+                "description": [
+                  "Chọn 1 trong 3 học phần · 3 tín chỉ."
+                ],
+                "courses": [
+                  {
+                    "name": "Sáp nhập, mua lại và tái cấu trúc doanh nghiệp",
+                    "englishName": "Mergers, Acquisitions, and Corporate Restructuring",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Quản trị chiến lược",
+                    "englishName": "Strategic management",
+                    "credits": 3,
+                    "elective": true
+                  },
+                  {
+                    "name": "Quản trị rủi ro doanh nghiệp",
+                    "englishName": "Enterprise Risk Management",
+                    "credits": 3,
+                    "elective": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Học kỳ 5",
+            "subtitle": "Thực tập tại đơn vị · 6 tín chỉ",
+            "groups": [
+              {
+                "title": "Học phần bắt buộc",
+                "totalCreditsLabel": "6 tín chỉ",
+                "description": [],
+                "courses": [
+                  {
+                    "name": "Thực tập",
+                    "englishName": "Internship",
+                    "credits": 6
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Học kỳ 6",
+            "subtitle": "Thực hiện đề án tốt nghiệp · 8 tín chỉ",
+            "groups": [
+              {
+                "title": "Học phần bắt buộc",
+                "totalCreditsLabel": "8 tín chỉ",
+                "description": [],
+                "courses": [
+                  {
+                    "name": "Đề án tốt nghiệp",
+                    "englishName": "Graduation Project",
+                    "credits": 8
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "completion": {
+        "heading": "Hoàn thành chương trình",
+        "items": [
+          "Hoàn thành các học phần, thực tập và đề án tốt nghiệp; bảo vệ đề án đạt yêu cầu.",
+          "Đạt chuẩn ngoại ngữ tương đương Bậc 4/6 trở lên hoặc đáp ứng hình thức minh chứng tương đương theo quy định.",
+          "Hoàn thành các nghĩa vụ và đáp ứng đầy đủ điều kiện công nhận tốt nghiệp của Trường."
+        ]
+      }
+    }
+  ]
+}

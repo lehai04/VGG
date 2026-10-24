@@ -1,0 +1,20 @@
+[
+  ".home-page .programmeTabs",
+  ".home-page .programmeTabs > *",
+  ".home-page .programmeTabs > *:last-child",
+  ".home-page .programmeTabs .active",
+  ".home-page .programmeList",
+  ".home-page .programmeList > a",
+  ".home-page .programmeList > a > span",
+  ".home-page .programmeList small",
+  ".home-page .programmeList h3",
+  ".home-page .programmeList i",
+  ".home-page .programmeList > a:hover",
+  ".home-page .programmeList > a:hover span",
+  ".home-page .programmeList > a:hover small",
+  ".home-page .programmeList",
+  ".home-page .programmeTabs",
+  ".home-page .programmeTabs > *",
+  ".home-page .programmeList",
+  ".home-page .programmeList > a"
+]

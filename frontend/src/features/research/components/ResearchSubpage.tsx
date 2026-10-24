@@ -102,7 +102,7 @@ export function ResearchSubpage({ slug }: { slug: string }) {
           <p className={styles.kicker}>02 — NỘI DUNG TRỌNG TÂM</p>
           <h2>
             Điểm nổi bật
-            <br />
+            {" "}
             đáng chú ý.
           </h2>
         </header>

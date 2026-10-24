@@ -46,7 +46,7 @@ export function ResearchClustersPage() {
         <div className={styles.heroOverlay} />
         <div className={styles.heroTitle}>
           <p>RESEARCH &amp; INNOVATION · 01</p>
-          <h1 id="clusters-title">Các cụm<br />nghiên cứu</h1>
+          <h1 id="clusters-title">Các cụm{" "}nghiên cứu</h1>
           <span>Research clusters</span>
         </div>
       </section>

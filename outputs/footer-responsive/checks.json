@@ -1,0 +1,186 @@
+{
+  "sizes": [
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 272.8000183105469,
+      "layout": "272.8px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 320
+    },
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 312.8000183105469,
+      "layout": "312.8px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 360
+    },
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 343.20001220703125,
+      "layout": "343.2px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 390
+    },
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 536.7999877929688,
+      "layout": "536.8px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 600
+    },
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 573.6000366210938,
+      "layout": "573.6px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 640
+    },
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 676,
+      "layout": "676px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 768
+    },
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 794.7999877929688,
+      "layout": "794.8px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 900
+    },
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 906.4000244140624,
+      "layout": "906.4px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 1024
+    },
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 974.7999877929688,
+      "layout": "974.8px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 1100
+    },
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 542.7999877929688,
+      "layout": "542.8px 542.8px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 1280
+    },
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 620.4000244140625,
+      "layout": "620.4px 620.4px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 1440
+    },
+    {
+      "clipped": 0,
+      "fields": 4,
+      "formWidth": 860.4000244140625,
+      "layout": "860.4px 860.4px",
+      "overflow": false,
+      "value": "Kiểm tra responsive",
+      "width": 1920
+    }
+  ],
+  "routes": [
+    {
+      "path": "/vi",
+      "clipped": false,
+      "fields": 4,
+      "footer": true,
+      "formWidth": 272.8000183105469,
+      "overflow": false,
+      "width": 320
+    },
+    {
+      "path": "/vi",
+      "clipped": false,
+      "fields": 4,
+      "footer": true,
+      "formWidth": 676,
+      "overflow": false,
+      "width": 768
+    },
+    {
+      "path": "/vi",
+      "clipped": false,
+      "fields": 4,
+      "footer": true,
+      "formWidth": 906.4000244140624,
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "path": "/vi",
+      "clipped": false,
+      "fields": 4,
+      "footer": true,
+      "formWidth": 620.4000244140625,
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "path": "/vi/admissions",
+      "clipped": false,
+      "fields": 4,
+      "footer": true,
+      "formWidth": 272.8000183105469,
+      "overflow": false,
+      "width": 320
+    },
+    {
+      "path": "/vi/admissions",
+      "clipped": false,
+      "fields": 4,
+      "footer": true,
+      "formWidth": 676,
+      "overflow": false,
+      "width": 768
+    },
+    {
+      "path": "/vi/admissions",
+      "clipped": false,
+      "fields": 4,
+      "footer": true,
+      "formWidth": 906.4000244140624,
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "path": "/vi/admissions",
+      "clipped": false,
+      "fields": 4,
+      "footer": true,
+      "formWidth": 620.4000244140625,
+      "overflow": false,
+      "width": 1440
+    }
+  ]
+}

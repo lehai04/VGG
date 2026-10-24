@@ -1,0 +1,296 @@
+[
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "cong-nghe-sinh-hoc",
+    "title": "Công nghệ Sinh học",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "cong-nghe-thong-tin",
+    "title": "Công nghệ thông tin",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "ke-toan",
+    "title": "Kế toán",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "khoa-hoc-moi-truong",
+    "title": "Khoa học Môi trường",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "kien-truc",
+    "title": "Kiến trúc",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "kinh-doanh-thuong-mai",
+    "title": "Kinh doanh Thương mại",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "ky-thuat-moi-truong",
+    "title": "Kỹ thuật Môi trường",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "ky-thuat-o-to",
+    "title": "Kỹ thuật ô tô",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "ky-thuat-xay-dung",
+    "title": "Kỹ thuật Xây dựng",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "logistics",
+    "title": "Logistics vàQuản lý chuỗi cung ứng",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "luat-kinh-te",
+    "title": "Luật Kinh tế",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "ly-luan-lich-su-my-thuat",
+    "title": "Lý luận và Lịch sử Mỹ thuật Ứng dụng",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 1,
+    "slug": "marketing",
+    "title": "Marketing",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "my-thuat-ung-dung",
+    "title": "Mỹ thuật Ứng dụng",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "ngon-ngu-anh",
+    "title": "Ngôn ngữ Anh",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "quan-he-cong-chung",
+    "title": "Quan hệ Công chúng",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "quan-ly-tai-nguyen-moi-truong",
+    "title": "Quản lý Tài nguyên và Môi trường",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "quan-tri-du-lich",
+    "title": "Quản trị Dịch vụ Du lịch và Lữ hành",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "quan-tri-khach-san",
+    "title": "Quản trị Khách sạn",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "quan-tri-kinh-doanh",
+    "title": "Quản trị Kinh doanh",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "sections": 7,
+    "slug": "tai-chinh-ngan-hang",
+    "title": "Tài chính - Ngân hàng",
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "cong-nghe-sinh-hoc",
+    "title": "Công nghệ Sinh học",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "cong-nghe-thong-tin",
+    "title": "Công nghệ thông tin",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "ke-toan",
+    "title": "Kế toán",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "none",
+    "slug": "khoa-hoc-moi-truong",
+    "title": "Khoa học Môi trường",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "kien-truc",
+    "title": "Kiến trúc",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "kinh-doanh-thuong-mai",
+    "title": "Kinh doanh Thương mại",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "ky-thuat-moi-truong",
+    "title": "Kỹ thuật Môi trường",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "ky-thuat-o-to",
+    "title": "Kỹ thuật ô tô",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "ky-thuat-xay-dung",
+    "title": "Kỹ thuật Xây dựng",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "logistics",
+    "title": "Logistics vàQuản lý chuỗi cung ứng",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "luat-kinh-te",
+    "title": "Luật Kinh tế",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "ly-luan-lich-su-my-thuat",
+    "title": "Lý luận và Lịch sử Mỹ thuật Ứng dụng",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": null,
+    "slug": "marketing",
+    "title": "Marketing",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "my-thuat-ung-dung",
+    "title": "Mỹ thuật Ứng dụng",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "ngon-ngu-anh",
+    "title": "Ngôn ngữ Anh",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "quan-he-cong-chung",
+    "title": "Quan hệ Công chúng",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "quan-ly-tai-nguyen-moi-truong",
+    "title": "Quản lý Tài nguyên và Môi trường",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "quan-tri-du-lich",
+    "title": "Quản trị Dịch vụ Du lịch và Lữ hành",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "quan-tri-khach-san",
+    "title": "Quản trị Khách sạn",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "quan-tri-kinh-doanh",
+    "title": "Quản trị Kinh doanh",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "overviewColumns": "343.2px",
+    "slug": "tai-chinh-ngan-hang",
+    "title": "Tài chính - Ngân hàng",
+    "width": 390
+  }
+]

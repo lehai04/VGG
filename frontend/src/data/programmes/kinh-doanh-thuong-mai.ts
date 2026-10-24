@@ -1,0 +1,848 @@
+// Nguồn: thac-si-kinh-doanh-thuong-mai.html do người dùng cung cấp ngày 24/10/2026.
+import { programmeSharedContent } from "./shared-content";
+import type { Programme, ProgrammePageContent } from "../programmes";
+import type { CurriculumTrack } from "../curricula";
+
+export const kinhDoanhThuongMaiPageContent: ProgrammePageContent = {
+  hero: {
+    ...programmeSharedContent.hero,
+    heroLead:
+      "Phát triển năng lực quản trị thương mại, phân tích dữ liệu và triển khai giải pháp kinh doanh trong môi trường số, gắn kiến thức chuyên sâu với những vấn đề thực tiễn của doanh nghiệp.",
+    heroSlogan: "FUTURE",
+    heroImage: "/images/pages/programmes/kinh-doanh-thuong-mai/business-learning.webp",
+    imageAlt: "Thuyết trình và trao đổi nhóm trong không gian học tập tại Trường Đại học Văn Lang",
+    imageCredit: {
+      text: "Không gian trao đổi và học tập · Nguồn: Văn Lang ↗",
+      href: "https://www.vlu.edu.vn/academics/majors/thac-si-kinh-doanh-thuong-mai",
+    },
+  },
+  facts: {
+    ...programmeSharedContent.facts,
+    quickFactsDetailed: [
+      {
+        label: "Mã ngành",
+        value: "340121",
+        detail: "Mã chương trình: 8340121",
+      },
+      {
+        label: "Khối lượng chương trình",
+        value: "60 tín chỉ",
+        detail: "24 tháng · 4 học kỳ",
+      },
+      {
+        label: "Định hướng đào tạo",
+        value: "Ứng dụng",
+        detail: "",
+      },
+      {
+        label: "Hình thức đào tạo",
+        value: "Chính quy",
+        detail: "Tập trung",
+      },
+      {
+        label: "Ngôn ngữ đào tạo",
+        value: "Tiếng Việt",
+        detail: "",
+      },
+      {
+        label: "Học phí toàn khóa",
+        value: "85 triệu đồng",
+        detail: "",
+      },
+    ],
+  },
+  section01: {
+    ...programmeSharedContent.overview,
+    sectionNumber: "01",
+    overviewTitle: "Tổng quan chương trình",
+    headline: "Hiểu thị trường. Phát triển kinh doanh.",
+    overview: [
+      "Chương trình Thạc sĩ Kinh doanh thương mại tại Văn Lang được thiết kế theo định hướng ứng dụng, kết nối kiến thức quản trị, hành vi khách hàng, marketing và công nghệ số. Người học phát triển khả năng phân tích bối cảnh, ra quyết định dựa trên dữ liệu và triển khai giải pháp phù hợp với hoạt động doanh nghiệp.",
+      "Chương trình chú trọng quản trị kinh doanh số, lãnh đạo sự thay đổi, tối ưu hiệu suất marketing và nghiên cứu kinh doanh. Các học phần tự chọn tạo cơ hội tiếp cận ESG, trí tuệ nhân tạo, thương mại đa kênh, quản trị rủi ro, đổi mới sản phẩm và phân tích dữ liệu.",
+      "Dự án kinh doanh kết hợp chuyến đi thực tế, thực tập tốt nghiệp và đề án tốt nghiệp giúp người học vận dụng kiến thức vào tình huống doanh nghiệp, phát triển kỹ năng giải quyết vấn đề và trình bày giải pháp có cơ sở.",
+      "Văn bằng tốt nghiệp: Thạc sĩ Kinh doanh thương mại Master of Commerce",
+    ],
+    overviewImage: "/images/pages/programmes/kinh-doanh-thuong-mai/business-presentation.webp",
+    imageAlt:
+      "Thuyết trình và trao đổi về biểu đồ kinh doanh trong phòng học tại Trường Đại học Văn Lang",
+    imageCredit: {
+      text: "Thuyết trình và trao đổi về dữ liệu kinh doanh Nguồn: Trường Đại học Văn Lang ↗",
+      href: "https://www.vlu.edu.vn/academics/majors/thac-si-kinh-doanh-thuong-mai",
+    },
+    focusAreas: [
+      "Quản trị kinh doanh số",
+      "Dữ liệu & công nghệ",
+      "Thương mại đa kênh",
+      "Đổi mới & bền vững",
+    ],
+    ribbonTitle: "Vận dụng vào thực tiễn.",
+    tags: [
+      "Thực tập tốt nghiệp Gắn với hoạt động chuyên môn 6 tín chỉ",
+      "Đề án tốt nghiệp Giải quyết bài toán kinh doanh 9 tín chỉ",
+    ],
+    link: {
+      text: "Khám phá khung chương trình",
+      href: "#chuong-trinh",
+      ariaLabel: "Khám phá khung chương trình Kinh doanh thương mại",
+    },
+  },
+  section02: {
+    ...programmeSharedContent.highlights,
+    sectionNumber: "02",
+    highlights: [
+      {
+        title: "Định hướng ứng dụng rõ nét",
+        text: "Chương trình tập trung vào phân tích và giải quyết vấn đề thực tế trong hoạt động thương mại, từ hoạch định đến triển khai và đánh giá giải pháp.",
+      },
+      {
+        title: "Quản trị trên nền tảng dữ liệu",
+        text: "Kết nối nghiên cứu kinh doanh, hiểu biết khách hàng và các công cụ phân tích để hỗ trợ quyết định trong môi trường số.",
+      },
+      {
+        title: "Gắn với bài toán doanh nghiệp",
+        text: "Học phần Dự án kinh doanh kết hợp chuyến đi thực tế giúp học viên làm việc với bối cảnh và nhu cầu thực tế của doanh nghiệp.",
+      },
+      {
+        title: "15 tín chỉ thực tập và đề án",
+        text: "Thực tập tốt nghiệp 6 tín chỉ và đề án tốt nghiệp 9 tín chỉ tạo điều kiện vận dụng kiến thức, xây dựng giải pháp và thể hiện năng lực chuyên môn.",
+      },
+      {
+        title: "Trao đổi chuyên môn, mở rộng góc nhìn",
+        text: "Bên cạnh các học phần, chương trình tạo cơ hội tham gia viết bài, dự hội thảo và trao đổi về kinh doanh thương mại, marketing, thương mại điện tử, kinh doanh quốc tế và logistics. Những hoạt động này hỗ trợ quá trình hình thành vấn đề và triển khai đề án tốt nghiệp.",
+      },
+    ],
+    learningOutcomes: {
+      intro:
+        "Mười chuẩn đầu ra bao quát kiến thức chuyên sâu, kỹ năng phân tích và triển khai giải pháp, cùng năng lực tự chủ và trách nhiệm nghề nghiệp.",
+      items: [
+        {
+          code: "PLO1",
+          title: "Phân tích và đề xuất giải pháp",
+          text: "Phân tích và đề xuất giải pháp cho các vấn đề của tổ chức dựa trên nền tảng phân tích kinh doanh, hành vi, quản trị, kinh tế số.",
+        },
+        {
+          code: "PLO2",
+          title: "Đánh giá vận hành doanh nghiệp",
+          text: "Phân tích và đánh giá các khía cạnh vận hành doanh nghiệp dựa trên việc áp dụng kiến thức cốt lõi của ngành kinh doanh thương mại trên nền tảng kinh doanh số.",
+        },
+        {
+          code: "PLO3",
+          title: "Ra quyết định dựa trên dữ liệu",
+          text: "Đánh giá các yếu tố tác động từ các bên liên quan đến hoạt động kinh doanh thương mại thông qua phân tích và nghiên cứu ứng dụng dựa trên dữ liệu, nhằm hỗ trợ ra quyết định quản trị.",
+        },
+        {
+          code: "PLO4",
+          title: "Sử dụng công cụ phân tích",
+          text: "Sử dụng thành thạo kỹ năng phân tích, tổng hợp, đánh giá dữ liệu và thông tin thông qua việc ứng dụng các công cụ công nghệ thông tin để đưa ra quyết định cho hoạt động kinh doanh thương mại trong tổ chức.",
+        },
+        {
+          code: "PLO5",
+          title: "Giao tiếp và hợp tác",
+          text: "Sử dụng thành thạo kỹ năng giao tiếp đa phương tiện và các kỹ năng mềm trong quá trình xử lý công việc trong tổ chức.",
+        },
+        {
+          code: "PLO6",
+          title: "Triển khai và đánh giá chiến lược số",
+          text: "Thành thạo kỹ năng số (Digital Skills) trong phân tích, triển khai và đánh giá chiến lược số dựa trên dữ liệu và các chỉ số đo lường hiệu quả.",
+        },
+        {
+          code: "PLO7",
+          title: "Ngoại ngữ trong môi trường chuyên môn",
+          text: "Sử dụng thành thạo ngoại ngữ đạt trình độ B2 tương đương bậc 4/6 trong Khung năng lực ngoại ngữ Việt Nam.",
+        },
+        {
+          code: "PLO8",
+          title: "Tuân thủ pháp luật và đạo đức",
+          text: "Tuân thủ các quy định của pháp luật trong công việc và cuộc sống.",
+        },
+        {
+          code: "PLO9",
+          title: "Trách nhiệm cá nhân và cộng đồng",
+          text: "Thể hiện khả năng chịu trách nhiệm cá nhân và ý thức trách nhiệm cộng đồng.",
+        },
+        {
+          code: "PLO10",
+          title: "Học tập và thích ứng lâu dài",
+          text: "Thể hiện thái độ cầu tiến, ý thức học tập suốt đời và khả năng tự cập nhật, vận dụng kiến thức, công cụ và phương pháp chuyên môn nhằm nâng cao khả năng thích ứng với công việc và bối cảnh nghề nghiệp.",
+        },
+      ],
+    },
+  },
+  section03: {
+    sectionNumber: "03",
+    audienceHeading: "Chương trình phù hợp với ai?",
+    headline: "Từ kinh nghiệm làm việc đến năng lực quản trị.",
+    intro: [
+      "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành học phù hợp và đáp ứng các điều kiện dự tuyển của chương trình.",
+    ],
+    audience: [
+      {
+        title: "Người đang làm kinh doanh, thương mại",
+        text: "Củng cố kiến thức và phương pháp để phát triển thị trường, quản lý bán hàng, marketing và hoạt động thương mại của doanh nghiệp.",
+      },
+      {
+        title: "Người hướng đến vai trò quản lý",
+        text: "Nâng cao năng lực phân tích, ra quyết định, điều phối công việc và dẫn dắt sự thay đổi trong môi trường kinh doanh.",
+      },
+      {
+        title: "Người muốn phát triển trong kinh doanh số",
+        text: "Tiếp cận các mô hình kinh doanh số, hành vi khách hàng và ứng dụng dữ liệu, công nghệ để cải tiến hoạt động của tổ chức.",
+      },
+    ],
+    requirements: [
+      {
+        title: "Ngành tốt nghiệp có phù hợp?",
+        paragraphs: [
+          "Người tốt nghiệp các ngành được liệt kê trong danh mục phù hợp thuộc nhóm Kinh doanh, Quản trị – Quản lý, Tài chính – Ngân hàng – Bảo hiểm, Kế toán – Kiểm toán và ngành Kinh tế số không cần học bổ sung kiến thức. Các ngành khác được đối chiếu hồ sơ để xác định yêu cầu bổ sung.",
+        ],
+      },
+      {
+        title: "Phương thức tuyển sinh",
+        paragraphs: [
+          "Xét tuyển. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Kinh doanh thương mại.",
+        ],
+      },
+      {
+        title: "Yêu cầu ngoại ngữ đầu vào",
+        paragraphs: [
+          "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên, được minh chứng bằng một trong các hình thức công nhận trong thông báo tuyển sinh.",
+        ],
+      },
+      {
+        title: "Các hình thức minh chứng ngoại ngữ đầu vào",
+        paragraphs: [
+          "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
+          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+          "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
+        ],
+        points: [
+          "Bằng đại học trở lên ngành ngôn ngữ nước ngoài hoặc chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
+          "Văn bằng, chứng chỉ tương đương Bậc 3 trở lên thuộc danh mục được công nhận và còn hiệu lực.",
+          "Kết quả đánh giá tương đương Bậc 3 trở lên do Trường tổ chức; hoặc hoàn thành chương trình đào tạo, bồi dưỡng ngoại ngữ do Trường tổ chức hoặc công nhận.",
+          "Bằng đại học trở lên do Văn Lang cấp trong thời hạn không quá 2 năm, với chương trình đã đáp ứng chuẩn đầu ra ngoại ngữ từ Bậc 3 trở lên.",
+        ],
+      },
+      {
+        title: "Bổ sung kiến thức đầu vào",
+        paragraphs: [
+          "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã học để xác định các học phần cần bổ sung. Ứng viên phải hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+          "Đối với các ngành khác: bổ sung tối đa 12 tín chỉ, gồm 4 học phần, mỗi học phần 3 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình thạc sĩ.",
+          "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
+        ],
+        groups: [
+          {
+            title: "01. Danh mục ngành không cần bổ sung kiến thức",
+            paragraphs: [],
+            groups: [
+              {
+                title: "Ngành tốt nghiệp",
+                paragraphs: [
+                  "Ứng viên vẫn phải đáp ứng đầy đủ các điều kiện dự tuyển của chương trình.",
+                ],
+                points: [
+                  "Kinh doanh Quản trị kinh doanh; Marketing; Bất động sản; Kinh doanh quốc tế; Kinh doanh thương mại; Thương mại điện tử.",
+                  "Quản trị – Quản lý Khoa học quản lý; Quản lý công; Quản trị nhân lực; Hệ thống thông tin quản lý; Quản trị văn phòng; Quản lý dự án.",
+                  "Tài chính - Ngân hàng - Bảo hiểm Tài chính - Ngân hàng; Bảo hiểm; Công nghệ tài chính.",
+                  "Kế toán – Kiểm toán Kế toán; Kiểm toán.",
+                  "Kinh tế học Kinh tế số.",
+                ],
+              },
+            ],
+          },
+          {
+            title: "02. Ngành khác · Bổ sung tối đa 12 tín chỉ",
+            paragraphs: [],
+            groups: [
+              {
+                title: "Các học phần bổ sung kiến thức",
+                paragraphs: [
+                  "Các học phần cần học được xác định theo văn bằng, bảng điểm và chương trình đã hoàn thành. Ứng viên cùng ngành tốt nghiệp có thể được yêu cầu bổ sung các học phần khác nhau tùy nền tảng đã học.",
+                ],
+                points: [
+                  "Kinh tế học đại cương · 3 tín chỉ",
+                  "Quản trị học · 3 tín chỉ",
+                  "Marketing căn bản · 3 tín chỉ",
+                  "Nguyên lý tài chính · 3 tín chỉ",
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  section04: {
+    sectionNumber: "04",
+    careerHeading: "Cơ hội nghề nghiệp và phát triển",
+    headline: "Mở rộng năng lực. Phát triển sự nghiệp.",
+    intro:
+      "Kiến thức kinh doanh thương mại, năng lực phân tích và kỹ năng quản trị tạo nền tảng để phát triển trong doanh nghiệp, tổ chức và các đơn vị tư vấn.",
+    note: "Hướng phát triển và vị trí đảm nhiệm phụ thuộc vào nền tảng chuyên môn, kinh nghiệm, năng lực thực tế và yêu cầu của từng tổ chức.",
+    careerImage: "/images/pages/programmes/kinh-doanh-thuong-mai/business-learning.webp",
+    careers: [
+      {
+        group: "Kinh doanh và thị trường",
+        title: "Quản lý kinh doanh và bán hàng",
+        sub: "Hoạch định, triển khai chiến lược kinh doanh; phát triển thị trường, tổ chức đội ngũ bán hàng và cải thiện hiệu quả doanh thu.",
+      },
+      {
+        group: "Kinh doanh và thị trường",
+        title: "Quản lý marketing",
+        sub: "Xây dựng và triển khai các hoạt động marketing đa kênh, phân tích hành vi khách hàng và đánh giá hiệu quả chiến dịch.",
+      },
+      {
+        group: "Thương mại và chuyển đổi số",
+        title: "Quản lý thương mại điện tử",
+        sub: "Phát triển hoạt động kinh doanh trên nền tảng trực tuyến, điều phối bán hàng đa kênh và nâng cao trải nghiệm khách hàng.",
+      },
+      {
+        group: "Thương mại và chuyển đổi số",
+        title: "Triển khai chuyển đổi số",
+        sub: "Tham gia xây dựng mô hình kinh doanh số, ứng dụng công nghệ và cải tiến quy trình để nâng cao năng lực cạnh tranh.",
+      },
+      {
+        group: "Phân tích, dự án và tư vấn",
+        title: "Phân tích kinh doanh và dữ liệu",
+        sub: "Thu thập, xử lý và phân tích dữ liệu để dự báo xu hướng, hỗ trợ quyết định và đề xuất giải pháp cho doanh nghiệp.",
+      },
+      {
+        group: "Phân tích, dự án và tư vấn",
+        title: "Quản lý dự án và chiến lược",
+        sub: "Điều phối các dự án phát triển sản phẩm, cải tiến quy trình và xây dựng chiến lược trong môi trường kinh doanh biến động.",
+      },
+      {
+        group: "Phân tích, dự án và tư vấn",
+        title: "Tư vấn giải pháp kinh doanh",
+        sub: "Hỗ trợ doanh nghiệp xây dựng mô hình kinh doanh, ứng dụng công nghệ số và quản trị dựa trên dữ liệu.",
+      },
+    ],
+  },
+  section05: {
+    ...programmeSharedContent.curriculum,
+    sectionNumber: "05",
+    curriculumIntro: [
+      "Chương trình kết nối quản trị, hành vi khách hàng và công nghệ số với các bài toán kinh doanh thực tế. Khối chuyên ngành gồm 22 tín chỉ bắt buộc và 8 tín chỉ tự chọn; thực tập và đề án tốt nghiệp chiếm 15 tín chỉ.",
+    ],
+    trackLabels: ["Định hướng ứng dụng"],
+    graduationProjects: ["Đề án tốt nghiệp · 9 tín chỉ"],
+    studyMode: "Chính quy tập trung",
+    generalFacts: [
+      {
+        label: "Thời gian chuẩn",
+        value: "24 tháng",
+      },
+      {
+        label: "Kế hoạch học tập",
+        value: "4 học kỳ",
+      },
+      {
+        label: "Hình thức",
+        value: "Chính quy tập trung",
+      },
+      {
+        label: "Ngôn ngữ",
+        value: "Tiếng Việt",
+      },
+      {
+        label: "Thực tập tốt nghiệp",
+        value: "6 tín chỉ",
+      },
+      {
+        label: "Đề án tốt nghiệp",
+        value: "9 tín chỉ",
+      },
+    ],
+    notes: [
+      "4 tín chỉ chung · 11 tín chỉ cơ sở ngành · 30 tín chỉ chuyên ngành · 15 tín chỉ thực tập và đề án.",
+    ],
+    semesters: {
+      heading: "Kế hoạch học tập theo từng học kỳ",
+      intro:
+        "Chương trình có thời gian đào tạo chuẩn 24 tháng, với kế hoạch 4 học kỳ. Ba học kỳ đầu tích lũy kiến thức nền tảng, chuyên ngành và dự án kinh doanh; học kỳ 4 tập trung thực tập và thực hiện đề án tốt nghiệp. Thời khóa biểu được công bố theo kế hoạch đào tạo.",
+      items: [
+        {
+          title: "Học kỳ 1",
+          subtitle: "Nền tảng kinh doanh số · 15 tín chỉ",
+          groups: [
+            {
+              title: "Học phần bắt buộc",
+              totalCreditsLabel: "15 tín chỉ",
+              courses: [
+                {
+                  name: "Triết học",
+                  englishName: "Philosophy",
+                  credits: 4,
+                },
+                {
+                  name: "Phương pháp nghiên cứu khoa học ứng dụng",
+                  englishName: "Applied Scientific Research Methods",
+                  credits: 3,
+                },
+                {
+                  name: "Kinh doanh kỹ thuật số",
+                  englishName: "Digital Business",
+                  credits: 4,
+                },
+                {
+                  name: "Thấu hiểu khách hàng và hành vi tiêu dùng kỹ thuật số",
+                  englishName: "Customer Insight & Digital Consumer Behavior",
+                  credits: 4,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: "Học kỳ 2",
+          subtitle: "Quản trị, lãnh đạo và marketing · 16 tín chỉ",
+          groups: [
+            {
+              title: "Học phần bắt buộc",
+              totalCreditsLabel: "12 tín chỉ",
+              courses: [
+                {
+                  name: "Quản trị kinh doanh số",
+                  englishName: "Digital Business Management",
+                  credits: 4,
+                },
+                {
+                  name: "Lãnh đạo số và quản trị sự thay đổi",
+                  englishName: "Digital Leadership & Change Management",
+                  credits: 4,
+                },
+                {
+                  name: "Thiết kế Marketing số và tối ưu hiệu suất",
+                  englishName: "Digital Marketing Design & Performance Optimization",
+                  credits: 4,
+                },
+              ],
+            },
+            {
+              title: "Tự chọn · Chọn 1 trong 3 học phần · 4 tín chỉ",
+              totalCreditsLabel: "4 tín chỉ",
+              courses: [
+                {
+                  name: "ESG và kinh doanh số bền vững",
+                  englishName: "ESG & Sustainable Digital Business",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Dữ liệu lớn và trí tuệ nhân tạo trong kinh doanh số",
+                  englishName: "Big Data & AI in Digital Business",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Vận hành kênh Omni và thương mại tích hợp",
+                  englishName: "Omnichannel Operation & Integrated Commerce",
+                  credits: 4,
+                  elective: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: "Học kỳ 3",
+          subtitle: "Nghiên cứu ứng dụng và dự án · 14 tín chỉ",
+          groups: [
+            {
+              title: "Học phần bắt buộc",
+              totalCreditsLabel: "10 tín chỉ",
+              courses: [
+                {
+                  name: "Nghiên cứu kinh doanh",
+                  englishName: "Business Research",
+                  credits: 4,
+                },
+                {
+                  name: "Các vấn đề đương đại trong kinh doanh thương mại",
+                  englishName: "Contemporary Issues in Business Commerce",
+                  credits: 4,
+                },
+                {
+                  name: "Dự án kinh doanh kết hợp chuyến đi thực tế",
+                  englishName: "",
+                  credits: 2,
+                },
+              ],
+            },
+            {
+              title: "Tự chọn · Chọn 1 trong 3 học phần · 4 tín chỉ",
+              totalCreditsLabel: "4 tín chỉ",
+              courses: [
+                {
+                  name: "Quản trị rủi ro trong vận hành số",
+                  englishName: "Risk Management in Digital Operations",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Quản trị sản phẩm và đổi mới sáng tạo",
+                  englishName: "Digital Product & Innovation Management",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Phân tích dữ liệu ứng dụng trong kinh doanh số",
+                  englishName: "Applied Digital Business Analytics",
+                  credits: 4,
+                  elective: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: "Học kỳ 4",
+          subtitle: "Thực tập và đề án tốt nghiệp · 15 tín chỉ",
+          groups: [
+            {
+              title: "Học phần bắt buộc",
+              totalCreditsLabel: "15 tín chỉ",
+              courses: [
+                {
+                  name: "Thực tập tốt nghiệp",
+                  englishName: "Graduation Internship",
+                  credits: 6,
+                },
+                {
+                  name: "Đề án tốt nghiệp",
+                  englishName: "Graduation Project",
+                  credits: 9,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    completion: {
+      heading: "Hoàn thành chương trình",
+      items: [
+        "Hoàn thành chương trình; điểm trung bình chung các học phần đạt từ 5,5/10 trở lên và không có học phần cơ sở ngành, chuyên ngành dưới 5,5/10.",
+        "Đạt chuẩn ngoại ngữ tương đương Bậc 4/6 trở lên theo quy định của chương trình.",
+        "Đề án tốt nghiệp đạt từ 5,5/10 trở lên; hoàn thiện, nộp và thực hiện các yêu cầu lưu trữ, công bố sau bảo vệ.",
+        "Đáp ứng các điều kiện về liêm chính học thuật và những yêu cầu công nhận tốt nghiệp của Trường.",
+      ],
+    },
+  },
+  consultation: {
+    ...programmeSharedContent.consultation,
+    ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
+    ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+    formIntro: {
+      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      titleLines: ["Bắt đầu từ", "mục tiêu của bạn."],
+      body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Kinh doanh thương mại. Đội ngũ tư vấn sẽ hỗ trợ bạn tìm hiểu chương trình và chuẩn bị hồ sơ phù hợp.",
+      benefits: [
+        "Tư vấn chương trình và định hướng học",
+        "Hướng dẫn học phí và chính sách hỗ trợ",
+        "Đối chiếu điều kiện và hồ sơ dự tuyển",
+      ],
+      formTitle: "Trao đổi trực tiếp với Viện",
+    },
+    contactActions: [
+      {
+        text: "Gọi tư vấn ↗",
+        href: "tel:0988486869",
+      },
+      {
+        text: "Gửi email ↗",
+        href: "mailto:tuyensinh.sdh@vlu.edu.vn",
+      },
+      {
+        text: "Hướng dẫn đăng ký dự tuyển ↗",
+        href: "/admissions",
+      },
+    ],
+  },
+  faq: {
+    ...programmeSharedContent.faq,
+    faqs: [
+      {
+        question: "Chương trình đào tạo theo định hướng nào?",
+        answer:
+          "Chương trình Thạc sĩ Kinh doanh thương mại theo định hướng ứng dụng, gồm 60 tín chỉ, thời gian chuẩn 24 tháng và kế hoạch 4 học kỳ. Nội dung tập trung vào quản trị thương mại, kinh doanh số và giải quyết vấn đề thực tiễn của doanh nghiệp.",
+      },
+      {
+        question: "Tôi cần đáp ứng điều kiện gì để dự tuyển?",
+        answer:
+          "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp và đáp ứng yêu cầu ngoại ngữ đầu vào. Trường hợp được yêu cầu bổ sung kiến thức phải hoàn thành các học phần trước khi xét tuyển. Hồ sơ được xem xét theo quy chế và thông báo tuyển sinh của Trường.",
+      },
+      {
+        question: "Tốt nghiệp ngành khác có thể dự tuyển không?",
+        answer:
+          "Ứng viên có ngành tốt nghiệp ngoài danh mục miễn bổ sung kiến thức được đối chiếu hồ sơ để xác định các học phần cần bổ sung, tối đa 12 tín chỉ. Danh mục gồm Kinh tế học đại cương, Quản trị học, Marketing căn bản và Nguyên lý tài chính, mỗi học phần 3 tín chỉ.",
+      },
+      {
+        question: "Các học phần tự chọn được đăng ký như thế nào?",
+        answer:
+          "Phần tự chọn gồm hai nhóm, mỗi nhóm ba học phần. Học viên chọn một học phần thuộc nhóm học kỳ 2 và một học phần thuộc nhóm học kỳ 3; mỗi học phần 4 tín chỉ, tổng cộng 8 tín chỉ. Việc mở lớp thực hiện theo kế hoạch đào tạo.",
+      },
+      {
+        question: "Chương trình có thực tập và đề án tốt nghiệp không?",
+        answer:
+          "Có. Học kỳ 4 bố trí Thực tập tốt nghiệp 6 tín chỉ và Đề án tốt nghiệp 9 tín chỉ. Trước đó, học kỳ 3 có học phần Dự án kinh doanh kết hợp chuyến đi thực tế, giúp người học vận dụng kiến thức vào bối cảnh doanh nghiệp.",
+      },
+      {
+        question: "Ngôn ngữ giảng dạy và yêu cầu ngoại ngữ là gì?",
+        answer:
+          "Chương trình giảng dạy bằng tiếng Việt. Ngoại ngữ đầu vào yêu cầu mức tương đương Bậc 3 trở lên; chuẩn đầu ra là mức tương đương Bậc 4 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam. Hình thức minh chứng được đối chiếu theo quy định và thông báo của Trường.",
+      },
+      {
+        question: "Lịch học có phù hợp với người đang đi làm?",
+        answer:
+          "Lịch học dự kiến bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật, theo kế hoạch từng học kỳ. Thời khóa biểu chính thức do Trường công bố. Bạn có thể trao đổi với Viện để sắp xếp công việc, thời gian học và thực hiện đề án.",
+      },
+      {
+        question: "Học phí và chính sách hỗ trợ được áp dụng như thế nào?",
+        answer:
+          "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt: 29.750.000 đồng, 25.500.000 đồng và 29.750.000 đồng. Các khoản thu riêng áp dụng theo từng trường hợp. Học bổng và hỗ trợ tài chính được xét theo điều kiện, hồ sơ và thông báo của Trường; chỉ áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+      },
+    ],
+  },
+  fees: {
+    heading: "Chủ động chuẩn bị cho hành trình học.",
+    intro: [
+      "Học phí toàn khóa được chia thành ba đợt thanh toán, giúp người học chủ động sắp xếp kế hoạch tài chính.",
+      "Các chính sách học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ. Người học chỉ được áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+    ],
+    intake: "TUYỂN SINH THẠC SĨ 2027",
+    language: "Tiếng Việt",
+    total: "85.000.000 đồng",
+    installments: [
+      {
+        label: "Đợt 1 · 35%",
+        amount: "29.750.000 đồng",
+      },
+      {
+        label: "Đợt 2 · 30%",
+        amount: "25.500.000 đồng",
+      },
+      {
+        label: "Đợt 3 · 35%",
+        amount: "29.750.000 đồng",
+      },
+    ],
+    additionalFees: [
+      {
+        title: "Lệ phí xét tuyển",
+        amount: "500.000 đồng",
+        note: "Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      },
+      {
+        title: "Lệ phí nhập học",
+        amount: "1.000.000 đồng",
+        note: "Nộp cùng học phí đợt đầu.",
+      },
+      {
+        title: "Học bổ sung kiến thức",
+        amount: "1.200.000 đồng/môn",
+        note: "Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      },
+      {
+        title: "Ôn tập tiếng Anh đầu vào",
+        amount: "1.000.000 đồng",
+        note: "Đăng ký tự nguyện.",
+      },
+      {
+        title: "Thi tiếng Anh đầu vào",
+        amount: "1.000.000 đồng",
+        note: "Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      },
+      {
+        title: "Gia hạn chương trình",
+        amount: "5% học phí toàn khóa/lần",
+        note: "Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      },
+    ],
+    notes: [
+      "Hoạt động học tập thực tế, tham quan chuyên môn hoặc thực địa có thể phát sinh chi phí ngoài học phí toàn khóa; Khoa thông báo nội dung và chi phí trước khi triển khai. Điều kiện thu, hoàn trả và các khoản phát sinh thực hiện theo thông báo được ban hành.",
+      "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng. Ngày đến hạn thanh toán theo thông báo thu của Trường.",
+    ],
+  },
+};
+
+export const kinhDoanhThuongMaiProgramme: Programme = {
+  id: "kinh-doanh-thuong-mai",
+  code: "340121",
+  title: "Kinh doanh Thương mại",
+  englishTitle: "Master of Commerce",
+  degree: "Thạc sĩ",
+  field: "Kỹ thuật, Môi trường & Công nghệ",
+  orientation: "Ứng dụng",
+  credits: 60,
+  duration: "24 tháng",
+  studyMode: "Chính quy tập trung, tiếng Việt",
+  intake: "Tuyển sinh thạc sĩ 2027",
+  summary:
+    "Phát triển năng lực quản trị thương mại, phân tích dữ liệu và triển khai giải pháp kinh doanh trong môi trường số, gắn kiến thức chuyên sâu với những vấn đề thực tiễn của doanh nghiệp.",
+  schedule:
+    "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
+  tuition: "85.000.000 VNĐ",
+};
+
+export function getKinhDoanhThuongMaiCurricula(): CurriculumTrack[] {
+  return [
+    {
+      number: "05",
+      title: "Định hướng ứng dụng",
+      subtitle: "60 tín chỉ · 24 tháng · 4 học kỳ",
+      orientation: "Ứng dụng",
+      graduationProject: "Đề án tốt nghiệp · 9 tín chỉ",
+      groups: [
+        {
+          title: "I. Kiến thức chung",
+          totalCreditsLabel: "4 tín chỉ",
+          description: [],
+          courses: [
+            {
+              name: "Triết học",
+              englishName: "Philosophy",
+              credits: 4,
+            },
+          ],
+        },
+        {
+          title: "II. Kiến thức cơ sở ngành",
+          totalCreditsLabel: "11 tín chỉ",
+          description: [],
+          courses: [
+            {
+              name: "Phương pháp nghiên cứu khoa học ứng dụng",
+              englishName: "Applied Scientific Research Methods",
+              credits: 3,
+            },
+            {
+              name: "Kinh doanh kỹ thuật số",
+              englishName: "Digital Business",
+              credits: 4,
+            },
+            {
+              name: "Thấu hiểu khách hàng và hành vi tiêu dùng kỹ thuật số",
+              englishName: "Customer Insight & Digital Consumer Behavior",
+              credits: 4,
+            },
+          ],
+        },
+        {
+          title: "III. Kiến thức chuyên ngành",
+          totalCreditsLabel: "30 tín chỉ",
+          description: [
+            "Học phần bắt buộc · 22 tín chỉ",
+            "Học phần tự chọn · 8 tín chỉ",
+            "Chọn 1 học phần ở mỗi nhóm dưới đây, tổng cộng 2 học phần, mỗi học phần 4 tín chỉ. Các nhóm được bố trí lần lượt trong học kỳ 2 và học kỳ 3.",
+            "Nhóm 1 · Học kỳ 2 · Chọn 1 trong 3 học phần",
+            "Nhóm 2 · Học kỳ 3 · Chọn 1 trong 3 học phần",
+          ],
+          courses: [],
+          subgroups: [
+            {
+              title: "Học phần bắt buộc · 22 tín chỉ",
+              totalCreditsLabel: "22 tín chỉ",
+              courses: [
+                {
+                  name: "Quản trị kinh doanh số",
+                  englishName: "Digital Business Management",
+                  credits: 4,
+                },
+                {
+                  name: "Lãnh đạo số và quản trị sự thay đổi",
+                  englishName: "Digital Leadership & Change Management",
+                  credits: 4,
+                },
+                {
+                  name: "Thiết kế Marketing số và tối ưu hiệu suất",
+                  englishName: "Digital Marketing Design & Performance Optimization",
+                  credits: 4,
+                },
+                {
+                  name: "Nghiên cứu kinh doanh",
+                  englishName: "Business Research",
+                  credits: 4,
+                },
+                {
+                  name: "Các vấn đề đương đại trong kinh doanh thương mại",
+                  englishName: "Contemporary Issues in Business Commerce",
+                  credits: 4,
+                },
+                {
+                  name: "Dự án kinh doanh kết hợp chuyến đi thực tế",
+                  englishName: "",
+                  credits: 2,
+                },
+              ],
+            },
+            {
+              title: "Nhóm 1 · Học kỳ 2 · Chọn 1 trong 3 học phần",
+              totalCreditsLabel: "Chọn 1 trong 3 học phần",
+              courses: [
+                {
+                  name: "ESG và kinh doanh số bền vững",
+                  englishName: "ESG & Sustainable Digital Business",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Dữ liệu lớn và trí tuệ nhân tạo trong kinh doanh số",
+                  englishName: "Big Data & AI in Digital Business",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Vận hành kênh Omni và thương mại tích hợp",
+                  englishName: "Omnichannel Operation & Integrated Commerce",
+                  credits: 4,
+                  elective: true,
+                },
+              ],
+            },
+            {
+              title: "Nhóm 2 · Học kỳ 3 · Chọn 1 trong 3 học phần",
+              totalCreditsLabel: "Chọn 1 trong 3 học phần",
+              courses: [
+                {
+                  name: "Quản trị rủi ro trong vận hành số",
+                  englishName: "Risk Management in Digital Operations",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Quản trị sản phẩm và đổi mới sáng tạo",
+                  englishName: "Digital Product & Innovation Management",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Phân tích dữ liệu ứng dụng trong kinh doanh số",
+                  englishName: "Applied Digital Business Analytics",
+                  credits: 4,
+                  elective: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: "IV. Thực tập và đề án tốt nghiệp",
+          totalCreditsLabel: "15 tín chỉ",
+          description: ["Thực tập và đề án theo định hướng ứng dụng"],
+          courses: [
+            {
+              name: "Thực tập tốt nghiệp",
+              englishName: "Graduation Internship",
+              credits: 6,
+            },
+            {
+              name: "Đề án tốt nghiệp",
+              englishName: "Graduation Project",
+              credits: 9,
+            },
+          ],
+        },
+      ],
+    },
+  ];
+}

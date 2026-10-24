@@ -24,9 +24,9 @@ type Reason = {
 const reasons: Reason[] = [
   {
     number: "01",
-    category: "Học thuật & Thực tiễn",
-    heading: "Một bước tiến trong học thuật mở ra một bước tiến trong sự nghiệp.",
-    body: "Viện Sau Đại học mang đến môi trường đào tạo nơi chiều sâu học thuật gắn liền với thực tiễn nghề nghiệp. Các chương trình phát triển chuyên môn, năng lực nghiên cứu, tư duy phân tích và khả năng vận dụng kiến thức vào những vấn đề thực tế.",
+    category: "Chương trình đào tạo",
+    heading: "Lựa chọn theo mục tiêu của bạn",
+    body: "Với 20 chương trình thạc sĩ, 01 chương trình tiến sĩ, 01 chương trình liên kết quốc tế thuộc nhiều lĩnh vực, Văn Lang mang đến những lựa chọn học tập phù hợp với nền tảng chuyên môn, mối quan tâm và kế hoạch phát triển của mỗi người.",
     image: "/images/pages/discover/content/1.jpg",
     imageAlt: "Giảng viên và người học Viện Sau Đại học trong ngày tốt nghiệp",
     accent: "red",
@@ -34,9 +34,9 @@ const reasons: Reason[] = [
   },
   {
     number: "02",
-    category: "Nghiên cứu & Ứng dụng",
-    heading: "Học để ứng dụng, nghiên cứu để phát triển.",
-    body: "Chương trình được xây dựng theo định hướng ứng dụng và nghiên cứu tùy từng ngành, giúp người học đào sâu chuyên môn, phát triển năng lực giải quyết vấn đề và mở rộng năng lực nghề nghiệp.",
+    category: "Học thuật & Thực tiễn",
+    heading: "Học chuyên sâu để giải quyết vấn đề",
+    body: "Chương trình gắn kiến thức chuyên sâu với những vấn đề trong thực tiễn nghề nghiệp. Định hướng nghiên cứu hoặc ứng dụng được triển khai tùy từng ngành, giúp người học rèn luyện tư duy phản biện, khả năng phân tích và đề xuất giải pháp.",
     image: "/images/pages/discover/content/2.jpg",
     imageAlt: "Người học Văn Lang trong không gian nghiên cứu ứng dụng",
     accent: "navy",
@@ -45,8 +45,8 @@ const reasons: Reason[] = [
   {
     number: "03",
     category: "Cộng đồng & Kết nối",
-    heading: "Một môi trường để đi xa hơn.",
-    body: "Viện Sau Đại học tạo điều kiện để người học kết nối với giảng viên, chuyên gia, cộng đồng học thuật và thực tiễn doanh nghiệp; từ đó mở rộng góc nhìn, xây dựng mạng lưới và tìm kiếm cơ hội phát triển mới.",
+    heading: "Học hỏi từ những góc nhìn khác",
+    body: "Trao đổi cùng giảng viên, chuyên gia và cộng đồng học thuật giúp người học tiếp cận nhiều cách nhìn về một vấn đề. Những kết nối với thực tiễn doanh nghiệp mở thêm cơ hội chia sẻ kinh nghiệm và xây dựng mạng lưới chuyên môn.",
     image: "/images/pages/discover/content/3.jpg",
     imageAlt: "Cộng đồng Văn Lang trong một hoạt động kết nối chuyên môn",
     accent: "navy",
@@ -54,9 +54,9 @@ const reasons: Reason[] = [
   },
   {
     number: "04",
-    category: "Quyết tâm & Tầm nhìn",
-    heading: "Chọn Viện Sau Đại học là chọn chủ động đi tiếp.",
-    body: "Học sâu hơn, tư duy rộng hơn, kết nối nhiều hơn và sẵn sàng cho những bước tiến xa hơn trong sự nghiệp và cuộc sống.",
+    category: "Tư vấn & Hỗ trợ",
+    heading: "Được hướng dẫn từ tìm hiểu đến nhập học",
+    body: "Đội ngũ tư vấn hỗ trợ bạn tìm hiểu chương trình, điều kiện dự tuyển, học phí, học bổng và cách chuẩn bị hồ sơ, giúp bạn nắm rõ thông tin để chủ động lựa chọn và thực hiện các bước đăng ký, nhập học.",
     image: "/images/pages/discover/content/campus.jpg",
     imageAlt: "Kiến trúc khuôn viên Trường Đại học Văn Lang",
     accent: "red",
@@ -76,10 +76,10 @@ export function WhyChooseSection() {
         <header className={styles.heading}>
           <div className={styles.eyebrow}>
             <span aria-hidden="true" />
-            <p>Vì sao chọn</p>
+            <p>VIỆN SAU ĐẠI HỌC</p>
             <span aria-hidden="true" />
           </div>
-          <h2 id="why-choose-title">Viện Sau Đại học</h2>
+          <h1 id="why-choose-title">Vì sao học sau đại học tại Văn Lang?</h1>
           <div className={styles.headingMark} aria-hidden="true">
             <span />
             <b>V</b>

@@ -1,0 +1,1333 @@
+{
+  "checked": 221,
+  "present": 221,
+  "missing": [],
+  "units": [
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Trang chủ",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h1",
+      "text": "Kiến trúc",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Phát triển tư duy thiết kế, khả năng tích hợp kiến thức và năng lực quản lý dự án để đề xuất giải pháp kiến trúc sáng tạo, bền vững và phù hợp bối cảnh.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Tổng quan chương trình",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h2",
+      "text": "Phát triển tư duy thiết kế. Vững năng lực hành nghề.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Kiến trúc tại Văn Lang phát triển kiến thức chuyên ngành và liên ngành, kết nối lý luận kiến trúc với hoạt động thiết kế, tư vấn và quản lý. Người học nâng cao khả năng phân tích bối cảnh, hình thành ý tưởng và giải quyết các vấn đề kiến trúc trong thực tiễn nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Định hướng ứng dụng được thể hiện qua đồ án thiết kế nâng cao, hình thái đô thị, tham quan và phê bình kiến trúc, quản lý dự án, thực tập và đề án tốt nghiệp. Các nội dung về thiết kế bền vững, bảo tồn di sản và BIM bổ sung góc nhìn cho quá trình phát triển giải pháp.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Bảy nhóm học phần tự chọn mở rộng sang cảnh quan, thiết kế đô thị, môi trường ở, công trình xanh, công nghệ và vật liệu mới. Người học chọn một học phần trong mỗi nhóm để tích lũy 14 tín chỉ tự chọn.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Văn bằng tốt nghiệp: Thạc sĩ Kiến trúc Master of Architecture",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "figcaption",
+      "text": "Thực hành thể hiện bản vẽ kiến trúc Nguồn: Trường Đại học Văn Lang ↗",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h3",
+      "text": "Định hướng ứng dụng. Kết nối thiết kế với thực tiễn.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Thời gian đào tạo Chính quy tập trung 18 tháng",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Khối lượng chương trình Bao gồm đề án tốt nghiệp 9 tín chỉ 60 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Điểm nổi bật của chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Thiết kế gắn với bối cảnh",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Rèn luyện tư duy thiết kế qua đồ án kiến trúc nâng cao, hình thái đô thị và hoạt động phân tích, đánh giá, phê bình kiến trúc.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Bền vững, bản sắc và di sản",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kết nối thiết kế bền vững với lý luận bảo tồn di sản; mở rộng qua các lựa chọn về công trình xanh, môi trường ở và phát triển đô thị.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "BIM trong thiết kế và quản lý",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Tiếp cận mô hình thông tin công trình trong thiết kế và quản lý công trình kiến trúc, gắn với năng lực tổ chức và điều hành dự án.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phát triển năng lực qua dự án",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kết hợp học phần quản lý và phát triển dự án, hai học phần thực tập và đề án tốt nghiệp để vận dụng kiến thức vào hoạt động chuyên môn.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Từ phân tích bối cảnh đến phát triển giải pháp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Chương trình kết hợp kiến thức chuyên ngành, phương pháp nghiên cứu và thực hành thiết kế. Người học rèn luyện khả năng đánh giá phương án, tích hợp yếu tố kỹ thuật, kinh tế và xã hội, đồng thời phát triển năng lực tổ chức công việc và phản biện chuyên môn.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "summary",
+      "text": "Chuẩn đầu ra của chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Mười chuẩn đầu ra tập trung vào kiến thức chuyên sâu, kỹ năng nghiên cứu và thiết kế, năng lực quản lý cùng trách nhiệm nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Đánh giá lý luận và xu hướng kiến trúc",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Đánh giá, phát triển lý thuyết, nguyên lý và xu hướng kiến trúc để định hướng nghiên cứu, tư vấn và thiết kế phù hợp bối cảnh.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Tích hợp kiến thức và thiết kế bền vững",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kết nối kiến thức liên ngành để đề xuất giải pháp kiến trúc đồng bộ, bền vững và phù hợp điều kiện tự nhiên, xã hội, kỹ thuật.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Xây dựng phương pháp nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Xác định vấn đề, xây dựng câu hỏi và lựa chọn phương pháp nghiên cứu phù hợp trong lĩnh vực kiến trúc.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phân tích dữ liệu và triển khai nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phân tích, tổng hợp dữ liệu và triển khai nghiên cứu để đưa ra kết luận có cơ sở khoa học và giá trị thực tiễn.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Sáng tạo định hướng và chiến lược",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phát triển các định hướng và chiến lược kiến trúc có tính đổi mới, khả thi và đáp ứng yêu cầu thực tiễn.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Giải quyết bài toán kiến trúc phức tạp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Lựa chọn phương án thiết kế và triển khai dự án trên cơ sở tích hợp các yếu tố kỹ thuật, kinh tế và xã hội.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Tổ chức và quản lý dự án",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Tổ chức, quản lý và điều hành hoạt động chuyên môn để đảm bảo hiệu quả, chất lượng và tiến độ dự án kiến trúc.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Trình bày và phản biện chuyên môn",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Trình bày, bảo vệ và phản biện nội dung chuyên môn, học thuật rõ ràng và thuyết phục.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Tự phát triển năng lực nghề nghiệp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Đánh giá năng lực cá nhân, chủ động học tập suốt đời và thích ứng với sự thay đổi của môi trường nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Đạo đức và trách nhiệm xã hội",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Đánh giá chuẩn mực đạo đức nghề nghiệp và thực hiện trách nhiệm xã hội, phát triển bền vững trong kiến trúc.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình phù hợp với ai?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h2",
+      "text": "Tiếp nối nền tảng đã có. Phát triển chiều sâu chuyên môn.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành học phù hợp và đáp ứng các điều kiện dự tuyển của chương trình.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Kiến trúc sư và người làm thiết kế",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Mong muốn nâng cao nền tảng lý luận, tư duy sáng tạo và khả năng giải quyết các vấn đề kiến trúc trong thực tiễn.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người làm tư vấn và quản lý dự án",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Muốn phát triển năng lực tích hợp kiến thức, tổ chức công việc và quản lý các hoạt động chuyên môn trong kiến trúc, quy hoạch và xây dựng.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người quan tâm nghiên cứu và phát triển chuyên môn",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Hướng đến nâng cao năng lực phân tích, đánh giá và phản biện kiến trúc, hoặc phát triển theo hướng nghiên cứu, giảng dạy và học tập ở trình độ cao hơn.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Ngành tốt nghiệp có phù hợp?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Người tốt nghiệp ngành Kiến trúc có chương trình đào tạo ở bậc đại học từ 150 tín chỉ trở lên không cần học bổ sung kiến thức. Các ngành và chương trình còn lại trong danh mục được đối chiếu bảng điểm để xác định các học phần cần bổ sung, tối đa 9 tín chỉ. Ngành chưa có trong danh mục được Khoa chuyên môn rà soát để Nhà trường xem xét.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Phương thức tuyển sinh",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Xét tuyển. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Kiến trúc định hướng ứng dụng.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Yêu cầu ngoại ngữ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng ngoại ngữ đầu vào tương đương Bậc 3/6 trở lên theo các hình thức được công nhận. Chuẩn ngoại ngữ đầu ra là Bậc 4/6 trở lên, cần đạt trước thời điểm xét tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Hồ sơ sử dụng văn bằng đại học do cơ sở giáo dục nước ngoài cấp cần kèm giấy công nhận hoặc xác nhận văn bằng theo quy định.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "Các hình thức minh chứng ngoại ngữ đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Bằng đại học trở lên ngành ngôn ngữ nước ngoài hoặc chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Văn bằng, chứng chỉ tương đương Bậc 3 trở lên thuộc danh mục được công nhận và còn hiệu lực.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kết quả đánh giá tương đương Bậc 3 trở lên do Trường tổ chức; hoặc hoàn thành chương trình đào tạo, bồi dưỡng ngoại ngữ do Trường tổ chức hoặc công nhận.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Bằng đại học trở lên do Văn Lang cấp trong thời hạn không quá 2 năm, với chương trình đã đáp ứng chuẩn đầu ra ngoại ngữ từ Bậc 3 trở lên.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Bổ sung kiến thức đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Viện và Khoa đối chiếu ngành tốt nghiệp, chương trình đào tạo và bảng điểm để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "01. Điều kiện không cần bổ sung kiến thức",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Người tốt nghiệp ngành Kiến trúc",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Không cần học bổ sung kiến thức nếu chương trình đào tạo ở bậc đại học có từ 150 tín chỉ trở lên .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên vẫn phải đáp ứng đầy đủ các điều kiện dự tuyển của chương trình.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "02. Danh mục ngành phù hợp · Bổ sung tối đa 9 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Ngành tốt nghiệp được xem xét",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ kỹ thuật kiến trúc và công trình xây dựng Công nghệ kỹ thuật kiến trúc.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kiến trúc và quy hoạch Kiến trúc; Kiến trúc cảnh quan; Kiến trúc nội thất; Quy hoạch vùng và đô thị; Thiết kế nội thất.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Với các ngành và chương trình trong danh mục chưa đáp ứng điều kiện miễn nêu trên, yêu cầu bổ sung được xác định qua bảng điểm, tối đa 9 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Các học phần bổ sung kiến thức",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Đồ án kiến trúc công cộng · 3 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Nguyên lý kiến trúc dân dụng, công nghiệp - nhà ở · 3 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Lịch sử kiến trúc Phương Tây, Phương Đông, Việt Nam · 3 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Các học phần cụ thể được xác định sau khi đối chiếu nội dung và khối lượng kiến thức đã tích lũy của từng ứng viên.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Chưa tìm thấy ngành tốt nghiệp của bạn?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Khoa chuyên môn sẽ rà soát hồ sơ và đề xuất để Nhà trường xem xét điều kiện dự tuyển cùng yêu cầu bổ sung kiến thức. Liên hệ Viện để được đối chiếu ngành học và bảng điểm trước khi đăng ký.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Cơ hội nghề nghiệp và phát triển",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h2",
+      "text": "Mở rộng vai trò trong nghề kiến trúc.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Nền tảng chuyên sâu cùng năng lực nghiên cứu, thiết kế và quản lý hỗ trợ người học phát triển trong doanh nghiệp, cơ quan quản lý, đơn vị tư vấn và cơ sở đào tạo.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Thiết kế và tư vấn kiến trúc",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Thiết kế và tư vấn chuyên sâu",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Vận dụng kiến thức chuyên ngành, tư duy liên ngành và phương pháp nghiên cứu để phát triển các giải pháp kiến trúc phù hợp bối cảnh.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Đánh giá và phê bình kiến trúc",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phát triển theo hướng tư vấn, đánh giá, thẩm định và phản biện chuyên môn theo yêu cầu của từng vị trí.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Quản lý doanh nghiệp và đô thị",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Quản lý doanh nghiệp và dự án",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tham gia tổ chức, điều hành hoạt động tư vấn, đầu tư, xây dựng và các dịch vụ trong lĩnh vực kiến trúc – xây dựng.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Quản lý kiến trúc và quy hoạch",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tham gia công tác quản lý nhà nước về kiến trúc, quy hoạch và xây dựng; đánh giá hồ sơ quản lý và thiết kế kiến trúc.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Nghiên cứu và phát triển học thuật",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Nghiên cứu và giảng dạy",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phát triển năng lực hợp tác nghiên cứu, giảng dạy tại viện nghiên cứu, cơ sở giáo dục và đào tạo khi đáp ứng yêu cầu của vị trí.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Tiếp tục học trình độ tiến sĩ",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Củng cố nền tảng lý luận và phương pháp nghiên cứu để tiếp tục học tập ở trình độ cao hơn theo điều kiện của chương trình dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Hướng phát triển và vị trí đảm nhiệm phụ thuộc vào nền tảng chuyên môn, kinh nghiệm, năng lực thực tế và yêu cầu của từng tổ chức.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Khung chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chương trình gồm 60 tín chỉ, trong đó có 46 tín chỉ bắt buộc và 14 tín chỉ tự chọn. Xem danh mục học phần và yêu cầu tích lũy trong từng khối kiến thức.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h3",
+      "text": "Định hướng ứng dụng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Thiết kế · Quản lý dự án · Thực tập · Đề án tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h3",
+      "text": "Thông tin chung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Thời gian đào tạo",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "18 tháng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Định hướng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Ứng dụng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Hình thức",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Chính quy tập trung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Ngôn ngữ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Học phần tự chọn",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "14 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Đề án · 9 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "6 tín chỉ chung + 30 tín chỉ cơ sở và chuyên ngành + 15 tín chỉ phát triển dự án, thực tập và đề cương + 9 tín chỉ đề án = 60 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chương trình kết nối kiến thức nền tảng, lý luận và thiết kế chuyên sâu với phát triển dự án, thực tập và đề án tốt nghiệp. Các học phần tự chọn được tổ chức thành bảy nhóm để người học lựa chọn theo cơ cấu chương trình.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "I. Kiến thức chung 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp nghiên cứu khoa học",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "II. Kiến thức cơ sở và chuyên ngành 30 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 16 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Lý thuyết và thực hành kiến trúc đương đại",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kiến trúc và Thiết kế bền vững",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Mô hình thông tin công trình (BIM) trong thiết kế và quản lý công trình kiến trúc",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Lý luận bảo tồn di sản văn hóa – kiến trúc",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đồ án thiết kế kiến trúc nâng cao",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đồ án Hình thái đô thị và kiến trúc",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Tham quan – phân tích, đánh giá và phê bình kiến trúc",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tích lũy 14 tín chỉ tự chọn : chọn một học phần trong mỗi nhóm dưới đây. Có 7 nhóm, mỗi học phần 2 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn nhóm 1",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chọn 1 trong 2 học phần · Tích lũy 2 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Lý thuyết tổ hợp không gian kiến trúc hiện đại",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kiến trúc cảnh quan",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn nhóm 2",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Mối quan hệ giữa kiến trúc và các ngành nghệ thuật khác",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Tổ chức không gian kiến trúc môi trường ở",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn nhóm 3",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Lý thuyết và ứng dụng Hình Thái học đô thị",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thiết kế đô thị",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn nhóm 4",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Lý luận phát triển không gian đô thị",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Tổ chức môi trường dịch vụ công cộng đô thị",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn nhóm 5",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Lý luận quy hoạch vùng và đô thị",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản lý quy hoạch, kiến trúc và xây dựng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn nhóm 6",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kiến trúc bền vững: mô phỏng và thiết kế công trình",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công trình xanh: thiết kế và tiêu chuẩn đánh giá",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn nhóm 7",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ mới trong kỹ thuật công trình",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Vật liệu và công nghệ xây dựng mới",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "III. Phát triển dự án, thực tập và đề cương 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản lý và phát triển dự án kiến trúc",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thực tập 1 (Chuyên gia và năng lực quản lý chuyên ngành)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thực tập 2 (Dự án nghiên cứu và Đề cương tốt nghiệp)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "IV. Đề án tốt nghiệp 9 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đề án tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần được triển khai theo kế hoạch đào tạo của Khoa. Lịch mở lớp, lựa chọn học phần tự chọn và thời khóa biểu được thông báo theo từng đợt.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Hoàn thành chương trình",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Tích lũy 60 tín chỉ theo cơ cấu chương trình, bao gồm 14 tín chỉ tự chọn theo các nhóm học phần.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Hoàn thành các học phần phát triển dự án, thực tập và đề cương; bảo vệ đề án tốt nghiệp 9 tín chỉ đạt yêu cầu.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Đạt chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 trước thời điểm xét tốt nghiệp và đáp ứng các điều kiện công nhận tốt nghiệp theo quy định của Trường.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "h2",
+      "text": "Chủ động chuẩn bị cho hành trình học.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa được chia thành ba đợt thanh toán, giúp người học chủ động sắp xếp kế hoạch tài chính.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Các chính sách học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ. Người học chỉ được áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "summary",
+      "text": "Các khoản thu riêng khi áp dụng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển 500.000 đồng Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học 1.000.000 đồng Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức 1.200.000 đồng/môn Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn tập tiếng Anh đầu vào 1.000.000 đồng Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào 1.000.000 đồng Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Gia hạn chương trình 5% học phí toàn khóa/lần Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Hoạt động học tập thực tế, tham quan chuyên môn hoặc thực địa có thể phát sinh chi phí ngoài học phí toàn khóa; Khoa thông báo nội dung và chi phí trước khi triển khai. Điều kiện thu, hoàn trả và các khoản phát sinh thực hiện theo thông báo được ban hành.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "TUYỂN SINH THẠC SĨ 2027",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa · Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "29.750.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "25.500.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng. Ngày đến hạn thanh toán theo thông báo thu của Trường.",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h2",
+      "text": "Sẵn sàng cho bước học tiếp theo?",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Câu hỏi thường gặp",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Chương trình đào tạo theo định hướng nào và kéo dài bao lâu?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Thạc sĩ Kiến trúc được đào tạo theo định hướng ứng dụng, khối lượng 60 tín chỉ, thời gian tiêu chuẩn 18 tháng. Lịch học được bố trí vào buổi tối các ngày trong tuần và/hoặc Thứ Bảy, Chủ nhật theo kế hoạch từng học kỳ. Thời khóa biểu chính thức do Trường công bố.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Tốt nghiệp ngành Kiến trúc có cần học bổ sung kiến thức?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Người tốt nghiệp ngành Kiến trúc có chương trình đào tạo ở bậc đại học từ 150 tín chỉ trở lên không cần học bổ sung kiến thức. Các ngành và chương trình còn lại trong danh mục được đối chiếu bảng điểm để xác định yêu cầu bổ sung, tối đa 9 tín chỉ. Với ngành ngoài danh mục, Khoa chuyên môn rà soát và đề xuất để Nhà trường xem xét.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Các học phần tự chọn được lựa chọn như thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình có 7 nhóm tự chọn, mỗi nhóm gồm 2 học phần. Học viên chọn 1 học phần trong mỗi nhóm, mỗi học phần 2 tín chỉ, để tích lũy tổng cộng 14 tín chỉ tự chọn. Việc đăng ký và mở lớp thực hiện theo kế hoạch đào tạo của Khoa.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Phần thực tập và đề án tốt nghiệp gồm bao nhiêu tín chỉ?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Khối phát triển dự án, thực tập và đề cương gồm 15 tín chỉ: Quản lý và phát triển dự án kiến trúc 6 tín chỉ, Thực tập 1 là 6 tín chỉ và Thực tập 2 là 3 tín chỉ. Đề án tốt nghiệp có 9 tín chỉ. Các học phần này nằm trong tổng khối lượng 60 tín chỉ của chương trình.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Yêu cầu ngoại ngữ đầu vào và đầu ra như thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ứng viên đáp ứng ngoại ngữ đầu vào tương đương Bậc 3/6 trở lên theo các hình thức được công nhận trong thông báo tuyển sinh. Trước khi được công nhận tốt nghiệp, học viên cần đạt chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 trở lên theo quy định.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phí toàn khóa và cách đóng học phí ra sao?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt: 29.750.000 đồng, 25.500.000 đồng và 29.750.000 đồng. Mức này chưa trừ học bổng, hỗ trợ tài chính và chưa bao gồm các khoản thu riêng khi áp dụng. Thời hạn thanh toán được Trường thông báo cụ thể.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h3",
+      "text": "Liên hệ tư vấn",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h2",
+      "text": "Bắt đầu từ mục tiêu của bạn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Kiến trúc. Đội ngũ tư vấn sẽ hỗ trợ bạn tìm hiểu lộ trình học tập và chuẩn bị hồ sơ phù hợp.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "01 Tư vấn chương trình và định hướng học",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "02 Hướng dẫn học phí và chính sách hỗ trợ",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "03 Đối chiếu điều kiện và hồ sơ dự tuyển",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h3",
+      "text": "Trao đổi trực tiếp với Viện",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Viện Sau đại học · Trường Đại học Văn Lang 69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    }
+  ]
+}

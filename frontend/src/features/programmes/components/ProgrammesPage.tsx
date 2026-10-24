@@ -1,3 +1,6 @@
+import styles from "./ProgrammeCatalogue.module.css";
+
+import { catalogueCopy } from "@/data/programmes/catalogue-copy";
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
@@ -5,49 +8,69 @@ import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import ProgrammeDirectory from "@/features/programmes/components/ProgrammeDirectory";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 
+const copy = catalogueCopy.ProgrammesPage;
+
 export function ProgrammesLanding() {
   return (
-    <main className="subpage programmes-page" id="main-content">
+    <main className={`subpage ${styles["programmes-page"]}`} id="main-content">
       <SiteHeader compact />
 
-      <section className="programmes-hero" aria-labelledby="programmes-title">
+      <section className={`${styles["programmes-hero"]}`} aria-labelledby="programmes-title">
         <Image
-          src="/images/pages/programmes/content/campus.jpg"
-          alt="Khuôn viên Trường Đại học Văn Lang"
+          src={copy.programmes_hero.src_images_pages_programmes_content_campus_jpg}
+          alt={copy.programmes_hero.alt_khuon_vien_truong_dai_hoc_van}
           fill
           priority
           sizes="100vw"
         />
-        <div className="programmes-hero-overlay" />
+        <div className={`${styles["programmes-hero-overlay"]}`} />
 
-        <nav className="programmes-breadcrumb" aria-label="Breadcrumb">
-          <Link href="/">Trang chủ</Link>
-          <span>/</span>
-          <strong>Chương trình đào tạo</strong>
+        <nav
+          className={`${styles["programmes-breadcrumb"]}`}
+          aria-label={copy.programmes_hero.aria_label_breadcrumb}
+        >
+          <Link href={copy.programmes_hero.href}>{copy.programmes_hero.trang_chu}</Link>
+          <span>{copy.programmes_hero.value_1}</span>
+          <strong>{copy.programmes_hero.chuong_trinh_dao_tao}</strong>
         </nav>
 
-        <div className="programmes-hero-copy">
+        <div className={`${styles["programmes-hero-copy"]}`}>
           <h1 id="programmes-title">
-            <span>Học để tiến xa.</span>
-            <em>Dẫn dắt tương lai.</em>
+            <span>{copy.programmes_hero.hoc_de_tien_xa}</span>
+            <em>{copy.programmes_hero.dan_dat_tuong_lai}</em>
           </h1>
-          <p className="programmes-hero-lead">
-            Kiến tạo lộ trình học thuật phù hợp với tham vọng nghề nghiệp — từ chuyên môn chuyên sâu đến năng lực nghiên cứu và lãnh đạo toàn cầu.
+          <p className={`${styles["programmes-hero-lead"]}`}>
+            {copy.programmes_hero.kien_tao_lo_trinh_hoc_thuat_phu}
           </p>
         </div>
 
-        <div className="programmes-hero-stats" aria-label="Thông tin tổng quan chương trình">
+        <div
+          className={`${styles["programmes-hero-stats"]}`}
+          aria-label={copy.programmes_hero.aria_label_thong_tin_tong_quan_chuong}
+        >
           <div>
-            <strong>20</strong>
-            <span>Chương trình<br />Thạc sĩ</span>
+            <strong>{copy.programmes_hero.value_2}</strong>
+            <span>
+              {copy.programmes_hero.chuong_trinh}
+              <br />
+              {copy.programmes_hero.thac_si}
+            </span>
           </div>
           <div>
-            <strong>01</strong>
-            <span>Chương trình<br />Tiến sĩ</span>
+            <strong>{copy.programmes_hero.value_3}</strong>
+            <span>
+              {copy.programmes_hero.chuong_trinh}
+              <br />
+              {copy.programmes_hero.tien_si}
+            </span>
           </div>
           <div>
-            <strong>05</strong>
-            <span>Nhóm ngành<br />chuyên sâu</span>
+            <strong>{copy.programmes_hero.value_4}</strong>
+            <span>
+              {copy.programmes_hero.nhom_nganh}
+              <br />
+              {copy.programmes_hero.chuyen_sau}
+            </span>
           </div>
         </div>
       </section>

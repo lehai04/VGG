@@ -16,6 +16,17 @@ const emptyForm = {
   excerpt: "",
   content: "",
   coverImage: "",
+  coverImageAlt: "",
+  metaTitle: "",
+  metaDescription: "",
+  canonicalUrl: "",
+  robotsIndex: "true",
+  robotsFollow: "true",
+  ogTitle: "",
+  ogDescription: "",
+  ogImage: "",
+  ogImageAlt: "",
+  customJsonLd: "",
   publishedAt: new Date().toISOString().slice(0, 10),
   status: "DRAFT",
 };
@@ -57,6 +68,17 @@ export function NewsEditor({
         excerpt: initialPost.excerpt ?? "",
         content: initialPost.content,
         coverImage: initialPost.coverImage ?? "",
+        coverImageAlt: initialPost.coverImageAlt ?? "",
+        metaTitle: initialPost.metaTitle ?? "",
+        metaDescription: initialPost.metaDescription ?? "",
+        canonicalUrl: initialPost.canonicalUrl ?? "",
+        robotsIndex: String(initialPost.robotsIndex !== false),
+        robotsFollow: String(initialPost.robotsFollow !== false),
+        ogTitle: initialPost.ogTitle ?? "",
+        ogDescription: initialPost.ogDescription ?? "",
+        ogImage: initialPost.ogImage ?? "",
+        ogImageAlt: initialPost.ogImageAlt ?? "",
+        customJsonLd: initialPost.customJsonLd ? JSON.stringify(initialPost.customJsonLd, null, 2) : "",
         publishedAt: initialPost.publishedAt?.slice(0, 10) ?? new Date().toISOString().slice(0, 10),
         status: initialPost.status,
       };
@@ -65,7 +87,7 @@ export function NewsEditor({
   });
 
   const [loading, setLoading] = useState(false);
-  const [fetchingPost, setFetchingPost] = useState(false);
+  const [fetchingPost, setFetchingPost] = useState(Boolean(editId && (!initialPost || initialPost.id !== editId)));
   const [uploadingImage, setUploadingImage] = useState(false);
 
   // States quản lý touched khi người dùng tương tác hoặc khi bấm Submit
@@ -90,7 +112,6 @@ export function NewsEditor({
   // Nếu có editId trên URL và chưa có initialPost tương ứng, fetch dữ liệu bài viết
   useEffect(() => {
     if (!editId || (initialPost && initialPost.id === editId)) return;
-    setFetchingPost(true);
     fetch(`/api/cms/news/${editId}`)
       .then((res) => res.json())
       .then((data) => {
@@ -105,6 +126,17 @@ export function NewsEditor({
             excerpt: post.excerpt ?? "",
             content: post.content,
             coverImage: post.coverImage ?? "",
+            coverImageAlt: post.coverImageAlt ?? "",
+            metaTitle: post.metaTitle ?? "",
+            metaDescription: post.metaDescription ?? "",
+            canonicalUrl: post.canonicalUrl ?? "",
+            robotsIndex: String(post.robotsIndex !== false),
+            robotsFollow: String(post.robotsFollow !== false),
+            ogTitle: post.ogTitle ?? "",
+            ogDescription: post.ogDescription ?? "",
+            ogImage: post.ogImage ?? "",
+            ogImageAlt: post.ogImageAlt ?? "",
+            customJsonLd: post.customJsonLd ? JSON.stringify(post.customJsonLd, null, 2) : "",
             publishedAt: post.publishedAt?.slice(0, 10) ?? new Date().toISOString().slice(0, 10),
             status: post.status,
           });
@@ -218,6 +250,15 @@ export function NewsEditor({
     const submitter = (event.nativeEvent as SubmitEvent).submitter as HTMLButtonElement | null;
     const nextStatus = submitter?.value === "PUBLISHED" ? "PUBLISHED" : "DRAFT";
 
+    let customJsonLd: Record<string, unknown> | null = null;
+    try {
+      customJsonLd = form.customJsonLd.trim() ? JSON.parse(form.customJsonLd) : null;
+      if (customJsonLd !== null && (typeof customJsonLd !== "object" || Array.isArray(customJsonLd))) throw new Error("Schema phải là một đối tượng JSON.");
+    } catch (error) {
+      setToast({ open: true, type: "error", title: "JSON-LD không hợp lệ", message: error instanceof Error ? error.message : "Vui lòng kiểm tra JSON-LD." });
+      return;
+    }
+
     setLoading(true);
     const payload = {
       title: form.title,
@@ -228,6 +269,17 @@ export function NewsEditor({
       excerpt: form.excerpt,
       content: form.content,
       coverImage: form.coverImage || null,
+      coverImageAlt: form.coverImageAlt || null,
+      metaTitle: form.metaTitle || null,
+      metaDescription: form.metaDescription || null,
+      canonicalUrl: form.canonicalUrl || null,
+      robotsIndex: form.robotsIndex === "true",
+      robotsFollow: form.robotsFollow === "true",
+      ogTitle: form.ogTitle || null,
+      ogDescription: form.ogDescription || null,
+      ogImage: form.ogImage || null,
+      ogImageAlt: form.ogImageAlt || null,
+      customJsonLd,
       publishedAt: form.publishedAt,
       status: nextStatus,
     };
@@ -301,7 +353,7 @@ export function NewsEditor({
               border: "1px solid #cbd5e1",
               borderRadius: "8px",
               color: "#334155",
-              fontSize: "0.85rem",
+              fontSize: "var(--text-14)",
               fontWeight: 600,
               textDecoration: "none",
               boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
@@ -313,7 +365,7 @@ export function NewsEditor({
             <h2 style={{ margin: 0, fontSize: "1.45rem", fontWeight: 800, color: "#0f172a" }}>
               {form.id ? "Chỉnh sửa bài viết" : "Đăng bài viết mới"}
             </h2>
-            <span style={{ fontSize: "0.84rem", color: "#64748b" }}>
+            <span style={{ fontSize: "var(--text-14)", color: "#64748b" }}>
               {form.id ? `Mã bài viết: ${form.id}` : "Nhập đầy đủ thông tin để xuất bản bài viết lên website"}
             </span>
           </div>
@@ -334,7 +386,7 @@ export function NewsEditor({
               border: "1px solid #cbd5e1",
               borderRadius: "8px",
               color: "#334155",
-              fontSize: "0.85rem",
+              fontSize: "var(--text-14)",
               fontWeight: 600,
               cursor: "pointer",
             }}
@@ -350,13 +402,15 @@ export function NewsEditor({
           {/* XEM TRƯỚC THẺ */}
           <section className="news-live-preview">
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
-              <h3 style={{ margin: 0, fontSize: "0.95rem", fontWeight: 700, color: "#1e293b" }}>
+              <h3 style={{ margin: 0, fontSize: "var(--text-16)", fontWeight: 700, color: "#1e293b" }}>
                 Xem trước thẻ tin tức
               </h3>
-              <span style={{ fontSize: "0.75rem", color: "#10b981", fontWeight: 600 }}>
+              <span style={{ fontSize: "var(--text-12)", color: "#10b981", fontWeight: 600 }}>
                 Chuẩn 16:9
               </span>
             </div>
+
+            <label className="field full">URL slug<input value={form.slug} onChange={(event) => update("slug", slugify(event.target.value))} maxLength={190} required /><small>Đường dẫn không dấu, chữ thường, dùng dấu gạch ngang.</small></label>
 
             <div className="news-preview-card" style={{ borderRadius: "12px", overflow: "hidden", border: "1px solid #e2e8f0" }}>
               <div
@@ -373,20 +427,20 @@ export function NewsEditor({
                 }}
               >
                 {!form.coverImage && (
-                  <span style={{ color: "#94a3b8", fontSize: "12px", fontWeight: 600 }}>
+                  <span style={{ color: "#94a3b8", fontSize: "var(--text-12)", fontWeight: 600 }}>
                     1024 × 576 px
                   </span>
                 )}
               </div>
               <div className="news-preview-body" style={{ padding: "16px" }}>
-                <small style={{ color: "#64748b", fontSize: "11px", display: "block", marginBottom: "6px" }}>
+                <small style={{ color: "#64748b", fontSize: "var(--text-10)", display: "block", marginBottom: "6px" }}>
                   {categoryLabel(form.category)} · {form.authorName || "Tác giả"} ·{" "}
                   {form.publishedAt ? new Date(`${form.publishedAt}T00:00:00`).toLocaleDateString("vi-VN") : "Ngày đăng"}
                 </small>
-                <h4 style={{ margin: "0 0 8px", fontSize: "15px", fontWeight: 700, color: "#0f172a", lineHeight: 1.35 }}>
+                <h4 style={{ margin: "0 0 8px", fontSize: "var(--text-14)", fontWeight: 700, color: "#0f172a", lineHeight: 1.35 }}>
                   {form.title || "Tiêu đề bài viết hiển thị ở đây"}
                 </h4>
-                <p style={{ margin: 0, fontSize: "13px", color: "#475569", lineHeight: 1.4 }}>
+                <p style={{ margin: 0, fontSize: "var(--text-12)", color: "#475569", lineHeight: 1.4 }}>
                   {form.excerpt || "Nội dung tóm tắt bài viết sẽ hiển thị ở đây..."}
                 </p>
               </div>
@@ -398,7 +452,7 @@ export function NewsEditor({
             {/* TIÊU ĐỀ */}
             <div className="field full">
               <label style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-                <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1e293b" }}>
+                <span style={{ fontSize: "var(--text-14)", fontWeight: 600, color: "#1e293b" }}>
                   Tiêu đề bài viết <span style={{ color: "#ef4444" }}>*</span>
                 </span>
                 <input
@@ -416,13 +470,13 @@ export function NewsEditor({
                     border: showTitleError ? "1.5px solid #ef4444" : "1.5px solid #cbd5e1",
                     boxShadow: showTitleError ? "0 0 0 3px rgba(239, 68, 68, 0.15)" : undefined,
                     outline: "none",
-                    fontSize: "0.9rem",
+                    fontSize: "var(--text-14)",
                     transition: "all 0.2s ease",
                   }}
                 />
               </label>
               {showTitleError && (
-                <span style={{ color: "#ef4444", fontSize: "0.8rem", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
+                <span style={{ color: "#ef4444", fontSize: "var(--text-12)", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
                   <span>⚠️</span> Vui lòng nhập tiêu đề bài viết (tối thiểu 5 ký tự).
                 </span>
               )}
@@ -431,7 +485,7 @@ export function NewsEditor({
             {/* CHUYÊN MỤC */}
             <div className="field full">
               <label style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-                <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1e293b" }}>
+                <span style={{ fontSize: "var(--text-14)", fontWeight: 600, color: "#1e293b" }}>
                   Tag / Chuyên mục <span style={{ color: "#ef4444" }}>*</span>
                 </span>
                 <select
@@ -446,7 +500,7 @@ export function NewsEditor({
                     border: showCategoryError ? "1.5px solid #ef4444" : "1.5px solid #cbd5e1",
                     boxShadow: showCategoryError ? "0 0 0 3px rgba(239, 68, 68, 0.15)" : undefined,
                     outline: "none",
-                    fontSize: "0.9rem",
+                    fontSize: "var(--text-14)",
                     backgroundColor: "#ffffff",
                     cursor: "pointer",
                   }}
@@ -459,7 +513,7 @@ export function NewsEditor({
                 </select>
               </label>
               {showCategoryError && (
-                <span style={{ color: "#ef4444", fontSize: "0.8rem", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
+                <span style={{ color: "#ef4444", fontSize: "var(--text-12)", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
                   <span>⚠️</span> Vui lòng chọn chuyên mục cho bài viết.
                 </span>
               )}
@@ -468,7 +522,7 @@ export function NewsEditor({
             {/* TÁC GIẢ */}
             <div className="field">
               <label style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-                <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1e293b" }}>
+                <span style={{ fontSize: "var(--text-14)", fontWeight: 600, color: "#1e293b" }}>
                   Tác giả / Người đăng <span style={{ color: "#ef4444" }}>*</span>
                 </span>
                 <input
@@ -487,12 +541,12 @@ export function NewsEditor({
                     border: showAuthorError ? "1.5px solid #ef4444" : "1.5px solid #cbd5e1",
                     boxShadow: showAuthorError ? "0 0 0 3px rgba(239, 68, 68, 0.15)" : undefined,
                     outline: "none",
-                    fontSize: "0.9rem",
+                    fontSize: "var(--text-14)",
                   }}
                 />
               </label>
               {showAuthorError && (
-                <span style={{ color: "#ef4444", fontSize: "0.8rem", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
+                <span style={{ color: "#ef4444", fontSize: "var(--text-12)", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
                   <span>⚠️</span> Vui lòng nhập tên tác giả (tối thiểu 2 ký tự).
                 </span>
               )}
@@ -501,7 +555,7 @@ export function NewsEditor({
             {/* NGÀY ĐĂNG */}
             <div className="field">
               <label style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-                <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1e293b" }}>
+                <span style={{ fontSize: "var(--text-14)", fontWeight: 600, color: "#1e293b" }}>
                   Ngày đăng <span style={{ color: "#ef4444" }}>*</span>
                 </span>
                 <input
@@ -518,12 +572,12 @@ export function NewsEditor({
                     border: showDateError ? "1.5px solid #ef4444" : "1.5px solid #cbd5e1",
                     boxShadow: showDateError ? "0 0 0 3px rgba(239, 68, 68, 0.15)" : undefined,
                     outline: "none",
-                    fontSize: "0.9rem",
+                    fontSize: "var(--text-14)",
                   }}
                 />
               </label>
               {showDateError && (
-                <span style={{ color: "#ef4444", fontSize: "0.8rem", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
+                <span style={{ color: "#ef4444", fontSize: "var(--text-12)", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
                   <span>⚠️</span> Vui lòng chọn ngày đăng bài viết.
                 </span>
               )}
@@ -532,7 +586,7 @@ export function NewsEditor({
             {/* TÓM TẮT */}
             <div className="field full">
               <label style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-                <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1e293b" }}>
+                <span style={{ fontSize: "var(--text-14)", fontWeight: 600, color: "#1e293b" }}>
                   Nội dung tóm tắt <span style={{ color: "#ef4444" }}>*</span>
                 </span>
                 <textarea
@@ -551,13 +605,13 @@ export function NewsEditor({
                     border: showExcerptError ? "1.5px solid #ef4444" : "1.5px solid #cbd5e1",
                     boxShadow: showExcerptError ? "0 0 0 3px rgba(239, 68, 68, 0.15)" : undefined,
                     outline: "none",
-                    fontSize: "0.9rem",
+                    fontSize: "var(--text-14)",
                     lineHeight: 1.5,
                   }}
                 />
               </label>
               {showExcerptError && (
-                <span style={{ color: "#ef4444", fontSize: "0.8rem", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
+                <span style={{ color: "#ef4444", fontSize: "var(--text-12)", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
                   <span>⚠️</span> Vui lòng nhập nội dung tóm tắt (tối thiểu 10 ký tự).
                 </span>
               )}
@@ -566,7 +620,7 @@ export function NewsEditor({
             {/* ẢNH ĐẠI DIỆN VỚI KÍCH THƯỚC HOÀN HẢO 1024 × 576 PX */}
             <div className="field full" ref={coverRef}>
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "8px", marginBottom: "6px" }}>
-                <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1e293b" }}>
+                <span style={{ fontSize: "var(--text-14)", fontWeight: 600, color: "#1e293b" }}>
                   Ảnh đại diện bài viết <span style={{ color: "#ef4444" }}>*</span>
                 </span>
 
@@ -580,7 +634,7 @@ export function NewsEditor({
                     borderRadius: "999px",
                     backgroundColor: "#ecfdf5",
                     color: "#047857",
-                    fontSize: "0.78rem",
+                    fontSize: "var(--text-12)",
                     fontWeight: 700,
                     border: "1.5px solid #34d399",
                     boxShadow: "0 2px 6px rgba(16, 185, 129, 0.15)",
@@ -614,7 +668,7 @@ export function NewsEditor({
                       backgroundColor: uploadingImage ? "#94a3b8" : "#db2639",
                       color: "#ffffff",
                       borderRadius: "8px",
-                      fontSize: "0.85rem",
+                      fontSize: "var(--text-14)",
                       fontWeight: 700,
                       cursor: uploadingImage ? "wait" : "pointer",
                       boxShadow: "0 2px 8px rgba(219, 38, 57, 0.25)",
@@ -636,13 +690,13 @@ export function NewsEditor({
                   </label>
 
                   {form.coverImage && (
-                    <span style={{ fontSize: "0.82rem", color: "#10b981", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                    <span style={{ fontSize: "var(--text-14)", color: "#10b981", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "4px" }}>
                       ✓ Đã có ảnh đại diện
                     </span>
                   )}
                 </div>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: "2px", fontSize: "0.78rem", color: "#64748b" }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: "2px", fontSize: "var(--text-12)", color: "#64748b" }}>
                   <span>• <strong>Chuẩn tỷ lệ 16:9</strong> (Kích thước tối ưu: <strong>1024 × 576 px</strong> hoặc 1600 × 900 px).</span>
                   <span>• Đặt chủ thể ở trung tâm khung hình, tránh để chữ quá sát mép.</span>
                   <span>• Định dạng hỗ trợ: JPG, PNG, WebP hoặc AVIF (Dung lượng tối đa 8 MB).</span>
@@ -650,21 +704,39 @@ export function NewsEditor({
               </div>
 
               {showCoverError && (
-                <span style={{ color: "#ef4444", fontSize: "0.8rem", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
+                <span style={{ color: "#ef4444", fontSize: "var(--text-12)", fontWeight: 600, marginTop: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
                   <span>⚠️</span> Vui lòng tải lên ảnh đại diện cho bài viết (chuẩn 1024 × 576 px).
                 </span>
               )}
+              <label className="field full">Alt ảnh đại diện<input value={form.coverImageAlt} onChange={(event) => update("coverImageAlt", event.target.value)} maxLength={500} placeholder="Mô tả ngắn gọn nội dung của ảnh" /></label>
             </div>
           </div>
         </div>
 
+        <details className="news-seo-settings" style={{ marginTop: 20, padding: 16, border: "1px solid #cbd5e1", borderRadius: 10 }}>
+          <summary style={{ cursor: "pointer", fontWeight: 700 }}>Thiết lập Technical SEO</summary>
+          <div className="form-grid news-meta-form" style={{ marginTop: 16 }}>
+            <label className="field full">Meta title<input value={form.metaTitle} onChange={(event) => update("metaTitle", event.target.value)} maxLength={250} /></label>
+            <label className="field full">Meta description<textarea value={form.metaDescription} onChange={(event) => update("metaDescription", event.target.value)} maxLength={1000} rows={3} /></label>
+            <label className="field full">Canonical URL<input value={form.canonicalUrl} onChange={(event) => update("canonicalUrl", event.target.value)} maxLength={1000} placeholder="Để trống để dùng URL bài viết" /></label>
+            <label className="field">Robots index<select value={form.robotsIndex} onChange={(event) => update("robotsIndex", event.target.value)}><option value="true">index</option><option value="false">noindex</option></select></label>
+            <label className="field">Robots follow<select value={form.robotsFollow} onChange={(event) => update("robotsFollow", event.target.value)}><option value="true">follow</option><option value="false">nofollow</option></select></label>
+            <label className="field full">OG title<input value={form.ogTitle} onChange={(event) => update("ogTitle", event.target.value)} maxLength={250} /></label>
+            <label className="field full">OG description<textarea value={form.ogDescription} onChange={(event) => update("ogDescription", event.target.value)} maxLength={1000} rows={3} /></label>
+            <label className="field full">OG image URL<input value={form.ogImage} onChange={(event) => update("ogImage", event.target.value)} maxLength={1000} /></label>
+            <label className="field full">OG image alt<input value={form.ogImageAlt} onChange={(event) => update("ogImageAlt", event.target.value)} maxLength={500} /></label>
+            <label className="field full">JSON-LD tùy chỉnh<textarea value={form.customJsonLd} onChange={(event) => update("customJsonLd", event.target.value)} rows={8} placeholder='{"@type":"..."}' /></label>
+          </div>
+          <small>JSON-LD phải là JSON object hợp lệ; tối đa 20 KB.</small>
+        </details>
+
         {/* NỘI DUNG CHI TIẾT VỚI TRÌNH SOẠN THẢO */}
         <div ref={contentRef} style={{ marginTop: "16px" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
-            <label className="rich-editor-label" style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1e293b", margin: 0 }}>
+            <label className="rich-editor-label" style={{ fontSize: "var(--text-14)", fontWeight: 700, color: "#1e293b", margin: 0 }}>
               Nội dung chi tiết bài viết <span style={{ color: "#ef4444" }}>*</span>
             </label>
-            <span style={{ fontSize: "0.8rem", color: isContentValid ? "#10b981" : "#64748b" }}>
+            <span style={{ fontSize: "var(--text-12)", color: isContentValid ? "#10b981" : "#64748b" }}>
               Tối thiểu 20 ký tự
             </span>
           </div>
@@ -689,7 +761,7 @@ export function NewsEditor({
           </div>
 
           {showContentError && (
-            <span style={{ color: "#ef4444", fontSize: "0.8rem", fontWeight: 600, marginTop: "6px", display: "flex", alignItems: "center", gap: "4px" }}>
+            <span style={{ color: "#ef4444", fontSize: "var(--text-12)", fontWeight: 600, marginTop: "6px", display: "flex", alignItems: "center", gap: "4px" }}>
               <span>⚠️</span> Vui lòng nhập nội dung chi tiết bài viết (tối thiểu 20 ký tự).
             </span>
           )}
@@ -714,7 +786,7 @@ export function NewsEditor({
               backgroundColor: "#f1f5f9",
               border: "1px solid #cbd5e1",
               borderRadius: "10px",
-              fontSize: "0.88rem",
+              fontSize: "var(--text-14)",
               fontWeight: 600,
               color: "#334155",
               textDecoration: "none",
@@ -732,7 +804,7 @@ export function NewsEditor({
               backgroundColor: "#ffffff",
               border: "1.5px solid #cbd5e1",
               borderRadius: "10px",
-              fontSize: "0.88rem",
+              fontSize: "var(--text-14)",
               fontWeight: 700,
               color: "#1e293b",
               cursor: loading ? "wait" : "pointer",
@@ -750,7 +822,7 @@ export function NewsEditor({
               backgroundColor: "#db2639",
               border: "none",
               borderRadius: "10px",
-              fontSize: "0.88rem",
+              fontSize: "var(--text-14)",
               fontWeight: 700,
               color: "#ffffff",
               cursor: loading ? "wait" : "pointer",

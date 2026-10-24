@@ -33,8 +33,8 @@
 .sectionHeading > p,
 .eyebrow {
   margin: 0;
-  font-size: 11px !important;
-  font-weight: 800 !important;
+  font-size: var(--text-10) !important;
+  font-weight: 700 !important;
   letter-spacing: 0.19em !important;
   text-transform: uppercase;
 }
@@ -44,8 +44,8 @@
 }
 .heroTitle span {
   color: #ef8793;
-  font-size: 14px;
-  font-weight: 800;
+  font-size: var(--text-14);
+  font-weight: 700;
   letter-spacing: 0.17em;
   text-transform: uppercase;
 }
@@ -75,7 +75,7 @@
 .sectionHeading > span {
   max-width: 52ch;
   color: #555968;
-  font-size: 18px;
+  font-size: var(--text-18);
   line-height: 1.65;
 }
 .contactCards {
@@ -100,8 +100,8 @@
 .cardNumber {
   margin-bottom: 46px;
   color: var(--contact-red);
-  font-size: 12px;
-  font-weight: 800;
+  font-size: var(--text-12);
+  font-weight: 700;
   letter-spacing: 0.2em;
 }
 .hotlineCard .cardNumber {
@@ -117,7 +117,7 @@ main:global(#main-content).page .contactCard > p,
 main:global(#main-content).page .visitCopy > p:not(.eyebrow) {
   margin: 0;
   max-width: 58ch;
-  font-size: 18px !important;
+  font-size: var(--text-18) !important;
   line-height: 1.68 !important;
 }
 .contactCard > p {
@@ -172,7 +172,7 @@ main:global(#main-content).page .visitCopy > p:not(.eyebrow) {
 }
 .phoneLinks span,
 .visitDetails span {
-  font-size: 16px;
+  font-size: var(--text-16);
   font-weight: 700;
   line-height: 1.35;
 }
@@ -182,7 +182,7 @@ main:global(#main-content).page .visitCopy > p:not(.eyebrow) {
   margin-bottom: 3px;
   color: inherit;
   opacity: 0.62;
-  font-size: 10px;
+  font-size: var(--text-10);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -283,14 +283,14 @@ main:global(#main-content).page .visitCopy > p:not(.eyebrow) {
     bottom: 48px;
   }
   .heroTitle span {
-    font-size: 12px;
+    font-size: var(--text-12);
   }
   .remoteSection,
   .visitSection {
     padding: 48px var(--page-gutter) 58px;
   }
   .sectionHeading > span {
-    font-size: 17px;
+    font-size: var(--text-16);
   }
   .contactCards {
     gap: 16px;
@@ -303,7 +303,7 @@ main:global(#main-content).page .visitCopy > p:not(.eyebrow) {
   }
   main:global(#main-content).page .contactCard > p,
   main:global(#main-content).page .visitCopy > p:not(.eyebrow) {
-    font-size: 17px !important;
+    font-size: var(--text-16) !important;
   }
   .socialLinks {
     grid-template-columns: 1fr;

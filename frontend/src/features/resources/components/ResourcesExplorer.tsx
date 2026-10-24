@@ -96,7 +96,7 @@ export function ResourcesExplorer({ resources }: { resources: PublicResource[] }
             <p>THƯ VIỆN TÀI LIỆU</p>
             <h2 id="resource-heading">Tra cứu tài nguyên</h2>
           </div>
-          <span>Tài liệu được cập nhật trực tiếp từ hệ thống quản trị của Viện Sau Đại học.</span>
+          <span>Tra cứu văn bản và tài liệu phục vụ học tập, nghiên cứu.</span>
         </header>
         <form className={styles.filters} onSubmit={search}>
           <label className={styles.search}>
@@ -175,7 +175,7 @@ export function ResourcesExplorer({ resources }: { resources: PublicResource[] }
                       <i>{documentTypeLabels[item.documentType] ?? item.documentType}</i>
                     )}
                   </div>
-                  <h3>{item.title}</h3>
+                  <h3 className="type-card-title">{item.title}</h3>
                   {item.description && <p>{item.description}</p>}
                   <dl>
                     {item.documentNumber && (

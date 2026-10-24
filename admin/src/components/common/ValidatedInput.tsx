@@ -110,7 +110,7 @@ export function ValidatedInput({
   return (
     <div className={wrapperClassName} style={{ display: "flex", flexDirection: "column" }}>
       {label && (
-        <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1e293b", marginBottom: "6px" }}>
+        <span style={{ fontSize: "var(--text-14)", fontWeight: 600, color: "#1e293b", marginBottom: "6px" }}>
           {label} {required && <span style={{ color: "#ef4444" }}>*</span>}
         </span>
       )}
@@ -132,7 +132,7 @@ export function ValidatedInput({
             borderRadius: "8px",
             border: `1.5px solid ${borderColor}`,
             boxShadow,
-            fontSize: "0.88rem",
+            fontSize: "var(--text-14)",
             color: "#0f172a",
             outline: "none",
             transition: "border-color 0.2s ease, box-shadow 0.2s ease",
@@ -178,7 +178,7 @@ export function ValidatedInput({
           role="alert"
           style={{
             color: "#ef4444",
-            fontSize: "0.78rem",
+            fontSize: "var(--text-12)",
             fontWeight: 500,
             marginTop: "5px",
             lineHeight: 1.35,
@@ -194,7 +194,7 @@ export function ValidatedInput({
 
       {/* Hint phụ trợ khi chưa có lỗi */}
       {!showError && hint && (
-        <small style={{ color: "#71717a", marginTop: "4px", fontSize: "0.78rem" }}>
+        <small style={{ color: "#71717a", marginTop: "4px", fontSize: "var(--text-12)" }}>
           {hint}
         </small>
       )}

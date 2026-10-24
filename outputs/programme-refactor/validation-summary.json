@@ -1,0 +1,35 @@
+{
+  "programmesPreserved": 21,
+  "originalDetailSelectorsPreserved": 204,
+  "retiredDetailSelectors": "careerImageCol",
+  "catalogueCleanup": {
+    "obsoleteClasses": [
+      "programmes-intro",
+      "programmes-admission",
+      "programmes-label",
+      "programmes-section-index",
+      "programmes-hero-actions",
+      "programme-pathways-heading",
+      "programme-pathways",
+      "programme-pathway-list",
+      "programme-pathway-topline",
+      "programme-ecosystem",
+      "programme-ecosystem-hero",
+      "programme-ecosystem-title",
+      "programme-ecosystem-visual",
+      "programme-field-media",
+      "programme-ecosystem-count",
+      "programme-field-grid",
+      "programme-field-card",
+      "programme-field-content",
+      "programme-search-eyebrow",
+      "programme-search-icon",
+      "vgg-pd__eyebrow",
+      "vgg-pd__total",
+      "vgg-pd-card__curriculum-sub",
+      "vgg-pd-card__group-en",
+      "vgg-pd-card__course-en"
+    ],
+    "removedSelectors": 110
+  }
+}

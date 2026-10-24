@@ -162,7 +162,7 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
                   display: "inline-block",
                   padding: "2px 8px",
                   borderRadius: "6px",
-                  fontSize: "0.72rem",
+                  fontSize: "var(--text-12)",
                   fontWeight: 700,
                   backgroundColor: categoryInfo.bg,
                   color: categoryInfo.color,
@@ -174,7 +174,7 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
               <h3
                 style={{
                   margin: 0,
-                  fontSize: "1.05rem",
+                  fontSize: "var(--text-16)",
                   fontWeight: 700,
                   color: "#0f172a",
                   lineHeight: 1.3,
@@ -190,7 +190,7 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
             style={{
               background: "transparent",
               border: "none",
-              fontSize: "1.2rem",
+              fontSize: "var(--text-20)",
               color: "#64748b",
               cursor: "pointer",
               padding: "4px 8px",
@@ -211,7 +211,7 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
               borderRadius: "10px",
               background: "#f8fafc",
               border: "1px solid #e2e8f0",
-              fontSize: "0.92rem",
+              fontSize: "var(--text-14)",
               fontWeight: 600,
               color: "#1e293b",
               lineHeight: 1.45,
@@ -230,19 +230,19 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
                 background: "#ffffff",
               }}
             >
-              <div style={{ fontSize: "0.75rem", color: "#64748b", fontWeight: 600, textTransform: "uppercase", marginBottom: "6px" }}>
+              <div style={{ fontSize: "var(--text-12)", color: "#64748b", fontWeight: 600, textTransform: "uppercase", marginBottom: "6px" }}>
                 Người thực hiện
               </div>
-              <div style={{ fontWeight: 700, fontSize: "0.88rem", color: "#0f172a" }}>
+              <div style={{ fontWeight: 700, fontSize: "var(--text-14)", color: "#0f172a" }}>
                 {notification.actorName}
               </div>
               {notification.actorRole && (
-                <div style={{ fontSize: "0.78rem", color: "#7c3aed", fontWeight: 600, marginTop: "2px" }}>
+                <div style={{ fontSize: "var(--text-12)", color: "#7c3aed", fontWeight: 600, marginTop: "2px" }}>
                   {notification.actorRole}
                 </div>
               )}
               {notification.actorEmail && (
-                <div style={{ fontSize: "0.78rem", color: "#64748b", marginTop: "2px", wordBreak: "break-all" }}>
+                <div style={{ fontSize: "var(--text-12)", color: "#64748b", marginTop: "2px", wordBreak: "break-all" }}>
                   {notification.actorEmail}
                 </div>
               )}
@@ -256,19 +256,19 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
                 background: "#ffffff",
               }}
             >
-              <div style={{ fontSize: "0.75rem", color: "#64748b", fontWeight: 600, textTransform: "uppercase", marginBottom: "6px" }}>
+              <div style={{ fontSize: "var(--text-12)", color: "#64748b", fontWeight: 600, textTransform: "uppercase", marginBottom: "6px" }}>
                 Đối tượng tác động
               </div>
-              <div style={{ fontWeight: 700, fontSize: "0.88rem", color: "#0f172a" }}>
+              <div style={{ fontWeight: 700, fontSize: "var(--text-14)", color: "#0f172a" }}>
                 {notification.targetName || "Hệ thống chung"}
               </div>
               {notification.targetRole && (
-                <div style={{ fontSize: "0.78rem", color: "#2563eb", fontWeight: 600, marginTop: "2px" }}>
+                <div style={{ fontSize: "var(--text-12)", color: "#2563eb", fontWeight: 600, marginTop: "2px" }}>
                   {notification.targetRole}
                 </div>
               )}
               {notification.targetEmail && (
-                <div style={{ fontSize: "0.78rem", color: "#64748b", marginTop: "2px", wordBreak: "break-all" }}>
+                <div style={{ fontSize: "var(--text-12)", color: "#64748b", marginTop: "2px", wordBreak: "break-all" }}>
                   {notification.targetEmail}
                 </div>
               )}
@@ -287,29 +287,29 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
               gap: "8px",
             }}
           >
-            <div style={{ fontSize: "0.75rem", color: "#64748b", fontWeight: 600, textTransform: "uppercase" }}>
+            <div style={{ fontSize: "var(--text-12)", color: "#64748b", fontWeight: 600, textTransform: "uppercase" }}>
               Thời gian & Mạng kết nối
             </div>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.85rem" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "var(--text-14)" }}>
               <span style={{ color: "#64748b" }}>Thời gian ghi nhận:</span>
               <strong style={{ color: "#0f172a" }}>
                 {formatExactDate(notification.createdAt)} ({timeAgo(notification.createdAt)})
               </strong>
             </div>
             {notification.ipAddress && (
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.85rem" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "var(--text-14)" }}>
                 <span style={{ color: "#64748b" }}>Địa chỉ IP:</span>
-                <code style={{ background: "#f1f5f9", padding: "2px 6px", borderRadius: "4px", fontSize: "0.82rem", color: "#334155" }}>
+                <code style={{ background: "#f1f5f9", padding: "2px 6px", borderRadius: "4px", fontSize: "var(--text-14)", color: "#334155" }}>
                   {notification.ipAddress}
                 </code>
               </div>
             )}
             {notification.userAgent && (
               <div style={{ marginTop: "4px" }}>
-                <span style={{ color: "#64748b", fontSize: "0.8rem", display: "block", marginBottom: "2px" }}>Thiết bị / Trình duyệt:</span>
+                <span style={{ color: "#64748b", fontSize: "var(--text-12)", display: "block", marginBottom: "2px" }}>Thiết bị / Trình duyệt:</span>
                 <div
                   style={{
-                    fontSize: "0.76rem",
+                    fontSize: "var(--text-12)",
                     color: "#475569",
                     background: "#f8fafc",
                     padding: "6px 8px",
@@ -334,7 +334,7 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
                 background: "#ffffff",
               }}
             >
-              <div style={{ fontSize: "0.75rem", color: "#64748b", fontWeight: 600, textTransform: "uppercase", marginBottom: "8px" }}>
+              <div style={{ fontSize: "var(--text-12)", color: "#64748b", fontWeight: 600, textTransform: "uppercase", marginBottom: "8px" }}>
                 Dữ liệu thay đổi / Thông số liên quan
               </div>
               <div
@@ -343,7 +343,7 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
                   color: "#e2e8f0",
                   padding: "12px",
                   borderRadius: "8px",
-                  fontSize: "0.8rem",
+                  fontSize: "var(--text-12)",
                   fontFamily: "monospace",
                   maxHeight: "180px",
                   overflowY: "auto",
@@ -375,7 +375,7 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
               href={quickLink.href}
               onClick={onClose}
               style={{
-                fontSize: "0.85rem",
+                fontSize: "var(--text-14)",
                 fontWeight: 600,
                 color: "#2563eb",
                 textDecoration: "none",
@@ -387,7 +387,7 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
               {quickLink.text} →
             </Link>
           ) : (
-            <span style={{ fontSize: "0.8rem", color: "#94a3b8" }}>Mã sự kiện: #{notification.id.slice(-8)}</span>
+            <span style={{ fontSize: "var(--text-12)", color: "#94a3b8" }}>Mã sự kiện: #{notification.id.slice(-8)}</span>
           )}
 
           <button
@@ -399,7 +399,7 @@ export function NotificationDetailModal({ notification, onClose }: NotificationD
               border: "1px solid #cbd5e1",
               background: "#ffffff",
               color: "#334155",
-              fontSize: "0.85rem",
+              fontSize: "var(--text-14)",
               fontWeight: 600,
               cursor: "pointer",
             }}

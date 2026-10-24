@@ -111,7 +111,7 @@ export function AdminNotifications() {
           justifyContent: "center",
           cursor: "pointer",
           position: "relative",
-          fontSize: "1.1rem",
+          fontSize: "var(--text-18)",
           transition: "all 0.2s ease",
         }}
       >
@@ -124,7 +124,7 @@ export function AdminNotifications() {
               right: "-4px",
               background: "#b91c1c",
               color: "#fff",
-              fontSize: "0.68rem",
+              fontSize: "var(--text-10)",
               fontWeight: 800,
               borderRadius: "10px",
               minWidth: "18px",
@@ -173,13 +173,13 @@ export function AdminNotifications() {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontWeight: 800, fontSize: "0.92rem", color: "#18181b" }}>Hoạt động & Thông báo</span>
+              <span style={{ fontWeight: 800, fontSize: "var(--text-14)", color: "#18181b" }}>Hoạt động & Thông báo</span>
               <span
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "4px",
-                  fontSize: "0.72rem",
+                  fontSize: "var(--text-12)",
                   fontWeight: 700,
                   color: "#15803d",
                   background: "#dcfce7",
@@ -197,7 +197,7 @@ export function AdminNotifications() {
               style={{
                 background: "none",
                 border: "none",
-                fontSize: "0.78rem",
+                fontSize: "var(--text-12)",
                 color: "#71717a",
                 cursor: "pointer",
                 padding: "2px 6px",
@@ -238,7 +238,7 @@ export function AdminNotifications() {
                   border: "none",
                   background: activeTab === tab.id ? "#b91c1c" : "#f4f4f5",
                   color: activeTab === tab.id ? "#ffffff" : "#52525b",
-                  fontSize: "0.75rem",
+                  fontSize: "var(--text-12)",
                   fontWeight: activeTab === tab.id ? 700 : 500,
                   cursor: "pointer",
                   whiteSpace: "nowrap",
@@ -253,7 +253,7 @@ export function AdminNotifications() {
           {/* List of items */}
           <div style={{ overflowY: "auto", flex: 1, minHeight: 0, padding: "8px" }}>
             {filteredNotifications.length === 0 ? (
-              <div style={{ padding: "32px 16px", textAlign: "center", color: "#a1a1aa", fontSize: "0.85rem" }}>
+              <div style={{ padding: "32px 16px", textAlign: "center", color: "#a1a1aa", fontSize: "var(--text-14)" }}>
                 Chưa có hoạt động nào được ghi nhận.
               </div>
             ) : (
@@ -276,17 +276,17 @@ export function AdminNotifications() {
                   onMouseEnter={(e) => (e.currentTarget.style.background = "#f8fafc")}
                   onMouseLeave={(e) => (e.currentTarget.style.background = "#ffffff")}
                 >
-                  <span style={{ fontSize: "1.2rem", marginTop: "2px", flexShrink: 0 }}>{item.icon}</span>
+                  <span style={{ fontSize: "var(--text-20)", marginTop: "2px", flexShrink: 0 }}>{item.icon}</span>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "6px" }}>
-                      <strong style={{ fontSize: "0.82rem", color: "#18181b", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                      <strong style={{ fontSize: "var(--text-14)", color: "#18181b", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                         {item.actorName}
                       </strong>
-                      <span style={{ fontSize: "0.72rem", color: "#a1a1aa", flexShrink: 0 }}>
+                      <span style={{ fontSize: "var(--text-12)", color: "#a1a1aa", flexShrink: 0 }}>
                         {timeAgo(item.createdAt)}
                       </span>
                     </div>
-                    <p style={{ margin: "2px 0 0", fontSize: "0.8rem", color: "#4b5563", lineHeight: 1.4, wordBreak: "break-word" }}>
+                    <p style={{ margin: "2px 0 0", fontSize: "var(--text-12)", color: "#4b5563", lineHeight: 1.4, wordBreak: "break-word" }}>
                       {item.title}
                     </p>
                   </div>
@@ -309,7 +309,7 @@ export function AdminNotifications() {
               href="/admin/notifications"
               onClick={() => setIsOpen(false)}
               style={{
-                fontSize: "0.8rem",
+                fontSize: "var(--text-12)",
                 fontWeight: 600,
                 color: "#2563eb",
                 textDecoration: "none",

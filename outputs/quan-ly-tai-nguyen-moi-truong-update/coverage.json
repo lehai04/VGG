@@ -1,0 +1,782 @@
+{
+  "checked": 123,
+  "present": 117,
+  "missing": [
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển: 500.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức: 1.200.000 đồng/môn",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn thi tiếng Anh đầu vào: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào: 750.000 đồng",
+      "present": false
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Thông tin cần biết trước khi đăng ký.",
+      "present": false
+    }
+  ],
+  "units": [
+    {
+      "section": null,
+      "tag": "h1",
+      "text": "Quản lý tài nguyên và môi trường",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Phát triển năng lực nghiên cứu, phân tích dữ liệu và đề xuất giải pháp quản lý tài nguyên, môi trường theo hướng tăng trưởng xanh, thích ứng biến đổi khí hậu.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h2",
+      "text": "Kiến thức chuyên sâu. Năng lực tạo tác động.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình cung cấp kiến thức chuyên sâu về quản lý chất lượng môi trường, sử dụng tài nguyên hiệu quả, chính sách, kinh tế môi trường và các công cụ phân tích hiện đại. Nội dung gắn với phát triển bền vững, tăng trưởng xanh và thích ứng biến đổi khí hậu.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Theo danh mục tuyển sinh 2027, chương trình tuyển định hướng nghiên cứu. Khối tốt nghiệp gồm chuyên đề nghiên cứu và luận văn, tạo nền tảng cho công việc chuyên gia, nghiên cứu, giảng dạy hoặc học tiếp tiến sĩ.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "figcaption",
+      "text": "Hoạt động học thuật · Trường Đại học Văn Lang",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Quản lý tích hợp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kết nối tài nguyên, chất lượng môi trường, chính sách và quy hoạch.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Dữ liệu và công nghệ",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Ứng dụng mô hình hóa, GIS, phân tích dữ liệu và trí tuệ nhân tạo.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Tăng trưởng xanh",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Giải quyết bài toán biến đổi khí hậu, carbon và phát triển bền vững.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Nghiên cứu chuyên sâu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "30 tín chỉ dành cho chuyên đề nghiên cứu và luận văn tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "summary",
+      "text": "Chuẩn đầu ra của chương trình",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h2",
+      "text": "Nền tảng phù hợp cho lộ trình sau đại học.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Điều kiện cụ thể được xác định trên cơ sở văn bằng, bảng điểm và định hướng đăng ký.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ngành phù hợp dự tuyển trực tiếp: Khoa học môi trường, Công nghệ kỹ thuật môi trường, Kỹ thuật môi trường, Quản lý tài nguyên và môi trường, Kinh tế tài nguyên thiên nhiên, Kỹ thuật tài nguyên nước.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Nhóm ngành gần: các ngành quản lý, sinh học, hóa học, địa chất, vật liệu, quy hoạch, xây dựng, nông–lâm–ngư nghiệp, quản lý đất đai, bảo hộ lao động, luật và các ngành liên quan trong danh mục CTĐT.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Bổ sung kiến thức: Quản lý môi trường: Giải pháp cho các đô thị thông minh (2 tín chỉ); Đánh giá tác động môi trường (3 tín chỉ); Luật và chính sách môi trường (3 tín chỉ). Học phần đã học tương đương được xem xét miễn.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Định hướng nghiên cứu: tốt nghiệp từ loại Khá trở lên hoặc có công bố khoa học liên quan.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên Việt Nam cần đáp ứng ngoại ngữ đầu vào từ Bậc 3/6 hoặc minh chứng tương đương được Trường công nhận. Công dân nước ngoài học chương trình tiếng Việt cần đạt tiếng Việt từ Bậc 4 hoặc tốt nghiệp chương trình đào tạo bằng tiếng Việt.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h2",
+      "text": "Mở rộng vai trò chuyên môn và quản lý.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Quản lý và tư vấn",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Quản lý doanh nghiệp hoặc cung cấp dịch vụ, tư vấn tài nguyên và môi trường.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Phân tích chuyên môn",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Chuyên gia phân tích dữ liệu, chính sách, rủi ro và chất lượng môi trường.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Nghiên cứu và giảng dạy",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Làm việc tại viện nghiên cứu, cơ sở giáo dục và các dự án khoa học.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Phát triển học thuật",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tiếp tục học chương trình tiến sĩ trong và ngoài nước.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h2",
+      "text": "60 tín chỉ theo lộ trình rõ ràng.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "3 tín chỉ kiến thức chung; 11–16 tín chỉ kiến thức cơ sở; 11 tín chỉ chuyên ngành bắt buộc; nhóm tự chọn theo quy tắc của chương trình; 15 tín chỉ chuyên đề nghiên cứu và 15 tín chỉ luận văn.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Lộ trình mẫu: Ba học kỳ đầu hoàn thành học phần và đề cương; giai đoạn cuối dành cho chuyên đề nghiên cứu và luận văn tối thiểu 6 tháng.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81PHIL60013",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học · Philosophy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81CCGG70023",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Biến đổi khí hậu và tăng trưởng xanh · Climate Change and Green Growth",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81ENMO70033",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Mô hình hóa môi trường · Environmental Modeling",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81REME70053",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp nghiên cứu khoa học · Research Methodology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81EQMA70062",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản lý chất lượng môi trường · Environmental Quality Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81WWAT70022",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kỹ thuật phân tích nước và nước thải · Water and Wastewater Analytical Techniques",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81ENTP70103",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Độc chất học môi trường · Environmental Toxicology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81APMI70122",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Vi sinh ứng dụng · Applied Microbiology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81EREN70173",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Năng lượng và năng lượng tái tạo · Energy and Renewable Energy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81HWTT70183",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kỹ thuật xử lý chất thải nguy hại · Hazardous Waste Treatment Technology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81NREM70042",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chính sách quản lý tài nguyên và môi trường · Natural Resources and Environmental Management Policy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81ENRE70052",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kinh tế tài nguyên môi trường · Economic of Natural Resources and Environment",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81IRBM70072",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản lý tổng hợp lưu vực sông · Integrated River Basin Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81ESAN70083",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phân tích hệ thống môi trường · Environmental System Analysis",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81RPDE70092",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đề cương thực hiện Luận văn tốt nghiệp và bảo vệ đề cương · Research proposal and defense",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81ENAU70212",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kiểm toán môi trường · Environmental Auditing",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81ENPL70292",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quy hoạch môi trường · Environmental Planning",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81EMSS70233",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản lý môi trường: Giải pháp cho các đô thị thông minh · Environmental Management: Solutions for Smart Cities",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81REGN70243",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Viễn thám và GIS ứng dụng trong Quản lý Tài nguyên và Môi trường · Remote Sensing and GIS applied in Natural Resources and Environmental Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81IEPC70306",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Tư vấn chính sách môi trường quốc tế · International Environmental Policy Consultant",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81AAPC70043",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kiểm soát ô nhiễm không khí nâng cao · Advanced Air Pollution Control Technology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81AWTT70063",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ xử lý nước thải bậc cao · Advanced Wastewater Treatment Technology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81SWRT0073",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ tái chế chất thải rắn · Solid Waste Recycling Technology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81MTAP70193",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ màng và ứng dụng · Membrane Technology and Applications",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81ERIA70203",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đánh giá rủi ro và đánh giá tác động môi trường Envionmental Risk and Impact Assessment",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81AEED70213",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phân tích và đánh giá dữ liệu môi trường · Analysis and Evaluation of Environmental Data",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81CMSE70313",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản lý carbon cho môi trường bền vững · Carbon Management for Sustainable Environment",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81AIAE770323",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Ứng dụng trí tuệ nhân tạo trong môi trường · Artificial-intelligence applied in environment",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81RESE703315",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề nghiên cứu · Research Seminar",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81GRTH703415",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Luận văn tốt nghiệp Graduation Thesis",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "h2",
+      "text": "Chủ động chuẩn bị cho hành trình học.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "summary",
+      "text": "Các khoản thu riêng khi áp dụng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển: 500.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức: 1.200.000 đồng/môn",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn thi tiếng Anh đầu vào: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào: 750.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "30.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "25.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Chưa trừ học bổng, hỗ trợ và chưa gồm các khoản thu riêng.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Thông tin cần biết trước khi đăng ký.",
+      "present": false
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Năm 2027 tuyển định hướng nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình tuyển sinh theo định hướng nghiên cứu trong kế hoạch năm 2027.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Ngành nào được dự tuyển trực tiếp?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ngành phù hợp dự tuyển trực tiếp: Khoa học môi trường, Công nghệ kỹ thuật môi trường, Kỹ thuật môi trường, Quản lý tài nguyên và môi trường, Kinh tế tài nguyên thiên nhiên, Kỹ thuật tài nguyên nước.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Các học phần bổ sung gồm những gì?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Bổ sung kiến thức: Quản lý môi trường: Giải pháp cho các đô thị thông minh (2 tín chỉ); Đánh giá tác động môi trường (3 tín chỉ); Luật và chính sách môi trường (3 tín chỉ). Học phần đã học tương đương được xem xét miễn.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Yêu cầu ngoại ngữ đầu vào ra sao?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ứng viên Việt Nam cần đáp ứng ngoại ngữ đầu vào từ Bậc 3/6 hoặc minh chứng tương đương được Trường công nhận; công dân nước ngoài học bằng tiếng Việt cần đạt tiếng Việt từ Bậc 4 hoặc tốt nghiệp chương trình bằng tiếng Việt.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Khối tốt nghiệp gồm bao nhiêu tín chỉ?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Định hướng nghiên cứu dành 30 tín chỉ cho chuyên đề nghiên cứu và luận văn tốt nghiệp, mỗi phần 15 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phí toàn khóa là bao nhiêu?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt 30.000.000 đồng, 25.000.000 đồng và 30.000.000 đồng.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h2",
+      "text": "Bắt đầu từ mục tiêu học tập của bạn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Trao đổi về chương trình Quản lý tài nguyên và môi trường, điều kiện đầu vào và lộ trình đăng ký.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h3",
+      "text": "Trao đổi trực tiếp với Viện",
+      "present": true
+    }
+  ]
+}

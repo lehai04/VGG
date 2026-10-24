@@ -1,0 +1,832 @@
+// Nguồn nội dung: thac-si-marketing.html do người dùng cung cấp ngày 24/10/2026.
+// Giữ nguyên dữ liệu nguồn; không dùng các môn tự chọn để cộng tổng tín chỉ đăng ký.
+import { programmeSharedContent } from "./shared-content";
+import type { Programme, ProgrammePageContent } from "../programmes";
+import type { CurriculumTrack } from "../curricula";
+
+export const marketingPageContent: ProgrammePageContent = {
+  hero: {
+    ...programmeSharedContent.hero,
+    heroLead:
+      "Phát triển tư duy chiến lược và năng lực nghiên cứu Marketing, kết nối dữ liệu, công nghệ và hiểu biết về khách hàng để giải quyết các vấn đề kinh doanh trong bối cảnh chuyển đổi số.",
+    heroImage: "/images/pages/programmes/marketing/seminar-omnichannel.webp",
+    heroSlogan: "FUTURE",
+    imageCredit: {
+      text: "Hội thảo bán hàng đa kênh · Ảnh: Hữu Phước / VLU ↗",
+      href: "https://www.vlu.edu.vn/news/xay-dung-chien-luoc-ban-hang-da-kenh-hieu-qua-bai-hoc-huu-ich-voi-sinh-vien-marketing",
+    },
+    imageAlt:
+      "Diễn giả chia sẻ tại hội thảo Xây dựng chiến lược bán hàng đa kênh hiệu quả của Trường Đại học Văn Lang",
+  },
+  facts: {
+    ...programmeSharedContent.facts,
+    quickFactsDetailed: [
+      {
+        label: "Mã ngành",
+        value: "340115",
+        detail: "Mã chương trình: 8340115",
+      },
+      {
+        label: "Khối lượng chương trình",
+        value: "60 tín chỉ",
+        detail: "24 tháng · 4 học kỳ",
+      },
+      {
+        label: "Định hướng đào tạo",
+        value: "Nghiên cứu",
+        detail: "",
+      },
+      {
+        label: "Hình thức đào tạo",
+        value: "Chính quy",
+        detail: "Tập trung",
+      },
+      {
+        label: "Ngôn ngữ đào tạo",
+        value: "Tiếng Việt",
+        detail: "",
+      },
+      {
+        label: "Học phí toàn khóa",
+        value: "90 triệu đồng",
+        detail: "",
+      },
+    ],
+  },
+  section01: {
+    ...programmeSharedContent.overview,
+    sectionNumber: "01",
+    overviewTitle: "Tổng quan chương trình",
+    headline: "Thấu hiểu thị trường. Dẫn dắt chiến lược Marketing.",
+    overview: [
+      "Chương trình Thạc sĩ Marketing tại Văn Lang giúp người học phát triển kiến thức chuyên sâu, tư duy nghiên cứu và năng lực hoạch định chiến lược Marketing trong môi trường kinh doanh toàn cầu và chuyển đổi số.",
+      "Nội dung học tập kết nối Marketing bền vững, phân tích dữ liệu, chiến lược số và quản trị trải nghiệm khách hàng. Người học rèn luyện khả năng nhận diện vấn đề, đánh giá bằng chứng và xây dựng các giải pháp Marketing gắn với thực tiễn doanh nghiệp.",
+      "Chương trình được thiết kế theo định hướng nghiên cứu, chú trọng phương pháp nghiên cứu khoa học, chuyên đề Marketing và luận văn tốt nghiệp. Nền tảng này hỗ trợ phát triển chuyên môn trong quản trị, tư vấn, nghiên cứu và giảng dạy, đồng thời mở ra khả năng tiếp tục học tập ở trình độ cao hơn.",
+      "Văn bằng tốt nghiệp: Thạc sĩ Marketing — Master of Marketing.",
+    ],
+    overviewImage: "/images/pages/programmes/marketing/seminar-trade-marketing.webp",
+    imageAlt:
+      "Người tham dự trao đổi cùng diễn giả tại hội thảo Trade Marketing của Khoa Thương mại, Trường Đại học Văn Lang",
+    imageCredit: {
+      text: "Trao đổi tại hội thảo Trade Marketing · Khoa Thương mại, Văn Lang Ảnh: Ngọc Duy / VLU ↗",
+      href: "https://www.vlu.edu.vn/news/hoi-thao-trade-marketing-trong-nganh-ban-le-va-dich-vu-cao-cap-1",
+    },
+    focusAreas: [
+      "Marketing chiến lược",
+      "Dữ liệu & công nghệ",
+      "Trải nghiệm khách hàng",
+      "Nghiên cứu Marketing",
+    ],
+    ribbonTitle: "Học sâu. Nghiên cứu có cơ sở.",
+    tags: [
+      "Định hướng nghiên cứu 24 tháng · 4 học kỳ 60 tín chỉ",
+      "Luận văn tốt nghiệp Nghiên cứu độc lập 15 tín chỉ",
+    ],
+    link: {
+      text: "Khám phá khung chương trình",
+      href: "#chuong-trinh",
+      ariaLabel: "Khám phá khung chương trình Marketing",
+    },
+  },
+  section02: {
+    ...programmeSharedContent.highlights,
+    sectionNumber: "02",
+    highlights: [
+      {
+        title: "Chiến lược Marketing trong môi trường số",
+        text: "Kết nối tư duy Marketing bền vững với chiến lược số và đa kênh hợp nhất, giúp người học phân tích thị trường, thấu hiểu hành trình khách hàng và xây dựng giải pháp phù hợp với bối cảnh kinh doanh.",
+      },
+      {
+        title: "Ra quyết định dựa trên dữ liệu",
+        text: "Học phần Phân tích kinh doanh và dự báo phát triển tư duy định lượng và khả năng sử dụng dữ liệu để đánh giá nhu cầu, doanh số và hành vi khách hàng, hỗ trợ các quyết định Marketing có cơ sở.",
+      },
+      {
+        title: "Nghiên cứu gắn với thực tiễn doanh nghiệp",
+        text: "Chuyên đề nghiên cứu Marketing kết hợp seminar, phản biện học thuật và các đợt tìm hiểu thực tế tại doanh nghiệp. Người học từng bước phát triển vấn đề, thiết kế nghiên cứu và chuẩn bị cho luận văn tốt nghiệp 15 tín chỉ.",
+      },
+      {
+        title: "Đạo đức và trách nhiệm trong Marketing",
+        text: "Quyền riêng tư, quản trị dữ liệu, liêm chính học thuật và trách nhiệm xã hội được đặt cùng năng lực chuyên môn, hướng đến các quyết định Marketing có trách nhiệm và giá trị bền vững cho tổ chức, khách hàng và cộng đồng.",
+      },
+    ],
+    learningOutcomes: {
+      intro:
+        "Sáu chuẩn đầu ra bao quát kiến thức chuyên sâu, kỹ năng nghiên cứu và quản trị, cùng năng lực tự chủ và trách nhiệm nghề nghiệp.",
+      items: [
+        {
+          code: "PLO1",
+          title: "Phân tích và tích hợp kiến thức chuyên sâu",
+          text: "Phân tích và tích hợp kiến thức nâng cao, chuyên sâu về Marketing, quản trị và tri thức liên ngành để đánh giá các vấn đề Marketing phức tạp trong bối cảnh toàn cầu.",
+        },
+        {
+          code: "PLO2",
+          title: "Kết nối công nghệ, dữ liệu và đổi mới",
+          text: "Phân tích và tích hợp công nghệ, dữ liệu và các xu hướng mới nổi để phát triển các giải pháp Marketing đổi mới.",
+        },
+        {
+          code: "PLO3",
+          title: "Thực hiện nghiên cứu Marketing nâng cao",
+          text: "Thực hiện nghiên cứu Marketing ở trình độ nâng cao nhằm phát triển tri thức và giải quyết các vấn đề chuyên sâu trong lĩnh vực Marketing.",
+        },
+        {
+          code: "PLO4",
+          title: "Giao tiếp và dẫn dắt hoạt động chuyên môn",
+          text: "Giao tiếp học thuật và nghề nghiệp hiệu quả, đồng thời quản trị và dẫn dắt hoạt động chuyên môn trong các bối cảnh Marketing phức tạp.",
+        },
+        {
+          code: "PLO5",
+          title: "Tự chủ, liêm chính và trách nhiệm xã hội",
+          text: "Thể hiện mức độ tự chủ cao, liêm chính học thuật, đạo đức nghề nghiệp và trách nhiệm xã hội trong nghiên cứu và thực hành Marketing.",
+        },
+        {
+          code: "PLO6",
+          title: "Đổi mới sáng tạo và học tập suốt đời",
+          text: "Thể hiện năng lực đổi mới sáng tạo, tự định hướng và học tập suốt đời để phát triển chuyên môn và thích ứng với sự thay đổi của khoa học, công nghệ và môi trường kinh doanh.",
+        },
+      ],
+    },
+  },
+  section03: {
+    sectionNumber: "03",
+    audienceHeading: "Chương trình phù hợp với ai?",
+    headline: "Nền tảng của bạn, bước học tiếp theo.",
+    intro: [
+      "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành học phù hợp và đáp ứng các điều kiện dự tuyển của chương trình.",
+    ],
+    audience: [
+      {
+        title: "Người làm Marketing và kinh doanh",
+        text: "Người mong muốn hệ thống hóa kiến thức, nâng cao năng lực phân tích và hoạch định chiến lược để phát triển chuyên môn hoặc đảm nhận vai trò quản lý Marketing, thương hiệu và bán hàng.",
+      },
+      {
+        title: "Người hướng đến tư vấn và khởi nghiệp",
+        text: "Người muốn phát triển khả năng đánh giá cơ hội thị trường, xây dựng giải pháp Marketing và vận dụng kiến thức vào hoạt động tư vấn hoặc dự án kinh doanh của mình.",
+      },
+      {
+        title: "Người theo đuổi nghiên cứu và giảng dạy",
+        text: "Người muốn rèn luyện phương pháp nghiên cứu, phát triển tư duy học thuật và chuẩn bị nền tảng cho công việc nghiên cứu, giảng dạy hoặc tiếp tục học tập ở trình độ cao hơn.",
+      },
+    ],
+    requirements: [
+      {
+        title: "Điều kiện đối với chương trình định hướng nghiên cứu",
+        paragraphs: [
+          "Ứng viên có hạng tốt nghiệp đại học từ khá trở lên hoặc có công bố khoa học liên quan đến lĩnh vực học tập, nghiên cứu.",
+        ],
+      },
+      {
+        title: "Ngành tốt nghiệp có phù hợp?",
+        paragraphs: [
+          "Người tốt nghiệp Marketing, Quản trị kinh doanh, Kinh doanh quốc tế, Kinh doanh thương mại và Thương mại điện tử không cần học bổ sung kiến thức. Các ngành liên quan và ngành khác được đối chiếu bảng điểm để xác định học phần cần bổ sung.",
+        ],
+      },
+      {
+        title: "Phương thức tuyển sinh",
+        paragraphs: [
+          "Xét tuyển. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Marketing.",
+        ],
+      },
+      {
+        title: "Yêu cầu ngoại ngữ đầu vào",
+        paragraphs: [
+          "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên, được minh chứng bằng một trong các hình thức công nhận trong thông báo tuyển sinh.",
+        ],
+      },
+      {
+        title: "Các hình thức minh chứng ngoại ngữ đầu vào",
+        paragraphs: [
+          "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
+          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+          "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học từ chương trình được giảng dạy bằng tiếng Việt.",
+        ],
+        points: [
+          "Có bằng tốt nghiệp đại học trở lên ngành ngôn ngữ nước ngoài hoặc từ chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
+          "Có văn bằng, chứng chỉ ngoại ngữ tương đương Bậc 3 trở lên, thuộc danh mục được công nhận và còn hiệu lực.",
+          "Đạt mức tương đương Bậc 3 trở lên qua kỳ đánh giá của Trường; hoặc hoàn thành chương trình đào tạo, bồi dưỡng ngoại ngữ do Trường tổ chức hoặc công nhận.",
+          "Có bằng tốt nghiệp đại học trở lên do Trường Đại học Văn Lang cấp trong thời hạn không quá 2 năm, đồng thời chương trình đã đáp ứng chuẩn đầu ra ngoại ngữ từ Bậc 3 trở lên.",
+        ],
+      },
+      {
+        title: "Bổ sung kiến thức đầu vào",
+        paragraphs: [
+          "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã học để xác định học phần cần bổ sung. Ứng viên phải hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+          "Tối đa 4 học phần, tổng 12 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình thạc sĩ.",
+          "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
+        ],
+        groups: [
+          {
+            title: "01. Không cần học bổ sung kiến thức",
+            groups: [
+              {
+                title: "Ngành tốt nghiệp",
+                paragraphs: [],
+                points: [
+                  "Marketing (7340115)",
+                  "Quản trị kinh doanh (7340101)",
+                  "Kinh doanh quốc tế (7340120)",
+                  "Kinh doanh thương mại (7340121)",
+                  "Thương mại điện tử (7340122)",
+                ],
+              },
+              {
+                title: "Yêu cầu bổ sung kiến thức",
+                paragraphs: [
+                  "Ứng viên không cần học bổ sung kiến thức và vẫn phải đáp ứng đầy đủ các điều kiện dự tuyển của chương trình.",
+                ],
+                points: [],
+              },
+            ],
+          },
+          {
+            title: "02. Xét miễn học phần tương đương, bổ sung phần còn thiếu",
+            groups: [
+              {
+                title: "Ngành tốt nghiệp",
+                paragraphs: [],
+                points: [
+                  "Logistics và Quản lý chuỗi cung ứng (7340123/7510605)",
+                  "Hệ thống thông tin quản lý (7340405)",
+                  "Truyền thông đa phương tiện (7320104)",
+                  "Công nghệ truyền thông (7320106)",
+                  "Quan hệ công chúng (7320108)",
+                ],
+              },
+              {
+                title: "Yêu cầu bổ sung kiến thức",
+                paragraphs: [
+                  "Ứng viên được xét miễn từng học phần tương đương theo bảng điểm và nội dung đã học; học bổ sung phần còn thiếu, tối đa 12 tín chỉ.",
+                ],
+                points: [
+                  "Kinh tế học đại cương · 3 tín chỉ",
+                  "Quản trị học · 3 tín chỉ",
+                  "Marketing căn bản · 3 tín chỉ",
+                  "Nguyên lý tài chính · 3 tín chỉ",
+                ],
+              },
+            ],
+          },
+          {
+            title: "03. Ứng viên tốt nghiệp các ngành khác",
+            groups: [
+              {
+                title: "Ngành tốt nghiệp",
+                paragraphs: ["Những ngành không được liệt kê ở các nhóm trên."],
+                points: [],
+              },
+              {
+                title: "Yêu cầu bổ sung kiến thức",
+                paragraphs: [
+                  "Ứng viên học bổ sung tối đa 12 tín chỉ thuộc 4 học phần. Có thể được miễn học phần tương đương nếu bảng điểm hoặc hồ sơ minh chứng đã tích lũy nội dung tương ứng.",
+                ],
+                points: [
+                  "Kinh tế học đại cương · 3 tín chỉ",
+                  "Quản trị học · 3 tín chỉ",
+                  "Marketing căn bản · 3 tín chỉ",
+                  "Nguyên lý tài chính · 3 tín chỉ",
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  section04: {
+    sectionNumber: "04",
+    careerHeading: "Cơ hội nghề nghiệp và phát triển",
+    headline: "Phát triển chuyên môn. Mở rộng hướng nghề nghiệp.",
+    intro:
+      "Nền tảng Marketing chuyên sâu và năng lực nghiên cứu hỗ trợ người học phát triển trong quản trị doanh nghiệp, tư vấn, khởi nghiệp và môi trường học thuật.",
+    note: "Khả năng đảm nhận từng vị trí phụ thuộc vào kinh nghiệm, năng lực cá nhân và yêu cầu của đơn vị tuyển dụng hoặc đào tạo.",
+    careerImage: "/images/pages/programmes/marketing/seminar-omnichannel.webp",
+    careers: [
+      {
+        group: "Quản lý Marketing & kinh doanh",
+        title: "Quản lý Marketing và thương hiệu",
+        sub: "Phát triển theo hướng trưởng phòng hoặc giám đốc Marketing, quản lý nhãn hàng và các vai trò quản lý hoạt động Marketing tại doanh nghiệp.",
+      },
+      {
+        group: "Quản lý Marketing & kinh doanh",
+        title: "Quản lý bán hàng",
+        sub: "Phát triển chuyên môn để hướng đến các vị trí giám sát hoặc giám đốc bán hàng, gắn hoạt động thị trường với mục tiêu kinh doanh của tổ chức.",
+      },
+      {
+        group: "Tư vấn & khởi nghiệp",
+        title: "Tư vấn chiến lược và thực thi Marketing",
+        sub: "Tư vấn cho cá nhân và tổ chức trong việc xây dựng chiến lược, lựa chọn giải pháp và triển khai hoạt động Marketing.",
+      },
+      {
+        group: "Tư vấn & khởi nghiệp",
+        title: "Khởi nghiệp kinh doanh",
+        sub: "Vận dụng kiến thức về thị trường, khách hàng và Marketing để phát triển dự án kinh doanh độc lập.",
+      },
+      {
+        group: "Nghiên cứu & giảng dạy",
+        title: "Nghiên cứu và giảng dạy Marketing",
+        sub: "Phát triển theo hướng nghiên cứu tại các viện nghiên cứu hoặc giảng dạy tại cơ sở giáo dục và đào tạo, phù hợp với yêu cầu của từng đơn vị.",
+      },
+      {
+        group: "Nghiên cứu & giảng dạy",
+        title: "Tiếp tục học tập ở trình độ cao hơn",
+        sub: "Củng cố nền tảng học thuật và năng lực nghiên cứu để tiếp tục học tập, theo điều kiện dự tuyển của cơ sở đào tạo.",
+      },
+    ],
+  },
+  section05: {
+    ...programmeSharedContent.curriculum,
+    sectionNumber: "05",
+    curriculumIntro: [
+      "Chương trình phát triển tư duy học thuật, năng lực thiết kế nghiên cứu và phân tích dữ liệu trong lĩnh vực Marketing. Hoạt động nghiên cứu trực tiếp chiếm 25 tín chỉ, gồm Phương pháp nghiên cứu khoa học, Chuyên đề nghiên cứu Marketing và Luận văn tốt nghiệp.",
+    ],
+    trackLabels: ["Định hướng nghiên cứu"],
+    graduationProjects: ["Luận văn tốt nghiệp"],
+    studyMode: "Chính quy tập trung",
+    generalFacts: [
+      {
+        label: "Thời gian chuẩn",
+        value: "24 tháng",
+      },
+      {
+        label: "Kế hoạch học tập",
+        value: "4 học kỳ",
+      },
+      {
+        label: "Hình thức",
+        value: "Chính quy tập trung",
+      },
+      {
+        label: "Ngôn ngữ",
+        value: "Tiếng Việt",
+      },
+      {
+        label: "Tốt nghiệp",
+        value: "Luận văn 15 tín chỉ",
+      },
+    ],
+    notes: [
+      "4 tín chỉ chung · 8 tín chỉ cơ sở · 33 tín chỉ nghiên cứu và chuyên ngành · 15 tín chỉ luận văn.",
+    ],
+    semesters: {
+      heading: "Kế hoạch học tập theo từng học kỳ",
+      intro:
+        "Các học phần được bố trí trong ba học kỳ đầu; học kỳ IV tập trung thực hiện luận văn tốt nghiệp. Việc mở lớp và thời khóa biểu thực hiện theo kế hoạch đào tạo của Trường.",
+      items: [
+        {
+          title: "Học kỳ 1",
+          subtitle: "Nền tảng & phương pháp nghiên cứu",
+          groups: [
+            {
+              title: "Học phần bắt buộc",
+              totalCreditsLabel: "12 tín chỉ",
+              courses: [
+                {
+                  name: "Triết học",
+                  englishName: "Philosophy",
+                  credits: 4,
+                },
+                {
+                  name: "Chiến lược Marketing bền vững",
+                  englishName: "Sustainable Marketing Strategy",
+                  credits: 4,
+                },
+                {
+                  name: "Phương pháp nghiên cứu khoa học",
+                  englishName: "Research Methodology",
+                  credits: 4,
+                },
+              ],
+            },
+            {
+              title: "Tự chọn · Chọn 1 trong 2 học phần",
+              totalCreditsLabel: "Tự chọn · Chọn 1 trong 2 học phần",
+              courses: [
+                {
+                  name: "Nghệ thuật kể chuyện trong truyền thông thương hiệu",
+                  englishName: "Storytelling in Brand Communications",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Marketing doanh nghiệp: Gắn kết chiến lược, quan hệ và học tập",
+                  englishName:
+                    "Business Marketing: Connecting Strategy, Relationships and Learning",
+                  credits: 4,
+                  elective: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: "Học kỳ 2",
+          subtitle: "Phân tích & mở rộng chuyên môn",
+          groups: [
+            {
+              title: "Học phần bắt buộc",
+              totalCreditsLabel: "4 tín chỉ",
+              courses: [
+                {
+                  name: "Chuyên đề - Phân tích kinh doanh và dự báo",
+                  englishName: "Business Analytics and Forecasting (Seminar)",
+                  credits: 4,
+                },
+              ],
+            },
+            {
+              title: "Tự chọn · Chọn 2 trong 3 học phần",
+              totalCreditsLabel: "Tự chọn · Chọn 2 trong 3 học phần",
+              courses: [
+                {
+                  name: "Công nghệ Marketing sáng tạo",
+                  englishName: "Creative Marketing Technology",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Chiến lược giá và quản trị doanh thu",
+                  englishName: "Pricing Strategy and Revenue Management",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Marketing khởi nghiệp",
+                  englishName: "Entrepreneurial Marketing",
+                  credits: 4,
+                  elective: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: "Học kỳ 3",
+          subtitle: "Nghiên cứu & chiến lược số",
+          groups: [
+            {
+              title: "Học phần bắt buộc",
+              totalCreditsLabel: "14 tín chỉ",
+              courses: [
+                {
+                  name: "Chuyên đề nghiên cứu Marketing",
+                  englishName: "Marketing Research Seminar Series",
+                  credits: 6,
+                },
+                {
+                  name: "Chuyên đề - Chiến lược Marketing số và đa kênh hợp nhất",
+                  englishName: "Digital & Omnichannel Marketing Strategy (Seminar)",
+                  credits: 4,
+                },
+                {
+                  name: "Quyền riêng tư – Đạo đức – Quản trị dữ liệu",
+                  englishName: "Privacy, Ethics & Data Governance",
+                  credits: 4,
+                },
+              ],
+            },
+            {
+              title: "Tự chọn · Chọn 1 trong 2 học phần",
+              totalCreditsLabel: "Tự chọn · Chọn 1 trong 2 học phần",
+              courses: [
+                {
+                  name: "Thiết kế trải nghiệm khách hàng",
+                  englishName: "Customer Experience Design",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Trí tuệ nhân tạo và dữ liệu lớn trong kinh doanh",
+                  englishName: "AI & Big Data in Business",
+                  credits: 4,
+                  elective: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: "Học kỳ 4",
+          subtitle: "Luận văn tốt nghiệp",
+          groups: [
+            {
+              title: "Học phần bắt buộc",
+              totalCreditsLabel: "15 tín chỉ",
+              courses: [
+                {
+                  name: "Luận văn tốt nghiệp",
+                  englishName: "Master’s Thesis",
+                  credits: 15,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    completion: {
+      heading: "Hoàn thành chương trình",
+      items: [
+        "Hoàn thành chương trình đào tạo; điểm mỗi học phần, điểm trung bình chung các học phần và điểm luận văn đạt từ 5,5/10 trở lên.",
+        "Hoàn thiện, nộp luận văn đã chỉnh sửa theo kết luận của hội đồng và thực hiện các yêu cầu lưu trữ, công bố theo quy định.",
+        "Đạt năng lực ngoại ngữ tương đương Bậc 4 trở lên trước thời điểm xét tốt nghiệp.",
+        "Đáp ứng các điều kiện về liêm chính học thuật và những quy định tốt nghiệp của Trường.",
+      ],
+    },
+  },
+  consultation: {
+    ...programmeSharedContent.consultation,
+    ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
+    ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+    formIntro: {
+      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      titleLines: ["Bắt đầu từ", "mục tiêu của bạn."],
+      body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Marketing. Đội ngũ tư vấn sẽ hỗ trợ bạn tìm hiểu chương trình và chuẩn bị hồ sơ phù hợp.",
+      benefits: [
+        "Tư vấn chương trình và định hướng học",
+        "Hướng dẫn học phí và chính sách hỗ trợ",
+        "Đối chiếu điều kiện và hồ sơ dự tuyển",
+      ],
+      formTitle: "Trao đổi trực tiếp với Viện",
+    },
+    contactActions: [
+      {
+        text: "Gọi tư vấn ↗",
+        href: "tel:0988486869",
+      },
+      {
+        text: "Gửi email ↗",
+        href: "mailto:tuyensinh.sdh@vlu.edu.vn",
+      },
+      {
+        text: "Hướng dẫn đăng ký dự tuyển ↗",
+        href: "/admissions",
+      },
+    ],
+  },
+  faq: {
+    ...programmeSharedContent.faq,
+    faqs: [
+      {
+        question: "Chương trình đào tạo theo định hướng nào?",
+        answer:
+          "Chương trình Thạc sĩ Marketing được thiết kế theo định hướng nghiên cứu, gồm 60 tín chỉ, thời gian chuẩn 24 tháng với kế hoạch 4 học kỳ. Các học phần được bố trí trong ba học kỳ đầu; học kỳ IV tập trung vào luận văn tốt nghiệp 15 tín chỉ.",
+      },
+      {
+        question: "Tôi cần đáp ứng điều kiện gì để dự tuyển?",
+        answer:
+          "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp và hoàn thành học phần bổ sung kiến thức nếu được yêu cầu. Chương trình định hướng nghiên cứu yêu cầu hạng tốt nghiệp đại học từ khá trở lên hoặc có công bố khoa học liên quan. Ứng viên đồng thời đáp ứng yêu cầu ngoại ngữ đầu vào và các điều kiện dự tuyển của chương trình.",
+      },
+      {
+        question: "Tốt nghiệp ngành khác có thể dự tuyển Marketing không?",
+        answer:
+          "Ứng viên tốt nghiệp ngành khác được đối chiếu văn bằng, bảng điểm và nội dung đã học. Phần bổ sung kiến thức tối đa 12 tín chỉ gồm Kinh tế học đại cương, Quản trị học, Marketing căn bản và Nguyên lý tài chính, mỗi học phần 3 tín chỉ. Có thể xét miễn học phần tương đương theo hồ sơ; cần hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+      },
+      {
+        question: "Ngôn ngữ giảng dạy và yêu cầu ngoại ngữ là gì?",
+        answer:
+          "Chương trình giảng dạy bằng tiếng Việt. Yêu cầu ngoại ngữ đầu vào tương đương Bậc 3 trở lên; trước thời điểm xét tốt nghiệp, học viên cần đạt mức tương đương Bậc 4 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam. Hình thức minh chứng được đối chiếu theo quy định và thông báo của Trường.",
+      },
+      {
+        question: "Lịch học có phù hợp với người đang đi làm?",
+        answer:
+          "Lịch học dự kiến bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật. Thời khóa biểu chính thức được công bố theo từng học kỳ. Bạn có thể trao đổi với Viện để chủ động sắp xếp công việc và kế hoạch học tập.",
+      },
+      {
+        question: "Học phí và chính sách hỗ trợ được áp dụng như thế nào?",
+        answer:
+          "Học phí toàn khóa là 90.000.000 đồng, chia thành ba đợt: 31.500.000 đồng, 27.000.000 đồng và 31.500.000 đồng. Các khoản thu riêng được áp dụng theo từng trường hợp. Học bổng và hỗ trợ tài chính được xét theo điều kiện, hồ sơ và thông báo của Trường; người học chỉ áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+      },
+    ],
+  },
+  fees: {
+    heading: "Chủ động chuẩn bị cho hành trình học.",
+    intro: [
+      "Học phí toàn khóa được chia thành ba đợt thanh toán, giúp người học chủ động sắp xếp kế hoạch tài chính.",
+      "Các chính sách học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ. Người học chỉ được áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+    ],
+    intake: "TUYỂN SINH THẠC SĨ 2027",
+    language: "Tiếng Việt",
+    total: "90.000.000 đồng",
+    installments: [
+      {
+        label: "Đợt 1 · 35%",
+        amount: "31.500.000 đồng",
+      },
+      {
+        label: "Đợt 2 · 30%",
+        amount: "27.000.000 đồng",
+      },
+      {
+        label: "Đợt 3 · 35%",
+        amount: "31.500.000 đồng",
+      },
+    ],
+    additionalFees: [
+      {
+        title: "Lệ phí xét tuyển",
+        amount: "500.000 đồng",
+        note: "Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      },
+      {
+        title: "Lệ phí nhập học",
+        amount: "1.000.000 đồng",
+        note: "Nộp cùng học phí đợt đầu.",
+      },
+      {
+        title: "Học bổ sung kiến thức",
+        amount: "1.200.000 đồng/môn",
+        note: "Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      },
+      {
+        title: "Ôn tập tiếng Anh đầu vào",
+        amount: "1.000.000 đồng",
+        note: "Đăng ký tự nguyện.",
+      },
+      {
+        title: "Thi tiếng Anh đầu vào",
+        amount: "1.000.000 đồng",
+        note: "Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      },
+      {
+        title: "Gia hạn chương trình",
+        amount: "5% học phí toàn khóa/lần",
+        note: "Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      },
+    ],
+    notes: [
+      "Hoạt động học tập thực tế, tham quan chuyên môn hoặc thực địa có thể phát sinh chi phí ngoài học phí toàn khóa; Khoa thông báo nội dung và chi phí trước khi triển khai. Điều kiện thu, hoàn trả và các khoản phát sinh thực hiện theo thông báo được ban hành.",
+      "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng. Ngày đến hạn thanh toán theo thông báo thu của Trường.",
+    ],
+  },
+};
+
+export const marketingProgramme: Programme = {
+  id: "marketing",
+  code: "340115",
+  title: "Marketing",
+  englishTitle: "Master of Marketing",
+  degree: "Thạc sĩ",
+  field: "Kinh doanh & Quản lý",
+  orientation: "Nghiên cứu",
+  credits: 60,
+  duration: "24 tháng",
+  studyMode: "Chính quy tập trung, tiếng Việt",
+  intake: "Tuyển sinh thạc sĩ 2027",
+  summary:
+    "Phát triển tư duy chiến lược và năng lực nghiên cứu Marketing, kết nối dữ liệu, công nghệ và hiểu biết về khách hàng để giải quyết các vấn đề kinh doanh trong bối cảnh chuyển đổi số.",
+  schedule:
+    "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
+  tuition: "90.000.000 VNĐ",
+};
+
+export function getMarketingCurricula(): CurriculumTrack[] {
+  return [
+    {
+      number: "05",
+      title: "Định hướng nghiên cứu",
+      subtitle: "60 tín chỉ · 24 tháng · 4 học kỳ",
+      orientation: "Nghiên cứu",
+      graduationProject: "Luận văn tốt nghiệp · 15 tín chỉ",
+      groups: [
+        {
+          title: "I. Kiến thức chung",
+          totalCreditsLabel: "4 tín chỉ",
+          description: [],
+          courses: [
+            {
+              name: "Triết học",
+              englishName: "Philosophy",
+              credits: 4,
+            },
+          ],
+        },
+        {
+          title: "II. Kiến thức cơ sở ngành",
+          totalCreditsLabel: "8 tín chỉ",
+          description: [],
+          courses: [
+            {
+              name: "Chiến lược Marketing bền vững",
+              englishName: "Sustainable Marketing Strategy",
+              credits: 4,
+            },
+            {
+              name: "Chuyên đề - Phân tích kinh doanh và dự báo",
+              englishName: "Business Analytics and Forecasting (Seminar)",
+              credits: 4,
+            },
+          ],
+        },
+        {
+          title: "III. Kiến thức nghiên cứu và chuyên ngành",
+          totalCreditsLabel: "33 tín chỉ",
+          courses: [],
+          subgroups: [
+            {
+              title: "Học phần bắt buộc · 18 tín chỉ",
+              totalCreditsLabel: "18 tín chỉ bắt buộc",
+              courses: [
+                {
+                  name: "Chuyên đề nghiên cứu Marketing",
+                  englishName: "Marketing Research Seminar Series",
+                  credits: 6,
+                },
+                {
+                  name: "Phương pháp nghiên cứu khoa học",
+                  englishName: "Research Methodology",
+                  credits: 4,
+                },
+                {
+                  name: "Chuyên đề - Chiến lược Marketing số và đa kênh hợp nhất",
+                  englishName: "Digital & Omnichannel Marketing Strategy (Seminar)",
+                  credits: 4,
+                },
+                {
+                  name: "Quyền riêng tư – Đạo đức – Quản trị dữ liệu",
+                  englishName: "Privacy, Ethics & Data Governance",
+                  credits: 4,
+                },
+              ],
+            },
+            {
+              title: "Nhóm tự chọn 1 · Chọn 1 trong 2 học phần",
+              totalCreditsLabel: "Chọn 1 trong 2 học phần",
+              courses: [
+                {
+                  name: "Nghệ thuật kể chuyện trong truyền thông thương hiệu",
+                  englishName: "Storytelling in Brand Communications",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Marketing doanh nghiệp: Gắn kết chiến lược, quan hệ và học tập",
+                  englishName:
+                    "Business Marketing: Connecting Strategy, Relationships and Learning",
+                  credits: 4,
+                  elective: true,
+                },
+              ],
+              description: [
+                "Học phần tự chọn · 15 tín chỉ theo cơ cấu chương trình",
+                "Học phần tự chọn được đăng ký theo nhóm và kế hoạch đào tạo của chương trình. Danh mục dưới đây thể hiện các lựa chọn để người học phát triển nội dung quan tâm.",
+              ],
+            },
+            {
+              title: "Nhóm tự chọn 2 · Chọn 2 trong 3 học phần",
+              totalCreditsLabel: "Chọn 2 trong 3 học phần",
+              courses: [
+                {
+                  name: "Công nghệ Marketing sáng tạo",
+                  englishName: "Creative Marketing Technology",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Chiến lược giá và quản trị doanh thu",
+                  englishName: "Pricing Strategy and Revenue Management",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Marketing khởi nghiệp",
+                  englishName: "Entrepreneurial Marketing",
+                  credits: 4,
+                  elective: true,
+                },
+              ],
+            },
+            {
+              title: "Nhóm tự chọn 3 · Chọn 1 trong 2 học phần",
+              totalCreditsLabel: "Chọn 1 trong 2 học phần",
+              courses: [
+                {
+                  name: "Thiết kế trải nghiệm khách hàng",
+                  englishName: "Customer Experience Design",
+                  credits: 4,
+                  elective: true,
+                },
+                {
+                  name: "Trí tuệ nhân tạo và dữ liệu lớn trong kinh doanh",
+                  englishName: "AI & Big Data in Business",
+                  credits: 4,
+                  elective: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: "IV. Luận văn tốt nghiệp",
+          totalCreditsLabel: "15 tín chỉ",
+          description: ["Công trình nghiên cứu độc lập trong lĩnh vực Marketing"],
+          courses: [
+            {
+              name: "Luận văn tốt nghiệp",
+              englishName: "Master’s Thesis",
+              credits: 15,
+            },
+          ],
+        },
+      ],
+    },
+  ];
+}

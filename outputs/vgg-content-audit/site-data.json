@@ -1,0 +1,897 @@
+{
+  "discoverSections": [
+    {
+      "slug": "gioi-thieu",
+      "title": "Giới thiệu",
+      "summary": "Khám phá câu chuyện và môi trường học thuật của Viện Sau Đại học."
+    },
+    {
+      "slug": "tam-nhin-su-menh",
+      "title": "Tầm nhìn & Sứ mệnh",
+      "summary": "Tìm hiểu định hướng phát triển và những giá trị Viện Sau Đại học theo đuổi."
+    },
+    {
+      "slug": "lanh-dao",
+      "title": "Lãnh đạo",
+      "summary": "Gặp gỡ đội ngũ định hướng hành trình học thuật tại Viện Sau Đại học."
+    },
+    {
+      "slug": "xep-hang-thanh-tuu",
+      "title": "Xếp hạng & Thành tựu",
+      "summary": "Các dấu ấn từ cộng đồng học thuật và người học Viện Sau Đại học."
+    }
+  ],
+  "menuGroups": [
+    {
+      "slug": "discover",
+      "en": "About Van Lang Institute Of Postgraduate Education",
+      "vi": "Về Viện Sau Đại học",
+      "kicker": "Van Lang Institute Of Postgraduate Education",
+      "headline": "Khám phá một Viện Sau Đại học lấy người học làm trung tâm.",
+      "intro": "Viện Sau Đại học kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",
+      "items": [
+        "Giới thiệu",
+        "Tầm nhìn & Sứ mệnh",
+        "Lãnh đạo",
+        "Xếp hạng & Thành tựu"
+      ],
+      "itemsEn": [
+        "Introduction",
+        "Vision & Mission",
+        "Leadership",
+        "Rankings & Achievements"
+      ],
+      "image": "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1800&q=86"
+    },
+    {
+      "slug": "programmes",
+      "en": "Programmes",
+      "vi": "Chương trình đào tạo",
+      "kicker": "Choose the path that moves you forward",
+      "headline": "Chương trình cho từng bước tiến sự nghiệp.",
+      "intro": "Các lộ trình kết nối tri thức chuyên sâu với nhu cầu thực tiễn và mục tiêu nghề nghiệp.",
+      "items": [
+        "Chương trình Thạc sĩ Flagship",
+        "Thạc sĩ",
+        "Tiến sĩ",
+        "Executive Education",
+        "Chương trình Quốc tế"
+      ],
+      "itemsEn": [
+        "Flagship Master's Programmes",
+        "Master's Programmes",
+        "Doctoral Programmes",
+        "Executive Education",
+        "International Programmes"
+      ],
+      "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1800&q=86"
+    },
+    {
+      "slug": "admissions",
+      "en": "Admissions",
+      "vi": "Tuyển sinh",
+      "kicker": "Your Viện Sau Đại học journey starts here",
+      "headline": "Thông tin rõ ràng. Hành trình tinh gọn.",
+      "intro": "Tìm hiểu điều kiện, học phí, học bổng, quy trình hồ sơ và các mốc quan trọng.",
+      "items": [
+        "Yêu cầu tuyển sinh",
+        "Học phí",
+        "Học bổng & Hỗ trợ tài chính",
+        "Quy trình nộp hồ sơ",
+        "Các mốc thời gian"
+      ],
+      "itemsEn": [
+        "Admission Requirements",
+        "Tuition Fees",
+        "Scholarships & Financial Aid",
+        "Application Process",
+        "Key Dates"
+      ],
+      "image": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=86"
+    },
+    {
+      "slug": "research",
+      "en": "Research & Global Opportunities",
+      "vi": "Nghiên cứu khoa học & Hợp tác quốc tế",
+      "kicker": "Knowledge for real-world impact",
+      "headline": "Nghiên cứu chuyên sâu. Kết nối tri thức toàn cầu.",
+      "intro": "Viện Sau Đại học kết nối nhà khoa học, doanh nghiệp, cộng đồng và mạng lưới đối tác quốc tế để kiến tạo tri thức, giải pháp thực tiễn và những cơ hội học tập vượt ra ngoài biên giới.",
+      "items": [
+        "Các cụm nghiên cứu",
+        "Dự án nghiên cứu",
+        "Công bố khoa học",
+        "Hội thảo & Sự kiện khoa học",
+        "Đổi mới sáng tạo",
+        "Hợp tác doanh nghiệp",
+        "Trao đổi sinh viên",
+        "Dual Degree",
+        "Thực tập Quốc tế",
+        "Study Tour",
+        "Overseas Immersion",
+        "Đối tác toàn cầu"
+      ],
+      "itemsEn": [
+        "Research Clusters",
+        "Research Projects",
+        "Publications",
+        "Conferences & Academic Events",
+        "Innovation",
+        "Industry Collaboration",
+        "Student Exchange",
+        "Dual Degree",
+        "International Internships",
+        "Study Tour",
+        "Overseas Immersion",
+        "Global Partners"
+      ],
+      "image": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1800&q=86"
+    },
+    {
+      "slug": "global",
+      "en": "Global Opportunities",
+      "vi": "Hợp tác quốc tế",
+      "kicker": "Learn beyond borders",
+      "headline": "Thế giới là một phần của hành trình học tập.",
+      "intro": "Trao đổi, bằng đôi, thực tập và mạng lưới đối tác giúp người học mở rộng góc nhìn toàn cầu.",
+      "items": [
+        "Trao đổi sinh viên",
+        "Dual Degree",
+        "Thực tập Quốc tế",
+        "Study Tour",
+        "Overseas Immersion",
+        "Đối tác toàn cầu"
+      ],
+      "itemsEn": [
+        "Student Exchange",
+        "Dual Degree",
+        "International Internships",
+        "Study Tour",
+        "Overseas Immersion",
+        "Global Partners"
+      ],
+      "image": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1800&q=86"
+    },
+    {
+      "slug": "student-success",
+      "en": "Student Success",
+      "vi": "Hành trình người học",
+      "kicker": "Supported at every step",
+      "headline": "Thành công của người học là trung tâm.",
+      "intro": "Hệ sinh thái hỗ trợ học tập, nghề nghiệp và kết nối doanh nghiệp đồng hành xuyên suốt hành trình.",
+      "items": [
+        "Dịch vụ hỗ trợ người học",
+        "Phát triển sự nghiệp",
+        "Tài nguyên học tập",
+        "Cựu người học",
+        "Câu chuyện thành công"
+      ],
+      "itemsEn": [
+        "Student Support",
+        "Career Development",
+        "Learning Resources",
+        "Alumni",
+        "Success Stories"
+      ],
+      "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=86"
+    },
+    {
+      "slug": "news",
+      "en": "News & Events",
+      "vi": "Tin tức & Sự kiện",
+      "kicker": "The pulse of our academic community",
+      "headline": "Theo dòng chuyển động học thuật.",
+      "intro": "Cập nhật tin tức, sự kiện, seminar và những khoảnh khắc nổi bật trong cộng đồng Viện Sau Đại học.",
+      "items": [
+        "Tin tức",
+        "Sự kiện",
+        "Seminar / Webinar",
+        "Thông cáo báo chí",
+        "Thư viện hình ảnh",
+        "Video"
+      ],
+      "itemsEn": [
+        "News",
+        "Events",
+        "Seminars / Webinars",
+        "Press Releases",
+        "Photo Gallery",
+        "Video"
+      ],
+      "image": "/images/pages/news/content/banner.jpg"
+    },
+    {
+      "slug": "resources",
+      "en": "Resources",
+      "vi": "Tài nguyên",
+      "kicker": "Everything you need in one place",
+      "headline": "Tài nguyên học thuật dễ tìm, dễ sử dụng.",
+      "intro": "Truy cập biểu mẫu, chính sách, tài liệu, lịch học thuật và câu hỏi thường gặp.",
+      "items": [
+        "Biểu mẫu",
+        "Chính sách & Quy định",
+        "Tài liệu tải về",
+        "Lịch học thuật",
+        "FAQ"
+      ],
+      "itemsEn": [
+        "Forms",
+        "Policies & Regulations",
+        "Downloads",
+        "Academic Calendar",
+        "FAQ"
+      ],
+      "image": "/images/pages/resources/content/banner.jpg"
+    }
+  ],
+  "programmes": [
+    "Quản trị Kinh doanh",
+    "Kinh doanh Thương mại",
+    "Tài chính - Ngân hàng",
+    "Kế toán",
+    "Luật Kinh tế",
+    "Quan hệ Công chúng",
+    "Ngôn ngữ Anh",
+    "Công nghệ Sinh học",
+    "Kỹ thuật Môi trường",
+    "Quản lý Tài nguyên và Môi trường",
+    "Kỹ thuật Xây dựng",
+    "Kỹ thuật ô tô",
+    "Logistics và Quản lý chuỗi cung ứng",
+    "Kiến trúc",
+    "Mỹ thuật Ứng dụng",
+    "Lý luận và Lịch sử Mỹ thuật Ứng dụng",
+    "Quản trị Dịch vụ Du lịch và Lữ hành",
+    "Quản trị Khách sạn"
+  ],
+  "navigationGroups": [
+    {
+      "slug": "discover",
+      "en": "About Van Lang Institute Of Postgraduate Education",
+      "vi": "Về Viện Sau Đại học",
+      "kicker": "Van Lang Institute Of Postgraduate Education",
+      "headline": "Khám phá một Viện Sau Đại học lấy người học làm trung tâm.",
+      "intro": "Viện Sau Đại học kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",
+      "items": [
+        "Giới thiệu",
+        "Tầm nhìn & Sứ mệnh",
+        "Lãnh đạo",
+        "Xếp hạng & Thành tựu"
+      ],
+      "itemsEn": [
+        "Introduction",
+        "Vision & Mission",
+        "Leadership",
+        "Rankings & Achievements"
+      ],
+      "image": "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1800&q=86"
+    },
+    {
+      "slug": "programmes",
+      "en": "Programmes",
+      "vi": "Chương trình đào tạo",
+      "kicker": "Choose the path that moves you forward",
+      "headline": "Chương trình cho từng bước tiến sự nghiệp.",
+      "intro": "Các lộ trình kết nối tri thức chuyên sâu với nhu cầu thực tiễn và mục tiêu nghề nghiệp.",
+      "items": [
+        "Chương trình Thạc sĩ Flagship",
+        "Thạc sĩ",
+        "Tiến sĩ",
+        "Executive Education",
+        "Chương trình Quốc tế"
+      ],
+      "itemsEn": [
+        "Flagship Master's Programmes",
+        "Master's Programmes",
+        "Doctoral Programmes",
+        "Executive Education",
+        "International Programmes"
+      ],
+      "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1800&q=86"
+    },
+    {
+      "slug": "admissions",
+      "en": "Admissions",
+      "vi": "Tuyển sinh",
+      "kicker": "Your Viện Sau Đại học journey starts here",
+      "headline": "Thông tin rõ ràng. Hành trình tinh gọn.",
+      "intro": "Tìm hiểu điều kiện, học phí, học bổng, quy trình hồ sơ và các mốc quan trọng.",
+      "items": [
+        "Yêu cầu tuyển sinh",
+        "Học phí",
+        "Học bổng & Hỗ trợ tài chính",
+        "Quy trình nộp hồ sơ",
+        "Các mốc thời gian"
+      ],
+      "itemsEn": [
+        "Admission Requirements",
+        "Tuition Fees",
+        "Scholarships & Financial Aid",
+        "Application Process",
+        "Key Dates"
+      ],
+      "image": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=86"
+    },
+    {
+      "slug": "research",
+      "en": "Research & Global Opportunities",
+      "vi": "Nghiên cứu khoa học & Hợp tác quốc tế",
+      "kicker": "Knowledge for real-world impact",
+      "headline": "Nghiên cứu chuyên sâu. Kết nối tri thức toàn cầu.",
+      "intro": "Viện Sau Đại học kết nối nhà khoa học, doanh nghiệp, cộng đồng và mạng lưới đối tác quốc tế để kiến tạo tri thức, giải pháp thực tiễn và những cơ hội học tập vượt ra ngoài biên giới.",
+      "items": [
+        "Các cụm nghiên cứu",
+        "Dự án nghiên cứu",
+        "Công bố khoa học",
+        "Hội thảo & Sự kiện khoa học",
+        "Đổi mới sáng tạo",
+        "Hợp tác doanh nghiệp",
+        "Trao đổi sinh viên",
+        "Dual Degree",
+        "Thực tập Quốc tế",
+        "Study Tour",
+        "Overseas Immersion",
+        "Đối tác toàn cầu"
+      ],
+      "itemsEn": [
+        "Research Clusters",
+        "Research Projects",
+        "Publications",
+        "Conferences & Academic Events",
+        "Innovation",
+        "Industry Collaboration",
+        "Student Exchange",
+        "Dual Degree",
+        "International Internships",
+        "Study Tour",
+        "Overseas Immersion",
+        "Global Partners"
+      ],
+      "image": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1800&q=86"
+    },
+    {
+      "slug": "student-success",
+      "en": "Student Success",
+      "vi": "Hành trình người học",
+      "kicker": "Supported at every step",
+      "headline": "Thành công của người học là trung tâm.",
+      "intro": "Hệ sinh thái hỗ trợ học tập, nghề nghiệp và kết nối doanh nghiệp đồng hành xuyên suốt hành trình.",
+      "items": [
+        "Dịch vụ hỗ trợ người học",
+        "Phát triển sự nghiệp",
+        "Tài nguyên học tập",
+        "Cựu người học",
+        "Câu chuyện thành công"
+      ],
+      "itemsEn": [
+        "Student Support",
+        "Career Development",
+        "Learning Resources",
+        "Alumni",
+        "Success Stories"
+      ],
+      "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=86"
+    },
+    {
+      "slug": "news",
+      "en": "News & Events",
+      "vi": "Tin tức & Sự kiện",
+      "kicker": "The pulse of our academic community",
+      "headline": "Theo dòng chuyển động học thuật.",
+      "intro": "Cập nhật tin tức, sự kiện, seminar và những khoảnh khắc nổi bật trong cộng đồng Viện Sau Đại học.",
+      "items": [
+        "Tin tức",
+        "Sự kiện",
+        "Seminar / Webinar",
+        "Thông cáo báo chí",
+        "Thư viện hình ảnh",
+        "Video"
+      ],
+      "itemsEn": [
+        "News",
+        "Events",
+        "Seminars / Webinars",
+        "Press Releases",
+        "Photo Gallery",
+        "Video"
+      ],
+      "image": "/images/pages/news/content/banner.jpg"
+    },
+    {
+      "slug": "resources",
+      "en": "Resources",
+      "vi": "Tài nguyên",
+      "kicker": "Everything you need in one place",
+      "headline": "Tài nguyên học thuật dễ tìm, dễ sử dụng.",
+      "intro": "Truy cập biểu mẫu, chính sách, tài liệu, lịch học thuật và câu hỏi thường gặp.",
+      "items": [
+        "Biểu mẫu",
+        "Chính sách & Quy định",
+        "Tài liệu tải về",
+        "Lịch học thuật",
+        "FAQ"
+      ],
+      "itemsEn": [
+        "Forms",
+        "Policies & Regulations",
+        "Downloads",
+        "Academic Calendar",
+        "FAQ"
+      ],
+      "image": "/images/pages/resources/content/banner.jpg"
+    }
+  ],
+  "subpageSlugs": {
+    "programmes": [
+      "flagship",
+      "thac-si",
+      "tien-si",
+      "executive-education",
+      "quoc-te"
+    ],
+    "admissions": [
+      "yeu-cau",
+      "hoc-phi",
+      "hoc-bong",
+      "nop-ho-so",
+      "moc-thoi-gian"
+    ],
+    "research": [
+      "cum-nghien-cuu",
+      "du-an",
+      "cong-bo",
+      "hoi-thao",
+      "doi-moi-sang-tao",
+      "hop-tac-doanh-nghiep",
+      "trao-doi",
+      "dual-degree",
+      "thuc-tap",
+      "study-tour",
+      "overseas-immersion",
+      "doi-tac"
+    ],
+    "global": [
+      "trao-doi",
+      "dual-degree",
+      "thuc-tap",
+      "study-tour",
+      "overseas-immersion",
+      "doi-tac"
+    ],
+    "student-success": [
+      "ho-tro-hoc-vien",
+      "phat-trien-su-nghiep",
+      "tai-nguyen-hoc-tap",
+      "cuu-hoc-vien",
+      "cau-chuyen-thanh-cong"
+    ],
+    "news": [
+      "tin-tuc",
+      "su-kien",
+      "seminar-webinar",
+      "thong-cao-bao-chi",
+      "thu-vien-hinh-anh",
+      "video"
+    ],
+    "resources": [
+      "bieu-mau",
+      "chinh-sach-quy-dinh",
+      "tai-lieu",
+      "lich-hoc-thuat",
+      "faq"
+    ]
+  },
+  "sectionSubpages": {
+    "programmes": [
+      {
+        "slug": "flagship",
+        "title": "Chương trình Thạc sĩ Flagship",
+        "eyebrow": "Programmes / 01",
+        "headline": "Chương trình Thạc sĩ Flagship: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho chương trình thạc sĩ flagship tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "thac-si",
+        "title": "Thạc sĩ",
+        "eyebrow": "Programmes / 02",
+        "headline": "Thạc sĩ: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho thạc sĩ tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "tien-si",
+        "title": "Tiến sĩ",
+        "eyebrow": "Programmes / 03",
+        "headline": "Tiến sĩ: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho tiến sĩ tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "executive-education",
+        "title": "Executive Education",
+        "eyebrow": "Programmes / 04",
+        "headline": "Executive Education: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho executive education tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "quoc-te",
+        "title": "Chương trình Quốc tế",
+        "eyebrow": "Programmes / 05",
+        "headline": "Chương trình Quốc tế: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho chương trình quốc tế tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      }
+    ],
+    "admissions": [
+      {
+        "slug": "yeu-cau",
+        "title": "Yêu cầu tuyển sinh",
+        "eyebrow": "Admissions / 01",
+        "headline": "Yêu cầu tuyển sinh: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho yêu cầu tuyển sinh tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "hoc-phi",
+        "title": "Học phí",
+        "eyebrow": "Admissions / 02",
+        "headline": "Học phí: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho học phí tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "hoc-bong",
+        "title": "Học bổng & Hỗ trợ tài chính",
+        "eyebrow": "Admissions / 03",
+        "headline": "Học bổng & Hỗ trợ tài chính: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho học bổng & hỗ trợ tài chính tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "nop-ho-so",
+        "title": "Quy trình nộp hồ sơ",
+        "eyebrow": "Admissions / 04",
+        "headline": "Quy trình nộp hồ sơ: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho quy trình nộp hồ sơ tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "moc-thoi-gian",
+        "title": "Các mốc thời gian",
+        "eyebrow": "Admissions / 05",
+        "headline": "Các mốc thời gian: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho các mốc thời gian tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      }
+    ],
+    "research": [
+      {
+        "slug": "cum-nghien-cuu",
+        "title": "Các cụm nghiên cứu",
+        "eyebrow": "Research & Global Opportunities / 01",
+        "headline": "Các cụm nghiên cứu: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho các cụm nghiên cứu tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "du-an",
+        "title": "Dự án nghiên cứu",
+        "eyebrow": "Research & Global Opportunities / 02",
+        "headline": "Dự án nghiên cứu: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho dự án nghiên cứu tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "cong-bo",
+        "title": "Công bố khoa học",
+        "eyebrow": "Research & Global Opportunities / 03",
+        "headline": "Công bố khoa học: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho công bố khoa học tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "hoi-thao",
+        "title": "Hội thảo & Sự kiện khoa học",
+        "eyebrow": "Research & Global Opportunities / 04",
+        "headline": "Hội thảo & Sự kiện khoa học: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho hội thảo & sự kiện khoa học tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "doi-moi-sang-tao",
+        "title": "Đổi mới sáng tạo",
+        "eyebrow": "Research & Global Opportunities / 05",
+        "headline": "Đổi mới sáng tạo: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho đổi mới sáng tạo tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "hop-tac-doanh-nghiep",
+        "title": "Hợp tác doanh nghiệp",
+        "eyebrow": "Research & Global Opportunities / 06",
+        "headline": "Hợp tác doanh nghiệp: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho hợp tác doanh nghiệp tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "trao-doi",
+        "title": "Trao đổi sinh viên",
+        "eyebrow": "Research & Global Opportunities / 07",
+        "headline": "Trao đổi sinh viên: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho trao đổi sinh viên tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "dual-degree",
+        "title": "Dual Degree",
+        "eyebrow": "Research & Global Opportunities / 08",
+        "headline": "Dual Degree: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho dual degree tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "thuc-tap",
+        "title": "Thực tập Quốc tế",
+        "eyebrow": "Research & Global Opportunities / 09",
+        "headline": "Thực tập Quốc tế: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho thực tập quốc tế tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "study-tour",
+        "title": "Study Tour",
+        "eyebrow": "Research & Global Opportunities / 10",
+        "headline": "Study Tour: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho study tour tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "overseas-immersion",
+        "title": "Overseas Immersion",
+        "eyebrow": "Research & Global Opportunities / 11",
+        "headline": "Overseas Immersion: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho overseas immersion tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "doi-tac",
+        "title": "Đối tác toàn cầu",
+        "eyebrow": "Research & Global Opportunities / 12",
+        "headline": "Đối tác toàn cầu: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho đối tác toàn cầu tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      }
+    ],
+    "global": [
+      {
+        "slug": "trao-doi",
+        "title": "Trao đổi sinh viên",
+        "eyebrow": "Global Opportunities / 01",
+        "headline": "Trao đổi sinh viên: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho trao đổi sinh viên tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "dual-degree",
+        "title": "Dual Degree",
+        "eyebrow": "Global Opportunities / 02",
+        "headline": "Dual Degree: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho dual degree tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "thuc-tap",
+        "title": "Thực tập Quốc tế",
+        "eyebrow": "Global Opportunities / 03",
+        "headline": "Thực tập Quốc tế: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho thực tập quốc tế tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "study-tour",
+        "title": "Study Tour",
+        "eyebrow": "Global Opportunities / 04",
+        "headline": "Study Tour: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho study tour tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "overseas-immersion",
+        "title": "Overseas Immersion",
+        "eyebrow": "Global Opportunities / 05",
+        "headline": "Overseas Immersion: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho overseas immersion tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "doi-tac",
+        "title": "Đối tác toàn cầu",
+        "eyebrow": "Global Opportunities / 06",
+        "headline": "Đối tác toàn cầu: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho đối tác toàn cầu tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      }
+    ],
+    "student-success": [
+      {
+        "slug": "ho-tro-hoc-vien",
+        "title": "Dịch vụ hỗ trợ người học",
+        "eyebrow": "Student Success / 01",
+        "headline": "Dịch vụ hỗ trợ người học: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho dịch vụ hỗ trợ người học tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "phat-trien-su-nghiep",
+        "title": "Phát triển sự nghiệp",
+        "eyebrow": "Student Success / 02",
+        "headline": "Phát triển sự nghiệp: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho phát triển sự nghiệp tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "tai-nguyen-hoc-tap",
+        "title": "Tài nguyên học tập",
+        "eyebrow": "Student Success / 03",
+        "headline": "Tài nguyên học tập: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho tài nguyên học tập tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "cuu-hoc-vien",
+        "title": "Cựu người học",
+        "eyebrow": "Student Success / 04",
+        "headline": "Cựu người học: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho cựu người học tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "cau-chuyen-thanh-cong",
+        "title": "Câu chuyện thành công",
+        "eyebrow": "Student Success / 05",
+        "headline": "Câu chuyện thành công: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho câu chuyện thành công tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      }
+    ],
+    "news": [
+      {
+        "slug": "tin-tuc",
+        "title": "Tin tức",
+        "eyebrow": "News & Events / 01",
+        "headline": "Tin tức: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho tin tức tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "su-kien",
+        "title": "Sự kiện",
+        "eyebrow": "News & Events / 02",
+        "headline": "Sự kiện: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho sự kiện tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "seminar-webinar",
+        "title": "Seminar / Webinar",
+        "eyebrow": "News & Events / 03",
+        "headline": "Seminar / Webinar: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho seminar / webinar tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "thong-cao-bao-chi",
+        "title": "Thông cáo báo chí",
+        "eyebrow": "News & Events / 04",
+        "headline": "Thông cáo báo chí: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho thông cáo báo chí tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "thu-vien-hinh-anh",
+        "title": "Thư viện hình ảnh",
+        "eyebrow": "News & Events / 05",
+        "headline": "Thư viện hình ảnh: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho thư viện hình ảnh tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "video",
+        "title": "Video",
+        "eyebrow": "News & Events / 06",
+        "headline": "Video: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho video tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      }
+    ],
+    "resources": [
+      {
+        "slug": "bieu-mau",
+        "title": "Biểu mẫu",
+        "eyebrow": "Resources / 01",
+        "headline": "Biểu mẫu: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho biểu mẫu tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "chinh-sach-quy-dinh",
+        "title": "Chính sách & Quy định",
+        "eyebrow": "Resources / 02",
+        "headline": "Chính sách & Quy định: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho chính sách & quy định tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "tai-lieu",
+        "title": "Tài liệu tải về",
+        "eyebrow": "Resources / 03",
+        "headline": "Tài liệu tải về: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho tài liệu tải về tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "lich-hoc-thuat",
+        "title": "Lịch học thuật",
+        "eyebrow": "Resources / 04",
+        "headline": "Lịch học thuật: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho lịch học thuật tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      },
+      {
+        "slug": "faq",
+        "title": "FAQ",
+        "eyebrow": "Resources / 05",
+        "headline": "FAQ: kiến tạo một hành trình có chiều sâu.",
+        "summary": "Khám phá thông tin, cơ hội và nguồn lực dành cho faq tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm."
+      }
+    ]
+  },
+  "unifiedSectionDetails": {
+    "admissions/yeu-cau": [
+      {
+        "title": "Trình độ đào tạo",
+        "text": "Đã tốt nghiệp đại học hoặc đủ điều kiện được công nhận tốt nghiệp đại học (hoặc có trình độ tương đương trở lên) theo quy định của Bộ Giáo dục và Đào tạo."
+      },
+      {
+        "title": "Ngành đào tạo",
+        "text": "Có bằng tốt nghiệp đại học thuộc ngành phù hợp với ngành đăng ký dự tuyển. Trường hợp tốt nghiệp ngành khác có thể phải học bổ sung kiến thức theo quy định của Trường Đại học Văn Lang trước khi tham gia chương trình đào tạo. Văn bằng do cơ sở giáo dục nước ngoài cấp phải được công nhận theo quy định hiện hành."
+      },
+      {
+        "title": "Điều kiện ngoại ngữ",
+        "text": "Đáp ứng yêu cầu về năng lực ngoại ngữ theo Quy chế tuyển sinh trình độ thạc sĩ của Bộ Giáo dục và Đào tạo, bao gồm một trong các điều kiện sau:",
+        "points": [
+          "Có chứng chỉ ngoại ngữ đạt trình độ tương đương Bậc 3 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam còn hiệu lực.",
+          "Có bằng tốt nghiệp đại học ngành ngôn ngữ nước ngoài.",
+          "Tốt nghiệp chương trình đại học toàn thời gian bằng tiếng nước ngoài và văn bằng được công nhận theo quy định.",
+          "Đạt yêu cầu đánh giá năng lực tiếng Anh đầu vào do Trường Đại học Văn Lang tổ chức (đối với các trường hợp áp dụng)."
+        ]
+      },
+      {
+        "title": "Điều kiện khác",
+        "text": "Ứng viên không trong thời gian thi hành kỷ luật từ mức cảnh cáo trở lên hoặc không trong thời gian thi hành án hình sự; đồng thời đáp ứng các quy định tuyển sinh hiện hành của Trường Đại học Văn Lang và Bộ Giáo dục và Đào tạo."
+      }
+    ],
+    "admissions/hoc-bong": [
+      {
+        "title": "Học bổng Tài năng 100%",
+        "text": "Hỗ trợ lên đến 100% học phí dựa trên thành tích nổi bật ở bậc Đại học và thành tích công bố khoa học ở bậc Thạc sĩ."
+      },
+      {
+        "title": "Học bổng 30%",
+        "text": "Hỗ trợ 30% học phí toàn khóa dành cho thương binh, bệnh binh và người khuyết tật."
+      },
+      {
+        "title": "Học bổng 10%",
+        "text": "Hỗ trợ 10% học phí toàn khóa dành cho cựu sinh viên Văn Lang; vợ, chồng hoặc anh, chị, em ruột cùng theo học; người dân tộc thiểu số; và con thương binh, bệnh binh."
+      },
+      {
+        "title": "Ưu đãi học phí 5%",
+        "text": "Giảm thêm 5% trên mức học phí thực đóng khi thanh toán toàn bộ học phí trong một lần. Chính sách áp dụng đối với người học có mức học bổng dưới 30%."
+      },
+      {
+        "title": "Học bổng Khuyến khích 5–10%",
+        "points": [
+          "Hỗ trợ 10% học phí toàn khóa dành cho người học theo học các ngành thuộc nhóm STEM.",
+          "Hỗ trợ 5% học phí toàn khóa dành cho người học là nữ, người dân tộc thiểu số, người khuyết tật, thương binh hoặc bệnh binh."
+        ]
+      }
+    ],
+    "admissions/nop-ho-so": [
+      {
+        "title": "Khám phá chương trình",
+        "text": "Tìm hiểu chương trình đào tạo, yêu cầu tuyển sinh và lựa chọn chương trình phù hợp. Đối với chương trình Tiến sĩ, ứng viên được khuyến khích xác định định hướng nghiên cứu và lĩnh vực chuyên môn phù hợp trước khi nộp hồ sơ."
+      },
+      {
+        "title": "Nộp hồ sơ",
+        "text": "Hoàn thành hồ sơ đăng ký theo yêu cầu của chương trình. Đối với chương trình Tiến sĩ, hồ sơ cần có đề cương nghiên cứu và minh chứng về năng lực nghiên cứu theo quy định."
+      },
+      {
+        "title": "Kiểm tra điều kiện đầu vào",
+        "text": "Viện Sau đại học đánh giá điều kiện đầu vào, năng lực học thuật, trình độ ngoại ngữ và mức độ phù hợp của ứng viên với chương trình đào tạo. Trong một số trường hợp, ứng viên có thể được yêu cầu hoàn thành các học phần bổ sung kiến thức hoặc đáp ứng thêm điều kiện ngoại ngữ trước khi được công nhận đủ điều kiện xét tuyển."
+      },
+      {
+        "title": "Đánh giá tuyển sinh",
+        "text": "Tùy theo chương trình, ứng viên có thể tham gia phỏng vấn, đánh giá năng lực hoặc các hình thức đánh giá khác. Đối với chương trình Tiến sĩ, ứng viên cần trình bày đề cương nghiên cứu; quá trình này tập trung vào tiềm năng nghiên cứu và sự phù hợp với định hướng học thuật của chương trình."
+      },
+      {
+        "title": "Thông báo kết quả tuyển sinh",
+        "text": "Kết quả tuyển sinh sẽ được thông báo chính thức đến ứng viên. Đối với các hồ sơ trúng tuyển, Viện Sau đại học sẽ gửi hướng dẫn nhập học và các bước tiếp theo."
+      },
+      {
+        "title": "Nhập học",
+        "text": "Sau khi hoàn tất thủ tục nhập học, người học chính thức trở thành người học cao học hoặc nghiên cứu sinh của Trường Đại học Văn Lang và bắt đầu hành trình học tập, nghiên cứu và phát triển nghề nghiệp trong môi trường học thuật quốc tế."
+      }
+    ],
+    "admissions/moc-thoi-gian": [
+      {
+        "title": "Các đợt dự tuyển và đăng ký học bổng",
+        "text": "Trường Đại học Văn Lang tổ chức 3 đợt tuyển sinh sau đại học mỗi năm."
+      },
+      {
+        "title": "Đợt 3",
+        "points": [
+          "29/08 — Hạn dành cho người học đăng ký học bổng.",
+          "05/09 — Hạn dành cho người học không đăng ký học bổng."
+        ]
+      }
+    ]
+  }
+}

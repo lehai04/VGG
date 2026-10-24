@@ -1,0 +1,549 @@
+// ==================================================
+// NGÀNH: CÔNG NGHỆ THÔNG TIN
+// ==================================================
+import { programmeSharedContent } from "./shared-content";
+import type { Programme, ProgrammePageContent } from "../programmes";
+import type { CurriculumTrack } from "../curricula";
+
+export const congNgheThongTinProgramme = {
+  id: "cong-nghe-thong-tin",
+  code: "480201",
+  title: "Công nghệ thông tin",
+  englishTitle: "Master of Information Technology",
+  degree: "Thạc sĩ",
+  field: "Kỹ thuật, Môi trường & Công nghệ",
+  orientation: "Ứng dụng và nghiên cứu",
+  orientations: ["Ứng dụng", "Nghiên cứu"],
+  credits: 45,
+  creditsLabel: "45 (ứng dụng) / 60 (nghiên cứu)",
+  duration: "18 tháng (ứng dụng) / 24 tháng (nghiên cứu)",
+  studyMode: "Chính quy, tiếng Việt",
+  intake: "Tuyển sinh thạc sĩ 2027",
+  summary:
+    "Nâng cao năng lực thiết kế, phát triển và quản lý các giải pháp công nghệ thông tin, với trọng tâm trí tuệ nhân tạo, dữ liệu lớn và điện toán đám mây.",
+  detailsPending: false,
+
+  tuition: "90.000.000 VNĐ",
+  schedule: "Buổi tối trong tuần và cuối tuần",
+} satisfies Programme;
+
+export const congNgheThongTinPageContent: ProgrammePageContent = {
+  // --------------------------------------------------
+  // NỘI DUNG HERO
+  // --------------------------------------------------
+  hero: {
+    ...programmeSharedContent.hero,
+    heroLead: congNgheThongTinProgramme.summary,
+    heroTitle: "Công nghệ thông tin",
+    heroSlogan: "FUTURE",
+    heroImage:
+      "https://images.unsplash.com/photo-1564035105550-e1f02aa8556b?auto=format&fit=crop&w=2400&q=85",
+  },
+
+  // --------------------------------------------------
+  // NỘI DUNG THÔNG TIN NHANH
+  // --------------------------------------------------
+  facts: {
+    ...programmeSharedContent.facts,
+    quickFactsDetailed: [
+      { label: "Mã ngành", value: "480201", detail: "Mã chương trình: 8480201" },
+      { label: "Định hướng ứng dụng", value: "45 tín chỉ", detail: "18 tháng · 5 học kỳ" },
+      { label: "Định hướng nghiên cứu", value: "60 tín chỉ", detail: "24 tháng · 6 học kỳ" },
+      { label: "Hình thức đào tạo", value: "Chính quy", detail: "Tập trung" },
+      { label: "Ngôn ngữ đào tạo", value: "Tiếng Việt" },
+      { label: "Học phí toàn khóa", value: "90 triệu đồng" },
+    ],
+  },
+
+  // --------------------------------------------------
+  // NỘI DUNG MỤC 01 - TỔNG QUAN CHƯƠNG TRÌNH
+  // --------------------------------------------------
+  section01: {
+    sectionNumber: "01",
+    overviewImage: "/images/pages/programmes/logistics/campus-building.jpg",
+    overviewTitle: "Tổng quan chương trình",
+    overview: [
+      "Từ kiến thức chuyên sâu đến giải pháp công nghệ.",
+      "Chương trình Thạc sĩ Công nghệ thông tin tại Văn Lang kết hợp kiến thức công nghệ hiện đại với năng lực nghiên cứu, phát triển và quản lý giải pháp CNTT.",
+      "Trọng tâm chương trình gồm trí tuệ nhân tạo, dữ liệu lớn và điện toán đám mây, gắn với nhu cầu phát triển hệ thống, sản phẩm công nghệ và chuyển đổi số. Người học đồng thời rèn luyện tư duy phản biện, kỹ năng làm việc trong môi trường đa ngành và trách nhiệm nghề nghiệp.",
+      "Hai định hướng ứng dụng và nghiên cứu dùng chung nền tảng kiến thức, sau đó phân nhánh theo mục tiêu học tập. Hình thức đào tạo chính quy, ngôn ngữ giảng dạy là tiếng Việt. Văn bằng tốt nghiệp: Thạc sĩ Công nghệ thông tin — Master of Information Technology.",
+    ],
+    ...programmeSharedContent.overview,
+    tags: ["Công nghệ thông tin", "Trí tuệ nhân tạo", "Dữ liệu lớn", "Điện toán đám mây"],
+
+
+  },
+
+  // --------------------------------------------------
+  // NỘI DUNG MỤC 02 - ĐIỂM NỔI BẬT
+  // --------------------------------------------------
+  section02: {
+    sectionNumber: "02",
+    highlights: [
+      {
+        title: "Công nghệ hiện đại trong học phần cốt lõi",
+        text: "AI tạo sinh và Hệ thống mô hình ngôn ngữ lớn là học phần bắt buộc ở cả hai định hướng. Chương trình còn có Máy học nâng cao và Quản trị dự án CNTT và Chuyển đổi số.",
+      },
+      {
+        title: "Phát triển giải pháp qua thực hành",
+        text: "Hoạt động học tập kết hợp lý thuyết, thực hành phòng máy, dự án, seminar và phản biện. Định hướng ứng dụng có 6 tín chỉ thực tập chuyên môn và 9 tín chỉ đề án thạc sĩ.",
+      },
+      {
+        title: "Dành thời lượng cho nghiên cứu",
+        text: "Định hướng nghiên cứu bố trí hai chuyên đề, mỗi chuyên đề 6 tín chỉ, và luận văn thạc sĩ 15 tín chỉ để phát triển năng lực nghiên cứu chuyên sâu.",
+      },
+      {
+        title: "Kỹ năng chuyên môn đi cùng trách nhiệm",
+        text: "Người học phát triển năng lực giao tiếp, điều phối nhóm và quản lý dự án, đồng thời chú trọng bảo vệ dữ liệu, liêm chính học thuật và AI có trách nhiệm.",
+      },
+    ],
+    learningOutcomes: {
+      intro: "Bảy chuẩn đầu ra bao quát kiến thức, kỹ năng, mức độ tự chủ và trách nhiệm.",
+      items: [
+        {
+          code: "PLO1",
+          title: "Đánh giá công nghệ và nền tảng lý thuyết",
+          text: "Đánh giá các nền tảng lý thuyết, nguyên lý và công nghệ tiên tiến trong lĩnh vực Công nghệ thông tin (trí tuệ nhân tạo, dữ liệu lớn, điện toán đám mây).",
+        },
+        {
+          code: "PLO2",
+          title: "Thiết kế nghiên cứu khoa học",
+          text: "Thiết kế nghiên cứu khoa học để phát triển tri thức và giải pháp mới cho các vấn đề CNTT phức tạp.",
+        },
+        {
+          code: "PLO3",
+          title: "Phát triển và kiểm chứng giải pháp CNTT",
+          text: "Thiết kế, triển khai và kiểm chứng thực nghiệm giải pháp, hệ thống CNTT hoàn chỉnh, tích hợp các công nghệ hiện đại (GenAI/LLM, kiến trúc cloud-native, dữ liệu lớn).",
+        },
+        {
+          code: "PLO4",
+          title: "Bảo mật, hiệu năng và quản trị dữ liệu",
+          text: "Bảo đảm an toàn – bảo mật, hiệu năng và vận hành hệ thống thông tin; quản trị dữ liệu hiệu quả.",
+        },
+        {
+          code: "PLO5",
+          title: "Giao tiếp, lãnh đạo và quản lý dự án",
+          text: "Giao tiếp chuyên môn và học thuật hiệu quả; lãnh đạo, điều phối nhóm chuyên môn – nghiên cứu và quản lý dự án CNTT trong môi trường đa ngành.",
+        },
+        {
+          code: "PLO6",
+          title: "Đạo đức nghề nghiệp và AI có trách nhiệm",
+          text: "Tuân thủ pháp luật, đạo đức nghề nghiệp và nguyên tắc AI có trách nhiệm; thể hiện trách nhiệm xã hội và phục vụ cộng đồng trong các sản phẩm, quyết định chuyên môn.",
+        },
+        {
+          code: "PLO7",
+          title: "Tự học, đổi mới sáng tạo và khởi nghiệp",
+          text: "Thể hiện năng lực tự định hướng, học tập suốt đời và tư duy đổi mới sáng tạo, khởi nghiệp để thích ứng với biến đổi công nghệ.",
+        },
+      ],
+    },
+    ...programmeSharedContent.highlights,
+  },
+
+  // --------------------------------------------------
+  // NỘI DUNG MỤC 03 - ĐỐI TƯỢNG
+  // --------------------------------------------------
+  section03: {
+    sectionNumber: "03",
+    audienceHeading: "Nền tảng của bạn, bước học tiếp theo.",
+    audience: [
+      {
+        title: "Người có nền tảng CNTT",
+        text: "Người tốt nghiệp các ngành thuộc nhóm Máy tính và Công nghệ thông tin, muốn học sâu hơn về công nghệ, phát triển hệ thống hoặc quản lý giải pháp CNTT.",
+      },
+      {
+        title: "Người tốt nghiệp ngành gần",
+        text: "Người học từ các ngành toán, dữ liệu và kỹ thuật liên quan được đối chiếu văn bằng, bảng điểm. Nhóm thuộc diện bổ sung kiến thức phải hoàn tất 5 học phần, tổng 15 tín chỉ.",
+      },
+      {
+        title: "Người hướng đến nghiên cứu",
+        text: "Người mong muốn phát triển năng lực nghiên cứu, tham gia hoạt động R&D, giảng dạy hoặc chuẩn bị nền tảng để tiếp tục học tập ở trình độ tiến sĩ.",
+      },
+    ].map((item, index) => ({
+      ...item,
+      image: [
+        "https://images.unsplash.com/photo-1764795850513-fa8a469a4600?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1589793463357-5fb813435467?auto=format&fit=crop&w=1200&q=85",
+        "https://images.unsplash.com/photo-1758270704851-adff797a2010?auto=format&fit=crop&w=1200&q=85",
+      ][index],
+    })),
+  },
+
+  // --------------------------------------------------
+  // NỘI DUNG MỤC 04 - NGHỀ NGHIỆP
+  // --------------------------------------------------
+  section04: {
+    sectionNumber: "04",
+    careerImage:
+      "https://images.unsplash.com/photo-1564035105550-e1f02aa8556b?auto=format&fit=crop&w=2400&q=85",
+    careerHeading: "Phát triển chuyên môn. Mở rộng hướng nghề nghiệp.",
+    careers: [
+      {
+        title: "Trưởng phòng / Quản lý dự án CNTT",
+        sub: "Lập kế hoạch, điều phối, quản lý nguồn lực và giám sát dự án công nghệ thông tin.",
+      },
+      {
+        title: "Quản lý phát triển sản phẩm công nghệ",
+        sub: "Kết hợp chuyên môn kỹ thuật và nghiệp vụ để định hình, phát triển sản phẩm công nghệ.",
+      },
+      {
+        title: "Tư vấn chuyển đổi số",
+        sub: "Tư vấn chiến lược, lộ trình và tổ chức triển khai chuyển đổi số cho doanh nghiệp, tổ chức.",
+      },
+      {
+        title: "Chuyên gia AI / học máy",
+        sub: "Thiết kế, xây dựng và triển khai mô hình AI, GenAI/LLM vào ứng dụng thực tế.",
+      },
+      {
+        title: "Kiến trúc sư đám mây / phần mềm",
+        sub: "Tư vấn, thiết kế, triển khai giải pháp cloud-native và dẫn dắt kỹ thuật trong các dự án phát triển phần mềm, ứng dụng web và di động.",
+      },
+      {
+        title: "Nghiên cứu, giảng dạy và học tiếp",
+        sub: "Làm việc tại viện nghiên cứu hoặc đơn vị R&D; giảng dạy CNTT tại trường đại học, cao đẳng; hoặc tiếp tục học tiến sĩ tùy điều kiện dự tuyển.",
+      },
+    ],
+  },
+
+  // --------------------------------------------------
+  // NỘI DUNG MỤC 05 - KHUNG CHƯƠNG TRÌNH
+  // --------------------------------------------------
+  section05: {
+    sectionNumber: "05",
+    curriculumIntro: [
+      "Định hướng ứng dụng tập trung thiết kế, triển khai và chuyển giao giải pháp công nghệ trong thực tiễn nghề nghiệp. Phần cuối chương trình gồm thực tập chuyên môn và đề án thạc sĩ.",
+      "Định hướng nghiên cứu tập trung thiết kế nghiên cứu, kiểm chứng thực nghiệm và phát triển tri thức trong lĩnh vực CNTT. Hoạt động nghiên cứu gồm hai chuyên đề và luận văn thạc sĩ.",
+    ],
+    trackCredits: ["45 tín chỉ", "60 tín chỉ"],
+    trackDurations: ["18 tháng", "24 tháng"],
+    ...programmeSharedContent.curriculum,
+  },
+
+  // --------------------------------------------------
+  // NỘI DUNG TƯ VẤN
+  // --------------------------------------------------
+  consultation: {
+    ...programmeSharedContent.consultation,
+    ctaHeading: ["Sẵn sàng cho bước học", "tiếp theo?"],
+    ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+  },
+
+  // --------------------------------------------------
+  // NỘI DUNG FAQ VÀ LIÊN HỆ
+  // --------------------------------------------------
+  faq: {
+    ...programmeSharedContent.faq,
+    faqs: [
+      {
+        question: "Hai định hướng đào tạo khác nhau như thế nào?",
+        answer:
+          "Định hướng ứng dụng có 45 tín chỉ, thời gian đào tạo 18 tháng với kế hoạch 5 học kỳ, kết thúc bằng thực tập chuyên môn và đề án thạc sĩ. Định hướng nghiên cứu có 60 tín chỉ, thời gian đào tạo 24 tháng với kế hoạch 6 học kỳ, gồm hai chuyên đề nghiên cứu và luận văn thạc sĩ.",
+      },
+      {
+        question: "Điều kiện dự tuyển Thạc sĩ Công nghệ thông tin là gì?",
+        answer:
+          "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp và đáp ứng điều kiện đầu vào. Chương trình tuyển sinh theo hình thức xét tuyển. Với định hướng nghiên cứu, nguồn yêu cầu hạng tốt nghiệp đại học từ khá trở lên hoặc có công bố khoa học liên quan. Ngành tốt nghiệp, chương trình đã học và bảng điểm được Khoa và Viện đối chiếu; yêu cầu cụ thể căn cứ quy định và thông báo tuyển sinh của Trường.",
+      },
+      {
+        question: "Ngành gần cần học bổ sung những học phần nào?",
+        answer:
+          "Nhóm thuộc diện bổ sung kiến thức phải hoàn tất 5 học phần, tổng 15 tín chỉ: Kỹ thuật lập trình; Cấu trúc dữ liệu và giải thuật; Cơ sở dữ liệu; Xác suất thống kê ứng dụng; Nhập môn Trí tuệ nhân tạo. Danh mục không cần bổ sung gồm Máy tính (74801): Khoa học máy tính (7480101), Mạng máy tính và truyền thông dữ liệu (7480102), Kỹ thuật phần mềm (7480103), Hệ thống thông tin (7480104), Kỹ thuật máy tính (7480106), Trí tuệ nhân tạo (7480107), Công nghệ kỹ thuật máy tính (7480108); và Công nghệ thông tin (74802): Công nghệ thông tin (7480201), An ninh mạng (7480208). Danh mục ngành gần cần đối chiếu gồm Khoa học dữ liệu, Toán tin, Kỹ thuật điện tử – viễn thông, Kỹ thuật điều khiển và tự động hóa, Kỹ thuật cơ khí và Kỹ thuật cơ điện tử. Ngành chưa được liệt kê được Khoa và Viện xem xét riêng theo văn bằng và bảng điểm. Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
+      },
+      {
+        question: "Yêu cầu ngoại ngữ đầu vào và tốt nghiệp ra sao?",
+        answer:
+          "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên theo một hình thức được Trường công nhận: bằng ngành ngôn ngữ nước ngoài hoặc chương trình chủ yếu giảng dạy bằng ngoại ngữ; văn bằng/chứng chỉ còn hiệu lực; kỳ đánh giá hoặc chương trình do Trường tổ chức/công nhận; hoặc bằng đại học Văn Lang cấp trong 2 năm gần nhất với chuẩn đầu ra ngoại ngữ từ Bậc 3. Trước khi bảo vệ đề án hoặc luận văn, học viên cần đạt mức tương đương Bậc 4 trở lên. Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường, không cấp chứng chỉ ngoại ngữ. Ứng viên nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học từ chương trình giảng dạy bằng tiếng Việt.",
+      },
+      {
+        question: "Lịch học được sắp xếp như thế nào?",
+        answer:
+          "Lịch học bố trí vào buổi tối trong tuần và cuối tuần. Thời khóa biểu cụ thể theo kế hoạch của từng chương trình và từng học kỳ; ứng viên có thể trao đổi với Viện để chuẩn bị kế hoạch học tập.",
+      },
+      {
+        question: "Học phí và các khoản thu của chương trình là bao nhiêu?",
+        answer:
+          "Học phí toàn khóa là 90.000.000 đồng, chia thành ba đợt: 31.500.000 đồng, 27.000.000 đồng và 31.500.000 đồng. Các khoản thu riêng có thể gồm lệ phí xét tuyển 500.000 đồng, lệ phí nhập học 1.000.000 đồng, học bổ sung kiến thức 1.200.000 đồng/môn, ôn tập hoặc thi tiếng Anh đầu vào 1.000.000 đồng và gia hạn 5% học phí toàn khóa mỗi lần 6 tháng khi áp dụng. Hoạt động học tập thực tế, tham quan chuyên môn hoặc thực địa có thể phát sinh chi phí được Khoa thông báo trước. Học bổng và hỗ trợ tài chính được xét theo điều kiện, hồ sơ và thông báo của Trường; không cộng dồn các chính sách.",
+      },
+    ],
+  },
+};
+
+// NỘI DUNG MỤC 05 - CHI TIẾT HỌC PHẦN VÀ ĐỊNH HƯỚNG
+export const congNgheThongTinCurricula: CurriculumTrack[] = [
+  {
+    number: "05",
+    title: "Chương trình đào tạo ứng dụng",
+    subtitle: "45 tín chỉ · 18 tháng · 5 học kỳ",
+    groups: [
+      {
+        title: "Kiến thức chung · 6 tín chỉ",
+        totalCreditsLabel: "6 tín chỉ",
+        courses: [
+          { code: "81PHIL6013", name: "Triết học", englishName: "Philosophy", credits: 3 },
+          {
+            code: "81ITGE10203",
+            name: "Phương pháp nghiên cứu khoa học trong CNTT",
+            englishName: "Research Methodology in Information Technology",
+            credits: 3,
+          },
+        ],
+      },
+      {
+        title: "Kiến thức cơ sở · 9 tín chỉ",
+        totalCreditsLabel: "9 tín chỉ",
+        courses: [
+          {
+            code: "81ITCR20103",
+            name: "Xác suất thống kê ứng dụng nâng cao",
+            englishName: "Advanced Applied Probability and Statistics",
+            credits: 3,
+          },
+          {
+            code: "81ITCR20203",
+            name: "Máy học nâng cao",
+            englishName: "Advanced Machine Learning",
+            credits: 3,
+          },
+          {
+            code: "81ITCR20303",
+            name: "Quản trị dự án CNTT và Chuyển đổi số",
+            englishName: "IT Project Management and Digital Transformation",
+            credits: 3,
+          },
+        ],
+      },
+      {
+        title: "Học phần chuyên ngành bắt buộc · 6 tín chỉ",
+        totalCreditsLabel: "6 tín chỉ",
+        courses: [
+          {
+            code: "81ITMJ30103",
+            name: "AI tạo sinh và Hệ thống mô hình ngôn ngữ lớn",
+            englishName: "Generative AI and Large Language Model Systems",
+            credits: 3,
+          },
+          {
+            code: "81ITMJ30203",
+            name: "Thiết kế và Phát triển phần mềm hiện đại",
+            englishName: "Modern Software Design and Development",
+            credits: 3,
+          },
+        ],
+      },
+      {
+        title: "Học phần chuyên ngành tự chọn · hoàn thành 9 tín chỉ",
+        totalCreditsLabel: "Chọn 3 trong 7 học phần · 9 tín chỉ",
+        courses: [
+          {
+            code: "81ITMJ30303",
+            name: "Hệ cơ sở dữ liệu hiện đại",
+            englishName: "Modern Database Systems",
+            credits: 3,
+            elective: true,
+          },
+          {
+            code: "81ITMJ30403",
+            name: "Mạng máy tính và Truyền thông nâng cao",
+            englishName: "Advanced Computer Networks and Communications",
+            credits: 3,
+            elective: true,
+          },
+          {
+            code: "81ITMJ30503",
+            name: "Điện toán đám mây ứng dụng",
+            englishName: "Applied Cloud Computing",
+            credits: 3,
+            elective: true,
+          },
+          {
+            code: "81ITMJ30603",
+            name: "Phân tích Dữ liệu lớn nâng cao",
+            englishName: "Advanced Big Data Analytics",
+            credits: 3,
+            elective: true,
+          },
+          {
+            code: "81ITMJ20703",
+            name: "Tính toán song song và Phân tán",
+            englishName: "Parallel and Distributed Computing",
+            credits: 3,
+            elective: true,
+          },
+          {
+            code: "81ITMJ20803",
+            name: "Nền tảng phát triển ứng dụng di động",
+            englishName: "Mobile Application Development Platforms",
+            credits: 3,
+            elective: true,
+          },
+          {
+            code: "81ITMJ20903",
+            name: "An toàn thông tin và An ninh mạng nâng cao",
+            englishName: "Advanced Information Security and Network Security",
+            credits: 3,
+            elective: true,
+          },
+        ],
+      },
+      {
+        title: "Thực tập và tốt nghiệp · 15 tín chỉ",
+        totalCreditsLabel: "6 tín chỉ thực tập + 9 tín chỉ đề án",
+        courses: [
+          {
+            code: "81ITGR40106",
+            name: "Thực tập chuyên môn",
+            englishName: "Professional Internship",
+            credits: 6,
+          },
+          {
+            code: "81ITGR40209",
+            name: "Đề án thạc sĩ",
+            englishName: "Master's Graduation Project",
+            credits: 9,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    number: "06",
+    title: "Chương trình đào tạo nghiên cứu",
+    subtitle: "60 tín chỉ · 24 tháng · 6 học kỳ",
+    groups: [
+      {
+        title: "Kiến thức chung · 6 tín chỉ",
+        totalCreditsLabel: "6 tín chỉ",
+        courses: [
+          { code: "81PHIL6013", name: "Triết học", englishName: "Philosophy", credits: 3 },
+          {
+            code: "81ITGE10203",
+            name: "Phương pháp nghiên cứu khoa học trong CNTT",
+            englishName: "Research Methodology in Information Technology",
+            credits: 3,
+          },
+        ],
+      },
+      {
+        title: "Kiến thức cơ sở · 9 tín chỉ",
+        totalCreditsLabel: "9 tín chỉ",
+        courses: [
+          {
+            code: "81ITCR20103",
+            name: "Xác suất thống kê ứng dụng nâng cao",
+            englishName: "Advanced Applied Probability and Statistics",
+            credits: 3,
+          },
+          {
+            code: "81ITCR20203",
+            name: "Máy học nâng cao",
+            englishName: "Advanced Machine Learning",
+            credits: 3,
+          },
+          {
+            code: "81ITCR20303",
+            name: "Quản trị dự án CNTT và Chuyển đổi số",
+            englishName: "IT Project Management and Digital Transformation",
+            credits: 3,
+          },
+        ],
+      },
+      {
+        title: "Học phần chuyên ngành bắt buộc · 9 tín chỉ",
+        totalCreditsLabel: "9 tín chỉ",
+        courses: [
+          {
+            code: "81ITMJ30103",
+            name: "AI tạo sinh và Hệ thống mô hình ngôn ngữ lớn",
+            englishName: "Generative AI and Large Language Model Systems",
+            credits: 3,
+          },
+          {
+            code: "81ITMJ30403",
+            name: "Mạng máy tính và Truyền thông nâng cao",
+            englishName: "Advanced Computer Networks and Communications",
+            credits: 3,
+          },
+          {
+            code: "81ITMJ30503",
+            name: "Điện toán đám mây ứng dụng",
+            englishName: "Applied Cloud Computing",
+            credits: 3,
+          },
+        ],
+      },
+      {
+        title: "Học phần chuyên ngành tự chọn · hoàn thành 9 tín chỉ",
+        totalCreditsLabel: "Chọn 3 trong 6 học phần · 9 tín chỉ",
+        courses: [
+          {
+            code: "81ITMJ30203",
+            name: "Thiết kế và Phát triển phần mềm hiện đại",
+            englishName: "Modern Software Design and Development",
+            credits: 3,
+            elective: true,
+          },
+          {
+            code: "81ITMJ30303",
+            name: "Hệ cơ sở dữ liệu hiện đại",
+            englishName: "Modern Database Systems",
+            credits: 3,
+            elective: true,
+          },
+          {
+            code: "81ITMJ30603",
+            name: "Phân tích Dữ liệu lớn nâng cao",
+            englishName: "Advanced Big Data Analytics",
+            credits: 3,
+            elective: true,
+          },
+          {
+            code: "81ITMJ20703",
+            name: "Tính toán song song và Phân tán",
+            englishName: "Parallel and Distributed Computing",
+            credits: 3,
+            elective: true,
+          },
+          {
+            code: "81ITMJ20803",
+            name: "Nền tảng phát triển ứng dụng di động",
+            englishName: "Mobile Application Development Platforms",
+            credits: 3,
+            elective: true,
+          },
+          {
+            code: "81ITMJ20903",
+            name: "An toàn thông tin và An ninh mạng nâng cao",
+            englishName: "Advanced Information Security and Network Security",
+            credits: 3,
+            elective: true,
+          },
+        ],
+      },
+      {
+        title: "Chuyên đề nghiên cứu · 12 tín chỉ",
+        totalCreditsLabel: "2 chuyên đề · mỗi chuyên đề 6 tín chỉ",
+        courses: [
+          { code: "81ITMJ31006", name: "Chuyên đề 1", englishName: "Research Topic 1", credits: 6 },
+          { code: "81ITMJ31106", name: "Chuyên đề 2", englishName: "Research Topic 2", credits: 6 },
+        ],
+      },
+      {
+        title: "Luận văn thạc sĩ · 15 tín chỉ",
+        totalCreditsLabel: "15 tín chỉ",
+        courses: [
+          {
+            code: "81ITGR40315",
+            name: "Luận văn thạc sĩ",
+            englishName: "Master's Thesis",
+            credits: 15,
+          },
+        ],
+      },
+    ],
+  },
+];
+
+// NỘI DUNG MỤC 05 - CHI TIẾT HỌC PHẦN VÀ ĐỊNH HƯỚNG
+export function getCongNgheThongTinCurricula(): CurriculumTrack[] {
+  return congNgheThongTinCurricula;
+}

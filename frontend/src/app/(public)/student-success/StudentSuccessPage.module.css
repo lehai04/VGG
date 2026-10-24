@@ -35,8 +35,8 @@
 .community p {
   margin: 0 0 17px;
   color: #ff98a8;
-  font-size: 11px;
-  font-weight: 800;
+  font-size: var(--text-10);
+  font-weight: 700;
   letter-spacing: 0.19em;
   text-transform: uppercase;
 }
@@ -76,7 +76,7 @@
 }
 .statement span {
   max-width: 880px;
-  font-size: 18px;
+  font-size: var(--text-18);
   font-weight: 600;
   line-height: 1.75;
 }
@@ -125,7 +125,7 @@
 .zigzag div > span {
   display: block;
   color: #484c61;
-  font-size: 16.5px;
+  font-size: var(--text-16);
   line-height: 1.68;
 }
 .zigzag a,
@@ -135,7 +135,7 @@
   gap: 8px;
   margin-top: 24px;
   color: var(--ink);
-  font-weight: 800;
+  font-weight: 700;
 }
 .zigzag a svg,
 .community a svg,
@@ -164,7 +164,7 @@
   display: block;
   max-width: 700px;
   color: rgba(255, 255, 255, 0.82);
-  font-size: 17px;
+  font-size: var(--text-16);
   line-height: 1.7;
 }
 .cardGrid {
@@ -200,7 +200,7 @@
 .card p {
   margin: 0;
   color: #525669;
-  font-size: 15px;
+  font-size: var(--text-14);
   line-height: 1.6;
 }
 .card b {
@@ -209,7 +209,7 @@
   align-items: center;
   margin-top: 17px;
   color: var(--red);
-  font-size: 13px;
+  font-size: var(--text-12);
 }
 .moments {
   padding: clamp(65px, 7vw, 100px) var(--container-padding);
@@ -263,7 +263,7 @@
 .community span {
   display: block;
   max-width: 650px;
-  font-size: 18px;
+  font-size: var(--text-18);
   line-height: 1.7;
 }
 .community a {
@@ -307,7 +307,7 @@
 .moreCard p {
   margin: 0;
   color: #4d5165;
-  font-size: 16px;
+  font-size: var(--text-16);
   line-height: 1.7;
 }
 .moreCard > div {
@@ -347,7 +347,7 @@
   border-radius: 999px;
   color: #fff;
   background: var(--ink);
-  font-size: 11px;
+  font-size: var(--text-10);
   font-weight: 700;
 }
 .moreNav nav a.active {

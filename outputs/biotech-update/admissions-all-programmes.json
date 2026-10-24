@@ -1,0 +1,128 @@
+[
+  {
+    "id": "cong-nghe-thong-tin",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "marketing",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "khoa-hoc-moi-truong",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "ky-thuat-moi-truong",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "quan-ly-tai-nguyen-moi-truong",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "cong-nghe-sinh-hoc",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "ky-thuat-xay-dung",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "ky-thuat-o-to",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "quan-tri-kinh-doanh",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "kinh-doanh-thuong-mai",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "tai-chinh-ngan-hang",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "ke-toan",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "logistics",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "quan-tri-du-lich",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "quan-tri-khach-san",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "luat-kinh-te",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "quan-he-cong-chung",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "ngon-ngu-anh",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "kien-truc",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "my-thuat-ung-dung",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  },
+  {
+    "id": "ly-luan-lich-su-my-thuat",
+    "bridge": true,
+    "overflow": false,
+    "present": true
+  }
+]

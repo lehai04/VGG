@@ -1,0 +1,191 @@
+[
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "cong-nghe-thong-tin",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Công nghệ thông tin",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "marketing",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Marketing",
+    "tabCount": 1
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "khoa-hoc-moi-truong",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Khoa học Môi trường",
+    "tabCount": 1
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "ky-thuat-moi-truong",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Kỹ thuật Môi trường",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "quan-ly-tai-nguyen-moi-truong",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Quản lý Tài nguyên và Môi trường",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "cong-nghe-sinh-hoc",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Công nghệ Sinh học",
+    "tabCount": 1
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "ky-thuat-xay-dung",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Kỹ thuật Xây dựng",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "ky-thuat-o-to",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Kỹ thuật ô tô",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "quan-tri-kinh-doanh",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Quản trị Kinh doanh",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "kinh-doanh-thuong-mai",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Kinh doanh Thương mại",
+    "tabCount": 1
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "tai-chinh-ngan-hang",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Tài chính - Ngân hàng",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "ke-toan",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Kế toán",
+    "tabCount": 1
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "logistics",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Logistics và Quản lý chuỗi cung ứng",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "quan-tri-du-lich",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Quản trị Dịch vụ Du lịch và Lữ hành",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "quan-tri-khach-san",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Quản trị Khách sạn",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "luat-kinh-te",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Luật Kinh tế",
+    "tabCount": 1
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "quan-he-cong-chung",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Quan hệ Công chúng",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "ngon-ngu-anh",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Ngôn ngữ Anh",
+    "tabCount": 2
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "kien-truc",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Kiến trúc",
+    "tabCount": 1
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "my-thuat-ung-dung",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Mỹ thuật Ứng dụng",
+    "tabCount": 1
+  },
+  {
+    "feeSection": true,
+    "h1": 1,
+    "id": "ly-luan-lich-su-my-thuat",
+    "missingAnchors": [],
+    "overflow": false,
+    "selected": "Lý luận và Lịch sử Mỹ thuật Ứng dụng",
+    "tabCount": 1
+  }
+]

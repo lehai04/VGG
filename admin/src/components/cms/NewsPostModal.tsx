@@ -100,7 +100,7 @@ export function NewsPostModal({
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <span
               style={{
-                fontSize: "0.75rem",
+                fontSize: "var(--text-12)",
                 fontWeight: 800,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
@@ -111,7 +111,7 @@ export function NewsPostModal({
             </span>
             <span
               style={{
-                fontSize: "0.75rem",
+                fontSize: "var(--text-12)",
                 padding: "3px 10px",
                 borderRadius: "999px",
                 fontWeight: 600,
@@ -138,7 +138,7 @@ export function NewsPostModal({
               alignItems: "center",
               justifyContent: "center",
               cursor: "pointer",
-              fontSize: "16px",
+              fontSize: "var(--text-16)",
             }}
           >
             ✕
@@ -185,7 +185,7 @@ export function NewsPostModal({
                   right: "12px",
                   backgroundColor: "rgba(15, 23, 42, 0.75)",
                   color: "#ffffff",
-                  fontSize: "11px",
+                  fontSize: "var(--text-10)",
                   padding: "4px 10px",
                   borderRadius: "6px",
                   backdropFilter: "blur(4px)",
@@ -206,7 +206,7 @@ export function NewsPostModal({
                 alignItems: "center",
                 justifyContent: "center",
                 color: "#94a3b8",
-                fontSize: "14px",
+                fontSize: "var(--text-14)",
               }}
             >
               Chưa có ảnh đại diện
@@ -220,7 +220,7 @@ export function NewsPostModal({
                 style={{
                   backgroundColor: "#fee2e2",
                   color: "#b91c1c",
-                  fontSize: "12px",
+                  fontSize: "var(--text-12)",
                   fontWeight: 700,
                   padding: "4px 12px",
                   borderRadius: "6px",
@@ -228,10 +228,10 @@ export function NewsPostModal({
               >
                 {categoryLabel(post.category)}
               </span>
-              <span style={{ fontSize: "13px", color: "#64748b" }}>
+              <span style={{ fontSize: "var(--text-12)", color: "#64748b" }}>
                 Tác giả: <strong style={{ color: "#1e293b" }}>{authorDisplay}</strong>
               </span>
-              <span style={{ fontSize: "13px", color: "#64748b" }}>
+              <span style={{ fontSize: "var(--text-12)", color: "#64748b" }}>
                 Ngày đăng: <strong style={{ color: "#1e293b" }}>{dateDisplay}</strong>
               </span>
             </div>
@@ -257,7 +257,7 @@ export function NewsPostModal({
                   borderLeft: "4px solid #db2639",
                   borderRadius: "4px 8px 8px 4px",
                   color: "#334155",
-                  fontSize: "14px",
+                  fontSize: "var(--text-14)",
                   fontStyle: "italic",
                   lineHeight: 1.6,
                 }}
@@ -269,12 +269,12 @@ export function NewsPostModal({
 
           {/* Nội dung chi tiết bài viết */}
           <div>
-            <h4 style={{ margin: "0 0 8px", fontSize: "13px", fontWeight: 700, color: "#64748b", textTransform: "uppercase" }}>
+            <h4 style={{ margin: "0 0 8px", fontSize: "var(--text-12)", fontWeight: 700, color: "#64748b", textTransform: "uppercase" }}>
               Nội dung chi tiết
             </h4>
             <div
               style={{
-                fontSize: "14.5px",
+                fontSize: "var(--text-14)",
                 lineHeight: 1.7,
                 color: "#1e293b",
                 maxHeight: "300px",
@@ -310,7 +310,7 @@ export function NewsPostModal({
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "6px",
-                  fontSize: "13px",
+                  fontSize: "var(--text-12)",
                   fontWeight: 600,
                   color: "#2563eb",
                   textDecoration: "none",
@@ -335,7 +335,7 @@ export function NewsPostModal({
                 backgroundColor: "#ffffff",
                 border: "1px solid #cbd5e1",
                 borderRadius: "8px",
-                fontSize: "13.5px",
+                fontSize: "var(--text-14)",
                 fontWeight: 600,
                 color: "#475569",
                 cursor: "pointer",
@@ -354,7 +354,7 @@ export function NewsPostModal({
                 backgroundColor: "#db2639",
                 border: "none",
                 borderRadius: "8px",
-                fontSize: "13.5px",
+                fontSize: "var(--text-14)",
                 fontWeight: 600,
                 color: "#ffffff",
                 cursor: "pointer",

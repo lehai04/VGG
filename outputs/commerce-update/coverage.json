@@ -1,0 +1,1315 @@
+{
+  "checked": 218,
+  "present": 218,
+  "missing": [],
+  "units": [
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Trang chủ",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h1",
+      "text": "Kinh doanh thương mại",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Phát triển năng lực quản trị thương mại, phân tích dữ liệu và triển khai giải pháp kinh doanh trong môi trường số, gắn kiến thức chuyên sâu với những vấn đề thực tiễn của doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Tổng quan chương trình",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h2",
+      "text": "Hiểu thị trường. Phát triển kinh doanh.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Kinh doanh thương mại tại Văn Lang được thiết kế theo định hướng ứng dụng, kết nối kiến thức quản trị, hành vi khách hàng, marketing và công nghệ số. Người học phát triển khả năng phân tích bối cảnh, ra quyết định dựa trên dữ liệu và triển khai giải pháp phù hợp với hoạt động doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình chú trọng quản trị kinh doanh số, lãnh đạo sự thay đổi, tối ưu hiệu suất marketing và nghiên cứu kinh doanh. Các học phần tự chọn tạo cơ hội tiếp cận ESG, trí tuệ nhân tạo, thương mại đa kênh, quản trị rủi ro, đổi mới sản phẩm và phân tích dữ liệu.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Dự án kinh doanh kết hợp chuyến đi thực tế, thực tập tốt nghiệp và đề án tốt nghiệp giúp người học vận dụng kiến thức vào tình huống doanh nghiệp, phát triển kỹ năng giải quyết vấn đề và trình bày giải pháp có cơ sở.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Văn bằng tốt nghiệp: Thạc sĩ Kinh doanh thương mại Master of Commerce",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "figcaption",
+      "text": "Thuyết trình và trao đổi về dữ liệu kinh doanh Nguồn: Trường Đại học Văn Lang ↗",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h3",
+      "text": "Vận dụng vào thực tiễn.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Thực tập tốt nghiệp Gắn với hoạt động chuyên môn 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Đề án tốt nghiệp Giải quyết bài toán kinh doanh 9 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Điểm nổi bật của chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Định hướng ứng dụng rõ nét",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Chương trình tập trung vào phân tích và giải quyết vấn đề thực tế trong hoạt động thương mại, từ hoạch định đến triển khai và đánh giá giải pháp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Quản trị trên nền tảng dữ liệu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kết nối nghiên cứu kinh doanh, hiểu biết khách hàng và các công cụ phân tích để hỗ trợ quyết định trong môi trường số.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Gắn với bài toán doanh nghiệp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Học phần Dự án kinh doanh kết hợp chuyến đi thực tế giúp học viên làm việc với bối cảnh và nhu cầu thực tế của doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "15 tín chỉ thực tập và đề án",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thực tập tốt nghiệp 6 tín chỉ và đề án tốt nghiệp 9 tín chỉ tạo điều kiện vận dụng kiến thức, xây dựng giải pháp và thể hiện năng lực chuyên môn.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Trao đổi chuyên môn, mở rộng góc nhìn",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Bên cạnh các học phần, chương trình tạo cơ hội tham gia viết bài, dự hội thảo và trao đổi về kinh doanh thương mại, marketing, thương mại điện tử, kinh doanh quốc tế và logistics. Những hoạt động này hỗ trợ quá trình hình thành vấn đề và triển khai đề án tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "summary",
+      "text": "Chuẩn đầu ra chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Mười chuẩn đầu ra bao quát kiến thức chuyên sâu, kỹ năng phân tích và triển khai giải pháp, cùng năng lực tự chủ và trách nhiệm nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phân tích và đề xuất giải pháp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phân tích và đề xuất giải pháp cho các vấn đề của tổ chức dựa trên nền tảng phân tích kinh doanh, hành vi, quản trị, kinh tế số.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Đánh giá vận hành doanh nghiệp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phân tích và đánh giá các khía cạnh vận hành doanh nghiệp dựa trên việc áp dụng kiến thức cốt lõi của ngành kinh doanh thương mại trên nền tảng kinh doanh số.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Ra quyết định dựa trên dữ liệu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Đánh giá các yếu tố tác động từ các bên liên quan đến hoạt động kinh doanh thương mại thông qua phân tích và nghiên cứu ứng dụng dựa trên dữ liệu, nhằm hỗ trợ ra quyết định quản trị.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Sử dụng công cụ phân tích",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Sử dụng thành thạo kỹ năng phân tích, tổng hợp, đánh giá dữ liệu và thông tin thông qua việc ứng dụng các công cụ công nghệ thông tin để đưa ra quyết định cho hoạt động kinh doanh thương mại trong tổ chức.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Giao tiếp và hợp tác",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Sử dụng thành thạo kỹ năng giao tiếp đa phương tiện và các kỹ năng mềm trong quá trình xử lý công việc trong tổ chức.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Triển khai và đánh giá chiến lược số",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thành thạo kỹ năng số (Digital Skills) trong phân tích, triển khai và đánh giá chiến lược số dựa trên dữ liệu và các chỉ số đo lường hiệu quả.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Ngoại ngữ trong môi trường chuyên môn",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Sử dụng thành thạo ngoại ngữ đạt trình độ B2 tương đương bậc 4/6 trong Khung năng lực ngoại ngữ Việt Nam.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Tuân thủ pháp luật và đạo đức",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Tuân thủ các quy định của pháp luật trong công việc và cuộc sống.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Trách nhiệm cá nhân và cộng đồng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thể hiện khả năng chịu trách nhiệm cá nhân và ý thức trách nhiệm cộng đồng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Học tập và thích ứng lâu dài",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thể hiện thái độ cầu tiến, ý thức học tập suốt đời và khả năng tự cập nhật, vận dụng kiến thức, công cụ và phương pháp chuyên môn nhằm nâng cao khả năng thích ứng với công việc và bối cảnh nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình phù hợp với ai?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h2",
+      "text": "Từ kinh nghiệm làm việc đến năng lực quản trị.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành học phù hợp và đáp ứng các điều kiện dự tuyển của chương trình.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người đang làm kinh doanh, thương mại",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Củng cố kiến thức và phương pháp để phát triển thị trường, quản lý bán hàng, marketing và hoạt động thương mại của doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người hướng đến vai trò quản lý",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Nâng cao năng lực phân tích, ra quyết định, điều phối công việc và dẫn dắt sự thay đổi trong môi trường kinh doanh.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người muốn phát triển trong kinh doanh số",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Tiếp cận các mô hình kinh doanh số, hành vi khách hàng và ứng dụng dữ liệu, công nghệ để cải tiến hoạt động của tổ chức.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Ngành tốt nghiệp có phù hợp?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Người tốt nghiệp các ngành được liệt kê trong danh mục phù hợp thuộc nhóm Kinh doanh, Quản trị – Quản lý, Tài chính – Ngân hàng – Bảo hiểm, Kế toán – Kiểm toán và ngành Kinh tế số không cần học bổ sung kiến thức. Các ngành khác được đối chiếu hồ sơ để xác định yêu cầu bổ sung.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Phương thức tuyển sinh",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Xét tuyển. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Kinh doanh thương mại.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Yêu cầu ngoại ngữ đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên, được minh chứng bằng một trong các hình thức công nhận trong thông báo tuyển sinh.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "Các hình thức minh chứng ngoại ngữ đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Bằng đại học trở lên ngành ngôn ngữ nước ngoài hoặc chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Văn bằng, chứng chỉ tương đương Bậc 3 trở lên thuộc danh mục được công nhận và còn hiệu lực.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kết quả đánh giá tương đương Bậc 3 trở lên do Trường tổ chức; hoặc hoàn thành chương trình đào tạo, bồi dưỡng ngoại ngữ do Trường tổ chức hoặc công nhận.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Bằng đại học trở lên do Văn Lang cấp trong thời hạn không quá 2 năm, với chương trình đã đáp ứng chuẩn đầu ra ngoại ngữ từ Bậc 3 trở lên.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Bổ sung kiến thức đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã học để xác định các học phần cần bổ sung. Ứng viên phải hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "01. Danh mục ngành không cần bổ sung kiến thức",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Ngành tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kinh doanh Quản trị kinh doanh; Marketing; Bất động sản; Kinh doanh quốc tế; Kinh doanh thương mại; Thương mại điện tử.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Quản trị – Quản lý Khoa học quản lý; Quản lý công; Quản trị nhân lực; Hệ thống thông tin quản lý; Quản trị văn phòng; Quản lý dự án.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Tài chính - Ngân hàng - Bảo hiểm Tài chính - Ngân hàng; Bảo hiểm; Công nghệ tài chính.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kế toán – Kiểm toán Kế toán; Kiểm toán.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kinh tế học Kinh tế số.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên vẫn phải đáp ứng đầy đủ các điều kiện dự tuyển của chương trình.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "02. Ngành khác · Bổ sung tối đa 12 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Các học phần bổ sung kiến thức",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kinh tế học đại cương · 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Quản trị học · 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Marketing căn bản · 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Nguyên lý tài chính · 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Các học phần cần học được xác định theo văn bằng, bảng điểm và chương trình đã hoàn thành. Ứng viên cùng ngành tốt nghiệp có thể được yêu cầu bổ sung các học phần khác nhau tùy nền tảng đã học.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Cơ hội nghề nghiệp và phát triển",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h2",
+      "text": "Mở rộng năng lực. Phát triển sự nghiệp.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Kiến thức kinh doanh thương mại, năng lực phân tích và kỹ năng quản trị tạo nền tảng để phát triển trong doanh nghiệp, tổ chức và các đơn vị tư vấn.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Kinh doanh và thị trường",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Quản lý kinh doanh và bán hàng",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Hoạch định, triển khai chiến lược kinh doanh; phát triển thị trường, tổ chức đội ngũ bán hàng và cải thiện hiệu quả doanh thu.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Quản lý marketing",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Xây dựng và triển khai các hoạt động marketing đa kênh, phân tích hành vi khách hàng và đánh giá hiệu quả chiến dịch.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Thương mại và chuyển đổi số",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Quản lý thương mại điện tử",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phát triển hoạt động kinh doanh trên nền tảng trực tuyến, điều phối bán hàng đa kênh và nâng cao trải nghiệm khách hàng.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Triển khai chuyển đổi số",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tham gia xây dựng mô hình kinh doanh số, ứng dụng công nghệ và cải tiến quy trình để nâng cao năng lực cạnh tranh.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Phân tích, dự án và tư vấn",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Phân tích kinh doanh và dữ liệu",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Thu thập, xử lý và phân tích dữ liệu để dự báo xu hướng, hỗ trợ quyết định và đề xuất giải pháp cho doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Quản lý dự án và chiến lược",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Điều phối các dự án phát triển sản phẩm, cải tiến quy trình và xây dựng chiến lược trong môi trường kinh doanh biến động.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Tư vấn giải pháp kinh doanh",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Hỗ trợ doanh nghiệp xây dựng mô hình kinh doanh, ứng dụng công nghệ số và quản trị dựa trên dữ liệu.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Hướng phát triển và vị trí đảm nhiệm phụ thuộc vào nền tảng chuyên môn, kinh nghiệm, năng lực thực tế và yêu cầu của từng tổ chức.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Khung chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h2",
+      "text": "Định hướng ứng dụng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "60 tín chỉ · 24 tháng · 4 học kỳ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h3",
+      "text": "Thông tin chung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Thời gian chuẩn",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "24 tháng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Kế hoạch học tập",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "4 học kỳ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Hình thức",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Chính quy tập trung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Ngôn ngữ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Thực tập tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Đề án tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "9 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "4 tín chỉ chung · 11 tín chỉ cơ sở ngành · 30 tín chỉ chuyên ngành · 15 tín chỉ thực tập và đề án.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chương trình kết nối quản trị, hành vi khách hàng và công nghệ số với các bài toán kinh doanh thực tế. Khối chuyên ngành gồm 22 tín chỉ bắt buộc và 8 tín chỉ tự chọn; thực tập và đề án tốt nghiệp chiếm 15 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "I. Kiến thức chung 4 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học Philosophy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "II. Kiến thức cơ sở ngành 11 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp nghiên cứu khoa học ứng dụng Applied Scientific Research Methods",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kinh doanh kỹ thuật số Digital Business",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thấu hiểu khách hàng và hành vi tiêu dùng kỹ thuật số Customer Insight & Digital Consumer Behavior",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "III. Kiến thức chuyên ngành 30 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 22 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị kinh doanh số Digital Business Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Lãnh đạo số và quản trị sự thay đổi Digital Leadership & Change Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thiết kế Marketing số và tối ưu hiệu suất Digital Marketing Design & Performance Optimization",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Nghiên cứu kinh doanh Business Research",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Các vấn đề đương đại trong kinh doanh thương mại Contemporary Issues in Business Commerce",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Dự án kinh doanh kết hợp chuyến đi thực tế",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần tự chọn · 8 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chọn 1 học phần ở mỗi nhóm dưới đây, tổng cộng 2 học phần, mỗi học phần 4 tín chỉ. Các nhóm được bố trí lần lượt trong học kỳ 2 và học kỳ 3.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Nhóm 1 · Học kỳ 2 · Chọn 1 trong 3 học phần",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "ESG và kinh doanh số bền vững ESG & Sustainable Digital Business",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Dữ liệu lớn và trí tuệ nhân tạo trong kinh doanh số Big Data & AI in Digital Business",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Vận hành kênh Omni và thương mại tích hợp Omnichannel Operation & Integrated Commerce",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Nhóm 2 · Học kỳ 3 · Chọn 1 trong 3 học phần",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị rủi ro trong vận hành số Risk Management in Digital Operations",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị sản phẩm và đổi mới sáng tạo Digital Product & Innovation Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phân tích dữ liệu ứng dụng trong kinh doanh số Applied Digital Business Analytics",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "IV. Thực tập và đề án tốt nghiệp 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Thực tập và đề án theo định hướng ứng dụng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thực tập tốt nghiệp Graduation Internship",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đề án tốt nghiệp Graduation Project",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "Kế hoạch học tập theo từng học kỳ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chương trình có thời gian đào tạo chuẩn 24 tháng, với kế hoạch 4 học kỳ. Ba học kỳ đầu tích lũy kiến thức nền tảng, chuyên ngành và dự án kinh doanh; học kỳ 4 tập trung thực tập và thực hiện đề án tốt nghiệp. Thời khóa biểu được công bố theo kế hoạch đào tạo.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 1",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 2",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tự chọn · Chọn 1 trong 3 học phần · 4 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 3",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 4",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Hoàn thành chương trình",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Hoàn thành chương trình; điểm trung bình chung các học phần đạt từ 5,5/10 trở lên và không có học phần cơ sở ngành, chuyên ngành dưới 5,5/10.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Đạt chuẩn ngoại ngữ tương đương Bậc 4/6 trở lên theo quy định của chương trình.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Đề án tốt nghiệp đạt từ 5,5/10 trở lên; hoàn thiện, nộp và thực hiện các yêu cầu lưu trữ, công bố sau bảo vệ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Đáp ứng các điều kiện về liêm chính học thuật và những yêu cầu công nhận tốt nghiệp của Trường.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "h2",
+      "text": "Chủ động chuẩn bị cho hành trình học.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa được chia thành ba đợt thanh toán, giúp người học chủ động sắp xếp kế hoạch tài chính.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Các chính sách học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ. Người học chỉ được áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "summary",
+      "text": "Các khoản thu riêng khi áp dụng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển 500.000 đồng Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học 1.000.000 đồng Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức 1.200.000 đồng/môn Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn tập tiếng Anh đầu vào 1.000.000 đồng Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào 1.000.000 đồng Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Gia hạn chương trình 5% học phí toàn khóa/lần Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Hoạt động học tập thực tế, tham quan chuyên môn hoặc thực địa có thể phát sinh chi phí ngoài học phí toàn khóa; Khoa thông báo nội dung và chi phí trước khi triển khai. Điều kiện thu, hoàn trả và các khoản phát sinh thực hiện theo thông báo được ban hành.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "TUYỂN SINH THẠC SĨ 2027",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa · Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "29.750.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "25.500.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng. Ngày đến hạn thanh toán theo thông báo thu của Trường.",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h2",
+      "text": "Sẵn sàng cho bước học tiếp theo?",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Câu hỏi thường gặp",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Chương trình đào tạo theo định hướng nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Kinh doanh thương mại theo định hướng ứng dụng, gồm 60 tín chỉ, thời gian chuẩn 24 tháng và kế hoạch 4 học kỳ. Nội dung tập trung vào quản trị thương mại, kinh doanh số và giải quyết vấn đề thực tiễn của doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Tôi cần đáp ứng điều kiện gì để dự tuyển?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp và đáp ứng yêu cầu ngoại ngữ đầu vào. Trường hợp được yêu cầu bổ sung kiến thức phải hoàn thành các học phần trước khi xét tuyển. Hồ sơ được xem xét theo quy chế và thông báo tuyển sinh của Trường.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Tốt nghiệp ngành khác có thể dự tuyển không?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ứng viên có ngành tốt nghiệp ngoài danh mục miễn bổ sung kiến thức được đối chiếu hồ sơ để xác định các học phần cần bổ sung, tối đa 12 tín chỉ. Danh mục gồm Kinh tế học đại cương, Quản trị học, Marketing căn bản và Nguyên lý tài chính, mỗi học phần 3 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Các học phần tự chọn được đăng ký như thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Phần tự chọn gồm hai nhóm, mỗi nhóm ba học phần. Học viên chọn một học phần thuộc nhóm học kỳ 2 và một học phần thuộc nhóm học kỳ 3; mỗi học phần 4 tín chỉ, tổng cộng 8 tín chỉ. Việc mở lớp thực hiện theo kế hoạch đào tạo.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Chương trình có thực tập và đề án tốt nghiệp không?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Có. Học kỳ 4 bố trí Thực tập tốt nghiệp 6 tín chỉ và Đề án tốt nghiệp 9 tín chỉ. Trước đó, học kỳ 3 có học phần Dự án kinh doanh kết hợp chuyến đi thực tế, giúp người học vận dụng kiến thức vào bối cảnh doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Ngôn ngữ giảng dạy và yêu cầu ngoại ngữ là gì?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình giảng dạy bằng tiếng Việt. Ngoại ngữ đầu vào yêu cầu mức tương đương Bậc 3 trở lên; chuẩn đầu ra là mức tương đương Bậc 4 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam. Hình thức minh chứng được đối chiếu theo quy định và thông báo của Trường.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Lịch học có phù hợp với người đang đi làm?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Lịch học dự kiến bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật, theo kế hoạch từng học kỳ. Thời khóa biểu chính thức do Trường công bố. Bạn có thể trao đổi với Viện để sắp xếp công việc, thời gian học và thực hiện đề án.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phí và chính sách hỗ trợ được áp dụng như thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt: 29.750.000 đồng, 25.500.000 đồng và 29.750.000 đồng. Các khoản thu riêng áp dụng theo từng trường hợp. Học bổng và hỗ trợ tài chính được xét theo điều kiện, hồ sơ và thông báo của Trường; chỉ áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h3",
+      "text": "Liên hệ tư vấn",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h2",
+      "text": "Bắt đầu từ mục tiêu của bạn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Kinh doanh thương mại. Đội ngũ tư vấn sẽ hỗ trợ bạn tìm hiểu chương trình và chuẩn bị hồ sơ phù hợp.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "01 Tư vấn chương trình và định hướng học",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "02 Hướng dẫn học phí và chính sách hỗ trợ",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "03 Đối chiếu điều kiện và hồ sơ dự tuyển",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h3",
+      "text": "Trao đổi trực tiếp với Viện",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Viện Sau đại học · Trường Đại học Văn Lang 69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    }
+  ]
+}

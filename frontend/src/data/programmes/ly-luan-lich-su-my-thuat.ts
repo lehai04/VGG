@@ -1,0 +1,808 @@
+// Nguồn: thac-si-ly-luan-va-lich-su-my-thuat-ung-dung.html do người dùng cung cấp ngày 24/10/2026.
+import { programmeSharedContent } from "./shared-content";
+import type { Programme, ProgrammePageContent } from "../programmes";
+import type { CurriculumTrack } from "../curricula";
+
+export const lyLuanLichSuMyThuatPageContent: ProgrammePageContent = {
+  hero: {
+    ...programmeSharedContent.hero,
+    heroLead:
+      "Kết nối lý luận, lịch sử mỹ thuật và thực tiễn thiết kế; phát triển tư duy phản biện cùng năng lực nghiên cứu để phân tích, lý giải và làm rõ giá trị của mỹ thuật ứng dụng trong đời sống.",
+    heroSlogan: "FUTURE",
+    heroImage: "/images/pages/programmes/ly-luan-lich-su-my-thuat/programme-hero.jpg",
+    imageAlt: "Cận cảnh thao tác màu trên tác phẩm mỹ thuật",
+    imageCredit: {
+      text: "Thực hành sáng tạo mỹ thuật · Nguồn: Trường Đại học Văn Lang ↗",
+      href: "https://www.vlu.edu.vn/academics/majors/thac-si-ly-luan-va-lich-su-my-thuat-ung-dung",
+    },
+  },
+  facts: {
+    ...programmeSharedContent.facts,
+    quickFactsDetailed: [
+      {
+        label: "Mã ngành",
+        value: "210401",
+        detail: "Mã chương trình: 8210401",
+      },
+      {
+        label: "Khối lượng chương trình",
+        value: "60 tín chỉ",
+        detail: "Luận văn: 15 tín chỉ",
+      },
+      {
+        label: "Thời gian đào tạo",
+        value: "24 tháng",
+        detail: "Định hướng nghiên cứu",
+      },
+      {
+        label: "Hình thức đào tạo",
+        value: "Chính quy",
+        detail: "Tập trung",
+      },
+      {
+        label: "Ngôn ngữ đào tạo",
+        value: "Tiếng Việt",
+        detail: "",
+      },
+      {
+        label: "Học phí toàn khóa",
+        value: "100 triệu đồng",
+        detail: "",
+      },
+    ],
+  },
+  section01: {
+    ...programmeSharedContent.overview,
+    sectionNumber: "01",
+    overviewTitle: "Tổng quan chương trình",
+    headline: "Hiểu sâu mỹ thuật. Phát triển tư duy nghiên cứu.",
+    overview: [
+      "Chương trình Thạc sĩ Lý luận và lịch sử mỹ thuật ứng dụng tại Văn Lang hướng đến phát triển năng lực nghiên cứu, phân tích và phê bình trong lĩnh vực mỹ thuật ứng dụng và thiết kế. Người học tiếp cận các vấn đề chuyên môn từ nền tảng lịch sử, văn hóa, mỹ học cùng kiến thức liên ngành.",
+      "Các học phần bắt buộc kết nối phương pháp nghiên cứu khoa học, nghiên cứu lịch sử mỹ thuật, phương pháp luận sáng tạo và tư duy thiết kế. Khối chuyên ngành tiếp tục đào sâu lý luận mỹ thuật ứng dụng Việt Nam, lịch sử và thẩm mỹ công nghiệp, cơ sở lý luận đề tài và nghiên cứu chuyên đề.",
+      "Các lựa chọn học phần mở rộng góc nhìn về văn hóa thị giác, lý luận và phê bình, thiết kế cộng đồng, trải nghiệm người dùng, môi trường và thiết kế bền vững. Người học tích lũy tín chỉ tự chọn theo cơ cấu và kế hoạch đào tạo của Khoa.",
+      "Văn bằng tốt nghiệp: Thạc sĩ Lý luận và lịch sử mỹ thuật ứng dụng Master of Applied Art Theory and History",
+    ],
+    overviewImage: "/images/pages/programmes/ly-luan-lich-su-my-thuat/programme-overview.webp",
+    imageAlt: "Diễn giả trình bày tham luận tại Hội thảo học thuật ICAD 2026 ở Văn Lang",
+    imageCredit: {
+      text: "Tham luận tại Hội thảo học thuật ICAD 2026 Ảnh: Minh Phương · Trường Đại học Văn Lang ↗",
+      href: "https://www.vlu.edu.vn/news/icad-2026-tai-truong-dai-hoc-van-lang-khong-gian-hoi-tu-cua-sang-tao-lien-nganh-va-doi-thoai-hoc-thuat-quoc-te",
+    },
+    focusAreas: [
+      "Lịch sử mỹ thuật",
+      "Lý luận & phê bình",
+      "Tư duy thiết kế",
+      "Nghiên cứu liên ngành",
+    ],
+    ribbonTitle: "Định hướng nghiên cứu. Kết nối lý luận với thiết kế.",
+    tags: [
+      "Thời gian đào tạo Chính quy tập trung 24 tháng",
+      "Luận văn tốt nghiệp Thuộc chương trình 60 tín chỉ 15 tín chỉ",
+    ],
+    link: {
+      text: "Khám phá chương trình đào tạo",
+      href: "#chuong-trinh",
+      ariaLabel: "Khám phá khung chương trình Lý luận và Lịch sử Mỹ thuật Ứng dụng",
+    },
+  },
+  section02: {
+    ...programmeSharedContent.highlights,
+    sectionNumber: "02",
+    highlights: [
+      {
+        title: "Lý luận, lịch sử và phê bình",
+        text: "Kết nối nghiên cứu lịch sử mỹ thuật, lịch sử design và lý luận mỹ thuật ứng dụng Việt Nam với các lựa chọn về văn hóa thị giác, mỹ thuật học và phê bình.",
+      },
+      {
+        title: "Phương pháp nghiên cứu và tư duy sáng tạo",
+        text: "Phát triển cách tiếp cận vấn đề qua phương pháp nghiên cứu khoa học, phương pháp luận sáng tạo, tư duy thiết kế và kiến thức liên ngành.",
+      },
+      {
+        title: "Thiết kế gắn với nhu cầu cộng đồng",
+        text: "Mở rộng hướng tìm hiểu qua các học phần tự chọn về thiết kế cộng đồng, trải nghiệm người dùng, mỹ thuật và môi trường, thiết kế bền vững.",
+      },
+      {
+        title: "Luận văn nghiên cứu 15 tín chỉ",
+        text: "Kết nối cơ sở lý luận đề tài và nghiên cứu chuyên đề với quá trình thực hiện luận văn tốt nghiệp trong lĩnh vực chuyên môn.",
+      },
+      {
+        title: "Nghiên cứu để hiểu và phát triển giá trị thiết kế",
+        text: "Chương trình hướng đến khả năng tự học, tự nghiên cứu và tiếp cận vấn đề từ nhiều lĩnh vực. Người học rèn luyện tư duy phản biện, kỹ năng thu thập và phân tích thông tin, đồng thời kết nối giá trị lịch sử, văn hóa với nhu cầu sáng tạo trong thực tiễn.",
+      },
+    ],
+    learningOutcomes: {
+      intro:
+        "Chín chuẩn đầu ra tập trung vào kiến thức liên ngành, lý luận và phê bình, tư duy sáng tạo, phương pháp nghiên cứu, giao tiếp và hợp tác chuyên môn cùng trách nhiệm với cộng đồng.",
+      items: [
+        {
+          code: "PLO 1",
+          title: "Kết nối kiến thức với mỹ thuật và thiết kế",
+          text: "Vận dụng kiến thức lịch sử, văn hóa, kinh tế, xã hội, mỹ học, tâm lý và con người vào nghiên cứu lý luận, phê bình và thiết kế, hướng đến cộng đồng bền vững.",
+        },
+        {
+          code: "PLO 2",
+          title: "Phát triển giá trị lý luận và phê bình",
+          text: "Triển khai quy trình để xây dựng, phát triển và nâng cao giá trị của lý luận, phê bình mỹ thuật ứng dụng trong thực tiễn.",
+        },
+        {
+          code: "PLO 3",
+          title: "Tư duy phản biện và sáng tạo",
+          text: "Vận dụng tư duy phản biện, sáng tạo và kỹ năng giải quyết vấn đề trong các bối cảnh mỹ thuật ứng dụng và thiết kế.",
+        },
+        {
+          code: "PLO 4",
+          title: "Hợp tác và dẫn dắt nhóm",
+          text: "Phối hợp làm việc trong môi trường quốc tế với vai trò thành viên hoặc người lãnh đạo nhóm.",
+        },
+        {
+          code: "PLO 5",
+          title: "Giao tiếp chuyên môn",
+          text: "Giao tiếp hiệu quả trong môi trường lý luận và thiết kế quốc tế chuyên nghiệp.",
+        },
+        {
+          code: "PLO 6",
+          title: "Ứng dụng công nghệ mới",
+          text: "Tiếp cận và ứng dụng công nghệ mới trong nghiên cứu lịch sử mỹ thuật ứng dụng và thiết kế.",
+        },
+        {
+          code: "PLO 7",
+          title: "Vận dụng kiến thức liên ngành",
+          text: "Kết hợp thành thạo kiến thức liên ngành trong quy trình lý luận và phê bình mỹ thuật ứng dụng.",
+        },
+        {
+          code: "PLO 8",
+          title: "Nghiên cứu từ dữ liệu và thực tiễn",
+          text: "Vận dụng phương pháp nghiên cứu, thu thập, phân tích, xử lý thông tin, đánh giá và khảo sát nhu cầu thực tế để phục vụ lý luận mỹ thuật ứng dụng và thiết kế.",
+        },
+        {
+          code: "PLO 9",
+          title: "Tự nghiên cứu và đóng góp cho cộng đồng",
+          text: "Chủ động tự nghiên cứu, cập nhật kiến thức khoa học về mỹ thuật ứng dụng để phục vụ lợi ích cộng đồng.",
+        },
+      ],
+    },
+    outcomesHeading: "Chuẩn đầu ra của chương trình",
+  },
+  section03: {
+    sectionNumber: "03",
+    audienceHeading: "Chương trình phù hợp với ai?",
+    headline: "Đào sâu nền tảng lý luận. Phát triển năng lực nghiên cứu.",
+    intro: [
+      "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành học phù hợp và đáp ứng các điều kiện dự tuyển của chương trình.",
+    ],
+    audience: [
+      {
+        title: "Người làm việc trong thiết kế",
+        text: "Muốn đào sâu nền tảng lý luận, lịch sử và văn hóa để phát triển góc nhìn chuyên môn trong thực hành hoặc tư vấn thiết kế.",
+      },
+      {
+        title: "Người quan tâm nghiên cứu mỹ thuật ứng dụng",
+        text: "Hướng đến nghiên cứu, phân tích và phê bình mỹ thuật ứng dụng, kết nối các giá trị lịch sử với vấn đề thiết kế trong thực tiễn.",
+      },
+      {
+        title: "Người định hướng giảng dạy và đào tạo",
+        text: "Muốn phát triển nền tảng nghiên cứu và kiến thức chuyên môn để tham gia giảng dạy, đào tạo trong lĩnh vực thiết kế.",
+      },
+    ],
+    requirements: [
+      {
+        title: "Ngành tốt nghiệp có phù hợp?",
+        paragraphs: [
+          "Người tốt nghiệp ngành Lý luận Lịch sử và Phê bình Mỹ thuật không cần học bổ sung kiến thức. Các ngành liên quan trong danh mục được chia thành hai nhóm, bổ sung tối đa 4 hoặc 10 tín chỉ. Yêu cầu cụ thể được xác định sau khi đối chiếu văn bằng, chương trình đào tạo và bảng điểm; ngành ngoài danh mục được xem xét riêng.",
+        ],
+      },
+      {
+        title: "Phương thức tuyển sinh",
+        paragraphs: [
+          "Xét tuyển. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Lý luận và lịch sử mỹ thuật ứng dụng, định hướng nghiên cứu.",
+          "Hồ sơ sử dụng văn bằng đại học do cơ sở giáo dục nước ngoài cấp cần kèm giấy công nhận hoặc xác nhận văn bằng theo quy định.",
+        ],
+      },
+      {
+        title: "Yêu cầu ngoại ngữ",
+        paragraphs: [
+          "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng ngoại ngữ đầu vào tương đương Bậc 3/6 trở lên theo các hình thức được công nhận. Chuẩn ngoại ngữ đầu ra là Bậc 4/6 trở lên, cần đạt trước thời điểm xét tốt nghiệp.",
+        ],
+      },
+      {
+        title: "Các hình thức minh chứng ngoại ngữ đầu vào",
+        paragraphs: [
+          "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
+          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+          "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
+        ],
+        groups: [],
+        points: [
+          "Bằng đại học trở lên ngành ngôn ngữ nước ngoài hoặc chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
+          "Văn bằng, chứng chỉ tương đương Bậc 3 trở lên thuộc danh mục được công nhận và còn hiệu lực.",
+          "Kết quả đánh giá tương đương Bậc 3 trở lên do Trường tổ chức; hoặc hoàn thành chương trình đào tạo, bồi dưỡng ngoại ngữ do Trường tổ chức hoặc công nhận.",
+          "Bằng đại học trở lên do Văn Lang cấp trong thời hạn không quá 2 năm, với chương trình đã đáp ứng chuẩn đầu ra ngoại ngữ từ Bậc 3 trở lên.",
+        ],
+      },
+      {
+        title: "Bổ sung kiến thức đầu vào",
+        paragraphs: [
+          "Viện và Khoa đối chiếu ngành tốt nghiệp, chương trình đào tạo và bảng điểm để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+          "Các học phần bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+          "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
+        ],
+        groups: [
+          {
+            title: "01. Ngành không cần bổ sung kiến thức",
+            paragraphs: [],
+            groups: [
+              {
+                title: "Ngành tốt nghiệp",
+                paragraphs: [
+                  "Ứng viên vẫn phải đáp ứng đầy đủ các điều kiện dự tuyển của chương trình.",
+                ],
+                points: ["Lý luận Lịch sử và Phê bình Mỹ thuật."],
+              },
+            ],
+          },
+          {
+            title: "02. Các ngành liên quan · Tối đa 4 tín chỉ",
+            paragraphs: [],
+            groups: [
+              {
+                title: "Danh mục ngành liên quan",
+                paragraphs: [],
+                points: [
+                  "Mỹ thuật Hội họa; Đồ họa; Điêu khắc; Gốm Mỹ thuật; Mỹ thuật Đô thị.",
+                  "Đào tạo giáo viên Sư phạm Mỹ thuật.",
+                  "Mỹ thuật ứng dụng Thiết kế Công nghiệp; Thiết kế Đồ họa; Thiết kế Thời trang; Thiết kế Mỹ thuật Sân khấu - Điện ảnh; Thiết kế Mỹ thuật số.",
+                  "Báo chí truyền thông Thiết kế truyền thông đa phương tiện; Công nghệ truyền thông.",
+                  "Kiến trúc và Quy hoạch Kiến trúc; Kiến trúc cảnh quan; Kiến trúc Nội thất; Kiến trúc Đô thị.",
+                ],
+              },
+              {
+                title: "Các học phần bổ sung kiến thức",
+                paragraphs: [
+                  "Khối lượng bổ sung tối đa 4 tín chỉ. Các học phần cụ thể được xác định sau khi đối chiếu hồ sơ và bảng điểm của từng ứng viên.",
+                ],
+                points: [
+                  "Lịch sử Mỹ thuật · 2 tín chỉ .",
+                  "Văn hóa dân tộc học nghệ thuật · 2 tín chỉ .",
+                ],
+              },
+            ],
+          },
+          {
+            title: "03. Các ngành khác trong danh mục · Tối đa 10 tín chỉ",
+            paragraphs: [],
+            groups: [
+              {
+                title: "Danh mục ngành được xem xét",
+                paragraphs: [],
+                points: [
+                  "Kiến trúc và Quy hoạch Bảo tồn Di sản kiến trúc và Đô thị.",
+                  "Công nghệ Kỹ thuật in Công nghệ Kỹ thuật in.",
+                  "Nghệ thuật trình diễn Lý luận và Lịch sử Sân khấu; Lý luận và Lịch sử Điện ảnh truyền hình.",
+                  "Nghệ thuật Nghe nhìn Nhiếp ảnh; Công nghệ điện ảnh truyền hình.",
+                  "Khác (75490) Công nghệ chế biến lâm sản; Kỹ nghệ gỗ và nội thất.",
+                  "Ngành khác (72290) Văn hóa học; Khảo cổ học; Lịch sử Thế giới; Lịch sử Việt Nam.",
+                ],
+              },
+              {
+                title: "Các học phần bổ sung kiến thức",
+                paragraphs: [
+                  "Khối lượng bổ sung tối đa 10 tín chỉ dành cho các ngành được liệt kê trong nhóm này. Các học phần cụ thể được xác định sau khi đối chiếu hồ sơ và bảng điểm của từng ứng viên.",
+                ],
+                points: [
+                  "Lịch sử Mỹ thuật · 2 tín chỉ .",
+                  "Văn hóa dân tộc học nghệ thuật · 2 tín chỉ .",
+                  "Mỹ thuật học · 2 tín chỉ .",
+                  "Lịch sử Design · 2 tín chỉ .",
+                  "Phương pháp luận sáng tạo · 2 tín chỉ .",
+                ],
+              },
+            ],
+          },
+          {
+            title: "Chưa tìm thấy ngành tốt nghiệp của bạn?",
+            paragraphs: [
+              "Khoa chuyên môn sẽ rà soát hồ sơ và đề xuất để Nhà trường xem xét điều kiện dự tuyển cùng yêu cầu bổ sung kiến thức. Liên hệ Viện để được đối chiếu ngành học và bảng điểm trước khi đăng ký.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  section04: {
+    sectionNumber: "04",
+    careerHeading: "Cơ hội nghề nghiệp và phát triển",
+    headline: "Từ nền tảng nghiên cứu đến đóng góp chuyên môn.",
+    intro:
+      "Năng lực lý luận, nghiên cứu và tư duy thiết kế hỗ trợ người học phát triển tại các đơn vị thiết kế, tư vấn, trung tâm nghiên cứu và cơ sở giáo dục trong lĩnh vực mỹ thuật ứng dụng.",
+    note: "Hướng phát triển và vị trí đảm nhiệm phụ thuộc vào nền tảng chuyên môn, kinh nghiệm, năng lực thực tế và yêu cầu của từng tổ chức.",
+    careerImage: "/images/pages/programmes/ly-luan-lich-su-my-thuat/programme-hero.jpg",
+    careers: [
+      {
+        group: "Thiết kế và tư vấn",
+        title: "Thiết kế và tư vấn thiết kế",
+        sub: "Vận dụng nền tảng lý luận, lịch sử và tư duy sáng tạo trong hoạt động thiết kế, tư vấn giải pháp chuyên môn.",
+      },
+      {
+        group: "Thiết kế và tư vấn",
+        title: "Tư vấn chiến lược thiết kế",
+        sub: "Kết nối nghiên cứu giá trị, bối cảnh văn hóa và nhu cầu thực tiễn để tham gia xây dựng định hướng thiết kế.",
+      },
+      {
+        group: "Nghiên cứu và phát triển",
+        title: "Nghiên cứu mỹ thuật ứng dụng",
+        sub: "Nghiên cứu lý luận, lịch sử và phê bình; sử dụng phương pháp và kiến thức liên ngành để tiếp cận vấn đề chuyên môn.",
+      },
+      {
+        group: "Nghiên cứu và phát triển",
+        title: "Nghiên cứu phục vụ thiết kế",
+        sub: "Thu thập, phân tích thông tin và khảo sát nhu cầu thực tế để phát triển giá trị phục vụ hoạt động thiết kế.",
+      },
+      {
+        group: "Giảng dạy và đào tạo",
+        title: "Giảng dạy lĩnh vực thiết kế",
+        sub: "Phát triển nền tảng kiến thức và nghiên cứu để tham gia giảng dạy chuyên môn khi đáp ứng yêu cầu của vị trí.",
+      },
+      {
+        group: "Giảng dạy và đào tạo",
+        title: "Đào tạo chuyên môn",
+        sub: "Vận dụng năng lực giao tiếp, hợp tác và kiến thức chuyên ngành trong các hoạt động đào tạo về thiết kế.",
+      },
+    ],
+  },
+  section05: {
+    ...programmeSharedContent.curriculum,
+    sectionNumber: "05",
+    curriculumIntro: [
+      "Dành cho người muốn đào sâu lý luận, lịch sử và phê bình mỹ thuật ứng dụng, phát triển phương pháp nghiên cứu và thực hiện luận văn về một vấn đề chuyên môn.",
+    ],
+    trackLabels: ["Định hướng nghiên cứu"],
+    graduationProjects: ["Luận văn tốt nghiệp · 15 tín chỉ"],
+    studyMode: "Chính quy tập trung",
+    generalFacts: [
+      {
+        label: "Thời gian đào tạo",
+        value: "24 tháng",
+      },
+      {
+        label: "Định hướng",
+        value: "Nghiên cứu",
+      },
+      {
+        label: "Hình thức",
+        value: "Chính quy tập trung",
+      },
+      {
+        label: "Ngôn ngữ",
+        value: "Tiếng Việt",
+      },
+      {
+        label: "Học phần tự chọn",
+        value: "17 tín chỉ",
+      },
+      {
+        label: "Tốt nghiệp",
+        value: "Luận văn · 15 tín chỉ",
+      },
+    ],
+    notes: [
+      "Chương trình gồm 60 tín chỉ, với 28 tín chỉ học phần bắt buộc, 17 tín chỉ tự chọn và 15 tín chỉ luận văn. Xem danh mục và yêu cầu tích lũy trong từng khối kiến thức.",
+      "3 tín chỉ chung + 22 tín chỉ cơ sở ngành + 20 tín chỉ chuyên ngành + 15 tín chỉ luận văn = 60 tín chỉ.",
+      "Việc lựa chọn học phần tự chọn, đăng ký và mở lớp thực hiện theo cơ cấu chương trình và kế hoạch đào tạo của Khoa. Thời khóa biểu được thông báo theo từng đợt.",
+    ],
+    completion: {
+      heading: "Hoàn thành chương trình",
+      items: [
+        "Tích lũy 60 tín chỉ theo cơ cấu chương trình, trong đó có 8 tín chỉ tự chọn cơ sở ngành và 9 tín chỉ tự chọn chuyên ngành.",
+        "Hoàn thành và bảo vệ luận văn tốt nghiệp 15 tín chỉ đạt yêu cầu.",
+        "Đạt chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 trước thời điểm xét tốt nghiệp; đáp ứng chuẩn đầu ra và các điều kiện công nhận tốt nghiệp theo quy định của chương trình và Trường.",
+      ],
+    },
+  },
+  consultation: {
+    ...programmeSharedContent.consultation,
+    ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
+    ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+    formIntro: {
+      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      titleLines: ["Bắt đầu từ", "mục tiêu của bạn."],
+      body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Lý luận và lịch sử mỹ thuật ứng dụng. Đội ngũ tư vấn sẽ hỗ trợ bạn lựa chọn định hướng học tập và chuẩn bị hồ sơ phù hợp.",
+      benefits: [
+        "Tư vấn chương trình và định hướng học",
+        "Hướng dẫn học phí và chính sách hỗ trợ",
+        "Đối chiếu điều kiện và hồ sơ dự tuyển",
+      ],
+      formTitle: "Trao đổi trực tiếp với Viện",
+    },
+    contactActions: [
+      {
+        text: "Gọi tư vấn ↗",
+        href: "tel:0988486869",
+      },
+      {
+        text: "Gửi email ↗",
+        href: "mailto:tuyensinh.sdh@vlu.edu.vn",
+      },
+      {
+        text: "Hướng dẫn đăng ký dự tuyển ↗",
+        href: "/admissions",
+      },
+    ],
+  },
+  faq: {
+    ...programmeSharedContent.faq,
+    faqs: [
+      {
+        question: "Chương trình đào tạo theo định hướng nào và kéo dài bao lâu?",
+        answer:
+          "Chương trình Thạc sĩ Lý luận và lịch sử mỹ thuật ứng dụng được đào tạo theo định hướng nghiên cứu, với khối lượng 60 tín chỉ và thời gian tiêu chuẩn 24 tháng. Lịch học được bố trí vào buổi tối các ngày trong tuần và/hoặc Thứ Bảy, Chủ nhật theo kế hoạch từng học kỳ. Thời khóa biểu chính thức do Trường công bố.",
+      },
+      {
+        question: "Nội dung nghiên cứu tập trung vào những lĩnh vực nào?",
+        answer:
+          "Chương trình kết nối lý luận, lịch sử và phê bình mỹ thuật ứng dụng với phương pháp nghiên cứu, tư duy thiết kế và kiến thức liên ngành. Các học phần tự chọn mở rộng sang văn hóa thị giác, thiết kế cộng đồng, trải nghiệm người dùng, môi trường và thiết kế bền vững.",
+      },
+      {
+        question: "Các học phần tự chọn được lựa chọn như thế nào?",
+        answer:
+          "Học viên tích lũy 8 tín chỉ tự chọn thuộc khối cơ sở ngành và 9 tín chỉ tự chọn thuộc khối chuyên ngành, tổng cộng 17 tín chỉ. Khối cơ sở có học phần 2 hoặc 3 tín chỉ; các học phần tự chọn chuyên ngành có 3 tín chỉ. Việc lựa chọn và đăng ký thực hiện theo cơ cấu chương trình, hướng dẫn và kế hoạch đào tạo của Khoa.",
+      },
+      {
+        question: "Ngành tốt nghiệp nào cần bổ sung kiến thức?",
+        answer:
+          "Ngành Lý luận Lịch sử và Phê bình Mỹ thuật không cần học bổ sung kiến thức. Các ngành liên quan trong danh mục được chia thành nhóm bổ sung tối đa 4 tín chỉ và nhóm tối đa 10 tín chỉ. Yêu cầu cụ thể được xác định theo hồ sơ và bảng điểm. Ngành ngoài danh mục được Khoa rà soát, đề xuất để Nhà trường xem xét.",
+      },
+      {
+        question: "Luận văn tốt nghiệp chiếm bao nhiêu tín chỉ?",
+        answer:
+          "Luận văn tốt nghiệp có khối lượng 15 tín chỉ và nằm trong tổng 60 tín chỉ của chương trình. Học viên cần hoàn thành, bảo vệ luận văn đạt yêu cầu và đáp ứng các điều kiện công nhận tốt nghiệp của chương trình và Trường.",
+      },
+      {
+        question: "Yêu cầu ngoại ngữ đầu vào và đầu ra như thế nào?",
+        answer:
+          "Ứng viên đáp ứng ngoại ngữ đầu vào tương đương Bậc 3/6 trở lên theo các hình thức công nhận trong thông báo tuyển sinh. Trước thời điểm xét tốt nghiệp, học viên cần đạt chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 trở lên theo quy định.",
+      },
+      {
+        question: "Học phí toàn khóa và cách đóng học phí ra sao?",
+        answer:
+          "Học phí toàn khóa là 100.000.000 đồng, chia thành ba đợt: 35.000.000 đồng, 30.000.000 đồng và 35.000.000 đồng. Mức này chưa trừ học bổng, hỗ trợ tài chính và chưa bao gồm các khoản thu riêng khi áp dụng. Thời hạn thanh toán được Trường thông báo cụ thể.",
+      },
+    ],
+  },
+  fees: {
+    heading: "Chủ động chuẩn bị cho hành trình học.",
+    intro: [
+      "Học phí toàn khóa được chia thành ba đợt thanh toán, giúp người học chủ động sắp xếp kế hoạch tài chính.",
+      "Các chính sách học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ. Người học chỉ được áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+    ],
+    intake: "TUYỂN SINH THẠC SĨ 2027",
+    language: "Tiếng Việt",
+    total: "100.000.000 đồng",
+    installments: [
+      {
+        label: "Đợt 1 · 35%",
+        amount: "35.000.000 đồng",
+      },
+      {
+        label: "Đợt 2 · 30%",
+        amount: "30.000.000 đồng",
+      },
+      {
+        label: "Đợt 3 · 35%",
+        amount: "35.000.000 đồng",
+      },
+    ],
+    additionalFees: [
+      {
+        title: "Lệ phí xét tuyển",
+        amount: "500.000 đồng",
+        note: "Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      },
+      {
+        title: "Lệ phí nhập học",
+        amount: "1.000.000 đồng",
+        note: "Nộp cùng học phí đợt đầu.",
+      },
+      {
+        title: "Học bổ sung kiến thức",
+        amount: "1.200.000 đồng/môn",
+        note: "Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      },
+      {
+        title: "Ôn tập tiếng Anh đầu vào",
+        amount: "1.000.000 đồng",
+        note: "Đăng ký tự nguyện.",
+      },
+      {
+        title: "Thi tiếng Anh đầu vào",
+        amount: "1.000.000 đồng",
+        note: "Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      },
+      {
+        title: "Gia hạn chương trình",
+        amount: "5% học phí toàn khóa/lần",
+        note: "Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      },
+    ],
+    notes: [
+      "Hoạt động học tập thực tế, tham quan chuyên môn hoặc thực địa có thể phát sinh chi phí ngoài học phí toàn khóa; Khoa thông báo nội dung và chi phí trước khi triển khai. Điều kiện thu, hoàn trả và các khoản phát sinh thực hiện theo thông báo được ban hành.",
+      "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng. Ngày đến hạn thanh toán theo thông báo thu của Trường.",
+    ],
+  },
+};
+
+export const lyLuanLichSuMyThuatProgramme: Programme = {
+  id: "ly-luan-lich-su-my-thuat",
+  code: "210401",
+  title: "Lý luận và Lịch sử Mỹ thuật Ứng dụng",
+  englishTitle: "Master of Applied Art Theory and History",
+  degree: "Thạc sĩ",
+  field: "Thiết kế & Mỹ thuật Ứng dụng",
+  orientation: "Nghiên cứu",
+  credits: 60,
+  duration: "24 tháng",
+  studyMode: "Chính quy tập trung, tiếng Việt",
+  intake: "Tuyển sinh thạc sĩ 2027",
+  summary:
+    "Kết nối lý luận, lịch sử mỹ thuật và thực tiễn thiết kế; phát triển tư duy phản biện cùng năng lực nghiên cứu để phân tích, lý giải và làm rõ giá trị của mỹ thuật ứng dụng trong đời sống.",
+  schedule:
+    "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
+  tuition: "100.000.000 VNĐ",
+};
+
+export function getLyLuanLichSuMyThuatCurricula(): CurriculumTrack[] {
+  return [
+    {
+      number: "05",
+      title: "Định hướng nghiên cứu",
+      orientation: "Nghiên cứu",
+      subtitle: "Lý luận · Lịch sử mỹ thuật · Thiết kế · Luận văn",
+      graduationProject: "Luận văn tốt nghiệp · 15 tín chỉ",
+      intro:
+        "Dành cho người muốn đào sâu lý luận, lịch sử và phê bình mỹ thuật ứng dụng, phát triển phương pháp nghiên cứu và thực hiện luận văn về một vấn đề chuyên môn.",
+      generalFacts: [
+        {
+          label: "Thời gian đào tạo",
+          value: "24 tháng",
+        },
+        {
+          label: "Định hướng",
+          value: "Nghiên cứu",
+        },
+        {
+          label: "Hình thức",
+          value: "Chính quy tập trung",
+        },
+        {
+          label: "Ngôn ngữ",
+          value: "Tiếng Việt",
+        },
+        {
+          label: "Học phần tự chọn",
+          value: "17 tín chỉ",
+        },
+        {
+          label: "Tốt nghiệp",
+          value: "Luận văn · 15 tín chỉ",
+        },
+      ],
+      notes: [
+        "Chương trình gồm 60 tín chỉ, với 28 tín chỉ học phần bắt buộc, 17 tín chỉ tự chọn và 15 tín chỉ luận văn. Xem danh mục và yêu cầu tích lũy trong từng khối kiến thức.",
+        "3 tín chỉ chung + 22 tín chỉ cơ sở ngành + 20 tín chỉ chuyên ngành + 15 tín chỉ luận văn = 60 tín chỉ.",
+        "Việc lựa chọn học phần tự chọn, đăng ký và mở lớp thực hiện theo cơ cấu chương trình và kế hoạch đào tạo của Khoa. Thời khóa biểu được thông báo theo từng đợt.",
+      ],
+      groups: [
+        {
+          title: "I. Kiến thức chung",
+          totalCreditsLabel: "3 tín chỉ",
+          courses: [
+            {
+              name: "Triết học",
+              englishName: "",
+              credits: 3,
+            },
+          ],
+          description: ["Học phần bắt buộc · 3 tín chỉ"],
+        },
+        {
+          title: "II. Kiến thức cơ sở ngành",
+          totalCreditsLabel: "22 tín chỉ",
+          courses: [],
+          subgroups: [
+            {
+              title: "Học phần bắt buộc · 14 tín chỉ",
+              totalCreditsLabel: "14 tín chỉ",
+              description: [],
+              courses: [
+                {
+                  name: "Phương pháp nghiên cứu khoa học",
+                  englishName: "",
+                  credits: 3,
+                },
+                {
+                  name: "Phương pháp luận sáng tạo",
+                  englishName: "",
+                  credits: 2,
+                },
+                {
+                  name: "Phương pháp nghiên cứu lịch sử mỹ thuật",
+                  englishName: "",
+                  credits: 3,
+                },
+                {
+                  name: "Lịch sử Design",
+                  englishName: "",
+                  credits: 3,
+                },
+                {
+                  name: "Tư duy thiết kế",
+                  englishName: "",
+                  credits: 3,
+                },
+              ],
+            },
+            {
+              title: "Học phần tự chọn · 8 tín chỉ",
+              totalCreditsLabel: "3 tín chỉ",
+              description: [
+                "Tích lũy 8 tín chỉ theo cơ cấu và kế hoạch đào tạo của Khoa. Các học phần có khối lượng 2 hoặc 3 tín chỉ.",
+              ],
+              courses: [
+                {
+                  name: "Mỹ thuật học",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Nghiên cứu lịch sử Mỹ thuật thế giới",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Lý luận dạy học đại học",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Văn hóa dân tộc học nghệ thuật",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Lý thuyết văn hóa thị giác",
+                  englishName: "",
+                  credits: 2,
+                  elective: true,
+                },
+                {
+                  name: "Chuyên đề công nghệ",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Lý luận và phê bình Mỹ thuật ứng dụng",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Đồ án thiết kế cộng đồng",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+              ],
+            },
+          ],
+          description: [],
+        },
+        {
+          title: "III. Kiến thức chuyên ngành",
+          totalCreditsLabel: "20 tín chỉ",
+          courses: [],
+          subgroups: [
+            {
+              title: "Học phần bắt buộc · 11 tín chỉ",
+              totalCreditsLabel: "11 tín chỉ",
+              description: [],
+              courses: [
+                {
+                  name: "Lý luận Mỹ thuật ứng dụng Việt Nam",
+                  englishName: "",
+                  credits: 2,
+                },
+                {
+                  name: "Lịch sử và Thẩm mỹ Công nghiệp",
+                  englishName: "",
+                  credits: 3,
+                },
+                {
+                  name: "Cơ sở lý luận đề tài",
+                  englishName: "",
+                  credits: 3,
+                },
+                {
+                  name: "Nghiên cứu chuyên đề",
+                  englishName: "",
+                  credits: 3,
+                },
+              ],
+            },
+            {
+              title: "Học phần tự chọn · 9 tín chỉ",
+              totalCreditsLabel: "3 tín chỉ",
+              description: [
+                "Tích lũy 9 tín chỉ theo cơ cấu và kế hoạch đào tạo của Khoa. Mỗi học phần 3 tín chỉ.",
+              ],
+              courses: [
+                {
+                  name: "Mỹ thuật ứng dụng Đông Nam Á",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Phương pháp luận design",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Dự án thiết kế trải nghiệm người dùng",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Mỹ thuật và môi trường",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Chuyên đề phát triển sản phẩm",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Workshop - Thiết kế bền vững",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+              ],
+            },
+          ],
+          description: [],
+        },
+        {
+          title: "IV. Luận văn tốt nghiệp",
+          totalCreditsLabel: "15 tín chỉ",
+          courses: [
+            {
+              name: "Luận văn tốt nghiệp",
+              englishName: "",
+              credits: 15,
+            },
+          ],
+          description: [
+            "Thực hiện luận văn về một vấn đề thuộc lĩnh vực lý luận, lịch sử mỹ thuật ứng dụng và thiết kế, trên nền tảng phương pháp nghiên cứu và kiến thức chuyên ngành.",
+          ],
+        },
+      ],
+      completion: {
+        heading: "Hoàn thành chương trình",
+        items: [
+          "Tích lũy 60 tín chỉ theo cơ cấu chương trình, trong đó có 8 tín chỉ tự chọn cơ sở ngành và 9 tín chỉ tự chọn chuyên ngành.",
+          "Hoàn thành và bảo vệ luận văn tốt nghiệp 15 tín chỉ đạt yêu cầu.",
+          "Đạt chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 trước thời điểm xét tốt nghiệp; đáp ứng chuẩn đầu ra và các điều kiện công nhận tốt nghiệp theo quy định của chương trình và Trường.",
+        ],
+      },
+    },
+  ];
+}

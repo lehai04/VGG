@@ -1,0 +1,662 @@
+{
+  "checked": 103,
+  "present": 97,
+  "missing": [
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển: 500.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức: 1.200.000 đồng/môn",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn thi tiếng Anh đầu vào: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào: 750.000 đồng",
+      "present": false
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Thông tin cần biết trước khi đăng ký.",
+      "present": false
+    }
+  ],
+  "units": [
+    {
+      "section": null,
+      "tag": "h1",
+      "text": "Quản trị kinh doanh",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Nâng cao năng lực quản trị, phân tích kinh doanh và lãnh đạo trong môi trường số; vận dụng dữ liệu, công nghệ và tư duy bền vững vào quyết định doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h2",
+      "text": "Kiến thức chuyên sâu. Năng lực tạo tác động.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình phát triển kiến thức chuyên sâu về chiến lược, tài chính, con người, vận hành, chuỗi cung ứng và marketing trong bối cảnh toàn cầu hóa. Người học được rèn luyện phương pháp nghiên cứu, phân tích dữ liệu và năng lực ra quyết định có trách nhiệm.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Theo kế hoạch tuyển sinh 2027, chương trình tuyển định hướng ứng dụng. Lộ trình kết nối học phần nền tảng với các chủ đề chuyển đổi số, dữ liệu lớn, khởi nghiệp và đề án giải quyết vấn đề thực tế.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "figcaption",
+      "text": "Hoạt động học thuật · Trường Đại học Văn Lang",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Chiến lược và chuyển đổi số",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phân tích bối cảnh số, mô hình kinh doanh và lợi thế cạnh tranh.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phân tích kinh doanh",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Khai thác dữ liệu đa nguồn và công cụ số để hỗ trợ quyết định.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Lãnh đạo và vận hành",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Điều phối con người, dự án, vận hành và chuỗi cung ứng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Khởi nghiệp bền vững",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kết nối đổi mới sáng tạo, đạo đức và phát triển bền vững.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "summary",
+      "text": "Chuẩn đầu ra của chương trình",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h2",
+      "text": "Nền tảng phù hợp cho lộ trình sau đại học.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Điều kiện cụ thể được xác định trên cơ sở văn bằng, bảng điểm và định hướng đăng ký.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Miễn bổ sung: người tốt nghiệp các ngành thuộc khối Kinh doanh và Quản lý của Trường Đại học Văn Lang.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Hồ sơ khác: chương trình đánh giá bằng cấp, bảng điểm và kinh nghiệm làm việc để xác định học phần cần bổ sung; học phần đã hoàn tất hoặc kinh nghiệm liên quan được xem xét miễn tương ứng.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình bổ sung tối đa 12 tín chỉ: Quản trị học (3), Kinh tế học đại cương (3), Marketing (3), Nguyên lý Tài chính (3).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên Việt Nam cần đáp ứng ngoại ngữ đầu vào từ Bậc 3/6 hoặc minh chứng tương đương được Trường công nhận. Công dân nước ngoài học chương trình tiếng Việt cần đạt tiếng Việt từ Bậc 4 hoặc tốt nghiệp chương trình đào tạo bằng tiếng Việt.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h2",
+      "text": "Mở rộng vai trò chuyên môn và quản lý.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Quản lý doanh nghiệp",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Quản lý doanh nghiệp hoặc các mảng marketing, nhân sự, vận hành, chuỗi cung ứng và dịch vụ khách hàng.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Tư vấn quản trị",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tư vấn cho cá nhân, tổ chức về chiến lược, vận hành và kinh doanh.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Khởi nghiệp",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Xây dựng và phát triển hoạt động kinh doanh độc lập.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Nghiên cứu và giảng dạy",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tham gia nghiên cứu, đào tạo và phát triển chuyên môn ở bậc cao hơn.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h2",
+      "text": "60 tín chỉ theo lộ trình rõ ràng.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "4 tín chỉ kiến thức chung; 9 tín chỉ cơ sở; 19 tín chỉ chuyên ngành bắt buộc; chọn 13 tín chỉ trong nhóm tự chọn; 6 tín chỉ thực tập và 9 tín chỉ đề án.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Lộ trình mẫu: Học kỳ I: 13 tín chỉ; học kỳ II: 18; học kỳ III: 14; học kỳ IV: thực tập và đề án 15 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81PHIL6014",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học · Philosophy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81RESE6023",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp nghiên cứu trong kinh doanh · Business Research Methods",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81MANA7033",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kinh tế học cho nhà quản lý · Economics for Manager",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81FINA7153",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Tài chính và kế toán cho nhà quản lý · Finance and Accounting for Manager",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81STRA7063",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản lý chiến lược và chuyển đổi số · Strategic Management and Digital Transformation",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81MANA7073",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị Con người và Tổ chức · Managing People and Organization",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81OPER7113",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị vận hành và chuỗi cung ứng · Operation and Supply Chain Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81LEAD7083",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Lãnh đạo và quản trị doanh nghiệp · Leadership and Governance",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81BUSI7094",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phân tích kinh doanh · Business Analytics",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81MARK7103",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chiến lược Marketing trong bối cảnh toàn cầu · Marketing Strategy in the Global context",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81ENTR7113",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Khởi nghiệp, đổi mới sáng tạo và phát triển bền vững Enterpreneurship, Innovations and Sustainable Development",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81DEGI7133",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Marketing kỹ thuật số · Digital Marketing",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81CHAN7153",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị sự thay đổi · Change Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81PROJ7163",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản lý dự án · Project Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81DATA7153",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phân tích dữ liệu lớn trong kinh doanh và quản lý · Big Data Analytics for Business and Management",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81SPEC7173",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề tự chọn Special Study",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81SEMN7171",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Các vấn đề đương đại trong Quản lý Kinh doanh 1Contemporary issues in Business & Management 1",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81SEMN7181",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Các vấn đề đương đại trong Quản lý Kinh doanh 2Contemporary issues in Business & Management 2",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81INTE7242",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thực tập tốt nghiệp 1Internship 1",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81INTE7254",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thực tập tốt nghiệp 2Internship 2",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81GRAD7269",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đề án tốt nghiệp · Final Project",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "h2",
+      "text": "Chủ động chuẩn bị cho hành trình học.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "summary",
+      "text": "Các khoản thu riêng khi áp dụng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển: 500.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức: 1.200.000 đồng/môn",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn thi tiếng Anh đầu vào: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào: 750.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "30.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "25.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Chưa trừ học bổng, hỗ trợ và chưa gồm các khoản thu riêng.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Thông tin cần biết trước khi đăng ký.",
+      "present": false
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Năm 2027 chương trình tuyển định hướng nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình tuyển sinh theo định hướng ứng dụng trong kế hoạch năm 2027.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Ai được miễn bổ sung kiến thức?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Hồ sơ khác: chương trình đánh giá bằng cấp, bảng điểm và kinh nghiệm làm việc để xác định học phần cần bổ sung; học phần đã hoàn tất hoặc kinh nghiệm liên quan được xem xét miễn tương ứng. Chương trình bổ sung tối đa 12 tín chỉ: Quản trị học (3), Kinh tế học đại cương (3), Marketing (3), Nguyên lý Tài chính (3).",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Chương trình bổ sung tối đa bao nhiêu tín chỉ?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Có học phần về chuyển đổi số và dữ liệu không?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Có. Nội dung chương trình tích hợp quản trị chiến lược, chuyển đổi số, phân tích dữ liệu và các học phần kinh doanh hiện đại.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phí toàn khóa là bao nhiêu?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt 30.000.000 đồng, 25.000.000 đồng và 30.000.000 đồng.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Thời gian đào tạo bao lâu?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Thời gian đào tạo chuẩn là 18–24 tháng, tùy tiến độ hoàn thành học phần và phần tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h2",
+      "text": "Bắt đầu từ mục tiêu học tập của bạn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Trao đổi về chương trình Quản trị kinh doanh, điều kiện đầu vào và lộ trình đăng ký.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h3",
+      "text": "Trao đổi trực tiếp với Viện",
+      "present": true
+    }
+  ]
+}

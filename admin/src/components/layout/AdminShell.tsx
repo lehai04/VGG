@@ -213,7 +213,7 @@ export function AdminShell({
                   gap: "12px",
                   padding: "10px 14px 4px",
                   color: "rgba(255, 255, 255, 0.9)",
-                  fontSize: "0.88rem",
+                  fontSize: "var(--text-14)",
                   fontWeight: 600,
                   userSelect: "none",
                 }}
@@ -227,11 +227,11 @@ export function AdminShell({
                   className={`admin-nav-link ${pathname === "/admin/news/create" ? "active" : ""}`}
                   style={{
                     padding: "7px 12px",
-                    fontSize: "0.82rem",
+                    fontSize: "var(--text-14)",
                     gap: "8px",
                   }}
                 >
-                  <span style={{ fontSize: "12px", opacity: 0.85 }}>✍️</span>
+                  <span style={{ fontSize: "var(--text-12)", opacity: 0.85 }}>✍️</span>
                   <span className="nav-text">Đăng tin</span>
                 </Link>
                 <Link
@@ -239,11 +239,11 @@ export function AdminShell({
                   className={`admin-nav-link ${pathname === "/admin/news" ? "active" : ""}`}
                   style={{
                     padding: "7px 12px",
-                    fontSize: "0.82rem",
+                    fontSize: "var(--text-14)",
                     gap: "8px",
                   }}
                 >
-                  <span style={{ fontSize: "12px", opacity: 0.85 }}>📑</span>
+                  <span style={{ fontSize: "var(--text-12)", opacity: 0.85 }}>📑</span>
                   <span className="nav-text">Danh sách tin</span>
                 </Link>
               </div>

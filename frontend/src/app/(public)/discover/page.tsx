@@ -23,18 +23,6 @@ export default function DiscoverPage() {
       <RevealOnScroll />
       <SiteHeader compact />
 
-      <section className="discover-editorial-hero">
-        <h1>Giới thiệu Viện Sau Đại học</h1>
-        <div className="discover-editorial-cover">
-          <Image
-            src="/images/pages/discover/content/banner.jpg"
-            alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang"
-            fill
-            priority
-            sizes="(max-width: 800px) 92vw, 76vw"
-          />
-        </div>
-      </section>
 
       <WhyChooseSection />
 
@@ -74,7 +62,7 @@ export default function DiscoverPage() {
       <section className="discover-editorial-chapter">
         <header className="discover-editorial-chapter-heading">
           <h2>NGHIÊN CỨU VÀ ĐỔI MỚI</h2>
-          <Link href="/discover/nghien-cuu-doi-moi">
+          <Link href="/research">
             Khám phá Nghiên cứu & Đổi mới <span>↗</span>
           </Link>
           <figure className="discover-editorial-chapter-media campus-crop">
@@ -105,7 +93,7 @@ export default function DiscoverPage() {
       <section className="discover-editorial-chapter">
         <header className="discover-editorial-chapter-heading">
           <h2>KẾT NỐI HỌC THUẬT VÀ NGHỀ NGHIỆP</h2>
-          <Link href="/discover/ket-noi-hoc-thuat-va-nghe-nghiep">
+          <Link href="/research#hop-tac-doanh-nghiep">
             Khám phá kết nối học thuật và nghề nghiệp <span>↗</span>
           </Link>
           <figure className="discover-editorial-chapter-media">

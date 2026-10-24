@@ -1,0 +1,896 @@
+{
+  "checked": 143,
+  "present": 138,
+  "missing": [
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Đối tượng và điều kiện dự tuyển",
+      "present": false
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Hướng phát triển nghề nghiệp",
+      "present": false
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "I. Kiến thức chung 10 tín chỉ +",
+      "present": false
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "II. Kiến thức cơ sở và chuyên ngành 33 tín chỉ +",
+      "present": false
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "III. Thực tập và đề án tốt nghiệp 17 tín chỉ +",
+      "present": false
+    }
+  ],
+  "units": [
+    {
+      "section": null,
+      "tag": "h1",
+      "text": "Luật kinh tế",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Phát triển năng lực phân tích, tư vấn và giải quyết các vấn đề pháp lý trong hoạt động doanh nghiệp, đầu tư, thương mại và cạnh tranh trong bối cảnh hội nhập.",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Hình ảnh hoạt động học tập · Nguồn: Văn Lang",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Tổng quan chương trình",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h2",
+      "text": "Hiểu sâu pháp luật. Giải quyết vấn đề trong kinh doanh.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Luật kinh tế tại Văn Lang được thiết kế theo định hướng ứng dụng, giúp người học làm chủ kiến thức chuyên sâu về pháp luật kinh doanh và phát triển kỹ năng phân tích, tư vấn, đàm phán, tranh tụng và xử lý các vấn đề pháp lý phát sinh trong thực tiễn.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Khối kiến thức tập trung vào pháp luật doanh nghiệp, đầu tư, thương mại, đất đai và cạnh tranh; đồng thời mở rộng sang lao động, thuế, bất động sản, tội phạm kinh tế, kiểm soát rủi ro pháp lý và các chuyên đề thực hành.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Thông qua thực tập và đề án tốt nghiệp, học viên vận dụng kiến thức vào bối cảnh cơ quan, tổ chức và doanh nghiệp, nâng cao khả năng đưa ra kết luận chuyên môn và đề xuất giải pháp pháp lý phù hợp.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Văn bằng tốt nghiệp: Thạc sĩ Luật kinh tế Master of Laws in Economic Law",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "figcaption",
+      "text": "Hoạt động chuyên môn · Khoa Luật, Trường Đại học Văn Lang",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Điểm nổi bật của chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Định hướng ứng dụng rõ ràng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kiến thức pháp luật được tổ chức quanh những vấn đề thực tế của doanh nghiệp, đầu tư, thương mại, cạnh tranh và quản trị rủi ro.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phát triển kỹ năng hành nghề",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Các chuyên đề thực hành rèn kỹ năng nhận diện tranh chấp, trọng tài giả định, soạn thảo, đàm phán và ký kết hợp đồng thương mại.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Tiếp cận pháp lý đa lĩnh vực",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Người học có thể mở rộng chuyên môn sang lao động, thuế, bất động sản, tội phạm kinh tế, xử phạt hành chính và kiểm soát rủi ro pháp lý.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "17 tín chỉ thực tập và đề án",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thực tập 8 tín chỉ và đề án tốt nghiệp 9 tín chỉ tạo không gian để vận dụng kiến thức vào một vấn đề pháp lý cụ thể trong thực tiễn.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Chương trình đã được kiểm định chất lượng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Luật kinh tế được công nhận đạt tiêu chuẩn chất lượng giáo dục theo quy định của Bộ Giáo dục và Đào tạo vào tháng 11/2025, củng cố nền tảng về chương trình, đội ngũ và hoạt động bảo đảm chất lượng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "summary",
+      "text": "Chuẩn đầu ra chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Bảy chuẩn đầu ra bao quát kiến thức pháp lý, kỹ năng chuyên môn, năng lực số, ngoại ngữ và trách nhiệm nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Nền tảng pháp lý và phương pháp nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Tổng hợp nguyên lý triết học, nền tảng khoa học pháp lý và phương pháp nghiên cứu để giải quyết vấn đề pháp lý trong Luật kinh tế.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Đề xuất giải pháp pháp lý",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Đề xuất giải pháp phù hợp cho các vấn đề phát sinh trong pháp luật doanh nghiệp, đầu tư, thương mại và cạnh tranh.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Kỹ năng hành nghề luật",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phối hợp kỹ năng lựa chọn và áp dụng quy phạm, soạn thảo, tư vấn, đàm phán, nghiên cứu hồ sơ và tranh tụng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Tư duy và làm việc chuyên nghiệp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phối hợp kỹ năng làm việc độc lập, làm việc nhóm, giao tiếp, thuyết trình, logic, sáng tạo và tư duy pháp lý.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Năng lực số và ngoại ngữ",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Tích hợp nền tảng số, công cụ AI và năng lực ngoại ngữ trong học tập, nghiên cứu và hoạt động nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Đạo đức và tuân thủ",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Tuân thủ pháp luật, quy tắc đạo đức nghề nghiệp và nội quy, kỷ luật của Nhà trường, cơ quan và đơn vị.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Học tập suốt đời và thích ứng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Chủ động cập nhật kiến thức, thích ứng với thay đổi của pháp luật kinh tế và đưa ra kết luận mang tính chuyên gia.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Đối tượng và điều kiện dự tuyển",
+      "present": false
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h2",
+      "text": "Từ nền tảng pháp luật đến chuyên môn Luật kinh tế.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên cần tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp và đáp ứng yêu cầu ngoại ngữ đầu vào theo quy định tuyển sinh.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Nhóm ngành Luật",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Luật; Luật hiến pháp và luật hành chính; Luật dân sự và tố tụng dân sự; Luật hình sự và tố tụng hình sự; Luật kinh tế; Luật quốc tế; Luật thương mại quốc tế; Tội phạm học và phòng ngừa tội phạm; Lý luận và lịch sử nhà nước và pháp luật.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Nhóm ngành phù hợp khác",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Bao gồm các nhóm về khoa học giáo dục, đào tạo giáo viên, Anh văn pháp lý, kinh tế, chính trị, quản lý, truyền thông, kinh doanh, tài chính, kế toán, quản trị, logistics, quản lý đô thị, y tế, dịch vụ và một số ngành an ninh – pháp lý có liên quan.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Danh mục tối đa 19 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Luật Doanh nghiệp — 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Luật Thương mại — 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Luật Dân sự và Luật tố tụng dân sự — 4 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Luật Thương mại quốc tế — 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Luật Hiến pháp và Luật Hành chính — 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Luật Hình sự và Luật Tố tụng hình sự — 3 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Học phần thực tế cần bổ sung được xác định trên cơ sở văn bằng, bảng điểm và nội dung đã tích lũy.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Ngoại ngữ đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Đáp ứng yêu cầu tương đương Bậc 3 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam, hoặc thuộc diện được công nhận tương đương theo thông báo tuyển sinh.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Hướng phát triển nghề nghiệp",
+      "present": false
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h2",
+      "text": "Vững chuyên môn pháp lý. Mở rộng vai trò nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Người học có thể phát triển theo hướng hành nghề pháp lý, pháp chế doanh nghiệp, quản lý nhà nước, nghiên cứu và đào tạo.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Cơ quan nhà nước",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Công việc liên quan đến quản lý kinh tế, hội nhập quốc tế, tòa án, viện kiểm sát và các cơ quan quản lý tại Trung ương, địa phương.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Dịch vụ pháp lý & pháp chế",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Luật sư, tư vấn tại công ty hoặc văn phòng luật; chuyên viên pháp chế và chuyên gia pháp lý trong doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Tổ chức quốc tế",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Làm việc tại các tổ chức liên chính phủ, phi chính phủ hoặc các tổ chức quốc tế có nhu cầu chuyên môn pháp lý và kinh tế.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Nghiên cứu & giảng dạy",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Giảng dạy, nghiên cứu tại trường đại học, viện nghiên cứu, trung tâm đào tạo; tiếp tục học lên trình độ tiến sĩ theo quy định.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h2",
+      "text": "Học sâu luật kinh tế. Vận dụng vào thực tiễn.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chương trình gồm 10 tín chỉ kiến thức chung, 33 tín chỉ kiến thức cơ sở và chuyên ngành, cùng 17 tín chỉ thực tập và đề án tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "I. Kiến thức chung 10 tín chỉ +",
+      "present": false
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học Philosophy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp nghiên cứu khoa học Research Methodology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Tư duy pháp lý Legal Reasoning",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "II. Kiến thức cơ sở và chuyên ngành 33 tín chỉ +",
+      "present": false
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Áp dụng pháp luật doanh nghiệp trong hoạt động của doanh nghiệp The application of law on enterprises in business activities",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Pháp luật về đầu tư trong thời kỳ hội nhập Investment Law in the integration facilitation",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Pháp luật về thương mại trong điều kiện hội nhập Commercial Law in the integration facilitation",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Pháp luật về xác lập quyền sử dụng đất của chủ thể kinh doanh Law on the assertion of land use rights of business entities",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Pháp luật về cạnh tranh trong nền kinh tế thị trường Competition law in the market economy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần tự chọn · tích lũy 18 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Danh mục tự chọn được mở theo kế hoạch đào tạo; người học tích lũy đủ 18 tín chỉ theo tư vấn học vụ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề thực hành 1: Kỹ năng nhận diện và giải quyết tranh chấp hợp đồng mua bán hàng hóa quốc tế",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề thực hành 2: Trọng tài giả định Moot Court",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề thực hành 3: Kỹ năng soạn thảo, đàm phán, ký kết hợp đồng thương mại",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Áp dụng pháp luật lao động trong doanh nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Tội phạm kinh tế",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Một số vấn đề pháp lý về thị trường bất động sản",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Xử phạt vi phạm hành chính trong lĩnh vực kinh tế",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Pháp luật về nghĩa vụ thuế của chủ thể kinh doanh",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kiểm soát rủi ro pháp lý trong doanh nghiệp Legal risk control in enterprises",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "III. Thực tập và đề án tốt nghiệp 17 tín chỉ +",
+      "present": false
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thực tập Internship",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đề án tốt nghiệp Graduation Project",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Thực tập tối thiểu 09 tuần tại cơ quan, tổ chức hoặc doanh nghiệp. Đề án tốt nghiệp được thực hiện trong ít nhất 03 tháng và bảo vệ trước hội đồng theo quy định.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "Kế hoạch học tập tham khảo",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Các học phần chuyên môn được bố trí chủ yếu trong ba học kỳ đầu. Giai đoạn sau dành cho thực tập và đề án tốt nghiệp; kế hoạch cụ thể được công bố theo từng khóa.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 1",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Triết học; Phương pháp nghiên cứu khoa học; Tư duy pháp lý; Áp dụng pháp luật doanh nghiệp; Pháp luật thương mại trong điều kiện hội nhập.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 2–3",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Pháp luật đầu tư; quyền sử dụng đất; cạnh tranh và các học phần tự chọn theo hướng nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Giai đoạn tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Thực tập 8 tín chỉ và Đề án tốt nghiệp 9 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "h2",
+      "text": "Chủ động chuẩn bị cho hành trình học.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa được chia thành ba đợt thanh toán để người học chủ động kế hoạch tài chính.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ; nếu đồng thời đủ nhiều chính sách, áp dụng một chính sách có mức cao nhất theo quy định.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "summary",
+      "text": "Các khoản thu riêng khi áp dụng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển 500.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học 1.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức 1.200.000 đồng/môn",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn tập tiếng Anh đầu vào 1.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào 1.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Gia hạn chương trình 5% học phí toàn khóa/lần",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "TUYỂN SINH THẠC SĨ 2027",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa · Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "29.750.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "25.500.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng.",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h2",
+      "text": "Sẵn sàng cho bước học tiếp theo?",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Câu hỏi thường gặp",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Chương trình đào tạo theo định hướng nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Luật kinh tế theo định hướng ứng dụng, khối lượng 60 tín chỉ. Thông tin tuyển sinh 2027 xác định thời gian đào tạo chuẩn 18 tháng.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Tôi cần đáp ứng điều kiện gì để dự tuyển?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ứng viên cần tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp, đáp ứng yêu cầu ngoại ngữ đầu vào và hoàn thành bổ sung kiến thức nếu thuộc diện phải học.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Ngành nào không cần bổ sung kiến thức?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Các ngành thuộc nhóm Luật trong danh mục tuyển sinh, gồm Luật, Luật hiến pháp và luật hành chính, Luật dân sự và tố tụng dân sự, Luật hình sự và tố tụng hình sự, Luật kinh tế, Luật quốc tế, Luật thương mại quốc tế và các ngành Luật được liệt kê trong phụ lục.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Bổ sung kiến thức gồm những môn nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Danh mục tối đa 19 tín chỉ gồm Luật Doanh nghiệp, Luật Thương mại, Luật Dân sự và Luật tố tụng dân sự, Luật Thương mại quốc tế, Luật Hiến pháp và Luật Hành chính, Luật Hình sự và Luật Tố tụng hình sự. Số môn thực tế được xác định qua đối chiếu bảng điểm.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Chương trình có thực tập không?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Có. Thực tập 8 tín chỉ, thời gian tối thiểu 09 tuần tại cơ quan, tổ chức hoặc doanh nghiệp. Học viên ghi nhật ký và thực hiện báo cáo thực tập theo yêu cầu.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Đề án tốt nghiệp có bao nhiêu tín chỉ?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Đề án tốt nghiệp có 9 tín chỉ, được thực hiện trong ít nhất 03 tháng và bảo vệ công khai trước hội đồng theo quy định.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phí toàn khóa là bao nhiêu?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt 29.750.000 đồng, 25.500.000 đồng và 29.750.000 đồng. Các khoản lệ phí và bổ sung kiến thức được thu riêng khi áp dụng.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h3",
+      "text": "Liên hệ tư vấn",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h2",
+      "text": "Bắt đầu từ mục tiêu của bạn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Luật kinh tế. Đội ngũ tư vấn sẽ hỗ trợ bạn đối chiếu điều kiện, học phí và hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "01 Tư vấn chương trình và định hướng học",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "02 Hướng dẫn học phí và chính sách hỗ trợ",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "03 Đối chiếu điều kiện và hồ sơ dự tuyển",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h3",
+      "text": "Trao đổi trực tiếp với Viện",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Viện Sau đại học · Trường Đại học Văn Lang 69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    }
+  ]
+}

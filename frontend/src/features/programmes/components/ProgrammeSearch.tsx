@@ -1,9 +1,15 @@
 "use client";
 
+import styles from "./ProgrammeCatalogue.module.css";
+
+import { catalogueCopy } from "@/data/programmes/catalogue-copy";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Search, SlidersHorizontal } from "lucide-react";
 import { programmeDegrees, programmeFields, programmeOrientations } from "@/data/programmes";
+
+const copy = catalogueCopy.ProgrammeSearch;
 
 export default function ProgrammeSearch() {
   const router = useRouter();
@@ -23,32 +29,33 @@ export default function ProgrammeSearch() {
   };
 
   return (
-    <section className="programme-search-wrapper" aria-labelledby="programme-search-title">
-      <div className="programme-search-heading">
+    <section
+      className={`${styles["programme-search-wrapper"]}`}
+      aria-labelledby="programme-search-title"
+    >
+      <div className={`${styles["programme-search-heading"]}`}>
+        <h2 id="programme-search-title">
+          {copy.programme_search_wrapper.tim_kiem_chuong_trinh_phu_hop_voi}
+        </h2>
 
-        <h2 id="programme-search-title">Tìm chương trình <em>phù hợp với bạn.</em></h2>
-
-        <p>
-          Tìm kiếm chương trình phù hợp với định hướng học tập và phát triển chuyên môn của bạn tại Văn Lang.
-        </p>
       </div>
 
-      <div className="programme-search-panel">
-        <div className="programme-search-panel-head">
+      <div className={`${styles["programme-search-panel"]}`}>
+        <div className={`${styles["programme-search-panel-head"]}`}>
           <div>
-            <span>KHỞI ĐẦU HÀNH TRÌNH</span>
-            <strong>Chọn điều bạn muốn khám phá</strong>
+            <strong>{copy.programme_search_wrapper.chon_dieu_ban_muon_kham_pha}</strong>
           </div>
-          <span className="programme-search-count">19 chương trình</span>
         </div>
-        <div className="programme-search-top">
-          <div className="programme-search-input">
+        <div className={`${styles["programme-search-top"]}`}>
+          <div className={`${styles["programme-search-input"]}`}>
             <Search size={21} aria-hidden="true" />
 
             <input
               type="text"
-              aria-label="Tìm kiếm chương trình"
-              placeholder="Nhập tên chương trình hoặc lĩnh vực bạn quan tâm"
+              aria-label={copy.programme_search_wrapper.aria_label_tim_kiem_chuong_trinh}
+              placeholder={
+                copy.programme_search_wrapper.placeholder_nhap_ten_chuong_trinh_hoac_linh
+              }
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
               onKeyDown={(e) => {
@@ -59,38 +66,41 @@ export default function ProgrammeSearch() {
             />
           </div>
 
-          <button
-            className="programme-search-button"
-            onClick={handleSearch}
-          >
-            Khám phá <ArrowRight size={18} aria-hidden="true" />
+          <button className={`${styles["programme-search-button"]}`} onClick={handleSearch}>
+            {copy.programme_search_wrapper.kham_pha}
+            <ArrowRight size={18} aria-hidden="true" />
           </button>
         </div>
 
-        <div className="programme-search-filters">
-          <span className="programme-search-filter-label"><SlidersHorizontal size={15} /> LỌC NHANH</span>
-          <select
-            value={degree}
-            onChange={(e) => setDegree(e.target.value)}
-          >
-            <option value="">Bậc đào tạo</option>
-            {programmeDegrees.map((item) => <option key={item} value={item}>{item}</option>)}
+        <div className={`${styles["programme-search-filters"]}`}>
+          <span className={`${styles["programme-search-filter-label"]}`}>
+            <SlidersHorizontal size={15} /> {copy.programme_search_wrapper.loc_nhanh}
+          </span>
+          <select value={degree} onChange={(e) => setDegree(e.target.value)}>
+            <option value="">{copy.programme_search_wrapper.bac_dao_tao}</option>
+            {programmeDegrees.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
           </select>
 
-          <select
-            value={field}
-            onChange={(e) => setField(e.target.value)}
-          >
-            <option value="">Lĩnh vực</option>
-            {programmeFields.map((item) => <option key={item} value={item}>{item}</option>)}
+          <select value={field} onChange={(e) => setField(e.target.value)}>
+            <option value="">{copy.programme_search_wrapper.linh_vuc}</option>
+            {programmeFields.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
           </select>
 
-          <select
-            value={orientation}
-            onChange={(e) => setOrientation(e.target.value)}
-          >
-            <option value="">Định hướng đào tạo</option>
-            {programmeOrientations.map((item) => <option key={item} value={item}>{item}</option>)}
+          <select value={orientation} onChange={(e) => setOrientation(e.target.value)}>
+            <option value="">{copy.programme_search_wrapper.dinh_huong_dao_tao}</option>
+            {programmeOrientations.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
           </select>
         </div>
       </div>

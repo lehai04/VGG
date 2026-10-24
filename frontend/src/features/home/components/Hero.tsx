@@ -1,3 +1,5 @@
+import Link from "@/i18n/components/LocalizedLink";
+
 /** HOMEPAGE SECTION: Hero đầu trang, CTA chính và các số liệu tổng quan. */
 export function Hero() {
   return (
@@ -18,21 +20,21 @@ export function Hero() {
       <div className="heroOverlay" aria-hidden="true" />
 
       <div className="eyebrow">CHƯƠNG TRÌNH SAU ĐẠI HỌC</div>
-      <h1>Nuôi dưỡng<br /><em>lãnh đạo đổi mới.</em></h1>
+      <h1>Nâng tầm tri thức{" "}<em>Chủ động dẫn đầu.</em></h1>
       <p>
-        KIẾN TẠO ƯU THẾ TỪ TRI THỨC, DẪN ĐẦU BẰNG CHUYÊN MÔN.<br />
-        Chương trình Đào tạo Sau đại học Trường Đại học Văn Lang với 20 chương trình Thạc sĩ và 01 chương trình Tiến sĩ
+        Trường Đại học Văn Lang mang đến 20 chương trình thạc sĩ và 01 chương trình tiến sĩ, 01 chương trình liên kết quốc tế giúp bạn phát triển chuyên môn, nâng cao năng lực nghiên cứu và mở rộng cơ hội nghề nghiệp.
+
       </p>
 
       <div className="heroActions">
         <a href="#programmes" className="primary vgg-cta-pill">Khám phá chương trình →</a>
-        <a className="vgg-cta-pill" href="#admissions">Tuyển sinh →</a>
+        <Link className="vgg-cta-pill" href="/admissions">Thông tin tuyển sinh →</Link>
       </div>
 
       <div className="heroStats">
         <div><b>20</b><span>Chương trình<br />Thạc sĩ</span></div>
         <div><b>01</b><span>Chương trình<br />Tiến sĩ</span></div>
-        <div><b>05</b><span>Nhóm ngành<br />đa lĩnh vực</span></div>
+        <div><b>01</b><span>Chương trình<br />Liên kết quốc tế</span></div>
       </div>
     </section>
   );

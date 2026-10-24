@@ -111,8 +111,8 @@ export function AccountProfileView({ admin }: AccountProfileProps) {
                 {admin.fullName.slice(0, 1).toUpperCase()}
               </div>
               <div>
-                <h2 style={{ margin: 0, fontSize: "1.25rem", fontWeight: 800, color: "#18181b" }}>{admin.fullName}</h2>
-                <span style={{ display: "inline-block", marginTop: "4px", padding: "3px 10px", borderRadius: "12px", background: "#fee2e2", color: "#991b1b", fontSize: "0.78rem", fontWeight: 700 }}>
+                <h2 style={{ margin: 0, fontSize: "var(--text-20)", fontWeight: 800, color: "#18181b" }}>{admin.fullName}</h2>
+                <span style={{ display: "inline-block", marginTop: "4px", padding: "3px 10px", borderRadius: "12px", background: "#fee2e2", color: "#991b1b", fontSize: "var(--text-12)", fontWeight: 700 }}>
                   {admin.role.name}
                 </span>
               </div>
@@ -120,7 +120,7 @@ export function AccountProfileView({ admin }: AccountProfileProps) {
             <button
               type="button"
               className="secondary-button"
-              style={{ fontSize: "0.82rem", padding: "6px 12px" }}
+              style={{ fontSize: "var(--text-14)", padding: "6px 12px" }}
               onClick={() => setIsEditing(!isEditing)}
             >
               {isEditing ? "HỦY SỬA" : "CHỈNH SỬA"}
@@ -129,7 +129,7 @@ export function AccountProfileView({ admin }: AccountProfileProps) {
 
           {isEditing ? (
             <form className="form-stack" onSubmit={handleUpdateProfile}>
-              <h3 style={{ margin: "0 0 12px", fontSize: "1rem", fontWeight: 800, color: "#b91c1c" }}>
+              <h3 style={{ margin: "0 0 12px", fontSize: "var(--text-16)", fontWeight: 800, color: "#b91c1c" }}>
                 Cập nhật thông tin tài khoản
               </h3>
 
@@ -205,32 +205,32 @@ export function AccountProfileView({ admin }: AccountProfileProps) {
           ) : (
             <div className="form-stack">
               <div>
-                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700, letterSpacing: "0.05em" }}>Tên đăng nhập</span>
-                <p style={{ margin: "4px 0 0", fontSize: "0.95rem", fontWeight: 600, color: "#27272a" }}>{admin.username}</p>
+                <span style={{ fontSize: "var(--text-12)", textTransform: "uppercase", color: "#71717a", fontWeight: 700, letterSpacing: "0.05em" }}>Tên đăng nhập</span>
+                <p style={{ margin: "4px 0 0", fontSize: "var(--text-16)", fontWeight: 600, color: "#27272a" }}>{admin.username}</p>
               </div>
 
               <div>
-                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700, letterSpacing: "0.05em" }}>Email Văn Lang (VLU)</span>
-                <p style={{ margin: "4px 0 0", fontSize: "0.95rem", fontWeight: 600, color: admin.email ? "#b91c1c" : "#a1a1aa" }}>
+                <span style={{ fontSize: "var(--text-12)", textTransform: "uppercase", color: "#71717a", fontWeight: 700, letterSpacing: "0.05em" }}>Email Văn Lang (VLU)</span>
+                <p style={{ margin: "4px 0 0", fontSize: "var(--text-16)", fontWeight: 600, color: admin.email ? "#b91c1c" : "#a1a1aa" }}>
                   {admin.email || "Chưa thiết lập email VLU"}
                 </p>
               </div>
 
               <div>
-                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700, letterSpacing: "0.05em" }}>Số điện thoại</span>
-                <p style={{ margin: "4px 0 0", fontSize: "0.95rem", fontWeight: 500, color: "#27272a" }}>{admin.phone || "—"}</p>
+                <span style={{ fontSize: "var(--text-12)", textTransform: "uppercase", color: "#71717a", fontWeight: 700, letterSpacing: "0.05em" }}>Số điện thoại</span>
+                <p style={{ margin: "4px 0 0", fontSize: "var(--text-16)", fontWeight: 500, color: "#27272a" }}>{admin.phone || "—"}</p>
               </div>
 
               <div>
-                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700, letterSpacing: "0.05em" }}>Trạng thái tài khoản</span>
-                <p style={{ margin: "4px 0 0", fontSize: "0.9rem", fontWeight: 700, color: admin.status === "ACTIVE" ? "#15803d" : "#b91c1c" }}>
+                <span style={{ fontSize: "var(--text-12)", textTransform: "uppercase", color: "#71717a", fontWeight: 700, letterSpacing: "0.05em" }}>Trạng thái tài khoản</span>
+                <p style={{ margin: "4px 0 0", fontSize: "var(--text-14)", fontWeight: 700, color: admin.status === "ACTIVE" ? "#15803d" : "#b91c1c" }}>
                   ● {admin.status === "ACTIVE" ? "Đang hoạt động" : "Tạm khóa"}
                 </p>
               </div>
 
               <div>
-                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700, letterSpacing: "0.05em" }}>Đăng nhập gần nhất</span>
-                <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "#52525b" }}>
+                <span style={{ fontSize: "var(--text-12)", textTransform: "uppercase", color: "#71717a", fontWeight: 700, letterSpacing: "0.05em" }}>Đăng nhập gần nhất</span>
+                <p style={{ margin: "4px 0 0", fontSize: "var(--text-14)", color: "#52525b" }}>
                   {admin.lastLoginAt ? new Date(admin.lastLoginAt).toLocaleString("vi-VN") : "Lần đầu đăng nhập"}
                 </p>
               </div>
@@ -240,22 +240,22 @@ export function AccountProfileView({ admin }: AccountProfileProps) {
 
         {/* CHỨC NĂNG & QUYỀN HẠN ĐƯỢC CHỈ ĐỊNH */}
         <section className="admin-card" style={{ padding: "24px" }}>
-          <h3 style={{ margin: "0 0 14px", fontSize: "0.95rem", fontWeight: 800, color: "#18181b", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+          <h3 style={{ margin: "0 0 14px", fontSize: "var(--text-16)", fontWeight: 800, color: "#18181b", textTransform: "uppercase", letterSpacing: "0.05em" }}>
             Quyền hạn phân quyền
           </h3>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
             {admin.role.code === "SUPER_ADMIN" ? (
-              <span style={{ padding: "6px 12px", background: "#fee2e2", color: "#991b1b", borderRadius: "6px", fontSize: "0.82rem", fontWeight: 700 }}>
+              <span style={{ padding: "6px 12px", background: "#fee2e2", color: "#991b1b", borderRadius: "6px", fontSize: "var(--text-14)", fontWeight: 700 }}>
                 Toàn quyền Quản trị Tối cao (Super Admin)
               </span>
             ) : admin.role.permissions.length > 0 ? (
               admin.role.permissions.map((p) => (
-                <span key={p.permission.code} style={{ padding: "5px 10px", background: "#f4f4f5", borderRadius: "6px", fontSize: "0.78rem", fontWeight: 600, color: "#3f3f46", border: "1px solid #e4e4e7" }}>
+                <span key={p.permission.code} style={{ padding: "5px 10px", background: "#f4f4f5", borderRadius: "6px", fontSize: "var(--text-12)", fontWeight: 600, color: "#3f3f46", border: "1px solid #e4e4e7" }}>
                   {p.permission.description || p.permission.code}
                 </span>
               ))
             ) : (
-              <span style={{ fontSize: "0.85rem", color: "#71717a" }}>Toàn quyền quản lý nội dung, tài nguyên & tư vấn (QTV Cấp 2)</span>
+              <span style={{ fontSize: "var(--text-14)", color: "#71717a" }}>Toàn quyền quản lý nội dung, tài nguyên & tư vấn (QTV Cấp 2)</span>
             )}
           </div>
         </section>
@@ -265,8 +265,8 @@ export function AccountProfileView({ admin }: AccountProfileProps) {
       <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
         <section className="admin-card" style={{ padding: "28px" }}>
           <div style={{ marginBottom: "20px" }}>
-            <h3 style={{ margin: 0, fontSize: "1.1rem", fontWeight: 800, color: "#18181b" }}>Thay đổi mật khẩu</h3>
-            <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "#71717a" }}>
+            <h3 style={{ margin: 0, fontSize: "var(--text-18)", fontWeight: 800, color: "#18181b" }}>Thay đổi mật khẩu</h3>
+            <p style={{ margin: "4px 0 0", fontSize: "var(--text-14)", color: "#71717a" }}>
               Mật khẩu mới yêu cầu tối thiểu 8 ký tự, gồm chữ hoa, chữ thường và chữ số.
             </p>
           </div>
@@ -275,16 +275,16 @@ export function AccountProfileView({ admin }: AccountProfileProps) {
 
         <section className="admin-card" style={{ padding: "24px", background: "#fafafa", border: "1px solid #e4e4e7" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
-            <h3 style={{ margin: 0, fontSize: "0.95rem", fontWeight: 800, color: "#18181b" }}>Quên mật khẩu?</h3>
-            <span style={{ fontSize: "0.75rem", padding: "2px 8px", background: "#fee2e2", color: "#991b1b", borderRadius: "10px", fontWeight: 700 }}>Bảo mật</span>
+            <h3 style={{ margin: 0, fontSize: "var(--text-16)", fontWeight: 800, color: "#18181b" }}>Quên mật khẩu?</h3>
+            <span style={{ fontSize: "var(--text-12)", padding: "2px 8px", background: "#fee2e2", color: "#991b1b", borderRadius: "10px", fontWeight: 700 }}>Bảo mật</span>
           </div>
-          <p style={{ margin: "0 0 16px", fontSize: "0.85rem", color: "#52525b", lineHeight: 1.5 }}>
+          <p style={{ margin: "0 0 16px", fontSize: "var(--text-14)", color: "#52525b", lineHeight: 1.5 }}>
             Nếu bạn cần liên kết khôi phục gửi về email Văn Lang ({admin.email || "chưa cấu hình"}), bấm nút bên dưới:
           </p>
           <button
             type="button"
             className="secondary-button"
-            style={{ width: "100%", padding: "10px", fontSize: "0.85rem", cursor: "pointer" }}
+            style={{ width: "100%", padding: "10px", fontSize: "var(--text-14)", cursor: "pointer" }}
             onClick={handleSendResetLink}
             disabled={forgotLoading || !admin.email}
           >
@@ -292,7 +292,7 @@ export function AccountProfileView({ admin }: AccountProfileProps) {
           </button>
 
           {forgotMsg && (
-            <div style={{ marginTop: "14px", padding: "12px", borderRadius: "6px", background: "#f0fdf4", border: "1px solid #bbf7d0", color: "#166534", fontSize: "0.85rem" }}>
+            <div style={{ marginTop: "14px", padding: "12px", borderRadius: "6px", background: "#f0fdf4", border: "1px solid #bbf7d0", color: "#166534", fontSize: "var(--text-14)" }}>
               <p style={{ margin: 0, lineHeight: 1.4 }}>{forgotMsg}</p>
             </div>
           )}

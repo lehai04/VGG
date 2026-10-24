@@ -1,0 +1,16 @@
+[
+  {
+    "label": "Định hướng nghiên cứu",
+    "completion": "Hoàn thành chương trìnhTích lũy 60 tín chỉ theo cơ cấu chương trình, gồm chuyên đề cơ sở ngành 3 tín chỉ, chuyên đề công nghệ mới trên ô tô 3 tín chỉ và luận văn tốt nghiệp 15 tín chỉ.Hoàn thành chuyên đề và luận văn theo yêu cầu; đáp ứng chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 và các điều kiện công nhận tốt nghiệp theo quy định của Trường.",
+    "facts": "Thông tin chungTổng số tín chỉ60 tín chỉThời gian đào tạo24 thángĐịnh hướngNghiên cứuHình thứcChính quy tập trungNgôn ngữTiếng ViệtHọc phần tự chọn12 tín chỉTốt nghiệpLuận văn · 15 tín chỉ",
+    "open": 30,
+    "overflow": false
+  },
+  {
+    "label": "Định hướng ứng dụng",
+    "completion": "Hoàn thành chương trìnhTích lũy 60 tín chỉ theo cơ cấu chương trình, gồm chuyên đề công nghệ mới trên ô tô 3 tín chỉ, thực tập chuyên môn nâng cao 6 tín chỉ và đề án tốt nghiệp 6 tín chỉ.Hoàn thành thực tập và đề án theo yêu cầu; đáp ứng chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 và các điều kiện công nhận tốt nghiệp theo quy định của Trường.",
+    "facts": "Thông tin chungTổng số tín chỉ60 tín chỉThời gian đào tạo18 thángĐịnh hướngỨng dụngHình thứcChính quy tập trungNgôn ngữTiếng ViệtHọc phần tự chọn9 tín chỉTốt nghiệpĐề án · 6 tín chỉ",
+    "open": 28,
+    "overflow": false
+  }
+]

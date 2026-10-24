@@ -1,0 +1,327 @@
+[
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsSteps article",
+    "dead": "admissionsSteps"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices article",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices.editorialAccordion",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices .editorialAccordionItem",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices .editorialAccordionItem > button",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices .editorialAccordionPanel",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices .editorialAccordionItem > button > span",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesList.editorialAccordion",
+    "dead": "resourcesList"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesList .editorialAccordionItem > button > span",
+    "dead": "resourcesList"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices .editorialAccordionItem > button",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices .editorialAccordionPanel",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogIntro",
+    "dead": "programmeCatalogIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogIntro > div > p",
+    "dead": "programmeCatalogIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogIntro h2",
+    "dead": "programmeCatalogIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogIntro h2 em",
+    "dead": "programmeCatalogIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogIntro > p",
+    "dead": "programmeCatalogIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogCta",
+    "dead": "programmeCatalogCta"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogCta b",
+    "dead": "programmeCatalogCta"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogCta:hover",
+    "dead": "programmeCatalogCta"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogCta:hover b",
+    "dead": "programmeCatalogCta"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogCta:focus-visible",
+    "dead": "programmeCatalogCta"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogCta:hover",
+    "dead": "programmeCatalogCta"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogShowcase",
+    "dead": "programmeCatalogShowcase"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsIntro > p",
+    "dead": "admissionsIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsIntro h2",
+    "dead": "admissionsIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsIntro > div",
+    "dead": "admissionsIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsSteps",
+    "dead": "admissionsSteps"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsSteps article",
+    "dead": "admissionsSteps"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsSteps article > span",
+    "dead": "admissionsSteps"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsSteps h3",
+    "dead": "admissionsSteps"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsSteps p",
+    "dead": "admissionsSteps"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentSuccessIntro > p",
+    "dead": "studentSuccessIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentSuccessIntro h2",
+    "dead": "studentSuccessIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentSuccessIntro h2 em",
+    "dead": "studentSuccessIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentSuccessIntro > div",
+    "dead": "studentSuccessIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentSuccessIntro > a",
+    "dead": "studentSuccessIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices article",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices article:last-child",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices article > span",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices h3",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices p",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices i",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesIntro p",
+    "dead": "resourcesIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesIntro h2",
+    "dead": "resourcesIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesList",
+    "dead": "resourcesList"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesList a",
+    "dead": "resourcesList"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesList span",
+    "dead": "resourcesList"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesList strong",
+    "dead": "resourcesList"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesList i",
+    "dead": "resourcesList"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogIntro",
+    "dead": "programmeCatalogIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogIntro > p",
+    "dead": "programmeCatalogIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentSuccessIntro h2",
+    "dead": "studentSuccessIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .studentServices article",
+    "dead": "studentServices"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsIntro h2",
+    "dead": "admissionsIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsSteps article",
+    "dead": "admissionsSteps"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .admissionsSteps article > span",
+    "dead": "admissionsSteps"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogIntro h2",
+    "dead": "programmeCatalogIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogCta",
+    "dead": "programmeCatalogCta"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesIntro h2",
+    "dead": "resourcesIntro"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogShowcase",
+    "dead": "programmeCatalogShowcase"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogShowcase",
+    "dead": "programmeCatalogShowcase"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .programmeCatalogShowcase > *",
+    "dead": "programmeCatalogShowcase"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesList .editorialAccordionPanel a",
+    "dead": "resourcesList"
+  },
+  {
+    "file": "app/home.css",
+    "selector": ".home-page .resourcesList .editorialAccordionItem > button > strong",
+    "dead": "resourcesList"
+  }
+]

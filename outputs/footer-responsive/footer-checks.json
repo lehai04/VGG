@@ -1,0 +1,98 @@
+[
+  {
+    "clipped": 0,
+    "contactColumns": "272.8px",
+    "contentColumns": "272.8px",
+    "links": 25,
+    "overflow": false,
+    "width": 320
+  },
+  {
+    "clipped": 0,
+    "contactColumns": "343.2px",
+    "contentColumns": "343.2px",
+    "links": 25,
+    "overflow": false,
+    "width": 390
+  },
+  {
+    "clipped": 0,
+    "contactColumns": "426.4px",
+    "contentColumns": "426.4px",
+    "links": 25,
+    "overflow": false,
+    "width": 480
+  },
+  {
+    "clipped": 0,
+    "contactColumns": "254.4px 254.4px",
+    "contentColumns": "254.4px 254.4px",
+    "links": 25,
+    "overflow": false,
+    "width": 600
+  },
+  {
+    "clipped": 0,
+    "contactColumns": "328px 328px",
+    "contentColumns": "328px 328px",
+    "links": 25,
+    "overflow": false,
+    "width": 760
+  },
+  {
+    "clipped": 0,
+    "contactColumns": "260.038px 192.625px 192.637px",
+    "contentColumns": "326.487px 326.487px",
+    "links": 25,
+    "overflow": false,
+    "width": 768
+  },
+  {
+    "clipped": 0,
+    "contactColumns": "305.775px 226.512px 226.512px",
+    "contentColumns": "383.9px 383.9px",
+    "links": 25,
+    "overflow": false,
+    "width": 900
+  },
+  {
+    "clipped": 0,
+    "contactColumns": "348.763px 258.35px 258.362px",
+    "contentColumns": "437.85px 437.85px",
+    "links": 25,
+    "overflow": false,
+    "width": 1024
+  },
+  {
+    "clipped": 0,
+    "contactColumns": "375.087px 277.85px 277.862px",
+    "contentColumns": "470.9px 470.9px",
+    "links": 25,
+    "overflow": false,
+    "width": 1100
+  },
+  {
+    "clipped": 0,
+    "contactColumns": "284.562px 307.325px 227.65px 227.663px",
+    "contentColumns": "198.488px 220.538px 176.438px 374.938px",
+    "links": 25,
+    "overflow": false,
+    "width": 1280
+  },
+  {
+    "clipped": 0,
+    "contactColumns": "320.65px 346.3px 256.525px 256.525px",
+    "contentColumns": "223.688px 248.538px 198.837px 422.538px",
+    "links": 25,
+    "overflow": false,
+    "width": 1440
+  },
+  {
+    "clipped": 0,
+    "contactColumns": "376.075px 406.175px 300.875px 300.875px",
+    "contentColumns": "264.675px 294.087px 235.275px 499.95px",
+    "links": 25,
+    "overflow": false,
+    "width": 1920
+  }
+]

@@ -1,0 +1,3 @@
+const fs=require('fs');const postcss=require('postcss');const root=postcss.parse(fs.readFileSync('outputs/admissions-reference.css','utf8'));
+root.walkRules(rule=>{if(rule.parent.type==='atrule' && /keyframes/.test(rule.parent.name))return;rule.selectors=rule.selectors.map(s=>{if(s===':root'||s==='body'||s==='html')return '.admissions-reference';return '.admissions-reference '+s.replace(/^body\s+|^html\s+/,'');});});
+fs.writeFileSync('frontend/src/features/admissions/reference.css',root.toString()+'\nbody:has(.admissions-reference) :is(.facebook-float,.apply-now-float,.zalo-float){display:none}\n');

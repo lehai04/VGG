@@ -4,7 +4,6 @@
  * Style: app/home.css (class .home-page).
  */
 import {
-  Admissions,
   Footer,
   Header,
   Hero,
@@ -13,7 +12,6 @@ import {
   Programmes,
   Research,
   ResourcesConsultation,
-  StudentSuccess,
 } from "@/features/home/components";
 import { ScrollReveal } from "@/features/home/components/ScrollReveal";
 import ProgrammeSearch from "@/features/programmes/components/ProgrammeSearch";
@@ -21,7 +19,7 @@ export default function Home() {
   return (
     <main id="main-content" className="home-page">
       <ScrollReveal />
-      {/* Header homepage: mega menu, trên mobile mở bằng nút MENU */}
+      {/* Header dùng liên kết trực tiếp; mobile mở bằng nút MENU */}
       <Header />
       <Hero />
       {/* Bộ lọc chương trình dùng chung với /programmes */}
@@ -29,8 +27,6 @@ export default function Home() {
       <Programmes />
       <Research />
       <ProgrammeCatalog />
-      <Admissions />
-      <StudentSuccess />
       {/* Năm bài viết đã xuất bản gần nhất từ CMS */}
       <News />
       {/* Form POST tới /api/consultations */}

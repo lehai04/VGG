@@ -148,7 +148,7 @@ export function NotificationsManager({
                   border: isActive ? "1px solid #991b1b" : "1px solid #e2e8f0",
                   background: isActive ? "#b91c1c" : "#ffffff",
                   color: isActive ? "#ffffff" : "#475569",
-                  fontSize: "0.82rem",
+                  fontSize: "var(--text-14)",
                   fontWeight: isActive ? 700 : 500,
                   cursor: "pointer",
                   transition: "all 0.15s ease",
@@ -172,7 +172,7 @@ export function NotificationsManager({
                 padding: "7px 12px",
                 borderRadius: "8px",
                 border: "1px solid #cbd5e1",
-                fontSize: "0.82rem",
+                fontSize: "var(--text-14)",
                 outline: "none",
                 minWidth: "240px",
               }}
@@ -185,7 +185,7 @@ export function NotificationsManager({
                 border: "none",
                 background: "#0f172a",
                 color: "#ffffff",
-                fontSize: "0.82rem",
+                fontSize: "var(--text-14)",
                 fontWeight: 600,
                 cursor: "pointer",
               }}
@@ -204,7 +204,7 @@ export function NotificationsManager({
               border: "1px solid #e2e8f0",
               background: "#ffffff",
               color: "#64748b",
-              fontSize: "0.82rem",
+              fontSize: "var(--text-14)",
               cursor: "pointer",
             }}
           >
@@ -232,19 +232,19 @@ export function NotificationsManager({
             justifyContent: "space-between",
           }}
         >
-          <div style={{ fontWeight: 700, fontSize: "0.95rem", color: "#0f172a" }}>
+          <div style={{ fontWeight: 700, fontSize: "var(--text-16)", color: "#0f172a" }}>
             Danh sách hoạt động & thông báo ({pagination.totalCount})
           </div>
-          {isLoading && <span style={{ fontSize: "0.8rem", color: "#64748b" }}>Đang tải dữ liệu...</span>}
+          {isLoading && <span style={{ fontSize: "var(--text-12)", color: "#64748b" }}>Đang tải dữ liệu...</span>}
         </div>
 
         {notifications.length === 0 ? (
-          <div style={{ padding: "48px 20px", textAlign: "center", color: "#94a3b8", fontSize: "0.9rem" }}>
+          <div style={{ padding: "48px 20px", textAlign: "center", color: "#94a3b8", fontSize: "var(--text-14)" }}>
             {isLoading ? "Đang đồng bộ hoạt động..." : "Không có thông báo nào phù hợp với bộ lọc hiện tại."}
           </div>
         ) : (
           <div style={{ overflowX: "auto" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: "0.85rem" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: "var(--text-14)" }}>
               <thead>
                 <tr style={{ background: "#f8fafc", borderBottom: "1px solid #e2e8f0", color: "#64748b" }}>
                   <th style={{ padding: "12px 18px", fontWeight: 600 }}>Hành động / Nội dung</th>
@@ -274,7 +274,7 @@ export function NotificationsManager({
                         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                           <span
                             style={{
-                              fontSize: "1.2rem",
+                              fontSize: "var(--text-20)",
                               width: "34px",
                               height: "34px",
                               borderRadius: "8px",
@@ -300,7 +300,7 @@ export function NotificationsManager({
                             display: "inline-block",
                             padding: "3px 8px",
                             borderRadius: "6px",
-                            fontSize: "0.72rem",
+                            fontSize: "var(--text-12)",
                             fontWeight: 700,
                             background: badge.bg,
                             color: badge.color,
@@ -315,14 +315,14 @@ export function NotificationsManager({
                       <td style={{ padding: "14px 18px" }}>
                         <strong style={{ color: "#0f172a", display: "block" }}>{item.actorName}</strong>
                         {item.actorRole && (
-                          <span style={{ fontSize: "0.75rem", color: "#64748b" }}>{item.actorRole}</span>
+                          <span style={{ fontSize: "var(--text-12)", color: "#64748b" }}>{item.actorRole}</span>
                         )}
                       </td>
 
                       {/* Time */}
                       <td style={{ padding: "14px 18px", whiteSpace: "nowrap" }}>
                         <div style={{ color: "#0f172a", fontWeight: 500 }}>{timeAgo(item.createdAt)}</div>
-                        <div style={{ fontSize: "0.74rem", color: "#94a3b8" }}>{formatExactDate(item.createdAt)}</div>
+                        <div style={{ fontSize: "var(--text-12)", color: "#94a3b8" }}>{formatExactDate(item.createdAt)}</div>
                       </td>
 
                       {/* Action Button */}
@@ -339,7 +339,7 @@ export function NotificationsManager({
                             border: "1px solid #cbd5e1",
                             background: "#ffffff",
                             color: "#2563eb",
-                            fontSize: "0.78rem",
+                            fontSize: "var(--text-12)",
                             fontWeight: 600,
                             cursor: "pointer",
                           }}
@@ -367,7 +367,7 @@ export function NotificationsManager({
               background: "#fafafa",
             }}
           >
-            <div style={{ fontSize: "0.82rem", color: "#64748b" }}>
+            <div style={{ fontSize: "var(--text-14)", color: "#64748b" }}>
               Trang {pagination.page} / {pagination.totalPages} ({pagination.totalCount} hoạt động)
             </div>
 
@@ -382,7 +382,7 @@ export function NotificationsManager({
                   border: "1px solid #cbd5e1",
                   background: pagination.page <= 1 ? "#f1f5f9" : "#ffffff",
                   color: pagination.page <= 1 ? "#94a3b8" : "#334155",
-                  fontSize: "0.8rem",
+                  fontSize: "var(--text-12)",
                   cursor: pagination.page <= 1 ? "not-allowed" : "pointer",
                 }}
               >
@@ -399,7 +399,7 @@ export function NotificationsManager({
                   border: "1px solid #cbd5e1",
                   background: pagination.page >= pagination.totalPages ? "#f1f5f9" : "#ffffff",
                   color: pagination.page >= pagination.totalPages ? "#94a3b8" : "#334155",
-                  fontSize: "0.8rem",
+                  fontSize: "var(--text-12)",
                   cursor: pagination.page >= pagination.totalPages ? "not-allowed" : "pointer",
                 }}
               >

@@ -233,7 +233,7 @@ export function AdminUserActions({
             background: isSuccess ? "#f0fdf4" : "#fef2f2",
             border: `1px solid ${isSuccess ? "#bbf7d0" : "#fecaca"}`,
             color: isSuccess ? "#166534" : "#991b1b",
-            fontSize: "0.9rem",
+            fontSize: "var(--text-14)",
             fontWeight: 600,
           }}
         >
@@ -245,10 +245,10 @@ export function AdminUserActions({
       <section className="admin-card" style={{ padding: "28px" }}>
         <div className="account-card-heading" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
           <div>
-            <h2 style={{ margin: 0, fontSize: "1.15rem", fontWeight: 800, color: "#18181b" }}>
+            <h2 style={{ margin: 0, fontSize: "var(--text-18)", fontWeight: 800, color: "#18181b" }}>
               {isEditing ? "Chỉnh sửa thông tin & Phân quyền" : "Thông tin định danh & Phân quyền"}
             </h2>
-            <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "#71717a" }}>
+            <p style={{ margin: "4px 0 0", fontSize: "var(--text-14)", color: "#71717a" }}>
               Super Admin có quyền cập nhật thông tin và điều chỉnh cấp bậc quản trị của nhân sự.
             </p>
           </div>
@@ -364,32 +364,32 @@ export function AdminUserActions({
         ) : (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "18px", overflowWrap: "anywhere" }}>
             <div>
-              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Họ và tên</span>
-              <p style={{ margin: "4px 0 0", fontSize: "0.95rem", fontWeight: 700, color: "#18181b" }}>{user.fullName}</p>
+              <span style={{ fontSize: "var(--text-12)", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Họ và tên</span>
+              <p style={{ margin: "4px 0 0", fontSize: "var(--text-16)", fontWeight: 700, color: "#18181b" }}>{user.fullName}</p>
             </div>
             <div>
-              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Tên đăng nhập</span>
-              <p style={{ margin: "4px 0 0", fontSize: "0.95rem", fontWeight: 600, color: "#27272a" }}>{user.username}</p>
+              <span style={{ fontSize: "var(--text-12)", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Tên đăng nhập</span>
+              <p style={{ margin: "4px 0 0", fontSize: "var(--text-16)", fontWeight: 600, color: "#27272a" }}>{user.username}</p>
             </div>
             <div>
-              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Email Văn Lang</span>
-              <p style={{ margin: "4px 0 0", fontSize: "0.95rem", fontWeight: 600, color: user.email ? "#b91c1c" : "#a1a1aa" }}>
+              <span style={{ fontSize: "var(--text-12)", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Email Văn Lang</span>
+              <p style={{ margin: "4px 0 0", fontSize: "var(--text-16)", fontWeight: 600, color: user.email ? "#b91c1c" : "#a1a1aa" }}>
                 {user.email || "Chưa thiết lập"}
               </p>
             </div>
             <div>
-              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Số điện thoại</span>
-              <p style={{ margin: "4px 0 0", fontSize: "0.95rem", color: "#27272a" }}>{user.phone || "—"}</p>
+              <span style={{ fontSize: "var(--text-12)", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Số điện thoại</span>
+              <p style={{ margin: "4px 0 0", fontSize: "var(--text-16)", color: "#27272a" }}>{user.phone || "—"}</p>
             </div>
             <div>
-              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Vai trò phân quyền</span>
+              <span style={{ fontSize: "var(--text-12)", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Vai trò phân quyền</span>
               <p style={{ margin: "4px 0 0" }}>
                 <span
                   style={{
                     display: "inline-block",
                     padding: "3px 8px",
                     borderRadius: "12px",
-                    fontSize: "0.82rem",
+                    fontSize: "var(--text-14)",
                     fontWeight: 700,
                     background:
                       user.role.level === 1
@@ -410,8 +410,8 @@ export function AdminUserActions({
               </p>
             </div>
             <div>
-              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Trạng thái</span>
-              <p style={{ margin: "4px 0 0", fontSize: "0.9rem", fontWeight: 700, color: user.status === "ACTIVE" ? "#15803d" : "#b91c1c" }}>
+              <span style={{ fontSize: "var(--text-12)", textTransform: "uppercase", color: "#71717a", fontWeight: 700 }}>Trạng thái</span>
+              <p style={{ margin: "4px 0 0", fontSize: "var(--text-14)", fontWeight: 700, color: user.status === "ACTIVE" ? "#15803d" : "#b91c1c" }}>
                 ● {user.status === "ACTIVE" ? "Đang hoạt động" : "Đang bị khóa"}
               </p>
             </div>
@@ -424,10 +424,10 @@ export function AdminUserActions({
         <div className="account-actions-grid" style={{ display: "grid", gridTemplateColumns: "var(--account-actions-columns, repeat(auto-fit, minmax(320px, 1fr)))", gap: "24px" }}>
           {/* KHÓA / KÍCH HOẠT */}
           <section className="admin-card" style={{ padding: "24px" }}>
-            <h3 style={{ margin: "0 0 8px", fontSize: "1rem", fontWeight: 800, color: "#18181b" }}>
+            <h3 style={{ margin: "0 0 8px", fontSize: "var(--text-16)", fontWeight: 800, color: "#18181b" }}>
               Khóa / Mở khóa tài khoản
             </h3>
-            <p style={{ margin: "0 0 16px", fontSize: "0.85rem", color: "#52525b", lineHeight: 1.5 }}>
+            <p style={{ margin: "0 0 16px", fontSize: "var(--text-14)", color: "#52525b", lineHeight: 1.5 }}>
               {user.status === "ACTIVE"
                 ? "Tài khoản hiện đang hoạt động bình thường. Khóa tài khoản sẽ chặn đăng nhập ngay lập tức."
                 : "Tài khoản hiện đang bị khóa. Mở khóa để cho phép nhân sự tiếp tục đăng nhập và làm việc."}
@@ -449,7 +449,7 @@ export function AdminUserActions({
 
           {/* CẤP LẠI MẬT KHẨU */}
           <section className="admin-card" style={{ padding: "24px" }}>
-            <h3 style={{ margin: "0 0 8px", fontSize: "1rem", fontWeight: 800, color: "#18181b" }}>
+            <h3 style={{ margin: "0 0 8px", fontSize: "var(--text-16)", fontWeight: 800, color: "#18181b" }}>
               Cấp lại mật khẩu tạm thời
             </h3>
             <form className="form-stack" onSubmit={handleResetPassword}>
@@ -498,10 +498,10 @@ export function AdminUserActions({
           >
             <div className="account-card-heading" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div>
-                <h3 style={{ margin: 0, fontSize: "1rem", fontWeight: 800, color: "#991b1b" }}>
+                <h3 style={{ margin: 0, fontSize: "var(--text-16)", fontWeight: 800, color: "#991b1b" }}>
                   Vùng nguy hiểm: Xóa tài khoản nhân sự
                 </h3>
-                <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "#742a2a" }}>
+                <p style={{ margin: "4px 0 0", fontSize: "var(--text-14)", color: "#742a2a" }}>
                   Hành động này sẽ xóa vĩnh viễn tài khoản nhân sự khỏi hệ thống và vô hiệu hóa mọi phiên đăng nhập.
                 </p>
               </div>
@@ -526,7 +526,7 @@ export function AdminUserActions({
                   border: "2px solid #ef4444",
                 }}
               >
-                <p style={{ margin: "0 0 12px", fontWeight: 700, color: "#991b1b", fontSize: "0.95rem" }}>
+                <p style={{ margin: "0 0 12px", fontWeight: 700, color: "#991b1b", fontSize: "var(--text-16)" }}>
                   ⚠️ Xác nhận xóa: Bạn có chắc chắn muốn xóa vĩnh viễn tài khoản &ldquo;{user.fullName}&rdquo; ({user.username})?
                 </p>
                 <div className="account-card-heading" style={{ display: "flex", gap: "10px" }}>

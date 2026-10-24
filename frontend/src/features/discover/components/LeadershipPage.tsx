@@ -100,11 +100,10 @@ export function LeadershipPage() {
       <section className={styles.deptSection} aria-labelledby="dept-leadership-title">
         <div className={styles.deptContainer}>
           <div className={styles.deptHeader} data-reveal>
-            <span className={styles.deptEyebrow}>BAN ĐIỀU HÀNH & QUẢN LÝ CHUYÊN TRÁCH</span>
-            <h2 id="dept-leadership-title">Đội ngũ phụ trách các bộ phận Viện Sau Đại học</h2>
+            <span className={styles.deptEyebrow}>VIỆN SAU ĐẠI HỌC</span>
+            <h2 id="dept-leadership-title">Đội ngũ phụ trách các bộ phận</h2>
             <p>
-              Đội ngũ phụ trách các mảng công tác trọng tâm đồng hành và hỗ trợ toàn diện cho học viên,
-              nghiên cứu sinh trong suốt quá trình đào tạo và phát triển học thuật.
+              Đội ngũ chuyên trách phối hợp triển khai hoạt động của Viện, từ phát triển chương trình, hỗ trợ người học đến tuyển sinh, truyền thông, chuyển đổi số và quản trị dữ liệu.
             </p>
           </div>
 

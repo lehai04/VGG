@@ -57,7 +57,7 @@ export function ResetPasswordForm({ token }: { token: string }) {
       <div className="form-stack">
         <div className="admin-alert" style={{ padding: "16px", borderRadius: "8px", background: "#fef2f2", border: "1px solid #fecaca", color: "#991b1b" }}>
           <strong>Mã khôi phục không hợp lệ</strong>
-          <p style={{ margin: "8px 0 16px", fontSize: "0.9rem" }}>
+          <p style={{ margin: "8px 0 16px", fontSize: "var(--text-14)" }}>
             Đường dẫn đặt lại mật khẩu bị thiếu token hoặc không chính xác. Vui lòng thực hiện lại thao tác quên mật khẩu.
           </p>
           <Link href="/admin/forgot-password" className="primary-button" style={{ display: "inline-block", textAlign: "center", textDecoration: "none" }}>
@@ -73,7 +73,7 @@ export function ResetPasswordForm({ token }: { token: string }) {
       <div className="form-stack">
         <div className="admin-alert admin-alert--success" style={{ padding: "16px", borderRadius: "8px", background: "#f0fdf4", border: "1px solid #bbf7d0", color: "#166534" }}>
           <strong style={{ display: "block", marginBottom: "8px" }}>✓ Đặt lại mật khẩu thành công</strong>
-          <p style={{ margin: "0 0 16px", fontSize: "0.9rem" }}>{message}</p>
+          <p style={{ margin: "0 0 16px", fontSize: "var(--text-14)" }}>{message}</p>
           <Link href="/admin/login" className="primary-button" style={{ display: "inline-block", textAlign: "center", textDecoration: "none" }}>
             ĐĂNG NHẬP NGAY
           </Link>
@@ -114,7 +114,7 @@ export function ResetPasswordForm({ token }: { token: string }) {
       </button>
 
       <div style={{ textAlign: "center", marginTop: "12px" }}>
-        <Link href="/admin/login" style={{ color: "#71717a", fontSize: "0.85rem", textDecoration: "none" }}>
+        <Link href="/admin/login" style={{ color: "#71717a", fontSize: "var(--text-14)", textDecoration: "none" }}>
           ← Quay lại Đăng nhập
         </Link>
       </div>

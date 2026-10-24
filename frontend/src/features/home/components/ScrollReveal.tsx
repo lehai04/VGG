@@ -11,16 +11,9 @@ const REVEAL_GROUPS = [
   ".immersiveVideoStage",
   ".graduateStatsGrid > article",
   ".researchImage, .researchContent > *",
-  ".programmeCatalogShowcase > *",
   ".programmeFieldGrid > article",
-  ".programmeCatalogCta",
-  ".admissionsIntro > *",
-  ".admissionsSteps > *",
-  ".studentSuccessIntro > *",
-  ".studentServices > *",
   ".newsHeading > *",
   ".newsGrid > *",
-  ".resourcesIntro > *, .resourcesList > *",
   ".consultationIntro > *, .consultationFields > *",
 ] as const;
 

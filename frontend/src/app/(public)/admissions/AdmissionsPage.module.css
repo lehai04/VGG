@@ -12,13 +12,13 @@
 .page h1,
 .page h2,
 .page h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-sans);
 }
 .eyebrow {
   margin: 0;
   color: var(--admissions-red);
-  font-size: 11px !important;
-  font-weight: 800 !important;
+  font-size: var(--text-10) !important;
+  font-weight: 700 !important;
   line-height: 1.5 !important;
   letter-spacing: 0.16em !important;
   text-transform: uppercase;
@@ -54,12 +54,12 @@
   gap: 14px;
   align-items: center;
   color: #fff;
-  font-size: 14px;
+  font-size: var(--text-14);
 }
 .breadcrumb span {
   color: #ef334b;
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 700;
 }
 .breadcrumb strong {
   font-weight: 600;
@@ -76,8 +76,8 @@
   grid-column: 1 / -1;
   margin: 0 0 -20px;
   color: #f4a2ab;
-  font-size: 11px !important;
-  font-weight: 800 !important;
+  font-size: var(--text-10) !important;
+  font-weight: 700 !important;
   letter-spacing: 0.18em;
 }
 .heroCopy h1 {
@@ -154,15 +154,15 @@ main:global(#main-content).page .introduction p:not(.eyebrow) {
   max-width: 58ch;
   margin: 0;
   color: #4c4e57;
-  font-size: 18px !important;
+  font-size: var(--text-18) !important;
   line-height: 1.7 !important;
 }
 .introduction a {
   margin-top: 28px;
   color: var(--admissions-dark-red);
   border-bottom: 0;
-  font-size: 16px;
-  font-weight: 800;
+  font-size: var(--text-16);
+  font-weight: 700;
 }
 
 .story {
@@ -196,7 +196,7 @@ main:global(#main-content).page .storyCopy > p:not(.eyebrow) {
   max-width: 53ch;
   margin: 0 0 18px;
   color: #41434b;
-  font-size: 18px !important;
+  font-size: var(--text-18) !important;
   line-height: 1.7 !important;
 }
 .storyCopy > a {
@@ -245,7 +245,7 @@ main:global(#main-content).page .storyCopy > p:not(.eyebrow) {
 }
 .stats strong {
   color: #fff;
-  font-family: var(--font-heading);
+  font-family: var(--font-sans);
   font-size: clamp(60px, 7vw, 104px);
   font-weight: 500;
   line-height: 0.9;
@@ -253,7 +253,7 @@ main:global(#main-content).page .storyCopy > p:not(.eyebrow) {
 .stats span {
   margin-top: 17px;
   color: #d8dae5;
-  font-size: 15px;
+  font-size: var(--text-14);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -283,7 +283,7 @@ main:global(#main-content).page .procedures > header > p:not(.eyebrow) {
   max-width: 53ch;
   margin: 0;
   color: #555762;
-  font-size: 18px !important;
+  font-size: var(--text-18) !important;
   line-height: 1.68 !important;
 }
 .programmeCards {
@@ -347,7 +347,7 @@ main:global(#main-content).page .procedures > header > p:not(.eyebrow) {
   max-width: none;
   margin: 0 0 12px;
   padding: 0;
-  font-family: var(--font-body) !important;
+  font-family: var(--font-sans) !important;
   font-size: clamp(22px, 1.7vw, 27px) !important;
   font-weight: 700 !important;
   line-height: 1.2 !important;
@@ -356,7 +356,7 @@ main:global(#main-content).page .programmeCard p {
   max-width: 42ch;
   margin: 0;
   color: #4f566e;
-  font-size: 14px !important;
+  font-size: var(--text-14) !important;
   line-height: 1.55 !important;
 }
 .programmeCard strong {
@@ -367,8 +367,8 @@ main:global(#main-content).page .programmeCard p {
   margin-top: auto;
   color: var(--admissions-navy);
   background: transparent;
-  font-size: 14px;
-  font-weight: 800;
+  font-size: var(--text-14);
+  font-weight: 700;
 }
 .programmeCard strong svg {
   width: 28px;
@@ -410,16 +410,16 @@ main:global(#main-content).page .programmeCard p {
 }
 .financeCopy h2 {
   margin: 0 0 22px;
-  font-family: var(--font-body) !important;
+  font-family: var(--font-sans) !important;
   font-size: clamp(31px, 3vw, 45px) !important;
-  font-weight: 750 !important;
+  font-weight: 700 !important;
   line-height: 1.1 !important;
 }
 main:global(#main-content).page .financeCopy p {
   max-width: 59ch;
   margin: 0;
   color: #32384c;
-  font-size: 16px !important;
+  font-size: var(--text-16) !important;
   line-height: 1.65 !important;
 }
 .financeCopy a {
@@ -428,8 +428,8 @@ main:global(#main-content).page .financeCopy p {
   gap: 10px;
   margin-top: 24px;
   color: var(--admissions-red);
-  font-size: 14px;
-  font-weight: 800;
+  font-size: var(--text-14);
+  font-weight: 700;
 }
 .financeCopy a svg {
   width: 17px;
@@ -478,7 +478,7 @@ main:global(#main-content).page .pathwaysHead > p:not(.eyebrow) {
   max-width: 45ch;
   margin: 0;
   color: #555762;
-  font-size: 18px !important;
+  font-size: var(--text-18) !important;
   line-height: 1.65 !important;
 }
 .pathwayList {
@@ -508,8 +508,8 @@ main:global(#main-content).page .pathwaysHead > p:not(.eyebrow) {
 }
 .pathwayList span {
   color: var(--admissions-red);
-  font-size: 11px;
-  font-weight: 800;
+  font-size: var(--text-10);
+  font-weight: 700;
   letter-spacing: 0.12em;
 }
 .pathwayList h3 {
@@ -547,7 +547,7 @@ main:global(#main-content).page .supportCopy > p:not(.eyebrow) {
   max-width: 48ch;
   margin: 0;
   color: rgba(255, 255, 255, 0.87);
-  font-size: 18px !important;
+  font-size: var(--text-18) !important;
   line-height: 1.68 !important;
 }
 .supportCopy > a {
@@ -649,7 +649,7 @@ main:global(#main-content).page .supportCopy > p:not(.eyebrow) {
   .breadcrumb {
     top: 34px;
     left: 24px;
-    font-size: 12px;
+    font-size: var(--text-12);
   }
   .heroCopy {
     padding: 130px 24px 46px;
@@ -663,14 +663,14 @@ main:global(#main-content).page .supportCopy > p:not(.eyebrow) {
     white-space: normal;
   }
   main:global(#main-content).page .heroCopy > strong {
-    font-size: 17px;
+    font-size: var(--text-16);
   }
   .introduction {
     gap: 36px;
     padding: 56px 24px;
   }
   main:global(#main-content).page .introduction p:not(.eyebrow) {
-    font-size: 17px !important;
+    font-size: var(--text-16) !important;
   }
   .storyMedia {
     min-height: 360px;

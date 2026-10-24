@@ -15,6 +15,17 @@ export type NewsPost = {
   excerpt: string | null;
   content: string;
   coverImage: string | null;
+  coverImageAlt?: string | null;
+  metaTitle?: string | null;
+  metaDescription?: string | null;
+  canonicalUrl?: string | null;
+  robotsIndex?: boolean;
+  robotsFollow?: boolean;
+  ogTitle?: string | null;
+  ogDescription?: string | null;
+  ogImage?: string | null;
+  ogImageAlt?: string | null;
+  customJsonLd?: Record<string, unknown> | null;
   publishedAt: string | null;
   authorName: string | null;
   externalUrl?: string;

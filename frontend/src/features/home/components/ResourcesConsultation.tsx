@@ -4,27 +4,22 @@
  * Form tư vấn (client): submit JSON tới POST /api/consultations.
  * Field ẩn `website` = honeypot chống bot. `consent` = hidden "yes".
  */
-import { FormEvent, useState } from "react";
+import { FormEvent, Fragment, useState } from "react";
+import type { ProgrammeConsultationIntro } from "@/data/programmes";
 import { programmes as PROGRAMMES } from "@/data/site";
-import { EditorialAccordion } from "./EditorialAccordion";
 import { useLocale } from "@/i18n/components/LocaleProvider";
 
-// Danh sách tài nguyên tải xuống hoặc tra cứu.
-const RESOURCES = [
-  { title:"Thư viện & học liệu", description:"Truy cập nguồn học liệu, tài liệu chuyên ngành và các tài nguyên phục vụ học tập và nghiên cứu.", href:"/resources/tai-lieu", linkLabel:"Truy cập tài nguyên" },
-  { title:"Biểu mẫu & tài liệu", description:"Tổng hợp biểu mẫu, hướng dẫn và tài liệu cần thiết trong quá trình học tập.", href:"/resources/bieu-mau", linkLabel:"Xem biểu mẫu" },
-  { title:"Quy định & chính sách", description:"Tra cứu các quy định, chính sách và hướng dẫn dành cho người học.", href:"/resources/chinh-sach-quy-dinh", linkLabel:"Tra cứu chính sách" },
-  { title:"Hệ thống trực tuyến", description:"Truy cập nhanh các nền tảng và hệ thống hỗ trợ học tập.", href:"/resources", linkLabel:"Truy cập hệ thống" },
-  { title:"Câu hỏi thường gặp", description:"Tìm câu trả lời nhanh cho những vấn đề thường gặp về chương trình, học vụ và các dịch vụ hỗ trợ.", href:"/resources/faq", linkLabel:"Xem câu hỏi" },
-] as const;
-
-/**
- * Khối tài nguyên + tư vấn dùng trên homepage; trang con có thể ẩn tài nguyên
- * để kế thừa nguyên form “Sẵn sàng cho bước tiến mới” mà không lặp logic/API.
- */
-export function ResourcesConsultation({ showResources = true, initialProgramme = "" }: { showResources?: boolean; initialProgramme?: string }) {
+export function ResourcesConsultation({
+  initialProgramme = "",
+  intro,
+}: {
+  initialProgramme?: string;
+  intro?: ProgrammeConsultationIntro;
+}) {
   const { messages } = useLocale();
   const cta = messages.cta;
+  const titleLines = intro?.titleLines ?? [cta.titleLine1, cta.titleLine2];
+  const benefits = intro?.benefits ?? [cta.benefit1, cta.benefit2, cta.benefit3];
   // Thông báo trạng thái gửi form cho người dùng.
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,13 +44,16 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
   const isNameValid = name.trim().length >= 2;
   const isProgrammeValid = programme.trim().length > 0;
 
-  const showPhoneError = (phoneTouched || forceTouched) && !isPhoneValid && (phone.length > 0 || forceTouched);
+  const showPhoneError =
+    (phoneTouched || forceTouched) && !isPhoneValid && (phone.length > 0 || forceTouched);
   const showPhoneSuccess = (phoneTouched || forceTouched) && isPhoneValid;
 
-  const showEmailError = (emailTouched || forceTouched) && !isEmailValid && (email.length > 0 || forceTouched);
+  const showEmailError =
+    (emailTouched || forceTouched) && !isEmailValid && (email.length > 0 || forceTouched);
   const showEmailSuccess = (emailTouched || forceTouched) && isEmailValid;
 
-  const showNameError = (nameTouched || forceTouched) && !isNameValid && (name.length > 0 || forceTouched);
+  const showNameError =
+    (nameTouched || forceTouched) && !isNameValid && (name.length > 0 || forceTouched);
   const showNameSuccess = (nameTouched || forceTouched) && isNameValid;
 
   const showProgrammeSuccess = (programmeTouched || forceTouched) && isProgrammeValid;
@@ -70,11 +68,17 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
       return;
     }
     if (!isPhoneValid) {
-      setMessage("Vui lòng nhập đúng định dạng: Số điện thoại phải gồm đúng 10 chữ số bắt đầu bằng số 0 (VD: 0901234567).");
+      setMessage(
+        "Vui lòng nhập đúng định dạng: Số điện thoại phải gồm đúng 10 chữ số bắt đầu bằng số 0 (VD: 0901234567).",
+      );
       return;
     }
     if (!isEmailValid) {
       setMessage("Vui lòng nhập đúng định dạng email (VD: email@example.com).");
+      return;
+    }
+    if (!isProgrammeValid) {
+      setMessage(cta.chooseProgramme);
       return;
     }
 
@@ -114,44 +118,27 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
   }
 
   return (
-    // Hai khối có cùng kích thước: Tài nguyên và Đặt lịch tư vấn.
-    <section className={`resourcesContact${showResources ? "" : " consultationOnly home-page"}`} id={showResources ? "resources" : "consultation"}>
-      {showResources && <div className="resourcesBlock">
-        <div className="resourcesIntro">
-          <p>RESOURCES · TÀI NGUYÊN</p>
-          <h2>
-            Mọi thông tin bạn cần,
-            <br />
-            tại một nơi.
-          </h2>
-        </div>
-
-        <EditorialAccordion items={RESOURCES} label="Tài nguyên học tập" className="resourcesList" />
-      </div>}
-
-      <div className="consultationBlock" id={showResources ? "consultation" : undefined}>
+    <section className="resourcesContact consultationOnly home-page" id="consultation">
+      <div className="consultationBlock">
         {/* Cột giới thiệu nhấn mạnh giá trị người dùng nhận được trước khi điền form. */}
         <div className="consultationIntro">
-          <p>{cta.eyebrow}</p>
+          <p>{intro?.eyebrow ?? cta.eyebrow}</p>
           <h2>
-            {cta.titleLine1}
-            <br />
-            <em>{cta.titleLine2}</em>
+            {titleLines.map((line, index) => (
+              <Fragment key={line}>
+                {index > 0 && " "}
+                {index === 0 ? line : <em>{line}</em>}
+              </Fragment>
+            ))}
           </h2>
-          <div>{cta.support}</div>
+          <div>{intro?.body ?? cta.support}</div>
           <ul className="consultationBenefits" aria-label="Quyền lợi tư vấn">
-            <li>
-              <span>01</span>
-              {cta.benefit1}
-            </li>
-            <li>
-              <span>02</span>
-              {cta.benefit2}
-            </li>
-            <li>
-              <span>03</span>
-              {cta.benefit3}
-            </li>
+            {benefits.map((benefit, index) => (
+              <li key={benefit}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {benefit}
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -160,7 +147,7 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
           <div className="consultationFormHead">
             <div>
               <span>PRIVATE CONSULTATION</span>
-              <strong>{cta.formTitle}</strong>
+              <strong>{intro?.formTitle ?? cta.formTitle}</strong>
             </div>
             <small>{cta.response}</small>
           </div>
@@ -193,14 +180,23 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
                 minLength={2}
                 maxLength={100}
                 required
-                className={showNameError ? "is-invalid" : (showNameSuccess ? "is-valid" : "")}
+                className={showNameError ? "is-invalid" : showNameSuccess ? "is-valid" : ""}
                 style={{
                   paddingRight: showNameSuccess ? "40px" : undefined,
                 }}
               />
               {showNameSuccess && (
                 <div className="consultationStatusIcon" title="Họ tên hợp lệ">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#10b981"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
@@ -234,14 +230,23 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
                 placeholder="0901234567"
                 maxLength={10}
                 required
-                className={showPhoneError ? "is-invalid" : (showPhoneSuccess ? "is-valid" : "")}
+                className={showPhoneError ? "is-invalid" : showPhoneSuccess ? "is-valid" : ""}
                 style={{
                   paddingRight: showPhoneSuccess ? "40px" : undefined,
                 }}
               />
               {showPhoneSuccess && (
                 <div className="consultationStatusIcon" title="Số điện thoại hợp lệ">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#10b981"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
@@ -249,7 +254,8 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
             </div>
             {showPhoneError && (
               <span className="consultationErrorMessage">
-                <span>⚠️</span> Vui lòng nhập đúng định dạng: Số điện thoại phải gồm đúng 10 chữ số bắt đầu bằng số 0 (VD: 0901234567).
+                <span>⚠️</span> Vui lòng nhập đúng định dạng: Số điện thoại phải gồm đúng 10 chữ số
+                bắt đầu bằng số 0 (VD: 0901234567).
               </span>
             )}
           </div>
@@ -274,14 +280,23 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
                 placeholder="example@gmail.com"
                 maxLength={190}
                 required
-                className={showEmailError ? "is-invalid" : (showEmailSuccess ? "is-valid" : "")}
+                className={showEmailError ? "is-invalid" : showEmailSuccess ? "is-valid" : ""}
                 style={{
                   paddingRight: showEmailSuccess ? "40px" : undefined,
                 }}
               />
               {showEmailSuccess && (
                 <div className="consultationStatusIcon" title="Email hợp lệ">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#10b981"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
@@ -321,8 +336,20 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
                   </option>
                 ))}
               </select>
-              <div className="consultationSelectArrow" style={{ color: showProgrammeSuccess ? "#10b981" : undefined }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <div
+                className="consultationSelectArrow"
+                style={{ color: showProgrammeSuccess ? "#10b981" : undefined }}
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </div>
@@ -335,11 +362,7 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
           {message && (
             <div
               className={`consultationFeedbackBanner ${
-                message === cta.success
-                  ? "success"
-                  : isSubmitting
-                  ? "submitting"
-                  : "error"
+                message === cta.success ? "success" : isSubmitting ? "submitting" : "error"
               }`}
               role="status"
               aria-live="polite"
@@ -348,7 +371,16 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
                 {message === cta.success ? (
                   <>
                     <div className="feedbackIcon success">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <polyline points="22 4 12 14.01 9 11.01" />
                       </svg>
@@ -361,7 +393,14 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
                 ) : isSubmitting ? (
                   <>
                     <div className="feedbackSpinner">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
                         <circle cx="12" cy="12" r="10" strokeDasharray="60" strokeDashoffset="20" />
                       </svg>
                     </div>
@@ -372,7 +411,16 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
                 ) : (
                   <>
                     <div className="feedbackIcon error">
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <circle cx="12" cy="12" r="10" />
                         <line x1="12" y1="8" x2="12" y2="12" />
                         <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -386,9 +434,7 @@ export function ResourcesConsultation({ showResources = true, initialProgramme =
               </div>
             </div>
           )}
-          <small className="consultationPrivacy">
-            {cta.privacy}
-          </small>
+          <small className="consultationPrivacy">{cta.privacy}</small>
         </form>
       </div>
     </section>

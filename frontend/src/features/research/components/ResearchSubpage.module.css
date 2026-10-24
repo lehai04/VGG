@@ -16,7 +16,7 @@
 /* ── KICKER shared ── */
 .kicker {
   margin: 0;
-  font-size: 11px;
+  font-size: var(--text-10);
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -45,7 +45,7 @@
 
 .heroEyebrow {
   margin: 0 0 36px;
-  font-size: 11px;
+  font-size: var(--text-10);
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -116,7 +116,7 @@
   align-items: center;
   gap: 10px;
   border-bottom: 1px solid var(--line);
-  font-size: 12px;
+  font-size: var(--text-12);
   letter-spacing: 0.04em;
 }
 
@@ -195,7 +195,7 @@
 
 .statIdx {
   display: block;
-  font-size: 10px;
+  font-size: var(--text-10);
   font-weight: 700;
   letter-spacing: 0.18em;
   color: var(--red);
@@ -251,7 +251,7 @@
 }
 
 .hlIndex {
-  font-size: 11px;
+  font-size: var(--text-10);
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--red);
@@ -285,7 +285,7 @@
 
 .quoteLabel {
   margin: 0 0 48px;
-  font-size: 10px;
+  font-size: var(--text-10);
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -305,7 +305,7 @@
 .quoteAttrib {
   margin: 36px 0 0;
   margin-left: clamp(27px, 3.3vw, 51px);
-  font-size: 12px;
+  font-size: var(--text-12);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   opacity: 0.45;
@@ -355,7 +355,7 @@
 }
 
 .relatedIdx {
-  font-size: 10px;
+  font-size: var(--text-10);
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--red);

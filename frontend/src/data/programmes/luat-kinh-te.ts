@@ -1,0 +1,707 @@
+// Nguồn: thac-si-luat-kinh-te.html do người dùng cung cấp ngày 24/10/2026.
+import { programmeSharedContent } from "./shared-content";
+import type { Programme, ProgrammePageContent } from "../programmes";
+import type { CurriculumTrack } from "../curricula";
+
+export const luatKinhTePageContent: ProgrammePageContent = {
+  hero: {
+    ...programmeSharedContent.hero,
+    heroLead:
+      "Phát triển năng lực phân tích, tư vấn và giải quyết các vấn đề pháp lý trong hoạt động doanh nghiệp, đầu tư, thương mại và cạnh tranh trong bối cảnh hội nhập.",
+    heroSlogan: "FUTURE",
+    heroImage: "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_1893_bd4580d03e.jpg",
+    imageAlt: "Hoạt động học tập của chương trình Thạc sĩ Luật kinh tế tại Trường Đại học Văn Lang",
+    imageCredit: {
+      text: "Hình ảnh hoạt động học tập · Nguồn: Văn Lang",
+    },
+  },
+  facts: {
+    ...programmeSharedContent.facts,
+    quickFactsDetailed: [
+      {
+        label: "Mã chương trình",
+        value: "8380107",
+        detail: "Mã ngành: 380107",
+      },
+      {
+        label: "Định hướng",
+        value: "Ứng dụng",
+        detail: "",
+      },
+      {
+        label: "Khối lượng",
+        value: "60 tín chỉ",
+        detail: "",
+      },
+      {
+        label: "Thời gian chuẩn",
+        value: "18 tháng",
+        detail: "",
+      },
+      {
+        label: "Hình thức đào tạo",
+        value: "Chính quy",
+        detail: "Tập trung",
+      },
+      {
+        label: "Học phí toàn khóa",
+        value: "85 triệu đồng",
+        detail: "",
+      },
+    ],
+  },
+  section01: {
+    ...programmeSharedContent.overview,
+    sectionNumber: "01",
+    overviewTitle: "Tổng quan chương trình",
+    headline: "Hiểu sâu pháp luật. Giải quyết vấn đề trong kinh doanh.",
+    overview: [
+      "Chương trình Thạc sĩ Luật kinh tế tại Văn Lang được thiết kế theo định hướng ứng dụng, giúp người học làm chủ kiến thức chuyên sâu về pháp luật kinh doanh và phát triển kỹ năng phân tích, tư vấn, đàm phán, tranh tụng và xử lý các vấn đề pháp lý phát sinh trong thực tiễn.",
+      "Khối kiến thức tập trung vào pháp luật doanh nghiệp, đầu tư, thương mại, đất đai và cạnh tranh; đồng thời mở rộng sang lao động, thuế, bất động sản, tội phạm kinh tế, kiểm soát rủi ro pháp lý và các chuyên đề thực hành.",
+      "Thông qua thực tập và đề án tốt nghiệp, học viên vận dụng kiến thức vào bối cảnh cơ quan, tổ chức và doanh nghiệp, nâng cao khả năng đưa ra kết luận chuyên môn và đề xuất giải pháp pháp lý phù hợp.",
+      "Văn bằng tốt nghiệp: Thạc sĩ Luật kinh tế Master of Laws in Economic Law",
+    ],
+    overviewImage: "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_1889_be9c776c33.jpg",
+    imageAlt: "Hoạt động trao đổi chuyên môn của học viên và giảng viên Khoa Luật Văn Lang",
+    imageCredit: {
+      text: "Hoạt động chuyên môn · Khoa Luật, Trường Đại học Văn Lang",
+    },
+    focusAreas: [
+      "Doanh nghiệp & đầu tư",
+      "Thương mại & cạnh tranh",
+      "Tranh chấp & đàm phán",
+      "Rủi ro pháp lý",
+    ],
+    ribbonTitle: "",
+    tags: [],
+    link: {
+      text: "Khám phá khung chương trình",
+      href: "#chuong-trinh",
+      ariaLabel: "Khám phá khung chương trình Luật Kinh tế",
+    },
+  },
+  section02: {
+    ...programmeSharedContent.highlights,
+    sectionNumber: "02",
+    highlights: [
+      {
+        title: "Định hướng ứng dụng rõ ràng",
+        text: "Kiến thức pháp luật được tổ chức quanh những vấn đề thực tế của doanh nghiệp, đầu tư, thương mại, cạnh tranh và quản trị rủi ro.",
+      },
+      {
+        title: "Phát triển kỹ năng hành nghề",
+        text: "Các chuyên đề thực hành rèn kỹ năng nhận diện tranh chấp, trọng tài giả định, soạn thảo, đàm phán và ký kết hợp đồng thương mại.",
+      },
+      {
+        title: "Tiếp cận pháp lý đa lĩnh vực",
+        text: "Người học có thể mở rộng chuyên môn sang lao động, thuế, bất động sản, tội phạm kinh tế, xử phạt hành chính và kiểm soát rủi ro pháp lý.",
+      },
+      {
+        title: "17 tín chỉ thực tập và đề án",
+        text: "Thực tập 8 tín chỉ và đề án tốt nghiệp 9 tín chỉ tạo không gian để vận dụng kiến thức vào một vấn đề pháp lý cụ thể trong thực tiễn.",
+      },
+      {
+        title: "Chương trình đã được kiểm định chất lượng",
+        text: "Chương trình Thạc sĩ Luật kinh tế được công nhận đạt tiêu chuẩn chất lượng giáo dục theo quy định của Bộ Giáo dục và Đào tạo vào tháng 11/2025, củng cố nền tảng về chương trình, đội ngũ và hoạt động bảo đảm chất lượng.",
+      },
+    ],
+    learningOutcomes: {
+      intro:
+        "Bảy chuẩn đầu ra bao quát kiến thức pháp lý, kỹ năng chuyên môn, năng lực số, ngoại ngữ và trách nhiệm nghề nghiệp.",
+      items: [
+        {
+          code: "PLO1",
+          title: "Nền tảng pháp lý và phương pháp nghiên cứu",
+          text: "Tổng hợp nguyên lý triết học, nền tảng khoa học pháp lý và phương pháp nghiên cứu để giải quyết vấn đề pháp lý trong Luật kinh tế.",
+        },
+        {
+          code: "PLO2",
+          title: "Đề xuất giải pháp pháp lý",
+          text: "Đề xuất giải pháp phù hợp cho các vấn đề phát sinh trong pháp luật doanh nghiệp, đầu tư, thương mại và cạnh tranh.",
+        },
+        {
+          code: "PLO3",
+          title: "Kỹ năng hành nghề luật",
+          text: "Phối hợp kỹ năng lựa chọn và áp dụng quy phạm, soạn thảo, tư vấn, đàm phán, nghiên cứu hồ sơ và tranh tụng.",
+        },
+        {
+          code: "PLO4",
+          title: "Tư duy và làm việc chuyên nghiệp",
+          text: "Phối hợp kỹ năng làm việc độc lập, làm việc nhóm, giao tiếp, thuyết trình, logic, sáng tạo và tư duy pháp lý.",
+        },
+        {
+          code: "PLO5",
+          title: "Năng lực số và ngoại ngữ",
+          text: "Tích hợp nền tảng số, công cụ AI và năng lực ngoại ngữ trong học tập, nghiên cứu và hoạt động nghề nghiệp.",
+        },
+        {
+          code: "PLO6",
+          title: "Đạo đức và tuân thủ",
+          text: "Tuân thủ pháp luật, quy tắc đạo đức nghề nghiệp và nội quy, kỷ luật của Nhà trường, cơ quan và đơn vị.",
+        },
+        {
+          code: "PLO7",
+          title: "Học tập suốt đời và thích ứng",
+          text: "Chủ động cập nhật kiến thức, thích ứng với thay đổi của pháp luật kinh tế và đưa ra kết luận mang tính chuyên gia.",
+        },
+      ],
+    },
+    outcomesHeading: "Chuẩn đầu ra chương trình",
+  },
+  section03: {
+    sectionNumber: "03",
+    audienceHeading: "Chương trình phù hợp với ai?",
+    headline: "Từ nền tảng pháp luật đến chuyên môn Luật kinh tế.",
+    intro: [
+      "Ứng viên cần tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp và đáp ứng yêu cầu ngoại ngữ đầu vào theo quy định tuyển sinh.",
+    ],
+    audience: [
+      {
+        title: "Nhóm ngành Luật",
+        text: "Luật; Luật hiến pháp và luật hành chính; Luật dân sự và tố tụng dân sự; Luật hình sự và tố tụng hình sự; Luật kinh tế; Luật quốc tế; Luật thương mại quốc tế; Tội phạm học và phòng ngừa tội phạm; Lý luận và lịch sử nhà nước và pháp luật. Không phải học bổ sung kiến thức.",
+      },
+      {
+        title: "Nhóm ngành phù hợp khác",
+        text: "Bao gồm các nhóm về khoa học giáo dục, đào tạo giáo viên, Anh văn pháp lý, kinh tế, chính trị, quản lý, truyền thông, kinh doanh, tài chính, kế toán, quản trị, logistics, quản lý đô thị, y tế, dịch vụ và một số ngành an ninh – pháp lý có liên quan. Đối chiếu bảng điểm; học tối đa 19 tín chỉ bổ sung kiến thức.",
+      },
+    ],
+    requirements: [
+      {
+        title: "Ngoại ngữ đầu vào",
+        paragraphs: [
+          "Đáp ứng yêu cầu tương đương Bậc 3 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam, hoặc thuộc diện được công nhận tương đương theo thông báo tuyển sinh.",
+        ],
+      },
+      {
+        title: "Ngành tốt nghiệp có phù hợp?",
+        paragraphs: [
+          "01 Nhóm ngành Luật Luật; Luật hiến pháp và luật hành chính; Luật dân sự và tố tụng dân sự; Luật hình sự và tố tụng hình sự; Luật kinh tế; Luật quốc tế; Luật thương mại quốc tế; Tội phạm học và phòng ngừa tội phạm; Lý luận và lịch sử nhà nước và pháp luật. Không phải học bổ sung kiến thức. Không phải học bổ sung kiến thức. 02 Nhóm ngành phù hợp khác Bao gồm các nhóm về khoa học giáo dục, đào tạo giáo viên, Anh văn pháp lý, kinh tế, chính trị, quản lý, truyền thông, kinh doanh, tài chính, kế toán, quản trị, logistics, quản lý đô thị, y tế, dịch vụ và một số ngành an ninh – pháp lý có liên quan. Đối chiếu bảng điểm; học tối đa 19 tín chỉ bổ sung kiến thức. Đối chiếu bảng điểm; học tối đa 19 tín chỉ bổ sung kiến thức.",
+        ],
+      },
+      {
+        title: "Bổ sung kiến thức đầu vào",
+        paragraphs: [""],
+        groups: [
+          {
+            title: "Danh mục tối đa 19 tín chỉ",
+            paragraphs: [
+              "Học phần thực tế cần bổ sung được xác định trên cơ sở văn bằng, bảng điểm và nội dung đã tích lũy.",
+            ],
+            groups: [],
+            points: [
+              "Luật Doanh nghiệp — 3 tín chỉ",
+              "Luật Thương mại — 3 tín chỉ",
+              "Luật Dân sự và Luật tố tụng dân sự — 4 tín chỉ",
+              "Luật Thương mại quốc tế — 3 tín chỉ",
+              "Luật Hiến pháp và Luật Hành chính — 3 tín chỉ",
+              "Luật Hình sự và Luật Tố tụng hình sự — 3 tín chỉ",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  section04: {
+    sectionNumber: "04",
+    careerHeading: "Cơ hội nghề nghiệp và phát triển",
+    headline: "Vững chuyên môn pháp lý. Mở rộng vai trò nghề nghiệp.",
+    intro:
+      "Người học có thể phát triển theo hướng hành nghề pháp lý, pháp chế doanh nghiệp, quản lý nhà nước, nghiên cứu và đào tạo.",
+    note: "",
+    careerImage: "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_1893_bd4580d03e.jpg",
+    careers: [
+      {
+        group: "",
+        title: "Cơ quan nhà nước",
+        sub: "Công việc liên quan đến quản lý kinh tế, hội nhập quốc tế, tòa án, viện kiểm sát và các cơ quan quản lý tại Trung ương, địa phương.",
+      },
+      {
+        group: "",
+        title: "Dịch vụ pháp lý & pháp chế",
+        sub: "Luật sư, tư vấn tại công ty hoặc văn phòng luật; chuyên viên pháp chế và chuyên gia pháp lý trong doanh nghiệp.",
+      },
+      {
+        group: "",
+        title: "Tổ chức quốc tế",
+        sub: "Làm việc tại các tổ chức liên chính phủ, phi chính phủ hoặc các tổ chức quốc tế có nhu cầu chuyên môn pháp lý và kinh tế.",
+      },
+      {
+        group: "",
+        title: "Nghiên cứu & giảng dạy",
+        sub: "Giảng dạy, nghiên cứu tại trường đại học, viện nghiên cứu, trung tâm đào tạo; tiếp tục học lên trình độ tiến sĩ theo quy định.",
+      },
+    ],
+  },
+  section05: {
+    ...programmeSharedContent.curriculum,
+    sectionNumber: "05",
+    curriculumIntro: [
+      "Chương trình gồm 10 tín chỉ kiến thức chung, 33 tín chỉ kiến thức cơ sở và chuyên ngành, cùng 17 tín chỉ thực tập và đề án tốt nghiệp.",
+    ],
+    trackLabels: ["Định hướng ứng dụng"],
+    graduationProjects: ["Đề án tốt nghiệp · 9 tín chỉ"],
+    studyMode: "Chính quy tập trung",
+    generalFacts: [
+      {
+        label: "Thời gian đào tạo",
+        value: "18 tháng",
+      },
+      {
+        label: "Định hướng",
+        value: "Ứng dụng",
+      },
+      {
+        label: "Hình thức",
+        value: "Chính quy tập trung",
+      },
+      {
+        label: "Ngôn ngữ",
+        value: "Tiếng Việt",
+      },
+      {
+        label: "Thực tập",
+        value: "8 tín chỉ",
+      },
+      {
+        label: "Đề án tốt nghiệp",
+        value: "9 tín chỉ",
+      },
+    ],
+    notes: ["", "Học sâu luật kinh tế. Vận dụng vào thực tiễn."],
+    semesters: {
+      heading: "Kế hoạch học tập tham khảo",
+      intro:
+        "Các học phần chuyên môn được bố trí chủ yếu trong ba học kỳ đầu. Giai đoạn sau dành cho thực tập và đề án tốt nghiệp; kế hoạch cụ thể được công bố theo từng khóa.",
+      items: [
+        {
+          title: "Học kỳ 1",
+          subtitle: "Nền tảng & pháp luật doanh nghiệp – thương mại",
+          groups: [
+            {
+              title: "Học kỳ 1",
+              description: [
+                "Triết học; Phương pháp nghiên cứu khoa học; Tư duy pháp lý; Áp dụng pháp luật doanh nghiệp; Pháp luật thương mại trong điều kiện hội nhập.",
+              ],
+              courses: [],
+            },
+          ],
+        },
+        {
+          title: "Học kỳ 2–3",
+          subtitle: "Kiến thức chuyên ngành & tự chọn",
+          groups: [
+            {
+              title: "Học kỳ 2–3",
+              description: [
+                "Pháp luật đầu tư; quyền sử dụng đất; cạnh tranh và các học phần tự chọn theo hướng nghề nghiệp.",
+              ],
+              courses: [],
+            },
+          ],
+        },
+        {
+          title: "Giai đoạn tốt nghiệp",
+          subtitle: "Thực tập & đề án",
+          groups: [
+            {
+              title: "Giai đoạn tốt nghiệp",
+              description: ["Thực tập 8 tín chỉ và Đề án tốt nghiệp 9 tín chỉ."],
+              courses: [],
+            },
+          ],
+        },
+      ],
+    },
+    completion: {
+      heading: "Thực tập và đề án tốt nghiệp",
+      items: [
+        "Thực tập tối thiểu 09 tuần tại cơ quan, tổ chức hoặc doanh nghiệp. Đề án tốt nghiệp được thực hiện trong ít nhất 03 tháng và bảo vệ trước hội đồng theo quy định.",
+      ],
+    },
+  },
+  consultation: {
+    ...programmeSharedContent.consultation,
+    ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
+    ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+    formIntro: {
+      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      titleLines: ["Bắt đầu từ mục tiêu của bạn."],
+      body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Luật kinh tế. Đội ngũ tư vấn sẽ hỗ trợ bạn đối chiếu điều kiện, học phí và hồ sơ dự tuyển.",
+      benefits: [
+        "Tư vấn chương trình và định hướng học",
+        "Hướng dẫn học phí và chính sách hỗ trợ",
+        "Đối chiếu điều kiện và hồ sơ dự tuyển",
+      ],
+      formTitle: "Trao đổi trực tiếp với Viện",
+    },
+    contactActions: [
+      {
+        text: "Gọi tư vấn ↗",
+        href: "tel:0988486869",
+      },
+      {
+        text: "Gửi email ↗",
+        href: "mailto:tuyensinh.sdh@vlu.edu.vn",
+      },
+      {
+        text: "Hướng dẫn đăng ký dự tuyển ↗",
+        href: "/admissions",
+      },
+    ],
+  },
+  faq: {
+    ...programmeSharedContent.faq,
+    faqs: [
+      {
+        question: "Chương trình đào tạo theo định hướng nào?",
+        answer:
+          "Chương trình Thạc sĩ Luật kinh tế theo định hướng ứng dụng, khối lượng 60 tín chỉ. Thông tin tuyển sinh 2027 xác định thời gian đào tạo chuẩn 18 tháng.",
+      },
+      {
+        question: "Tôi cần đáp ứng điều kiện gì để dự tuyển?",
+        answer:
+          "Ứng viên cần tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp, đáp ứng yêu cầu ngoại ngữ đầu vào và hoàn thành bổ sung kiến thức nếu thuộc diện phải học.",
+      },
+      {
+        question: "Ngành nào không cần bổ sung kiến thức?",
+        answer:
+          "Các ngành thuộc nhóm Luật trong danh mục tuyển sinh, gồm Luật, Luật hiến pháp và luật hành chính, Luật dân sự và tố tụng dân sự, Luật hình sự và tố tụng hình sự, Luật kinh tế, Luật quốc tế, Luật thương mại quốc tế và các ngành Luật được liệt kê trong phụ lục.",
+      },
+      {
+        question: "Bổ sung kiến thức gồm những môn nào?",
+        answer:
+          "Danh mục tối đa 19 tín chỉ gồm Luật Doanh nghiệp, Luật Thương mại, Luật Dân sự và Luật tố tụng dân sự, Luật Thương mại quốc tế, Luật Hiến pháp và Luật Hành chính, Luật Hình sự và Luật Tố tụng hình sự. Số môn thực tế được xác định qua đối chiếu bảng điểm.",
+      },
+      {
+        question: "Chương trình có thực tập không?",
+        answer:
+          "Có. Thực tập 8 tín chỉ, thời gian tối thiểu 09 tuần tại cơ quan, tổ chức hoặc doanh nghiệp. Học viên ghi nhật ký và thực hiện báo cáo thực tập theo yêu cầu.",
+      },
+      {
+        question: "Đề án tốt nghiệp có bao nhiêu tín chỉ?",
+        answer:
+          "Đề án tốt nghiệp có 9 tín chỉ, được thực hiện trong ít nhất 03 tháng và bảo vệ công khai trước hội đồng theo quy định.",
+      },
+      {
+        question: "Học phí toàn khóa là bao nhiêu?",
+        answer:
+          "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt 29.750.000 đồng, 25.500.000 đồng và 29.750.000 đồng. Các khoản lệ phí và bổ sung kiến thức được thu riêng khi áp dụng.",
+      },
+    ],
+  },
+  fees: {
+    heading: "Chủ động chuẩn bị cho hành trình học.",
+    intro: [
+      "Học phí toàn khóa được chia thành ba đợt thanh toán để người học chủ động kế hoạch tài chính.",
+      "Học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ; nếu đồng thời đủ nhiều chính sách, áp dụng một chính sách có mức cao nhất theo quy định.",
+    ],
+    intake: "TUYỂN SINH THẠC SĨ 2027",
+    language: "Tiếng Việt",
+    total: "85.000.000 đồng",
+    installments: [
+      {
+        label: "Đợt 1 · 35%",
+        amount: "29.750.000 đồng",
+      },
+      {
+        label: "Đợt 2 · 30%",
+        amount: "25.500.000 đồng",
+      },
+      {
+        label: "Đợt 3 · 35%",
+        amount: "29.750.000 đồng",
+      },
+    ],
+    additionalFees: [
+      {
+        title: "Lệ phí xét tuyển",
+        amount: "500.000 đồng",
+        note: "",
+      },
+      {
+        title: "Lệ phí nhập học",
+        amount: "1.000.000 đồng",
+        note: "",
+      },
+      {
+        title: "Học bổ sung kiến thức",
+        amount: "1.200.000 đồng/môn",
+        note: "",
+      },
+      {
+        title: "Ôn tập tiếng Anh đầu vào",
+        amount: "1.000.000 đồng",
+        note: "",
+      },
+      {
+        title: "Thi tiếng Anh đầu vào",
+        amount: "1.000.000 đồng",
+        note: "",
+      },
+      {
+        title: "Gia hạn chương trình",
+        amount: "5% học phí toàn khóa/lần",
+        note: "",
+      },
+    ],
+    notes: ["", "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng."],
+  },
+};
+
+export const luatKinhTeProgramme: Programme = {
+  id: "luat-kinh-te",
+  code: "380107",
+  title: "Luật Kinh tế",
+  englishTitle: "Master of Laws in Economic Law",
+  degree: "Thạc sĩ",
+  field: "Luật, Nhân văn & Truyền thông",
+  orientation: "Ứng dụng",
+  credits: 60,
+  duration: "18 tháng",
+  studyMode: "Chính quy tập trung, tiếng Việt",
+  intake: "Tuyển sinh thạc sĩ 2027",
+  summary:
+    "Phát triển năng lực phân tích, tư vấn và giải quyết các vấn đề pháp lý trong hoạt động doanh nghiệp, đầu tư, thương mại và cạnh tranh trong bối cảnh hội nhập.",
+  schedule:
+    "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
+  tuition: "85.000.000 VNĐ",
+};
+
+export function getLuatKinhTeCurricula(): CurriculumTrack[] {
+  return [
+    {
+      number: "05",
+      title: "Định hướng ứng dụng",
+      orientation: "Ứng dụng",
+      subtitle: "18 tháng · 60 tín chỉ",
+      graduationProject: "Đề án tốt nghiệp · 9 tín chỉ",
+      intro:
+        "Chương trình gồm 10 tín chỉ kiến thức chung, 33 tín chỉ kiến thức cơ sở và chuyên ngành, cùng 17 tín chỉ thực tập và đề án tốt nghiệp.",
+      generalFacts: [
+        {
+          label: "Thời gian đào tạo",
+          value: "18 tháng",
+        },
+        {
+          label: "Định hướng",
+          value: "Ứng dụng",
+        },
+        {
+          label: "Hình thức",
+          value: "Chính quy tập trung",
+        },
+        {
+          label: "Ngôn ngữ",
+          value: "Tiếng Việt",
+        },
+        {
+          label: "Thực tập",
+          value: "8 tín chỉ",
+        },
+        {
+          label: "Đề án tốt nghiệp",
+          value: "9 tín chỉ",
+        },
+      ],
+      notes: ["", "Học sâu luật kinh tế. Vận dụng vào thực tiễn."],
+      groups: [
+        {
+          title: "I. Kiến thức chung",
+          totalCreditsLabel: "10 tín chỉ",
+          courses: [
+            {
+              name: "Triết học",
+              englishName: "Philosophy",
+              credits: 4,
+            },
+            {
+              name: "Phương pháp nghiên cứu khoa học",
+              englishName: "Research Methodology",
+              credits: 3,
+            },
+            {
+              name: "Tư duy pháp lý",
+              englishName: "Legal Reasoning",
+              credits: 3,
+            },
+          ],
+          description: [],
+        },
+        {
+          title: "II. Kiến thức cơ sở và chuyên ngành",
+          totalCreditsLabel: "33 tín chỉ",
+          courses: [],
+          subgroups: [
+            {
+              title: "Học phần bắt buộc · 15 tín chỉ",
+              totalCreditsLabel: "15 tín chỉ",
+              description: [],
+              courses: [
+                {
+                  name: "Áp dụng pháp luật doanh nghiệp trong hoạt động của doanh nghiệp",
+                  englishName: "The application of law on enterprises in business activities",
+                  credits: 3,
+                },
+                {
+                  name: "Pháp luật về đầu tư trong thời kỳ hội nhập",
+                  englishName: "Investment Law in the integration facilitation",
+                  credits: 3,
+                },
+                {
+                  name: "Pháp luật về thương mại trong điều kiện hội nhập",
+                  englishName: "Commercial Law in the integration facilitation",
+                  credits: 3,
+                },
+                {
+                  name: "Pháp luật về xác lập quyền sử dụng đất của chủ thể kinh doanh",
+                  englishName: "Law on the assertion of land use rights of business entities",
+                  credits: 3,
+                },
+                {
+                  name: "Pháp luật về cạnh tranh trong nền kinh tế thị trường",
+                  englishName: "Competition law in the market economy",
+                  credits: 3,
+                },
+              ],
+            },
+            {
+              title: "Học phần tự chọn · tích lũy 18 tín chỉ",
+              totalCreditsLabel: "18 tín chỉ",
+              description: [
+                "Danh mục tự chọn được mở theo kế hoạch đào tạo; người học tích lũy đủ 18 tín chỉ theo tư vấn học vụ.",
+              ],
+              courses: [
+                {
+                  name: "Chuyên đề thực hành 1: Kỹ năng nhận diện và giải quyết tranh chấp hợp đồng mua bán hàng hóa quốc tế",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Chuyên đề thực hành 2: Trọng tài giả định",
+                  englishName: "Moot Court",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Chuyên đề thực hành 3: Kỹ năng soạn thảo, đàm phán, ký kết hợp đồng thương mại",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Áp dụng pháp luật lao động trong doanh nghiệp",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Tội phạm kinh tế",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Một số vấn đề pháp lý về thị trường bất động sản",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Xử phạt vi phạm hành chính trong lĩnh vực kinh tế",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Pháp luật về nghĩa vụ thuế của chủ thể kinh doanh",
+                  englishName: "",
+                  credits: 3,
+                  elective: true,
+                },
+                {
+                  name: "Kiểm soát rủi ro pháp lý trong doanh nghiệp",
+                  englishName: "Legal risk control in enterprises",
+                  credits: 3,
+                  elective: true,
+                },
+              ],
+            },
+          ],
+          description: [
+            "Danh mục tự chọn được mở theo kế hoạch đào tạo; người học tích lũy đủ 18 tín chỉ theo tư vấn học vụ.",
+          ],
+        },
+        {
+          title: "III. Thực tập và đề án tốt nghiệp",
+          totalCreditsLabel: "17 tín chỉ",
+          courses: [
+            {
+              name: "Thực tập",
+              englishName: "Internship",
+              credits: 8,
+            },
+            {
+              name: "Đề án tốt nghiệp",
+              englishName: "Graduation Project",
+              credits: 9,
+            },
+          ],
+          description: [
+            "Thực tập tối thiểu 09 tuần tại cơ quan, tổ chức hoặc doanh nghiệp. Đề án tốt nghiệp được thực hiện trong ít nhất 03 tháng và bảo vệ trước hội đồng theo quy định.",
+          ],
+        },
+      ],
+      semesters: {
+        heading: "Kế hoạch học tập tham khảo",
+        intro:
+          "Các học phần chuyên môn được bố trí chủ yếu trong ba học kỳ đầu. Giai đoạn sau dành cho thực tập và đề án tốt nghiệp; kế hoạch cụ thể được công bố theo từng khóa.",
+        items: [
+          {
+            title: "Học kỳ 1",
+            subtitle: "Nền tảng & pháp luật doanh nghiệp – thương mại",
+            groups: [
+              {
+                title: "Học kỳ 1",
+                description: [
+                  "Triết học; Phương pháp nghiên cứu khoa học; Tư duy pháp lý; Áp dụng pháp luật doanh nghiệp; Pháp luật thương mại trong điều kiện hội nhập.",
+                ],
+                courses: [],
+              },
+            ],
+          },
+          {
+            title: "Học kỳ 2–3",
+            subtitle: "Kiến thức chuyên ngành & tự chọn",
+            groups: [
+              {
+                title: "Học kỳ 2–3",
+                description: [
+                  "Pháp luật đầu tư; quyền sử dụng đất; cạnh tranh và các học phần tự chọn theo hướng nghề nghiệp.",
+                ],
+                courses: [],
+              },
+            ],
+          },
+          {
+            title: "Giai đoạn tốt nghiệp",
+            subtitle: "Thực tập & đề án",
+            groups: [
+              {
+                title: "Giai đoạn tốt nghiệp",
+                description: ["Thực tập 8 tín chỉ và Đề án tốt nghiệp 9 tín chỉ."],
+                courses: [],
+              },
+            ],
+          },
+        ],
+      },
+      completion: {
+        heading: "Thực tập và đề án tốt nghiệp",
+        items: [
+          "Thực tập tối thiểu 09 tuần tại cơ quan, tổ chức hoặc doanh nghiệp. Đề án tốt nghiệp được thực hiện trong ít nhất 03 tháng và bảo vệ trước hội đồng theo quy định.",
+        ],
+      },
+    },
+  ];
+}

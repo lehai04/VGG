@@ -95,7 +95,7 @@ export function ImmersiveVideo() {
               <p>VAN LANG GLOBAL GRADUATE · THE FILM</p>
               <h3>
                 Học để hiểu.
-                <br />
+                {" "}
                 <em>Học để dẫn đầu.</em>
               </h3>
               <span>Khám phá tinh thần học thuật và cộng đồng sáng tạo tại Văn Lang.</span>

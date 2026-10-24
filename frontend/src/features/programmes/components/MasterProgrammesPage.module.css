@@ -34,8 +34,8 @@
 }
 .heroCopy > p {
   margin: 0 0 24px;
-  font-size: 13px;
-  font-weight: 800;
+  font-size: var(--text-12);
+  font-weight: 700;
   letter-spacing: 0.18em;
 }
 .heroCopy h1 {
@@ -47,7 +47,7 @@
 .heroCopy > span {
   display: block;
   margin-top: 32px;
-  font-size: 17px;
+  font-size: var(--text-16);
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -73,7 +73,7 @@
   padding: 20px var(--master-gutter);
   border-bottom: 1px solid #e5e5e8;
   color: #6a6c78;
-  font-size: 13px;
+  font-size: var(--text-12);
 }
 .breadcrumb a {
   color: inherit;
@@ -88,8 +88,8 @@
 .eyebrow {
   margin: 0;
   color: var(--red);
-  font-size: 11px;
-  font-weight: 850;
+  font-size: var(--text-10);
+  font-weight: 700;
   letter-spacing: 0.17em;
 }
 .overviewCopy {
@@ -112,7 +112,7 @@
   display: grid;
   gap: 16px;
   color: #535664;
-  font-size: 17px;
+  font-size: var(--text-16);
   line-height: 1.68;
   text-align: left !important;
 }
@@ -148,8 +148,8 @@
   left: 28px;
   bottom: 24px;
   color: #fff;
-  font-size: 10px;
-  font-weight: 850;
+  font-size: var(--text-10);
+  font-weight: 700;
   letter-spacing: 0.16em;
 }
 .overviewMedia:hover {
@@ -195,9 +195,9 @@
   top: -24px;
   left: 0;
   color: var(--red);
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   font-size: 92px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1;
 }
 .quoteCopy blockquote {
@@ -208,7 +208,7 @@
   font-weight: 500;
   line-height: 1.55;
   letter-spacing: -0.014em;
-  text-align: justify;
+  text-align: start;
   text-justify: inter-word;
 }
 .quoteCopy p {
@@ -219,11 +219,11 @@
   margin: 38px 0 0;
 }
 .quoteCopy strong {
-  font-size: 18px;
+  font-size: var(--text-18);
 }
 .quoteCopy small {
   color: #777986;
-  font-size: 14px;
+  font-size: var(--text-14);
 }
 .quotePortrait {
   position: relative;
@@ -283,7 +283,7 @@
   max-width: 65ch;
   margin: 0;
   color: #25283c;
-  font-size: 18px;
+  font-size: var(--text-18);
   line-height: 1.65;
 }
 .benefits {
@@ -315,7 +315,7 @@
   grid-column: 2;
   margin: 0;
   color: #3f4252;
-  font-size: 16px;
+  font-size: var(--text-16);
   line-height: 1.7;
 }
 .directory {
@@ -341,8 +341,8 @@
 }
 .fieldGroups header span {
   color: var(--red);
-  font-size: 11px;
-  font-weight: 850;
+  font-size: var(--text-10);
+  font-weight: 700;
 }
 .fieldGroups h3 {
   margin: 0;
@@ -361,7 +361,7 @@
   padding: 15px 0;
   border-bottom: 1px solid #ececf0;
   color: inherit;
-  font-size: 15px;
+  font-size: var(--text-14);
   font-weight: 700;
 }
 .fieldGroups a:hover {
@@ -380,7 +380,7 @@
   padding-bottom: 8px;
   color: var(--red);
   border-bottom: 2px solid var(--red);
-  font-weight: 850;
+  font-weight: 700;
 }
 .allProgrammes svg {
   width: 18px;
@@ -594,7 +594,7 @@
     padding-left: 52px;
   }
   .quoteCopy blockquote {
-    font-size: 20px;
+    font-size: var(--text-20);
   }
   .why > header {
     grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
@@ -635,7 +635,7 @@
   }
   .heroCopy > span {
     max-width: 25ch;
-    font-size: 14px;
+    font-size: var(--text-14);
     line-height: 1.5;
   }
   .breadcrumb {
@@ -668,7 +668,7 @@
     font-size: 64px;
   }
   .quoteCopy blockquote {
-    font-size: 18px;
+    font-size: var(--text-18);
     line-height: 1.6;
   }
   .quotePortrait {

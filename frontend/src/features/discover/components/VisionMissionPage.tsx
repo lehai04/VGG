@@ -54,7 +54,7 @@ export function VisionMissionPage() {
       <div className={styles.philosophyBottom}>
         <p data-reveal>Viện Sau Đại học hướng đến mô hình giáo dục lấy người học làm trung tâm, trong đó quá trình giảng dạy không chỉ truyền đạt kiến thức mà còn khuyến khích tư duy độc lập, khám phá và ứng dụng. Nội dung đào tạo được kết nối với các vấn đề thực tiễn, hoạt động nghiên cứu và kinh nghiệm nghề nghiệp, giúp người học chuyển hóa tri thức thành năng lực hành động và những giá trị có ý nghĩa cho tổ chức, cộng đồng và xã hội.</p>
         {/* Ảnh luôn hiển thị; không gắn reveal để tránh bị giữ opacity khi section vào viewport nhanh. */}
-        <figure><Image src="/images/pages/discover/Vision/4.jpg" alt="Trải nghiệm học tập của cộng đồng người học Văn Lang" fill loading="eager" sizes="(max-width: 767px) 100vw, 38vw" /></figure>
+        <figure><Image src="/images/pages/discover/content/2.jpg" alt="Giảng viên và người học Văn Lang tìm hiểu kỹ thuật tại xưởng thực hành" fill loading="eager" sizes="(max-width: 767px) 100vw, 38vw" /></figure>
       </div>
     </section>
 

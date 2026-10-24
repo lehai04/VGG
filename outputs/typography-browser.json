@@ -1,0 +1,194 @@
+[
+  {
+    "route": "/vi",
+    "width": 320,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "32px",
+    "h2": "28px",
+    "overflow": false
+  },
+  {
+    "route": "/vi",
+    "width": 768,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "56px",
+    "h2": "40px",
+    "overflow": false
+  },
+  {
+    "route": "/vi",
+    "width": 1440,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "64px",
+    "h2": "56px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/admissions",
+    "width": 320,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "32px",
+    "h2": "28px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/admissions",
+    "width": 768,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "56px",
+    "h2": "40px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/admissions",
+    "width": 1440,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "64px",
+    "h2": "56px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/programmes/marketing",
+    "width": 320,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "32px",
+    "h2": "28px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/programmes/marketing",
+    "width": 768,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "56px",
+    "h2": "40px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/programmes/marketing",
+    "width": 1440,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "64px",
+    "h2": "56px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/programmes",
+    "width": 320,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "32px",
+    "h2": "28px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/programmes",
+    "width": 768,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "56px",
+    "h2": "40px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/programmes",
+    "width": 1440,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "64px",
+    "h2": "56px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/discover",
+    "width": 320,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "32px",
+    "h2": "28px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/discover",
+    "width": 768,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "56px",
+    "h2": "40px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/discover",
+    "width": 1440,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "64px",
+    "h2": "56px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/research",
+    "width": 320,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "32px",
+    "h2": "28px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/research",
+    "width": 768,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "56px",
+    "h2": "40px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/research",
+    "width": 1440,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "64px",
+    "h2": "56px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/resources",
+    "width": 320,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "32px",
+    "h2": "28px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/resources",
+    "width": 768,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "56px",
+    "h2": "40px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/resources",
+    "width": 1440,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "64px",
+    "h2": "56px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/news",
+    "width": 320,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "32px",
+    "h2": "28px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/news",
+    "width": 768,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "56px",
+    "h2": "40px",
+    "overflow": false
+  },
+  {
+    "route": "/vi/news",
+    "width": 1440,
+    "font": "\"Maison Neue\", Arial, sans-serif",
+    "h1": "64px",
+    "h2": "56px",
+    "overflow": false
+  }
+]

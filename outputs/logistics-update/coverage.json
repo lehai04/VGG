@@ -1,0 +1,1333 @@
+{
+  "checked": 221,
+  "present": 221,
+  "missing": [],
+  "units": [
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Trang chủ",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h1",
+      "text": "Logistics và quản lý chuỗi cung ứng",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Phát triển góc nhìn hệ thống và năng lực phân tích để tổ chức vận hành, thiết kế và cải tiến chuỗi cung ứng; kết nối kiến thức chuyên sâu với quyết định quản trị và nghiên cứu.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Tổng quan chương trình",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h2",
+      "text": "Hiểu chuỗi cung ứng. Giải quyết bài toán vận hành.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Logistics và Quản lý chuỗi cung ứng tại Văn Lang phát triển kiến thức chuyên sâu về quản lý vận hành, phân tích và cải tiến hoạt động logistics. Người học tiếp cận chuỗi cung ứng như một hệ thống, từ đó nâng cao khả năng nhận diện vấn đề, thiết kế giải pháp và hỗ trợ quyết định trong thực tiễn.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Nền tảng chung kết hợp phương pháp nghiên cứu khoa học với kỹ thuật hệ thống, kinh tế kỹ thuật, vận trù học, thống kê trong công nghiệp và quản lý chất lượng. Danh mục chuyên ngành mở rộng sang thu mua, vận tải, tồn kho, tinh gọn, hệ thống thông tin và các công cụ quản trị; cơ cấu bắt buộc, tự chọn khác nhau theo từng định hướng.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Cả hai định hướng đều có khối lượng 60 tín chỉ. Hướng ứng dụng kết nối học tập với thực tập tốt nghiệp 6 tín chỉ và đề án tốt nghiệp 9 tín chỉ. Hướng nghiên cứu dành 12 tín chỉ cho hai chuyên đề Quản lý chuỗi cung ứng và 15 tín chỉ cho luận văn, hỗ trợ người học đào sâu một vấn đề chuyên môn.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Văn bằng tốt nghiệp: Thạc sĩ Logistics và quản lý chuỗi cung ứng Master of Logistics and Supply Chain Management",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "figcaption",
+      "text": "Trao đổi chuyên môn về logistics tại Cảng SP–ITC Ảnh: Trí Nguyễn · Trường Đại học Văn Lang ↗",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h3",
+      "text": "Hai định hướng. Hai cách phát triển chuyên môn.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Ứng dụng Thực tập · Đề án tốt nghiệp 18 tháng",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Nghiên cứu Hai chuyên đề · Luận văn 24 tháng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Điểm nổi bật của chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Nền tảng hệ thống và định lượng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kết nối kỹ thuật hệ thống, vận trù học, thống kê và kinh tế kỹ thuật để phát triển cách tiếp cận vấn đề trong quản lý, vận hành chuỗi cung ứng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Chuyên môn gắn với chuỗi cung ứng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Danh mục chuyên ngành bao quát thu mua, vận tải logistics, hoạch định tồn kho và vật tư, cùng các phương pháp tinh gọn trong hệ thống chuỗi cung ứng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Mở rộng công cụ quản trị",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Các lựa chọn học phần gồm hệ thống thông tin, hoạch định nguồn lực ERP, thiết kế mặt bằng công nghiệp, đánh giá kinh tế và quản lý dự án, kế toán và nguồn nhân lực.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Hai định hướng theo mục tiêu phát triển",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Hướng ứng dụng kết thúc bằng thực tập và đề án tốt nghiệp; hướng nghiên cứu tập trung vào hai chuyên đề nghiên cứu và luận văn tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Kết nối tư duy hệ thống với quyết định vận hành",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Từ kỹ thuật hệ thống, vận trù học và thống kê đến quản lý thu mua, vận tải, tồn kho và tinh gọn, chương trình giúp người học nhìn nhận chuỗi cung ứng trong mối liên hệ giữa các hoạt động. Hai định hướng phát triển khả năng vận dụng kiến thức vào thực tiễn hoặc đi sâu nghiên cứu một vấn đề chuyên môn.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "summary",
+      "text": "Mục tiêu phát triển năng lực",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Chương trình hướng đến năng lực phân tích, thiết kế và cải tiến hệ thống, quản lý hoạt động nghề nghiệp, nghiên cứu và hợp tác chuyên môn.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phân tích và cải tiến vận hành",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phân tích, đánh giá và cải tiến các hoạt động logistics, quản lý và vận hành chuỗi cung ứng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Thiết kế hệ thống chuỗi cung ứng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phát triển khả năng thiết kế, tái thiết kế hệ thống chuỗi cung ứng phù hợp với vấn đề và điều kiện thực tế.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Hỗ trợ quyết định quản trị",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Vận dụng kiến thức chuyên ngành và các công cụ phân tích để hỗ trợ ra quyết định trong vận hành logistics và chuỗi cung ứng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Lãnh đạo và tổ chức thực hiện",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Hướng ứng dụng chú trọng năng lực lãnh đạo, quản lý, điều hành và tổ chức thực hiện các công việc chuyên môn phức tạp.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Nghiên cứu độc lập và phát triển ý tưởng",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Hướng nghiên cứu chú trọng phương pháp khoa học, khả năng nghiên cứu độc lập, hình thành ý tưởng và thử nghiệm kiến thức mới.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Tiếp tục phát triển chuyên môn",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Xây dựng nền tảng để tiếp tục học tập nâng cao trình độ hoặc tham gia đào tạo tiến sĩ ở ngành gần, liên quan khi đáp ứng điều kiện của chương trình.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình phù hợp với ai?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h2",
+      "text": "Chọn hướng học phù hợp với mục tiêu của bạn.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành học phù hợp và đáp ứng các điều kiện dự tuyển của chương trình.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người làm vận hành logistics và chuỗi cung ứng",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Muốn nâng cao kiến thức chuyên môn, khả năng quản lý và xử lý các vấn đề trong hoạt động logistics, thu mua, vận tải hoặc tồn kho.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người tham gia phân tích và cải tiến hệ thống",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Quan tâm đến thiết kế, tái thiết kế chuỗi cung ứng và vận dụng công cụ phân tích để hỗ trợ ra quyết định, nâng cao hiệu quả vận hành.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người định hướng nghiên cứu chuyên sâu",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Hướng đến nghiên cứu độc lập, phát triển ý tưởng khoa học hoặc tham gia nghiên cứu, giảng dạy và tư vấn trong lĩnh vực logistics và chuỗi cung ứng.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Ngành tốt nghiệp có phù hợp?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Người tốt nghiệp Logistics và quản lý chuỗi cung ứng, Kỹ thuật hệ thống công nghiệp hoặc Quản lý công nghiệp không cần học bổ sung kiến thức. Với các ngành khác, Viện và Khoa đối chiếu hồ sơ để xác định mức độ phù hợp và các học phần cần bổ sung, tối đa 6 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Phương thức tuyển sinh",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Xét tuyển cho cả định hướng ứng dụng và nghiên cứu. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Logistics và quản lý chuỗi cung ứng.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Ngoại ngữ theo ngôn ngữ đào tạo",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình bằng tiếng Việt: năng lực ngoại ngữ tương đương Bậc 3/6 trở lên theo các hình thức được công nhận.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình bằng tiếng Anh: năng lực ngoại ngữ tương đương Bậc 4/6 trở lên hoặc văn bằng thuộc diện được công nhận theo quy định của Trường.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Hồ sơ sử dụng văn bằng đại học do cơ sở giáo dục nước ngoài cấp cần kèm giấy công nhận hoặc xác nhận văn bằng theo quy định.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Điều kiện riêng của định hướng nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên cần tốt nghiệp đại học từ loại Khá trở lên và có công bố khoa học liên quan đến lĩnh vực học tập, nghiên cứu.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "Minh chứng ngoại ngữ theo ngôn ngữ đào tạo",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Chương trình bằng tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Bằng đại học trở lên ngành ngôn ngữ nước ngoài hoặc chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Văn bằng, chứng chỉ tương đương Bậc 3 trở lên thuộc danh mục được công nhận và còn hiệu lực.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kết quả đánh giá tương đương Bậc 3 trở lên do Trường tổ chức; hoặc hoàn thành chương trình đào tạo, bồi dưỡng ngoại ngữ do Trường tổ chức hoặc công nhận.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Bằng đại học trở lên do Văn Lang cấp trong thời hạn không quá 2 năm, với chương trình đã đáp ứng chuẩn đầu ra ngoại ngữ từ Bậc 3 trở lên.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Chương trình bằng tiếng Anh",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Năng lực ngoại ngữ tương đương Bậc 4 trở lên hoặc có văn bằng thuộc diện được công nhận theo quy định của Nhà trường.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên là công dân nước ngoài đăng ký chương trình bằng tiếng Việt cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 trở lên cần được đáp ứng trước thời điểm xét tốt nghiệp, theo các hình thức được Trường công nhận.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Bổ sung kiến thức đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Viện và Khoa đối chiếu ngành tốt nghiệp, chương trình đào tạo và bảng điểm để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "01. Các ngành không cần bổ sung kiến thức",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Ngành tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Logistics và quản lý chuỗi cung ứng.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật Hệ thống Công nghiệp.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Quản lý Công nghiệp.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên vẫn phải đáp ứng đầy đủ các điều kiện dự tuyển của định hướng và ngôn ngữ đào tạo đăng ký.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "02. Các ngành khác · Tối đa 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Với các ngành ngoài nhóm miễn, hồ sơ được đối chiếu để xác định mức độ phù hợp và các học phần cần bổ sung, tối đa 6 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Các học phần bổ sung kiến thức",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Quản trị sản xuất · 2 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Quản trị Logistics và chuỗi cung ứng · 2 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Các mô hình toán ứng dụng · 2 tín chỉ .",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Nội dung cụ thể được xác định theo chương trình đại học, bảng điểm và kiến thức đã tích lũy của từng ứng viên.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Hồ sơ của bạn cần bổ sung những gì?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Liên hệ Viện để được đối chiếu ngành học, bảng điểm và mục tiêu đào tạo trước khi đăng ký. Khoa chuyên môn sẽ xem xét mức độ phù hợp của hồ sơ và hướng dẫn các học phần cần hoàn thành.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Cơ hội nghề nghiệp và phát triển",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h2",
+      "text": "Phát triển chuyên môn. Mở rộng vai trò trong chuỗi cung ứng.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Nền tảng quản lý vận hành, phân tích hệ thống và phương pháp nghiên cứu hỗ trợ người học phát triển trong doanh nghiệp, đơn vị tư vấn, tổ chức nghiên cứu và cơ sở giáo dục.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Vận hành và cải tiến",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Quản lý hoạt động logistics",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Vận dụng kiến thức chuyên môn để tham gia quản lý, điều hành và tổ chức thực hiện các công việc trong hệ thống logistics.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Cải tiến chuỗi cung ứng",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phân tích hoạt động, nhận diện vấn đề và đề xuất giải pháp cải tiến phù hợp với điều kiện thực tế của tổ chức.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Phân tích và tư vấn",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Phân tích, thiết kế hệ thống",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tham gia phân tích, đánh giá, thiết kế và tái thiết kế hệ thống chuỗi cung ứng, hỗ trợ các quyết định vận hành.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Tư vấn chuyên môn",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Vận dụng kiến thức, kết quả nghiên cứu và công cụ phân tích trong hoạt động tư vấn về logistics và quản lý chuỗi cung ứng.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Nghiên cứu và giảng dạy",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Nghiên cứu logistics và chuỗi cung ứng",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Nghiên cứu độc lập, phát triển ý tưởng, khám phá và thử nghiệm kiến thức mới về quản lý, vận hành hệ thống logistics.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Giảng dạy và phát triển học thuật",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phát triển theo hướng giảng dạy hoặc tiếp tục học tập ở trình độ cao hơn khi đáp ứng các yêu cầu của vị trí, chương trình.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Hướng phát triển và vị trí đảm nhiệm phụ thuộc vào nền tảng chuyên môn, kinh nghiệm, năng lực thực tế và yêu cầu của từng tổ chức.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Khung chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Cả hai định hướng đều có 60 tín chỉ, với cơ cấu học phần, lựa chọn tự chọn và hình thức hoàn thành riêng. Chọn định hướng để xem chi tiết chương trình.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h3",
+      "text": "Thông tin chung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Thời gian đào tạo",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "18 tháng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Định hướng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Ứng dụng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Hình thức",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Chính quy tập trung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Ngôn ngữ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Tiếng Việt hoặc tiếng Anh",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Học phần tự chọn",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "12 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Đề án · 9 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "6 tín chỉ chung + 15 tín chỉ cơ sở ngành + 24 tín chỉ chuyên ngành + 6 tín chỉ thực tập + 9 tín chỉ đề án = 60 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Dành cho người muốn nâng cao năng lực quản lý, điều hành, thiết kế và cải tiến hoạt động logistics, chuỗi cung ứng trong thực tiễn nghề nghiệp.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "I. Kiến thức chung 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp nghiên cứu khoa học",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "II. Kiến thức cơ sở ngành 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kỹ thuật hệ thống",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kinh tế kỹ thuật",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Vận trù học",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thống kê trong công nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kiểm soát và quản lý chất lượng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "III. Kiến thức chuyên ngành 24 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 12 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản lý thu mua",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản lý vận tải Logistics",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Hoạch định tồn kho và vật tư",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Tinh gọn trong chuỗi cung ứng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần tự chọn · 12 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chọn 4 trong 6 học phần · Tích lũy 12 tín chỉ. Mỗi học phần 3 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Hệ thống thông tin quản lý",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Hoạch định nguồn lực ERP",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kỹ thuật thiết kế mặt bằng công nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đánh giá kinh tế và quản lý dự án",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kế toán quản trị",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị nguồn nhân lực",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "IV. Thực tập tốt nghiệp và đề án tốt nghiệp 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thực tập tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đề án tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần được triển khai theo kế hoạch đào tạo của Khoa. Lịch mở lớp, lựa chọn học phần tự chọn và thời khóa biểu được thông báo theo từng đợt.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Hoàn thành chương trình",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Tích lũy đủ 60 tín chỉ theo cơ cấu chương trình, gồm 12 tín chỉ tự chọn: chọn 4 trong 6 học phần thuộc danh mục tự chọn chuyên ngành.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Hoàn thành thực tập tốt nghiệp 6 tín chỉ và đề án tốt nghiệp 9 tín chỉ theo yêu cầu của chương trình.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Đạt chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 trước thời điểm xét tốt nghiệp; đáp ứng chuẩn đầu ra và các điều kiện công nhận tốt nghiệp theo quy định của chương trình và Trường.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "24 tháng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Luận văn · 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "6 tín chỉ chung + 15 tín chỉ cơ sở ngành + 12 tín chỉ tự chọn chuyên ngành + 12 tín chỉ chuyên đề nghiên cứu + 15 tín chỉ luận văn = 60 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Dành cho người muốn đào sâu kiến thức, công cụ phân tích và phương pháp nghiên cứu; phát triển khả năng nghiên cứu độc lập, hình thành và thử nghiệm ý tưởng khoa học.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "III. Kiến thức chuyên ngành 12 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chọn 4 trong 10 học phần · Tích lũy 12 tín chỉ. Mỗi học phần 3 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "IV. Chuyên đề nghiên cứu và luận văn tốt nghiệp 27 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Học phần bắt buộc · 27 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề Quản lý chuỗi cung ứng 1",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề Quản lý chuỗi cung ứng 2",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Luận văn tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Tích lũy đủ 60 tín chỉ theo cơ cấu chương trình, gồm 12 tín chỉ tự chọn: chọn 4 trong 10 học phần thuộc danh mục tự chọn chuyên ngành.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Hoàn thành hai chuyên đề Quản lý chuỗi cung ứng, mỗi chuyên đề 6 tín chỉ, và luận văn tốt nghiệp 15 tín chỉ theo yêu cầu của chương trình.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "h2",
+      "text": "Chủ động chuẩn bị cho hành trình học.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Chọn ngôn ngữ đào tạo để xem học phí toàn khóa và số tiền của từng đợt. Học phí được chia thành ba đợt theo tỷ lệ 35% – 30% – 35%.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Tiếng Việt: 85.000.000 đồng/toàn khóa.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Tiếng Anh: 175.000.000 đồng/toàn khóa.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Các chính sách học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ. Người học chỉ được áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "summary",
+      "text": "Các khoản thu riêng khi áp dụng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển 500.000 đồng Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học 1.000.000 đồng Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức 1.200.000 đồng/môn Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn tập tiếng Anh đầu vào 1.000.000 đồng Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào 1.000.000 đồng Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Gia hạn chương trình 5% học phí toàn khóa/lần Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Hoạt động học tập thực tế, tham quan chuyên môn hoặc thực địa có thể phát sinh chi phí ngoài học phí toàn khóa; Khoa thông báo nội dung và chi phí trước khi triển khai. Điều kiện thu, hoàn trả và các khoản phát sinh thực hiện theo thông báo được ban hành.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "TUYỂN SINH THẠC SĨ 2027",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa · Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "29.750.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "25.500.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng. Ngày đến hạn thanh toán theo thông báo thu của Trường.",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h2",
+      "text": "Sẵn sàng cho bước học tiếp theo?",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Câu hỏi thường gặp",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Hai định hướng ứng dụng và nghiên cứu khác nhau thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Cả hai định hướng đều có 60 tín chỉ. Hướng ứng dụng phát triển năng lực quản lý, điều hành và cải tiến hoạt động logistics, với thực tập tốt nghiệp 6 tín chỉ và đề án tốt nghiệp 9 tín chỉ. Hướng nghiên cứu phát triển năng lực phân tích và nghiên cứu độc lập, với hai chuyên đề Quản lý chuỗi cung ứng, mỗi chuyên đề 6 tín chỉ, cùng luận văn tốt nghiệp 15 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Thời gian học và lịch học được bố trí như thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Thời gian đào tạo chuẩn là 18 tháng đối với định hướng ứng dụng và 24 tháng đối với định hướng nghiên cứu. Lịch học được bố trí vào buổi tối các ngày trong tuần và/hoặc Thứ Bảy, Chủ nhật theo kế hoạch từng học kỳ. Thời khóa biểu chính thức do Trường công bố.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Định hướng nghiên cứu có điều kiện dự tuyển riêng không?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ngoài các điều kiện dự tuyển chung, ứng viên đăng ký định hướng nghiên cứu cần tốt nghiệp đại học từ loại Khá trở lên và có công bố khoa học liên quan đến lĩnh vực học tập, nghiên cứu. Cả hai định hướng đều tuyển sinh bằng phương thức xét tuyển.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phần tự chọn của hai định hướng được lựa chọn như thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Cả hai định hướng đều tích lũy 12 tín chỉ tự chọn chuyên ngành. Hướng ứng dụng chọn 4 trong 6 học phần; hướng nghiên cứu chọn 4 trong 10 học phần. Mỗi học phần có 3 tín chỉ. Việc đăng ký và mở lớp thực hiện theo kế hoạch đào tạo của Khoa.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Tốt nghiệp ngành khác có thể dự tuyển không?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Người tốt nghiệp các ngành Logistics và quản lý chuỗi cung ứng, Kỹ thuật hệ thống công nghiệp hoặc Quản lý công nghiệp không cần học bổ sung kiến thức. Các ngành khác được đối chiếu hồ sơ để xác định mức độ phù hợp và các học phần cần bổ sung, tối đa 6 tín chỉ. Ứng viên vẫn cần đáp ứng các điều kiện dự tuyển của định hướng và ngôn ngữ đào tạo đăng ký.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Yêu cầu ngoại ngữ của chương trình tiếng Việt và tiếng Anh có khác nhau?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Với chương trình bằng tiếng Việt, ứng viên đáp ứng ngoại ngữ đầu vào tương đương Bậc 3/6 trở lên theo các hình thức được công nhận. Với chương trình bằng tiếng Anh, yêu cầu đầu vào tương đương Bậc 4/6 trở lên hoặc văn bằng thuộc diện được công nhận theo quy định của Trường. Chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 trở lên cần đạt trước thời điểm xét tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phí toàn khóa được xác định theo định hướng hay ngôn ngữ?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Học phí được công bố theo ngôn ngữ đào tạo: 85.000.000 đồng cho chương trình bằng tiếng Việt và 175.000.000 đồng cho chương trình bằng tiếng Anh. Mỗi mức được chia thành ba đợt theo tỷ lệ 35% – 30% – 35%. Chọn ngôn ngữ tại mục Học phí để xem số tiền từng đợt. Mức này chưa trừ học bổng, hỗ trợ tài chính và chưa bao gồm các khoản thu riêng khi áp dụng.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h3",
+      "text": "Liên hệ tư vấn",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h2",
+      "text": "Bắt đầu từ mục tiêu của bạn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Logistics và quản lý chuỗi cung ứng. Đội ngũ tư vấn sẽ hỗ trợ bạn lựa chọn định hướng học tập và chuẩn bị hồ sơ phù hợp.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "01 Tư vấn chương trình và định hướng học",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "02 Hướng dẫn học phí và chính sách hỗ trợ",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "03 Đối chiếu điều kiện và hồ sơ dự tuyển",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h3",
+      "text": "Trao đổi trực tiếp với Viện",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Viện Sau đại học · Trường Đại học Văn Lang 69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    }
+  ]
+}

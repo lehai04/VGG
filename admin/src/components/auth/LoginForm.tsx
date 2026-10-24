@@ -117,7 +117,7 @@ function SsoMockBox({ provider }: { provider: string }) {
           >
             <div>
               <strong>{acc.label}</strong>
-              <div style={{ color: "#64748b", fontSize: "0.72rem" }}>{acc.email}</div>
+              <div style={{ color: "#64748b", fontSize: "var(--text-12)" }}>{acc.email}</div>
             </div>
             <span className="badge">{acc.role}</span>
           </a>
@@ -133,7 +133,7 @@ function SsoMockBox({ provider }: { provider: string }) {
           style={{
             flex: 1,
             padding: "6px 10px",
-            fontSize: "0.8rem",
+            fontSize: "var(--text-12)",
             border: "1px solid #cbd5e1",
             borderRadius: "6px",
           }}
@@ -142,7 +142,7 @@ function SsoMockBox({ provider }: { provider: string }) {
           href={customEmail ? `/api/admin/auth/sso/${provider}/callback?mock_email=${encodeURIComponent(customEmail)}` : "#"}
           className="primary-button"
           style={{
-            fontSize: "0.78rem",
+            fontSize: "var(--text-12)",
             padding: "6px 12px",
             pointerEvents: customEmail ? "auto" : "none",
             opacity: customEmail ? 1 : 0.5,
@@ -267,12 +267,12 @@ export function LoginForm() {
 
         <div className="field" style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-            <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1e293b" }}>
+            <span style={{ fontSize: "var(--text-14)", fontWeight: 600, color: "#1e293b" }}>
               Mật khẩu <span style={{ color: "#ef4444" }}>*</span>
             </span>
             <Link
               href="/admin/forgot-password"
-              style={{ color: "#b91c1c", fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}
+              style={{ color: "#b91c1c", fontSize: "var(--text-14)", fontWeight: 600, textDecoration: "none" }}
             >
               Quên mật khẩu?
             </Link>
@@ -298,7 +298,7 @@ export function LoginForm() {
                 borderRadius: "8px",
                 border: `1.5px solid ${passwordError ? "#ef4444" : (passwordValid && passwordInput.length > 0 ? "#10b981" : "#cbd5e1")}`,
                 boxShadow: passwordError ? "0 0 0 3px rgba(239, 68, 68, 0.15)" : (passwordValid && passwordInput.length > 0 ? "0 0 0 3px rgba(16, 185, 129, 0.15)" : "none"),
-                fontSize: "0.88rem",
+                fontSize: "var(--text-14)",
                 color: "#0f172a",
                 outline: "none",
                 transition: "border-color 0.2s ease, box-shadow 0.2s ease",
@@ -341,7 +341,7 @@ export function LoginForm() {
                 border: "none",
                 cursor: "pointer",
                 padding: "4px 8px",
-                fontSize: "0.78rem",
+                fontSize: "var(--text-12)",
                 color: "#64748b",
                 fontWeight: 600,
               }}
@@ -355,7 +355,7 @@ export function LoginForm() {
               role="alert"
               style={{
                 color: "#ef4444",
-                fontSize: "0.78rem",
+                fontSize: "var(--text-12)",
                 fontWeight: 500,
                 marginTop: "5px",
                 display: "flex",

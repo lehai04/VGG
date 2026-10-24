@@ -1,17 +1,70 @@
+import { withProgrammeImages } from "./programmes/images";
+import type { programmeSharedContent } from "./programmes/shared-content";
+import type { CurriculumGroup } from "./curricula";
+import {
+  congNgheThongTinProgramme,
+  congNgheThongTinPageContent,
+} from "./programmes/cong-nghe-thong-tin";
+import { marketingProgramme, marketingPageContent } from "./programmes/marketing";
+import {
+  khoaHocMoiTruongProgramme,
+  khoaHocMoiTruongPageContent,
+} from "./programmes/khoa-hoc-moi-truong";
+import {
+  kyThuatMoiTruongProgramme,
+  kyThuatMoiTruongPageContent,
+} from "./programmes/ky-thuat-moi-truong";
+import {
+  quanLyTaiNguyenMoiTruongProgramme,
+  quanLyTaiNguyenMoiTruongPageContent,
+} from "./programmes/quan-ly-tai-nguyen-moi-truong";
+import {
+  congNgheSinhHocProgramme,
+  congNgheSinhHocPageContent,
+} from "./programmes/cong-nghe-sinh-hoc";
+import { kyThuatXayDungProgramme, kyThuatXayDungPageContent } from "./programmes/ky-thuat-xay-dung";
+import { kyThuatOToProgramme, kyThuatOToPageContent } from "./programmes/ky-thuat-o-to";
+import {
+  quanTriKinhDoanhProgramme,
+  quanTriKinhDoanhPageContent,
+} from "./programmes/quan-tri-kinh-doanh";
+import {
+  kinhDoanhThuongMaiProgramme,
+  kinhDoanhThuongMaiPageContent,
+} from "./programmes/kinh-doanh-thuong-mai";
+import {
+  taiChinhNganHangProgramme,
+  taiChinhNganHangPageContent,
+} from "./programmes/tai-chinh-ngan-hang";
+import { keToanProgramme, keToanPageContent } from "./programmes/ke-toan";
+import { logisticsProgramme, logisticsPageContent } from "./programmes/logistics";
+import { quanTriDuLichProgramme, quanTriDuLichPageContent } from "./programmes/quan-tri-du-lich";
+import {
+  quanTriKhachSanProgramme,
+  quanTriKhachSanPageContent,
+} from "./programmes/quan-tri-khach-san";
+import { luatKinhTeProgramme, luatKinhTePageContent } from "./programmes/luat-kinh-te";
+import {
+  quanHeCongChungProgramme,
+  quanHeCongChungPageContent,
+} from "./programmes/quan-he-cong-chung";
+import { ngonNguAnhProgramme, ngonNguAnhPageContent } from "./programmes/ngon-ngu-anh";
+import { kienTrucProgramme, kienTrucPageContent } from "./programmes/kien-truc";
+import { myThuatUngDungProgramme, myThuatUngDungPageContent } from "./programmes/my-thuat-ung-dung";
+import {
+  lyLuanLichSuMyThuatProgramme,
+  lyLuanLichSuMyThuatPageContent,
+} from "./programmes/ly-luan-lich-su-my-thuat";
+
 // data/programmes.ts
 
 /* =========================================================
    PROGRAMME TYPES
    ========================================================= */
 
-export const programmeDegrees = [
-  "Thạc sĩ",
-  "Tiến sĩ",
-] as const;
+export const programmeDegrees = ["Thạc sĩ", "Tiến sĩ"] as const;
 
-export type ProgrammeDegree =
-  (typeof programmeDegrees)[number];
-
+export type ProgrammeDegree = (typeof programmeDegrees)[number];
 
 export const programmeFields = [
   "Kinh doanh & Quản lý",
@@ -21,18 +74,130 @@ export const programmeFields = [
   "Thiết kế & Mỹ thuật Ứng dụng",
 ] as const;
 
-export type ProgrammeField =
-  (typeof programmeFields)[number];
+export type ProgrammeField = (typeof programmeFields)[number];
 
+export const programmeOrientations = ["Ứng dụng", "Nghiên cứu"] as const;
 
-export const programmeOrientations = [
-  "Ứng dụng",
-  "Nghiên cứu",
-] as const;
+export type ProgrammeOrientation = (typeof programmeOrientations)[number];
 
-export type ProgrammeOrientation =
-  (typeof programmeOrientations)[number];
+export type ProgrammeInformationBlock = {
+  title: string;
+  paragraphs?: readonly string[];
+  points?: readonly string[];
+  groups?: readonly ProgrammeInformationBlock[];
+};
 
+export type ProgrammeFeeContent = {
+  heading: string;
+  intro: readonly string[];
+  intake: string;
+  language: string;
+  total: string;
+  installments: readonly { label: string; amount: string }[];
+  variants?: readonly {
+    language: string;
+    total: string;
+    installments: readonly { label: string; amount: string }[];
+  }[];
+  additionalFees: readonly { title: string; amount: string; note: string }[];
+  notes: readonly string[];
+};
+
+export type ProgrammeConsultationIntro = {
+  eyebrow: string;
+  titleLines: readonly string[];
+  body: string;
+  benefits: readonly string[];
+  formTitle?: string;
+};
+
+export type ProgrammePageContent = {
+  hero: {
+    heroLead: string;
+    heroTitle?: string;
+    heroSlogan?: string;
+    heroImage?: string;
+    imageAlt?: string;
+    imageCredit?: { text: string; href?: string };
+  } & typeof programmeSharedContent.hero;
+  facts: {
+    quickFactsDetailed?: readonly {
+      label: string;
+      value: string;
+      detail?: string;
+    }[];
+    displayCode?: string;
+    displayDuration?: string;
+    displayTuition?: string;
+  } & typeof programmeSharedContent.facts;
+  section01: {
+    sectionNumber: "01";
+    /** null ẩn ảnh; undefined giữ ảnh mặc định hiện có. */
+    overviewImage?: string | null;
+    overviewTitle: string;
+    overview: readonly string[];
+    headline?: string;
+    focusAreas?: readonly string[];
+    imageCredit?: { text: string; href?: string };
+    link?: typeof programmeSharedContent.overview.link;
+  } & Omit<typeof programmeSharedContent.overview, "link">;
+  section02: {
+    sectionNumber: "02";
+    highlights: readonly { title: string; text: string }[];
+    learningOutcomes?: {
+      intro: string;
+      items: readonly { code: string; title: string; text: string }[];
+    };
+  } & typeof programmeSharedContent.highlights;
+  section03: {
+    sectionNumber: "03";
+    audienceHeading: string;
+    headline?: string;
+    intro?: readonly string[];
+    requirements?: readonly ProgrammeInformationBlock[];
+    illustration?: { src: string; alt: string; source: string };
+    audience: readonly {
+      title: string;
+      text: string;
+      image?: string;
+      alt?: string;
+      imageSource?: string;
+    }[];
+  };
+  section04: {
+    sectionNumber: "04";
+    careerImage?: string;
+    careerHeading: string;
+    headline?: string;
+    intro?: string;
+    note?: string;
+    careers: readonly { title: string; sub: string; group?: string }[];
+  };
+  section05: {
+    sectionNumber: "05";
+    curriculumIntro: readonly string[];
+    trackCredits?: readonly string[];
+    trackDurations?: readonly string[];
+    generalFacts?: readonly { label: string; value: string }[];
+    notes?: readonly string[];
+    semesters?: {
+      heading: string;
+      intro: string;
+      items: readonly { title: string; subtitle: string; groups: CurriculumGroup[] }[];
+    };
+    completion?: { heading: string; items: readonly string[] };
+  } & typeof programmeSharedContent.curriculum;
+  consultation: {
+    ctaHeading: readonly string[];
+    ctaBody: string;
+    formIntro?: ProgrammeConsultationIntro;
+    contactActions?: readonly { text: string; href: string }[];
+  } & typeof programmeSharedContent.consultation;
+  faq: {
+    faqs: readonly { question: string; answer: string }[];
+  } & typeof programmeSharedContent.faq;
+  fees?: ProgrammeFeeContent;
+};
 
 /* =========================================================
    PROGRAMME MODEL
@@ -50,13 +215,18 @@ export type Programme = {
 
   degree: ProgrammeDegree;
   field: ProgrammeField;
-  orientation: ProgrammeOrientation | "Đang cập nhật";
+  orientation: ProgrammeOrientation | "Đang cập nhật" | "Ứng dụng và nghiên cứu";
   orientations?: readonly ProgrammeOrientation[];
 
   credits: number;
   creditsLabel?: string;
+  summary?: string;
   detailsPending?: boolean;
   duration: string;
+  tuition: string;
+  schedule?: string;
+  graduationRequirements?: readonly string[];
+  pageContent?: ProgrammePageContent;
 
   studyMode: string;
   intake: string;
@@ -64,578 +234,45 @@ export type Programme = {
 
 /** Điều kiện chung và yêu cầu công bố khoa học riêng theo đúng ngành. */
 export function getProgrammeGraduationRequirements(programme: Programme): string[] {
-  const requirements = [
+  if (programme.pageContent?.section05.completion) {
+    return [...programme.pageContent.section05.completion.items];
+  }
+  return [
     "Hoàn thành chương trình đào tạo theo quy định.",
     "Đạt chuẩn đầu ra về năng lực tiếng Anh theo quy định của Trường Đại học Văn Lang.",
+    ...(programme.graduationRequirements ?? []),
   ];
-
-  if (programme.id === "my-thuat-ung-dung") {
-    requirements.push(
-      "Đối với ngành Mỹ thuật Ứng dụng: Có tối thiểu 02 công bố khoa học được đăng trên tạp chí khoa học hoặc trong kỷ yếu hội nghị trong nước/quốc tế.",
-    );
-  } else if (programme.id === "quan-he-cong-chung") {
-    requirements.push(
-      "Đối với ngành Quan hệ Công chúng: Có tối thiểu 01 công bố khoa học được đăng trên tạp chí khoa học hoặc trong kỷ yếu hội nghị trong nước/quốc tế.",
-    );
-  }
-
-  return requirements;
 }
 
 /** Học phí toàn khóa theo danh mục tuyển sinh do Viện Sau Đại học công bố. */
 export function getProgrammeTuition(programme: Programme) {
-  if (programme.degree === "Tiến sĩ") return "145.000.000 VNĐ";
-  if (programme.field === "Thiết kế & Mỹ thuật Ứng dụng") return "100.000.000 VNĐ";
-  if (programme.field === "Luật, Nhân văn & Truyền thông") return "85.000.000 – 110.000.000 VNĐ";
-  return "85.000.000 VNĐ";
+  return programme.tuition;
 }
-
 
 /* =========================================================
    PROGRAMME DATA
    ========================================================= */
 
 export const programmes: Programme[] = [
-  {
-    id: "cong-nghe-thong-tin",
-    code: "S-19",
-    title: "Công nghệ thông tin",
-    englishTitle: "Master of Information Technology",
-    degree: "Thạc sĩ",
-    field: "Kỹ thuật, Môi trường & Công nghệ",
-    orientation: "Đang cập nhật",
-    credits: 60,
-    creditsLabel: "45 hoặc 60",
-    duration: "18–24 tháng",
-    studyMode: "Đang cập nhật",
-    intake: "Đang cập nhật",
-    detailsPending: true,
-  },
-  {
-    id: "marketing",
-    code: "S-20",
-    title: "Marketing",
-    englishTitle: "Master of Marketing",
-    degree: "Thạc sĩ",
-    field: "Kinh doanh & Quản lý",
-    orientation: "Đang cập nhật",
-    credits: 60,
-    duration: "24 tháng",
-    studyMode: "Đang cập nhật",
-    intake: "Đang cập nhật",
-    detailsPending: true,
-  },
-  /* ==============================
-     TIẾN SĨ
-     ============================== */
-
-  {
-    id: "khoa-hoc-moi-truong",
-    code: "D-01",
-
-    title: "Khoa học Môi trường",
-    englishTitle:
-      "Doctor of Philosophy in Environmental Science",
-
-    degree: "Tiến sĩ",
-
-    field:
-      "Kỹ thuật, Môi trường & Công nghệ",
-
-    orientation: "Nghiên cứu",
-
-    credits: 90,
-
-    duration: "36–48 tháng",
-
-    studyMode:
-      "Theo kế hoạch đào tạo",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-
-  /* ==============================
-     KỸ THUẬT · MÔI TRƯỜNG
-     ============================== */
-
-  {
-    id: "ky-thuat-moi-truong",
-    code: "S-01",
-
-    title: "Kỹ thuật Môi trường",
-    englishTitle:
-      "Master of Environmental Engineering",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Kỹ thuật, Môi trường & Công nghệ",
-
-    orientation: "Nghiên cứu",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "quan-ly-tai-nguyen-moi-truong",
-    code: "S-02",
-
-    title:
-      "Quản lý Tài nguyên và Môi trường",
-
-    englishTitle:
-      "Master of Natural Resources and Environmental Management",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Kỹ thuật, Môi trường & Công nghệ",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "cong-nghe-sinh-hoc",
-    code: "S-03",
-
-    title: "Công nghệ Sinh học",
-    englishTitle:
-      "Master of Biotechnology",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Kỹ thuật, Môi trường & Công nghệ",
-
-    orientation: "Nghiên cứu",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "ky-thuat-xay-dung",
-    code: "S-04",
-
-    title: "Kỹ thuật Xây dựng",
-    englishTitle:
-      "Master of Civil Engineering",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Kỹ thuật, Môi trường & Công nghệ",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "ky-thuat-o-to",
-    code: "S-05",
-
-    title: "Kỹ thuật ô tô",
-    englishTitle:
-      "Master of Automotive Engineering",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Kỹ thuật, Môi trường & Công nghệ",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-
-  /* ==============================
-     KINH DOANH
-     ============================== */
-
-  {
-    id: "quan-tri-kinh-doanh",
-    code: "S-06",
-
-    title: "Quản trị Kinh doanh",
-    englishTitle:
-      "Master of Business Administration",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Kinh doanh & Quản lý",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "kinh-doanh-thuong-mai",
-    code: "S-07",
-
-    title: "Kinh doanh Thương mại",
-    englishTitle:
-      "Master of Commercial Business",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Kinh doanh & Quản lý",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "tai-chinh-ngan-hang",
-    code: "S-08",
-
-    title: "Tài chính - Ngân hàng",
-    englishTitle:
-      "Master of Finance and Banking",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Kinh doanh & Quản lý",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "ke-toan",
-    code: "S-09",
-
-    title: "Kế toán",
-    englishTitle:
-      "Master of Accounting",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Kinh doanh & Quản lý",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "logistics",
-    orientations: ["Ứng dụng", "Nghiên cứu"],
-    code: "S-10",
-
-    title:
-      "Logistics và Quản lý chuỗi cung ứng",
-
-    englishTitle:
-      "Master of Logistics and Supply Chain Management",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Kinh doanh & Quản lý",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-
-  /* ==============================
-     DU LỊCH
-     ============================== */
-
-  {
-    id: "quan-tri-du-lich",
-    code: "S-11",
-
-    title:
-      "Quản trị Dịch vụ Du lịch và Lữ hành",
-
-    englishTitle:
-      "Master of Tourism and Travel Service Management",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Du lịch & Khách sạn",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "quan-tri-khach-san",
-    code: "S-12",
-
-    title: "Quản trị Khách sạn",
-    englishTitle:
-      "Master of Hospitality Management",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Du lịch & Khách sạn",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-
-  /* ==============================
-     LUẬT · TRUYỀN THÔNG
-     ============================== */
-
-  {
-    id: "luat-kinh-te",
-    code: "S-13",
-
-    title: "Luật Kinh tế",
-    englishTitle:
-      "Master of Economic Law",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Luật, Nhân văn & Truyền thông",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "quan-he-cong-chung",
-    code: "S-14",
-
-    title: "Quan hệ Công chúng",
-    englishTitle:
-      "Master of Public Relations",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Luật, Nhân văn & Truyền thông",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "ngon-ngu-anh",
-    code: "S-15",
-
-    title: "Ngôn ngữ Anh",
-    englishTitle:
-      "Master of English Language",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Luật, Nhân văn & Truyền thông",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-
-  /* ==============================
-     THIẾT KẾ
-     ============================== */
-
-  {
-    id: "kien-truc",
-    code: "S-16",
-
-    title: "Kiến trúc",
-    englishTitle:
-      "Master of Architecture",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Kỹ thuật, Môi trường & Công nghệ",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "my-thuat-ung-dung",
-    code: "S-17",
-
-    title: "Mỹ thuật Ứng dụng",
-    englishTitle:
-      "Master of Applied Arts",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Thiết kế & Mỹ thuật Ứng dụng",
-
-    orientation: "Ứng dụng",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-
-  {
-    id: "ly-luan-lich-su-my-thuat",
-    code: "S-18",
-
-    title:
-      "Lý luận và Lịch sử Mỹ thuật Ứng dụng",
-
-    englishTitle:
-      "Master of Theory and History of Applied Arts",
-
-    degree: "Thạc sĩ",
-
-    field:
-      "Thiết kế & Mỹ thuật Ứng dụng",
-
-    orientation: "Nghiên cứu",
-
-    credits: 60,
-
-    duration: "18–24 tháng",
-
-    studyMode: "Linh hoạt",
-
-    intake:
-      "Theo thông báo tuyển sinh",
-  },
-];
+  { ...congNgheThongTinProgramme, pageContent: congNgheThongTinPageContent },
+  { ...marketingProgramme, pageContent: marketingPageContent },
+  { ...khoaHocMoiTruongProgramme, pageContent: khoaHocMoiTruongPageContent },
+  { ...kyThuatMoiTruongProgramme, pageContent: kyThuatMoiTruongPageContent },
+  { ...quanLyTaiNguyenMoiTruongProgramme, pageContent: quanLyTaiNguyenMoiTruongPageContent },
+  { ...congNgheSinhHocProgramme, pageContent: congNgheSinhHocPageContent },
+  { ...kyThuatXayDungProgramme, pageContent: kyThuatXayDungPageContent },
+  { ...kyThuatOToProgramme, pageContent: kyThuatOToPageContent },
+  { ...quanTriKinhDoanhProgramme, pageContent: quanTriKinhDoanhPageContent },
+  { ...kinhDoanhThuongMaiProgramme, pageContent: kinhDoanhThuongMaiPageContent },
+  { ...taiChinhNganHangProgramme, pageContent: taiChinhNganHangPageContent },
+  { ...keToanProgramme, pageContent: keToanPageContent },
+  { ...logisticsProgramme, pageContent: logisticsPageContent },
+  { ...quanTriDuLichProgramme, pageContent: quanTriDuLichPageContent },
+  { ...quanTriKhachSanProgramme, pageContent: quanTriKhachSanPageContent },
+  { ...luatKinhTeProgramme, pageContent: luatKinhTePageContent },
+  { ...quanHeCongChungProgramme, pageContent: quanHeCongChungPageContent },
+  { ...ngonNguAnhProgramme, pageContent: ngonNguAnhPageContent },
+  { ...kienTrucProgramme, pageContent: kienTrucPageContent },
+  { ...myThuatUngDungProgramme, pageContent: myThuatUngDungPageContent },
+  { ...lyLuanLichSuMyThuatProgramme, pageContent: lyLuanLichSuMyThuatPageContent },
+].map(withProgrammeImages);

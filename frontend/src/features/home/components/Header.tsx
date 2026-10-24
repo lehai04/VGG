@@ -3,14 +3,13 @@
 /**
  * Header dùng chung cho homepage và mọi trang con.
  * Menu chính luôn dẫn tới route thật, để cùng một điều hướng hoạt động nhất quán
- * ở bất kỳ page nào. Mega menu chỉ là lớp khám phá bổ sung.
+ * ở bất kỳ page nào. Các mục điều hướng dẫn thẳng đến trang tương ứng.
  */
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
 import { usePathname } from "next/navigation";
-import { discoverSections, navigationGroups, subpageHref } from "@/data/site";
-import { LanguageToggle } from "@/shared/components/layout/LanguageToggle";
+import { navigationGroups } from "@/data/site";
 import { useLocale } from "@/i18n/components/LocaleProvider";
 import { stripLocale } from "@/lib/i18n";
 
@@ -29,34 +28,24 @@ const MENU_ITEMS = navigationGroups.map((group) => ({
 /** Header dùng chung; routeMode được giữ lại để tương thích các nơi đang sử dụng component. */
 export function Header({ routeMode = false }: { routeMode?: boolean }) {
   const { locale, messages } = useLocale();
-  // Quản lý trạng thái menu trên thiết bị di động và mục mega menu đang được chọn.
+  // Quản lý trạng thái menu trên thiết bị di động.
   const [open, setOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState<number | null>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const routePathname = stripLocale(pathname);
-  const activeItem = activeMenu === null ? null : MENU_ITEMS[activeMenu];
 
   // Navigation chính không dùng hash: mọi page có đích route độc lập trong app/<slug>/page.tsx.
   const itemHref = (slug: string) => `/${slug}`;
 
-  // Chỉ Về Viện Sau Đại học còn trang con. Các nhóm khác đi thẳng tới trang tổng hợp duy nhất.
-  const submenuHref = (slug: string, index: number) => {
-    if (slug === "discover")
-      return index === 0 ? "/discover" : `/discover/${discoverSections[index].slug}`;
-    return subpageHref(slug, index);
-  };
-
-  // Mega menu chỉ mở bằng click và đóng bằng click bên ngoài hoặc phím Escape.
+  // Đóng menu di động bằng click bên ngoài hoặc phím Escape.
   useEffect(() => {
     const closeFromOutside = (event: MouseEvent) => {
       if (!headerRef.current?.contains(event.target as Node)) {
-        setActiveMenu(null);
         if (window.matchMedia("(width < 1024px)").matches) setOpen(false);
       }
     };
     const closeFromKeyboard = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setActiveMenu(null);
+      if (event.key === "Escape") setOpen(false);
     };
 
     document.addEventListener("click", closeFromOutside);
@@ -107,13 +96,12 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
         <nav className="topBarLinks" aria-label="Liên kết nhanh">
           <Link href="/news">{messages.navigation.news}</Link>
           <Link href="/resources">{messages.navigation.resources}</Link>
-          <LanguageToggle />
         </nav>
       </div>
 
       <div className="headerShell" ref={headerRef}>
         <header className="header">
-          <Link className="brand" href="/" aria-label="Trang chủ Viện Sau Đại học" onClick={() => { setOpen(false); setActiveMenu(null); }}>
+          <Link className="brand" href="/" aria-label="Trang chủ Viện Sau Đại học" onClick={() => { setOpen(false); }}>
             <Image
               className="brandLogo"
               src={LOGO_SRC}
@@ -153,31 +141,16 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
             className={open ? "nav open" : "nav"}
             aria-label="Điều hướng chính"
           >
-            {MENU_ITEMS.map((item, index) => (
+            {MENU_ITEMS.map((item) => (
               <Link
                 href={itemHref(item.slug)}
                 key={item.english}
-                aria-expanded={item.slug === "discover" ? activeMenu === index : undefined}
-                aria-controls={item.slug === "discover" ? "header-mega-menu" : undefined}
                 className={
-                  activeMenu === index || (routeMode && routePathname.startsWith(`/${item.slug}`))
+                  routeMode && routePathname.startsWith(`/${item.slug}`)
                     ? "active"
                     : ""
                 }
-                onClick={(event) => {
-                  if (item.slug === "discover") {
-                    if (window.matchMedia("(max-width: 1100px)").matches) {
-                      setOpen(false);
-                      setActiveMenu(null);
-                      return;
-                    }
-                    event.preventDefault();
-                    setActiveMenu((current) => (current === index ? null : index));
-                    return;
-                  }
-                  setActiveMenu(null);
-                  setOpen(false);
-                }}
+                onClick={() => setOpen(false)}
               >
                 <span className="navTitle">{locale === "en" ? item.english : item.vietnamese}</span>
               </Link>
@@ -185,61 +158,6 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
           </nav>
         </header>
 
-        {activeItem && (
-          // Nội dung mega menu được sinh từ cùng nguồn data/site.ts với menu chính.
-          <section
-            className="megaMenu megaMenuVlu"
-            id="header-mega-menu"
-            aria-label={`Menu ${activeItem.english}`}
-          >
-            <div className="megaVluImage">
-              <Image
-                src="/images/pages/home/sections/campus.jpg"
-                alt="Khuôn viên Trường Đại học Văn Lang"
-                fill
-                sizes="(max-width: 1100px) 0px, 42vw"
-              />
-            </div>
-
-            <div className="megaVluBody">
-              <div className="megaVluHeading">
-                <h2>{locale === "en" ? activeItem.english : activeItem.vietnamese}</h2>
-                <Link href={itemHref(activeItem.slug)} onClick={() => setActiveMenu(null)}>
-                  <span>{messages.navigation.overview.toUpperCase()}</span>
-                  <b aria-hidden="true">›</b>
-                </Link>
-              </div>
-
-              <nav
-                className="megaVluLinks"
-                aria-label={`${messages.navigation.overview} ${locale === "en" ? activeItem.english : activeItem.vietnamese}`}
-              >
-                {(locale === "en" ? activeItem.linksEn : activeItem.links).map((link, index) => (
-                  <Link
-                    href={submenuHref(activeItem.slug, index)}
-                    key={link}
-                    onClick={() => setActiveMenu(null)}
-                  >
-                    {link}
-                  </Link>
-                ))}
-              </nav>
-
-              <aside className="megaVluPromo">
-                <small>VAN LANG GLOBAL GRADUATE</small>
-                <strong>
-                  {locale === "en" ? "International standards." : "Chuẩn quốc tế."}
-                  <br />
-                  {locale === "en" ? "Learner-centered." : "Lấy người học làm trung tâm."}
-                </strong>
-                <Link href="/discover" onClick={() => setActiveMenu(null)}>
-                  {locale === "en" ? "Explore Viện Sau Đại học" : "Khám phá Viện Sau Đại học"}{" "}
-                  <span>→</span>
-                </Link>
-              </aside>
-            </div>
-          </section>
-        )}
       </div>
     </>
   );

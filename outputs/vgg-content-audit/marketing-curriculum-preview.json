@@ -1,0 +1,136 @@
+[
+  {
+    "title": "I. Kiến thức chung",
+    "totalCreditsLabel": "4 tín chỉ",
+    "description": [],
+    "courses": [
+      {
+        "name": "Triết học",
+        "englishName": "Philosophy",
+        "credits": 4
+      }
+    ]
+  },
+  {
+    "title": "II. Kiến thức cơ sở ngành",
+    "totalCreditsLabel": "8 tín chỉ",
+    "description": [],
+    "courses": [
+      {
+        "name": "Chiến lược Marketing bền vững",
+        "englishName": "Sustainable Marketing Strategy",
+        "credits": 4
+      },
+      {
+        "name": "Chuyên đề - Phân tích kinh doanh và dự báo",
+        "englishName": "Business Analytics and Forecasting (Seminar)",
+        "credits": 4
+      }
+    ]
+  },
+  {
+    "title": "III. Kiến thức nghiên cứu và chuyên ngành · Học phần bắt buộc · 18 tín chỉ",
+    "totalCreditsLabel": "18 tín chỉ bắt buộc",
+    "courses": [
+      {
+        "name": "Chuyên đề nghiên cứu Marketing",
+        "englishName": "Marketing Research Seminar Series",
+        "credits": 6
+      },
+      {
+        "name": "Phương pháp nghiên cứu khoa học",
+        "englishName": "Research Methodology",
+        "credits": 4
+      },
+      {
+        "name": "Chuyên đề - Chiến lược Marketing số và đa kênh hợp nhất",
+        "englishName": "Digital & Omnichannel Marketing Strategy (Seminar)",
+        "credits": 4
+      },
+      {
+        "name": "Quyền riêng tư – Đạo đức – Quản trị dữ liệu",
+        "englishName": "Privacy, Ethics & Data Governance",
+        "credits": 4
+      }
+    ],
+    "description": [
+      "Học phần tự chọn · 15 tín chỉ theo cơ cấu chương trình",
+      "Học phần tự chọn được đăng ký theo nhóm và kế hoạch đào tạo của chương trình. Danh mục dưới đây thể hiện các lựa chọn để người học phát triển nội dung quan tâm.",
+      "Tổng kiến thức nghiên cứu và chuyên ngành: 33 tín chỉ"
+    ]
+  },
+  {
+    "title": "III. Kiến thức nghiên cứu và chuyên ngành · Nhóm tự chọn 1 · Chọn 1 trong 2 học phần",
+    "totalCreditsLabel": "Chọn 1 trong 2 học phần",
+    "courses": [
+      {
+        "name": "Nghệ thuật kể chuyện trong truyền thông thương hiệu",
+        "englishName": "Storytelling in Brand Communications",
+        "credits": 3,
+        "elective": true
+      },
+      {
+        "name": "Marketing doanh nghiệp: Gắn kết chiến lược, quan hệ và học tập",
+        "englishName": "Business Marketing: Connecting Strategy, Relationships and Learning",
+        "credits": 4,
+        "elective": true
+      }
+    ]
+  },
+  {
+    "title": "III. Kiến thức nghiên cứu và chuyên ngành · Nhóm tự chọn 2 · Chọn 2 trong 3 học phần",
+    "totalCreditsLabel": "Chọn 2 trong 3 học phần",
+    "courses": [
+      {
+        "name": "Công nghệ Marketing sáng tạo",
+        "englishName": "Creative Marketing Technology",
+        "credits": 4,
+        "elective": true
+      },
+      {
+        "name": "Chiến lược giá và quản trị doanh thu",
+        "englishName": "Pricing Strategy and Revenue Management",
+        "credits": 4,
+        "elective": true
+      },
+      {
+        "name": "Marketing khởi nghiệp",
+        "englishName": "Entrepreneurial Marketing",
+        "credits": 4,
+        "elective": true
+      }
+    ]
+  },
+  {
+    "title": "III. Kiến thức nghiên cứu và chuyên ngành · Nhóm tự chọn 3 · Chọn 1 trong 2 học phần",
+    "totalCreditsLabel": "Chọn 1 trong 2 học phần",
+    "courses": [
+      {
+        "name": "Thiết kế trải nghiệm khách hàng",
+        "englishName": "Customer Experience Design",
+        "credits": 4,
+        "elective": true
+      },
+      {
+        "name": "Trí tuệ nhân tạo và dữ liệu lớn trong kinh doanh",
+        "englishName": "AI & Big Data in Business",
+        "credits": 4,
+        "elective": true
+      }
+    ]
+  },
+  {
+    "title": "IV. Luận văn tốt nghiệp",
+    "totalCreditsLabel": "15 tín chỉ",
+    "description": [
+      "Công trình nghiên cứu độc lập trong lĩnh vực Marketing"
+    ],
+    "courses": [
+      {
+        "name": "Luận văn tốt nghiệp",
+        "englishName": "Master’s Thesis",
+        "credits": 15
+      }
+    ]
+  }
+]

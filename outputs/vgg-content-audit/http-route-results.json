@@ -1,0 +1,1333 @@
+[
+  {
+    "route": "/",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "home.html"
+  },
+  {
+    "route": "/admissions",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/admissions",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/admissions",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fadmissions.html"
+  },
+  {
+    "route": "/admissions/hoc-bong",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/admissions#hoc-bong",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/admissions/hoc-bong",
+        "status": 307,
+        "location": "/vi/admissions#hoc-bong"
+      },
+      {
+        "url": "http://localhost:3000/vi/admissions#hoc-bong",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fadmissions%2Fhoc-bong.html"
+  },
+  {
+    "route": "/admissions/hoc-phi",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/admissions#hoc-phi",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/admissions/hoc-phi",
+        "status": 307,
+        "location": "/vi/admissions#hoc-phi"
+      },
+      {
+        "url": "http://localhost:3000/vi/admissions#hoc-phi",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fadmissions%2Fhoc-phi.html"
+  },
+  {
+    "route": "/admissions/moc-thoi-gian",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/admissions#moc-thoi-gian",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/admissions/moc-thoi-gian",
+        "status": 307,
+        "location": "/vi/admissions#moc-thoi-gian"
+      },
+      {
+        "url": "http://localhost:3000/vi/admissions#moc-thoi-gian",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fadmissions%2Fmoc-thoi-gian.html"
+  },
+  {
+    "route": "/admissions/nop-ho-so",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/admissions#nop-ho-so",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/admissions/nop-ho-so",
+        "status": 307,
+        "location": "/vi/admissions#nop-ho-so"
+      },
+      {
+        "url": "http://localhost:3000/vi/admissions#nop-ho-so",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fadmissions%2Fnop-ho-so.html"
+  },
+  {
+    "route": "/admissions/yeu-cau",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/admissions#yeu-cau",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/admissions/yeu-cau",
+        "status": 307,
+        "location": "/vi/admissions#yeu-cau"
+      },
+      {
+        "url": "http://localhost:3000/vi/admissions#yeu-cau",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fadmissions%2Fyeu-cau.html"
+  },
+  {
+    "route": "/discover",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/discover",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/discover",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fdiscover.html"
+  },
+  {
+    "route": "/discover/gioi-thieu",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/discover",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/discover/gioi-thieu",
+        "status": 307,
+        "location": "/discover"
+      },
+      {
+        "url": "http://localhost:3000/discover",
+        "status": 307,
+        "location": "/vi/discover"
+      },
+      {
+        "url": "http://localhost:3000/vi/discover",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fdiscover%2Fgioi-thieu.html"
+  },
+  {
+    "route": "/discover/lanh-dao",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/discover/lanh-dao",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/discover/lanh-dao",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fdiscover%2Flanh-dao.html"
+  },
+  {
+    "route": "/discover/lien-he",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/discover/lien-he",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/discover/lien-he",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fdiscover%2Flien-he.html"
+  },
+  {
+    "route": "/discover/tam-nhin-su-menh",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/discover/tam-nhin-su-menh",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/discover/tam-nhin-su-menh",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fdiscover%2Ftam-nhin-su-menh.html"
+  },
+  {
+    "route": "/discover/xep-hang-thanh-tuu",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/discover/xep-hang-thanh-tuu",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/discover/xep-hang-thanh-tuu",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fdiscover%2Fxep-hang-thanh-tuu.html"
+  },
+  {
+    "route": "/global",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research#strategic-partners-title",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/global",
+        "status": 307,
+        "location": "/vi/research#strategic-partners-title"
+      },
+      {
+        "url": "http://localhost:3000/vi/research#strategic-partners-title",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fglobal.html"
+  },
+  {
+    "route": "/global/doi-tac",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research#strategic-partners-title",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/global/doi-tac",
+        "status": 307,
+        "location": "/vi/research/doi-tac"
+      },
+      {
+        "url": "http://localhost:3000/vi/research/doi-tac",
+        "status": 307,
+        "location": "/vi/research#strategic-partners-title"
+      },
+      {
+        "url": "http://localhost:3000/vi/research#strategic-partners-title",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fglobal%2Fdoi-tac.html"
+  },
+  {
+    "route": "/global/dual-degree",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/global/dual-degree",
+        "status": 307,
+        "location": "/vi/research/dual-degree"
+      },
+      {
+        "url": "http://localhost:3000/vi/research/dual-degree",
+        "status": 307,
+        "location": "/vi/research"
+      },
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fglobal%2Fdual-degree.html"
+  },
+  {
+    "route": "/global/overseas-immersion",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/global/overseas-immersion",
+        "status": 307,
+        "location": "/vi/research/overseas-immersion"
+      },
+      {
+        "url": "http://localhost:3000/vi/research/overseas-immersion",
+        "status": 307,
+        "location": "/vi/research"
+      },
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fglobal%2Foverseas-immersion.html"
+  },
+  {
+    "route": "/global/study-tour",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/global/study-tour",
+        "status": 307,
+        "location": "/vi/research/study-tour"
+      },
+      {
+        "url": "http://localhost:3000/vi/research/study-tour",
+        "status": 307,
+        "location": "/vi/research"
+      },
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fglobal%2Fstudy-tour.html"
+  },
+  {
+    "route": "/global/thuc-tap",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/global/thuc-tap",
+        "status": 307,
+        "location": "/vi/research/thuc-tap"
+      },
+      {
+        "url": "http://localhost:3000/vi/research/thuc-tap",
+        "status": 307,
+        "location": "/vi/research"
+      },
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fglobal%2Fthuc-tap.html"
+  },
+  {
+    "route": "/global/trao-doi",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/global/trao-doi",
+        "status": 307,
+        "location": "/vi/research/trao-doi"
+      },
+      {
+        "url": "http://localhost:3000/vi/research/trao-doi",
+        "status": 307,
+        "location": "/vi/research"
+      },
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fglobal%2Ftrao-doi.html"
+  },
+  {
+    "route": "/missing-page-audit",
+    "status": 404,
+    "finalUrl": "http://localhost:3000/vi/missing-page-audit",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/missing-page-audit",
+        "status": 404,
+        "location": null
+      }
+    ],
+    "file": "%2Fmissing-page-audit.html"
+  },
+  {
+    "route": "/news",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/news",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/news",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fnews.html"
+  },
+  {
+    "route": "/news/seminar-webinar",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/news",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/news/seminar-webinar",
+        "status": 307,
+        "location": "/vi/news"
+      },
+      {
+        "url": "http://localhost:3000/vi/news",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fnews%2Fseminar-webinar.html"
+  },
+  {
+    "route": "/news/su-kien",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/news?category=UNIVERSITY_EVENT",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/news/su-kien",
+        "status": 307,
+        "location": "/vi/news?category=UNIVERSITY_EVENT"
+      },
+      {
+        "url": "http://localhost:3000/vi/news?category=UNIVERSITY_EVENT",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fnews%2Fsu-kien.html"
+  },
+  {
+    "route": "/news/thong-cao-bao-chi",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/news",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/news/thong-cao-bao-chi",
+        "status": 307,
+        "location": "/vi/news"
+      },
+      {
+        "url": "http://localhost:3000/vi/news",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fnews%2Fthong-cao-bao-chi.html"
+  },
+  {
+    "route": "/news/thu-vien-hinh-anh",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/news",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/news/thu-vien-hinh-anh",
+        "status": 307,
+        "location": "/vi/news"
+      },
+      {
+        "url": "http://localhost:3000/vi/news",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fnews%2Fthu-vien-hinh-anh.html"
+  },
+  {
+    "route": "/news/tin-tuc",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/news",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/news/tin-tuc",
+        "status": 307,
+        "location": "/vi/news"
+      },
+      {
+        "url": "http://localhost:3000/vi/news",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fnews%2Ftin-tuc.html"
+  },
+  {
+    "route": "/news/video",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/news",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/news/video",
+        "status": 307,
+        "location": "/vi/news"
+      },
+      {
+        "url": "http://localhost:3000/vi/news",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fnews%2Fvideo.html"
+  },
+  {
+    "route": "/programmes",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes.html"
+  },
+  {
+    "route": "/programmes/cong-nghe-sinh-hoc",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/cong-nghe-sinh-hoc",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/cong-nghe-sinh-hoc",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fcong-nghe-sinh-hoc.html"
+  },
+  {
+    "route": "/programmes/cong-nghe-thong-tin",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/cong-nghe-thong-tin",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/cong-nghe-thong-tin",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fcong-nghe-thong-tin.html"
+  },
+  {
+    "route": "/programmes/executive-education",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/executive-education",
+        "status": 307,
+        "location": "/vi/programmes"
+      },
+      {
+        "url": "http://localhost:3000/vi/programmes",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fexecutive-education.html"
+  },
+  {
+    "route": "/programmes/flagship",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/flagship",
+        "status": 307,
+        "location": "/vi/programmes"
+      },
+      {
+        "url": "http://localhost:3000/vi/programmes",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fflagship.html"
+  },
+  {
+    "route": "/programmes/ke-toan",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/ke-toan",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/ke-toan",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fke-toan.html"
+  },
+  {
+    "route": "/programmes/khoa-hoc-moi-truong",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/khoa-hoc-moi-truong",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/khoa-hoc-moi-truong",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fkhoa-hoc-moi-truong.html"
+  },
+  {
+    "route": "/programmes/kien-truc",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/kien-truc",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/kien-truc",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fkien-truc.html"
+  },
+  {
+    "route": "/programmes/kinh-doanh-thuong-mai",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/kinh-doanh-thuong-mai",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/kinh-doanh-thuong-mai",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fkinh-doanh-thuong-mai.html"
+  },
+  {
+    "route": "/programmes/ky-thuat-moi-truong",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/ky-thuat-moi-truong",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/ky-thuat-moi-truong",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fky-thuat-moi-truong.html"
+  },
+  {
+    "route": "/programmes/ky-thuat-o-to",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/ky-thuat-o-to",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/ky-thuat-o-to",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fky-thuat-o-to.html"
+  },
+  {
+    "route": "/programmes/ky-thuat-xay-dung",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/ky-thuat-xay-dung",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/ky-thuat-xay-dung",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fky-thuat-xay-dung.html"
+  },
+  {
+    "route": "/programmes/logistics",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/logistics",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/logistics",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Flogistics.html"
+  },
+  {
+    "route": "/programmes/luat-kinh-te",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/luat-kinh-te",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/luat-kinh-te",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fluat-kinh-te.html"
+  },
+  {
+    "route": "/programmes/ly-luan-lich-su-my-thuat",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/ly-luan-lich-su-my-thuat",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/ly-luan-lich-su-my-thuat",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fly-luan-lich-su-my-thuat.html"
+  },
+  {
+    "route": "/programmes/marketing",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/marketing",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/marketing",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fmarketing.html"
+  },
+  {
+    "route": "/programmes/my-thuat-ung-dung",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/my-thuat-ung-dung",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/my-thuat-ung-dung",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fmy-thuat-ung-dung.html"
+  },
+  {
+    "route": "/programmes/ngon-ngu-anh",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/ngon-ngu-anh",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/ngon-ngu-anh",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fngon-ngu-anh.html"
+  },
+  {
+    "route": "/programmes/quan-he-cong-chung",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/quan-he-cong-chung",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/quan-he-cong-chung",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fquan-he-cong-chung.html"
+  },
+  {
+    "route": "/programmes/quan-ly-tai-nguyen-moi-truong",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/quan-ly-tai-nguyen-moi-truong",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/quan-ly-tai-nguyen-moi-truong",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fquan-ly-tai-nguyen-moi-truong.html"
+  },
+  {
+    "route": "/programmes/quan-tri-du-lich",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/quan-tri-du-lich",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/quan-tri-du-lich",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fquan-tri-du-lich.html"
+  },
+  {
+    "route": "/programmes/quan-tri-khach-san",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/quan-tri-khach-san",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/quan-tri-khach-san",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fquan-tri-khach-san.html"
+  },
+  {
+    "route": "/programmes/quan-tri-kinh-doanh",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/quan-tri-kinh-doanh",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/quan-tri-kinh-doanh",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fquan-tri-kinh-doanh.html"
+  },
+  {
+    "route": "/programmes/quoc-te",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/quoc-te",
+        "status": 307,
+        "location": "/vi/programmes"
+      },
+      {
+        "url": "http://localhost:3000/vi/programmes",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fquoc-te.html"
+  },
+  {
+    "route": "/programmes/tai-chinh-ngan-hang",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes/tai-chinh-ngan-hang",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/tai-chinh-ngan-hang",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Ftai-chinh-ngan-hang.html"
+  },
+  {
+    "route": "/programmes/thac-si",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes?degree=Th%E1%BA%A1c%20s%C4%A9",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/thac-si",
+        "status": 307,
+        "location": "/vi/programmes?degree=Th%E1%BA%A1c%20s%C4%A9"
+      },
+      {
+        "url": "http://localhost:3000/vi/programmes?degree=Th%E1%BA%A1c%20s%C4%A9",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Fthac-si.html"
+  },
+  {
+    "route": "/programmes/tien-si",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/programmes?degree=Ti%E1%BA%BFn%20s%C4%A9",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/programmes/tien-si",
+        "status": 307,
+        "location": "/vi/programmes?degree=Ti%E1%BA%BFn%20s%C4%A9"
+      },
+      {
+        "url": "http://localhost:3000/vi/programmes?degree=Ti%E1%BA%BFn%20s%C4%A9",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fprogrammes%2Ftien-si.html"
+  },
+  {
+    "route": "/research",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch.html"
+  },
+  {
+    "route": "/research/cong-bo",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research#cong-bo",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/cong-bo",
+        "status": 307,
+        "location": "/vi/research#cong-bo"
+      },
+      {
+        "url": "http://localhost:3000/vi/research#cong-bo",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Fcong-bo.html"
+  },
+  {
+    "route": "/research/cum-nghien-cuu",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research#fields",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/cum-nghien-cuu",
+        "status": 307,
+        "location": "/vi/research#fields"
+      },
+      {
+        "url": "http://localhost:3000/vi/research#fields",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Fcum-nghien-cuu.html"
+  },
+  {
+    "route": "/research/doi-moi-sang-tao",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research#goals",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/doi-moi-sang-tao",
+        "status": 307,
+        "location": "/vi/research#goals"
+      },
+      {
+        "url": "http://localhost:3000/vi/research#goals",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Fdoi-moi-sang-tao.html"
+  },
+  {
+    "route": "/research/doi-tac",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research#strategic-partners-title",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/doi-tac",
+        "status": 307,
+        "location": "/vi/research#strategic-partners-title"
+      },
+      {
+        "url": "http://localhost:3000/vi/research#strategic-partners-title",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Fdoi-tac.html"
+  },
+  {
+    "route": "/research/du-an",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research#du-an",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/du-an",
+        "status": 307,
+        "location": "/vi/research#du-an"
+      },
+      {
+        "url": "http://localhost:3000/vi/research#du-an",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Fdu-an.html"
+  },
+  {
+    "route": "/research/dual-degree",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/dual-degree",
+        "status": 307,
+        "location": "/vi/research"
+      },
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Fdual-degree.html"
+  },
+  {
+    "route": "/research/hoi-thao",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/hoi-thao",
+        "status": 307,
+        "location": "/vi/research"
+      },
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Fhoi-thao.html"
+  },
+  {
+    "route": "/research/hop-tac-doanh-nghiep",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research#hop-tac-doanh-nghiep",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/hop-tac-doanh-nghiep",
+        "status": 307,
+        "location": "/vi/research#hop-tac-doanh-nghiep"
+      },
+      {
+        "url": "http://localhost:3000/vi/research#hop-tac-doanh-nghiep",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Fhop-tac-doanh-nghiep.html"
+  },
+  {
+    "route": "/research/overseas-immersion",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/overseas-immersion",
+        "status": 307,
+        "location": "/vi/research"
+      },
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Foverseas-immersion.html"
+  },
+  {
+    "route": "/research/study-tour",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/study-tour",
+        "status": 307,
+        "location": "/vi/research"
+      },
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Fstudy-tour.html"
+  },
+  {
+    "route": "/research/thuc-tap",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/thuc-tap",
+        "status": 307,
+        "location": "/vi/research"
+      },
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Fthuc-tap.html"
+  },
+  {
+    "route": "/research/trao-doi",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/research",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/research/trao-doi",
+        "status": 307,
+        "location": "/vi/research"
+      },
+      {
+        "url": "http://localhost:3000/vi/research",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresearch%2Ftrao-doi.html"
+  },
+  {
+    "route": "/resources",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/resources",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/resources",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresources.html"
+  },
+  {
+    "route": "/resources/bieu-mau",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/resources",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/resources/bieu-mau",
+        "status": 307,
+        "location": "/vi/resources"
+      },
+      {
+        "url": "http://localhost:3000/vi/resources",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresources%2Fbieu-mau.html"
+  },
+  {
+    "route": "/resources/chinh-sach-quy-dinh",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/resources",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/resources/chinh-sach-quy-dinh",
+        "status": 307,
+        "location": "/vi/resources"
+      },
+      {
+        "url": "http://localhost:3000/vi/resources",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresources%2Fchinh-sach-quy-dinh.html"
+  },
+  {
+    "route": "/resources/faq",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/resources",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/resources/faq",
+        "status": 307,
+        "location": "/vi/resources"
+      },
+      {
+        "url": "http://localhost:3000/vi/resources",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresources%2Ffaq.html"
+  },
+  {
+    "route": "/resources/lich-hoc-thuat",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/resources",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/resources/lich-hoc-thuat",
+        "status": 307,
+        "location": "/vi/resources"
+      },
+      {
+        "url": "http://localhost:3000/vi/resources",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresources%2Flich-hoc-thuat.html"
+  },
+  {
+    "route": "/resources/tai-lieu",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/resources",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/resources/tai-lieu",
+        "status": 307,
+        "location": "/vi/resources"
+      },
+      {
+        "url": "http://localhost:3000/vi/resources",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fresources%2Ftai-lieu.html"
+  },
+  {
+    "route": "/robots.txt",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/robots.txt",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/robots.txt",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Frobots.txt.html"
+  },
+  {
+    "route": "/sitemap.xml",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/sitemap.xml",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/sitemap.xml",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fsitemap.xml.html"
+  },
+  {
+    "route": "/student-success",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/student-success",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/student-success",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fstudent-success.html"
+  },
+  {
+    "route": "/student-success/cau-chuyen-thanh-cong",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/student-success",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/student-success/cau-chuyen-thanh-cong",
+        "status": 307,
+        "location": "/vi/student-success"
+      },
+      {
+        "url": "http://localhost:3000/vi/student-success",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fstudent-success%2Fcau-chuyen-thanh-cong.html"
+  },
+  {
+    "route": "/student-success/cuu-hoc-vien",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/student-success#cuu-hoc-vien",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/student-success/cuu-hoc-vien",
+        "status": 307,
+        "location": "/vi/student-success#cuu-hoc-vien"
+      },
+      {
+        "url": "http://localhost:3000/vi/student-success#cuu-hoc-vien",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fstudent-success%2Fcuu-hoc-vien.html"
+  },
+  {
+    "route": "/student-success/ho-tro-hoc-vien",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/student-success#ho-tro-hoc-vien",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/student-success/ho-tro-hoc-vien",
+        "status": 307,
+        "location": "/vi/student-success#ho-tro-hoc-vien"
+      },
+      {
+        "url": "http://localhost:3000/vi/student-success#ho-tro-hoc-vien",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fstudent-success%2Fho-tro-hoc-vien.html"
+  },
+  {
+    "route": "/student-success/phat-trien-su-nghiep",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/student-success#phat-trien-su-nghiep",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/student-success/phat-trien-su-nghiep",
+        "status": 307,
+        "location": "/vi/student-success#phat-trien-su-nghiep"
+      },
+      {
+        "url": "http://localhost:3000/vi/student-success#phat-trien-su-nghiep",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fstudent-success%2Fphat-trien-su-nghiep.html"
+  },
+  {
+    "route": "/student-success/tai-nguyen-hoc-tap",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/vi/student-success#tai-nguyen-hoc-tap",
+    "chain": [
+      {
+        "url": "http://localhost:3000/vi/student-success/tai-nguyen-hoc-tap",
+        "status": 307,
+        "location": "/vi/student-success#tai-nguyen-hoc-tap"
+      },
+      {
+        "url": "http://localhost:3000/vi/student-success#tai-nguyen-hoc-tap",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "file": "%2Fstudent-success%2Ftai-nguyen-hoc-tap.html"
+  }
+]

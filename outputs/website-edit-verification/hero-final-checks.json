@@ -1,0 +1,20 @@
+[
+  {
+    "font": "32px",
+    "overflow": false,
+    "overlap": false,
+    "width": 1024
+  },
+  {
+    "font": "46.08px",
+    "overflow": false,
+    "overlap": false,
+    "width": 768
+  },
+  {
+    "font": "32px",
+    "overflow": false,
+    "overlap": false,
+    "width": 390
+  }
+]

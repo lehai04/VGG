@@ -1,5 +1,9 @@
 "use client";
 
+import styles from "./ProgrammeCatalogue.module.css";
+
+import { catalogueCopy } from "@/data/programmes/catalogue-copy";
+
 import Link from "@/i18n/components/LocalizedLink";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowUpRight, ChevronDown, X, RotateCcw, Search, SlidersHorizontal } from "lucide-react";
@@ -15,6 +19,8 @@ import {
   type ProgrammeOrientation,
 } from "@/data/programmes";
 import { getProgrammeCurricula, getProgrammeDetails } from "@/data/curricula";
+
+const copy = catalogueCopy.ProgrammeDirectory;
 
 /** Chuẩn hóa bản dùng để so khớp, không sửa tên chương trình hiển thị.
  * NFD tách dấu tổ hợp; đ/Đ cần xử lý riêng vì không bị tách thành d bởi NFD. */
@@ -43,9 +49,19 @@ export default function ProgrammeDirectory() {
       const nextField = params.get("field");
       const nextOrientation = params.get("orientation");
       setKeyword(params.get("search") ?? "");
-      setDegrees(programmeDegrees.includes(nextDegree as ProgrammeDegree) ? [nextDegree as ProgrammeDegree] : []);
-      setFields(programmeFields.includes(nextField as ProgrammeField) ? [nextField as ProgrammeField] : []);
-      setOrientations(programmeOrientations.includes(nextOrientation as ProgrammeOrientation) ? [nextOrientation as ProgrammeOrientation] : []);
+      setDegrees(
+        programmeDegrees.includes(nextDegree as ProgrammeDegree)
+          ? [nextDegree as ProgrammeDegree]
+          : [],
+      );
+      setFields(
+        programmeFields.includes(nextField as ProgrammeField) ? [nextField as ProgrammeField] : [],
+      );
+      setOrientations(
+        programmeOrientations.includes(nextOrientation as ProgrammeOrientation)
+          ? [nextOrientation as ProgrammeOrientation]
+          : [],
+      );
     });
     // Hủy callback nếu component rời trang trước frame kế tiếp.
     return () => window.cancelAnimationFrame(frame);
@@ -53,7 +69,9 @@ export default function ProgrammeDirectory() {
 
   // Functional update dùng state mới nhất; tạo mảng mới để React nhận ra thay đổi.
   const toggle = <T,>(set: React.Dispatch<React.SetStateAction<T[]>>, value: T) => {
-    set((current) => current.includes(value) ? current.filter((item) => item !== value) : [...current, value]);
+    set((current) =>
+      current.includes(value) ? current.filter((item) => item !== value) : [...current, value],
+    );
   };
 
   // Các nhóm lọc kết hợp AND; nhiều giá trị trong cùng một nhóm kết hợp OR.
@@ -62,19 +80,23 @@ export default function ProgrammeDirectory() {
     const query = normalizeText(keyword.trim());
     const result = programmes.filter((p) => {
       const searchText = normalizeText(
-        [p.code, p.title, p.englishTitle, p.degree, p.field, p.orientation].join(" ")
+        [p.code, p.title, p.englishTitle, p.degree, p.field, p.orientation].join(" "),
       );
       const keywordMatch = !query || searchText.includes(query);
       const degreeMatch = degrees.length === 0 || degrees.includes(p.degree);
       const fieldMatch = fields.length === 0 || fields.includes(p.field);
-      const orientationMatch = orientations.length === 0 || (p.orientations ?? [p.orientation]).some(value => orientations.some(selected => selected === value));
+      const orientationMatch =
+        orientations.length === 0 ||
+        (p.orientations ?? [p.orientation]).some((value) =>
+          orientations.some((selected) => selected === value),
+        );
       return keywordMatch && degreeMatch && fieldMatch && orientationMatch;
     });
 
     // filter() đã tạo mảng riêng nên sort trực tiếp không đảo thứ tự nguồn programmes.
     // localeCompare với vi giữ quy tắc sắp xếp tên tiếng Việt.
     return result.sort((a, b) =>
-      sort === "za" ? b.title.localeCompare(a.title, "vi") : a.title.localeCompare(b.title, "vi")
+      sort === "za" ? b.title.localeCompare(a.title, "vi") : a.title.localeCompare(b.title, "vi"),
     );
   }, [keyword, degrees, fields, orientations, sort]);
 
@@ -106,114 +128,123 @@ export default function ProgrammeDirectory() {
   // Giữ quy tắc này khi sửa UI để tránh làm số lượng cạnh checkbox đổi ý nghĩa.
   const filterSections = [
     {
-      title: "Bậc đào tạo",
+      title: copy.labels.degree,
       items: programmeDegrees,
       selected: degrees,
       toggleItem: (val: string) => toggle(setDegrees, val as ProgrammeDegree),
       count: (val: string) => programmes.filter((p) => p.degree === val).length,
     },
     {
-      title: "Nhóm ngành",
+      title: copy.labels.field,
       items: programmeFields,
       selected: fields,
       toggleItem: (val: string) => toggle(setFields, val as ProgrammeField),
       count: (val: string) => programmes.filter((p) => p.field === val).length,
     },
     {
-      title: "Định hướng",
+      title: copy.labels.orientation,
       items: programmeOrientations,
       selected: orientations,
       toggleItem: (val: string) => toggle(setOrientations, val as ProgrammeOrientation),
-      count: (val: string) => programmes.filter((p) => (p.orientations ?? [p.orientation]).some(value => value === val)).length,
+      count: (val: string) =>
+        programmes.filter((p) => (p.orientations ?? [p.orientation]).some((value) => value === val))
+          .length,
     },
   ];
 
   return (
-    <section className="vgg-pd" id="programme-directory">
-      <div className="vgg-pd__intro">
-        <div className="vgg-pd__intro-copy">
-          <h2>KHÁM PHÁ CÁC NGÀNH HỌC</h2>
-          <p className="vgg-pd__lead">
-            Khám phá chương trình Sau đại học theo lĩnh vực, bậc đào tạo và định hướng phù hợp với mục tiêu của bạn.
+    <section className={`${styles["vgg-pd"]}`} id="programme-directory">
+      <div className={`${styles["vgg-pd__intro"]}`}>
+        <div className={`${styles["vgg-pd__intro-copy"]}`}>
+          <h2>{copy.programme_directory.kham_pha_cac_nganh_hoc}</h2>
+          <p className={`${styles["vgg-pd__lead"]}`}>
+            {copy.programme_directory.kham_pha_chuong_trinh_sau_dai_hoc}
           </p>
         </div>
       </div>
 
-      <div className="vgg-pd__finder">
-        <aside className="vgg-pd__sidebar">
-          <div className="vgg-pd__sidebar-head">
-            <div className="vgg-pd__sidebar-title">
+      <div className={`${styles["vgg-pd__finder"]}`}>
+        <aside className={`${styles["vgg-pd__sidebar"]}`}>
+          <div className={`${styles["vgg-pd__sidebar-head"]}`}>
+            <div className={`${styles["vgg-pd__sidebar-title"]}`}>
               <SlidersHorizontal size={18} strokeWidth={1.8} />
-              <strong>Bộ lọc</strong>
-              {activeFilterCount > 0 && <span className="vgg-pd__active-count">{activeFilterCount}</span>}
+              <strong>{copy.programme_directory.bo_loc}</strong>
+              {activeFilterCount > 0 && (
+                <span className={`${styles["vgg-pd__active-count"]}`}>{activeFilterCount}</span>
+              )}
             </div>
-            <button type="button" className="vgg-pd__clear" onClick={clearAll}>
+            <button type="button" className={`${styles["vgg-pd__clear"]}`} onClick={clearAll}>
               <RotateCcw size={13} />
-              Xóa tất cả
+              {copy.programme_directory.xoa_tat_ca}
             </button>
           </div>
 
           {filterSections.map((sec) => (
-            <details className="vgg-pd__filter" open key={sec.title}>
+            <details className={`${styles["vgg-pd__filter"]}`} open key={sec.title}>
               <summary>
                 <span>{sec.title}</span>
                 <ChevronDown size={16} />
               </summary>
-              <div className="vgg-pd__filter-list">
+              <div className={`${styles["vgg-pd__filter-list"]}`}>
                 {sec.items.map((item) => (
-                  <label className="vgg-pd__option" key={item}>
+                  <label className={`${styles["vgg-pd__option"]}`} key={item}>
                     <input
                       type="checkbox"
                       checked={sec.selected.includes(item as never)}
                       onChange={() => sec.toggleItem(item)}
                     />
-                    <span className="vgg-pd__checkbox" />
-                    <span className="vgg-pd__option-name">{item}</span>
-                    <span className="vgg-pd__option-count">{sec.count(item)}</span>
+                    <span className={`${styles["vgg-pd__checkbox"]}`} />
+                    <span className={`${styles["vgg-pd__option-name"]}`}>{item}</span>
+                    <span className={`${styles["vgg-pd__option-count"]}`}>{sec.count(item)}</span>
                   </label>
                 ))}
               </div>
             </details>
           ))}
 
-          <div className="vgg-pd__consult">
-            <span>NEED GUIDANCE?</span>
-            <h3>Chưa chắc nên<br />chọn chương trình nào?</h3>
-            <p>
-              Trao đổi với đội ngũ Viện Sau Đại học để tìm lộ trình phù hợp với mục tiêu học tập và nghề nghiệp.
-            </p>
-            <Link href="/admissions#consultation">
-              Nhận tư vấn
+          <div className={`${styles["vgg-pd__consult"]}`}>
+            <span>{copy.programme_directory.need_guidance}</span>
+            <h3>
+              {copy.programme_directory.chua_chac_nen}
+              {" "}
+              {copy.programme_directory.chon_chuong_trinh_nao}
+            </h3>
+            <p>{copy.programme_directory.trao_doi_voi_doi_ngu_vien_sau}</p>
+            <Link href={copy.programme_directory.href_admissions_consultation}>
+              {copy.programme_directory.nhan_tu_van}
               <ArrowUpRight size={16} />
             </Link>
           </div>
         </aside>
 
-        <div className="vgg-pd__results">
-          <div className="vgg-pd__toolbar">
-            <label className="vgg-pd__search">
+        <div className={`${styles["vgg-pd__results"]}`}>
+          <div className={`${styles["vgg-pd__toolbar"]}`}>
+            <label className={`${styles["vgg-pd__search"]}`}>
               <Search size={20} strokeWidth={1.7} />
               <input
                 type="search"
-                aria-label="Tìm chương trình"
-                placeholder="Bạn muốn học gì?"
+                aria-label={copy.programme_directory.aria_label_tim_chuong_trinh}
+                placeholder={copy.programme_directory.placeholder_ban_muon_hoc_gi}
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
               />
             </label>
 
-            <label className="vgg-pd__sort">
-              <span>SORT BY</span>
+            <label className={`${styles["vgg-pd__sort"]}`}>
+              <span>{copy.programme_directory.sort_by}</span>
               <select value={sort} onChange={(e) => setSort(e.target.value as "az" | "za")}>
-                <option value="az">Tên A–Z</option>
-                <option value="za">Tên Z–A</option>
+                <option value="az">{copy.programme_directory.ten_a_z}</option>
+                <option value="za">{copy.programme_directory.ten_z_a}</option>
               </select>
             </label>
           </div>
 
           {activeFilters.length > 0 && (
-            <div className="vgg-pd__active-filters" aria-label="Bộ lọc đang chọn">
-              <span>Đang lọc</span>
+            <div
+              className={`${styles["vgg-pd__active-filters"]}`}
+              aria-label={copy.programme_directory.aria_label_bo_loc_dang_chon}
+            >
+              <span>{copy.programme_directory.dang_loc}</span>
               {activeFilters.map((filter) => (
                 <button
                   type="button"
@@ -223,82 +254,108 @@ export default function ProgrammeDirectory() {
                   {filter.value} <X size={13} aria-hidden="true" />
                 </button>
               ))}
-              <button type="button" className="vgg-pd__clear-chips" onClick={clearAll}>
-                Xóa lọc
+              <button
+                type="button"
+                className={`${styles["vgg-pd__clear-chips"]}`}
+                onClick={clearAll}
+              >
+                {copy.programme_directory.xoa_loc}
               </button>
             </div>
           )}
 
-          <div className="vgg-pd__result-meta">
+          <div className={`${styles["vgg-pd__result-meta"]}`}>
             <p>
-              Hiển thị <strong>{filteredProgrammes.length}</strong> chương trình
+              {copy.programme_directory.hien_thi} <strong>{filteredProgrammes.length}</strong>{" "}
+              {copy.programme_directory.chuong_trinh}
             </p>
-            <span>VAN LANG GRADUATE</span>
+            <span>{copy.programme_directory.van_lang_graduate}</span>
           </div>
 
-          <div className="vgg-pd__list">
+          <div className={`${styles["vgg-pd__list"]}`}>
             {filteredProgrammes.map((programme) => {
               const expanded = expandedId === programme.id;
               const details = getProgrammeDetails(programme);
 
               return (
                 <article
-                  className={`vgg-pd-card ${expanded ? "vgg-pd-card--open" : ""}`}
+                  className={`${styles["vgg-pd-card"]} ${expanded ? styles["vgg-pd-card--open"] : ""}`}
                   key={programme.id}
                 >
-                  <div className="vgg-pd-card__row">
-                    <span className="vgg-pd-card__code">{programme.code}</span>
-                    <div className="vgg-pd-card__main">
-                      <div className="vgg-pd-card__meta">
+                  <div className={`${styles["vgg-pd-card__row"]}`}>
+                    <span className={`${styles["vgg-pd-card__code"]}`}>{programme.code}</span>
+                    <div className={`${styles["vgg-pd-card__main"]}`}>
+                      <div className={`${styles["vgg-pd-card__meta"]}`}>
                         <span>{programme.degree}</span>
                         <span>{programme.field}</span>
                       </div>
-                      <h3><Link href={`/programmes/${programme.id}`}>{programme.title}</Link></h3>
+                      <h3 className="type-list-title">
+                        <Link href={`/programmes/${programme.id}`}>{programme.title}</Link>
+                      </h3>
                     </div>
 
-                    <div className="vgg-pd-card__stat">
+                    <div className={`${styles["vgg-pd-card__stat"]}`}>
                       <strong>{programme.creditsLabel ?? programme.credits}</strong>
-                      <span>TÍN CHỈ</span>
+                      <span>{copy.programme_directory.tin_chi}</span>
                     </div>
 
-                    <div className="vgg-pd-card__stat">
+                    <div className={`${styles["vgg-pd-card__stat"]}`}>
                       <strong>{programme.duration}</strong>
-                      <span>THỜI GIAN</span>
+                      <span>{copy.programme_directory.thoi_gian}</span>
                     </div>
 
-                    <div className="vgg-pd-card__stat vgg-pd-card__tuition">
-                      <strong>{getProgrammeTuition(programme)}</strong>
-                      <span>HỌC PHÍ TOÀN KHÓA</span>
-                    </div>
-
-                    {programme.id === "logistics" ? <Link
-                      href={`/programmes/${programme.id}`}
-                      className="vgg-pd-card__toggle"
-                      aria-label={`Khám phá ngành ${programme.title}`}
-                    ><ArrowUpRight size={18} /></Link> : <button
-                      type="button"
-                      className="vgg-pd-card__toggle"
-                      aria-expanded={expanded}
-                      aria-label={expanded ? `Thu gọn ${programme.title}` : `Xem thêm ${programme.title}`}
-                      onClick={() => setExpandedId(expanded ? null : programme.id)}
+                    <div
+                      className={`${styles["vgg-pd-card__stat"]} ${styles["vgg-pd-card__tuition"]}`}
                     >
-                      <ChevronDown size={18} />
-                    </button>}
+                      <strong>{getProgrammeTuition(programme)}</strong>
+                      <span>{copy.programme_directory.hoc_phi_toan_khoa}</span>
+                    </div>
+
+                    {programme.id === "logistics" ? (
+                      <Link
+                        href={`/programmes/${programme.id}`}
+                        className={`${styles["vgg-pd-card__toggle"]}`}
+                        aria-label={`Khám phá ngành ${programme.title}`}
+                      >
+                        <ArrowUpRight size={18} />
+                      </Link>
+                    ) : (
+                      <button
+                        type="button"
+                        className={`${styles["vgg-pd-card__toggle"]}`}
+                        aria-expanded={expanded}
+                        aria-label={
+                          expanded ? `Thu gọn ${programme.title}` : `Xem thêm ${programme.title}`
+                        }
+                        onClick={() => setExpandedId(expanded ? null : programme.id)}
+                      >
+                        <ChevronDown size={18} />
+                      </button>
+                    )}
                   </div>
 
                   {expanded && programme.detailsPending && (
-                    <div className="vgg-pd-card__details"><p className="vgg-pd-card__intro">Thông tin chi tiết ngành {programme.title} đang được cập nhật.</p></div>
+                    <div className={`${styles["vgg-pd-card__details"]}`}>
+                      <p className={`${styles["vgg-pd-card__intro"]}`}>
+                        {programme.summary ??
+                          `Thông tin chi tiết ngành ${programme.title} đang được cập nhật.`}
+                      </p>
+                    </div>
                   )}
                   {expanded && !programme.detailsPending && (
-                    <div className="vgg-pd-card__details">
-                      <p className="vgg-pd-card__intro">{details.intro}</p>
+                    <div className={`${styles["vgg-pd-card__details"]}`}>
+                      <p className={`${styles["vgg-pd-card__intro"]}`}>{details.intro}</p>
 
-                      <div className="vgg-pd-card__content-grid">
+                      <div className={`${styles["vgg-pd-card__content-grid"]}`}>
                         {[
-                          ["01", "Đặc điểm nổi bật", details.highlights],
-                          ["02", "Năng lực đầu ra", details.outcomes],
-                          ["03", "Triển vọng nghề nghiệp", details.careers],
-                          ["04", "Điều kiện tốt nghiệp", getProgrammeGraduationRequirements(programme)],
+                          ["01", copy.labels.highlights, details.highlights],
+                          ["02", copy.labels.outcomes, details.outcomes],
+                          ["03", copy.labels.careers, details.careers],
+                          [
+                            "04",
+                            copy.labels.graduation,
+                            getProgrammeGraduationRequirements(programme),
+                          ],
                         ].map(([number, title, items]) => (
                           <section key={number as string}>
                             <h4>
@@ -315,39 +372,50 @@ export default function ProgrammeDirectory() {
                       </div>
 
                       {getProgrammeCurricula(programme).map((curriculum) => (
-                        <section className="vgg-pd-card__curriculum" key={curriculum.number}>
+                        <section
+                          className={`${styles["vgg-pd-card__curriculum"]}`}
+                          key={curriculum.number}
+                        >
                           <header>
                             <span>{curriculum.number}</span>
                             <div>
-                              <p>NỘI DUNG CHƯƠNG TRÌNH</p>
+                              <p>{copy.vgg_pd_card_curriculum.noi_dung_chuong_trinh}</p>
                               <h4>{curriculum.title}</h4>
                             </div>
-                            <strong>{programme.creditsLabel ?? programme.credits} tín chỉ</strong>
+                            <strong>
+                              {programme.creditsLabel ?? programme.credits}{" "}
+                              {copy.vgg_pd_card_curriculum.tin_chi}
+                            </strong>
                           </header>
 
-                          <div className="vgg-pd-card__curriculum-groups">
+                          <div className={`${styles["vgg-pd-card__curriculum-groups"]}`}>
                             {curriculum.groups.map((group, groupIndex) => (
                               <section key={group.title}>
                                 <h5>
                                   <span>{String(groupIndex + 1).padStart(2, "0")}</span>
-                                  <span className="vgg-pd-card__group-header">
+                                  <span className={`${styles["vgg-pd-card__group-header"]}`}>
                                     <strong>{group.title}</strong>
                                   </span>
                                 </h5>
                                 <ul>
                                   {group.courses.map((course, courseIndex) => (
                                     <li key={`${course.name}-${courseIndex}`}>
-                                      <span className="vgg-pd-card__course-number">
+                                      <span className={`${styles["vgg-pd-card__course-number"]}`}>
                                         {String(courseIndex + 1).padStart(2, "0")}
                                       </span>
-                                      <span className="vgg-pd-card__course-name">
+                                      <span className={`${styles["vgg-pd-card__course-name"]}`}>
                                         <span>{course.name}</span>
                                       </span>
                                       <div>
-                                        {course.elective && <small>TỰ CHỌN</small>}
-                                        {typeof course.credits === "number" && course.credits > 0 && (
-                                          <b>{course.credits} tín chỉ</b>
+                                        {course.elective && (
+                                          <small>{copy.vgg_pd_card_curriculum.tu_chon}</small>
                                         )}
+                                        {typeof course.credits === "number" &&
+                                          course.credits > 0 && (
+                                            <b>
+                                              {course.credits} {copy.vgg_pd_card_curriculum.tin_chi}
+                                            </b>
+                                          )}
                                       </div>
                                     </li>
                                   ))}
@@ -358,33 +426,38 @@ export default function ProgrammeDirectory() {
                         </section>
                       ))}
 
-
-                      <div className="vgg-pd-card__detail-grid">
+                      <div className={`${styles["vgg-pd-card__detail-grid"]}`}>
                         <div>
-                          <span>Hình thức học</span>
+                          <span>{copy.programme_directory.hinh_thuc_hoc}</span>
                           <strong>{programme.studyMode}</strong>
                         </div>
                         <div>
-                          <span>Kỳ tuyển sinh</span>
+                          <span>{copy.programme_directory.ky_tuyen_sinh}</span>
                           <strong>{programme.intake}</strong>
                         </div>
                         <div>
-                          <span>Thời gian</span>
+                          <span>{copy.programme_directory.thoi_gian_1}</span>
                           <strong>{programme.duration}</strong>
                         </div>
                         <div>
-                          <span>Định hướng</span>
+                          <span>{copy.programme_directory.dinh_huong}</span>
                           <strong>{programme.orientation}</strong>
                         </div>
                       </div>
 
-                      <div className="vgg-pd-card__actions">
-                        <Link href="/admissions" className="vgg-pd-card__primary vgg-cta-pill">
-                          Thông tin tuyển sinh
+                      <div className={`${styles["vgg-pd-card__actions"]}`}>
+                        <Link
+                          href={copy.programme_directory.href_admissions}
+                          className={`${styles["vgg-pd-card__primary"]} vgg-cta-pill`}
+                        >
+                          {copy.programme_directory.thong_tin_tuyen_sinh}
                           <ArrowUpRight size={16} />
                         </Link>
-                        <Link href="/admissions#consultation" className="vgg-pd-card__secondary vgg-cta-pill">
-                          Liên hệ tư vấn
+                        <Link
+                          href={copy.programme_directory.href_admissions_consultation}
+                          className={`${styles["vgg-pd-card__secondary"]} vgg-cta-pill`}
+                        >
+                          {copy.programme_directory.lien_he_tu_van}
                           <ArrowUpRight size={16} />
                         </Link>
                       </div>
@@ -395,12 +468,12 @@ export default function ProgrammeDirectory() {
             })}
 
             {filteredProgrammes.length === 0 && (
-              <div className="vgg-pd__empty">
+              <div className={`${styles["vgg-pd__empty"]}`}>
                 <Search size={32} strokeWidth={1.4} />
-                <h3>Không tìm thấy chương trình</h3>
-                <p>Hãy thử thay đổi từ khóa hoặc bộ lọc.</p>
+                <h3>{copy.programme_directory.khong_tim_thay_chuong_trinh}</h3>
+                <p>{copy.programme_directory.hay_thu_thay_doi_tu_khoa_hoac}</p>
                 <button type="button" onClick={clearAll}>
-                  Xóa toàn bộ bộ lọc
+                  {copy.programme_directory.xoa_toan_bo_bo_loc}
                 </button>
               </div>
             )}

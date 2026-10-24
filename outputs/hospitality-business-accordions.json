@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "quan-tri-kinh-doanh",
+    "open": 15,
+    "overflow": false,
+    "sourceImages": [
+      {
+        "loaded": true
+      },
+      {
+        "loaded": true
+      }
+    ],
+    "total": 15
+  },
+  {
+    "slug": "quan-tri-khach-san",
+    "open": 15,
+    "overflow": false,
+    "sourceImages": [
+      {
+        "loaded": true
+      },
+      {
+        "loaded": true
+      }
+    ],
+    "total": 15
+  }
+]

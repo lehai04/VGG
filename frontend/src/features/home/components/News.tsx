@@ -26,7 +26,7 @@ export async function News() {
               <Image
                 src={post.coverImage || "/images/pages/news/content/banner.jpg"}
                 unoptimized={Boolean(post.externalUrl) || post.coverImage?.startsWith("/uploads/")}
-                alt={post.title}
+                alt={post.coverImageAlt || post.title}
                 fill
                 sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw"
               />
@@ -37,7 +37,7 @@ export async function News() {
                 ? new Date(post.publishedAt).toLocaleDateString("vi-VN")
                 : "Mới cập nhật"}
             </small>
-            <h3><Link href={post.externalUrl ?? `/news/${post.slug}`} target={post.externalUrl ? "_blank" : undefined} rel={post.externalUrl ? "noopener noreferrer" : undefined}>{post.title}</Link></h3>
+            <h3 className="type-card-title"><Link href={post.externalUrl ?? `/news/${post.slug}`} target={post.externalUrl ? "_blank" : undefined} rel={post.externalUrl ? "noopener noreferrer" : undefined}>{post.title}</Link></h3>
             {post.excerpt && <p>{post.excerpt}</p>}
             <Link className="newsReadMore" href={post.externalUrl ?? `/news/${post.slug}`} target={post.externalUrl ? "_blank" : undefined} rel={post.externalUrl ? "noopener noreferrer" : undefined}>
               Đọc bài viết <span>→</span>

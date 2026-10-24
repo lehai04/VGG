@@ -2,24 +2,21 @@
 
 /**
  * Header trang con. `compact` = dùng Header homepage ở chế độ routeMode
- * (click menu đi tới /slug thay vì #anchor). Nhánh không compact là mega menu hover cũ.
+ * (click menu đi tới /slug thay vì #anchor). Cả hai biến thể điều hướng trực tiếp.
  */
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { discoverSections, navigationGroups, subpageHref } from "@/data/site";
+import { navigationGroups } from "@/data/site";
 import { Header } from "@/features/home/components/Header";
-import { LanguageToggle } from "@/shared/components/layout/LanguageToggle";
 
 function UtilityBar() {
   return (
     <div className="utility">
-      <span>TRƯỜNG ĐẠI HỌC VĂN LANG</span>
+      <span>VIỆN SAU ĐẠI HỌC – TRƯỜNG ĐẠI HỌC VĂN LANG</span>
       <div>
         <Link href="/news">Tin tức</Link>
         <Link href="/resources">Tài nguyên</Link>
-        <LanguageToggle />
       </div>
     </div>
   );
@@ -41,13 +38,10 @@ function BrandLink({ className }: { className: string }) {
 
 /**
  * LAYOUT DÙNG CHUNG cho các page ngoài homepage.
- * `compact` dùng header route trực tiếp; nhánh còn lại hỗ trợ mega menu đầy đủ.
+ * `compact` dùng header route trực tiếp; cả hai biến thể dùng cùng đích điều hướng.
  */
 export function SiteHeader({ compact = false }: { compact?: boolean }) {
-  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSlug, setActiveSlug] = useState<string | null>(null);
-  const active = navigationGroups.find((group) => group.slug === activeSlug);
 
   if (compact)
     return (
@@ -68,7 +62,6 @@ export function SiteHeader({ compact = false }: { compact?: boolean }) {
           aria-controls="main-menu"
           onClick={() => {
             setMobileOpen((value) => !value);
-            setActiveSlug(null);
           }}
         >
           {mobileOpen ? "ĐÓNG ×" : "MENU ☰"}
@@ -79,73 +72,12 @@ export function SiteHeader({ compact = false }: { compact?: boolean }) {
           className={mobileOpen ? "main-menu open" : "main-menu"}
         >
           {navigationGroups.map((group) => (
-            group.slug === "discover" ? (
-              <button
-                type="button"
-                key={group.slug}
-                aria-expanded={activeSlug === group.slug}
-                onClick={() => setActiveSlug(activeSlug === group.slug ? null : group.slug)}
-                className={activeSlug === group.slug ? "active" : ""}
-              >
-                <span>{group.en}</span>
-                <small>{group.vi}</small>
-              </button>
-            ) : (
-              <button
-                type="button"
-                key={group.slug}
-                onClick={() => {
-                  setActiveSlug(null);
-                  setMobileOpen(false);
-                  router.push(`/${group.slug}`);
-                }}
-              >
-                <span>{group.en}</span>
-                <small>{group.vi}</small>
-              </button>
-            )
+            <Link key={group.slug} href={`/${group.slug}`} onClick={() => setMobileOpen(false)}>
+              <span>{group.en}</span>
+              <small>{group.vi}</small>
+            </Link>
           ))}
         </nav>
-        {active && (
-          <div className="mega-menu">
-            <div className="mega-title">
-              <p>{String(navigationGroups.indexOf(active) + 1).padStart(2, "0")}</p>
-              <h2>{active.en}</h2>
-              <span>{active.vi}</span>
-            </div>
-            <div className="mega-links">
-              {active.items.map((item, index) => (
-                <Link
-                  key={item}
-                  href={
-                    active.slug === "discover"
-                      ? index === 0 ? "/discover" : `/discover/${discoverSections[index].slug}`
-                      : subpageHref(active.slug, index)
-                  }
-                  onClick={() => {
-                    setActiveSlug(null);
-                    setMobileOpen(false);
-                  }}
-                >
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  {item}
-                  <b aria-hidden="true">↗</b>
-                </Link>
-              ))}
-            </div>
-            <div className="mega-feature">
-              <small>VAN LANG GLOBAL GRADUATE</small>
-              <h3>
-                Chuẩn quốc tế.
-                <br />
-                Lấy người học
-                <br />
-                làm trung tâm.
-              </h3>
-              <Link href="/discover">Khám phá Viện Sau Đại học →</Link>
-            </div>
-          </div>
-        )}
       </header>
     </>
   );

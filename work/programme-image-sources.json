@@ -1,0 +1,149 @@
+[
+  {
+    "key": "laboratory",
+    "page": "https://unsplash.com/photos/a-scientist-is-working-in-a-laboratory-476mHdnj8dM",
+    "url": "https://images.unsplash.com/photo-1748182448174-30c6b83443b9?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "energyLab",
+    "page": "https://unsplash.com/photos/scientist-using-laptop-in-laboratory-8yS04veb1TQ",
+    "url": "https://images.unsplash.com/photo-1581093577421-f561a654a353?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "logistics",
+    "page": "https://unsplash.com/photos/stacks-of-shipping-containers-at-a-port-2mnOE-OPn-k",
+    "url": "https://images.unsplash.com/photo-1770944182416-911214039dae?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "law",
+    "page": "https://unsplash.com/photos/a-library-with-books-on-shelves-3K6Qcxm6Jig",
+    "url": "https://images.unsplash.com/photo-1669348849154-25e23e2ccf05?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "hotel",
+    "page": "https://unsplash.com/photos/empty-hotel-lobby-FPS7a7XQZ0w",
+    "url": "https://images.unsplash.com/photo-1560662105-57f8ad6ae2d1?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "accounting",
+    "page": "https://unsplash.com/photos/person-reviewing-documents-with-calculator-and-laptop-0oZpRxG5Hkk",
+    "url": "https://images.unsplash.com/photo-1772588627327-1eeddcf73c11?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "marketing",
+    "page": "https://unsplash.com/photos/three-men-using-macbooks-_S7-KX8geL0",
+    "url": "https://images.unsplash.com/photo-1559523182-a284c3fb7cff?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "forest",
+    "page": "https://unsplash.com/photos/an-aerial-view-of-a-river-running-through-a-forest-1oEnl6GQxWE",
+    "url": "https://images.unsplash.com/photo-1697223243328-fdd5c3ae34da?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "automotive",
+    "page": "https://unsplash.com/photos/mechanic-working-on-a-car-engine-in-a-workshop-XP8o9_Arwqg",
+    "url": "https://images.unsplash.com/photo-1771340012319-0b4fca008b54?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "art",
+    "page": "https://unsplash.com/photos/artist-paints-on-canvas-in-a-light-filled-studio-eD8AGdTTlQc",
+    "url": "https://images.unsplash.com/photo-1752649937956-f2c09651bf7f?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "communication",
+    "page": "https://unsplash.com/photos/a-microphone-stands-on-a-stand-in-an-empty-room-Wce1i00U8eM",
+    "url": "https://images.unsplash.com/photo-1774025395295-6d5f23f272bd?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "coding",
+    "page": "https://unsplash.com/photos/computer-screen-displaying-code-and-terminal-output-fmH6yLBwEPw",
+    "url": "https://images.unsplash.com/photo-1774901128283-64c62117216a?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "architecture",
+    "page": "https://unsplash.com/photos/architectural-blueprints-with-drafting-tools-Yn8D5B8C-eY",
+    "url": "https://images.unsplash.com/photo-1603901622056-0a5bee231395?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "tourism",
+    "page": "https://unsplash.com/photos/two-women-planning-a-journey-pointing-at-a-detailed-map-FkSchPMHSBg",
+    "url": "https://images.unsplash.com/photo-1781861799305-d22ee4b22795?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "classroom",
+    "page": "https://unsplash.com/photos/students-reading-textbooks-in-classroom-BCBGahg0MH0",
+    "url": "https://images.unsplash.com/photo-1557989048-03456d01a26e?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "gallery",
+    "page": "https://unsplash.com/photos/art-gallery-interior-with-paintings-and-seating-EzfHCR-0bGo",
+    "url": "https://images.unsplash.com/photo-1768366778536-f4e32064cc2c?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "construction",
+    "page": "https://unsplash.com/photos/construction-workers-review-plans-at-a-job-site-qjxlAZYkGpU",
+    "url": "https://images.unsplash.com/photo-1742112125554-fdb788faedaa?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "finance",
+    "page": "https://unsplash.com/photos/financial-stock-market-data-displayed-on-a-screen-EuIqk6LpUU0",
+    "url": "https://images.unsplash.com/photo-1773266110858-acb9b6c43b15?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "water",
+    "page": "https://unsplash.com/photos/aerial-view-of-a-water-treatment-plant-with-surrounding-fields-T-q7fVaJgHA",
+    "url": "https://images.unsplash.com/photo-1774789599304-cca1e1ffbb95?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "commerce",
+    "page": "https://unsplash.com/photos/woman-shopping-for-clothes-in-a-boutique-WUXaLGUkNs8",
+    "url": "https://images.unsplash.com/photo-1753161029492-0644556055cf?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  },
+  {
+    "key": "management",
+    "page": "https://unsplash.com/photos/team-discussing-charts-during-a-business-meeting-3B5Hf9_PLpU",
+    "url": "https://images.unsplash.com/photo-1758518729829-162d6bf27b5e?auto=format&fit=crop&fm=jpg&ixid=NHwxMjA3fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "license": "https://unsplash.com/license",
+    "credit": "Unsplash"
+  }
+]

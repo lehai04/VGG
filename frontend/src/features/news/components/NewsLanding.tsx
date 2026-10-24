@@ -103,7 +103,7 @@ export function NewsLanding({
                   <Image
                     src={post.coverImage || "/images/pages/news/content/banner.jpg"}
                     unoptimized={Boolean(post.externalUrl) || post.coverImage?.startsWith("/uploads/")}
-                    alt={post.title}
+                    alt={post.coverImageAlt || post.title}
                     fill
                     sizes="(max-width:760px) 100vw,33vw"
                   />
@@ -111,7 +111,7 @@ export function NewsLanding({
                   {post.id === newestPostId && <strong className={styles.newBadge}>NEW</strong>}
                 </figure>
                 <div className={styles.cardBody}>
-                  <h3>{post.title}</h3>
+                  <h3 className="type-card-title">{post.title}</h3>
                   <div className={styles.byline}>
                     <UserRound />
                     <b>{post.authorName || post.author?.fullName || "Viện Sau Đại học"}</b>

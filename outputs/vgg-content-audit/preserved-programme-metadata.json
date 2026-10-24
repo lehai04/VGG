@@ -1,0 +1,16 @@
+{
+  "programmes": 20,
+  "keys": [
+    "id",
+    "title",
+    "code",
+    "credits",
+    "duration",
+    "tuition",
+    "orientation",
+    "orientations",
+    "degree",
+    "studyMode"
+  ],
+  "differences": []
+}

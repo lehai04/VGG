@@ -114,6 +114,17 @@ model NewsPost {
   excerpt     String?
   content     String
   coverImage  String?       @map("cover_image") @db.VarChar(1000)
+  coverImageAlt String?     @map("cover_image_alt") @db.VarChar(500)
+  metaTitle   String?       @map("meta_title") @db.VarChar(250)
+  metaDescription String?   @map("meta_description") @db.VarChar(1000)
+  canonicalUrl String?      @map("canonical_url") @db.VarChar(1000)
+  robotsIndex Boolean       @default(true) @map("robots_index")
+  robotsFollow Boolean      @default(true) @map("robots_follow")
+  ogTitle     String?       @map("og_title") @db.VarChar(250)
+  ogDescription String?     @map("og_description") @db.VarChar(1000)
+  ogImage     String?       @map("og_image") @db.VarChar(1000)
+  ogImageAlt  String?       @map("og_image_alt") @db.VarChar(500)
+  customJsonLd Json?        @map("custom_json_ld")
   status      ContentStatus @default(DRAFT)
   publishedAt DateTime?     @map("published_at")
   authorName  String?       @map("author_name") @db.VarChar(120)

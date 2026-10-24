@@ -1,0 +1,1363 @@
+{
+  "checked": 226,
+  "present": 226,
+  "missing": [],
+  "units": [
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Trang chủ",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "li",
+      "text": "Chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h1",
+      "text": "Công nghệ sinh học",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Phát triển kiến thức chuyên sâu và năng lực nghiên cứu để khám phá các cơ chế của sự sống, ứng dụng công nghệ sinh học trong y sinh, sức khỏe và phát triển bền vững.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Tổng quan chương trình",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h2",
+      "text": "Nghiên cứu sự sống. Ứng dụng vì sức khỏe.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Công nghệ sinh học tại Văn Lang được thiết kế theo định hướng nghiên cứu, giúp người học phát triển kiến thức chuyên sâu về sinh học phân tử, hóa sinh, miễn dịch và sinh học tế bào. Từ nền tảng này, người học tiếp cận các công nghệ hiện đại trong chẩn đoán phân tử, liệu pháp gene, liệu pháp tế bào và tin sinh học.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Với 27 tín chỉ dành cho hai chuyên đề nghiên cứu và luận văn, chương trình chú trọng năng lực xác định vấn đề, thiết kế nghiên cứu, triển khai thực nghiệm, phân tích dữ liệu và trình bày kết quả khoa học.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Người học có cơ hội kết nối nghiên cứu với thực tiễn tại Trường, các viện, trung tâm nghiên cứu và doanh nghiệp; đồng thời phát triển ý thức về đạo đức nghiên cứu, an toàn sinh học và trách nhiệm với cộng đồng.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Văn bằng tốt nghiệp: Thạc sĩ Công nghệ sinh học Master of Engineering in Biotechnology",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "figcaption",
+      "text": "Thao tác với thiết bị phòng thí nghiệm Nguồn: Trường Đại học Văn Lang ↗",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h3",
+      "text": "Nghiên cứu là trọng tâm.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Chuyên đề và luận văn 45% khối lượng chương trình 27 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "li",
+      "text": "Luận văn tốt nghiệp Thực hiện trong học kỳ 5–6 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Điểm nổi bật của chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Nghiên cứu chiếm 45% chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Hai chuyên đề nghiên cứu, mỗi chuyên đề 6 tín chỉ, cùng luận văn 15 tín chỉ tạo không gian để người học phát triển một hướng nghiên cứu chuyên sâu.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Tiếp cận công nghệ sinh học hiện đại",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Kết nối kiến thức sinh học phân tử và tế bào với liệu pháp gene, miễn dịch học, chẩn đoán phân tử và các học phần chuyên ngành tự chọn.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phân tích dữ liệu sinh học",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Học phần Tin sinh học ứng dụng giúp người học tiếp cận dữ liệu hệ gen và dữ liệu omics, rèn luyện kỹ năng xử lý, phân tích và diễn giải kết quả.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Gắn với môi trường nghiên cứu thực tế",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Học viên được tham quan, kiến tập, thực tập và thực hiện luận văn tại Trường, viện, trung tâm nghiên cứu và doanh nghiệp theo kế hoạch đào tạo.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phát triển cùng môi trường nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Học viên được tạo điều kiện đăng ký đề tài nghiên cứu khoa học cấp trường. Học viên đáp ứng năng lực ngoại ngữ được giới thiệu tham gia các dự án nghiên cứu quốc tế; với kết quả nghiên cứu tốt, học viên được giảng viên hướng dẫn công bố bài báo khoa học và giới thiệu cơ hội học tiến sĩ.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "summary",
+      "text": "Chuẩn đầu ra chương trình",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Sáu chuẩn đầu ra bao quát kiến thức chuyên sâu, kỹ năng nghiên cứu và năng lực tự chủ, trách nhiệm trong hoạt động khoa học.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Vận dụng kiến thức chuyên sâu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Vận dụng kiến thức chuyên sâu về sinh học phân tử, hóa sinh, sinh học tế bào, miễn dịch và vi sinh học để phân tích và giải thích các hiện tượng sinh học, bệnh học và các vấn đề khoa học trong lĩnh vực công nghệ sinh học.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Đánh giá và ứng dụng công nghệ",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phân tích nguyên lý và đánh giá khả năng ứng dụng của các công nghệ sinh học hiện đại trong y sinh và sức khỏe, bao gồm chẩn đoán phân tử, Vắc xin, liệu pháp sinh học, công nghệ nano sinh học và tin sinh học.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Thiết kế và triển khai nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thiết kế, triển khai và đánh giá một nghiên cứu khoa học trong lĩnh vực công nghệ sinh học theo phương pháp luận khoa học, từ hình thành vấn đề nghiên cứu đến phân tích và diễn giải kết quả.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Phân tích và trình bày dữ liệu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phân tích, xử lý và trình bày dữ liệu nghiên cứu khoa học bằng các công cụ và phương pháp phù hợp, đáp ứng yêu cầu báo cáo và công bố khoa học ở trình độ thạc sĩ.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Làm việc độc lập và hợp tác",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Làm việc độc lập hoặc phối hợp trong nhóm nghiên cứu, có khả năng tổ chức, quản lý hoạt động nghiên cứu khoa học và chủ động cập nhật kiến thức mới trong lĩnh vực công nghệ sinh học.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Thực hành nghiên cứu có trách nhiệm",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Tuân thủ đạo đức nghiên cứu, trung thực khoa học, an toàn sinh học và các quy định pháp lý liên quan; thể hiện trách nhiệm xã hội trong nghiên cứu và ứng dụng công nghệ sinh học vì sự phát triển bền vững.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình phù hợp với ai?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h2",
+      "text": "Từ nền tảng chuyên môn đến năng lực nghiên cứu.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành học phù hợp và đáp ứng các điều kiện dự tuyển của chương trình.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người muốn đi sâu vào nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Phát triển nền tảng sinh học thành năng lực đặt câu hỏi khoa học, thiết kế thực nghiệm, phân tích dữ liệu và thực hiện nghiên cứu độc lập.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người làm việc trong lĩnh vực liên quan",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Cập nhật kiến thức và phương pháp phục vụ công việc tại phòng thí nghiệm, đơn vị nghiên cứu, doanh nghiệp công nghệ sinh học hoặc y sinh.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Người hướng đến giảng dạy và học tiếp",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Củng cố kiến thức chuyên sâu và năng lực nghiên cứu để chuẩn bị cho công việc học thuật hoặc hành trình học tập ở trình độ tiến sĩ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Ngành tốt nghiệp có phù hợp?",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Người tốt nghiệp Công nghệ sinh học, Kỹ thuật sinh học, Sinh học ứng dụng, Sinh học và Sư phạm sinh học không cần học bổ sung kiến thức. Với các ngành liên quan trong danh mục, khối lượng bổ sung tối đa 6 tín chỉ, được xác định trên cơ sở bảng điểm và nội dung đã học. Các ngành chưa có trong danh mục được Hội đồng xem xét theo từng hồ sơ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Phương thức tuyển sinh",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Xét tuyển. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Công nghệ sinh học.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Yêu cầu ngoại ngữ đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên, được minh chứng bằng một trong các hình thức công nhận trong thông báo tuyển sinh.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "Các hình thức minh chứng ngoại ngữ đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Bằng đại học trở lên ngành ngôn ngữ nước ngoài hoặc chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Văn bằng, chứng chỉ tương đương Bậc 3 trở lên thuộc danh mục được công nhận và còn hiệu lực.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kết quả đánh giá tương đương Bậc 3 trở lên do Trường tổ chức; hoặc hoàn thành chương trình đào tạo, bồi dưỡng ngoại ngữ do Trường tổ chức hoặc công nhận.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Bằng đại học trở lên do Văn Lang cấp trong thời hạn không quá 2 năm, với chương trình đã đáp ứng chuẩn đầu ra ngoại ngữ từ Bậc 3 trở lên.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h3",
+      "text": "Bổ sung kiến thức đầu vào",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã học để xác định học phần cần bổ sung. Ứng viên phải hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "01. Nhóm không cần bổ sung kiến thức",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Ngành tốt nghiệp",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ sinh học (7420201)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật sinh học (7420202)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Sinh học ứng dụng (7420203)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Sinh học (7420101)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Sư phạm sinh học (7140213)",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên không cần học bổ sung kiến thức và vẫn phải đáp ứng đầy đủ các điều kiện dự tuyển của chương trình.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "02. Các ngành liên quan · Bổ sung tối đa 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Chế biến lương thực, thực phẩm và đồ uống Công nghệ thực phẩm (7540101); Công nghệ sau thu hoạch (7540104); Công nghệ chế biến thủy sản (7540105); Đảm bảo chất lượng và an toàn thực phẩm (7540106).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Nông nghiệp Nông nghiệp (7620101); Khuyến nông (7620102); Khoa học đất (7620103); Chăn nuôi (7620105); Nông học (7620109); Khoa học cây trồng (7620110); Bảo vệ thực vật (7620112); Kinh tế nông nghiệp (7620115); Phát triển nông thôn (7620116).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Dược học Dược học (7720201); Công nghệ dược phẩm (7720202); Hóa dược (7720203).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Dinh dưỡng Dinh dưỡng (7720401).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật y học Kỹ thuật xét nghiệm y học (7720601).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Quản lý tài nguyên và môi trường Quản lý tài nguyên và môi trường (7850101); Môi trường và phát triển bền vững (7850104).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Lâm nghiệp Lâm học (7620201); Lâm nghiệp đô thị (7620202); Lâm sinh (7620205).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Thủy sản Khoa học thủy sản (7620303).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Y học Y học cổ truyền (7720115).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Thú y Thú y (7640101).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h4",
+      "text": "Danh mục học phần có thể được yêu cầu",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Hội đồng xác định các học phần cần bổ sung, tổng khối lượng tối đa 6 tín chỉ, trên cơ sở nội dung đã học. Danh mục gồm 8 học phần, mỗi học phần 2 tín chỉ:",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Nhập môn Công nghệ sinh học · 2 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Hóa sinh · 2 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Sinh học phân tử và Di truyền · 2 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Kỹ thuật vi sinh · 2 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Sinh lý người và động vật · 2 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Sinh lý thực vật · 2 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Công nghệ gen · 2 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "li",
+      "text": "Tin sinh học · 2 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên có thể được miễn học phần bổ sung nếu bảng điểm minh chứng đã hoàn thành học phần tương đương.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "summary",
+      "text": "03. Ngành khác hoặc chưa có trong danh mục",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Hội đồng tuyển sinh và Hội đồng Khoa học Khoa Công nghệ Ứng dụng xem xét từng trường hợp trên cơ sở văn bằng, bảng điểm và định hướng đào tạo, từ đó xác định yêu cầu bổ sung kiến thức phù hợp.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Cơ hội nghề nghiệp và phát triển",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h2",
+      "text": "Đưa năng lực nghiên cứu vào thực tiễn.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Nền tảng chuyên sâu và kỹ năng nghiên cứu mở ra nhiều hướng phát triển trong công nghệ sinh học, y sinh, dữ liệu sinh học và chuyển giao công nghệ.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Nghiên cứu và học thuật",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Nghiên cứu viên",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tham gia nghiên cứu tại viện, trung tâm R&D và phòng thí nghiệm công nghệ sinh học, y sinh.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Giảng dạy và trợ giảng",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phát triển theo hướng giảng dạy công nghệ sinh học, sinh học phân tử, hóa sinh và y sinh khi đáp ứng yêu cầu sư phạm, chuyên môn của vị trí.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Học tiếp trình độ tiến sĩ",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tiếp tục đào sâu một hướng nghiên cứu tại các chương trình tiến sĩ trong và ngoài nước khi đáp ứng điều kiện tuyển sinh.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Phát triển và chuyển giao",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Nghiên cứu và phát triển sản phẩm",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tham gia phát triển sản phẩm, công nghệ trong lĩnh vực sinh học, chẩn đoán, vắc xin và liệu pháp sinh học.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Chuyển giao công nghệ",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Đánh giá, hoàn thiện và chuyển giao kết quả nghiên cứu sang ứng dụng thực tiễn trong doanh nghiệp.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Tư vấn khoa học và đổi mới sáng tạo",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Đóng góp chuyên môn cho các dự án phát triển công nghệ, đánh giá sản phẩm và khởi nghiệp trong công nghệ sinh học.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Dữ liệu và phòng thí nghiệm",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Tin sinh học và phân tích dữ liệu",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Phân tích dữ liệu gen, protein và hệ thống sinh học phục vụ nghiên cứu, phát triển công nghệ.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Chẩn đoán phân tử và xét nghiệm sinh học",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tham gia các hoạt động chuyên môn tại phòng xét nghiệm, trung tâm y sinh hoặc cơ sở nghiên cứu và ứng dụng công nghệ chẩn đoán.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h4",
+      "text": "Quản lý phòng thí nghiệm",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Điều phối nghiên cứu, tổ chức vận hành phòng thí nghiệm và đảm bảo an toàn sinh học, chất lượng nghiên cứu.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Hướng phát triển phụ thuộc vào nền tảng, kinh nghiệm và mục tiêu của mỗi người học. Các vị trí chuyên môn có yêu cầu tuyển dụng và điều kiện hành nghề riêng.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Khung chương trình đào tạo",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h2",
+      "text": "Định hướng nghiên cứu",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "60 tín chỉ · 24 tháng · 6 học kỳ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h3",
+      "text": "Thông tin chung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Thời gian chuẩn",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "24 tháng",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Kế hoạch học tập",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "6 học kỳ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Hình thức",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Chính quy tập trung",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Ngôn ngữ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Nghiên cứu khoa học",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "27 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dt",
+      "text": "Luận văn",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "dd",
+      "text": "15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "6 tín chỉ chung · 15 tín chỉ cơ sở · 12 tín chỉ chuyên ngành tự chọn · 27 tín chỉ nghiên cứu khoa học.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Từ nền tảng sinh học hiện đại đến thực hành nghiên cứu, chương trình giúp người học xây dựng hướng chuyên môn phù hợp. Hai chuyên đề nghiên cứu và luận văn chiếm 27 tín chỉ, tương đương 45% khối lượng toàn khóa.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "I. Kiến thức chung 6 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học Philosophy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp nghiên cứu khoa học Research Methodology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "II. Kiến thức cơ sở 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Hóa sinh trong sức khỏe và bệnh tật Biochemistry in Health and Diseases",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Tin sinh học ứng dụng Applied Bioinformatics",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Miễn dịch học ứng dụng Applied Immunology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Truyền tải tín hiệu ở tế bào Cell Signaling",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Liệu pháp gene Gene Therapy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "III. Kiến thức chuyên ngành tự chọn 12 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Tích lũy tối thiểu 12 tín chỉ tự chọn, tương đương 4 trong 9 học phần dưới đây. Mỗi học phần 3 tín chỉ; việc đăng ký thực hiện theo hướng nghiên cứu và kế hoạch mở lớp.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Liệu pháp tế bào Cell Therapy",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Vắc xin Vaccine",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chẩn đoán phân tử Molecular Diagnostics",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Sinh học ung thư Cancer Cell Biology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Cơ sở phân tử trong tương tác vật chủ - tác nhân gây bệnh Molecular Basis of Host – Pathogen Interaction",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Vi sinh vật học ứng dụng trong sản xuất Microbiology Applied in Manufacture",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ sinh học nano Nano Biotechnology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Công nghệ sinh học và phát triển bền vững Biotechnology and Sustainable Development",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đổi mới sáng tạo trong công nghệ sinh học Innovation in Biotechnology",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "IV. Nghiên cứu khoa học 27 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Hai chuyên đề nghiên cứu · 12 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề nghiên cứu 1 Research topic 1",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Chuyên đề nghiên cứu 2 Research topic 2",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Luận văn · 15 tín chỉ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Luận văn Thesis",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "summary",
+      "text": "Kế hoạch học tập theo từng học kỳ",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chương trình được tổ chức trong 2 năm, mỗi năm 3 học kỳ chính. Ba học kỳ đầu tập trung vào các học phần nền tảng và chuyên ngành; học kỳ 4 thực hiện chuyên đề nghiên cứu; học kỳ 5–6 dành cho luận văn. Thời khóa biểu được công bố theo kế hoạch đào tạo.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 1",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 2",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 3",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Chọn 4 trong 9 học phần chuyên ngành, mỗi học phần 3 tín chỉ. Xem danh mục tại khối kiến thức chuyên ngành tự chọn.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 4",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Học kỳ 5–6",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h4",
+      "text": "Hoàn thành chương trình",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Hoàn thành các học phần của chương trình và bảo vệ luận văn đạt yêu cầu.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Đạt chuẩn đầu ra ngoại ngữ tương đương Bậc 4 trở lên trước thời điểm xét tốt nghiệp, theo các hình thức minh chứng được công nhận.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "li",
+      "text": "Hoàn thành các trách nhiệm và đáp ứng điều kiện công nhận tốt nghiệp theo quy định của Trường.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "h2",
+      "text": "Chủ động chuẩn bị cho hành trình học.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa được chia thành ba đợt thanh toán, giúp người học chủ động sắp xếp kế hoạch tài chính.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Các chính sách học bổng và hỗ trợ tài chính được xét theo điều kiện và hồ sơ. Người học chỉ được áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "summary",
+      "text": "Các khoản thu riêng khi áp dụng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển 500.000 đồng Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp minh chứng khi nộp hồ sơ dự tuyển.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học 1.000.000 đồng Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Nộp cùng học phí đợt đầu.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức 1.200.000 đồng/môn Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Áp dụng khi hồ sơ thuộc diện phải học bổ sung.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn tập tiếng Anh đầu vào 1.000.000 đồng Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Đăng ký tự nguyện.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào 1.000.000 đồng Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Người đã đạt chuẩn đầu vào không phải tham gia kỳ thi.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Gia hạn chương trình 5% học phí toàn khóa/lần Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mỗi lần gia hạn 6 tháng, áp dụng khi học vượt thời gian tiêu chuẩn.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Hoạt động học tập thực tế, tham quan chuyên môn hoặc thực địa có thể phát sinh chi phí ngoài học phí toàn khóa; Khoa thông báo nội dung và chi phí trước khi triển khai. Điều kiện thu, hoàn trả và các khoản phát sinh thực hiện theo thông báo được ban hành.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "TUYỂN SINH THẠC SĨ 2027",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa · Tiếng Việt",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "29.750.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "25.500.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Mức trên chưa trừ học bổng, hỗ trợ và chưa bao gồm các khoản thu riêng. Ngày đến hạn thanh toán theo thông báo thu của Trường.",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "h2",
+      "text": "Sẵn sàng cho bước học tiếp theo?",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Câu hỏi thường gặp",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Chương trình đào tạo theo định hướng nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình Thạc sĩ Công nghệ sinh học được thiết kế theo định hướng nghiên cứu, gồm 60 tín chỉ, thời gian chuẩn 24 tháng với 6 học kỳ. Khối nghiên cứu gồm hai chuyên đề, mỗi chuyên đề 6 tín chỉ, và luận văn 15 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Tôi cần đáp ứng điều kiện gì để dự tuyển?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành học phù hợp và đáp ứng yêu cầu ngoại ngữ đầu vào. Trường hợp được yêu cầu bổ sung kiến thức phải hoàn thành các học phần trước khi xét tuyển. Hồ sơ được xem xét theo quy chế và thông báo tuyển sinh của Trường.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Tốt nghiệp ngành khác có thể dự tuyển không?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Người tốt nghiệp Công nghệ sinh học, Kỹ thuật sinh học, Sinh học ứng dụng, Sinh học và Sư phạm sinh học không cần học bổ sung kiến thức. Các ngành liên quan trong danh mục được đối chiếu bảng điểm để xác định học phần bổ sung, tối đa 6 tín chỉ. Những ngành chưa có trong danh mục được Hội đồng xem xét theo từng hồ sơ.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Người học có phải học toàn bộ 9 học phần tự chọn?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Người học tích lũy tối thiểu 12 tín chỉ chuyên ngành tự chọn, tương đương 4 trong 9 học phần, mỗi học phần 3 tín chỉ. Các học phần được đăng ký theo hướng nghiên cứu và kế hoạch mở lớp của chương trình.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Ngôn ngữ giảng dạy và yêu cầu ngoại ngữ là gì?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình giảng dạy bằng tiếng Việt. Ngoại ngữ đầu vào yêu cầu mức tương đương Bậc 3 trở lên; chuẩn đầu ra trước khi xét tốt nghiệp là mức tương đương Bậc 4 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam. Hình thức minh chứng được đối chiếu theo quy định và thông báo của Trường.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Lịch học có phù hợp với người đang đi làm?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Lịch học dự kiến bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật, theo kế hoạch từng học kỳ. Thời khóa biểu chính thức do Trường công bố. Bạn có thể trao đổi với Viện để sắp xếp công việc và kế hoạch học tập, nghiên cứu.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phí và chính sách hỗ trợ được áp dụng như thế nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt: 29.750.000 đồng, 25.500.000 đồng và 29.750.000 đồng. Các khoản thu riêng áp dụng theo từng trường hợp. Học bổng và hỗ trợ tài chính được xét theo điều kiện, hồ sơ và thông báo của Trường; chỉ áp dụng một chính sách có mức cao nhất trong các nhóm được quy định, không cộng dồn.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h3",
+      "text": "Liên hệ tư vấn",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h2",
+      "text": "Bắt đầu từ mục tiêu của bạn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Công nghệ sinh học. Đội ngũ tư vấn sẽ hỗ trợ bạn tìm hiểu chương trình và chuẩn bị hồ sơ phù hợp.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "01 Tư vấn chương trình và định hướng học",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "02 Hướng dẫn học phí và chính sách hỗ trợ",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "li",
+      "text": "03 Đối chiếu điều kiện và hồ sơ dự tuyển",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h3",
+      "text": "Trao đổi trực tiếp với Viện",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Viện Sau đại học · Trường Đại học Văn Lang 69/68 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "present": true
+    }
+  ]
+}

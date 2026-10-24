@@ -1,0 +1,52 @@
+[
+  {
+    "route": "/",
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "route": "/discover",
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "route": "/programmes",
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "route": "/admissions",
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "route": "/research",
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "route": "/student-success",
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "route": "/news",
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "route": "/resources",
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "route": "/programmes/cong-nghe-sinh-hoc",
+    "h1": 1,
+    "overflow": false
+  },
+  {
+    "route": "/programmes/cong-nghe-thong-tin",
+    "h1": 1,
+    "overflow": false
+  }
+]

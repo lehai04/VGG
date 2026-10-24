@@ -1,0 +1,620 @@
+{
+  "checked": 95,
+  "present": 88,
+  "missing": [
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "4 tín chỉ kiến thức chung; 18 tín chỉ cơ sở; 16 tín chỉ chuyên ngành bắt buộc; chọn 2/4 học phần tự chọn (6 tín chỉ); thực tập 6 tín chỉ và đề án 9 tín chỉ.",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển: 500.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức: 1.200.000 đồng/môn",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn thi tiếng Anh đầu vào: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào: 750.000 đồng",
+      "present": false
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Thông tin cần biết trước khi đăng ký.",
+      "present": false
+    }
+  ],
+  "units": [
+    {
+      "section": null,
+      "tag": "h1",
+      "text": "Quản trị khách sạn",
+      "present": true
+    },
+    {
+      "section": null,
+      "tag": "p",
+      "text": "Phát triển năng lực quản trị chiến lược, vận hành, tài chính, công nghệ và trải nghiệm khách hàng trong ngành khách sạn theo hướng đổi mới và bền vững.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "h2",
+      "text": "Kiến thức chuyên sâu. Năng lực tạo tác động.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Chương trình trang bị kiến thức chuyên sâu về vận hành khách sạn, tài chính, doanh thu, nhân lực quốc tế, marketing và công nghệ số. Các học phần được đặt trong bối cảnh toàn cầu hóa, biến động thị trường và yêu cầu phát triển bền vững.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "p",
+      "text": "Theo kế hoạch tuyển sinh 2027, chương trình tuyển định hướng ứng dụng, với học phần thực tập 6 tín chỉ và đề án tốt nghiệp 9 tín chỉ. Hoạt động trải nghiệm và học qua dự án giúp người học tiếp cận bài toán thực tế của doanh nghiệp khách sạn.",
+      "present": true
+    },
+    {
+      "section": "tong-quan",
+      "tag": "figcaption",
+      "text": "Hoạt động học thuật · Trường Đại học Văn Lang",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Vận hành và trải nghiệm",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Cải tiến quy trình vận hành và tối ưu hóa trải nghiệm khách hàng.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Tài chính và doanh thu",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Phân tích phương án tài chính, doanh thu và hiệu quả kinh doanh.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Công nghệ và ESG",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Ứng dụng công nghệ số, chuyển đổi xanh và quản trị bền vững.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "h3",
+      "text": "Kết nối doanh nghiệp",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "p",
+      "text": "Thực tập, dự án phát triển khách sạn và đồng giảng dạy với chuyên gia.",
+      "present": true
+    },
+    {
+      "section": "diem-noi-bat",
+      "tag": "summary",
+      "text": "Chuẩn đầu ra của chương trình",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "h2",
+      "text": "Nền tảng phù hợp cho lộ trình sau đại học.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Điều kiện cụ thể được xác định trên cơ sở văn bằng, bảng điểm và định hướng đăng ký.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Miễn bổ sung: Quản trị khách sạn; Quản trị nhà hàng và dịch vụ ăn uống; Quản trị dịch vụ du lịch và lữ hành; Du lịch.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ngành gần: Quản trị kinh doanh, Marketing, Kinh doanh quốc tế, Kinh doanh thương mại, Kinh tế, Kinh tế phát triển — học Tổng quan du lịch, Quản trị dịch vụ bổ sung, Quản trị tiền sảnh (3 tín chỉ/học phần).",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ngành khác: học thêm Marketing du lịch, tổng cộng 12 tín chỉ.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Ứng viên Việt Nam cần đáp ứng ngoại ngữ đầu vào từ Bậc 3/6 hoặc minh chứng tương đương được Trường công nhận. Công dân nước ngoài học chương trình tiếng Việt cần đạt tiếng Việt từ Bậc 4 hoặc tốt nghiệp chương trình đào tạo bằng tiếng Việt.",
+      "present": true
+    },
+    {
+      "section": "doi-tuong",
+      "tag": "p",
+      "text": "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h2",
+      "text": "Mở rộng vai trò chuyên môn và quản lý.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Quản lý khách sạn và khu nghỉ dưỡng",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Đảm nhiệm vị trí quản lý cấp trung, cấp cao hoặc giám đốc bộ phận.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Phát triển dự án",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Quản lý dự án phát triển khách sạn, khu nghỉ dưỡng và doanh nghiệp dịch vụ.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Tư vấn chiến lược",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Tư vấn vận hành, tài chính, doanh thu, thương hiệu và trải nghiệm khách hàng.",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "h3",
+      "text": "Nghiên cứu và đào tạo",
+      "present": true
+    },
+    {
+      "section": "nghe-nghiep",
+      "tag": "p",
+      "text": "Giảng dạy, nghiên cứu hoặc tiếp tục học ở bậc tiến sĩ.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "h2",
+      "text": "60 tín chỉ theo lộ trình rõ ràng.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "4 tín chỉ kiến thức chung; 18 tín chỉ cơ sở; 16 tín chỉ chuyên ngành bắt buộc; chọn 2/4 học phần tự chọn (6 tín chỉ); thực tập 6 tín chỉ và đề án 9 tín chỉ.",
+      "present": false
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "p",
+      "text": "Lộ trình mẫu: Học kỳ 1–3 hoàn thành học phần; học kỳ 4–5 dành cho thực tập và đề án tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81PHIL1014",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Triết học(Philosophy)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7034",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Phương pháp nghiên cứu trong du lịch(Research Methods in Tourism)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7084",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Marketing nâng cao trong du lịch - khách sạn (Advanced Marketing in Tourism and Hospitality)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7063",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị bền vững và ESG trong du lịch - khách sạn (Sustainable and ESG Management in Tourism & Hospitality)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7074",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị nhân lực quốc tế trong du lịch(International Human Resource Management in Tourism)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7053",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Kinh tế du lịch(Tourism Economics)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7233",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị vận hành khách sạn(Hospitality Operations Management)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7044",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị tài chính trong doanh nghiệp du lịch - khách sạn(Financial Management in Tourism and Hospitality Enterprises)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7093",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Ứng dụng công nghệ số trong du lịch - khách sạn(Digital Technology in Tourism and Hospitality)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81HOSP7113",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị chiến lược nâng cao trong khách sạn(Advanced Strategic Management in Hospitality)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81HOSP7104",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Dự án phát triển khách sạn(Hospitality Development Project)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81HOSP7153",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị doanh thu khách sạn (Hospitality Revenue Management)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7123",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị rủi ro và xử lý khủng hoảng trong du lịch(Risk and Crisis Management in Tourism)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7133",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Quản trị dịch vụ cao cấp (Luxury Service Management)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81HOSP7143",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Lãnh đạo hiệu quả trong môi trường đa văn hóa(Effective Leadership in a Multicultural Environment)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7166",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Thực tập (Internship)",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "81TTHR7179",
+      "present": true
+    },
+    {
+      "section": "chuong-trinh",
+      "tag": "td",
+      "text": "Đề án tốt nghiệp(Applied Graduation Project)",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "h2",
+      "text": "Chủ động chuẩn bị cho hành trình học.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027.",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "summary",
+      "text": "Các khoản thu riêng khi áp dụng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí xét tuyển: 500.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Lệ phí nhập học: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Học bổ sung kiến thức: 1.200.000 đồng/môn",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Ôn thi tiếng Anh đầu vào: 1.000.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "li",
+      "text": "Thi tiếng Anh đầu vào: 750.000 đồng",
+      "present": false
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Học phí toàn khóa",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "30.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "td",
+      "text": "25.000.000 đồng",
+      "present": true
+    },
+    {
+      "section": "hoc-phi",
+      "tag": "p",
+      "text": "Chưa trừ học bổng, hỗ trợ và chưa gồm các khoản thu riêng.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "h2",
+      "text": "Thông tin cần biết trước khi đăng ký.",
+      "present": false
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Năm 2027 tuyển định hướng nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Chương trình tuyển sinh theo định hướng ứng dụng trong kế hoạch năm 2027.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Ngành nào không cần bổ sung kiến thức?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Ngành gần: Quản trị kinh doanh, Marketing, Kinh doanh quốc tế, Kinh doanh thương mại, Kinh tế, Kinh tế phát triển — học Tổng quan du lịch, Quản trị dịch vụ bổ sung, Quản trị tiền sảnh (3 tín chỉ/học phần).",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Ngành gần phải học những môn nào?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Chương trình có thực tập không?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Có. Chương trình bố trí học phần thực tập 6 tín chỉ trước phần đề án tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Học phí toàn khóa là bao nhiêu?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt 30.000.000 đồng, 25.000.000 đồng và 30.000.000 đồng.",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "summary",
+      "text": "Thời gian đào tạo bao lâu?",
+      "present": true
+    },
+    {
+      "section": "faq",
+      "tag": "p",
+      "text": "Thời gian đào tạo chuẩn là 18–24 tháng, tùy tiến độ hoàn thành học phần và phần tốt nghiệp.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h2",
+      "text": "Bắt đầu từ mục tiêu học tập của bạn.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "p",
+      "text": "Trao đổi về chương trình Quản trị khách sạn, điều kiện đầu vào và lộ trình đăng ký.",
+      "present": true
+    },
+    {
+      "section": "consultation",
+      "tag": "h3",
+      "text": "Trao đổi trực tiếp với Viện",
+      "present": true
+    }
+  ]
+}
