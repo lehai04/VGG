@@ -77,8 +77,9 @@
   z-index: 2;
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
-  gap: clamp(50px, 8vw, 128px);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  container-type: inline-size;
   align-items: end;
   padding: 160px 0 138px;
 }
@@ -2341,4 +2342,21 @@
 .programme-search-wrapper {
   padding-left: var(--page-gutter);
   padding-right: var(--page-gutter);
+}
+
+/* Keep each hero phrase intact on wide screens, and balance it on phones. */
+:root body .programmes-hero h1 {
+  font-size: clamp(28px, 4.4cqi, 56px) !important;
+  line-height: 1.15 !important;
+}
+.programmes-hero h1 span,
+.programmes-hero h1 em {
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .programmes-hero h1 span,
+  .programmes-hero h1 em {
+    white-space: normal;
+    text-wrap: balance;
+  }
 }
