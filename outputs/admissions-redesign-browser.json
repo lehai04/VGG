@@ -1,0 +1,42 @@
+{
+  "responsive": [
+    {
+      "h1": 1,
+      "overflow": false,
+      "steps": 8,
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "steps": 8,
+      "width": 1024
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "steps": 8,
+      "width": 768
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "steps": 8,
+      "width": 375
+    },
+    {
+      "h1": 1,
+      "overflow": false,
+      "steps": 8,
+      "width": 320
+    }
+  ],
+  "degreeSwitch": true,
+  "doctorChecklist": 24,
+  "logisticsEnglishTuition": 175000000,
+  "checklistInteraction": true,
+  "faqInteraction": true,
+  "emptyFormSuccess": false,
+  "pdfStatus": 200,
+  "consultationApiStatus": 502
+}

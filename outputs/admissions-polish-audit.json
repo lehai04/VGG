@@ -1,0 +1,37 @@
+{
+  "responsive": [
+    {
+      "catalogue": false,
+      "overflow": false,
+      "sections": 8,
+      "width": 1440
+    },
+    {
+      "catalogue": false,
+      "overflow": false,
+      "sections": 8,
+      "width": 1024
+    },
+    {
+      "catalogue": false,
+      "overflow": false,
+      "sections": 8,
+      "width": 768
+    },
+    {
+      "catalogue": false,
+      "overflow": false,
+      "sections": 8,
+      "width": 375
+    },
+    {
+      "catalogue": false,
+      "overflow": false,
+      "sections": 8,
+      "width": 320
+    }
+  ],
+  "catalogueRemoved": true,
+  "doctorChecklist": 24,
+  "motionBlocks": 9
+}

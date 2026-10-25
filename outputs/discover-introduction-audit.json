@@ -1,0 +1,75 @@
+{
+  "responsive": [
+    {
+      "grids": [
+        "420.525px 420.538px 420.538px",
+        "306.4px 306.4px 306.4px 306.4px",
+        "417.862px 417.862px 417.862px"
+      ],
+      "h1": 1,
+      "leaders": 6,
+      "missingImageSources": 0,
+      "overflow": false,
+      "sections": 9,
+      "width": 1440
+    },
+    {
+      "grids": [
+        "292.95px 292.962px 292.95px",
+        "210.712px 210.725px 210.712px 210.725px",
+        "290.288px 290.288px 290.3px"
+      ],
+      "h1": 1,
+      "leaders": 6,
+      "missingImageSources": 0,
+      "overflow": false,
+      "sections": 9,
+      "width": 1024
+    },
+    {
+      "grids": [
+        "691.35px",
+        "331.675px 331.675px",
+        "331.675px 331.675px"
+      ],
+      "h1": 1,
+      "leaders": 6,
+      "missingImageSources": 0,
+      "overflow": false,
+      "sections": 9,
+      "width": 768
+    },
+    {
+      "grids": [
+        "328px",
+        "328px",
+        "328px"
+      ],
+      "h1": 1,
+      "leaders": 6,
+      "missingImageSources": 0,
+      "overflow": false,
+      "sections": 9,
+      "width": 375
+    },
+    {
+      "grids": [
+        "272.8px",
+        "272.8px",
+        "272.8px"
+      ],
+      "h1": 1,
+      "leaders": 6,
+      "missingImageSources": 0,
+      "overflow": false,
+      "sections": 9,
+      "width": 320
+    }
+  ],
+  "source": {
+    "checked": 55,
+    "missing": []
+  },
+  "consultationTarget": "/vi/admissions#tu-van",
+  "leaders": 6
+}

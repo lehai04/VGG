@@ -1,5 +1,6 @@
 // Adapted from the user-supplied admissions reference, 25/10/2026.
 // Data and UI logic are bundled as a local module; no source scripts are evaluated.
+import { sendAdmissionConsultation } from "./consultation-request";
 export function initializeAdmissions(root) {
   const originalTitle = globalThis.document.title;
   const controller = new AbortController();
@@ -2353,6 +2354,10 @@ export function initializeAdmissions(root) {
   };
   const $ = (s) => document.querySelector(s),
     $$ = (s) => Array.from(document.querySelectorAll(s));
+  const catalogueLocale = globalThis.location.pathname.split("/")[1] === "en" ? "en" : "vi";
+  $$('a[href="/programmes"]').forEach((link) =>
+    link.setAttribute("href", `/${catalogueLocale}/programmes`),
+  );
   const escapeHtml = (v) =>
     String(v ?? "").replace(
       /[&<>"']/g,
@@ -2411,7 +2416,6 @@ export function initializeAdmissions(root) {
     process: 0,
   };
   const masterSections = [
-    "chuong-trinh",
     "dieu-kien",
     "lich-tuyen-sinh",
     "hoc-phi",
@@ -2445,6 +2449,7 @@ export function initializeAdmissions(root) {
     return rounds.find((r) => r.id === state.round);
   }
   function renderPrograms() {
+    if (!$("#program-search")) return;
     const query = normalize($("#program-search").value.trim()),
       group = $("#program-group").value;
     const filtered = programs.filter(
@@ -2628,18 +2633,21 @@ export function initializeAdmissions(root) {
     $("#fee-amount").textContent = money(v.total_vnd);
     $("#fee-caption").textContent =
       "Học phí toàn khóa · " + v.language + (v.specialization ? " · " + v.specialization : "");
-    $("#fee-installments").innerHTML = v.installments_vnd
-      .map(
-        (n, i) =>
-          '<div class="fee-row"><span>Đợt ' +
-          (i + 1) +
-          " · " +
-          v.installment_percent[i] +
-          "%</span><span>" +
-          money(n) +
-          "</span></div>",
-      )
-      .join("");
+    $("#fee-installments").innerHTML =
+      '<table class="admissions-payment-table"><caption>Lịch đóng học phí theo chương trình</caption><thead><tr><th scope="col">Đợt thanh toán</th><th scope="col">Số tiền (VNĐ)</th></tr></thead><tbody>' +
+      v.installments_vnd
+        .map(
+          (n, i) =>
+            '<tr><th scope="row">Đợt ' +
+            (i + 1) +
+            " · " +
+            v.installment_percent[i] +
+            "%</th><td>" +
+            money(n) +
+            "</td></tr>",
+        )
+        .join("") +
+      "</tbody></table>";
   }
   function docs() {
     return DATA.docs[state.doc];
@@ -3205,10 +3213,7 @@ export function initializeAdmissions(root) {
     if (!b) return;
 
     if (b.hasAttribute("data-degree")) {
-      const changed = state.degree !== b.dataset.degree;
       setDegree(b.dataset.degree);
-      if (changed && window.scrollY > $("#thong-tin").offsetTop)
-        $(".section-nav-shell").scrollIntoView({ behavior: "auto", block: "start" });
       return;
     }
     if (b.hasAttribute("data-program")) {
@@ -3216,6 +3221,7 @@ export function initializeAdmissions(root) {
       return;
     }
     if (b.hasAttribute("data-notice")) {
+      if (b.dataset.noticeContext) setDegree(b.dataset.noticeContext);
       showNotice();
       return;
     }
@@ -3274,15 +3280,15 @@ export function initializeAdmissions(root) {
       renderPrograms();
     }
   });
-  $("#program-search").addEventListener("input", renderPrograms);
-  $("#program-group").addEventListener("change", renderPrograms);
+  $("#program-search")?.addEventListener("input", renderPrograms);
+  $("#program-group")?.addEventListener("change", renderPrograms);
   $("#intake-select").addEventListener("change", () => {
     state.round = Number($("#intake-select").value);
     renderTimeline();
   });
   $("#fee-program").addEventListener("change", () => updateFee(true));
   $("#fee-variant").addEventListener("change", () => updateFee(false));
-  $("#show-more").addEventListener("click", () => {
+  $("#show-more")?.addEventListener("click", () => {
     state.showAll = !state.showAll;
     renderPrograms();
   });
@@ -3315,42 +3321,58 @@ export function initializeAdmissions(root) {
   $("#info-dialog").addEventListener("close", () => {
     if (lastDialogTrigger?.isConnected) lastDialogTrigger.focus({ preventScroll: true });
   });
-  $("#consultation-form").addEventListener("submit", (e) => {
+  listen($("#consultation-form"), "submit", async (e) => {
     e.preventDefault();
-    if (!e.target.reportValidity()) return;
-    const program = $("#contact-program").selectedOptions[0].textContent;
-    const degree = state.degree === "doctor" ? "tiến sĩ" : "thạc sĩ";
-    const subject = "Tư vấn tuyển sinh " + degree + " – " + program;
-    const body = [
-      "Kính gửi Viện Sau đại học – Trường Đại học Văn Lang,",
-      "",
-      "Tôi muốn được tư vấn tuyển sinh với các thông tin sau:",
-      "Họ và tên: " + $("#contact-name").value.trim(),
-      "Số điện thoại: " + $("#contact-phone").value.trim(),
-      "Email liên hệ: " + $("#contact-email").value.trim(),
-      "Chương trình quan tâm: " + program,
-      "Nội dung cần tư vấn: " +
-        ($("#contact-question").value.trim() || "Thông tin tuyển sinh và hướng dẫn đăng ký."),
-      "",
-      "Trân trọng.",
-    ].join("\n");
-    const mailto =
-      "mailto:tuyensinh.sdh@vlu.edu.vn?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(body);
-    const link = document.createElement("a");
-    link.href = mailto;
-    link.hidden = true;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    $("#form-success").innerHTML =
-      'Email đã được soạn sẵn. <a href="' +
-      escapeHtml(mailto) +
-      '">Mở ứng dụng email</a> để kiểm tra và gửi.';
-    $("#form-success").hidden = false;
+    const form = e.target;
+    if (!form.reportValidity() || form.getAttribute("aria-busy") === "true") return;
+    const success = $("#form-success");
+    const error = $("#form-error");
+    success.hidden = true;
+    error.hidden = true;
+    const submit = form.querySelector('button[type="submit"]');
+    const originalLabel = submit.textContent;
+    const input = {
+      name: $("#contact-name").value.trim(),
+      phone: $("#contact-phone").value.trim(),
+      email: $("#contact-email").value.trim(),
+      programme: $("#contact-program").selectedOptions[0].textContent,
+      interestedField: state.degree === "doctor" ? "Tiến sĩ" : "Thạc sĩ",
+      message: $("#contact-question").value.trim(),
+      consent: $("#contact-consent").checked,
+      website: $("#contact-website").value,
+      sourcePage: "/admissions",
+      sourceComponent: "AdmissionsReference",
+    };
+    if (input.name.length < 2) {
+      error.textContent = "Vui lòng nhập họ và tên từ 2 ký tự.";
+      error.hidden = false;
+      return;
+    }
+    submit.disabled = true;
+    submit.textContent = "Đang gửi yêu cầu…";
+    form.setAttribute("aria-busy", "true");
+    try {
+      const message = await sendAdmissionConsultation(input);
+      if (!root.isConnected || !form.isConnected) return;
+      success.textContent = message;
+      success.hidden = false;
+      form.reset();
+      $("#contact-degree").value = state.degree;
+    } catch {
+      if (!root.isConnected || !form.isConnected) return;
+      error.textContent =
+        "Chưa gửi được yêu cầu. Vui lòng thử lại hoặc liên hệ Viện qua điện thoại/email bên cạnh.";
+      error.hidden = false;
+    } finally {
+      if (root.isConnected && form.isConnected) {
+        submit.disabled = false;
+        submit.textContent = originalLabel;
+        form.removeAttribute("aria-busy");
+      }
+    }
   });
+  listen($("#admissions-degree"), "change", (e) => setDegree(e.target.value));
+  listen($("#contact-degree"), "change", (e) => setDegree(e.target.value));
   listen(root, "keydown", (e) => {
     const tab = e.target.closest('[role="tab"]');
     if (!tab || !["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"].includes(e.key))
@@ -3393,7 +3415,6 @@ export function initializeAdmissions(root) {
   listen(window, "scroll", requestNavUpdate, { passive: true });
   listen(window, "resize", requestNavUpdate);
   const doctorSectionMap = {
-    "chuong-trinh": "ts-chuong-trinh",
     "dieu-kien": "ts-dieu-kien",
     "lich-tuyen-sinh": "ts-lich-tuyen-sinh",
     "hoc-phi": "ts-hoc-phi",
@@ -3423,7 +3444,9 @@ export function initializeAdmissions(root) {
     $("#degree-content").setAttribute("aria-labelledby", "degree-" + degree);
     $$("[data-degree-label]").forEach((el) => (el.textContent = master ? "Thạc sĩ" : "Tiến sĩ"));
     masterSections.forEach((id) => ($("#" + id).hidden = !master));
-    $("#doctor-information").hidden = master;
+    Object.values(doctorSectionMap).forEach((id) => ($("#" + id).hidden = master));
+    $("#admissions-degree").value = degree;
+    $("#contact-degree").value = degree;
     $(".section-nav").hidden = false;
     $("#intake-title").textContent = master ? "Tuyển sinh thạc sĩ 2027" : "Tuyển sinh tiến sĩ";
     $("#intake-badge").innerHTML =
@@ -3440,9 +3463,7 @@ export function initializeAdmissions(root) {
       ? '<option value="">Chọn chương trình bạn quan tâm</option><option value="undecided">Chưa xác định — cần tư vấn thêm</option>' +
         optionsHtml(programs)
       : '<option value="">Chọn chương trình bạn quan tâm</option><option value="doctor">Tiến sĩ Khoa học Môi trường</option>';
-    $(".hero-title-label").textContent = master
-      ? "Tuyển sinh sau đại học 2027"
-      : "Tuyển sinh tiến sĩ";
+    $(".hero-title-label").textContent = "Tuyển sinh năm 2027";
     $(".contact-address").innerHTML = master
       ? originalContactAddress
       : "Phòng 2.01, Tòa A, Cơ sở chính<br>69/68 Đặng Thùy Trâm, phường Bình Lợi Trung, TP. Hồ Chí Minh.";
@@ -3462,12 +3483,13 @@ export function initializeAdmissions(root) {
       }
     });
     if (master) {
-      $("#program-search").value = "";
-      $("#program-group").innerHTML =
-        '<option value="all">Tất cả nhóm ngành</option>' +
-        Object.entries(groups)
-          .map(([k, v]) => '<option value="' + k + '">' + escapeHtml(v) + "</option>")
-          .join("");
+      if ($("#program-search")) $("#program-search").value = "";
+      if ($("#program-group"))
+        $("#program-group").innerHTML =
+          '<option value="all">Tất cả nhóm ngành</option>' +
+          Object.entries(groups)
+            .map(([k, v]) => '<option value="' + k + '">' + escapeHtml(v) + "</option>")
+            .join("");
       $("#fee-program").innerHTML = optionsHtml(programs);
       $("#fee-program").value = "mba";
       renderPrograms();

@@ -3,7 +3,9 @@ import { useEffect, useRef } from "react";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import content from "./reference-content.json";
 import { initializeAdmissions } from "./reference-engine";
+import { initializeAdmissionsMotion } from "./admissions-motion";
 import "./reference.css";
+import "./admissions-redesign.css";
 /** Reviewed static reference markup also renders on the server. */
 export function AdmissionsReference() {
   const root = useRef<HTMLDivElement>(null);
@@ -11,7 +13,12 @@ export function AdmissionsReference() {
     if (!root.current) return;
     // Restore initial markup when React replays effects in development.
     root.current.innerHTML = content.html;
-    return initializeAdmissions(root.current);
+    const cleanupEngine = initializeAdmissions(root.current);
+    const cleanupMotion = initializeAdmissionsMotion(root.current);
+    return () => {
+      cleanupMotion();
+      cleanupEngine();
+    };
   }, []);
   return (
     <>

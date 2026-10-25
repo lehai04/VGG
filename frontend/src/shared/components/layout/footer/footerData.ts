@@ -18,7 +18,7 @@ export const contactItems = [
 export const aboutLinks = [
   { label: "Tin tức", href: "/news" },
   { label: "Sự kiện", href: "/news" },
-  { label: "Đảm bảo chất lượng đào tạo", href: "/discover/xep-hang-thanh-tuu" },
+  { label: "Giá trị cốt lõi", href: "/discover#gia-tri-cot-loi" },
   { label: "Trung tâm khảo thí tiếng Anh", href: "/resources" },
 ] as const;
 
@@ -30,8 +30,16 @@ export const quickLinks = [
 
 export const socialLinks = [
   { label: "Facebook", href: "https://www.facebook.com/saudaihoc.vlu", icon: "facebook" },
-  { label: "YouTube", href: "https://www.youtube.com/@Vi%E1%BB%87nsau%C4%90%E1%BA%A1ih%E1%BB%8Dc-VLU", icon: "youtube" },
-  { label: "Instagram", href: "https://www.instagram.com/vsdh.vlu?igsi=MXc4aWFqc2FlOWc1Yw==", icon: "instagram" },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@Vi%E1%BB%87nsau%C4%90%E1%BA%A1ih%E1%BB%8Dc-VLU",
+    icon: "youtube",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/vsdh.vlu?igsi=MXc4aWFqc2FlOWc1Yw==",
+    icon: "instagram",
+  },
   { label: "Zalo", href: "https://zalo.me/0988486869", icon: "zalo" },
 ] as const;
 

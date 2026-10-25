@@ -4,7 +4,7 @@
  * Sửa file này khi muốn đổi: tên menu, slug URL, headline landing page,
  * danh sách chương trình (dropdown form tư vấn), hoặc ảnh hero của page con.
  * Không nhét nội dung dài của Discover vào đây — nội dung đó nằm ở
- * app/discover/[slug]/page.tsx (object `pages`).
+ * data/discover-introduction.json; Discover chỉ có một trang /discover.
  */
 export type MenuGroup = {
   slug: string; // khớp với thư mục route: app/<slug>/page.tsx
@@ -18,30 +18,6 @@ export type MenuGroup = {
   image: string;
 };
 
-// NGUỒN DỮ LIỆU CHUNG cho menu Discover, landing page và các liên kết trang con.
-export const discoverSections = [
-  {
-    slug: "gioi-thieu",
-    title: "Giới thiệu",
-    summary: "Khám phá câu chuyện và môi trường học thuật của Viện Sau Đại học.",
-  },
-  {
-    slug: "tam-nhin-su-menh",
-    title: "Tầm nhìn & Sứ mệnh",
-    summary: "Tìm hiểu định hướng phát triển và những giá trị Viện Sau Đại học theo đuổi.",
-  },
-  {
-    slug: "lanh-dao",
-    title: "Lãnh đạo",
-    summary: "Gặp gỡ đội ngũ định hướng hành trình học thuật tại Viện Sau Đại học.",
-  },
-  {
-    slug: "xep-hang-thanh-tuu",
-    title: "Xếp hạng & Thành tựu",
-    summary: "Các dấu ấn từ cộng đồng học thuật và người học Viện Sau Đại học.",
-  },
-] as const;
-
 // NGUỒN DỮ LIỆU CHUNG cho navigation và các landing page dùng SectionLanding.
 export const menuGroups: readonly MenuGroup[] = [
   {
@@ -52,13 +28,8 @@ export const menuGroups: readonly MenuGroup[] = [
     headline: "Khám phá một Viện Sau Đại học lấy người học làm trung tâm.",
     intro:
       "Viện Sau Đại học kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",
-    items: discoverSections.map((item) => item.title),
-    itemsEn: [
-      "Introduction",
-      "Vision & Mission",
-      "Leadership",
-      "Rankings & Achievements",
-    ],
+    items: [],
+    itemsEn: [],
     image:
       "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1800&q=86",
   },
@@ -208,7 +179,8 @@ export const menuGroups: readonly MenuGroup[] = [
     vi: "Tin tức & Sự kiện",
     kicker: "The pulse of our academic community",
     headline: "Theo dòng chuyển động học thuật.",
-    intro: "Cập nhật tin tức, sự kiện, seminar và những khoảnh khắc nổi bật trong cộng đồng Viện Sau Đại học.",
+    intro:
+      "Cập nhật tin tức, sự kiện, seminar và những khoảnh khắc nổi bật trong cộng đồng Viện Sau Đại học.",
     items: [
       "Tin tức",
       "Sự kiện",
@@ -218,8 +190,7 @@ export const menuGroups: readonly MenuGroup[] = [
       "Video",
     ],
     itemsEn: ["News", "Events", "Seminars / Webinars", "Press Releases", "Photo Gallery", "Video"],
-    image:
-      "/images/pages/news/content/banner.jpg",
+    image: "/images/pages/news/content/banner.jpg",
   },
   {
     slug: "resources",
@@ -230,8 +201,7 @@ export const menuGroups: readonly MenuGroup[] = [
     intro: "Truy cập biểu mẫu, chính sách, tài liệu, lịch học thuật và câu hỏi thường gặp.",
     items: ["Biểu mẫu", "Chính sách & Quy định", "Tài liệu tải về", "Lịch học thuật", "FAQ"],
     itemsEn: ["Forms", "Policies & Regulations", "Downloads", "Academic Calendar", "FAQ"],
-    image:
-      "/images/pages/resources/content/banner.jpg",
+    image: "/images/pages/resources/content/banner.jpg",
   },
 ];
 

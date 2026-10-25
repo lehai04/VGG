@@ -1,0 +1,44 @@
+[
+  {
+    "columns": "245.913px 245.925px 245.913px 245.925px 245.913px",
+    "departmentCards": 5,
+    "oldLinks": 0,
+    "overflow": false,
+    "width": 1440
+  },
+  {
+    "columns": "165.25px 165.25px 165.25px 165.25px 165.262px",
+    "departmentCards": 5,
+    "oldLinks": 0,
+    "overflow": false,
+    "width": 1002
+  },
+  {
+    "columns": "217.113px 217.113px 217.125px",
+    "departmentCards": 5,
+    "oldLinks": 0,
+    "overflow": false,
+    "width": 768
+  },
+  {
+    "columns": "258.4px 258.4px",
+    "departmentCards": 5,
+    "oldLinks": 0,
+    "overflow": false,
+    "width": 600
+  },
+  {
+    "columns": "328px",
+    "departmentCards": 5,
+    "oldLinks": 0,
+    "overflow": false,
+    "width": 375
+  },
+  {
+    "columns": "272.8px",
+    "departmentCards": 5,
+    "oldLinks": 0,
+    "overflow": false,
+    "width": 320
+  }
+]
