@@ -6,7 +6,7 @@
  */
 import { FormEvent, Fragment, useState } from "react";
 import type { ProgrammeConsultationIntro } from "@/data/programmes";
-import { programmes as PROGRAMMES } from "@/data/site";
+import { useWebsiteChrome } from '@/shared/components/layout/WebsiteChromeProvider';
 import { useLocale } from "@/i18n/components/LocaleProvider";
 
 export function ResourcesConsultation({
@@ -17,6 +17,7 @@ export function ResourcesConsultation({
   intro?: ProgrammeConsultationIntro;
 }) {
   const { messages } = useLocale();
+  const { programmeOptions: PROGRAMMES } = useWebsiteChrome();
   const cta = messages.cta;
   const titleLines = intro?.titleLines ?? [cta.titleLine1, cta.titleLine2];
   const benefits = intro?.benefits ?? [cta.benefit1, cta.benefit2, cta.benefit3];

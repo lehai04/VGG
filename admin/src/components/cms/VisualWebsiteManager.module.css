@@ -1,0 +1,444 @@
+.manager {
+  --cms-ink: #17243b;
+  --cms-muted: #5c6b80;
+  --cms-line: #dce4ef;
+  --cms-accent: #b7193d;
+  color: var(--cms-ink);
+  container: cms-editor/inline-size;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.manager * {
+  box-sizing: border-box;
+  min-width: 0;
+}
+.manager button,
+.manager input,
+.manager textarea,
+.manager select {
+  font: inherit;
+}
+.manager button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--cms-line);
+  border-radius: 10px;
+  background: white;
+  color: var(--cms-ink);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.manager button:hover:not(:disabled) {
+  background: #fff4f6;
+  border-color: #bc5670;
+  color: #991834;
+}
+.manager button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.manager :is(button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid #356edc;
+  outline-offset: 3px;
+}
+.manager
+  :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #cbd6e5;
+  border-radius: 10px;
+  padding: 11px 12px;
+  background: #fff;
+  color: var(--cms-ink);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.manager textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.manager input[type="file"] {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.manager label {
+  display: grid;
+  gap: 7px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.manager fieldset {
+  border: 1px solid var(--cms-line);
+  border-radius: 12px;
+  padding: 14px;
+  margin: 12px 0;
+}
+.manager legend {
+  padding: 0 8px;
+  font-weight: 650;
+}
+.manager summary {
+  cursor: pointer;
+  font-weight: 650;
+  padding: 13px 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.manager details[open] > summary {
+  margin-bottom: 12px;
+}
+.manager details {
+  min-width: 0;
+}
+.manager p {
+  color: var(--cms-muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.manager small {
+  font-size: 12px;
+  color: var(--cms-muted);
+  overflow-wrap: anywhere;
+}
+.bar {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 140px auto;
+  align-items: end;
+  gap: 14px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--cms-line);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px #253d6310;
+}
+.bar label {
+  font-size: 12px;
+  color: var(--cms-muted);
+}
+.bar strong {
+  grid-column: 1/-1;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+.bar .publish {
+  background: var(--cms-accent);
+  color: white;
+  border-color: var(--cms-accent);
+  font-weight: 700;
+}
+.bar .publish:hover:not(:disabled) {
+  background: #971331;
+  color: white;
+}
+.statusLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 2px;
+}
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 650;
+  color: #24634e;
+  background: #ecf7f1;
+  border: 1px solid #cae7d8;
+  border-radius: 999px;
+  padding: 5px 11px;
+}
+.status[data-dirty="true"] {
+  color: #825819;
+  background: #fff7e7;
+  border-color: #f1ddb5;
+}
+.notice {
+  padding: 12px 16px;
+  border: 1px solid #d5dfed;
+  border-radius: 10px;
+  background: #f2f6fc;
+  overflow-wrap: anywhere;
+}
+.workspaceTabs {
+  display: none;
+  gap: 8px;
+  margin: 12px 0;
+}
+.workspaceTabs button[aria-pressed="true"],
+.devices button[aria-pressed="true"] {
+  color: #a41636;
+  border-color: #d393a3;
+  background: #fff0f4;
+  font-weight: 700;
+}
+.studio {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 330px);
+  align-items: start;
+  gap: 20px;
+  margin: 4px 0 20px;
+}
+.preview {
+  border: 1px solid var(--cms-line);
+  border-radius: 16px;
+  background: #f1f4f9;
+  overflow: hidden;
+  min-width: 0;
+}
+.previewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  background: #fff;
+  border-bottom: 1px solid var(--cms-line);
+}
+.previewHeader strong {
+  display: block;
+  font-size: 14px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: #6d7e97;
+  font-weight: 700;
+}
+.previewSize {
+  font-size: 11px;
+  color: var(--cms-muted);
+  white-space: nowrap;
+}
+.devices {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+.devices button {
+  font-size: 12px;
+  min-height: 36px;
+  padding: 7px 11px;
+}
+.previewStage {
+  width: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.canvas {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  background: white;
+  transition: height 0.15s;
+}
+.canvas iframe {
+  display: block;
+  border: 0;
+  max-width: none;
+  transform-origin: top left;
+  background: white;
+}
+.previewNote {
+  padding: 4px 16px 12px;
+  margin: 8px 0 !important;
+  font-size: 12px !important;
+}
+.loading {
+  display: grid;
+  place-content: center;
+  min-height: 320px;
+  padding: 24px;
+  color: var(--cms-muted);
+}
+.inspector {
+  padding: 18px;
+  background: white;
+  border: 1px solid var(--cms-line);
+  border-radius: 16px;
+  align-self: start;
+  display: grid;
+  gap: 14px;
+}
+.inspectorHeader {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--cms-line);
+}
+.manager .inspectorHeader h2 {
+  font-size: 18px !important;
+  margin: 0;
+  line-height: 1.4 !important;
+}
+.inspectorHeader p {
+  margin: 5px 0 0;
+  font-size: 12px;
+}
+.fieldHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 650;
+}
+.fieldType {
+  font-size: 11px;
+  color: var(--cms-muted);
+  padding: 3px 7px;
+  background: #f0f3f8;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.fieldMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--cms-muted);
+  font-size: 12px;
+}
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.actions button:first-child {
+  background: #172b4b;
+  color: white;
+  border-color: #172b4b;
+}
+.inspector > details {
+  border-top: 1px solid var(--cms-line);
+  padding-top: 4px;
+}
+.advanced {
+  background: white;
+  border: 1px solid var(--cms-line);
+  border-radius: 14px;
+  padding: 4px 18px;
+  margin-top: 16px;
+}
+.scopeNote {
+  font-size: 12px !important;
+  padding: 12px 14px;
+  background: #f5f7fb;
+  border-radius: 10px;
+}
+.sourcePath {
+  max-height: 70px;
+  overflow: auto;
+  font-family: monospace;
+  display: block;
+}
+.manager :is(h2, h3, h4) {
+  overflow-wrap: anywhere;
+}
+.manager :is(input, textarea, select):disabled {
+  background: #f3f5f8;
+  color: #68778b;
+}
+.manager [role="dialog"] {
+  max-height: 360px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--cms-line);
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 10px;
+}
+@container cms-editor (max-width:900px) {
+  .studio {
+    grid-template-columns: 1fr;
+  }
+  .workspaceTabs {
+    display: flex;
+  }
+  .workspaceTabs button {
+    flex: 1;
+  }
+  .studio[data-panel="edit"] > .preview {
+    display: none;
+  }
+  .studio[data-panel="preview"] > .inspector {
+    display: none;
+  }
+  .bar {
+    grid-template-columns: minmax(0, 1fr) 135px;
+  }
+  .bar .publish {
+    grid-column: 1/-1;
+  }
+  .previewHeader {
+    padding: 14px;
+  }
+  .inspector {
+    padding: 18px;
+  }
+  .previewSize {
+    white-space: normal;
+    text-align: right;
+  }
+}
+@container cms-editor (max-width:420px) {
+  .bar {
+    grid-template-columns: 1fr;
+    padding: 14px;
+    gap: 10px;
+  }
+  .bar strong {
+    font-size: 15px;
+  }
+  .bar .publish {
+    grid-column: auto;
+  }
+  .studio {
+    gap: 12px;
+  }
+  .inspector {
+    padding: 14px;
+  }
+  .actions {
+    grid-template-columns: 1fr;
+  }
+  .previewHeader {
+    align-items: start;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .devices {
+    gap: 4px;
+    padding: 8px;
+  }
+  .devices button {
+    flex: 1 1 40%;
+    font-size: 12px;
+  }
+  .manager fieldset {
+    padding: 10px;
+  }
+  .manager button {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .manager label {
+    font-size: 13px;
+  }
+  .statusLine {
+    align-items: flex-start;
+  }
+  .advanced {
+    padding: 4px 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .manager * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "@/i18n/components/LocalizedLink";
-import { legalLinks } from "./footerData";
+import { useWebsiteChrome } from '../WebsiteChromeProvider';
 import { useLocale } from "@/i18n/components/LocaleProvider";
 
 /** Dòng copyright + điều khoản / bảo mật / sitemap. */
 export function FooterBottom() {
+  const { legalLinks } = useWebsiteChrome();
   const { locale } = useLocale();
   const labels = locale === "en" ? ["Terms", "Privacy Policy", "Sitemap"] : legalLinks.map((item) => item.label);
   return (

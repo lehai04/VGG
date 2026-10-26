@@ -77,6 +77,21 @@ export function getCurriculumCourses(groups: readonly CurriculumGroup[]): Curric
 }
 
 export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
+  if (programme.cmsCurriculum) {
+    return (["Ứng dụng", "Nghiên cứu"] as const).flatMap((orientation, index) => {
+      const rows = programme.cmsCurriculum!.filter((row) => row.track === orientation);
+      if (!rows.length) return [];
+      const groups: CurriculumGroup[] = [];
+      for (const row of rows) {
+        let group = groups.find((item) => item.title === row.group);
+        if (!group) { group = { title: row.group, courses: [] }; groups.push(group); }
+        group.courses.push({ name: row.name, credits: Number(row.credits) });
+        if (row.note) group.description = [...(group.description ?? []), `${row.name}: ${row.note}`];
+      }
+      return [{ number: String(index + 1).padStart(2, "0"), title: `Định hướng ${orientation.toLocaleLowerCase("vi")}`, orientation, groups }];
+    });
+  }
+  if(programme.curriculaPending)return [];
   if (programme.id === "marketing") return getMarketingCurricula();
   if (programme.id === "cong-nghe-thong-tin") return getCongNgheThongTinCurricula();
   if (programme.id === "khoa-hoc-moi-truong") return getKhoaHocMoiTruongCurricula();

@@ -1,11 +1,12 @@
 "use client";
 
-import { locations } from "./footerData";
+import { useWebsiteChrome } from '../WebsiteChromeProvider';
 import { FooterIcon } from "./FooterIcon";
 import { useLocale } from "@/i18n/components/LocaleProvider";
 
 /** Cột địa chỉ + iframe Google Maps (cơ sở đầu tiên trong `locations`). */
 export function FooterLocation() {
+  const { locations } = useWebsiteChrome();
   const { locale } = useLocale();
   const [mainLocation, ...otherLocations] = locations;
   return (

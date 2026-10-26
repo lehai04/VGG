@@ -13,6 +13,7 @@ const permissions = [
   "resources.view", "resources.create", "resources.update", "resources.delete",
   "consultations.view", "consultations.update", "consultations.assign", "consultations.export",
   "media.view", "media.upload", "media.delete",
+  "website.view", "website.update", "website.publish",
   "admins.view", "admins.create", "admins.update", "admins.disable", "admins.reset_password", "admins.change_role", "admins.delete",
   "permissions.manage", "audit.view",
   "settings.view", "settings.update", "settings.security", "settings.logs",
@@ -47,7 +48,7 @@ async function main() {
 
   // Level 2 & Level 3 get all permissions EXCEPT admins.*, permissions.*, audit.*
   const standardPermissions = permissionRows.filter(
-    (p) => !p.code.startsWith("admins.") && !p.code.startsWith("permissions.") && !p.code.startsWith("audit.")
+    (p) => !p.code.startsWith("admins.") && !p.code.startsWith("permissions.") && !p.code.startsWith("audit.") && !p.code.startsWith('website.')
   );
   await prisma.rolePermission.createMany({
     data: [

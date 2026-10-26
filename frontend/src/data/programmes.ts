@@ -194,7 +194,7 @@ export type ProgrammePageContent = {
     contactActions?: readonly { text: string; href: string }[];
   } & typeof programmeSharedContent.consultation;
   faq: {
-    faqs: readonly { question: string; answer: string }[];
+    faqs: readonly { question: string; answer: string; hidden?: "true" | "false" }[];
   } & typeof programmeSharedContent.faq;
   fees?: ProgrammeFeeContent;
 };
@@ -222,6 +222,12 @@ export type Programme = {
   creditsLabel?: string;
   summary?: string;
   detailsPending?: boolean;
+  /** Ngành CMS mới chưa có khung chương trình đã được phê duyệt. */
+  curriculaPending?: boolean;
+  cmsCurriculum?: { name: string; credits: string; group: string; track: "Ứng dụng" | "Nghiên cứu"; note: string }[];
+  cmsApplication?: { title: string; text: string }[];
+  cmsOverview?: { html: string }[];
+  cmsSupport?: { title: string; text: string }[];
   duration: string;
   tuition: string;
   schedule?: string;

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "@/i18n/components/LocalizedLink";
-import { aboutLinks, quickLinks, socialLinks } from "./footerData";
+import { useWebsiteChrome } from '../WebsiteChromeProvider';
 import { FooterIcon } from "./FooterIcon";
 import { useLocale } from "@/i18n/components/LocaleProvider";
 
@@ -28,16 +28,19 @@ function LinkColumn({
   );
 }
 export function FooterAbout() {
+  const { aboutLinks } = useWebsiteChrome();
   const { locale } = useLocale();
   const labels = locale === "en" ? ["News", "Events", "Careers", "Quality Assurance", "English Testing Centre"] : aboutLinks.map((item) => item.label);
   return <LinkColumn title={locale === "en" ? "About us" : "Về chúng tôi"} links={aboutLinks.map((item,index) => ({...item,label:labels[index]}))} />;
 }
 export function FooterQuickLinks() {
+  const { quickLinks } = useWebsiteChrome();
   const { locale } = useLocale();
   const labels = locale === "en" ? ["Home", "About Viện Sau Đại học", "Programmes", "Admissions", "Research & Innovation", "Global Opportunities", "Student Success", "News & Events", "Resources", "Contact"] : quickLinks.map((item) => item.label);
   return <LinkColumn title={locale === "en" ? "Quick links" : "Truy cập nhanh"} links={quickLinks.map((item,index) => ({...item,label:labels[index] ?? item.label}))} />;
 }
 export function FooterSocial() {
+  const { socialLinks } = useWebsiteChrome();
   const { locale } = useLocale();
   return (
     <section className="university-footer-column university-footer-social">

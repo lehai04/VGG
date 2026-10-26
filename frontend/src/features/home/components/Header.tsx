@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
 import { usePathname } from "next/navigation";
-import { navigationGroups } from "@/data/site";
+import { useWebsiteChrome } from '@/shared/components/layout/WebsiteChromeProvider';
 import { useLocale } from "@/i18n/components/LocaleProvider";
 import { stripLocale } from "@/lib/i18n";
 
@@ -17,16 +17,16 @@ import { stripLocale } from "@/lib/i18n";
 const LOGO_SRC = "/images/logo/logo-vgg.png";
 
 // Homepage dùng chung nguồn navigation với các trang con; chỉ đích liên kết khác nhau.
-const MENU_ITEMS = navigationGroups.map((group) => ({
+const menuItems = (navigationGroups: ReturnType<typeof useWebsiteChrome>['navigationGroups']) => navigationGroups.map((group) => ({
   slug: group.slug,
   english: group.en,
   vietnamese: group.vi,
-  links: group.items,
-  linksEn: group.itemsEn,
 }));
 
 /** Header dùng chung; routeMode được giữ lại để tương thích các nơi đang sử dụng component. */
 export function Header({ routeMode = false }: { routeMode?: boolean }) {
+  const chrome = useWebsiteChrome();
+  const MENU_ITEMS = menuItems(chrome.navigationGroups);
   const { locale, messages } = useLocale();
   // Quản lý trạng thái menu trên thiết bị di động.
   const [open, setOpen] = useState(false);
@@ -104,8 +104,8 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
           <Link className="brand" href="/" aria-label="Trang chủ Viện Sau Đại học" onClick={() => { setOpen(false); }}>
             <Image
               className="brandLogo"
-              src={LOGO_SRC}
-              alt="Viện Sau đại học Văn Lang"
+              src={chrome.brand.image || LOGO_SRC}
+              alt={chrome.brand.alt}
               width={270}
               height={96}
               priority

@@ -250,6 +250,9 @@ export function AdminShell({
             </div>
           )}
 
+          {can('website.view') && <Link href="/admin/programmes" className={`admin-nav-link ${pathname.startsWith('/admin/programmes') ? 'active' : ''}`}><span className="nav-icon"><IconResources /></span><span className="nav-text">Quản lý chuyên ngành</span></Link>}
+          {can('website.view') && <Link href="/admin/website" className={`admin-nav-link ${pathname.startsWith('/admin/website') ? 'active' : ''}`}><span className="nav-icon"><IconResources /></span><span className="nav-text">Nội dung website</span></Link>}
+          <Link href="/admin/guide" className={`admin-nav-link ${pathname.startsWith('/admin/guide') ? 'active' : ''}`}><span className="nav-icon"><IconResources /></span><span className="nav-text">Hướng dẫn sử dụng</span></Link>
           {can("resources.view") && (
             <Link
               href="/admin/resources"

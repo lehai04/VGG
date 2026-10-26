@@ -79,7 +79,7 @@ const canonicalUrl = z.string().trim().max(1000).optional().nullable().refine((v
   } catch { return false; }
 }, "Canonical phải là đường dẫn trên website hoặc URL HTTPS cùng domain.");
 const customJsonLd = z.record(z.string(), z.unknown()).optional().nullable().refine((value) => !value || JSON.stringify(value).length <= 20_000, "Schema tùy chỉnh không được vượt quá 20 KB.");
-const siteSeoInput = z.object({
+export const siteSeoInput = z.object({
   metaTitle: z.string().max(250).optional(), metaDescription: z.string().max(1000).optional(),
   canonicalUrl: z.string().max(1000).optional(), robotsIndex: z.boolean().optional(), robotsFollow: z.boolean().optional(),
   ogTitle: z.string().max(250).optional(), ogDescription: z.string().max(1000).optional(), ogImage: z.string().max(1000).optional(), ogImageAlt: z.string().max(500).optional(),
@@ -115,9 +115,10 @@ const resourceInput = z.object({
   fileUrl: z.string().max(1000).refine((value) => value.startsWith("/api/media/"), "Đường dẫn file phải thuộc kho nội bộ."),
   fileName: z.string().trim().min(1).max(255),
   fileType: z.string().trim().refine((value) => allowedResourceFiles.has(value), "Định dạng file không được hỗ trợ."),
-  fileSize: z.coerce.number().int().positive().max(50 * 1024 * 1024),
+  fileSize: z.coerce.number().int().positive().max(100 * 1024 * 1024),
   status: status.default("PUBLISHED"),
 }).superRefine((value, context) => {
+  if (value.fileType !== "application/pdf" && value.fileSize > 50 * 1024 * 1024) context.addIssue({ code: "custom", path: ["fileSize"], message: "File không phải PDF tối đa 50 MB." });
   const isDocument = value.resourceType === "DIRECTIVE_DOCUMENT" || value.resourceType === "EXECUTION_DOCUMENT";
   if (isDocument && !value.documentNumber) context.addIssue({ code: "custom", path: ["documentNumber"], message: "Số văn bản là bắt buộc." });
   if (isDocument && !value.issueDate) context.addIssue({ code: "custom", path: ["issueDate"], message: "Ngày ban hành là bắt buộc." });
@@ -197,8 +198,15 @@ export async function cmsRoutes(app: FastifyInstance) {
     if (!post) return fail(reply, 404, "Không tìm thấy bài viết.", "NEWS_NOT_FOUND");
     return ok(reply, { post });
   });
-  app.get("/api/public/resources", async (_request, reply) => ok(reply, { resources: await prisma.resourceFile.findMany({ where: { status: "PUBLISHED" }, orderBy: { publishedAt: "desc" }, include: { category: true } }) }));
-  app.get("/api/public/site-content", async (request, reply) => { const query = z.object({ locale: z.enum(["vi", "en"]).default("vi") }).parse(request.query); return ok(reply, { contents: await prisma.siteContent.findMany({ where: { locale: query.locale, published: true } }) }); });
+  app.get("/api/public/resources", async (_request, reply) => {
+    const [resources, categories] = await Promise.all([
+      prisma.resourceFile.findMany({ where: { status: "PUBLISHED" }, orderBy: { publishedAt: "desc" }, include: { category: true } }),
+      prisma.resourceCategory.findMany({ orderBy: { name: "asc" }, select: { id: true, name: true } }),
+    ]);
+    reply.header("Cache-Control", "no-store");
+    return ok(reply, { resources, categories, resourceTypes: resourceType.options });
+  });
+  app.get("/api/public/site-content", async (request, reply) => { const query = z.object({ locale: z.enum(["vi", "en"]).default("vi") }).parse(request.query); reply.header('Cache-Control', 'no-store'); return ok(reply, { contents: await prisma.siteContent.findMany({ where: { locale: query.locale, published: true } }) }); });
   app.post("/api/public/visits", async (request, reply) => { const input = z.object({ path: z.string().max(500), locale: z.string().max(5).optional(), visitorId: z.string().max(100).optional() }).parse(request.body); await prisma.pageVisit.create({ data: input }); return reply.code(201).send({ success: true, data: {}, message: "" }); });
 
   app.get("/api/admin/dashboard", async (request, reply) => {
@@ -861,5 +869,13 @@ export async function cmsRoutes(app: FastifyInstance) {
   app.get("/api/admin/applications", async (request, reply) => { if (!await guard(request, reply, "applications.view")) return; return ok(reply, { applications: await prisma.application.findMany({ orderBy: { createdAt: "desc" }, take: 200 }) }); });
 
   app.get("/api/admin/site-content", async (request, reply) => { if (!await guard(request, reply, "website.view")) return; return ok(reply, { contents: await prisma.siteContent.findMany({ orderBy: [{ section: "asc" }, { page: "asc" }] }) }); });
-  app.post("/api/admin/site-content", async (request, reply) => { const admin = await guard(request, reply, "website.update"); if (!admin) return; const input = siteInput.parse(request.body); const data = { ...input, value: input.value as Prisma.InputJsonValue, authorId: admin.id }; const content = await prisma.siteContent.upsert({ where: { key: input.key }, update: data, create: data }); return ok(reply, { content }, "Đã cập nhật cấu hình website."); });
+  app.post("/api/admin/site-content", async (request, reply) => {
+    const admin = await guard(request, reply, "website.update"); if (!admin) return;
+    const input = siteInput.parse(request.body);
+    const existing = await prisma.siteContent.findUnique({ where: { key: input.key } });
+    if (input.key.startsWith('cms.') || input.section.startsWith('cms-') || existing?.section.startsWith('cms-')) return fail(reply, 400, 'Dùng trình quản lý trang để sửa nội dung CMS.', 'RESERVED_CMS_KEY');
+    if ((input.published || existing?.published) && !await guard(request, reply, 'website.publish')) return;
+    const data = { ...input, value: input.value as Prisma.InputJsonValue, authorId: admin.id };
+    const content = await prisma.siteContent.upsert({ where: { key: input.key }, update: data, create: data }); return ok(reply, { content }, "Đã cập nhật cấu hình website.");
+  });
 }

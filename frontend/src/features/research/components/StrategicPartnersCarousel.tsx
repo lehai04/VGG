@@ -13,7 +13,7 @@ const strategicPartners = [
   { name: "Ming Chuan University", logo: "/images/pages/research/partners/ming-chuan.png" },
 ] as const;
 
-export function StrategicPartnersCarousel() {
+export function StrategicPartnersCarousel({ partners = strategicPartners }: { partners?: readonly { name: string; logo: string }[] }) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const dragState = useRef({ pointerId: 0, startX: 0, scrollLeft: 0 });
   const draggingRef = useRef(false);
@@ -78,9 +78,9 @@ export function StrategicPartnersCarousel() {
       onLostPointerCapture={stopDragging}
     >
       <div className={styles.partnerTrack}>
-        {[...strategicPartners, ...strategicPartners].map((partner, index) => (
-          <figure key={`${partner.name}-${index}`} aria-hidden={index >= strategicPartners.length}>
-            <Image src={partner.logo} alt={index < strategicPartners.length ? `Logo ${partner.name}` : ""} fill sizes="240px" draggable={false} />
+        {[...partners, ...partners].map((partner, index) => (
+          <figure key={`${partner.name}-${index}`} aria-hidden={index >= partners.length}>
+            <Image src={partner.logo} alt={index < partners.length ? `Logo ${partner.name}` : ""} fill sizes="240px" draggable={false} />
           </figure>
         ))}
       </div>

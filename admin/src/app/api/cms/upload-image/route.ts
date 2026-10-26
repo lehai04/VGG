@@ -1,7 +1,8 @@
 import { getCurrentAdmin } from "@/lib/auth/session";
 import { uploadNewsImage } from "@/lib/storage";
 import sharp from "sharp";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { isTrustedMutation } from '@/lib/auth/request';
 
 export const runtime = "nodejs";
 
@@ -16,10 +17,11 @@ function detectImage(buffer: Buffer) {
   return null;
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  if (!isTrustedMutation(request)) return NextResponse.json({ success: false, message: 'Nguồn yêu cầu không hợp lệ.' }, { status: 403 });
   const admin = await getCurrentAdmin();
   if (!admin) return NextResponse.json({ success: false, message: "Bạn chưa đăng nhập." }, { status: 401 });
-  if (!admin.permissionCodes.includes("news.create") && !admin.permissionCodes.includes("news.update")) {
+  if (admin.mustChangePassword || (admin.role.code !== 'SUPER_ADMIN' && !admin.permissionCodes.includes("media.upload") && !admin.permissionCodes.includes("news.create") && !admin.permissionCodes.includes("news.update"))) {
     return NextResponse.json({ success: false, message: "Bạn không có quyền tải ảnh Tin tức." }, { status: 403 });
   }
 

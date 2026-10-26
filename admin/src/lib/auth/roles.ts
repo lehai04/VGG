@@ -33,7 +33,7 @@ export async function ensureRolesAndPermissions() {
   });
 
   const standardPermissions = permissions.filter(
-    (permission) => !permission.code.startsWith("admins.") && !permission.code.startsWith("settings.")
+    (permission) => permission.code !== 'consultations.import' && !permission.code.startsWith("admins.") && !permission.code.startsWith("settings.") && !permission.code.startsWith('website.') && !permission.code.startsWith('media.')
   );
   if (level2) {
     await prisma.rolePermission.createMany({

@@ -11,7 +11,7 @@ import {
   programmeDegrees,
   programmeFields,
   programmeOrientations,
-  programmes,
+  programmes as defaultProgrammes,
   getProgrammeTuition,
   getProgrammeGraduationRequirements,
   type ProgrammeDegree,
@@ -19,8 +19,6 @@ import {
   type ProgrammeOrientation,
 } from "@/data/programmes";
 import { getProgrammeCurricula, getProgrammeDetails } from "@/data/curricula";
-
-const copy = catalogueCopy.ProgrammeDirectory;
 
 /** Chuẩn hóa bản dùng để so khớp, không sửa tên chương trình hiển thị.
  * NFD tách dấu tổ hợp; đ/Đ cần xử lý riêng vì không bị tách thành d bởi NFD. */
@@ -32,7 +30,9 @@ function normalizeText(value: string) {
     .toLowerCase();
 }
 
-export default function ProgrammeDirectory() {
+export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDirectory, entries = defaultProgrammes }: { content?: typeof catalogueCopy.ProgrammeDirectory; entries?: typeof defaultProgrammes } = {}) {
+  const copy = content;
+  const programmes = entries;
   const [keyword, setKeyword] = useState("");
   const [degrees, setDegrees] = useState<ProgrammeDegree[]>([]);
   const [fields, setFields] = useState<ProgrammeField[]>([]);
@@ -98,7 +98,7 @@ export default function ProgrammeDirectory() {
     return result.sort((a, b) =>
       sort === "za" ? b.title.localeCompare(a.title, "vi") : a.title.localeCompare(b.title, "vi"),
     );
-  }, [keyword, degrees, fields, orientations, sort]);
+  }, [keyword, degrees, fields, orientations, sort, programmes]);
 
   const activeFilterCount = degrees.length + fields.length + orientations.length;
 

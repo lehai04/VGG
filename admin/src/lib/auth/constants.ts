@@ -11,6 +11,12 @@ export const ROLE_CODES = {
 } as const;
 
 export const ADMIN_PERMISSIONS = [
+  'consultations.import',
+  'website.view',
+  'website.update',
+  'website.publish',
+  'media.view',
+  'media.upload',
   "admins.view",
   "admins.create",
   "admins.update",

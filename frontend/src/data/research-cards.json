@@ -1,0 +1,48 @@
+{
+  "goals": [
+    {
+      "title": "Nâng cao chất lượng nghiên cứu",
+      "text": "Phát triển năng lực nghiên cứu của giảng viên và người học, gia tăng chất lượng công bố và khả năng tham gia các mạng lưới học thuật."
+    },
+    {
+      "title": "Chú trọng tính thực tiễn",
+      "text": "Khởi xướng các đề tài có khả năng ứng dụng, chuyển giao tri thức và góp phần giải quyết những vấn đề của tổ chức, xã hội và cộng đồng."
+    },
+    {
+      "title": "Đa dạng và quốc tế hóa",
+      "text": "Mở rộng hợp tác với các đối tác trong và ngoài nước thông qua dự án, hội nghị, hội thảo và trao đổi chuyên môn."
+    }
+  ],
+  "researchFields": [
+    {
+      "name": "Quản trị kinh doanh",
+      "image": "/images/pages/research/content/qtkd.avif",
+      "href": "/research/cum-nghien-cuu"
+    },
+    {
+      "name": "Công nghệ & Kỹ thuật",
+      "image": "/images/pages/research/content/congnghekythuat.avif",
+      "href": "/research/cum-nghien-cuu"
+    },
+    {
+      "name": "Môi trường & Phát triển bền vững",
+      "image": "/images/pages/research/content/moitruong.avif",
+      "href": "/research/doi-moi-sang-tao"
+    },
+    {
+      "name": "Dịch vụ & Du lịch",
+      "image": "/images/pages/research/content/dulich.avif",
+      "href": "/research/cum-nghien-cuu"
+    },
+    {
+      "name": "Thiết kế & Truyền thông",
+      "image": "/images/pages/research/content/thietke.avif",
+      "href": "/research/cum-nghien-cuu"
+    },
+    {
+      "name": "Khoa học Xã hội & Nhân văn",
+      "image": "/images/pages/research/content/xhnv.avif",
+      "href": "/research/cum-nghien-cuu"
+    }
+  ]
+}

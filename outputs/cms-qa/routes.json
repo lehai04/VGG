@@ -1,0 +1,297 @@
+[
+  {
+    "path": "/vi/research",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/admissions",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/student-success",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/cong-nghe-thong-tin",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/marketing",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/khoa-hoc-moi-truong",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/ky-thuat-moi-truong",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/quan-ly-tai-nguyen-moi-truong",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/cong-nghe-sinh-hoc",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/ky-thuat-xay-dung",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/ky-thuat-o-to",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/quan-tri-kinh-doanh",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/kinh-doanh-thuong-mai",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/tai-chinh-ngan-hang",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/ke-toan",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/logistics",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/quan-tri-du-lich",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/quan-tri-khach-san",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/luat-kinh-te",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/quan-he-cong-chung",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/ngon-ngu-anh",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/kien-truc",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/my-thuat-ung-dung",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/programmes/ly-luan-lich-su-my-thuat",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/discover",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/news",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/resources",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/research",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/admissions",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/student-success",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/cong-nghe-thong-tin",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/marketing",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/khoa-hoc-moi-truong",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/ky-thuat-moi-truong",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/quan-ly-tai-nguyen-moi-truong",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/cong-nghe-sinh-hoc",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/ky-thuat-xay-dung",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/ky-thuat-o-to",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/quan-tri-kinh-doanh",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/kinh-doanh-thuong-mai",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/tai-chinh-ngan-hang",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/ke-toan",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/logistics",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/quan-tri-du-lich",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/quan-tri-khach-san",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/luat-kinh-te",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/quan-he-cong-chung",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/ngon-ngu-anh",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/kien-truc",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/my-thuat-ung-dung",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/programmes/ly-luan-lich-su-my-thuat",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/discover",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/news",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/en/resources",
+    "status": 200,
+    "hasPage": true
+  },
+  {
+    "path": "/vi/discover/gioi-thieu",
+    "status": 404,
+    "expected": 404
+  }
+]

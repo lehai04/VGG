@@ -1,4 +1,6 @@
 import Link from "@/i18n/components/LocalizedLink";
+import { homeContent } from '@/data/home-content';
+import { websiteContent } from '@/lib/website-content';
 
 const MASTER_FIELDS = [
   {
@@ -46,12 +48,13 @@ const MASTER_FIELDS = [
 ] as const;
 
 /** HOMEPAGE SECTION: Danh mục các nhóm chương trình và liên kết sang /programmes. */
-export function ProgrammeCatalog() {
+export async function ProgrammeCatalog() {
+  const content = await websiteContent('home', homeContent);
   return (
     <section className="programmeCatalog" aria-label="Chương trình đào tạo" id="programmes">
       {/* Các nhóm ngành dẫn tới danh mục với bộ lọc tương ứng. */}
       <div className="programmeFieldGrid">
-        {MASTER_FIELDS.map((field, fieldIndex) => (
+        {content.fields.map((field, fieldIndex) => (
           <article
             className={
               field.code === "PHD" ? "programmeField programmeFieldDoctoral" : "programmeField"
@@ -65,7 +68,7 @@ export function ProgrammeCatalog() {
             <p>{field.english}</p>
             <h3>{field.title}</h3>
             <p className="programmeFieldDescription">{field.description}</p>
-            <Link className="programmeFieldLink" href={field.code === "PHD" ? "/programmes?degree=Tiến sĩ" : `/programmes?degree=Thạc sĩ&field=${encodeURIComponent(field.title)}`}>
+            <Link className="programmeFieldLink" href={field.code === "PHD" ? "/programmes?degree=Tiến sĩ" : `/programmes?degree=Thạc sĩ&field=${encodeURIComponent(MASTER_FIELDS[fieldIndex].title)}`}>
               Tìm hiểu chương trình <b aria-hidden="true">→</b>
             </Link>
           </article>

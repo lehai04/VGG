@@ -4,26 +4,7 @@ import { FormEvent, Suspense, useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ValidatedInput } from "@/components/common/ValidatedInput";
-import { validateUsername, validateGeneralEmail, ValidationResult } from "@/lib/validation/rules";
-
-function validateLoginAccount(input: string): ValidationResult {
-  const trimmed = (input || "").trim();
-  if (!trimmed) return { isValid: false, message: "Vui lòng nhập email hoặc tên đăng nhập." };
-  if (trimmed.includes("@")) {
-    if (trimmed.endsWith("@vanlanguni.vn")) {
-      return /^[a-z0-9]+\.[a-z0-9]+@vanlanguni\.vn$/i.test(trimmed)
-        ? { isValid: true, message: "" }
-        : { isValid: false, message: "Vui lòng nhập đúng định dạng: Email CTV phải là ten.mssv@vanlanguni.vn" };
-    }
-    if (trimmed.endsWith("@vlu.edu.vn")) {
-      return /^[a-z0-9]+(\.[a-z0-9]+)+@vlu\.edu\.vn$/i.test(trimmed)
-        ? { isValid: true, message: "" }
-        : { isValid: false, message: "Vui lòng nhập đúng định dạng: Email QTV phải là ten.holot@vlu.edu.vn" };
-    }
-    return validateGeneralEmail(trimmed);
-  }
-  return validateUsername(trimmed);
-}
+import { validateLoginAccount } from "@/lib/validation/rules";
 
 function MicrosoftIcon() {
   return (

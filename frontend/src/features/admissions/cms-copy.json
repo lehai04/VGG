@@ -1,0 +1,2310 @@
+{
+  "defaults": {
+    "introduction": {
+      "text_001": "Bỏ qua điều hướng",
+      "url_002": "/vi",
+      "text_003": "Viện Sau đại học",
+      "text_004": "Tuyển sinh",
+      "text_005": "Tuyển sinh năm 2027",
+      "text_006": "Nâng cao chuyên môn, phát triển năng lực nghiên cứu và chuẩn bị cho những mục tiêu nghề nghiệp mới. Tìm chương trình phù hợp, hiểu rõ điều kiện và chủ động hoàn thiện hồ sơ cùng Viện Sau đại học Văn Lang.",
+      "text_007": "Đăng ký dự tuyển ",
+      "url_008": "/programmes",
+      "text_009": "Khám phá chương trình",
+      "text_010": "Xem thông tin đợt tuyển sinh",
+      "text_011": "Học viên cùng trao đổi trong hoạt động học tập tại Văn Lang",
+      "image_012": "/admissions/reference-1.webp",
+      "text_013": " VAN LANG POSTGRADUATE",
+      "text_014": "Hiểu rõ lựa chọn. Chủ động chuẩn bị.",
+      "text_015": "Từ tìm hiểu chương trình đến hoàn tất hồ sơ dự tuyển.",
+      "image_016": "/images/pages/discover/content/campus.jpg",
+      "text_017": "Khuôn viên Trường Đại học Văn Lang",
+      "text_018": "Thông báo & lịch",
+      "text_019": "Điều kiện",
+      "text_020": "Học phí & học bổng",
+      "text_021": "Hồ sơ",
+      "text_022": "Quy trình",
+      "text_023": "FAQ",
+      "text_024": "Nhận tư vấn"
+    },
+    "thong-bao-lich-tuyen-sinh": {
+      "text_001": "02",
+      "text_002": "Thông báo và lịch tuyển sinh",
+      "text_003": "Bậc đào tạo đang xem",
+      "text_004": "Thạc sĩ: thông tin tuyển sinh 2027. Tiến sĩ: thông báo PDF hiện có áp dụng năm 2026. Vui lòng chọn đúng bậc đào tạo để xem điều kiện và lịch tương ứng.",
+      "text_005": "Tuyển sinh thạc sĩ 2027",
+      "text_006": " Kế hoạch tuyển sinh 2027",
+      "text_007": "Trình độ đang xem",
+      "text_008": "Thông báo tuyển sinh ",
+      "text_009": "THẠC SĨ 2027",
+      "text_010": "Thông tin tuyển sinh từ tài liệu hiện có",
+      "text_011": "Tham khảo kế hoạch tuyển sinh và các mốc nhận hồ sơ bên dưới. Chưa có bản PDF thông báo Thạc sĩ 2027 để tải xuống tại đây; vui lòng liên hệ Viện để nhận văn bản chính thức.",
+      "text_012": "Xem nội dung thông báo",
+      "text_013": "TIẾN SĨ 2026 · PDF",
+      "text_014": "Thông báo tuyển sinh tiến sĩ",
+      "text_015": "Tài liệu hiện có dành cho chương trình Khoa học Môi trường, năm 2026; không phải thông báo tuyển sinh năm 2027.",
+      "url_016": "/admissions/thong-bao-tuyen-sinh-tien-si-2026.pdf",
+      "text_017": "Xem PDF",
+      "url_018": "/admissions/thong-bao-tuyen-sinh-tien-si-2026.pdf",
+      "text_019": "Tải thông báo",
+      "text_020": "Phương thức & lịch tuyển sinh",
+      "text_021": "Những mốc cần ghi nhớ.",
+      "text_022": "Theo dõi lịch của đúng chương trình và đợt dự tuyển để chủ động sắp xếp thời gian, hoàn thiện hồ sơ.",
+      "text_023": "Phương thức & thời gian tuyển sinh",
+      "text_024": "Chuẩn bị đầy đủ. Chủ động dự tuyển.",
+      "text_025": "Nhận hồ sơ thường xuyên và xét tuyển sau khi ứng viên nộp đầy đủ hồ sơ theo yêu cầu.",
+      "text_026": "01",
+      "text_027": "Chuẩn bị hồ sơ",
+      "text_028": "Tiếp nhận thường xuyên",
+      "text_029": "Đối chiếu điều kiện, hoàn thiện giấy tờ, đề cương và kế hoạch nghiên cứu.",
+      "text_030": "02",
+      "text_031": "Nộp hồ sơ",
+      "text_032": "Nộp đủ theo hướng dẫn của Viện",
+      "text_033": "Hồ sơ học bổng được nộp cùng hồ sơ ứng tuyển tiến sĩ nếu có đăng ký.",
+      "text_034": "03",
+      "text_035": "Tham gia xét tuyển",
+      "text_036": "Hình thức trực tiếp",
+      "text_037": "Thực hiện theo lịch được hướng dẫn. Khi ảnh hưởng bởi thiên tai, dịch bệnh, Trường có thể tổ chức trực tuyến hoặc kết hợp.",
+      "text_038": "04",
+      "text_039": "Kết quả & nhập học",
+      "text_040": "Theo thông báo của Trường",
+      "text_041": "Hội đồng tuyển sinh quyết định danh sách trúng tuyển; người trúng tuyển thực hiện thủ tục nhập học được hướng dẫn.",
+      "text_042": "Nhận hồ sơ thường xuyên.",
+      "text_043": " Liên hệ Viện để được hướng dẫn nộp hồ sơ và lịch xét tuyển. ",
+      "text_044": "Xem thông báo "
+    },
+    "dieu-kien-phuong-thuc": {
+      "text_001": "03",
+      "text_002": "Điều kiện và phương thức tuyển sinh",
+      "text_003": "Thạc sĩ",
+      "text_004": "Tiến sĩ",
+      "text_005": "Điều kiện dự tuyển",
+      "text_006": "Chương trình ",
+      "text_007": "Tìm hiểu điều kiện. Chuẩn bị đúng từ đầu.",
+      "text_008": "Đối chiếu nền tảng học tập và các minh chứng hiện có với yêu cầu của chương trình bạn muốn theo học.",
+      "text_009": "Chưa rõ mình có đủ điều kiện?",
+      "text_010": "Chuẩn bị tên ngành tốt nghiệp, bảng điểm và chương trình quan tâm để được hướng dẫn cụ thể.",
+      "text_011": "Tư vấn điều kiện dự tuyển ",
+      "text_012": "Điều kiện dự tuyển",
+      "text_013": "Chương trình Tiến sĩ",
+      "text_014": "Sẵn sàng cho hành trình nghiên cứu.",
+      "text_015": "Đối chiếu đồng thời văn bằng, kinh nghiệm nghiên cứu, ngoại ngữ và đề cương dự kiến.",
+      "text_016": "Đã có định hướng nghiên cứu?",
+      "text_017": "Chuẩn bị văn bằng, bảng điểm, minh chứng nghiên cứu và ý tưởng đề tài để được Viện hướng dẫn hồ sơ phù hợp.",
+      "text_018": "Trao đổi về hồ sơ của bạn ",
+      "text_019": "01",
+      "text_020": "Văn bằng và ngành phù hợp",
+      "text_021": "Đáp ứng một trong các diện đầu vào:",
+      "text_022": "Đã tốt nghiệp thạc sĩ ngành phù hợp.",
+      "text_023": "Đã tốt nghiệp đại học hạng giỏi trở lên ngành phù hợp.",
+      "text_024": "Tốt nghiệp trình độ tương đương Bậc 7 theo Khung trình độ quốc gia Việt Nam ở một số ngành đào tạo chuyên sâu đặc thù phù hợp.",
+      "text_025": "Đồng thời đáp ứng chuẩn đầu vào của chương trình. Học phần bổ sung kiến thức, nếu có, được xác định theo ngành tốt nghiệp và hồ sơ cụ thể.",
+      "text_026": "Tra cứu ngành & bổ sung kiến thức ",
+      "text_027": "02",
+      "text_028": "Kinh nghiệm nghiên cứu",
+      "text_029": "Thể hiện bằng một trong các hình thức:",
+      "text_030": "Luận văn thạc sĩ của chương trình định hướng nghiên cứu.",
+      "text_031": "Bài báo hoặc báo cáo khoa học đã công bố.",
+      "text_032": "Có từ 02 năm (24 tháng) công tác là giảng viên hoặc nghiên cứu viên tại cơ sở đào tạo, tổ chức khoa học và công nghệ.",
+      "text_033": "Chuẩn bị minh chứng tương ứng để Hội đồng xem xét.",
+      "text_034": "03",
+      "text_035": "Năng lực ngoại ngữ",
+      "text_036": "Đối với công dân Việt Nam, đáp ứng một trong các hình thức minh chứng:",
+      "text_037": "Bằng đại học trở lên do cơ sở đào tạo nước ngoài, phân hiệu tại Việt Nam hoặc cơ sở Việt Nam cấp cho người học toàn thời gian bằng tiếng nước ngoài.",
+      "text_038": "Bằng đại học trở lên ngành ngôn ngữ nước ngoài do cơ sở đào tạo Việt Nam cấp.",
+      "text_039": "Chứng chỉ trong danh mục được chấp nhận còn hiệu lực đến ngày đăng ký dự tuyển; hoặc chứng chỉ khác tương đương Bậc 4 theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam do Bộ GDĐT công bố.",
+      "text_040": "Tra cứu bảng ngoại ngữ Bậc 4 ",
+      "text_041": "04",
+      "text_042": "Đề cương và kế hoạch nghiên cứu",
+      "text_043": "Có dự thảo đề cương nghiên cứu và dự kiến kế hoạch học tập, nghiên cứu toàn khóa.",
+      "text_044": "Danh mục hồ sơ còn có thư giới thiệu, lý lịch khoa học và minh chứng công bố của người hướng dẫn. Liên hệ Viện để được hướng dẫn việc chuẩn bị, xác nhận các tài liệu này.",
+      "text_045": "Gợi ý chuẩn bị đề cương ",
+      "text_046": "05",
+      "text_047": "Ứng viên là công dân nước ngoài",
+      "text_048": "Người đăng ký chương trình tiến sĩ bằng tiếng Việt phải có chứng chỉ tiếng Việt tối thiểu Bậc 4 theo Khung năng lực tiếng Việt dùng cho người nước ngoài, đồng thời đáp ứng các điều kiện dự tuyển của chương trình."
+    },
+    "hoc-phi-hoc-bong": {
+      "text_001": "04",
+      "text_002": "Học phí và chính sách học bổng",
+      "text_003": "Học phí & chính sách hỗ trợ",
+      "text_004": "Chủ động kế hoạch tài chính cho việc học.",
+      "text_005": "Tìm hiểu học phí, các khoản liên quan và chính sách hỗ trợ theo đúng chương trình, khóa tuyển sinh.",
+      "text_006": "Chương trình bạn muốn tìm hiểu",
+      "text_007": "Ngôn ngữ / chuyên ngành",
+      "text_008": "Ba đợt đóng học phí: 35% – 30% – 35%. Hạn đóng theo thông báo của Trường.",
+      "text_009": "Xem các khoản thu riêng ",
+      "text_010": "Nhận tư vấn học phí ",
+      "text_011": "Học bổng Phát triển năng lực",
+      "text_012": "Mức 15–50%, căn cứ xếp loại tốt nghiệp và danh hiệu. Thời gian từ tốt nghiệp đến trúng tuyển không quá 24 tháng.",
+      "text_013": "Xem mức và điều kiện xét ",
+      "text_014": "Học bổng đồng hành STEM",
+      "text_015": "Mức 15% dành cho nữ và 10% dành cho nam, áp dụng với ngành thuộc danh mục STEM do Trường công bố.",
+      "text_016": "Tìm hiểu phạm vi áp dụng ",
+      "text_017": "Hỗ trợ tài chính",
+      "text_018": "16 nhóm đối tượng được xem xét hỗ trợ từ 10–30%. Cựu sinh viên, cựu học viên Văn Lang thuộc diện xét mức 10%.",
+      "text_019": "Tra cứu đối tượng và mức hỗ trợ ",
+      "text_020": "Hỗ trợ nghiên cứu khoa học",
+      "text_021": "Cơ chế hỗ trợ gắn với sản phẩm nghiên cứu, cam kết đầu ra và hợp đồng nghiên cứu được ký kết.",
+      "text_022": "Xem nguyên tắc hỗ trợ ",
+      "text_023": "Mỗi học viên chỉ được áp dụng một chính sách có mức cao nhất trong học bổng Phát triển năng lực, học bổng đồng hành STEM và hỗ trợ tài chính; không cộng dồn. Mức được hưởng xác định sau khi xét hồ sơ và phê duyệt.",
+      "text_024": "Học phí & chính sách hỗ trợ",
+      "text_025": "Đầu tư cho hành trình nghiên cứu.",
+      "text_026": "Tìm hiểu học phí, kế hoạch thanh toán và chính sách hỗ trợ dành cho nghiên cứu sinh.",
+      "text_027": "TIẾN SĨ · KHOA HỌC MÔI TRƯỜNG",
+      "text_028": "Học phí toàn khóa",
+      "text_029": "145.000.000 đ",
+      "text_030": "Học phí toàn khóa · Chương trình tiến sĩ",
+      "text_031": "Năm 1",
+      "text_032": "50.000.000 đ",
+      "text_033": "Năm 2",
+      "text_034": "45.000.000 đ",
+      "text_035": "Năm 3",
+      "text_036": "50.000.000 đ",
+      "text_037": "Ứng viên theo lộ trình 4 năm từ đại học liên hệ Viện để được hướng dẫn kế hoạch đóng học phí phù hợp.",
+      "text_038": "Lệ phí, bổ sung kiến thức & thanh toán ",
+      "text_039": "Nhận tư vấn học phí ",
+      "text_040": "Học bổng đến 100%",
+      "text_041": "Xét trên học phí toàn khóa, gắn với tiến độ đào tạo và cam kết nghiên cứu, công bố khoa học vượt chuẩn đầu ra.",
+      "text_042": "Xem điều kiện & cam kết ",
+      "text_043": "Giảm học phí 10% hoặc 30%",
+      "text_044": "Dành cho cựu sinh viên, cựu học viên Văn Lang và các nhóm đối tượng đủ điều kiện.",
+      "text_045": "Tra cứu đối tượng áp dụng ",
+      "text_046": "Thanh toán toàn khóa: giảm 5%",
+      "text_047": "Tính trên học phí thực đóng sau miễn giảm, học bổng. Có điều kiện về thời điểm thanh toán và mức chính sách đang hưởng.",
+      "text_048": "Xem điều kiện thanh toán ",
+      "text_049": "Học bổng khuyến khích 5%",
+      "text_050": "Dành cho nghiên cứu sinh nữ, người khuyết tật, thương binh/bệnh binh hoặc người dân tộc thiểu số, trong giới hạn quy định.",
+      "text_051": "Xem mức cộng thêm & giới hạn ",
+      "text_052": "Học bổng được xét duyệt theo hồ sơ và cam kết. Có cơ chế rà soát, điều chỉnh và thu hồi khi không đáp ứng cam kết."
+    },
+    "ho-so-du-tuyen": {
+      "text_001": "05",
+      "text_002": "Hồ sơ dự tuyển",
+      "text_003": "Hồ sơ & biểu mẫu",
+      "text_004": "Chuẩn bị từng giấy tờ. Chủ động từng bước.",
+      "text_005": "Đối chiếu 12 mục hồ sơ dự tuyển và 8 mục hồ sơ nhập học. Các giấy tờ ghi “nếu có” hoặc “nếu thuộc diện yêu cầu” chỉ áp dụng với trường hợp tương ứng.",
+      "text_006": "Hồ sơ dự tuyển",
+      "text_007": "Hồ sơ nhập học",
+      "text_008": "Bỏ đánh dấu",
+      "text_009": "Dự tuyển chủ yếu bằng hồ sơ điện tử; nhập học thực hiện theo hướng dẫn đối chiếu và nộp hồ sơ của Trường. Không mặc định yêu cầu nộp lại minh chứng đã được xác thực hợp lệ. Hồ sơ học bổng, hỗ trợ tài chính thực hiện theo quy trình riêng.",
+      "text_010": "Tài liệu để bạn bắt đầu.",
+      "text_011": "Tải danh sách chuẩn bị để ghi chú, hoặc xem hướng dẫn các bước đăng ký.",
+      "text_012": "Danh sách chuẩn bị hồ sơ",
+      "text_013": "Tuyển sinh thạc sĩ 2027 · TXT",
+      "text_014": "Thông tin tuyển sinh & biểu mẫu",
+      "text_015": "Tra cứu nội dung và cổng đăng ký",
+      "text_016": "Xem hướng dẫn đăng ký ",
+      "text_017": "Hồ sơ & tài liệu",
+      "text_018": "Chuẩn bị hồ sơ theo từng nhóm.",
+      "text_019": "Danh mục gồm 24 mục hồ sơ. Các mục “nếu có” áp dụng theo trường hợp; đánh dấu để theo dõi và tải danh sách về máy.",
+      "text_020": "Bỏ đánh dấu",
+      "text_021": "Tài liệu cho bước chuẩn bị đầu tiên.",
+      "text_022": "Tải danh sách hồ sơ và thông báo tuyển sinh để chuẩn bị.",
+      "text_023": "Checklist hồ sơ tiến sĩ",
+      "text_024": "24 mục · TXT",
+      "text_025": "Thông báo tuyển sinh tiến sĩ 2026",
+      "text_026": "Kèm 3 phụ lục · PDF, 13 trang",
+      "text_027": "Dự tuyển từ trình độ đại học?",
+      "text_028": "Liên hệ Viện để được hướng dẫn hồ sơ phù hợp với văn bằng dự tuyển.",
+      "text_029": "Gợi ý chuẩn bị đề cương ",
+      "text_030": "Nhận biểu mẫu từ Viện"
+    },
+    "quy-trinh-tuyen-sinh": {
+      "text_001": "06",
+      "text_002": "Quy trình tuyển sinh",
+      "text_003": "Hướng dẫn đăng ký",
+      "text_004": "Từ tìm hiểu đến hoàn tất đăng ký.",
+      "text_005": "Chọn từng bước để xem việc cần làm. Thao tác nộp hồ sơ chính thức được thực hiện trên cổng tuyển sinh của Trường.",
+      "text_006": "Hướng dẫn đăng ký",
+      "text_007": "Từng bước chuẩn bị cho kỳ dự tuyển.",
+      "text_008": "Chọn một bước để xem việc cần làm. Viện Sau đại học hướng dẫn việc tiếp nhận hồ sơ và xét tuyển tiến sĩ.",
+      "text_009": "Kết quả & nhập học",
+      "text_010": "Theo dõi hồ sơ. Sẵn sàng cho bước tiếp theo.",
+      "text_011": "Sử dụng thông tin và hướng dẫn chính thức của đợt tuyển sinh để theo dõi kết quả, hoàn tất thủ tục đúng thời hạn.",
+      "text_012": "Bạn đã nộp hồ sơ?",
+      "text_013": "Theo dõi tài khoản đăng ký và thông tin liên lạc đã khai báo. Bổ sung hồ sơ hoặc hoàn thiện điều kiện theo yêu cầu của Viện.",
+      "text_014": "Hướng dẫn theo dõi hồ sơ ",
+      "text_015": "Bạn đã nhận kết quả trúng tuyển?",
+      "text_016": "Kết quả được công bố sau khi có quyết định phê duyệt của Hiệu trưởng. Người trúng tuyển hoàn tất hồ sơ và nghĩa vụ tài chính theo thông báo nhập học.",
+      "text_017": "Xem phần chuẩn bị nhập học ",
+      "text_018": "Kết quả & nhập học",
+      "text_019": "Theo dõi kết quả. Hoàn tất thủ tục nhập học.",
+      "text_020": "Hội đồng tuyển sinh quyết định danh sách trúng tuyển theo quy định và kế hoạch tuyển sinh của Trường.",
+      "text_021": "Bạn đã nộp hồ sơ?",
+      "text_022": "Theo dõi yêu cầu bổ sung và lịch xét tuyển qua đầu mối tiếp nhận của Viện. Khi số người đủ điều kiện vượt chỉ tiêu, Hội đồng có thể xem xét trình độ đã tốt nghiệp và kinh nghiệm nghiên cứu.",
+      "text_023": "Hướng dẫn theo dõi kết quả ",
+      "text_024": "Bạn đã trúng tuyển?",
+      "text_025": "Thực hiện hướng dẫn nhập học, kế hoạch học tập và nghĩa vụ tài chính. Kết quả học bổng được xét duyệt, công bố sau khi có dữ liệu trúng tuyển và nhập học.",
+      "text_026": "Xem việc cần chuẩn bị "
+    },
+    "cau-hoi-thuong-gap": {
+      "text_001": "07",
+      "text_002": "Câu hỏi thường gặp (FAQ)",
+      "text_003": "Câu hỏi thường gặp",
+      "text_004": "Giải đáp những điều bạn đang băn khoăn.",
+      "text_005": "Những thông tin cần làm rõ trước khi đăng ký dự tuyển thạc sĩ 2027.",
+      "text_006": "Gửi câu hỏi cho đội ngũ tư vấn ",
+      "text_007": "Câu hỏi thường gặp",
+      "text_008": "Làm rõ trước khi bắt đầu nghiên cứu.",
+      "text_009": "Giải đáp về điều kiện, học phí, học bổng và cách chuẩn bị hồ sơ tiến sĩ.",
+      "text_010": "Gửi câu hỏi cho Viện "
+    },
+    "tu-van": {
+      "text_001": "Tư vấn tuyển sinh",
+      "text_002": "Đăng ký dự tuyển / Nhận tư vấn",
+      "text_003": "Trao đổi về nền tảng chuyên môn, mục tiêu học tập và những điều bạn cần làm rõ trước khi đăng ký dự tuyển.",
+      "text_004": "Tìm hiểu chương trình và điều kiện dự tuyển",
+      "text_005": "Giải đáp học phí và chính sách hỗ trợ",
+      "text_006": "Hướng dẫn chuẩn bị hồ sơ đăng ký",
+      "url_007": "tel:+84988486869",
+      "text_008": "Hotline: 0988 48 6869",
+      "url_009": "tel:+842871016869",
+      "text_010": "Điện thoại: 028 7101 6869",
+      "url_011": "mailto:tuyensinh.sdh@vlu.edu.vn",
+      "text_012": "tuyensinh.sdh@vlu.edu.vn",
+      "text_013": "Phòng 1.10A, Tòa A, Cơ sở chính",
+      "text_014": "69/68 Đặng Thùy Trâm, phường Bình Lợi Trung, TP. Hồ Chí Minh",
+      "text_015": "Nhận tư vấn tuyển sinh",
+      "text_016": "Điền thông tin để Viện Sau đại học liên hệ và hỗ trợ bạn.",
+      "text_017": "Họ và tên ",
+      "text_018": "*",
+      "text_019": "Số điện thoại ",
+      "text_020": "*",
+      "text_021": "Email ",
+      "text_022": "*",
+      "text_023": "Chương trình quan tâm ",
+      "text_024": "*",
+      "text_025": "Nội dung cần tư vấn",
+      "text_026": "Bậc đào tạo quan tâm",
+      "text_027": " Tôi đồng ý để Viện liên hệ và sử dụng thông tin trên nhằm hỗ trợ tư vấn tuyển sinh.",
+      "text_028": "Website",
+      "text_029": "Gửi yêu cầu tư vấn",
+      "text_030": "Thông tin được gửi tới hệ thống tiếp nhận tư vấn của Viện. Bạn sẽ nhận thông báo khi hệ thống tiếp nhận thành công hoặc khi có lỗi.",
+      "text_031": "Viện Sau đại học Văn Lang",
+      "image_032": "/admissions/reference-2.webp",
+      "text_033": "Viện Sau đại học · Trường Đại học Văn Lang",
+      "text_034": "Cơ sở chính: 69/68 Đặng Thùy Trâm,",
+      "text_035": "Phường Bình Lợi Trung, TP. Hồ Chí Minh.",
+      "text_036": "Thông tin tuyển sinh",
+      "url_037": "/programmes",
+      "text_038": "Chương trình đào tạo",
+      "text_039": "Điều kiện dự tuyển",
+      "text_040": "Học phí và chính sách hỗ trợ",
+      "text_041": "Hồ sơ và biểu mẫu",
+      "text_042": "Kết nối với Viện",
+      "text_043": "Đăng ký tư vấn",
+      "url_044": "mailto:tuyensinh.sdh@vlu.edu.vn",
+      "text_045": "tuyensinh.sdh@vlu.edu.vn",
+      "url_046": "tel:+84988486869",
+      "text_047": "Hotline: 0988 48 6869",
+      "text_048": "Câu hỏi thường gặp",
+      "text_049": "VIỆN SAU ĐẠI HỌC · TRƯỜNG ĐẠI HỌC VĂN LANG",
+      "text_050": "Tuyển sinh sau đại học",
+      "text_051": "Xem điều kiện",
+      "text_052": "Đăng ký dự tuyển "
+    }
+  },
+  "slots": [
+    {
+      "section": "introduction",
+      "key": "text_001",
+      "start": 30,
+      "end": 47,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "url_002",
+      "start": 2538,
+      "end": 2541,
+      "type": "url"
+    },
+    {
+      "section": "introduction",
+      "key": "text_003",
+      "start": 2543,
+      "end": 2559,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_004",
+      "start": 2598,
+      "end": 2608,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_005",
+      "start": 2738,
+      "end": 2757,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_006",
+      "start": 2773,
+      "end": 2977,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_007",
+      "start": 3050,
+      "end": 3067,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "url_008",
+      "start": 3177,
+      "end": 3188,
+      "type": "url"
+    },
+    {
+      "section": "introduction",
+      "key": "text_009",
+      "start": 3190,
+      "end": 3211,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_010",
+      "start": 3378,
+      "end": 3406,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_011",
+      "start": 52177,
+      "end": 52236,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "image_012",
+      "start": 52314,
+      "end": 52342,
+      "type": "image"
+    },
+    {
+      "section": "introduction",
+      "key": "text_013",
+      "start": 52461,
+      "end": 52483,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_014",
+      "start": 52639,
+      "end": 52675,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_015",
+      "start": 52690,
+      "end": 52743,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "image_016",
+      "start": 52821,
+      "end": 52862,
+      "type": "image"
+    },
+    {
+      "section": "introduction",
+      "key": "text_017",
+      "start": 52869,
+      "end": 52903,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_018",
+      "start": 53072,
+      "end": 53088,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_019",
+      "start": 53125,
+      "end": 53134,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_020",
+      "start": 53166,
+      "end": 53184,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_021",
+      "start": 53214,
+      "end": 53219,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_022",
+      "start": 53255,
+      "end": 53264,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_023",
+      "start": 53298,
+      "end": 53301,
+      "type": "text"
+    },
+    {
+      "section": "introduction",
+      "key": "text_024",
+      "start": 53323,
+      "end": 53334,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_001",
+      "start": 53575,
+      "end": 53577,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_002",
+      "start": 53627,
+      "end": 53655,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_003",
+      "start": 53733,
+      "end": 53753,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_004",
+      "start": 53937,
+      "end": 54088,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_005",
+      "start": 54262,
+      "end": 54285,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_006",
+      "start": 54353,
+      "end": 54378,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_007",
+      "start": 54956,
+      "end": 54973,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_008",
+      "start": 55082,
+      "end": 55103,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_009",
+      "start": 55279,
+      "end": 55291,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_010",
+      "start": 55302,
+      "end": 55342,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_011",
+      "start": 55350,
+      "end": 55522,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_012",
+      "start": 55597,
+      "end": 55619,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_013",
+      "start": 55675,
+      "end": 55693,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_014",
+      "start": 55704,
+      "end": 55732,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_015",
+      "start": 55740,
+      "end": 55851,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "url_016",
+      "start": 55886,
+      "end": 55935,
+      "type": "url"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_017",
+      "start": 55968,
+      "end": 55975,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "url_018",
+      "start": 56006,
+      "end": 56055,
+      "type": "url"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_019",
+      "start": 56066,
+      "end": 56079,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_020",
+      "start": 56253,
+      "end": 56286,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_021",
+      "start": 56317,
+      "end": 56339,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_022",
+      "start": 56353,
+      "end": 56453,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_023",
+      "start": 56935,
+      "end": 56973,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_024",
+      "start": 57011,
+      "end": 57046,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_025",
+      "start": 57060,
+      "end": 57144,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_026",
+      "start": 57233,
+      "end": 57235,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_027",
+      "start": 57245,
+      "end": 57259,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_028",
+      "start": 57291,
+      "end": 57313,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_029",
+      "start": 57322,
+      "end": 57395,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_030",
+      "start": 57466,
+      "end": 57468,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_031",
+      "start": 57478,
+      "end": 57487,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_032",
+      "start": 57519,
+      "end": 57549,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_033",
+      "start": 57558,
+      "end": 57626,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_034",
+      "start": 57697,
+      "end": 57699,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_035",
+      "start": 57709,
+      "end": 57727,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_036",
+      "start": 57759,
+      "end": 57778,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_037",
+      "start": 57787,
+      "end": 57909,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_038",
+      "start": 57980,
+      "end": 57982,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_039",
+      "start": 57992,
+      "end": 58014,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_040",
+      "start": 58046,
+      "end": 58071,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_041",
+      "start": 58080,
+      "end": 58194,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_042",
+      "start": 58328,
+      "end": 58352,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_043",
+      "start": 58361,
+      "end": 58422,
+      "type": "text"
+    },
+    {
+      "section": "thong-bao-lich-tuyen-sinh",
+      "key": "text_044",
+      "start": 58470,
+      "end": 58484,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_001",
+      "start": 58814,
+      "end": 58816,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_002",
+      "start": 58862,
+      "end": 58897,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_003",
+      "start": 59103,
+      "end": 59110,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_004",
+      "start": 59259,
+      "end": 59266,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_005",
+      "start": 59518,
+      "end": 59536,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_006",
+      "start": 59570,
+      "end": 59583,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_007",
+      "start": 59657,
+      "end": 59698,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_008",
+      "start": 59706,
+      "end": 59806,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_009",
+      "start": 59839,
+      "end": 59868,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_010",
+      "start": 59877,
+      "end": 59968,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_011",
+      "start": 60034,
+      "end": 60060,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_012",
+      "start": 60392,
+      "end": 60410,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_013",
+      "start": 60444,
+      "end": 60464,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_014",
+      "start": 60504,
+      "end": 60539,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_015",
+      "start": 60547,
+      "end": 60631,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_016",
+      "start": 60664,
+      "end": 60692,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_017",
+      "start": 60701,
+      "end": 60808,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_018",
+      "start": 60889,
+      "end": 60915,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_019",
+      "start": 61067,
+      "end": 61069,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_020",
+      "start": 61076,
+      "end": 61101,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_021",
+      "start": 61134,
+      "end": 61169,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_022",
+      "start": 61181,
+      "end": 61217,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_023",
+      "start": 61226,
+      "end": 61280,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_024",
+      "start": 61289,
+      "end": 61415,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_025",
+      "start": 61428,
+      "end": 61566,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_026",
+      "start": 61615,
+      "end": 61653,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_027",
+      "start": 61783,
+      "end": 61785,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_028",
+      "start": 61792,
+      "end": 61814,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_029",
+      "start": 61847,
+      "end": 61885,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_030",
+      "start": 61897,
+      "end": 61953,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_031",
+      "start": 61962,
+      "end": 62003,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_032",
+      "start": 62012,
+      "end": 62129,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_033",
+      "start": 62142,
+      "end": 62192,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_034",
+      "start": 62247,
+      "end": 62249,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_035",
+      "start": 62256,
+      "end": 62274,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_036",
+      "start": 62307,
+      "end": 62377,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_037",
+      "start": 62389,
+      "end": 62537,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_038",
+      "start": 62546,
+      "end": 62623,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_039",
+      "start": 62632,
+      "end": 62823,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_040",
+      "start": 62883,
+      "end": 62912,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_041",
+      "start": 63042,
+      "end": 63044,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_042",
+      "start": 63051,
+      "end": 63082,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_043",
+      "start": 63115,
+      "end": 63196,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_044",
+      "start": 63203,
+      "end": 63373,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_045",
+      "start": 63427,
+      "end": 63451,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_046",
+      "start": 63581,
+      "end": 63583,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_047",
+      "start": 63590,
+      "end": 63621,
+      "type": "text"
+    },
+    {
+      "section": "dieu-kien-phuong-thuc",
+      "key": "text_048",
+      "start": 63654,
+      "end": 63866,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_001",
+      "start": 64128,
+      "end": 64130,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_002",
+      "start": 64171,
+      "end": 64201,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_003",
+      "start": 64359,
+      "end": 64390,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_004",
+      "start": 64417,
+      "end": 64458,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_005",
+      "start": 64472,
+      "end": 64571,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_006",
+      "start": 64653,
+      "end": 64683,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_007",
+      "start": 64844,
+      "end": 64867,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_008",
+      "start": 65080,
+      "end": 65153,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_009",
+      "start": 65214,
+      "end": 65238,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_010",
+      "start": 65389,
+      "end": 65409,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_011",
+      "start": 65663,
+      "end": 65691,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_012",
+      "start": 65699,
+      "end": 65811,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_013",
+      "start": 65867,
+      "end": 65892,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_014",
+      "start": 66129,
+      "end": 66152,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_015",
+      "start": 66160,
+      "end": 66257,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_016",
+      "start": 66306,
+      "end": 66331,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_017",
+      "start": 66566,
+      "end": 66582,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_018",
+      "start": 66590,
+      "end": 66699,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_019",
+      "start": 66751,
+      "end": 66783,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_020",
+      "start": 67019,
+      "end": 67045,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_021",
+      "start": 67053,
+      "end": 67146,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_022",
+      "start": 67199,
+      "end": 67221,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_023",
+      "start": 67428,
+      "end": 67641,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_024",
+      "start": 67833,
+      "end": 67864,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_025",
+      "start": 67898,
+      "end": 67931,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_026",
+      "start": 67945,
+      "end": 68029,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_027",
+      "start": 68115,
+      "end": 68144,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_028",
+      "start": 68179,
+      "end": 68196,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_029",
+      "start": 68225,
+      "end": 68238,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_030",
+      "start": 68269,
+      "end": 68309,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_031",
+      "start": 68364,
+      "end": 68369,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_032",
+      "start": 68382,
+      "end": 68394,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_033",
+      "start": 68434,
+      "end": 68439,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_034",
+      "start": 68452,
+      "end": 68464,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_035",
+      "start": 68504,
+      "end": 68509,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_036",
+      "start": 68522,
+      "end": 68534,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_037",
+      "start": 68574,
+      "end": 68675,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_038",
+      "start": 68740,
+      "end": 68783,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_039",
+      "start": 68939,
+      "end": 68959,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_040",
+      "start": 69213,
+      "end": 69230,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_041",
+      "start": 69238,
+      "end": 69348,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_042",
+      "start": 69411,
+      "end": 69439,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_043",
+      "start": 69674,
+      "end": 69699,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_044",
+      "start": 69707,
+      "end": 69788,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_045",
+      "start": 69848,
+      "end": 69874,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_046",
+      "start": 70112,
+      "end": 70141,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_047",
+      "start": 70149,
+      "end": 70268,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_048",
+      "start": 70326,
+      "end": 70351,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_049",
+      "start": 70588,
+      "end": 70612,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_050",
+      "start": 70620,
+      "end": 70742,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_051",
+      "start": 70807,
+      "end": 70840,
+      "type": "text"
+    },
+    {
+      "section": "hoc-phi-hoc-bong",
+      "key": "text_052",
+      "start": 71046,
+      "end": 71160,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_001",
+      "start": 71398,
+      "end": 71400,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_002",
+      "start": 71439,
+      "end": 71453,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_003",
+      "start": 71609,
+      "end": 71629,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_004",
+      "start": 71661,
+      "end": 71703,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_005",
+      "start": 71717,
+      "end": 71866,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_006",
+      "start": 72115,
+      "end": 72129,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_007",
+      "start": 72270,
+      "end": 72284,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_008",
+      "start": 72429,
+      "end": 72440,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_009",
+      "start": 72861,
+      "end": 73098,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_010",
+      "start": 73152,
+      "end": 73176,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_011",
+      "start": 73184,
+      "end": 73255,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_012",
+      "start": 73368,
+      "end": 73392,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_013",
+      "start": 73407,
+      "end": 73436,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_014",
+      "start": 73720,
+      "end": 73755,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_015",
+      "start": 73770,
+      "end": 73802,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_016",
+      "start": 74022,
+      "end": 74044,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_017",
+      "start": 74304,
+      "end": 74324,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_018",
+      "start": 74358,
+      "end": 74388,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_019",
+      "start": 74402,
+      "end": 74516,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_020",
+      "start": 74732,
+      "end": 74743,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_021",
+      "start": 75083,
+      "end": 75119,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_022",
+      "start": 75127,
+      "end": 75183,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_023",
+      "start": 75296,
+      "end": 75319,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_024",
+      "start": 75334,
+      "end": 75346,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_025",
+      "start": 75630,
+      "end": 75663,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_026",
+      "start": 75678,
+      "end": 75707,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_027",
+      "start": 75915,
+      "end": 75944,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_028",
+      "start": 75953,
+      "end": 76020,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_029",
+      "start": 76076,
+      "end": 76100,
+      "type": "text"
+    },
+    {
+      "section": "ho-so-du-tuyen",
+      "key": "text_030",
+      "start": 76270,
+      "end": 76291,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_001",
+      "start": 76551,
+      "end": 76553,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_002",
+      "start": 76598,
+      "end": 76618,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_003",
+      "start": 76781,
+      "end": 76798,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_004",
+      "start": 76828,
+      "end": 76861,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_005",
+      "start": 76875,
+      "end": 76988,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_006",
+      "start": 77406,
+      "end": 77423,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_007",
+      "start": 77460,
+      "end": 77495,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_008",
+      "start": 77509,
+      "end": 77613,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_009",
+      "start": 78026,
+      "end": 78048,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_010",
+      "start": 78078,
+      "end": 78122,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_011",
+      "start": 78136,
+      "end": 78249,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_012",
+      "start": 78426,
+      "end": 78443,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_013",
+      "start": 78451,
+      "end": 78575,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_014",
+      "start": 78626,
+      "end": 78651,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_015",
+      "start": 78885,
+      "end": 78917,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_016",
+      "start": 78925,
+      "end": 79074,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_017",
+      "start": 79125,
+      "end": 79152,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_018",
+      "start": 79430,
+      "end": 79452,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_019",
+      "start": 79489,
+      "end": 79533,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_020",
+      "start": 79547,
+      "end": 79648,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_021",
+      "start": 79824,
+      "end": 79841,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_022",
+      "start": 79849,
+      "end": 80038,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_023",
+      "start": 80090,
+      "end": 80117,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_024",
+      "start": 80351,
+      "end": 80370,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_025",
+      "start": 80378,
+      "end": 80532,
+      "type": "text"
+    },
+    {
+      "section": "quy-trinh-tuyen-sinh",
+      "key": "text_026",
+      "start": 80588,
+      "end": 80610,
+      "type": "text"
+    },
+    {
+      "section": "cau-hoi-thuong-gap",
+      "key": "text_001",
+      "start": 80944,
+      "end": 80946,
+      "type": "text"
+    },
+    {
+      "section": "cau-hoi-thuong-gap",
+      "key": "text_002",
+      "start": 80989,
+      "end": 81013,
+      "type": "text"
+    },
+    {
+      "section": "cau-hoi-thuong-gap",
+      "key": "text_003",
+      "start": 81176,
+      "end": 81194,
+      "type": "text"
+    },
+    {
+      "section": "cau-hoi-thuong-gap",
+      "key": "text_004",
+      "start": 81220,
+      "end": 81259,
+      "type": "text"
+    },
+    {
+      "section": "cau-hoi-thuong-gap",
+      "key": "text_005",
+      "start": 81282,
+      "end": 81349,
+      "type": "text"
+    },
+    {
+      "section": "cau-hoi-thuong-gap",
+      "key": "text_006",
+      "start": 81416,
+      "end": 81447,
+      "type": "text"
+    },
+    {
+      "section": "cau-hoi-thuong-gap",
+      "key": "text_007",
+      "start": 84844,
+      "end": 84862,
+      "type": "text"
+    },
+    {
+      "section": "cau-hoi-thuong-gap",
+      "key": "text_008",
+      "start": 84895,
+      "end": 84931,
+      "type": "text"
+    },
+    {
+      "section": "cau-hoi-thuong-gap",
+      "key": "text_009",
+      "start": 84939,
+      "end": 85011,
+      "type": "text"
+    },
+    {
+      "section": "cau-hoi-thuong-gap",
+      "key": "text_010",
+      "start": 85100,
+      "end": 85121,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_001",
+      "start": 85504,
+      "end": 85521,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_002",
+      "start": 85551,
+      "end": 85581,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_003",
+      "start": 85589,
+      "end": 85695,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_004",
+      "start": 85798,
+      "end": 85841,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_005",
+      "start": 85946,
+      "end": 85983,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_006",
+      "start": 86088,
+      "end": 86120,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "url_007",
+      "start": 86162,
+      "end": 86178,
+      "type": "url"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_008",
+      "start": 86250,
+      "end": 86271,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "url_009",
+      "start": 86284,
+      "end": 86301,
+      "type": "url"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_010",
+      "start": 86373,
+      "end": 86398,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "url_011",
+      "start": 86411,
+      "end": 86442,
+      "type": "url"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_012",
+      "start": 86513,
+      "end": 86537,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_013",
+      "start": 86571,
+      "end": 86602,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_014",
+      "start": 86606,
+      "end": 86666,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_015",
+      "start": 86721,
+      "end": 86743,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_016",
+      "start": 86770,
+      "end": 86827,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_017",
+      "start": 86947,
+      "end": 86957,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_018",
+      "start": 86963,
+      "end": 86964,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_019",
+      "start": 87159,
+      "end": 87173,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_020",
+      "start": 87179,
+      "end": 87180,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_021",
+      "start": 87492,
+      "end": 87498,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_022",
+      "start": 87504,
+      "end": 87505,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_023",
+      "start": 87713,
+      "end": 87735,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_024",
+      "start": 87741,
+      "end": 87742,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_025",
+      "start": 87882,
+      "end": 87901,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_026",
+      "start": 88093,
+      "end": 88113,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_027",
+      "start": 88369,
+      "end": 88453,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_028",
+      "start": 88548,
+      "end": 88555,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_029",
+      "start": 88705,
+      "end": 88723,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_030",
+      "start": 88758,
+      "end": 88889,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_031",
+      "start": 89230,
+      "end": 89255,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "image_032",
+      "start": 89294,
+      "end": 89322,
+      "type": "image"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_033",
+      "start": 89339,
+      "end": 89381,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_034",
+      "start": 89385,
+      "end": 89419,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_035",
+      "start": 89423,
+      "end": 89462,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_036",
+      "start": 89504,
+      "end": 89524,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "url_037",
+      "start": 89564,
+      "end": 89575,
+      "type": "url"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_038",
+      "start": 89577,
+      "end": 89597,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_039",
+      "start": 89622,
+      "end": 89640,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_040",
+      "start": 89663,
+      "end": 89691,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_041",
+      "start": 89712,
+      "end": 89729,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_042",
+      "start": 89777,
+      "end": 89793,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_043",
+      "start": 89842,
+      "end": 89856,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "url_044",
+      "start": 89869,
+      "end": 89900,
+      "type": "url"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_045",
+      "start": 89902,
+      "end": 89926,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "url_046",
+      "start": 89939,
+      "end": 89955,
+      "type": "url"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_047",
+      "start": 89957,
+      "end": 89978,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_048",
+      "start": 90001,
+      "end": 90019,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_049",
+      "start": 90074,
+      "end": 90116,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_050",
+      "start": 90129,
+      "end": 90151,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_051",
+      "start": 90250,
+      "end": 90263,
+      "type": "text"
+    },
+    {
+      "section": "tu-van",
+      "key": "text_052",
+      "start": 90309,
+      "end": 90326,
+      "type": "text"
+    }
+  ]
+}

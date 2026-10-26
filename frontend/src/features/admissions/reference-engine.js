@@ -1,7 +1,8 @@
 // Adapted from the user-supplied admissions reference, 25/10/2026.
 // Data and UI logic are bundled as a local module; no source scripts are evaluated.
 import { sendAdmissionConsultation } from "./consultation-request";
-export function initializeAdmissions(root) {
+/** @param {HTMLElement} root @param {typeof import('./editorial-content.json') | null} [editorial] */
+export function initializeAdmissions(root, editorial = null) {
   const originalTitle = globalThis.document.title;
   const controller = new AbortController();
   const timers = new Set();
@@ -2354,6 +2355,12 @@ export function initializeAdmissions(root) {
   };
   const $ = (s) => document.querySelector(s),
     $$ = (s) => Array.from(document.querySelectorAll(s));
+  const initialEditorialCopy = {
+    heroTitle: $('.hero-title-label').textContent,
+    intakeTitle: $('#intake-title').textContent,
+    intakeBadge: $('#intake-badge').innerHTML,
+    faqIntro: $('#faq-intro').textContent,
+  };
   const catalogueLocale = globalThis.location.pathname.split("/")[1] === "en" ? "en" : "vi";
   $$('a[href="/programmes"]').forEach((link) =>
     link.setAttribute("href", `/${catalogueLocale}/programmes`),
@@ -2696,7 +2703,7 @@ export function initializeAdmissions(root) {
     $("#progress-fill").style.width = percent + "%";
     $("#checklist-progress").setAttribute("aria-valuenow", percent);
   }
-  const processSteps = [
+  const processSteps = editorial?.masterProcess ?? [
     {
       title: "Đăng ký trực tuyến",
       detail: "Chọn ngành và gửi hồ sơ dự tuyển",
@@ -2781,7 +2788,7 @@ export function initializeAdmissions(root) {
           '"><span class="step-num">' +
           (i + 1) +
           "</span><strong>" +
-          s.title +
+          escapeHtml(s.title) +
           "</strong>" +
           icon("arrow") +
           "</button>",
@@ -2793,9 +2800,9 @@ export function initializeAdmissions(root) {
       '<span class="large-step" aria-hidden="true">0' +
       (state.process + 1) +
       '</span><div class="eyebrow">Hướng dẫn từng bước</div><h3>' +
-      s.detail +
+      escapeHtml(s.detail) +
       "</h3><p>" +
-      s.text +
+      escapeHtml(s.text) +
       "</p>" +
       listHtml(s.items) +
       '<div class="process-bottom"><span>Bước ' +
@@ -2803,13 +2810,13 @@ export function initializeAdmissions(root) {
       ' / 6</span><button class="text-link" data-process-action="' +
       s.target +
       '">' +
-      s.action +
+      escapeHtml(s.action) +
       " " +
       icon("arrow") +
       "</button></div>";
   }
   function renderFAQ() {
-    const questions = [
+    const questions = editorial?.masterFaq?.map(item => [item.question, item.answer]) ?? [
       [
         "Tốt nghiệp ngành khác có thể đăng ký không?",
         "Có thể được xem xét nếu ngành tốt nghiệp thuộc nhóm phù hợp của chương trình đăng ký. Khoa và Viện sẽ đối chiếu bảng điểm, xác định học phần bổ sung kiến thức nếu cần. Kết quả tra cứu giúp chuẩn bị hồ sơ; điều kiện áp dụng được xác định theo hồ sơ cụ thể.",
@@ -2847,8 +2854,7 @@ export function initializeAdmissions(root) {
         "Lịch phỏng vấn, công bố kết quả và nhập học được thông báo theo từng đợt tuyển sinh.",
       ],
     ];
-    $("#faq-intro").textContent =
-      "Những thông tin cần làm rõ trước khi đăng ký dự tuyển thạc sĩ 2027.";
+    $("#faq-intro").textContent = initialEditorialCopy.faqIntro;
     $("#faq-list").innerHTML = questions
       .map(
         (x, i) =>
@@ -3448,10 +3454,9 @@ export function initializeAdmissions(root) {
     $("#admissions-degree").value = degree;
     $("#contact-degree").value = degree;
     $(".section-nav").hidden = false;
-    $("#intake-title").textContent = master ? "Tuyển sinh thạc sĩ 2027" : "Tuyển sinh tiến sĩ";
+    $("#intake-title").textContent = master ? initialEditorialCopy.intakeTitle : "Tuyển sinh tiến sĩ";
     $("#intake-badge").innerHTML =
-      '<span class="dot"></span> ' +
-      (master ? "Kế hoạch tuyển sinh 2027" : "Nhận hồ sơ thường xuyên");
+      master ? initialEditorialCopy.intakeBadge : '<span class="dot"></span> Nhận hồ sơ thường xuyên';
     $("#intake-select").disabled = !master;
     $("#intake-select").hidden = !master;
     $("#doctor-intake-info").hidden = master;
@@ -3463,7 +3468,7 @@ export function initializeAdmissions(root) {
       ? '<option value="">Chọn chương trình bạn quan tâm</option><option value="undecided">Chưa xác định — cần tư vấn thêm</option>' +
         optionsHtml(programs)
       : '<option value="">Chọn chương trình bạn quan tâm</option><option value="doctor">Tiến sĩ Khoa học Môi trường</option>';
-    $(".hero-title-label").textContent = "Tuyển sinh năm 2027";
+    $(".hero-title-label").textContent = initialEditorialCopy.heroTitle;
     $(".contact-address").innerHTML = master
       ? originalContactAddress
       : "Phòng 2.01, Tòa A, Cơ sở chính<br>69/68 Đặng Thùy Trâm, phường Bình Lợi Trung, TP. Hồ Chí Minh.";
@@ -3627,7 +3632,7 @@ export function initializeAdmissions(root) {
     );
     toast("Đã tạo danh sách hồ sơ tiến sĩ để tải xuống.");
   }
-  const doctorProcessSteps = [
+  const doctorProcessSteps = editorial?.doctorProcess ?? [
     {
       title: "Đối chiếu điều kiện",
       detail: "Xác định diện dự tuyển",
@@ -3737,7 +3742,7 @@ export function initializeAdmissions(root) {
       "</button></div>";
   }
   function renderDoctorFAQ() {
-    const rows = [
+    const rows = editorial?.doctorFaq?.map(item => [item.question, item.answer]) ?? [
       [
         "Chưa có bằng thạc sĩ có được dự tuyển không?",
         "Có thể dự tuyển từ đại học hạng giỏi trở lên thuộc ngành phù hợp và đáp ứng các điều kiện còn lại. Bốn ngành đại học phù hợp gồm: Kỹ thuật môi trường, Khoa học môi trường, Công nghệ kỹ thuật môi trường, Quản lý tài nguyên và môi trường. Hồ sơ ngoài danh mục được Hội đồng xem xét theo bảng điểm.",

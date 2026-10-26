@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { menuGroups } from "@/data/site";
-import { programmes } from "@/data/programmes";
+import { websiteProgrammes } from '@/lib/website-content';
 import { locales } from "@/lib/i18n";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const programmes=await websiteProgrammes();
   const base = (process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn").replace(/\/$/, "");
   const paths = [
     { path: "", changeFrequency: "weekly" as const, priority: 1 },

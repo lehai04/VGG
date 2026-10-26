@@ -1,6 +1,7 @@
 import { getCurrentAdmin } from "@/lib/auth/session";
 import { uploadResourceFile } from "@/lib/storage";
 import { NextResponse } from "next/server";
+import { MAX_RESOURCE_PDF_MB, MAX_RESOURCE_PDF_BYTES } from "@/lib/resource-upload-limits";
 
 export const runtime = "nodejs";
 
@@ -87,15 +88,17 @@ export async function POST(request: Request) {
       { success: false, message: "File rỗng hoặc bị lỗi." },
       { status: 400 },
     );
-  if (file.size > MAX_FILE_SIZE)
+  const extension = extensionOf(file.name);
+  const maxSize = extension === ".pdf" ? MAX_RESOURCE_PDF_BYTES : MAX_FILE_SIZE;
+  const maxSizeMB = extension === ".pdf" ? MAX_RESOURCE_PDF_MB : MAX_FILE_SIZE_MB;
+  if (file.size > maxSize)
     return NextResponse.json(
       {
         success: false,
-        message: `File có dung lượng ${(file.size / 1024 / 1024).toFixed(1)} MB, vượt giới hạn ${MAX_FILE_SIZE_MB} MB.`,
+        message: `File có dung lượng ${(file.size / 1024 / 1024).toFixed(1)} MB, vượt giới hạn ${maxSizeMB} MB.`,
       },
       { status: 413 },
     );
-  const extension = extensionOf(file.name);
   if (
     !allowedTypes[extension] ||
     !allowedTypes[extension].includes(file.type || "application/octet-stream")

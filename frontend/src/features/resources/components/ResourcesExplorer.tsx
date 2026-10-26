@@ -10,7 +10,7 @@ import {
   Search,
   X,
 } from "lucide-react";
-import type { PublicResource } from "../data";
+import type { PublicResource, ResourceCatalogue } from "../data";
 import { documentTypeLabels, resourceTypeLabels } from "../data";
 import styles from "./ResourcesLanding.module.css";
 
@@ -22,7 +22,7 @@ const formatSize = (bytes: number) =>
     : `${Math.max(1, Math.round(bytes / 1024))} KB`;
 const ITEMS_PER_PAGE = 5;
 
-export function ResourcesExplorer({ resources }: { resources: PublicResource[] }) {
+export function ResourcesExplorer({ resources, categories, resourceTypes: types }: ResourceCatalogue) {
   const [query, setQuery] = useState("");
   const [appliedQuery, setAppliedQuery] = useState("");
   const [category, setCategory] = useState("ALL");
@@ -51,14 +51,6 @@ export function ResourcesExplorer({ resources }: { resources: PublicResource[] }
     };
   }, [preview]);
   const [page, setPage] = useState(1);
-  const categories = useMemo(
-    () => Array.from(new Map(resources.map((item) => [item.category.id, item.category])).values()),
-    [resources],
-  );
-  const types = useMemo(
-    () => Array.from(new Set(resources.map((item) => item.resourceType))),
-    [resources],
-  );
   const filtered = useMemo(() => {
     const keyword = appliedQuery.trim().toLocaleLowerCase("vi");
     return resources.filter((item) => {

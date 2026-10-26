@@ -4,6 +4,7 @@ import {
 } from "@/components/consultations/ConsultationManager";
 import { requireAdmin } from "@/lib/auth/authorization";
 import { backendRequest } from "@/lib/backend-api";
+import {ConsultationImport} from '@/components/consultations/ConsultationImport';
 
 export const metadata = { title: "Lịch tư vấn" };
 
@@ -29,6 +30,7 @@ export default async function ConsultationsPage() {
           <p>Tiếp nhận và theo dõi các yêu cầu tư vấn được gửi từ website.</p>
         </div>
       </header>
+      {(admin.role.code==='SUPER_ADMIN'||admin.permissionCodes.includes('consultations.import'))&&<ConsultationImport/>}
       {error ? (
         <section className="admin-card">
           <p className="form-message">{error}</p>

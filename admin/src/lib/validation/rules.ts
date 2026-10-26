@@ -15,6 +15,18 @@ export interface PasswordCriteria {
   isValid: boolean;
 }
 
+/** Login must accept existing accounts, including the seeded `admin` account.
+ * Account creation continues using its separate, stricter validation rules. */
+export function validateLoginAccount(input: string): ValidationResult {
+  const value = (input || '').trim();
+  if (!value) return { isValid: false, message: 'Vui lòng nhập email hoặc tên đăng nhập.' };
+  if (value.length > 190) return { isValid: false, message: 'Email hoặc tên đăng nhập không được vượt quá 190 ký tự.' };
+  if (value.includes('@')) return validateGeneralEmail(value);
+  if (value.length < 3 || value.length > 50) return { isValid: false, message: 'Tên đăng nhập phải có từ 3 đến 50 ký tự.' };
+  if (!/^[a-zA-Z0-9._-]+$/.test(value)) return { isValid: false, message: 'Tên đăng nhập chỉ gồm chữ cái, chữ số và các ký tự . _ -' };
+  return { isValid: true, message: '' };
+}
+
 /**
  * Số điện thoại: Bắt đầu bằng số 0, gồm đúng 10 số tự nhiên, không chữ, không ký tự đặc biệt.
  */

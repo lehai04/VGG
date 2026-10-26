@@ -15,22 +15,29 @@ import {
 } from "@/features/home/components";
 import { ScrollReveal } from "@/features/home/components/ScrollReveal";
 import ProgrammeSearch from "@/features/programmes/components/ProgrammeSearch";
-export default function Home() {
+import { websiteContent, websiteLayout } from '@/lib/website-content';
+import {CmsPageSections,CmsSlot} from '@/shared/components/CmsPageSections';
+import { homeContent } from '@/data/home-content';
+export default async function Home() {
+  const content = await websiteContent('home', homeContent);
+  const layout=await websiteLayout('home');
   return (
     <main id="main-content" className="home-page">
       <ScrollReveal />
       {/* Header dùng liên kết trực tiếp; mobile mở bằng nút MENU */}
       <Header />
-      <Hero />
+      <CmsPageSections layout={layout}>
+      <CmsSlot slot="hero"><Hero /></CmsSlot>
       {/* Bộ lọc chương trình dùng chung với /programmes */}
-      <ProgrammeSearch />
-      <Programmes />
-      <Research />
-      <ProgrammeCatalog />
+      <CmsSlot slot="search"><ProgrammeSearch content={content.programmeSearch} /></CmsSlot>
+      <CmsSlot slot="overview"><Programmes /></CmsSlot>
+      <CmsSlot slot="research"><Research /></CmsSlot>
+      <CmsSlot slot="programmes"><ProgrammeCatalog /></CmsSlot>
       {/* Năm bài viết đã xuất bản gần nhất từ CMS */}
-      <News />
+      <CmsSlot slot="news"><News /></CmsSlot>
       {/* Form POST tới /api/consultations */}
-      <ResourcesConsultation />
+      <CmsSlot slot="consultation"><ResourcesConsultation /></CmsSlot>
+      </CmsPageSections>
       <Footer />
     </main>
   );

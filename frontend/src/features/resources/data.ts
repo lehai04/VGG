@@ -31,16 +31,32 @@ export const documentTypeLabels: Record<string, string> = {
   NOTICE: "Thông báo",
   GUIDELINE: "Hướng dẫn",
 };
-export async function getPublicResources(): Promise<PublicResource[]> {
-  if (process.env.VGG_DEMO_RESOURCES !== "false") return demoResources;
+export type ResourceCatalogue = {
+  resources: PublicResource[];
+  categories: ResourceCategory[];
+  resourceTypes: string[];
+};
+export async function getPublicResourceCatalogue(): Promise<ResourceCatalogue> {
+  const empty: ResourceCatalogue = { resources: [], categories: [], resourceTypes: Object.keys(resourceTypeLabels) };
+  if (process.env.VGG_DEMO_RESOURCES === "true") return {
+    resources: demoResources,
+    categories: Array.from(new Map(demoResources.map((item) => [item.category.id, item.category])).values()),
+    resourceTypes: Object.keys(resourceTypeLabels),
+  };
   const backend = process.env.BACKEND_INTERNAL_URL ?? process.env.NEXT_PUBLIC_BACKEND_URL;
-  if (!backend) return [];
+  if (!backend) return empty;
   try {
     const response = await fetch(`${backend}/api/public/resources`, { cache: "no-store" });
-    if (!response.ok) return [];
-    const payload = (await response.json()) as { data?: { resources?: PublicResource[] } };
-    return payload.data?.resources ?? [];
-  } catch {
-    return [];
-  }
+    if (!response.ok) return empty;
+    const payload = (await response.json()) as { data?: Partial<ResourceCatalogue> };
+    const resources = payload.data?.resources ?? [];
+    return {
+      resources,
+      categories: payload.data?.categories ?? Array.from(new Map(resources.map((item) => [item.category.id,item.category])).values()),
+      resourceTypes: payload.data?.resourceTypes ?? Object.keys(resourceTypeLabels),
+    };
+  } catch { return empty; }
+}
+export async function getPublicResources(): Promise<PublicResource[]> {
+  return (await getPublicResourceCatalogue()).resources;
 }

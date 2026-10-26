@@ -8,6 +8,10 @@ import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import { ResearchHighlights } from "./ResearchHighlights";
 import { StrategicPartnersCarousel } from "./StrategicPartnersCarousel";
 import styles from "./ResearchLanding.module.css";
+import researchCopy from '@/data/research-copy.json';
+import partners from '@/data/research-partners.json';
+import { websiteContent,websiteLayout } from '@/lib/website-content';
+import {CmsPageSections} from '@/shared/components/CmsPageSections';
 
 const goals = [
   { title: "Nâng cao chất lượng nghiên cứu", text: "Phát triển năng lực nghiên cứu của giảng viên và người học, gia tăng chất lượng công bố và khả năng tham gia các mạng lưới học thuật." },
@@ -55,40 +59,43 @@ const researchLinks = [
   { label: "Hợp tác doanh nghiệp", href: "/research/hop-tac-doanh-nghiep" },
 ] as const;
 
-export function ResearchLanding() {
+export async function ResearchLanding() {
+  const content = await websiteContent('research', { ...researchCopy, goals, researchFields, partners });
+  const layout=await websiteLayout('research');
   return (
     <main className={styles.vluResearch} id="main-content">
       <RevealOnScroll />
       <SiteHeader compact />
 
-      <section className={styles.hero}>
-        <Image src="/images/pages/research/content/banner.jpg" alt="Không gian nghiên cứu tại Văn Lang" fill priority sizes="100vw" />
+      <CmsPageSections pageId="research" layout={layout}>
+      <section data-cms-slot="hero" className={styles.hero}>
+        <Image src={content.hero.image} alt={content.hero.alt} fill priority sizes="100vw" />
         <div className={styles.heroShade} />
         <div className={styles.heroCopy} data-reveal>
-          <p>RESEARCH &amp; GLOBAL OPPORTUNITIES · Viện Sau Đại học</p>
-          <h1>Nghiên cứu khoa học{" "}&amp; Hợp tác quốc tế</h1>
-          <span>Viện Sau Đại học phát triển tri thức mới, giải pháp thực tiễn và kết nối người học với các chương trình, đối tác cùng trải nghiệm học thuật trên phạm vi toàn cầu.</span>
+          <p>{content.hero.label}</p>
+          <h1>{content.hero.title}</h1>
+          <span>{content.hero.intro}</span>
         </div>
         <a href="#overview" className={styles.heroDown} aria-label="Xem nội dung"><ArrowDown /></a>
       </section>
 
       <section className={styles.overview} id="overview" data-reveal>
         <div>
-          <p>01 · TỔNG QUAN</p>
-          <h2>Đặt nền móng cho những tác động truyền cảm hứng</h2>
-          <p>Nền tảng của đổi mới nằm ở những khám phá mới. Thông qua các dự án nghiên cứu mang tính ứng dụng, những ý tưởng tiềm năng được cộng đồng Viện Sau Đại học đào sâu để phát triển thành phương pháp, kỹ thuật và giải pháp có thể đóng góp cải thiện xã hội.</p>
+          <p>{content.overview.label}</p>
+          <h2>{content.overview.title}</h2>
+          <p>{content.overview.text}</p>
         </div>
-        <figure><Image src="/images/pages/research/content/Cô Diệu.avif" alt="Nhà nghiên cứu tại Văn Lang" fill sizes="(max-width: 800px) 100vw, 42vw" /></figure>
+        <figure><Image src={content.overview.image} alt={content.overview.alt} fill sizes="(max-width: 800px) 100vw, 42vw" /></figure>
       </section>
 
       <section className={styles.goals} id="goals">
         <header data-reveal>
-          <p>02 · ĐỊNH HƯỚNG</p>
-          <h2>Mục tiêu nghiên cứu</h2>
-          <span>Nghiên cứu tại Viện Sau Đại học hướng đến chất lượng học thuật, giá trị ứng dụng và khả năng kết nối cộng đồng tri thức trong nước lẫn quốc tế.</span>
+          <p>{content.goalsHeading.label}</p>
+          <h2>{content.goalsHeading.title}</h2>
+          <span>{content.goalsHeading.intro}</span>
         </header>
         <div>
-          {goals.map((goal) => (
+          {content.goals.map((goal) => (
             <article key={goal.title} data-reveal>
               <span aria-hidden="true" />
               <h3>{goal.title}</h3>
@@ -100,12 +107,12 @@ export function ResearchLanding() {
 
       <section className={styles.fields} id="fields">
         <header data-reveal>
-          <p>03 · RESEARCH AREAS</p>
-          <h2>Lĩnh vực nghiên cứu trọng tâm</h2>
-          <span>Cộng đồng Viện Sau Đại học tiếp cận các vấn đề từ nhiều lĩnh vực để tạo ra góc nhìn liên ngành và những kết quả có giá trị cho xã hội.</span>
+          <p>{content.fieldsHeading.label}</p>
+          <h2>{content.fieldsHeading.title}</h2>
+          <span>{content.fieldsHeading.intro}</span>
         </header>
         <div className={styles.fieldGrid}>
-          {researchFields.map((field, index) => (
+          {content.researchFields.map((field, index) => (
             <Link href={field.href} key={field.name} data-reveal>
               <Image src={field.image} alt={field.name} fill sizes="(max-width: 700px) 100vw, 33vw" />
               <span>{String(index + 1).padStart(2, "0")}</span>
@@ -118,33 +125,33 @@ export function ResearchLanding() {
 
       <ResearchHighlights />
 
-      <section className={styles.partners} aria-labelledby="strategic-partners-title">
+      <section data-cms-slot="partners" className={styles.partners} aria-labelledby="strategic-partners-title">
         <header className={styles.partnerLead} data-reveal>
-          <h2 id="strategic-partners-title">Các đối tác chiến lược</h2>
-          <p>Trường Đại học Văn Lang tự hào là đối tác của các đại học, viện nghiên cứu, doanh nghiệp và tập đoàn hàng đầu thế giới. Những mối quan hệ đối tác đa dạng trên nhiều lĩnh vực mở ra cơ hội để người học làm giàu kiến thức và tích lũy trải nghiệm toàn cầu.</p>
+          <h2 id="strategic-partners-title">{content.partnersHeading.title}</h2>
+          <p>{content.partnersHeading.text}</p>
         </header>
-        <StrategicPartnersCarousel />
+        <StrategicPartnersCarousel partners={content.partners} />
       </section>
 
       <section id="hop-tac-doanh-nghiep" className={styles.industryNetwork} aria-labelledby="industry-network-title">
         <div className={styles.industryRedRail} aria-hidden="true" />
         <figure className={styles.industryPhoto} data-reveal>
-          <Image src="/images/pages/research/content/hoptac.JPG" alt="Đối tác doanh nghiệp và hợp tác chiến lược tại Viện Sau Đại học" fill sizes="(max-width: 900px) 100vw, 55vw" />
-          <figcaption>Chương trình đào tạo<br />đảm bảo tính thực tiễn cao</figcaption>
+          <Image src={content.industry.image} alt={content.industry.alt} fill sizes="(max-width: 900px) 100vw, 55vw" />
+          <figcaption>{content.industry.captionLine1}<br />{content.industry.captionLine2}</figcaption>
         </figure>
         <div className={styles.industryContent} data-reveal>
           <header>
-            <strong>700+</strong>
+            <strong>{content.industry.count}</strong>
             <div>
-              <h2 id="industry-network-title">Đối tác doanh nghiệp hàng đầu Việt Nam &amp; Thế giới</h2>
-              <p>Đến từ hơn 30 quốc gia và toàn cầu</p>
+              <h2 id="industry-network-title">{content.industry.title}</h2>
+              <p>{content.industry.intro}</p>
             </div>
           </header>
-          <p className={styles.industryLead}>Chương trình đảm bảo bám sát với thực tế và tương lai của công việc, có tính ứng dụng cao.</p>
+          <p className={styles.industryLead}>{content.industry.text}</p>
           <figure className={styles.partnerLogoBoard}>
             <Image
-              src="/images/pages/research/content/partner-logos.png"
-              alt="Logo các đối tác doanh nghiệp thuộc nhiều lĩnh vực của Viện Sau Đại học"
+              src={content.industry.logoImage}
+              alt={content.industry.logoAlt}
               width={832}
               height={800}
               sizes="(max-width: 900px) 100vw, 56vw"
@@ -153,6 +160,7 @@ export function ResearchLanding() {
         </div>
       </section>
 
+      </CmsPageSections>
       <NextStepCTA />
       <SiteFooter />
     </main>

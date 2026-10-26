@@ -30,6 +30,22 @@ const {
   getCurriculumCourses,
 } = loadData(path.join(frontend, "src/data/curricula.ts"));
 
+test("CMS curricula render only the current programme rows and retain their order", () => {
+  const original = programmes.find((item) => item.id === "marketing");
+  const custom = { ...original, cmsCurriculum: [
+    { name: "Course A", credits: "3", group: "Semester 1", track: "Ứng dụng", note: "Note" },
+    { name: "Course B", credits: "2.5", group: "Semester 1", track: "Ứng dụng", note: "" },
+    { name: "Research", credits: "6", group: "Research group", track: "Nghiên cứu", note: "" },
+  ] };
+  const tracks = getProgrammeCurricula(custom);
+  assert.equal(tracks.length, 2);
+  assert.deepEqual(tracks[0].groups[0].courses.map((course) => course.name), ["Course A", "Course B"]);
+  assert.equal(tracks[0].groups[0].courses[1].credits, 2.5);
+  assert.equal(tracks[1].groups[0].courses[0].name, "Research");
+  assert.deepEqual(getProgrammeCurricula({ ...original, cmsCurriculum: [] }), []);
+  assert.ok(getProgrammeCurricula(original).length, "Source programme stays unchanged");
+});
+
 test("every registered programme has independently addressed content sections", () => {
   assert.equal(new Set(programmes.map((p) => p.id)).size, programmes.length);
   for (const p of programmes) {

@@ -14,7 +14,10 @@ import {
 import Link from "@/i18n/components/LocalizedLink";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
-import content from "@/data/discover-introduction.json";
+import defaultContent from "@/data/discover-introduction.json";
+import { websiteContent,websiteLayout,websiteBanner } from '@/lib/website-content';
+import {CmsPageSections} from '@/shared/components/CmsPageSections';
+import { discoverMedia, discoverActions } from '@/data/discover-media';
 import { leadershipProfiles, departmentHeads } from "@/data/discover-leadership";
 import styles from "./DiscoverIntroduction.module.css";
 
@@ -46,33 +49,37 @@ function SectionLabel({ number, children }: { number: string; children: React.Re
     </div>
   );
 }
-function Actions() {
+function Actions({ actions }: { actions: typeof discoverActions }) {
   return (
     <div className={styles.actions}>
-      <Link className={styles.primary} href="/programmes">
-        Khám phá chương trình đào tạo <ArrowUpRight size={18} aria-hidden="true" />
+      <Link className={styles.primary} href={actions.primary.href}>
+        {actions.primary.label} <ArrowUpRight size={18} aria-hidden="true" />
       </Link>
-      <Link className={styles.secondary} href="/admissions#tu-van">
-        Đăng ký tư vấn <ArrowUpRight size={18} aria-hidden="true" />
+      <Link className={styles.secondary} href={actions.secondary.href}>
+        {actions.secondary.label} <ArrowUpRight size={18} aria-hidden="true" />
       </Link>
     </div>
   );
 }
 
-export function DiscoverIntroduction() {
+export async function DiscoverIntroduction() {
+  const layout=await websiteLayout('discover');
+  const banner=await websiteBanner('discover');
+  const { leaders: cmsLeaders, media, actions, ...content } = await websiteContent('discover', { ...defaultContent, leaders, media: discoverMedia, actions: discoverActions });
   return (
     <main className={`subpage ${styles.page}`} id="main-content">
       <SiteHeader compact />
-      <section className={styles.hero} aria-labelledby="discover-title">
-        <Image
-          src="/images/pages/discover/content/campus.jpg"
-          alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang"
+      <CmsPageSections layout={layout} pageId="discover">
+      <section data-cms-slot="hero" className={styles.hero} aria-labelledby="discover-title">
+        {banner?.kind==='video'?<video className={styles.cover} style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}} src={banner.src} poster={banner.poster} autoPlay muted loop playsInline/>:<Image
+          src={banner?.src??media.hero.image}
+          alt={banner?.alt??media.hero.alt}
           fill
           priority
           loading="eager"
           sizes="100vw"
           className={styles.cover}
-        />
+        />}
         <div className={styles.heroShade} />
         <div className={`${styles.container} ${styles.heroCopy}`}>
           <SectionLabel number="01">VỀ VIỆN SAU ĐẠI HỌC</SectionLabel>
@@ -84,7 +91,7 @@ export function DiscoverIntroduction() {
           <div className={styles.english}>{content.hero.english}</div>
           <p className={styles.heroMessage}>{content.hero.message}</p>
           <p className={styles.heroIntro}>{content.hero.intro}</p>
-          <Actions />
+          <Actions actions={actions} />
           <Link
             href="#gioi-thieu"
             className={styles.scrollLink}
@@ -106,8 +113,8 @@ export function DiscoverIntroduction() {
           </div>
           <figure className={styles.introMedia}>
             <Image
-              src="/images/pages/discover/introduction/seminar-discussion.webp"
-              alt="Học viên trao đổi tại hội thảo Dẫn nhập nghiên cứu khoa học của Viện Sau Đại học Văn Lang"
+              src={media.introduction.image}
+              alt={media.introduction.alt}
               fill
               sizes="(max-width: 900px) 100vw, 45vw"
               className={styles.cover}
@@ -214,39 +221,15 @@ export function DiscoverIntroduction() {
           </Link>
         </div>
       </section>
-      <section
-        id="dinh-huong-2030"
-        className={`${styles.section} ${styles.tinted}`}
-        aria-labelledby="strategy-title"
-      >
-        <div className={`${styles.container} ${styles.split}`}>
-          <figure className={styles.strategyMedia}>
-            <Image
-              src="/images/pages/discover/content/campus.jpg"
-              alt="Không gian khuôn viên và cơ sở vật chất Trường Đại học Văn Lang"
-              fill
-              loading="eager"
-              sizes="(max-width: 900px) 100vw, 45vw"
-              className={styles.cover}
-            />
-            <span className={styles.year}>2030</span>
-          </figure>
-          <div>
-            <SectionLabel number="07">ĐỊNH HƯỚNG PHÁT TRIỂN ĐẾN NĂM 2030</SectionLabel>
-            <h2 id="strategy-title">{content.strategy.title}</h2>
-            <Paragraphs items={content.strategy.paragraphs} />
-          </div>
-        </div>
-      </section>
       <section id="doi-ngu-lanh-dao" className={styles.section} aria-labelledby="leaders-title">
         <div className={styles.container}>
-          <SectionLabel number="08">ĐỘI NGŨ LÃNH ĐẠO</SectionLabel>
+          <SectionLabel number="07">ĐỘI NGŨ LÃNH ĐẠO</SectionLabel>
           <h2 id="leaders-title">{content.leadership.title}</h2>
           <div className={styles.sectionIntro}>
             <Paragraphs items={content.leadership.paragraphs} />
           </div>
           <div id="phu-trach-cac-bo-phan" className={styles.leadersGrid}>
-            {leaders.map((person) => (
+            {cmsLeaders.map((person) => (
               <article className={styles.leaderCard} key={person.name}>
                 <div className={styles.portrait}>
                   {person.image && (
@@ -267,10 +250,10 @@ export function DiscoverIntroduction() {
           </div>
         </div>
       </section>
-      <section className={`${styles.section} ${styles.closing}`} aria-labelledby="closing-title">
+      <section data-cms-slot="closing" className={`${styles.section} ${styles.closing}`} aria-labelledby="closing-title">
         <Image
-          src="/images/pages/discover/introduction/seminar-community.webp"
-          alt="Cộng đồng giảng viên và học viên tham gia hoạt động nghiên cứu tại Văn Lang"
+          src={media.closing.image}
+          alt={media.closing.alt}
           fill
           sizes="100vw"
           className={styles.cover}
@@ -281,9 +264,10 @@ export function DiscoverIntroduction() {
           <h2 id="closing-title">{content.closing.title}</h2>
           <p className={styles.statement}>{content.closing.message}</p>
           <p>{content.closing.intro}</p>
-          <Actions />
+          <Actions actions={actions} />
         </div>
       </section>
+      </CmsPageSections>
       <SiteFooter />
     </main>
   );

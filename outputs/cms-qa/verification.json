@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-25",
+  "timezone": "Asia/Saigon",
+  "cmsDocuments": 30,
+  "projectImageAssets": 183,
+  "builds": {
+    "frontend": "passed",
+    "admin": "passed",
+    "backend": "passed"
+  },
+  "tests": {
+    "frontend": 30,
+    "admin": 19,
+    "backendUnit": 3,
+    "postgresIntegration": "passed; isolated database removed"
+  },
+  "browser": [
+    "Admin login",
+    "Marketing draft stays private",
+    "Preview shows edited text/image/alt",
+    "Publish and reload",
+    "Other programme isolated",
+    "MinIO upload and public image load",
+    "Admissions banner and FAQ publish",
+    "Admissions master/doctor tab round trip"
+  ],
+  "routes": "59/59 expected HTTP statuses",
+  "lint": {
+    "frontend": "passed",
+    "changedCmsFiles": "passed",
+    "fullAdmin": "10 existing errors in unchanged components"
+  },
+  "cleanup": "QA services, temporary database, temporary credentials and QA MinIO bucket removed",
+  "mobile": "Physical mobile testing not performed; viewport override did not change actual render size"
+}

@@ -7,7 +7,7 @@
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
 import { useState } from "react";
-import { navigationGroups } from "@/data/site";
+import { useWebsiteChrome } from './WebsiteChromeProvider';
 import { Header } from "@/features/home/components/Header";
 
 function UtilityBar() {
@@ -23,11 +23,12 @@ function UtilityBar() {
 }
 
 function BrandLink({ className }: { className: string }) {
+  const { brand } = useWebsiteChrome();
   return (
     <Link href="/" className={className} aria-label="Trang chủ Viện Sau Đại học">
       <Image
-        src="/images/logo/logo-vgg.png"
-        alt="Viện Sau đại học Văn Lang"
+        src={brand.image}
+        alt={brand.alt}
         width={320}
         height={125}
         priority
@@ -41,6 +42,7 @@ function BrandLink({ className }: { className: string }) {
  * `compact` dùng header route trực tiếp; cả hai biến thể dùng cùng đích điều hướng.
  */
 export function SiteHeader({ compact = false }: { compact?: boolean }) {
+  const { navigationGroups } = useWebsiteChrome();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   if (compact)

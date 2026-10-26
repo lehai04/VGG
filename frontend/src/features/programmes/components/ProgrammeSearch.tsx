@@ -9,9 +9,8 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, Search, SlidersHorizontal } from "lucide-react";
 import { programmeDegrees, programmeFields, programmeOrientations } from "@/data/programmes";
 
-const copy = catalogueCopy.ProgrammeSearch;
-
-export default function ProgrammeSearch() {
+export default function ProgrammeSearch({ content = catalogueCopy.ProgrammeSearch }: { content?: typeof catalogueCopy.ProgrammeSearch } = {}) {
+  const copy = content;
   const router = useRouter();
   const [keyword, setKeyword] = useState("");
   const [degree, setDegree] = useState("");

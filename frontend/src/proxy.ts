@@ -24,6 +24,16 @@ export function proxy(request: NextRequest) {
   // Ghi đè header locale bằng giá trị đã kiểm tra từ URL để Server Component đọc được.
   headers.set("x-vgg-locale", locale);
   headers.set("x-vgg-pathname", pathname);
+  headers.delete('x-vgg-cms-preview');
+  const preview = request.nextUrl.searchParams.get('cmsPreview');
+  if (preview && /^[a-f0-9]{64}$/.test(preview)) headers.set('x-vgg-cms-preview', preview);
+  if (preview) {
+    const response = NextResponse.rewrite(rewriteUrl, { request: { headers } });
+    response.headers.set('Cache-Control', 'private, no-store');
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+    response.headers.set('Referrer-Policy', 'no-referrer');
+    return response;
+  }
   return NextResponse.rewrite(rewriteUrl, { request: { headers } });
 }
 

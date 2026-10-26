@@ -1,0 +1,66 @@
+{
+  "fields": [
+    {
+      "code": "PHD",
+      "title": "Tiến sĩ Khoa học Môi trường",
+      "english": "PhD in Environmental Science",
+      "description": "Phát triển năng lực nghiên cứu độc lập, đóng góp tri thức mới và đề xuất giải pháp cho các vấn đề môi trường, hướng đến phát triển bền vững."
+    },
+    {
+      "code": "EET",
+      "title": "Kỹ thuật, Môi trường & Công nghệ",
+      "english": "Engineering, Environment & Technology",
+      "description": "Đào sâu kiến thức kỹ thuật, môi trường và công nghệ; phát triển tư duy ứng dụng, hướng đến các giải pháp thiết thực và bền vững."
+    },
+    {
+      "code": "BM",
+      "title": "Kinh doanh & Quản lý",
+      "english": "Business & Management",
+      "description": "Củng cố nền tảng quản trị, phát triển tư duy chiến lược và năng lực ra quyết định để dẫn dắt tổ chức thích ứng, đổi mới và tạo giá trị."
+    },
+    {
+      "code": "TH",
+      "title": "Du lịch & Khách sạn",
+      "english": "Tourism & Hospitality",
+      "description": "Phát triển tư duy quản trị dịch vụ, thấu hiểu trải nghiệm khách hàng và khám phá những hướng đi mới cho ngành du lịch, khách sạn."
+    },
+    {
+      "code": "LHC",
+      "title": "Luật, Nhân văn & Truyền thông",
+      "english": "Law, Humanities & Communication",
+      "description": "Mở rộng góc nhìn về con người và xã hội, vận dụng tri thức pháp lý, ngôn ngữ và truyền thông để giải quyết các vấn đề thực tiễn."
+    },
+    {
+      "code": "AAD",
+      "title": "Thiết kế & Mỹ thuật Ứng dụng",
+      "english": "Design & Applied Arts",
+      "description": "Phát triển tư duy thẩm mỹ, khả năng sáng tạo và năng lực thiết kế, đưa ý tưởng thành sản phẩm có giá trị ứng dụng trong đời sống."
+    }
+  ],
+  "researchLinks": [
+    {
+      "title": "Hướng nghiên cứu trọng điểm",
+      "description": "Khám phá các hướng nghiên cứu tập trung vào những vấn đề có ý nghĩa đối với xã hội, môi trường và sự phát triển bền vững.",
+      "linkLabel": "Khám phá lĩnh vực nghiên cứu",
+      "href": "/research/cum-nghien-cuu"
+    },
+    {
+      "title": "Dự án & công bố",
+      "description": "Tổng hợp các dự án, công trình và kết quả nghiên cứu tiêu biểu được triển khai bởi giảng viên và người học.",
+      "linkLabel": "Tìm hiểu hoạt động nghiên cứu",
+      "href": "/research/du-an"
+    },
+    {
+      "title": "Hợp tác nghiên cứu",
+      "description": "Kết nối nhà trường với doanh nghiệp, tổ chức và các đối tác học thuật trong nước và quốc tế.",
+      "linkLabel": "Xem cơ hội hợp tác",
+      "href": "/research/hop-tac-doanh-nghiep"
+    },
+    {
+      "title": "Cơ sở nghiên cứu",
+      "description": "Hệ thống không gian nghiên cứu và cơ sở vật chất hỗ trợ học tập, thử nghiệm và phát triển các ý tưởng mới.",
+      "linkLabel": "Tìm hiểu thêm",
+      "href": "/research/doi-moi-sang-tao"
+    }
+  ]
+}

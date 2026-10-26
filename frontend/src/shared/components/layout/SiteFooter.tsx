@@ -6,6 +6,7 @@ import { FooterAbout, FooterQuickLinks, FooterSocial } from "./footer/FooterColu
 import { FooterContact } from "./footer/FooterContact";
 import { FooterLocation } from "./footer/FooterLocation";
 import { useLocale } from "@/i18n/components/LocaleProvider";
+import { useWebsiteChrome } from './WebsiteChromeProvider';
 
 /** Footer duy nhất, được chia nhỏ theo từng vùng nội dung để tái sử dụng toàn site. */
 export function SiteFooter() {
@@ -27,11 +28,12 @@ export function SiteFooter() {
 /** Cụm nút nổi (Facebook, Apply, Zalo) — được RootLayout gắn 1 lần. */
 export function StickyActions() {
   const { locale, messages } = useLocale();
+  const { socialLinks, application } = useWebsiteChrome();
   return (
     <>
       <a
         className="facebook-float"
-        href="https://www.facebook.com/saudaihoc.vlu"
+        href={socialLinks.find(item => item.icon === 'facebook')!.href}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Theo dõi Văn Lang University trên Facebook"
@@ -41,14 +43,14 @@ export function StickyActions() {
       </a>
       <Link
         className="apply-now-float"
-        href="https://tuyensinh.vlu.edu.vn/xet-tuyen/thac-si/"
+        href={application.href}
         aria-label="Nộp hồ sơ ngay"
       >
         <span>{messages.common.applyNow}</span>
       </Link>
       <a
         className="zalo-float"
-        href="https://zalo.me/0988486869"
+        href={socialLinks.find(item => item.icon === 'zalo')!.href}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Liên hệ tuyển sinh qua Zalo"

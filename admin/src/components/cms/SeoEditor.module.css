@@ -1,0 +1,119 @@
+.editor {
+  background: white;
+  border: 1px solid #dce4ef;
+  border-radius: 16px;
+  padding: 6px 20px;
+  margin-top: 20px;
+}
+.editor > summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.editor > summary small {
+  background: #f0f4fa;
+  padding: 4px 9px;
+  border-radius: 6px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 24px;
+  padding-bottom: 16px;
+}
+.fields {
+  min-width: 0;
+}
+.fields label {
+  margin-bottom: 16px;
+}
+.fields .check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.check input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.actions button:first-child {
+  background: #172b4b;
+  color: white;
+  border-color: #172b4b;
+}
+.actions button:last-child {
+  color: #a51637;
+  border-color: #d8a0ad;
+}
+.result {
+  align-self: start;
+  background: #f8faff;
+  border: 1px solid #dfe7f1;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+.caption {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #64758b;
+  font-weight: 700;
+}
+.searchUrl {
+  font-size: 12px;
+  color: #48654e;
+  margin-top: 20px;
+}
+.editor .result h3 {
+  font-size: 21px !important;
+  line-height: 1.4 !important;
+  color: #174b9c;
+  margin: 7px 0 !important;
+  font-weight: 500 !important;
+}
+.result p {
+  font-size: 14px;
+  color: #445367;
+}
+.result small {
+  display: block;
+}
+.result a {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 12px;
+  color: #345d97;
+}
+.notice {
+  padding: 12px;
+  background: #f0f5fb;
+  border-radius: 9px;
+}
+.editor :is(input, textarea) {
+  min-width: 0;
+}
+@container (max-width:760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .result {
+    grid-row: 1;
+  }
+  .editor {
+    padding: 6px 14px;
+  }
+  .actions button {
+    flex: 1 1 140px;
+  }
+}

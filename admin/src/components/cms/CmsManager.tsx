@@ -9,7 +9,8 @@ export function CmsManager({ endpoint, items, fields, kind }: { endpoint: string
   const router = useRouter(); const [message, setMessage] = useState(""); const [loading, setLoading] = useState(false);
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); const form = event.currentTarget; const data = new FormData(form); const payload: Record<string, unknown> = {};
-    for (const field of fields) { const raw = String(data.get(field.name) ?? ""); payload[field.name] = field.type === "json" ? JSON.parse(raw || "{}") : raw; }
+    try { for (const field of fields) { const raw = String(data.get(field.name) ?? ""); payload[field.name] = field.type === "json" ? JSON.parse(raw || "{}") : raw; } }
+    catch { setMessage('JSON cấu hình không hợp lệ. Hãy kiểm tra dấu ngoặc và dấu phẩy.'); return; }
     if (kind === "site") payload.published = data.get("published") === "true";
     setLoading(true); setMessage("");
     try { const response = await fetch(`/api/cms/${endpoint}`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) }); const result = await response.json(); if (!response.ok) throw new Error(result.message || "Không thể lưu dữ liệu."); setMessage(result.message || "Đã lưu."); form.reset(); router.refresh(); }

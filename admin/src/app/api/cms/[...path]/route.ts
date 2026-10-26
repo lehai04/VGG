@@ -1,10 +1,14 @@
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
+import { isTrustedMutation } from '@/lib/auth/request';
 
 async function forward(
   request: NextRequest,
   context: { params: Promise<{ path: string[] }> },
 ) {
+  if (!['GET', 'HEAD'].includes(request.method)) {
+    if (!isTrustedMutation(request)) return NextResponse.json({ success: false, message: 'Nguồn yêu cầu không hợp lệ.' }, { status: 403 });
+  }
   const backend = process.env.BACKEND_INTERNAL_URL;
   if (!backend)
     return NextResponse.json(
@@ -31,6 +35,7 @@ async function forward(
   return new NextResponse(await response.text(), {
     status: response.status,
     headers: {
+      'cache-control': 'private, no-store',
       "content-type":
         response.headers.get("content-type") || "application/json",
     },

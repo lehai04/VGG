@@ -1,0 +1,210 @@
+{
+  "masterProcess": [
+    {
+      "title": "Đăng ký trực tuyến",
+      "detail": "Chọn ngành và gửi hồ sơ dự tuyển",
+      "text": "Truy cập cổng tuyển sinh thạc sĩ của Trường, chọn ngành dự tuyển, khai thông tin và tải hồ sơ điện tử theo hướng dẫn.",
+      "items": [
+        "Kiểm tra điều kiện và giấy tờ trước khi đăng ký.",
+        "Lệ phí xét tuyển: 500.000 đồng, thu một lần khi đăng ký và nộp hồ sơ.",
+        "Lưu thông tin tài khoản, mã hồ sơ hoặc xác nhận được cấp."
+      ],
+      "action": "Mở thông tin đăng ký",
+      "target": "apply"
+    },
+    {
+      "title": "Kiểm tra hồ sơ",
+      "detail": "Theo dõi yêu cầu bổ sung",
+      "text": "Viện tiếp nhận và kiểm tra tính đầy đủ, hợp lệ của hồ sơ. Ứng viên theo dõi kênh liên lạc đã đăng ký để bổ sung khi được yêu cầu.",
+      "items": [
+        "Đảm bảo ảnh chụp hoặc bản quét đầy đủ và rõ ràng.",
+        "Kiểm tra thông tin cá nhân, ngành đăng ký và minh chứng đã gửi."
+      ],
+      "action": "Xem danh mục hồ sơ",
+      "target": "ho-so"
+    },
+    {
+      "title": "Hoàn thiện điều kiện",
+      "detail": "Đối chiếu nền tảng và minh chứng",
+      "text": "Khoa và Viện xem xét ngành phù hợp, yêu cầu bổ sung kiến thức, ngoại ngữ và các điều kiện riêng của chương trình.",
+      "items": [
+        "Hoàn thành học phần bổ sung kiến thức trước xét tuyển, nếu thuộc diện yêu cầu.",
+        "Bổ sung minh chứng ngoại ngữ hợp lệ hoặc thực hiện hình thức đánh giá được chấp nhận."
+      ],
+      "action": "Xem điều kiện dự tuyển",
+      "target": "dieu-kien"
+    },
+    {
+      "title": "Xét tuyển / phỏng vấn",
+      "detail": "Tham gia tuyển sinh theo ngành",
+      "text": "Quản trị kinh doanh, Quan hệ công chúng và Mỹ thuật ứng dụng xét tuyển kết hợp phỏng vấn. Các ngành còn lại xét tuyển.",
+      "items": [
+        "Theo dõi lịch và hướng dẫn của đợt đã đăng ký.",
+        "Chuẩn bị nội dung, giấy tờ hoặc minh chứng được yêu cầu cho phỏng vấn."
+      ],
+      "action": "Xem lịch tuyển sinh",
+      "target": "lich-tuyen-sinh"
+    },
+    {
+      "title": "Nhận kết quả",
+      "detail": "Theo dõi kết quả được phê duyệt",
+      "text": "Nhà trường công bố kết quả sau khi có quyết định phê duyệt của Hiệu trưởng. Ứng viên đọc đầy đủ thông báo và hướng dẫn tiếp theo.",
+      "items": [
+        "Đối chiếu kết quả với đúng thông tin hồ sơ đã đăng ký.",
+        "Liên hệ Viện nếu cần làm rõ yêu cầu hoặc thủ tục tiếp theo."
+      ],
+      "action": "Hướng dẫn theo dõi",
+      "target": "status"
+    },
+    {
+      "title": "Hoàn tất nhập học",
+      "detail": "Hoàn thiện hồ sơ và tài chính",
+      "text": "Người trúng tuyển nộp, đối chiếu hồ sơ nhập học và hoàn thành các khoản theo thông báo của Trường.",
+      "items": [
+        "Lệ phí nhập học: 1.000.000 đồng.",
+        "Chuẩn bị học phí đợt 1 bằng 35% học phí toàn khóa theo chương trình.",
+        "Theo dõi kế hoạch học tập và thời khóa biểu chính thức."
+      ],
+      "action": "Xem hồ sơ nhập học",
+      "target": "enrollment"
+    }
+  ],
+  "masterFaq": [
+    {
+      "question": "Tốt nghiệp ngành khác có thể đăng ký không?",
+      "answer": "Có thể được xem xét nếu ngành tốt nghiệp thuộc nhóm phù hợp của chương trình đăng ký. Khoa và Viện sẽ đối chiếu bảng điểm, xác định học phần bổ sung kiến thức nếu cần. Kết quả tra cứu giúp chuẩn bị hồ sơ; điều kiện áp dụng được xác định theo hồ sơ cụ thể."
+    },
+    {
+      "question": "Chưa có chứng chỉ ngoại ngữ có được đăng ký không?",
+      "answer": "Chứng chỉ là một trong các hình thức minh chứng. Bạn có thể sử dụng văn bằng phù hợp hoặc kết quả đánh giá, đào tạo ngoại ngữ được Trường tổ chức hay công nhận theo quy định. Bạn cần được đối chiếu trường hợp cụ thể và hoàn tất yêu cầu trước khi xét tuyển."
+    },
+    {
+      "question": "Cựu sinh viên Văn Lang có được miễn chứng chỉ ngoại ngữ không?",
+      "answer": "Văn bằng từ đại học trở lên do Văn Lang cấp trong thời gian không quá 02 năm được xem xét khi chuẩn đầu ra ngoại ngữ của chương trình đã đạt Bậc 3 trở lên. Hai điều kiện phải đồng thời đáp ứng. Chương trình dạy bằng tiếng nước ngoài và yêu cầu riêng của ngành vẫn cần được kiểm tra."
+    },
+    {
+      "question": "Lịch học có phù hợp với người đang đi làm không?",
+      "answer": "Chương trình đào tạo theo hình thức chính quy. Lịch học bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu cụ thể được công bố theo học kỳ. Thời gian chuẩn là 18 tháng với định hướng ứng dụng, 24 tháng với định hướng nghiên cứu."
+    },
+    {
+      "question": "Học phí toàn khóa đã bao gồm tất cả các khoản chưa?",
+      "answer": "Chưa. Lệ phí xét tuyển 500.000 đồng và nhập học 1.000.000 đồng được thu riêng. Bổ sung kiến thức 1.200.000 đồng/môn áp dụng khi được yêu cầu; ôn tiếng Anh 1.000.000 đồng và thi tiếng Anh đầu vào 1.000.000 đồng áp dụng khi đăng ký tương ứng."
+    },
+    {
+      "question": "Học bổng và hỗ trợ tài chính có được cộng dồn không?",
+      "answer": "Không. Mỗi học viên chỉ áp dụng một chính sách có mức cao nhất trong học bổng Phát triển năng lực, học bổng đồng hành STEM hoặc hỗ trợ tài chính. Hồ sơ và minh chứng phải được xét, phê duyệt trước khi xác định mức hưởng."
+    },
+    {
+      "question": "Cựu sinh viên, cựu học viên Văn Lang được hỗ trợ bao nhiêu?",
+      "answer": "Cựu sinh viên và cựu học viên Văn Lang thuộc nhóm được xét hỗ trợ tài chính 10%. Việc áp dụng cần minh chứng hợp lệ và tuân theo nguyên tắc chọn một chính sách có mức cao nhất."
+    },
+    {
+      "question": "Tôi cần nộp hồ sơ giấy ngay khi dự tuyển không?",
+      "answer": "Hồ sơ dự tuyển chủ yếu được tiếp nhận trực tuyến hoặc dưới dạng điện tử; hồ sơ xét học bổng, hỗ trợ tài chính có quy trình riêng. Khi nhập học, thực hiện danh mục hồ sơ và việc đối chiếu theo hướng dẫn của Trường, trong đó giấy khám sức khỏe được cung cấp bằng bản giấy."
+    },
+    {
+      "question": "Khi nào có lịch phỏng vấn, kết quả và nhập học?",
+      "answer": "Lịch phỏng vấn, công bố kết quả và nhập học được thông báo theo từng đợt tuyển sinh."
+    }
+  ],
+  "doctorProcess": [
+    {
+      "title": "Đối chiếu điều kiện",
+      "detail": "Xác định diện dự tuyển",
+      "text": "Đối chiếu văn bằng, ngành tốt nghiệp, kinh nghiệm nghiên cứu và ngoại ngữ với yêu cầu chương trình tiến sĩ Khoa học Môi trường.",
+      "items": [
+        "Chuẩn bị bằng tốt nghiệp và bảng điểm.",
+        "Tra cứu danh mục ngành phù hợp.",
+        "Đối chiếu minh chứng ngoại ngữ theo điều kiện tiến sĩ."
+      ],
+      "action": "Tra cứu ngành phù hợp",
+      "target": "bsk"
+    },
+    {
+      "title": "Chuẩn bị hướng nghiên cứu",
+      "detail": "Xây dựng đề cương và kế hoạch",
+      "text": "Chuẩn bị dự thảo đề cương nghiên cứu và dự kiến kế hoạch học tập, nghiên cứu toàn khóa.",
+      "items": [
+        "Xác định vấn đề, mục tiêu và phương pháp nghiên cứu dự kiến.",
+        "Tổng hợp minh chứng kinh nghiệm nghiên cứu.",
+        "Trao đổi với Viện về người hướng dẫn và hồ sơ liên quan."
+      ],
+      "action": "Gợi ý chuẩn bị đề cương",
+      "target": "proposal"
+    },
+    {
+      "title": "Hoàn thiện và nộp hồ sơ",
+      "detail": "Chuẩn bị theo danh mục 24 mục",
+      "text": "Nhận biểu mẫu từ Viện, đối chiếu số lượng và quy cách, nộp hồ sơ đầy đủ theo hướng dẫn tiếp nhận.",
+      "items": [
+        "Lệ phí xét tuyển: 500.000 đồng.",
+        "Hồ sơ học bổng nộp cùng hồ sơ ứng tuyển nếu có đăng ký.",
+        "Xác nhận điểm tiếp nhận và các tài liệu áp dụng cho diện của bạn."
+      ],
+      "action": "Xem checklist hồ sơ",
+      "target": "ts-ho-so"
+    },
+    {
+      "title": "Tham gia xét tuyển",
+      "detail": "Theo dõi hướng dẫn của Viện",
+      "text": "Xét tuyển sau khi ứng viên nộp đầy đủ hồ sơ; hình thức tổ chức trực tiếp.",
+      "items": [
+        "Theo dõi yêu cầu bổ sung và lịch được thông báo.",
+        "Chuẩn bị trao đổi về đề cương, kinh nghiệm nghiên cứu theo hướng dẫn.",
+        "Hội đồng tuyển sinh quyết định danh sách trúng tuyển theo quy định."
+      ],
+      "action": "Hướng dẫn theo dõi kết quả",
+      "target": "status"
+    },
+    {
+      "title": "Hoàn tất nhập học",
+      "detail": "Bắt đầu kế hoạch học tập, nghiên cứu",
+      "text": "Thực hiện thủ tục nhập học và nghĩa vụ tài chính theo hướng dẫn chính thức của Trường.",
+      "items": [
+        "Lệ phí nhập học: 1.000.000 đồng, nộp cùng học phí học kỳ đầu.",
+        "Học phí năm 1: 50.000.000 đồng trước khi xét các chính sách.",
+        "Theo dõi kết quả học bổng, xác nhận cam kết và kế hoạch học tập nếu được xét cấp."
+      ],
+      "action": "Xem việc cần chuẩn bị",
+      "target": "enrollment"
+    }
+  ],
+  "doctorFaq": [
+    {
+      "question": "Chưa có bằng thạc sĩ có được dự tuyển không?",
+      "answer": "Có thể dự tuyển từ đại học hạng giỏi trở lên thuộc ngành phù hợp và đáp ứng các điều kiện còn lại. Bốn ngành đại học phù hợp gồm: Kỹ thuật môi trường, Khoa học môi trường, Công nghệ kỹ thuật môi trường, Quản lý tài nguyên và môi trường. Hồ sơ ngoài danh mục được Hội đồng xem xét theo bảng điểm."
+    },
+    {
+      "question": "Phải có bài báo khoa học mới đủ điều kiện không?",
+      "answer": "Kinh nghiệm nghiên cứu có thể thể hiện qua luận văn thạc sĩ của chương trình định hướng nghiên cứu; hoặc bài báo, báo cáo khoa học đã công bố; hoặc từ 24 tháng làm giảng viên, nghiên cứu viên tại cơ sở đào tạo, tổ chức khoa học và công nghệ. Cần chuẩn bị minh chứng tương ứng và đáp ứng các điều kiện đầu vào khác."
+    },
+    {
+      "question": "Ngoại ngữ đầu vào tiến sĩ yêu cầu mức nào?",
+      "answer": "Ngoại ngữ được chứng minh bằng văn bằng phù hợp hoặc chứng chỉ tương đương Bậc 4. Chứng chỉ phải còn hiệu lực đến ngày đăng ký dự tuyển và đáp ứng yêu cầu về đơn vị tổ chức thi, cấp chứng chỉ. Xem bảng riêng của tiến sĩ trong phần điều kiện."
+    },
+    {
+      "question": "Thời gian học tiến sĩ là bao lâu?",
+      "answer": "Chính quy tập trung, thời gian chuẩn 3 năm với người có bằng thạc sĩ và 4 năm với người có bằng đại học. Tổng thời gian đào tạo không quá 6 năm theo quy định. Lịch học bố trí buổi tối trong tuần, thứ Bảy và Chủ nhật."
+    },
+    {
+      "question": "Có cần học bổ sung kiến thức không?",
+      "answer": "Một số ngành thạc sĩ được miễn học bổ sung kiến thức. Với các nhóm ngành còn lại và ứng viên từ đại học, Hội đồng bảo vệ đề cương quyết định học phần bổ sung theo định hướng nghiên cứu. Học phí bổ sung kiến thức là 1.500.000 đồng/môn."
+    },
+    {
+      "question": "Học phí 145 triệu được đóng thế nào?",
+      "answer": "Học phí toàn khóa 145.000.000 đồng, đóng năm 1: 50.000.000 đồng; năm 2: 45.000.000 đồng; năm 3: 50.000.000 đồng. Lệ phí xét tuyển, nhập học và bổ sung kiến thức được thu riêng. Lộ trình 4 năm từ đại học cần được Viện hướng dẫn kế hoạch đóng cụ thể."
+    },
+    {
+      "question": "Học bổng 100% có được áp dụng tự động không?",
+      "answer": "Không. Nghiên cứu sinh phải đăng ký, được xét duyệt và cam kết tiến độ đào tạo, sản phẩm nghiên cứu vượt chuẩn đầu ra. Nhà trường rà soát cam kết, có thể điều chỉnh hoặc thu hồi học bổng. Hồ sơ học bổng nộp cùng hồ sơ ứng tuyển."
+    },
+    {
+      "question": "Khi nào hết hạn nộp hồ sơ?",
+      "answer": "Viện tiếp nhận hồ sơ thường xuyên và tổ chức xét tuyển sau khi ứng viên nộp đầy đủ hồ sơ. Liên hệ Viện để được hướng dẫn nộp hồ sơ và lịch xét tuyển."
+    },
+    {
+      "question": "Tôi nhận biểu mẫu chính thức ở đâu?",
+      "answer": "Liên hệ Viện Sau đại học qua 0988 48 6869 hoặc tuyensinh.sdh@vlu.edu.vn để nhận biểu mẫu và hướng dẫn. Checklist tải từ trang này hỗ trợ chuẩn bị; không thay thế đơn, lý lịch và biểu mẫu chính thức của Trường."
+    }
+  ]
+}

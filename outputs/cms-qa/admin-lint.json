@@ -1,0 +1,73 @@
+{
+  "fullAdmin": {
+    "errors": 10,
+    "warnings": 6,
+    "unchangedFiles": [
+      {
+        "file": "admin\\src\\components\\auth\\LoginForm.tsx",
+        "errors": 2,
+        "warnings": 0,
+        "rules": [
+          "@next/next/no-html-link-for-pages"
+        ]
+      },
+      {
+        "file": "admin\\src\\components\\cms\\NewsPostModal.tsx",
+        "errors": 0,
+        "warnings": 1,
+        "rules": [
+          "@next/next/no-img-element"
+        ]
+      },
+      {
+        "file": "admin\\src\\components\\common\\PasswordChecklistInput.tsx",
+        "errors": 1,
+        "warnings": 0,
+        "rules": [
+          "react-hooks/set-state-in-effect"
+        ]
+      },
+      {
+        "file": "admin\\src\\components\\common\\ValidatedInput.tsx",
+        "errors": 2,
+        "warnings": 0,
+        "rules": [
+          "react-hooks/set-state-in-effect"
+        ]
+      },
+      {
+        "file": "admin\\src\\components\\dashboard\\RealtimeDashboard.tsx",
+        "errors": 1,
+        "warnings": 0,
+        "rules": [
+          "react-hooks/set-state-in-effect"
+        ]
+      },
+      {
+        "file": "admin\\src\\components\\notifications\\NotificationsManager.tsx",
+        "errors": 1,
+        "warnings": 1,
+        "rules": [
+          "react-hooks/set-state-in-effect",
+          "react-hooks/exhaustive-deps"
+        ]
+      },
+      {
+        "file": "admin\\src\\components\\settings\\SettingsManager.tsx",
+        "errors": 3,
+        "warnings": 4,
+        "rules": [
+          "react-hooks/set-state-in-effect",
+          "react-hooks/exhaustive-deps",
+          "react/no-unescaped-entities",
+          "@next/next/no-img-element"
+        ]
+      }
+    ]
+  },
+  "changedCmsFiles": {
+    "errors": 0,
+    "warnings": 0,
+    "check": "Targeted ESLint completed successfully after final edits"
+  }
+}

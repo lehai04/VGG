@@ -9,8 +9,8 @@ type Messages = typeof vi;
 const dictionaries: Record<Locale, Messages> = { vi, en };
 const LocaleContext = createContext<{ locale: Locale; messages: Messages }>({ locale: "vi", messages: vi });
 
-export function LocaleProvider({ locale, children }: { locale: Locale; children: ReactNode }) {
-  return <LocaleContext.Provider value={{ locale, messages: dictionaries[locale] }}>{children}</LocaleContext.Provider>;
+export function LocaleProvider({ locale, children, messages }: { locale: Locale; children: ReactNode; messages?: Messages }) {
+  return <LocaleContext.Provider value={{ locale, messages: messages ?? dictionaries[locale] }}>{children}</LocaleContext.Provider>;
 }
 
 export function useLocale() {

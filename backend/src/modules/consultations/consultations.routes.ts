@@ -26,6 +26,96 @@ const adminStatusSchema = z.object({
 
 export async function consultationRoutes(app: FastifyInstance) {
   app.post(
+    "/api/admin/consultations/import",
+    { bodyLimit: 6 * 1024 * 1024 },
+    async (request, reply) => {
+      const admin = await authenticateRequest(request);
+      if (!admin)
+        return fail(reply, 401, "Bạn chưa đăng nhập.", "UNAUTHENTICATED");
+      if (
+        admin.mustChangePassword ||
+        (admin.role.code !== "SUPER_ADMIN" &&
+          !admin.permissions.includes("consultations.import"))
+      )
+        return fail(
+          reply,
+          403,
+          "Bạn không có quyền nhập dữ liệu tư vấn.",
+          "FORBIDDEN",
+        );
+      const input = z
+        .object({
+          rows: z
+            .array(
+              z
+                .object({
+                  fullName: z.string().trim().min(2).max(120),
+                  phone: z
+                    .string()
+                    .trim()
+                    .regex(/^\+?[\d\s().-]{9,30}$/),
+                  email: z.email().max(190),
+                  programme: z.string().trim().max(190).default(""),
+                  message: z.string().max(3000).default(""),
+                })
+                .strict(),
+            )
+            .min(1)
+            .max(500),
+        })
+        .strict()
+        .parse(request.body);
+      const result = await prisma.$transaction(
+        async (tx) => {
+          await tx.$queryRaw`SELECT pg_advisory_xact_lock(7420195)::text`;
+          let inserted = 0,
+            skipped = 0;
+          for (const row of input.rows) {
+            const email = row.email.toLowerCase();
+            const phone = row.phone.replace(/[^\d+]/g, "");
+            const programme = row.programme || null;
+            const existing = await tx.consultation.findFirst({
+              where: { email, phone, programme },
+              select: { id: true },
+            });
+            if (existing) {
+              skipped++;
+              continue;
+            }
+            const created = await tx.consultation.create({
+              data: {
+                ...row,
+                email,
+                phone,
+                programme,
+                sourceComponent: "admin-excel-import",
+                history: {
+                  create: {
+                    action: "created",
+                    metadata: { source: "excel", adminId: admin.id },
+                  },
+                },
+              },
+            });
+            await tx.auditLog.create({
+              data: {
+                actorAdminId: admin.id,
+                action: "CONSULTATION_CREATED",
+                targetType: "consultation",
+                targetId: created.id,
+                ipAddress: request.ip,
+              },
+            });
+            inserted++;
+          }
+          return { inserted, skipped };
+        },
+        { timeout: 60000 },
+      );
+      return ok(reply, result, "Đã nhập danh sách tư vấn.");
+    },
+  );
+  app.post(
     "/api/public/consultations",
     { config: { rateLimit: { max: 5, timeWindow: "10 minutes" } } },
     async (request, reply) => {
@@ -72,14 +162,11 @@ export async function consultationRoutes(app: FastifyInstance) {
           ipAddress: request.ip,
         },
       });
-      return reply
-        .code(201)
-        .send({
-          success: true,
-          data: { id: consultation.id },
-          message:
-            "Cảm ơn bạn. Đội ngũ VGG sẽ liên hệ trong thời gian sớm nhất.",
-        });
+      return reply.code(201).send({
+        success: true,
+        data: { id: consultation.id },
+        message: "Cảm ơn bạn. Đội ngũ VGG sẽ liên hệ trong thời gian sớm nhất.",
+      });
     },
   );
 

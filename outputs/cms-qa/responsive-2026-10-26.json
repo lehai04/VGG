@@ -1,0 +1,74 @@
+{
+  "frames": [
+    {
+      "requested": 320,
+      "columns": "272.8px",
+      "documentWidth": 305,
+      "editorDisplay": "grid",
+      "overflowingControls": [],
+      "previewDisplay": "none",
+      "tabsDisplay": "flex",
+      "viewport": 305
+    },
+    {
+      "requested": 375,
+      "columns": "328px",
+      "documentWidth": 360,
+      "editorDisplay": "grid",
+      "overflowingControls": [],
+      "previewDisplay": "none",
+      "tabsDisplay": "flex",
+      "viewport": 360
+    },
+    {
+      "requested": 768,
+      "columns": "720.8px",
+      "documentWidth": 753,
+      "editorDisplay": "grid",
+      "overflowingControls": [],
+      "previewDisplay": "none",
+      "tabsDisplay": "flex",
+      "viewport": 753
+    },
+    {
+      "requested": 1280,
+      "columns": "570.8px 330px",
+      "documentWidth": 1265,
+      "editorDisplay": "grid",
+      "overflowingControls": [],
+      "previewDisplay": "block",
+      "tabsDisplay": "none",
+      "viewport": 1265
+    }
+  ],
+  "deviceProfiles": [
+    {
+      "mode": "Desktop",
+      "available": 569,
+      "height": "900px",
+      "renderedWidth": 569,
+      "width": "1440px"
+    },
+    {
+      "mode": "Tablet",
+      "available": 569,
+      "height": "1180px",
+      "renderedWidth": 569,
+      "width": "820px"
+    },
+    {
+      "mode": "Điện thoại",
+      "available": 569,
+      "height": "844px",
+      "renderedWidth": 390,
+      "width": "390px"
+    },
+    {
+      "mode": "Vừa khung",
+      "available": 569,
+      "height": "760px",
+      "renderedWidth": 569,
+      "width": "100%"
+    }
+  ]
+}

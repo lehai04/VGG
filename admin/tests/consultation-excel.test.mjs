@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createRequire} from 'node:module';
+import ts from 'typescript';
+import ExcelJS from 'exceljs';
+const source=ts.transpileModule(readFileSync(new URL('../src/lib/consultation-excel.ts',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;
+const loaded={exports:{}};new Function('exports','require',source)(loaded.exports,createRequire(import.meta.url));
+const {consultationTemplate,parseConsultations,validateXlsxArchive}=loaded.exports;
+test('Excel template round trip preserves leading zero phones',async()=>{const parsed=await parseConsultations(Buffer.from(await consultationTemplate()));assert.equal(parsed.rows[0].phone,'0901234567');assert.deepEqual(parsed.errors,[]);});
+test('Excel import rejects formulas before database writes',async()=>{const book=new ExcelJS.Workbook();await book.xlsx.load(await consultationTemplate());book.worksheets[0].getCell('A2').value={formula:'1+1',result:2};const parsed=await parseConsultations(Buffer.from(await book.xlsx.writeBuffer()));assert.equal(parsed.rows.length,0);assert.match(parsed.errors[0],/công thức/);});
+test('Excel archive rejects malformed and oversized inputs',()=>{assert.throws(()=>validateXlsxArchive(Buffer.from('not xlsx')));assert.throws(()=>validateXlsxArchive(Buffer.alloc(5*1024*1024+1)),/5 MB/);});
+test('Excel archive checks actual expanded size instead of trusting ZIP metadata',async()=>{const buffer=Buffer.from(await consultationTemplate());let cursor=buffer.indexOf(Buffer.from([0x50,0x4b,0x01,0x02]));while(cursor>=0&&buffer.readUInt32LE(cursor+24)===0)cursor=buffer.indexOf(Buffer.from([0x50,0x4b,0x01,0x02]),cursor+4);assert.ok(cursor>=0);buffer.writeUInt32LE(0,cursor+24);assert.throws(()=>validateXlsxArchive(buffer),/Dung lượng XLSX/);});

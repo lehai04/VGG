@@ -1,4 +1,5 @@
 "use client";
+import { MAX_RESOURCE_PDF_MB } from "@/lib/resource-upload-limits";
 
 import { ChangeEvent, DragEvent, FormEvent, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -829,7 +830,7 @@ export function ResourceManager({
                       {pdfOnly
                         ? "Chỉ hỗ trợ PDF"
                         : "PDF, DOC, DOCX, XLS, XLSX, JPG, JPEG, PNG"}{" "}
-                      · tối đa 10 MB
+                      · PDF tối đa {MAX_RESOURCE_PDF_MB} MB
                     </small>
                   </div>
                 )}
