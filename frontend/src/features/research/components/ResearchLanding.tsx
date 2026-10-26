@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
-import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import { ResearchHighlights } from "./ResearchHighlights";
 import { StrategicPartnersCarousel } from "./StrategicPartnersCarousel";
@@ -64,25 +63,24 @@ export async function ResearchLanding() {
   const layout=await websiteLayout('research');
   return (
     <main className={styles.vluResearch} id="main-content">
-      <RevealOnScroll />
       <SiteHeader compact />
 
       <CmsPageSections pageId="research" layout={layout}>
-      <section data-cms-slot="hero" className={styles.hero}>
+      <section data-site-banner data-cms-slot="hero" className={styles.hero}>
         <Image src={content.hero.image} alt={content.hero.alt} fill priority sizes="100vw" />
         <div className={styles.heroShade} />
-        <div className={styles.heroCopy} data-reveal>
-          <p>{content.hero.label}</p>
-          <h1>{content.hero.title}</h1>
-          <span>{content.hero.intro}</span>
+        <div data-banner-copy className={styles.heroCopy} data-reveal>
+          <p data-banner-label>{content.hero.label.split(" · ")[0]}</p>
+          <h1 data-banner-title>{content.hero.title}</h1>
+          <span data-banner-description>{content.hero.intro}</span>
         </div>
         <a href="#overview" className={styles.heroDown} aria-label="Xem nội dung"><ArrowDown /></a>
       </section>
 
       <section className={styles.overview} id="overview" data-reveal>
         <div>
-          <p>{content.overview.label}</p>
-          <h2>{content.overview.title}</h2>
+          <p data-section-label>{content.overview.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</p>
+          <h2 data-section-subtitle>{content.overview.title}</h2>
           <p>{content.overview.text}</p>
         </div>
         <figure><Image src={content.overview.image} alt={content.overview.alt} fill sizes="(max-width: 800px) 100vw, 42vw" /></figure>
@@ -90,8 +88,8 @@ export async function ResearchLanding() {
 
       <section className={styles.goals} id="goals">
         <header data-reveal>
-          <p>{content.goalsHeading.label}</p>
-          <h2>{content.goalsHeading.title}</h2>
+          <p data-section-label>{content.goalsHeading.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</p>
+          <h2 data-section-subtitle>{content.goalsHeading.title}</h2>
           <span>{content.goalsHeading.intro}</span>
         </header>
         <div>
@@ -107,18 +105,17 @@ export async function ResearchLanding() {
 
       <section className={styles.fields} id="fields">
         <header data-reveal>
-          <p>{content.fieldsHeading.label}</p>
-          <h2>{content.fieldsHeading.title}</h2>
+          <p data-section-label>{content.fieldsHeading.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</p>
+          <h2 data-section-subtitle>{content.fieldsHeading.title}</h2>
           <span>{content.fieldsHeading.intro}</span>
         </header>
         <div className={styles.fieldGrid}>
           {content.researchFields.map((field, index) => (
-            <Link href={field.href} key={field.name} data-reveal>
+            <div className={styles.fieldCard} key={field.name} data-reveal>
               <Image src={field.image} alt={field.name} fill sizes="(max-width: 700px) 100vw, 33vw" />
               <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{field.name}</h3>
-              <ArrowUpRight />
-            </Link>
+            </div>
           ))}
         </div>
       </section>
@@ -127,7 +124,7 @@ export async function ResearchLanding() {
 
       <section data-cms-slot="partners" className={styles.partners} aria-labelledby="strategic-partners-title">
         <header className={styles.partnerLead} data-reveal>
-          <h2 id="strategic-partners-title">{content.partnersHeading.title}</h2>
+          <h2 data-section-label id="strategic-partners-title">{content.partnersHeading.title}</h2>
           <p>{content.partnersHeading.text}</p>
         </header>
         <StrategicPartnersCarousel partners={content.partners} />
@@ -143,7 +140,7 @@ export async function ResearchLanding() {
           <header>
             <strong>{content.industry.count}</strong>
             <div>
-              <h2 id="industry-network-title">{content.industry.title}</h2>
+              <h2 data-section-label id="industry-network-title">{content.industry.title}</h2>
               <p>{content.industry.intro}</p>
             </div>
           </header>

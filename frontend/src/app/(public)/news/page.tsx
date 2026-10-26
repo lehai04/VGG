@@ -1,4 +1,4 @@
-import { sectionMetadata } from "@/features/content/components/SectionPages";
+import { sectionMetadata } from "@/lib/section-metadata";
 import { NewsLanding } from "@/features/news/components/NewsLanding";
 import { getNewsPosts, getPaginatedNewsPosts, newsCategories } from "@/features/news/data";
 

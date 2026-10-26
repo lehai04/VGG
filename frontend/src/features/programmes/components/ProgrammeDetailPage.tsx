@@ -16,14 +16,12 @@ import {
   CreditCard,
   Download,
   FileText,
-  FlaskConical,
   GitFork,
   GraduationCap,
   Mail,
   MapPin,
   Network,
   Phone,
-  Target,
   TrendingUp,
   Truck,
   Users,
@@ -104,9 +102,9 @@ function PendingPage({ programme }: { programme: Programme }) {
 function SectionHeader({ index, title }: { index: string; title: string }) {
   return (
     <div className={styles.sectionHeader}>
-      <span className={styles.sectionIndex}>{index}</span>
-      <span className={styles.sectionDivider} aria-hidden="true" />
-      <h2 id={`sec-${index}-title`} className={styles.sectionTitle}>
+      <span hidden className={styles.sectionIndex}>{index}</span>
+      <span hidden className={styles.sectionDivider} aria-hidden="true" />
+      <h2 data-section-label id={`sec-${index}-title`} className={styles.sectionTitle}>
         {title}
       </h2>
     </div>
@@ -269,7 +267,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           HERO BANNER
           ──────────────────────────────────────────────────────── */}
       <CmsPageSections pageId={`programme:${programme.id}`} layout={layout}>
-      <section data-cms-slot="hero" data-cms-path="pageContent.hero.heroImage" className={styles.hero} aria-labelledby="programme-title">
+      <section data-site-banner data-cms-slot="hero" data-cms-path="pageContent.hero.heroImage" className={styles.hero} aria-labelledby="programme-title">
         <Image
           className={styles.heroBackground}
           src={
@@ -293,9 +291,9 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
             <span>{pageContent.hero.heroSlogan ?? programmeSharedContent.hero.fallbackSlogan}</span>
           </div>
 
-          <div className={styles.heroContent}>
-            <span className={styles.heroDegree}>{programme.degree.toUpperCase()}</span>
-            <h1 id="programme-title" className={styles.heroTitle} data-cms-path="pageContent.hero.heroTitle">
+          <div data-banner-copy data-banner-inset className={styles.heroContent}>
+            <span data-banner-label className={styles.heroDegree}>{programme.englishTitle}</span>
+            <h1 data-banner-title id="programme-title" className={styles.heroTitle} data-cms-path="pageContent.hero.heroTitle">
               {(pageContent.hero.heroTitle ?? programme.title).split("\n").map((line, index) => (
                 <React.Fragment key={line}>
                   {index > 0 && " "}
@@ -303,7 +301,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 </React.Fragment>
               ))}
             </h1>
-            <p className={styles.heroLead} data-cms-path="pageContent.hero.heroLead">{pageContent.hero.heroLead}</p>
+            <p data-banner-description className={styles.heroLead} data-cms-path="pageContent.hero.heroLead">{pageContent.hero.heroLead}</p>
 
             <div className={styles.heroCtas}>
               <a data-cms-path="pageContent.hero.consultation.text" className={styles.btnPrimary} href={pageContent.hero.consultation.href}>
@@ -406,7 +404,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           >
             <div className={styles.overviewCopy}>
               {pageContent.section01.headline && (
-                <h3 className={styles.contentHeadline}>{pageContent.section01.headline}</h3>
+                <h3 data-section-subtitle className={styles.contentHeadline}>{pageContent.section01.headline}</h3>
               )}
               {programme.cmsOverview?.[0]?.html ? <div data-cms-path="cmsOverview.0.html"><CmsRichText html={programme.cmsOverview[0].html} /></div> : overviewParagraphs.map((para, i) => (
                 <p key={i}>{para}</p>
@@ -452,17 +450,9 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                   <div className={styles.overviewRibbon}>
                     <h3 className={styles.ribbonTitle}>{pageContent.section01.ribbonTitle}</h3>
                     <div className={styles.ribbonItems}>
-                      {overviewTags.map((tag, index) => {
-                        const Icon = index === 0 ? Target : FlaskConical;
-                        return (
-                          <div className={styles.ribbonItem} key={tag}>
-                            <span className={styles.ribbonBadge} aria-hidden="true">
-                              <Icon size={16} />
-                            </span>
-                            <span>{tag}</span>
-                          </div>
-                        );
-                      })}
+                      {overviewTags.map((tag) => (
+                        <div className={styles.ribbonItem} key={tag}>{tag}</div>
+                      ))}
                     </div>
                   </div>
                 )}
@@ -549,7 +539,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           />
 
           {pageContent.section03.headline && (
-            <h3 className={styles.contentHeadline}>{pageContent.section03.headline}</h3>
+            <h3 data-section-subtitle className={styles.contentHeadline}>{pageContent.section03.headline}</h3>
           )}
           {pageContent.section03.intro?.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
@@ -619,7 +609,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           />
 
           {pageContent.section04.headline && (
-            <h3 className={styles.contentHeadline}>{pageContent.section04.headline}</h3>
+            <h3 data-section-subtitle className={styles.contentHeadline}>{pageContent.section04.headline}</h3>
           )}
           {pageContent.section04.intro && <p>{pageContent.section04.intro}</p>}
           <div className={styles.careersLayout}>

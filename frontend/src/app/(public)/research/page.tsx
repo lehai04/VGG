@@ -1,4 +1,4 @@
-import { sectionMetadata } from "@/features/content/components/SectionPages";
+import { sectionMetadata } from "@/lib/section-metadata";
 import { ResearchLanding } from "@/features/research/components/ResearchLanding";
 import {withPageSeo} from '@/lib/page-seo';
 

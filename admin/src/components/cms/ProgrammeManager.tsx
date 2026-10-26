@@ -31,7 +31,7 @@ export function ProgrammeManager({ pages, canEdit, canPublish, canUpload }: { pa
     return `${page.title} ${page.path} ${page.field ?? ""}`.toLocaleLowerCase("vi").includes(search.toLocaleLowerCase("vi")) && (status === "archived" ? state === "archived" : state !== "archived" && (status === "all" || (status === "hidden" ? state === "hidden" : state === "active" && (status === "published" ? published : draft))));
   });
   return <div className={styles.manager}>
-    {canEdit && <ProgrammeCreator canUpload={canUpload} onCreated={(id) => { router.push(`/admin/programmes?id=${encodeURIComponent(id)}`); router.refresh(); }} />}
+    {canEdit && <ProgrammeCreator canPublish={canPublish} canUpload={canUpload} onCreated={(id) => { router.push(`/admin/programmes?id=${encodeURIComponent(id)}`); router.refresh(); }} />}
     <div className={styles.filters}><label>Tìm chuyên ngành<input type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Tên chuyên ngành, nhóm ngành hoặc đường dẫn…" /></label><label>Trạng thái<select value={status} onChange={(event) => setStatus(event.target.value)}><option value="all">Tất cả (trừ thùng rác)</option><option value="draft">Có bản nháp</option><option value="published">Đã xuất bản qua CMS</option><option value="hidden">Đã ẩn</option><option value="archived">Thùng rác</option></select></label></div>
     {message && <p role="status">{message}</p>}
     <p role="status">Hiển thị {visible.length} / {pages.length} chuyên ngành</p>

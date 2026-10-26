@@ -34,12 +34,12 @@ export async function ResearchHighlights() {
   const publications = posts.filter((post) => post.category === "RESEARCH_PUBLICATION").slice(0, 3);
   return (
     <section className={styles.achievements} id="achievements">
-      <h2>Dự án &amp; Công bố nổi bật</h2>
-      <div className={styles.projectHead}><h3>Dự án khoa học</h3><Link href="https://www.vlu.edu.vn/research/projects/search">Xem tất cả dự án <ArrowUpRight /></Link></div>
+      <h2 data-section-label>Dự án &amp; Công bố nổi bật</h2>
+      <div className={styles.projectHead}><h3 data-section-subtitle>Dự án khoa học</h3><Link href="https://www.vlu.edu.vn/research/projects/search">Xem tất cả dự án <ArrowUpRight /></Link></div>
       <div id="du-an" className={styles.projectGrid}>{projects.map((post) => <article key={post.id} className={styles.projectCard}><div className={styles.projectImage} style={{ backgroundImage: `url("${post.coverImage || "/images/pages/research/content/campus.jpg"}")` }} /><h3 className="type-card-title"><Link href={researchPostHref(post.slug)}>{post.title}</Link></h3>{post.excerpt && <p>{post.excerpt}</p>}</article>)}</div>
       <div id="cong-bo" className={styles.publicationBlock}>
         <div className={styles.publicationHead}>
-          <h3>Công bố khoa học</h3>
+          <h3 data-section-subtitle>Công bố khoa học</h3>
           <Link href="https://www.vlu.edu.vn/research/publications/search">
             Xem tất cả công bố <ArrowUpRight />
           </Link>

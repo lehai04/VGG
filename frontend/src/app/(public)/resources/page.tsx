@@ -1,4 +1,4 @@
-import { sectionMetadata } from "@/features/content/components/SectionPages";
+import { sectionMetadata } from "@/lib/section-metadata";
 import { ResourcesLanding } from "@/features/resources/components/ResourcesLanding";
 import { getPublicResourceCatalogue } from "@/features/resources/data";
 

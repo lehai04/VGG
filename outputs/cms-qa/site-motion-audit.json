@@ -1,0 +1,354 @@
+{
+  "desktop": [
+    {
+      "overflow": false,
+      "path": "/vi",
+      "reveal": 35,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/discover",
+      "reveal": 41,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes",
+      "reveal": 24,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/admissions",
+      "reveal": 27,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/research",
+      "reveal": 26,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/student-success",
+      "reveal": 23,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/news",
+      "reveal": 6,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/resources",
+      "reveal": 9,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/cong-nghe-sinh-hoc",
+      "reveal": 30,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/cong-nghe-thong-tin",
+      "reveal": 27,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ke-toan",
+      "reveal": 30,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/khoa-hoc-moi-truong",
+      "reveal": 19,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/kien-truc",
+      "reveal": 34,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/kinh-doanh-thuong-mai",
+      "reveal": 34,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ky-thuat-moi-truong",
+      "reveal": 32,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ky-thuat-o-to",
+      "reveal": 30,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ky-thuat-xay-dung",
+      "reveal": 19,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/logistics",
+      "reveal": 30,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/luat-kinh-te",
+      "reveal": 28,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ly-luan-lich-su-my-thuat",
+      "reveal": 33,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/marketing",
+      "reveal": 29,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/my-thuat-ung-dung",
+      "reveal": 34,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ngon-ngu-anh",
+      "reveal": 29,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/quan-he-cong-chung",
+      "reveal": 31,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/quan-ly-tai-nguyen-moi-truong",
+      "reveal": 28,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/quan-tri-du-lich",
+      "reveal": 19,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/quan-tri-khach-san",
+      "reveal": 26,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/quan-tri-kinh-doanh",
+      "reveal": 26,
+      "width": 1440
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/tai-chinh-ngan-hang",
+      "reveal": 28,
+      "width": 1440
+    }
+  ],
+  "mobile": [
+    {
+      "overflow": false,
+      "path": "/vi",
+      "reveal": 35,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/discover",
+      "reveal": 41,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes",
+      "reveal": 24,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/admissions",
+      "reveal": 27,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/research",
+      "reveal": 26,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/student-success",
+      "reveal": 23,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/news",
+      "reveal": 6,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/resources",
+      "reveal": 9,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/cong-nghe-sinh-hoc",
+      "reveal": 30,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/cong-nghe-thong-tin",
+      "reveal": 27,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ke-toan",
+      "reveal": 30,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/khoa-hoc-moi-truong",
+      "reveal": 19,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/kien-truc",
+      "reveal": 34,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/kinh-doanh-thuong-mai",
+      "reveal": 34,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ky-thuat-moi-truong",
+      "reveal": 32,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ky-thuat-o-to",
+      "reveal": 30,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ky-thuat-xay-dung",
+      "reveal": 19,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/logistics",
+      "reveal": 30,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/luat-kinh-te",
+      "reveal": 28,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ly-luan-lich-su-my-thuat",
+      "reveal": 33,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/marketing",
+      "reveal": 29,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/my-thuat-ung-dung",
+      "reveal": 34,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/ngon-ngu-anh",
+      "reveal": 29,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/quan-he-cong-chung",
+      "reveal": 31,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/quan-ly-tai-nguyen-moi-truong",
+      "reveal": 28,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/quan-tri-du-lich",
+      "reveal": 19,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/quan-tri-khach-san",
+      "reveal": 26,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/quan-tri-kinh-doanh",
+      "reveal": 26,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "path": "/vi/programmes/tai-chinh-ngan-hang",
+      "reveal": 28,
+      "width": 390
+    }
+  ]
+}

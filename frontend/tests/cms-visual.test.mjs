@@ -11,6 +11,12 @@ const compiled=ts.transpileModule(readFileSync(new URL('../src/shared/components
 const loaded={exports:{}};new Function('exports','require',compiled)(loaded.exports,path=>path.includes('visual-model')?model:path.endsWith('.css')?{default:{}}:path==='next/image'?{default:()=>null}:require(path));
 const {CmsPageSections,CmsSlot}=loaded.exports;
 
+test('builder versions accept legacy layouts and reject unsupported schema versions',()=>{
+  const legacy=model.parseComposition('home',JSON.stringify({order:['hero'],hidden:[],added:[]}));
+  assert.equal(legacy.schemaVersion,1);
+  assert.equal(model.parseComposition('home',JSON.stringify({schemaVersion:99,order:['hero'],hidden:[],added:[]})),undefined);
+});
+
 test('programme collections isolate new groups and reject invalid course credits',()=>{
   const source={code:'OLD',degree:'Thạc sĩ',field:'Kinh doanh & Quản lý',orientation:'Ứng dụng',pageContent:{section02:{},section03:{}}};
   const changed=model.applyCollections(source,{'$list:cmsObjectives':JSON.stringify([{title:'Năng lực',text:'Mô tả'}]),'$list:cmsRequirements':JSON.stringify([{title:'Văn bằng',text:'Điều kiện'}])},'programme:test');

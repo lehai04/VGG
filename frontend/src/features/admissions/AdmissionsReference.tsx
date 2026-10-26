@@ -21,11 +21,16 @@ export function AdmissionsReference({
   layout?: CmsComposition;
   programmeOptions?: Array<{ id: string; title: string; degree: string; sourceTitle?: string }>;
 }) {
+  const bannerHtml = html
+    .replace('class="hero admission-step admission-step-01"', 'data-site-banner class="hero admission-step admission-step-01"')
+    .replace('<div class="hero-copy">', '<div class="hero-copy" data-banner-copy data-banner-inset><p data-banner-label class="eyebrow">ADMISSIONS</p>')
+    .replace('<h1 id="hero-title">', '<h1 data-banner-title id="hero-title">')
+    .replace('</h1>\n<p>', '</h1>\n<p data-banner-description>');
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (!root.current) return;
     // Restore initial markup when React replays effects in development.
-    root.current.innerHTML = html;
+    root.current.innerHTML = bannerHtml;
     applyAdmissionsLayout(root.current, layout);
     const cleanupEngine = initializeAdmissions(root.current, editorial);
     const cleanupMotion = initializeAdmissionsMotion(root.current);
@@ -69,7 +74,7 @@ export function AdmissionsReference({
       cleanupEngine();
       observer.disconnect();
     };
-  }, [html, editorial, layout, programmeOptions]);
+  }, [bannerHtml, editorial, layout, programmeOptions]);
   return (
     <>
       <SiteHeader compact />
@@ -77,7 +82,7 @@ export function AdmissionsReference({
         ref={root}
         id="main-content"
         className="admissions-reference"
-        dangerouslySetInnerHTML={{ __html: html }}
+        dangerouslySetInnerHTML={{ __html: bannerHtml }}
       />
     </>
   );

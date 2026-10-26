@@ -43,8 +43,8 @@ function Paragraphs({ items }: { items: readonly string[] }) {
 }
 function SectionLabel({ number, children }: { number: string; children: React.ReactNode }) {
   return (
-    <div className={styles.label}>
-      <span>{number}</span>
+    <div data-section-label={number ? "" : undefined} className={styles.label}>
+      <span hidden>{number}</span>
       {children}
     </div>
   );
@@ -70,7 +70,7 @@ export async function DiscoverIntroduction() {
     <main className={`subpage ${styles.page}`} id="main-content">
       <SiteHeader compact />
       <CmsPageSections layout={layout} pageId="discover">
-      <section data-cms-slot="hero" className={styles.hero} aria-labelledby="discover-title">
+      <section data-site-banner data-cms-slot="hero" className={styles.hero} aria-labelledby="discover-title">
         {banner?.kind==='video'?<video className={styles.cover} style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}} src={banner.src} poster={banner.poster} autoPlay muted loop playsInline/>:<Image
           src={banner?.src??media.hero.image}
           alt={banner?.alt??media.hero.alt}
@@ -81,16 +81,16 @@ export async function DiscoverIntroduction() {
           className={styles.cover}
         />}
         <div className={styles.heroShade} />
-        <div className={`${styles.container} ${styles.heroCopy}`}>
-          <SectionLabel number="01">VỀ VIỆN SAU ĐẠI HỌC</SectionLabel>
-          <h1 id="discover-title">
+        <div data-banner-copy data-banner-inset className={`${styles.container} ${styles.heroCopy}`}>
+          <div data-banner-label><SectionLabel number="">ABOUT THE INSTITUTE OF POSTGRADUATE EDUCATION</SectionLabel></div>
+          <h1 data-banner-title id="discover-title">
             {content.hero.title.map((line) => (
               <span key={line}>{line}</span>
             ))}
           </h1>
-          <div className={styles.english}>{content.hero.english}</div>
-          <p className={styles.heroMessage}>{content.hero.message}</p>
-          <p className={styles.heroIntro}>{content.hero.intro}</p>
+          <div data-banner-description className={styles.english}>{content.hero.english}</div>
+          <p data-banner-description className={styles.heroMessage}>{content.hero.message}</p>
+          <p data-banner-description className={styles.heroIntro}>{content.hero.intro}</p>
           <Actions actions={actions} />
           <Link
             href="#gioi-thieu"
@@ -105,7 +105,7 @@ export async function DiscoverIntroduction() {
         <div className={`${styles.container} ${styles.split}`}>
           <div>
             <SectionLabel number="02">GIỚI THIỆU VIỆN SAU ĐẠI HỌC</SectionLabel>
-            <h2 id="introduction-title">{content.introduction.title}</h2>
+            <h2 data-section-subtitle id="introduction-title">{content.introduction.title}</h2>
             <Paragraphs items={content.introduction.paragraphs} />
             <Link className={styles.textLink} href="#tam-nhin-su-menh">
               Tìm hiểu thêm <ArrowUpRight size={18} aria-hidden="true" />
@@ -129,7 +129,7 @@ export async function DiscoverIntroduction() {
       >
         <div className={styles.container}>
           <SectionLabel number="03">TẦM NHÌN & SỨ MỆNH</SectionLabel>
-          <h2 id="vision-title">Tầm nhìn và Sứ mệnh</h2>
+          <h2 data-section-subtitle id="vision-title">Tầm nhìn và Sứ mệnh</h2>
           <div className={styles.visionGrid}>
             {[content.vision, content.mission].map((item, i) => (
               <article className={styles.visionBlock} key={item.title}>
@@ -149,7 +149,7 @@ export async function DiscoverIntroduction() {
       <section id="triet-ly-giao-duc" className={styles.section} aria-labelledby="philosophy-title">
         <div className={styles.container}>
           <SectionLabel number="04">TRIẾT LÝ GIÁO DỤC</SectionLabel>
-          <h2 id="philosophy-title">{content.philosophy.title}</h2>
+          <h2 data-section-subtitle id="philosophy-title">{content.philosophy.title}</h2>
           <div className={styles.sectionIntro}>
             <Paragraphs items={content.philosophy.paragraphs} />
           </div>
@@ -175,7 +175,7 @@ export async function DiscoverIntroduction() {
       >
         <div className={styles.container}>
           <SectionLabel number="05">GIÁ TRỊ CỐT LÕI LEAD</SectionLabel>
-          <h2 id="values-title">{content.values.title}</h2>
+          <h2 data-section-subtitle id="values-title">{content.values.title}</h2>
           <p className={styles.sectionIntro}>{content.values.intro}</p>
           <div className={styles.fourGrid}>
             {content.values.items.map((item, i) => {
@@ -199,7 +199,7 @@ export async function DiscoverIntroduction() {
       <section id="vi-sao-chon-vgg" className={styles.section} aria-labelledby="benefits-title">
         <div className={styles.container}>
           <SectionLabel number="06">LỢI THẾ DÀNH CHO NGƯỜI HỌC</SectionLabel>
-          <h2 id="benefits-title">{content.benefits.title}</h2>
+          <h2 data-section-subtitle id="benefits-title">{content.benefits.title}</h2>
           <p className={styles.statement}>{content.benefits.message}</p>
           <p className={styles.sectionIntro}>{content.benefits.intro}</p>
           <div className={styles.benefitsGrid}>
@@ -224,7 +224,7 @@ export async function DiscoverIntroduction() {
       <section id="doi-ngu-lanh-dao" className={styles.section} aria-labelledby="leaders-title">
         <div className={styles.container}>
           <SectionLabel number="07">ĐỘI NGŨ LÃNH ĐẠO</SectionLabel>
-          <h2 id="leaders-title">{content.leadership.title}</h2>
+          <h2 data-section-subtitle id="leaders-title">{content.leadership.title}</h2>
           <div className={styles.sectionIntro}>
             <Paragraphs items={content.leadership.paragraphs} />
           </div>
@@ -261,7 +261,7 @@ export async function DiscoverIntroduction() {
         <div className={styles.heroShade} />
         <div className={`${styles.container} ${styles.closingCopy}`}>
           <SectionLabel number="09">HÀNH TRÌNH TIẾP THEO</SectionLabel>
-          <h2 id="closing-title">{content.closing.title}</h2>
+          <h2 data-section-subtitle id="closing-title">{content.closing.title}</h2>
           <p className={styles.statement}>{content.closing.message}</p>
           <p>{content.closing.intro}</p>
           <Actions actions={actions} />

@@ -4,7 +4,7 @@
 .filters { display: grid; grid-template-columns: minmax(0, 1fr) minmax(180px, 280px); gap: 16px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 18px; }
 .card { display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 24px; border: 1px solid #dce3ec; border-radius: 16px; background: white; }
-.manager .card h2 { font-size: 22px !important; line-height: 1.4 !important; margin: 0; }
+.manager .card h2 { font-size: 20px !important; line-height: 1.4 !important; margin: 0; }
 .card p { margin: 0; color: #52647a; font-size: 14px; }
 .card code { overflow-wrap: anywhere; font-size: 13px; }
 .card a { margin-top: auto; padding: 12px 0; color: #b71935; font-weight: 600; }

@@ -212,7 +212,7 @@
   border-bottom: 1px solid #dce1e8;
   text-align: start;
 }
-.admissions-reference .admissions-payment-table td:last-child {
+.admissions-reference .admissions-payment-table :is(th, td):last-child {
   text-align: end;
 }
 .admissions-reference .admission-step-08 {
@@ -533,6 +533,35 @@
     top: 18px;
   }
   .admissions-reference #cau-hoi-thuong-gap .accordion .answer {
+    padding: 0 20px 20px;
+  }
+}
+
+/* Keep intake steps compact and condition controls inset from the card edges. */
+.admissions-reference .timeline-card h3 {
+  font-size: 20px !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.025em;
+}
+.admissions-reference #dieu-kien-phuong-thuc .accordion summary {
+  padding: 24px 56px 24px 24px;
+}
+.admissions-reference #dieu-kien-phuong-thuc .accordion summary::after {
+  right: 24px;
+  top: 24px;
+}
+.admissions-reference #dieu-kien-phuong-thuc .accordion .answer {
+  padding: 0 24px 24px;
+}
+@media (max-width: 600px) {
+  .admissions-reference #dieu-kien-phuong-thuc .accordion summary {
+    padding: 20px 48px 20px 20px;
+  }
+  .admissions-reference #dieu-kien-phuong-thuc .accordion summary::after {
+    right: 20px;
+    top: 20px;
+  }
+  .admissions-reference #dieu-kien-phuong-thuc .accordion .answer {
     padding: 0 20px 20px;
   }
 }

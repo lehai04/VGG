@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { randomBytes } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import ts from 'typescript';
 
 test('CMS login, drafts, publish, preview, conflicts and access control with real PostgreSQL', { skip: process.env.CMS_INTEGRATION !== '1' }, async () => {
   assert.match(new URL(process.env.DATABASE_URL).pathname, /^\/vgg_cms_test_[a-f0-9]+$/);
@@ -89,10 +91,16 @@ test('CMS login, drafts, publish, preview, conflicts and access control with rea
     assert.equal((await request('POST','/api/admin/consultations/import',importRows)).json().data.inserted,1);
     assert.equal((await request('POST','/api/admin/consultations/import',importRows)).json().data.skipped,1,'Repeated imports skip duplicate records');
     const newProgramme={id:'cms-test-new',title:'Ngành thử nghiệm CMS',englishTitle:'CMS Test',code:'TEST-001',degree:'Thạc sĩ',field:'Kinh doanh & Quản lý',orientation:'Ứng dụng',credits:60,duration:'24 tháng',tuition:'Đang cập nhật',studyMode:'Đang cập nhật',intake:'2027',summary:'Giới thiệu ngành thử nghiệm',bannerImage:'/images/test-portrait.jpg'};
-    response=await request('POST','/api/admin/website/programmes',newProgramme,editorToken);
+    const formModule={exports:{}};
+    new Function('exports',ts.transpileModule(readFileSync(new URL('../../admin/src/lib/programme-form.ts',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText)(formModule.exports);
+    const formPayload=formModule.exports.programmeFormPayload({...formModule.exports.emptyProgrammeForm,...newProgramme,credits:'60',heroTitle:'Banner tạo mới'},{cmsObjectives:[{title:'Mục tiêu từ form tạo mới',text:'Nội dung'}]});
+    assert.equal((await request('POST','/api/admin/website/programmes',{...newProgramme,values:{unknown:'Not allowed'}},editorToken)).statusCode,400);
+    response=await request('POST','/api/admin/website/programmes',formPayload,editorToken);
     assert.equal(response.statusCode,200,response.body);
     assert.equal((await request('GET','/api/public/website/programmes',undefined,null)).json().data.programmes.length,0,'New programme stays private');
     const newDoc=(await request('GET','/api/admin/website/page?id=programme:cms-test-new&locale=vi')).json().data;
+    assert.equal(newDoc.values['pageContent.hero.heroTitle'],'Banner tạo mới','Initial sections are saved with the new draft');
+    assert.equal(JSON.parse(newDoc.values['$list:cmsObjectives'])[0].title,'Mục tiêu từ form tạo mới');
     assert.ok(newDoc.page.fields.some(field=>field.path==='pageContent.section01.overview.0'));
     assert.equal((await request('POST','/api/admin/website/publish',{id:'programme:cms-test-new',locale:'vi',revision:newDoc.revision},editorToken)).statusCode,403);
     assert.equal((await request('POST','/api/admin/website/publish',{id:'programme:cms-test-new',locale:'vi',revision:newDoc.revision})).statusCode,200);
@@ -134,5 +142,37 @@ test('CMS login, drafts, publish, preview, conflicts and access control with rea
     assert.equal((await request('PUT','/api/admin/website/seo',{id:'programme:marketing',locale:'vi',revision:null,values:seoValues})).statusCode,409);
     assert.equal((await request('PUT','/api/admin/website/seo',{id:'programme:marketing',locale:'vi',revision:seoRevision,values:{canonicalUrl:'https://outside.example/marketing'}})).statusCode,400);
     assert.equal((await request('GET','/api/admin/website/seo?id=programme:marketing&locale=en')).json().data.publishedAt,null);
+    const historyPath='/api/admin/website/history?id=discover&locale=vi';
+    assert.equal((await request('GET',historyPath,undefined,null)).statusCode,401);
+    const history=(await request('GET',historyPath)).json().data;
+    assert.ok(history.versions.length>0,'Publish creates durable snapshots');
+    assert.equal(history.versions[0].value,undefined,'History list returns metadata only');
+    const versionId=history.versions.at(-1).id;
+    const currentDiscover=(await request('GET',path)).json().data;
+    const beforeRestore=JSON.stringify((await publicRows()).find(row=>row.key==='cms.published.vi.discover').value);
+    assert.equal((await request('POST','/api/admin/website/history/restore',{id:'home',locale:'vi',versionId,revision:null})).statusCode,400);
+    assert.equal((await request('POST','/api/admin/website/history/restore',{id:'discover',locale:'en',versionId,revision:null})).statusCode,400);
+    assert.equal((await request('POST','/api/admin/website/history/restore',{id:'discover',locale:'vi',versionId,revision:null})).statusCode,409);
+    response=await request('POST','/api/admin/website/history/restore',{id:'discover',locale:'vi',versionId,revision:currentDiscover.revision},editorToken);
+    assert.equal(response.statusCode,200,response.body);
+    const restored=(await request('GET',path)).json().data;
+    assert.equal(restored.values['hero.english'],'CMS integration preview');
+    assert.equal(JSON.stringify((await publicRows()).find(row=>row.key==='cms.published.vi.discover').value),beforeRestore,'Restore changes only draft');
+    assert.ok(!(await publicRows()).some(row=>row.section==='cms-version'),'Versions remain private');
+    assert.equal((await request('POST','/api/admin/website/publish',{id:'discover',locale:'vi',revision:restored.revision})).statusCode,200);
+    assert.equal((await request('GET',historyPath)).json().data.total,history.total+1);
+    assert.ok(await prisma.auditLog.count({where:{targetType:'website',targetId:'discover'}})>0);
+    const readerRole=await prisma.role.create({data:{code:'CMS_TEST_READER',name:'CMS reader',level:9}});
+    await prisma.rolePermission.create({data:{roleId:readerRole.id,permissionId:view.id}});
+    await prisma.admin.create({data:{username:'cms_test_reader',fullName:'CMS reader',passwordHash,roleId:readerRole.id,mustChangePassword:false}});
+    const readerToken=await login('cms_test_reader');
+    assert.equal((await request('GET',historyPath,undefined,readerToken)).statusCode,200);
+    assert.equal((await request('POST','/api/admin/website/history/restore',{id:'discover',locale:'vi',versionId,revision:restored.revision},readerToken)).statusCode,403);
+    const publishedDiscover=await prisma.siteContent.findUniqueOrThrow({where:{key:'cms.published.vi.discover'}});
+    await prisma.siteContent.create({data:{key:'cms.published.vi.home',locale:'vi',page:'/',section:'cms-published',title:'Legacy home',published:true,authorId:publishedDiscover.authorId,value:{}}});
+    const homeSave=await request('PUT','/api/admin/website/page',{id:'home',locale:'vi',revision:null,values:{}});
+    assert.equal(homeSave.statusCode,200,homeSave.body);
+    assert.equal((await request('POST','/api/admin/website/publish',{id:'home',locale:'vi',revision:homeSave.json().data.revision})).statusCode,200);
+    assert.equal((await request('GET','/api/admin/website/history?id=home&locale=vi')).json().data.total,2,'Upgrade retains the existing public patch as baseline');
   } finally { await app.close(); }
 });

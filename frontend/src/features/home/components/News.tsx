@@ -10,8 +10,8 @@ export async function News() {
     <section className="newsSection" id="news">
       <div className="newsHeading">
         <div>
-          <p>NEWS &amp; EVENTS</p>
-          <h2>
+          <p data-section-label>NEWS &amp; EVENTS</p>
+          <h2 data-section-subtitle>
             Tin tức <em>&amp; Sự kiện</em>
           </h2>
         </div>

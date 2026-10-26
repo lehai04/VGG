@@ -2,9 +2,11 @@
 import { useState } from "react";
 type Section = { id: string; title: string };
 type Layout = {
+  schemaVersion?: 1;
   order: string[];
   hidden: string[];
   added: Array<{
+    schemaVersion?: 1;
     id: string;
     template: "text" | "text-image" | "cards" | "faq";
     title: string;
@@ -31,7 +33,7 @@ export function VisualStructureEditor({
     try {
       if (value) return JSON.parse(value);
     } catch {}
-    return { order: sections.map((item) => item.id), hidden: [], added: [] };
+    return { schemaVersion: 1, order: sections.map((item) => item.id), hidden: [], added: [] };
   };
   const [layout, setLayoutState] = useState<Layout>(initial);
   function setLayout(next: Layout) {
@@ -39,6 +41,7 @@ export function VisualStructureEditor({
     onDirtyChange(true);
   }
   const [error, setError] = useState("");
+  const [dragged, setDragged] = useState<string|null>(null);
   const order = [
     ...layout.order,
     ...sections.map((s) => s.id),
@@ -55,11 +58,16 @@ export function VisualStructureEditor({
         const custom = layout.added.find((s) => s.id === id);
         const hidden = layout.hidden.includes(id);
         return (
-          <fieldset key={id} disabled={disabled}>
+          <fieldset key={id} disabled={disabled} onDragOver={event=>{if(dragged&&!disabled)event.preventDefault();}} onDrop={event=>{
+            event.preventDefault();
+            if(!dragged||dragged===id||disabled)return;
+            const next=order.filter(key=>key!==dragged);next.splice(next.indexOf(id),0,dragged);setLayout({...layout,order:next});setDragged(null);
+          }}>
             <legend>
               {index + 1}.{" "}
               {custom?.title ?? sections.find((s) => s.id === id)?.title ?? id}
             </legend>
+            <button type="button" draggable={!disabled} onDragStart={event=>{event.dataTransfer.setData("text/plain",id);event.dataTransfer.effectAllowed="move";setDragged(id);}} onDragEnd={()=>setDragged(null)} title="Kéo đến section khác; hoặc dùng nút Lên/Xuống">Kéo sắp xếp ↕</button>
             <button
               disabled={index === 0}
               onClick={() => {
@@ -94,6 +102,15 @@ export function VisualStructureEditor({
             </button>
             {custom && (
               <>
+                <button type="button" disabled={layout.added.length>=20} onClick={()=>{
+                  const copyId=`custom-${crypto.randomUUID()}`;
+                  const next=[...order];next.splice(index+1,0,copyId);
+                  setLayout({...layout,order:next,added:[...layout.added,{...structuredClone(custom),id:copyId,title:`${custom.title.slice(0,180)} (bản sao)`}]});
+                }}>Sao chép khối</button>
+                <button type="button" onClick={()=>{
+                  if(!window.confirm("Xóa khối tự thêm khỏi bản nháp cấu trúc? Bản công khai chưa thay đổi cho tới khi xuất bản."))return;
+                  setLayout({...layout,order:order.filter(key=>key!==id),hidden:layout.hidden.filter(key=>key!==id),added:layout.added.filter(item=>item.id!==id)});
+                }}>Xóa khối tự thêm</button>
                 <label>
                   Tiêu đề
                   <input
@@ -137,6 +154,7 @@ export function VisualStructureEditor({
             added: [
               ...layout.added,
               {
+                schemaVersion: 1,
                 id,
                 template: "text",
                 title: "Section mới",
@@ -154,7 +172,7 @@ export function VisualStructureEditor({
         onClick={async () => {
           try {
             await onSave("structure", {
-              $layout: JSON.stringify({ ...layout, order }),
+              $layout: JSON.stringify({ ...layout, schemaVersion: 1, order, added: layout.added.map(item=>({...item,schemaVersion:1})) }),
             });
             onDirtyChange(false);
             setError("Đã lưu cấu trúc vào bản nháp.");

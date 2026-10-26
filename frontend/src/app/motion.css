@@ -1,0 +1,29 @@
+/* Shared interaction motion; scroll reveals are progressive enhancements in JS. */
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  main :is(section, article) a:not(:where(nav a, footer a, [data-site-banner] a)) > svg {
+    transition: translate 220ms ease;
+  }
+
+  main :is(section, article) a:not(:where(nav a, footer a, [data-site-banner] a)):is(:hover, :focus-visible) > svg {
+    translate: 3px -2px;
+  }
+
+  main section a:has(> figure) {
+    transition: translate 260ms cubic-bezier(.22, 1, .36, 1), box-shadow 260ms ease;
+  }
+
+  main section a:has(> figure):is(:hover, :focus-visible) {
+    translate: 0 -4px;
+    box-shadow: 0 14px 32px rgb(23 29 69 / 12%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  main *, main *::before, main *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}

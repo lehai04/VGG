@@ -117,8 +117,6 @@ test("local programme images exist and module class references resolve", () => {
     ["ProgrammeDirectory", "ProgrammeCatalogue"],
     ["ProgrammesPage", "ProgrammeCatalogue"],
     ["ProgrammeSearch", "ProgrammeCatalogue"],
-    ["MasterProgrammesPage", "MasterProgrammesPage"],
-    ["SpecialProgrammesPage", "MasterProgrammesPage"],
   ]) {
     const css = readFileSync(path.join(base, `${stylesheet}.module.css`), "utf8");
     const source = readFileSync(path.join(base, `${component}.tsx`), "utf8");

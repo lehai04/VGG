@@ -4,6 +4,7 @@ import { WebsiteManager, cmsFieldLabel } from "./WebsiteManager";
 import { DevicePreview } from "./DevicePreview";
 import { SeoEditor } from "./SeoEditor";
 import { RichTextEditor } from "./RichTextEditor";
+import { VersionHistory } from "./VersionHistory";
 import styles from "./VisualWebsiteManager.module.css";
 import { VisualImagePicker } from "./VisualImagePicker";
 import { VisualLists } from "./VisualLists";
@@ -539,6 +540,10 @@ export function VisualWebsiteManager(props: Props) {
           )}
         </aside>
       </div>
+      {doc && <VersionHistory key={`history:${id}:${locale}`} id={id} locale={locale} revision={doc.revision} disabled={busy||dirty} canRestore={props.canEdit} onBusyChange={setBusy} onRestored={async()=>{
+        const fresh=await request<Document>(`page?id=${encodeURIComponent(id)}&locale=${locale}`);
+        setDoc(fresh);setValues(fresh.values);setExtraDirty({});setSelected(fresh.page.fields[0]?.path??"");setNotice("Đã khôi phục bản nháp. Website chính chưa thay đổi.");
+      }} />}
       {!["shared", "messages"].includes(
         props.pages.find((page) => page.id === id)?.kind ?? "",
       ) && (

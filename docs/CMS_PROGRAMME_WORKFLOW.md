@@ -60,3 +60,14 @@ Kết quả nghiệm thu 26/10/2026:
 - Ảnh: outputs/cms-qa/programme-workflow-final.png.
 - Không chạy migration mới, không cần biến môi trường mới, chưa commit/push/deploy. QA dùng database riêng và được dọn sau kiểm tra.
 - Chưa kiểm tra trên thiết bị vật lý; bảng học phần dùng vùng cuộn ngang trong panel hẹp. Không hỗ trợ đổi slug hoặc xóa vĩnh viễn trong giao diện này.
+
+## Form tạo mới theo nhóm nội dung
+
+- Mở Thêm chuyên ngành mới tại danh sách. Có ba tab Nội dung / Hình ảnh / Xem trước, thông tin cơ bản và mười section thu gọn theo mẫu.
+- Lưu nháp tạo ngành và toàn bộ section trong cùng transaction; lần lưu tiếp theo cập nhật đúng ngành với revision, không tạo bản ghi trùng. Slug khóa sau lần lưu đầu.
+- Xem trước lưu bản nháp rồi mở template frontend thật. Xuất bản lưu các thay đổi trước, sau đó gọi nghiệp vụ publish có kiểm tra quyền và dữ liệu bắt buộc.
+- Form giữ dữ liệu khi chuyển tab hoặc mở/đóng section; có cảnh báo rời trang khi chưa lưu. Lỗi API giữ dữ liệu trên form.
+- Kiểm tra: build Admin/backend, TypeScript/lint, test chuyển đổi payload và integration với payload thực tế: qua. Browser QA đã lưu nháp, xem đúng tiêu đề trong iframe, xuất bản thành công qua UI và chuyển lại tab mà vẫn giữ dữ liệu. Ảnh: outputs/cms-qa/programme-create-sections.png.
+- QA dùng database riêng và đã dọn. Không deploy, không publish dữ liệu thử vào database thật.
+
+Layout chuẩn: trang Công nghệ sinh học /vi/programmes/cong-nghe-sinh-hoc là mẫu tham chiếu. Ngành mới vẫn render bằng ProgrammeDetailPage dùng chung. Form tự tạo thanh thông tin nhanh 6 ô (mã ngành, khối lượng, định hướng, hình thức, ngôn ngữ, học phí) theo dữ liệu nhập; có thể tùy chỉnh trong Thông tin nhanh. Không sao chép dữ liệu, ảnh hoặc học phần của ngành mẫu. Nội dung chưa cung cấp vẫn để đang cập nhật hoặc ẩn theo quy tắc hiện có.

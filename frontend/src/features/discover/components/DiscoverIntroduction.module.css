@@ -155,6 +155,12 @@
 }
 .introMedia {
   position: relative;
+  min-height: 0;
+  aspect-ratio: 1106 / 1312;
+}
+.introMedia img {
+  object-fit: contain;
+  object-position: center;
 }
 .textLink {
   display: inline-flex;
@@ -378,7 +384,6 @@
     position: relative;
     top: auto;
   }
-  .introMedia,
   .strategyMedia {
     min-height: 0;
     aspect-ratio: 16 / 10;

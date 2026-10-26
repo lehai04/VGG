@@ -120,6 +120,7 @@ export function VisualCollectionEditor({
       ))}
       {path !== "cmsBasics" && <button
         type="button"
+        disabled={path === "cmsOverview" && items.length >= 1}
         onClick={() =>
           onChange([
             ...items,

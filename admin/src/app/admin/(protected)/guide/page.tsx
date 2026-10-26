@@ -49,6 +49,10 @@ export default async function Guide() {
       "Trong Lịch tư vấn, mở Import Excel và tải file mẫu. Xóa dòng minh họa trước khi nhập dữ liệu thật. Điền điện thoại ở định dạng văn bản để giữ số 0 đầu; tải lại file để kiểm tra. Sửa toàn bộ dòng báo lỗi trước khi bấm Xác nhận nhập. Hệ thống bỏ qua bản ghi trùng, giữ nguyên trạng thái xử lý của dữ liệu cũ. Chức năng này cần quyền consultations.import.",
     ],
     [
+      "Lịch sử xuất bản và khôi phục",
+      "Mở Lịch sử xuất bản & khôi phục trong editor. Mỗi lần xuất bản từ phiên bản CMS này có snapshot riêng. Lưu hoặc hủy nội dung đang nhập trước khi chọn Khôi phục vào nháp. Sau khi khôi phục, xem trước rồi bấm Xuất bản nếu muốn áp dụng. Website chính giữ nguyên trong lúc khôi phục bản nháp; file media đã bị xóa không được phục hồi bằng lịch sử nội dung.",
+    ],
+    [
       "Học phần, gỡ công khai và khôi phục ngành",
       "Trong editor chuyên ngành, mở Quản lý danh sách: Bảng học phần để thêm, sửa, sắp xếp các dòng; lưu bảng sẽ thay khung học phần của riêng ngành đó. Mục tiêu, tổng quan có định dạng, hồ sơ và chính sách hỗ trợ có nhóm riêng. Từ danh sách chuyên ngành, người có quyền xuất bản có thể Gỡ công khai hoặc Chuyển vào thùng rác. Thùng rác giữ nội dung để Khôi phục; ngành chưa từng xuất bản vẫn là nháp sau khi khôi phục. Các thao tác này không xóa nội dung ngành khác.",
     ],

@@ -31,8 +31,8 @@ export async function Research() {
       </div>
 
       <div className="researchContent">
-        <p className="researchEyebrow">{research.label}</p>
-        <h2>
+        <p data-section-label className="researchEyebrow">{research.label}</p>
+        <h2 data-section-subtitle>
           {research.title}
           {" "}
           <em>{research.emphasis}</em>

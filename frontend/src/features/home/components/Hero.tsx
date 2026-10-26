@@ -9,7 +9,7 @@ export async function Hero() {
   const banner = await websiteBanner("home");
   const programmes = await websiteProgrammes();
   return (
-    <section className="hero" id="top">
+    <section data-site-banner className="hero" id="top">
       <div className="heroMedia" aria-hidden="true">
         {banner?.kind === "image" ? (
           <Image fill sizes="100vw" className="heroBackground" src={banner.src} alt={banner.alt} />
@@ -32,11 +32,12 @@ export async function Hero() {
       </div>
       <div className="heroOverlay" aria-hidden="true" />
 
-      <div className="eyebrow">{hero.label}</div>
-      <h1>
+      <div data-banner-copy data-banner-inset>
+      <div data-banner-label className="eyebrow">VAN LANG GLOBAL GRADUATE</div>
+      <h1 data-banner-title>
         {hero.title} <em>{hero.emphasis}</em>
       </h1>
-      <p>{hero.intro}</p>
+      <p data-banner-description>{hero.intro}</p>
 
       <div className="heroActions">
         <a href={hero.primary.href} className="primary vgg-cta-pill">
@@ -45,6 +46,8 @@ export async function Hero() {
         <Link className="vgg-cta-pill" href={hero.secondary.href}>
           {hero.secondary.label}
         </Link>
+      </div>
+
       </div>
 
       <div className="heroStats">

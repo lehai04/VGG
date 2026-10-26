@@ -20,7 +20,7 @@ export async function ProgrammesLanding() {
       <SiteHeader compact />
 
       <CmsPageSections pageId="catalogue" layout={layout}>
-      <section data-cms-slot="hero" className={`${styles["programmes-hero"]}`} aria-labelledby="programmes-title">
+      <section data-site-banner data-cms-slot="hero" className={`${styles["programmes-hero"]}`} aria-labelledby="programmes-title">
         <Image
           src={copy.programmes_hero.src_images_pages_programmes_content_campus_jpg}
           alt={copy.programmes_hero.alt_khuon_vien_truong_dai_hoc_van}
@@ -39,12 +39,12 @@ export async function ProgrammesLanding() {
           <strong>{copy.programmes_hero.chuong_trinh_dao_tao}</strong>
         </nav>
 
-        <div className={`${styles["programmes-hero-copy"]}`}>
-          <h1 id="programmes-title">
-            <span>{copy.programmes_hero.hoc_de_tien_xa}</span>
-            <em>{copy.programmes_hero.dan_dat_tuong_lai}</em>
+        <div data-banner-copy className={`${styles["programmes-hero-copy"]}`}>
+          <p data-banner-label>PROGRAMMES</p>
+          <h1 data-banner-title id="programmes-title">
+            <span>{copy.programmes_hero.chuong_trinh_dao_tao}</span>
           </h1>
-          <p className={`${styles["programmes-hero-lead"]}`}>
+          <p data-banner-description className={`${styles["programmes-hero-lead"]}`}>
             {copy.programmes_hero.kien_tao_lo_trinh_hoc_thuat_phu}
           </p>
         </div>

@@ -1,3 +1,7 @@
+# Bản đồ mã nguồn website
+
+Xem [frontend/README.md](frontend/README.md) để tra cây thư mục hiện hành và bảng URL → component. Các component trang cũ không được route sử dụng đã được dọn khỏi frontend.
+
 # VGG Platform — Hệ thống Cổng thông tin & Quản trị Viện Sau Đại học
 
 Monorepo bao gồm Cổng thông tin đào tạo công khai (Frontend), Hệ thống Quản trị Nội dung & Tuyển sinh (Admin Portal), và Dịch vụ Xử lý Dữ liệu Tập trung (Backend API).
@@ -45,6 +49,12 @@ Toàn bộ tài liệu chi tiết cho IT / DevOps được lưu trữ tại thư
 ---
 
 ## 2. Hướng dẫn Khởi động Nhanh (Local Development)
+
+Demo tài nguyên: chạy `npm install` rồi `npm run dev` và mở
+`http://localhost:3000/resources`. Danh sách tài nguyên mặc định dùng dữ liệu cố định
+và các PDF trong `frontend/public/documents/demo`, không cần chạy backend hay database
+để tra cứu, xem trước và tải tài liệu. Đặt `VGG_DEMO_RESOURCES=false` trong
+`frontend/.env.local` rồi khởi động lại frontend khi muốn dùng tài nguyên từ CMS.
 
 ```bash
 # Bước 1: Khởi động PostgreSQL và MinIO nội bộ

@@ -310,6 +310,7 @@
 }
 .pagination {
   display: flex;
+  flex-wrap: wrap;
   width: min(calc(100% - 2 * var(--page-gutter, 6vw)), 1546px);
   margin: 42px auto 0;
   align-items: center;
@@ -318,8 +319,8 @@
 }
 .pagination a {
   display: inline-flex;
-  min-width: 42px;
-  height: 42px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0 13px;
   align-items: center;
   justify-content: center;
@@ -358,7 +359,7 @@
     padding-bottom: 50px;
   }
   .controls form {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
   }
   .controls button {
     grid-column: 1/-1;

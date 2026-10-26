@@ -1,3 +1,7 @@
+# Cập nhật cấu trúc hiện hành
+
+Các phần bên dưới ghi lại đợt chuẩn hóa dữ liệu trước đây. Sau đợt dọn mã nguồn, `MasterProgrammesPage.tsx`, `SpecialProgrammesPage.tsx`, `MasterProgrammesPage.module.css` và `catalogue-config.ts` đã được xóa vì không còn được route sử dụng. Danh mục hiện chạy bằng `ProgrammesPage`, `ProgrammeDirectory`, `ProgrammeSearch`; chi tiết ngành dùng `ProgrammeDetailPage`. Kiểm thử CSS chỉ kiểm tra các component hiện hành. Xem [bản đồ frontend](../frontend/README.md) để tìm đúng file; không tạo lại các file cũ theo danh sách lịch sử bên dưới.
+
 # Quản lý nội dung và CSS ngành học
 
 Ngày thực hiện: 24/10/2026. Kiến trúc giữ nguyên Next.js 16 App Router, React, TypeScript và CSS Modules. Không thêm dependency hoặc sửa backend.

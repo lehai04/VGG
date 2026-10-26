@@ -10,6 +10,9 @@ import "./globals.css";
 import "./home.css";
 import "../../../shared/styles/typography.css";
 import "./content-format.css";
+import "./banner-layout.css";
+import "./motion.css";
+import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 import { StickyActions } from "@/shared/components/layout/SiteFooter";
 import { LocaleProvider } from "@/i18n/components/LocaleProvider";
 import { defaultLocale, isLocale } from "@/lib/i18n";
@@ -123,6 +126,7 @@ export default async function RootLayout({
         <LocaleProvider locale={locale} messages={messages}>
           <WebsiteChromeProvider value={{ ...chrome, programmeOptions }}>
           <PageSeoJsonLd />
+          <RevealOnScroll />
           {children}
           <StickyActions />
           </WebsiteChromeProvider>

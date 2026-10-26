@@ -1,0 +1,23 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import ts from 'typescript';
+const loaded={exports:{}};
+new Function('exports',ts.transpileModule(readFileSync(new URL('../src/lib/programme-form.ts',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText)(loaded.exports);
+const {emptyProgrammeForm,programmeFormPayload}=loaded.exports;
+test('new programme form serializes the ten sections without changing source values',()=>{
+  const form={...emptyProgrammeForm,id:'test-form',title:'Ngành mới',heroTitle:'Tiêu đề banner',summary:'Giới thiệu',bannerImage:'/images/banner.jpg',code:'NEW',credits:'60'};
+  const rows={'cmsObjectives':[{title:'Mục tiêu',text:'Nội dung'}],cmsCurriculum:[{name:'Học phần',credits:'3',group:'HK1',track:'Ứng dụng',note:''}]};
+  const result=programmeFormPayload(form,rows);
+  assert.equal(result.credits,60);
+  assert.equal(result.values['pageContent.hero.heroTitle'],'Tiêu đề banner');
+  assert.equal(result.values['pageContent.section01.overviewImage'],'/images/banner.jpg');
+  assert.deepEqual(JSON.parse(result.values['$list:cmsCurriculum']),rows.cmsCurriculum);
+  assert.equal(JSON.parse(result.values['$list:cmsBasics'])[0].code,'NEW');
+  assert.equal(form.credits,'60');assert.equal(emptyProgrammeForm.id,'');
+  assert.equal(result.heroTitle,undefined,'Presentation-only fields stay out of programme API root');
+  const facts=JSON.parse(result.values['$list:pageContent.facts.quickFactsDetailed']);
+  assert.deepEqual(facts.map(item=>item.label),['Mã ngành','Khối lượng chương trình','Định hướng đào tạo','Hình thức đào tạo','Ngôn ngữ đào tạo','Học phí toàn khóa']);
+  assert.equal(facts[0].value,'NEW');
+  assert.equal(facts[1].value,'60 tín chỉ');
+});

@@ -3,7 +3,6 @@ import { ArrowRight, Search, UserRound } from "lucide-react";
 import Link from "@/i18n/components/LocalizedLink";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
-import { RevealOnScroll } from "@/shared/components/layout/RevealOnScroll";
 import { categoryLabel, newsCategories, type NewsPagination, type NewsPost } from "../data";
 import styles from "./NewsLanding.module.css";
 
@@ -35,14 +34,13 @@ export function NewsLanding({
   };
   return (
     <main className={styles.page} id="main-content">
-      <RevealOnScroll />
       <SiteHeader compact />
       <nav className={styles.breadcrumb} aria-label="Đường dẫn">
         <Link href="/">Trang chủ</Link>
         <span>/</span>
         <b>Tin tức &amp; Sự kiện</b>
       </nav>
-      <header className={styles.hero} data-reveal>
+      <header data-site-banner className={styles.hero} data-reveal>
         <Image
           src="/images/pages/news/content/banner.jpg"
           alt="Tin tức và sự kiện Viện Sau Đại học"
@@ -51,10 +49,10 @@ export function NewsLanding({
           sizes="100vw"
         />
         <div className={styles.heroShade} />
-        <div className={styles.heroCopy}>
-          <p>NEWS &amp; EVENTS · VIỆN SAU ĐẠI HỌC</p>
-          <h1>TIN TỨC &amp; SỰ KIỆN</h1>
-          <span>
+        <div data-banner-copy className={styles.heroCopy}>
+          <p data-banner-label>NEWS &amp; EVENTS</p>
+          <h1 data-banner-title>TIN TỨC &amp; SỰ KIỆN</h1>
+          <span data-banner-description>
             Nơi cập nhật thông tin tuyển sinh, hoạt động học thuật, đời sống Văn Lang và những kết
             nối quốc tế mới nhất.
           </span>

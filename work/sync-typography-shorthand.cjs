@@ -1,3 +1,0 @@
-const fs=require('fs'),path=require('path'),postcss=require('postcss');const sizes=[10,12,14,16,18,20];const nearest=n=>sizes.reduce((a,b)=>Math.abs(b-n)<Math.abs(a-n)?b:a,10);
-const paths=JSON.parse(fs.readFileSync('outputs/typography-css-changes.json','utf8'));
-for(const p of paths){const root=postcss.parse(fs.readFileSync(p,'utf8'));let changed=false;root.walkDecls('font',d=>{if(d.value==='inherit')return;d.value=d.value.replace(/([\d.]+)(px|rem)(?=\s|\/)/g,(m,n,u)=>{const px=Number(n)*(u==='rem'?16:1);if(px>20)return m;changed=true;return nearest(px)+'px';});});if(changed)fs.writeFileSync(p,root.toString());}

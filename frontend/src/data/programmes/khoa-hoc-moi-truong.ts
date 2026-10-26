@@ -328,7 +328,7 @@ export function getKhoaHocMoiTruongCurricula(): CurriculumTrack[] {
     {
       number: "05",
       title: "Chương trình đào tạo",
-      subtitle: "Curriculum",
+      subtitle: "",
       groups: [
         {
           title: "Chương trình đào tạo",

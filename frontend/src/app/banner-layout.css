@@ -1,0 +1,144 @@
+/* Public banners share one geometry and typography scale, including CMS previews. */
+:root body [data-site-banner] {
+  --banner-gutter: clamp(20px, 4vw, 72px);
+  --banner-heading: clamp(44px, 3.5vw, 64px);
+  position: relative;
+  display: block !important;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto !important;
+  min-height: clamp(520px, calc(100svh - 108px), 760px) !important;
+  margin: 0 !important;
+  padding: clamp(72px, 10vw, 144px) 0 clamp(48px, 6vw, 80px) !important;
+}
+/* Some page templates nest the copy inside a container or grid. */
+:root body [data-site-banner] :has([data-banner-copy]):not([data-banner-copy]) {
+  display: contents !important;
+}
+:root body [data-site-banner] [data-banner-copy] {
+  position: relative !important;
+  z-index: 2;
+  inset: auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  display: block !important;
+  box-sizing: border-box;
+  width: calc(100% - 2 * var(--banner-gutter)) !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  text-align: left !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+:root body [data-banner-copy] [data-banner-label],
+:root body [data-banner-copy] [data-banner-label] :is(p,span,div) {
+  display: block;
+  min-height: 22px;
+  margin: 0 0 24px !important;
+  padding: 0 !important;
+  font: 500 20px/1.5 var(--font-sans) !important;
+  letter-spacing: .18em !important;
+  color: #ff8c9e !important;
+  text-transform: uppercase;
+  text-align: left !important;
+}
+:root body [data-banner-copy] [data-banner-label] :is(p,span,div) { margin: 0 !important; }
+:root body [data-banner-copy] [data-banner-title] {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 0;
+  margin: 0 0 32px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font: 700 var(--banner-heading)/1.15 var(--font-sans) !important;
+  letter-spacing: -.02em !important;
+  text-align: left !important;
+  text-transform: uppercase;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  text-wrap: wrap !important;
+  transform: none !important;
+}
+:root body [data-banner-copy] [data-banner-title] :is(span,em,i,strong,b) {
+  display: inline !important;
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  color: inherit !important;
+  background: none !important;
+  white-space: normal !important;
+}
+:root body [data-banner-copy] [data-banner-title] > :is(span,em,i) + :is(span,em,i)::before { content: " "; white-space: pre; }
+:root body [data-banner-copy] [data-banner-description] {
+  display: block;
+  width: 100% !important;
+  max-width: 860px !important;
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  font: 500 clamp(18px, 1.2vw, 22px)/1.65 var(--font-sans) !important;
+  letter-spacing: normal !important;
+  text-align: left !important;
+}
+:root body [data-site-banner] nav[aria-label] {
+  position: absolute;
+  inset: 24px var(--banner-gutter) auto;
+  margin: 0;
+}
+@media(max-width:1023px) {
+  :root body [data-site-banner] { --banner-heading: clamp(32px, 4.6vw, 44px); }
+}
+@media(max-width:767px) {
+  :root body [data-site-banner] {
+    --banner-heading: clamp(28px, 7.5vw, 38px);
+    min-height: min(620px, calc(100svh - 108px)) !important;
+    padding-block: 48px 48px !important;
+  }
+  :root body [data-banner-copy] [data-banner-label],
+  :root body [data-banner-copy] [data-banner-label] :is(p,span,div) { font-size: 13px !important; letter-spacing: .08em !important; overflow-wrap: anywhere; }
+  :root body [data-banner-copy] [data-banner-title] { min-height: 0; }
+  :root body [data-banner-copy] [data-banner-description] { font-size: 16px !important; }
+  :root body [data-banner-copy] [data-banner-title] { margin-bottom: 24px !important; }
+}
+
+/* Every page starts its banner below the same shared navigation. */
+:root body #main-content:has([data-site-banner]) { padding-top: 108px !important; }
+:root body [data-banner-label] :empty { display: none !important; }
+:root body #main-content > nav:has(+ [data-site-banner]) {
+  position: absolute;
+  top: 132px;
+  left: clamp(24px, 4vw, 72px);
+  z-index: 3;
+  margin: 0;
+  padding: 0;
+}
+@media(max-width:767px) {
+  :root body #main-content:has([data-site-banner]) { padding-top: 108px !important; }
+  :root body [data-banner-copy] [data-banner-label] { min-height: 0; }
+}
+
+/* Split-banner media fills the shared frame instead of adding a second row. */
+:root body [data-site-banner] > :is([class*="heroMedia"], .detail-hero-media) {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0;
+}
+:root body [data-site-banner] > :is([class*="heroMedia"], .detail-hero-media)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10,19,43,.88), rgba(10,19,43,.38));
+}
+
+/* Hide the public-page breadcrumb trails; keep primary and section navigation. */
+:root body #main-content :is(
+  nav[aria-label="Breadcrumb"],
+  nav[aria-label="Đường dẫn"],
+  nav[aria-label="Đường dẫn trang"],
+  [class*="breadcrumb"],
+  .detail-trail
+) {
+  display: none !important;
+}

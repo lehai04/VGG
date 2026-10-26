@@ -37,6 +37,7 @@ export function programmeDefinition(input: z.infer<typeof programmeInput>) {
   const pageContent = structuredClone(template);
   Object.assign(pageContent.hero, { heroTitle: input.title, heroImage: input.bannerImage, imageAlt: input.title });
   Object.assign(pageContent.section01, { overviewImage: input.bannerImage, imageFallback: input.bannerImage, imageAlt: input.title });
+  Object.assign(pageContent.section04, { careerImage: input.bannerImage });
   pageContent.section02.highlights = [];
   pageContent.section03.audience = [];
   pageContent.section04.careers = [];

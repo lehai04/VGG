@@ -11,8 +11,8 @@ export async function Programmes() {
       <div className="overviewFeature">
         <div className="overviewIntro">
           <div className="overviewCopy">
-            <p>{overview.label}</p>
-            <h2>
+            <p data-section-label>{overview.label}</p>
+            <h2 data-section-subtitle>
               {overview.title}
               {" "}
               <em>{overview.emphasis}</em>

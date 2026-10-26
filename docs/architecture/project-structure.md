@@ -24,13 +24,16 @@ vgg-platform/
 │   │   ├── features/               # component thuộc đúng một chuyên mục
 │   │   │   ├── home/components/
 │   │   │   ├── discover/components/
-│   │   │   ├── admissions/components/
+│   │   │   ├── admissions/        # AdmissionsReference + HTML/CSS/engine/CMS adapter
 │   │   │   ├── programmes/components/
 │   │   │   ├── research/components/
-│   │   │   └── content/components/
+│   │   │   ├── content/components/
+│   │   │   ├── news/components/
+│   │   │   ├── resources/components/
+│   │   │   └── student-success/components/
 │   │   ├── shared/                 # thành phần được dùng bởi nhiều chuyên mục
 │   │   │   ├── components/layout/
-│   │   │   ├── components/ui/
+│   │   │   ├── components/        # CMS renderer và rich text
 │   │   │   └── analytics/components/
 │   │   ├── i18n/components/
 │   │   ├── data/
@@ -43,7 +46,7 @@ vgg-platform/
 │   │   ├── app/                    # /admin và API admin
 │   │   ├── components/             # auth, dashboard, CMS, user, layout
 │   │   ├── lib/                    # session, RBAC, database, backend client
-│   │   └── generated/prisma/
+│   │   └── generated/prisma/      # Prisma client sinh tự động
 │   ├── prisma/
 │   ├── scripts/
 │   └── tests/
@@ -56,6 +59,10 @@ vgg-platform/
 │   │   └── server.ts
 │   ├── prisma/
 │   └── tests/
+├── shared/styles/                # Typography dùng chung
+├── scripts/                      # Công cụ bảo trì và kiểm tra
+├── outputs/                      # Bằng chứng kiểm tra; không deploy
+├── work/                         # Dữ liệu làm việc lịch sử; không deploy
 └── docs/
     └── architecture/
 ```

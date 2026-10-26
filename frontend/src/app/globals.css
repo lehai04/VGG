@@ -290,26 +290,6 @@ b {
   }
 }
 
-/* Motion language dùng chung cho các page sử dụng RevealOnScroll. */
-.subpage [data-reveal] {
-  opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity var(--motion-duration) var(--motion-ease) var(--academic-delay, 0ms),
-    transform var(--motion-duration) var(--motion-ease) var(--academic-delay, 0ms);
-}
-.subpage [data-reveal].academic-reveal--visible {
-  opacity: 1;
-  transform: none;
-}
-@media (prefers-reduced-motion: reduce) {
-  .subpage [data-reveal] {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
 /* Editorial subpages: Stanford-inspired hierarchy with VLU colour language. */
 .academic-index > a {
   color: inherit;
@@ -5634,7 +5614,7 @@ main:not(.subpage) .main-menu > a.active small {
 }
 
 /* Final normalization layer for legacy page-specific CSS. */
-main p:not([class*="eyebrow"]):not([class*="kicker"]):not([class*="caption"]):not([class*="meta"]) {
+main p:not([data-section-label]):not([data-banner-label]):not([data-banner-description]):not([class*="eyebrow"]):not([class*="kicker"]):not([class*="caption"]):not([class*="meta"]) {
   font-family: var(--font-sans) !important;
   font-size: clamp(1rem, 1.05vw, 1.0625rem) !important;
   font-weight: 400 !important;

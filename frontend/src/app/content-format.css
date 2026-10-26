@@ -1,5 +1,63 @@
 /* Public content formatting shared by all routes, including imported admissions content.
    Keep controls, navigation, table values and footer layouts in their own components. */
+
+/* Intrinsic sizing prevents long CMS content and native controls widening grids. */
+#main-content :is(input, select, textarea) {
+  min-width: 0;
+  max-width: 100%;
+}
+#main-content :is(button, a, input, select, textarea, summary):focus-visible {
+  outline: 3px solid #385a9b;
+  outline-offset: 4px;
+}
+#main-content :is(section[id], h2[id], h3[id]) {
+  scroll-margin-top: 132px;
+}
+
+/* Explicit section roles keep banners, card titles and navigation independent.
+   Section labels share the learner journey pink; font families stay page-specific. */
+:root body main [data-section-label],
+:root body main .admissions-reference .section-number,
+:root body main .admissions-reference .admission-step-heading h2 {
+  color: #ff98a8 !important;
+  font-size: clamp(24px, 2.4vw, 34px) !important;
+  font-weight: 700 !important;
+  font-style: normal;
+  line-height: 1.3 !important;
+  letter-spacing: 0.01em !important;
+  max-width: 100%;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere !important;
+  margin-block: 0 14px;
+}
+
+:root body main [data-section-subtitle],
+:root body main .admissions-reference .section-number ~ :is(h2, h3) {
+  font-size: clamp(20px, 1.8vw, 26px) !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+  line-height: 1.45 !important;
+  letter-spacing: normal !important;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere !important;
+  margin-top: 0;
+}
+
+:root body main [data-section-subtitle] :is(em, strong, b, span),
+:root body main .admissions-reference .section-number ~ :is(h2, h3) :is(em, strong, b, span) {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  font-style: inherit !important;
+  line-height: inherit !important;
+}
+
+:root body main [data-section-label] > [hidden],
+:root body main :has(> [data-section-label]) > [hidden],
+:root body main .admissions-reference .admission-step-heading > .admission-step-number {
+  display: none !important;
+}
 :root
   body
   main
@@ -42,4 +100,20 @@
 /* Lists keep a single hanging indent; nested items retain their own level. */
 :root body main :is(ul, ol):not(:where(header *, nav *, footer *, form *, [role="tablist"] *)) {
   text-indent: 0;
+}
+
+@media (max-width: 767px) {
+  /* Ragged-right text stays readable in narrow columns, without stretched gaps. */
+  :root body main :is(p, li):not(:where(header *, nav *, footer *, form *, button *)) {
+    text-align: start !important;
+    text-align-last: auto;
+  }
+  #main-content :is(input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]), select, textarea) {
+    font-size: 16px;
+    min-height: 44px;
+  }
+  #main-content form :is(button[type="submit"], input[type="submit"]) {
+    min-height: 48px;
+    white-space: normal;
+  }
 }

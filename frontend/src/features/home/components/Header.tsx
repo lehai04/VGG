@@ -41,7 +41,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
   useEffect(() => {
     const closeFromOutside = (event: MouseEvent) => {
       if (!headerRef.current?.contains(event.target as Node)) {
-        if (window.matchMedia("(width < 1024px)").matches) setOpen(false);
+        if (window.matchMedia("(max-width: 1100px)").matches) setOpen(false);
       }
     };
     const closeFromKeyboard = (event: KeyboardEvent) => {
@@ -65,7 +65,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
         setOpen(false);
         headerRef.current?.querySelector<HTMLButtonElement>(".menuButton")?.focus();
       }
-      if (event.key === "Tab" && window.matchMedia("(width < 1024px)").matches) {
+      if (event.key === "Tab" && window.matchMedia("(max-width: 1100px)").matches) {
         const first = headerRef.current?.querySelector<HTMLButtonElement>(".menuButton");
         const links = headerRef.current?.querySelectorAll<HTMLAnchorElement>(".nav a");
         const last = links?.[links.length - 1];
@@ -76,7 +76,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
         }
       }
     };
-    const mobile = window.matchMedia("(width < 1024px)");
+    const mobile = window.matchMedia("(max-width: 1100px)");
     const closeOnResize = () => setOpen(false);
     mobile.addEventListener("change", closeOnResize);
     document.addEventListener("keydown", closeOnEscape);

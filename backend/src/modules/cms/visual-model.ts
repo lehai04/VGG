@@ -289,6 +289,7 @@ const card = z
   .strict();
 const custom = z
   .object({
+    schemaVersion: z.literal(1).default(1),
     id: itemId,
     template: z.enum(["text", "text-image", "cards", "faq"]),
     title: short,
@@ -300,6 +301,7 @@ const custom = z
   .strict();
 export const compositionSchema = z
   .object({
+    schemaVersion: z.literal(1).default(1),
     order: z.array(itemId).max(60),
     hidden: z.array(itemId).max(40),
     added: z.array(custom).max(20),

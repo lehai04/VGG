@@ -18,3 +18,9 @@ database_backup*.sql
 /backups/
 *.zip
 *.sha256
+
+# Local scratch/cache output; existing tracked evidence is retained separately.
+__pycache__/
+*.py[cod]
+/admin/tmp/
+/work/github-check/
