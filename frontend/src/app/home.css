@@ -240,6 +240,7 @@
 }
 .home-page .brand {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   gap: 13px;
 }
@@ -3512,5 +3513,36 @@
 @media (max-width: 600px) {
   .home-page .brandLogo {
     max-width: min(185px, calc(100vw - 110px));
+  }
+}
+
+/* Reserve logo space so long navigation labels cannot squeeze the brand. */
+.home-page .header .brandLogo {
+  width: 164px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+.home-page .header {
+  gap: 20px;
+}
+@media (min-width: 1101px) {
+  .home-page .header .nav {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .home-page .header .nav > a:not(.navCta) {
+    padding-inline: clamp(6px, .65vw, 12px);
+    min-width: 0;
+  }
+  .home-page .header .navTitle {
+    white-space: normal;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .home-page .header .brandLogo {
+    width: 156px;
+    max-width: calc(100vw - 120px);
   }
 }

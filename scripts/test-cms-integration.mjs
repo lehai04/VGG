@@ -4,6 +4,8 @@ import { randomBytes } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { mkdirSync, writeFileSync } from 'node:fs';
 config({ path: 'backend/.env', quiet: true });
+const compile = spawnSync(process.execPath, ['node_modules/typescript/bin/tsc','--project','backend/tsconfig.json'], { encoding:'utf8', windowsHide:true });
+if (compile.status !== 0) throw Error('CMS backend build failed: '+compile.stdout+compile.stderr);
 const original = new URL(process.env.DATABASE_URL);
 if (!['localhost', '127.0.0.1'].includes(original.hostname)) throw Error('CMS integration tests require local PostgreSQL.');
 const database = `vgg_cms_test_${randomBytes(5).toString('hex')}`;

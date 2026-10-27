@@ -1,5 +1,6 @@
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
+import { randomUUID } from "node:crypto";
 import { Prisma } from "@prisma/client";
 import sanitizeHtml from "sanitize-html";
 import { prisma } from "../../shared/database/prisma.js";
@@ -21,7 +22,7 @@ const newsCategory = z.enum([
 const imagePath = z.string().trim().max(1000).refine((value) => value.startsWith("/") || URL.canParse(value), "Ảnh phải là URL hoặc đường dẫn bắt đầu bằng /.");
 const safeCssColor = [/^#[0-9a-f]{3,8}$/i, /^rgba?\([\d\s,.%]+\)$/i, /^hsla?\([\d\s,.%]+\)$/i, /^[a-z]+$/i];
 const safeCssLength = [/^-?\d+(?:\.\d+)?(?:px|em|rem|%|pt)?$/i];
-const cleanNewsHtml = (value: string) => sanitizeHtml(value, {
+export const cleanNewsHtml = (value: string) => sanitizeHtml(value, {
   allowedTags: ["p", "div", "span", "br", "hr", "h1", "h2", "h3", "h4", "h5", "h6", "strong", "b", "em", "i", "u", "s", "sub", "sup", "font", "ul", "ol", "li", "blockquote", "a", "img", "figure", "figcaption", "table", "thead", "tbody", "tfoot", "tr", "th", "td"],
   allowedAttributes: {
     "*": ["style", "align"],
@@ -98,7 +99,7 @@ export const siteSeoInput = z.object({
   for (const [locale, url] of Object.entries(value.hreflang ?? {})) checkSameSite(`hreflang.${locale}`, url);
   if (value.customJsonLd && JSON.stringify(value.customJsonLd).length > 20_000) context.addIssue({ code: "custom", path: ["customJsonLd"], message: "Schema tùy chỉnh không được vượt quá 20 KB." });
 });
-const newsInput = z.object({ slug, locale: z.enum(["vi", "en"]).default("vi"), category: newsCategory.default("VAN_LANG_UNIVERSITY"), title: z.string().trim().min(2).max(250), authorName: z.string().trim().min(2).max(120), excerpt: z.string().trim().min(10).max(1000), content: newsContent, coverImage: imagePath.optional().nullable(), coverImageAlt: z.string().trim().max(500).optional().nullable(), metaTitle: z.string().trim().max(250).optional().nullable(), metaDescription: z.string().trim().max(1000).optional().nullable(), canonicalUrl, robotsIndex: z.boolean().default(true), robotsFollow: z.boolean().default(true), ogTitle: z.string().trim().max(250).optional().nullable(), ogDescription: z.string().trim().max(1000).optional().nullable(), ogImage: imagePath.optional().nullable(), ogImageAlt: z.string().trim().max(500).optional().nullable(), customJsonLd, publishedAt: z.coerce.date().optional(), status: status.default("DRAFT") });
+export const newsInput = z.object({ slug, locale: z.enum(["vi", "en"]).default("vi"), category: newsCategory.default("VAN_LANG_UNIVERSITY"), title: z.string().trim().min(2).max(250), authorName: z.string().trim().min(2).max(120), excerpt: z.string().trim().min(10).max(1000), content: newsContent, coverImage: imagePath.optional().nullable(), coverImageAlt: z.string().trim().max(500).optional().nullable(), metaTitle: z.string().trim().max(250).optional().nullable(), metaDescription: z.string().trim().max(1000).optional().nullable(), canonicalUrl, robotsIndex: z.boolean().default(true), robotsFollow: z.boolean().default(true), ogTitle: z.string().trim().max(250).optional().nullable(), ogDescription: z.string().trim().max(1000).optional().nullable(), ogImage: imagePath.optional().nullable(), ogImageAlt: z.string().trim().max(500).optional().nullable(), customJsonLd, publishedAt: z.coerce.date().optional(), status: status.default("DRAFT") });
 const resourceType = z.enum(["DIRECTIVE_DOCUMENT", "EXECUTION_DOCUMENT", "BROCHURE", "PDF_DOCUMENT"]);
 const resourceDocumentType = z.enum(["REGULATION", "RULE", "PROCESS", "NOTICE", "GUIDELINE"]);
 const allowedResourceFiles = new Set(["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "image/jpeg", "image/png"]);
@@ -138,7 +139,7 @@ async function guard(request: FastifyRequest, reply: FastifyReply, permission: s
   if (!admin) { fail(reply, 401, "Bạn chưa đăng nhập.", "UNAUTHENTICATED"); return null; }
   const isSuper = admin.role.code === "SUPER_ADMIN";
   const hasPerm = admin.permissions.includes(permission) || (permission.startsWith("settings.") && (admin.permissions.includes("admins.view") || admin.permissions.includes("audit.view")));
-  if (!isSuper && !hasPerm) { fail(reply, 403, "Bạn không có quyền thực hiện thao tác này.", "FORBIDDEN"); return null; }
+  if (admin.mustChangePassword || (!isSuper && !hasPerm)) { fail(reply, 403, "Bạn không có quyền thực hiện thao tác này.", "FORBIDDEN"); return null; }
   return admin;
 }
 
@@ -813,60 +814,72 @@ export async function cmsRoutes(app: FastifyInstance) {
     return reply.code(201).send({ success: true, data: { resource }, message: "Đã thêm tài nguyên." });
   });
 
+  app.get("/api/admin/resources/:id/versions", async (request, reply) => {
+    if (!await guard(request, reply, "resources.view")) return;
+    const {id}=z.object({id:z.string()}).parse(request.params);
+    const {page}=z.object({page:z.coerce.number().int().min(1).default(1)}).parse(request.query);
+    const where:Prisma.SiteContentWhereInput={section:"cms-resource-version",value:{path:["id"],equals:id}};
+    const [versions,total]=await prisma.$transaction([prisma.siteContent.findMany({where,orderBy:[{createdAt:"desc"},{id:"asc"}],skip:(page-1)*10,take:10,select:{id:true,createdAt:true,value:true}}),prisma.siteContent.count({where})]);
+    return ok(reply,{versions,total});
+  });
   app.put("/api/admin/resources/:id", async (request, reply) => {
-    if (!await guard(request, reply, "resources.update")) return;
+    const admin=await guard(request, reply, "resources.update");if(!admin)return;
     const { id } = z.object({ id: z.string() }).parse(request.params);
-    const admin = await authenticateRequest(request);
+    const {revision}=z.object({revision:z.string().datetime()}).parse(request.body);
     const input = resourceInput.parse(request.body);
-    const current = await prisma.resourceFile.findUnique({ where: { id }, select: { id: true, publishedAt: true } });
-    if (!current) return fail(reply, 404, "Không tìm thấy tài nguyên.", "RESOURCE_NOT_FOUND");
-    const category = await prisma.resourceCategory.findUnique({ where: { id: input.categoryId }, select: { id: true } });
-    if (!category) return fail(reply, 400, "Danh mục không tồn tại.", "RESOURCE_CATEGORY_NOT_FOUND");
-    const resourceSlug = await availableResourceSlug(input.title, id);
-    const resource = await prisma.resourceFile.update({
-      where: { id },
-      data: {
-        ...input,
-        slug: resourceSlug,
-        publishedAt: input.status === "PUBLISHED" ? (current.publishedAt ?? new Date()) : null,
-      },
-    });
-    await prisma.auditLog.create({
-      data: {
-        action: "RESOURCE_UPDATED",
-        actorAdminId: admin?.id,
-        targetType: "resource",
-        targetId: resource.id,
-        metadata: { title: resource.title, fileName: resource.fileName },
-      },
-    }).catch(() => null);
-    return ok(reply, { resource }, "Đã cập nhật tài nguyên.");
+    try {
+      const resource=await prisma.$transaction(async tx=>{
+        const current=await tx.resourceFile.findUnique({where:{id}});
+        if(!current)return null;
+        if(current.updatedAt.toISOString()!==revision)throw Error("RESOURCE_CONFLICT");
+        const category=await tx.resourceCategory.findUnique({where:{id:input.categoryId}});
+        if(!category)throw Error("RESOURCE_CATEGORY_NOT_FOUND");
+        await tx.siteContent.create({data:{key:"cms.resource.version."+randomUUID(),page:"/resources",locale:current.locale,section:"cms-resource-version",title:current.title,published:false,authorId:admin.id,value:JSON.parse(JSON.stringify({id,resource:current}))}});
+        const updated=await tx.resourceFile.update({where:{id},data:{...input,locale:current.locale,publishedAt:input.status==="PUBLISHED"?(current.publishedAt??new Date()):current.publishedAt}});
+        await tx.auditLog.create({data:{action:"RESOURCE_UPDATED",actorAdminId:admin.id,targetType:"resource",targetId:id,metadata:{title:updated.title,fileName:updated.fileName,previousRevision:revision}}});
+        return updated;
+      },{isolationLevel:"Serializable"});
+      if(!resource)return fail(reply,404,"Không tìm thấy tài nguyên.","RESOURCE_NOT_FOUND");
+      return ok(reply,{resource},"Đã cập nhật; URL và phiên bản tệp cũ được giữ lại.");
+    } catch(error) {
+      if(error instanceof Error&&error.message==="RESOURCE_CATEGORY_NOT_FOUND")return fail(reply,400,"Danh mục không tồn tại.",error.message);
+      if((error instanceof Error&&error.message==="RESOURCE_CONFLICT")||(error instanceof Prisma.PrismaClientKnownRequestError&&error.code==="P2034"))return fail(reply,409,"Tài nguyên đã thay đổi. Tải lại trước khi lưu.","RESOURCE_CONFLICT");
+      throw error;
+    }
   });
 
   app.delete("/api/admin/resources/:id", async (request, reply) => {
-    if (!await guard(request, reply, "resources.delete")) return;
-    const { id } = z.object({ id: z.string() }).parse(request.params);
-    const admin = await authenticateRequest(request);
-    const existing = await prisma.resourceFile.findUnique({ where: { id }, select: { id: true, title: true } });
-    if (!existing) return fail(reply, 404, "Không tìm thấy tài nguyên.", "RESOURCE_NOT_FOUND");
-    await prisma.resourceFile.delete({ where: { id } });
-    await prisma.auditLog.create({
-      data: {
-        action: "RESOURCE_DELETED",
-        actorAdminId: admin?.id,
-        targetType: "resource",
-        targetId: id,
-        metadata: { title: existing.title },
-      },
-    }).catch(() => null);
-    return ok(reply, {}, "Đã xóa tài nguyên.");
+    const admin=await guard(request,reply,"resources.delete");if(!admin)return;
+    const {id}=z.object({id:z.string()}).parse(request.params);
+    const {revision}=z.object({revision:z.string().datetime()}).parse(request.query);
+    try{const found=await prisma.$transaction(async tx=>{
+      const current=await tx.resourceFile.findUnique({where:{id}});if(!current)return false;
+      if(current.updatedAt.toISOString()!==revision)throw Error("RESOURCE_CONFLICT");
+      await tx.siteContent.create({data:{key:"cms.resource.version."+randomUUID(),page:"/resources",locale:current.locale,section:"cms-resource-version",title:current.title,published:false,authorId:admin.id,value:JSON.parse(JSON.stringify({id,resource:current}))}});
+      await tx.resourceFile.update({where:{id},data:{status:"ARCHIVED"}});
+      await tx.auditLog.create({data:{action:"RESOURCE_DELETED",actorAdminId:admin.id,targetType:"resource",targetId:id,metadata:{operation:"RESOURCE_ARCHIVE",title:current.title}}});return true;
+    },{isolationLevel:"Serializable"});if(!found)return fail(reply,404,"Không tìm thấy tài nguyên.","RESOURCE_NOT_FOUND");return ok(reply,{},"Đã lưu trữ tài nguyên; tệp và lịch sử được giữ lại. Có thể mở chỉnh sửa để khôi phục.");}
+    catch(error){if((error instanceof Error&&error.message==="RESOURCE_CONFLICT")||(error instanceof Prisma.PrismaClientKnownRequestError&&error.code==="P2034"))return fail(reply,409,"Tài nguyên đã thay đổi. Tải lại trước khi lưu trữ.","RESOURCE_CONFLICT");throw error;}
   });
 
   app.get("/api/admin/resource-categories", async (request, reply) => { if (!await guard(request, reply, "resources.view")) return; const categories = await prisma.resourceCategory.findMany({ orderBy: { name: "asc" }, include: { _count: { select: { resources: true } } } }); return ok(reply, { categories }); });
   app.post("/api/admin/resource-categories", async (request, reply) => { if (!await guard(request, reply, "resources.create")) return; const input = resourceCategoryInput.parse(request.body); const duplicate = await prisma.resourceCategory.findFirst({ where: { name: { equals: input.name, mode: "insensitive" } }, select: { id: true } }); if (duplicate) return fail(reply, 409, "Tên danh mục đã tồn tại.", "RESOURCE_CATEGORY_DUPLICATE"); const category = await prisma.resourceCategory.create({ data: input }); return reply.code(201).send({ success: true, data: { category }, message: "Đã thêm danh mục." }); });
   app.put("/api/admin/resource-categories/:id", async (request, reply) => { if (!await guard(request, reply, "resources.update")) return; const { id } = z.object({ id: z.string() }).parse(request.params); const input = resourceCategoryInput.parse(request.body); const duplicate = await prisma.resourceCategory.findFirst({ where: { name: { equals: input.name, mode: "insensitive" }, id: { not: id } }, select: { id: true } }); if (duplicate) return fail(reply, 409, "Tên danh mục đã tồn tại.", "RESOURCE_CATEGORY_DUPLICATE"); const existing = await prisma.resourceCategory.findUnique({ where: { id }, select: { id: true } }); if (!existing) return fail(reply, 404, "Không tìm thấy danh mục.", "RESOURCE_CATEGORY_NOT_FOUND"); const category = await prisma.resourceCategory.update({ where: { id }, data: input }); return ok(reply, { category }, "Đã cập nhật danh mục."); });
   app.delete("/api/admin/resource-categories/:id", async (request, reply) => { if (!await guard(request, reply, "resources.delete")) return; const { id } = z.object({ id: z.string() }).parse(request.params); const category = await prisma.resourceCategory.findUnique({ where: { id }, include: { _count: { select: { resources: true } } } }); if (!category) return fail(reply, 404, "Không tìm thấy danh mục.", "RESOURCE_CATEGORY_NOT_FOUND"); if (category._count.resources > 0) return fail(reply, 409, "Không thể xóa danh mục vì hiện vẫn còn tài nguyên thuộc danh mục này.", "RESOURCE_CATEGORY_IN_USE"); await prisma.resourceCategory.delete({ where: { id } }); return ok(reply, {}, "Đã xóa danh mục."); });
-  app.get("/api/admin/applications", async (request, reply) => { if (!await guard(request, reply, "applications.view")) return; return ok(reply, { applications: await prisma.application.findMany({ orderBy: { createdAt: "desc" }, take: 200 }) }); });
+  app.get("/api/admin/applications", async (request, reply) => {
+    if (!await guard(request, reply, "applications.view")) return;
+    const q = z.object({ search: z.string().trim().max(190).default(""), status: z.string().max(50).default(""), page: z.coerce.number().int().min(1).max(100000).default(1) }).parse(request.query);
+    const where: Prisma.ApplicationWhereInput = { ...(q.status ? { status: q.status } : {}), ...(q.search ? { OR: ["fullName", "email", "phone", "programme"].map(key => ({ [key]: { contains: q.search, mode: "insensitive" } })) } : {}) };
+    const [applications, total, statuses] = await prisma.$transaction([prisma.application.findMany({ where, orderBy: [{ createdAt: "desc" }, { id: "asc" }], skip: (q.page - 1) * 25, take: 25 }), prisma.application.count({ where }), prisma.application.findMany({ distinct: ["status"], select: { status: true }, orderBy: { status: "asc" } })], { isolationLevel: "RepeatableRead" });
+    return ok(reply, { applications, total, statuses: statuses.map(item => item.status), page: q.page });
+  });
+  app.get("/api/admin/applications/:id", async (request, reply) => {
+    if (!await guard(request, reply, "applications.view")) return;
+    const { id } = z.object({ id: z.string().min(1).max(100) }).parse(request.params);
+    const application = await prisma.application.findUnique({ where: { id } });
+    if (!application) return fail(reply, 404, "Không tìm thấy hồ sơ đăng ký.", "NOT_FOUND");
+    return ok(reply, { application });
+  });
 
   app.get("/api/admin/site-content", async (request, reply) => { if (!await guard(request, reply, "website.view")) return; return ok(reply, { contents: await prisma.siteContent.findMany({ orderBy: [{ section: "asc" }, { page: "asc" }] }) }); });
   app.post("/api/admin/site-content", async (request, reply) => {

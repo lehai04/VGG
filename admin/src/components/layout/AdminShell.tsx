@@ -251,7 +251,9 @@ export function AdminShell({
           )}
 
           {can('website.view') && <Link href="/admin/programmes" className={`admin-nav-link ${pathname.startsWith('/admin/programmes') ? 'active' : ''}`}><span className="nav-icon"><IconResources /></span><span className="nav-text">Quản lý chuyên ngành</span></Link>}
-          {can('website.view') && <Link href="/admin/website" className={`admin-nav-link ${pathname.startsWith('/admin/website') ? 'active' : ''}`}><span className="nav-icon"><IconResources /></span><span className="nav-text">Nội dung website</span></Link>}
+          {can("news.view") && <Link href="/admin/news-workspace" className={`admin-nav-link ${pathname.startsWith("/admin/news-workspace") ? "active" : ""}`}><span className="nav-icon"><IconNews /></span><span className="nav-text">CMS mới · Tin tức</span></Link>}
+          {can('website.view') && <Link href="/admin/content" className={`admin-nav-link ${pathname.startsWith('/admin/content') ? 'active' : ''}`}><span className="nav-icon"><IconResources /></span><span className="nav-text">CMS mới · Nội dung</span></Link>}
+          {can('website.view') && <Link href="/admin/website" className={`admin-nav-link ${pathname.startsWith('/admin/website') ? 'active' : ''}`}><span className="nav-icon"><IconResources /></span><span className="nav-text">Nội dung website hiện tại</span></Link>}
           <Link href="/admin/guide" className={`admin-nav-link ${pathname.startsWith('/admin/guide') ? 'active' : ''}`}><span className="nav-icon"><IconResources /></span><span className="nav-text">Hướng dẫn sử dụng</span></Link>
           {can("resources.view") && (
             <Link
@@ -263,6 +265,8 @@ export function AdminShell({
             </Link>
           )}
 
+          {can("applications.view") && <Link href="/admin/applications" className={`admin-nav-link ${pathname.startsWith("/admin/applications") ? "active" : ""}`}><span className="nav-icon"><IconConsultations /></span><span className="nav-text">Hồ sơ đăng ký</span></Link>}
+          {can("consultations.view") && <Link href="/admin/consultation-workspace" className={`admin-nav-link ${pathname.startsWith("/admin/consultation-workspace") ? "active" : ""}`}><span className="nav-icon"><IconConsultations /></span><span className="nav-text">CMS mới · Tư vấn</span></Link>}
           {can("consultations.view") && (
             <Link
               href="/admin/consultations"

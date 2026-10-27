@@ -1,9 +1,10 @@
 "use client";
 import { MAX_RESOURCE_PDF_MB } from "@/lib/resource-upload-limits";
 
-import { ChangeEvent, DragEvent, FormEvent, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, DragEvent, FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { ResourceHistory } from "../cms-next/ResourceHistory";
 
 type Category = {
   id: string;
@@ -25,10 +26,16 @@ type Resource = {
   fileType: string;
   fileSize: number;
   createdAt: string;
+  updatedAt: string;
+  locale: string;
+  status: string;
   category: { id: string; name: string };
 };
 type ResourceForm = {
   id: string;
+  revision: string;
+  locale: string;
+  status: string;
   title: string;
   categoryId: string;
   resourceType: string;
@@ -57,6 +64,9 @@ const documentTypes = [
 ] as const;
 const defaultForm: ResourceForm = {
   id: "",
+  revision: "",
+  locale: "vi",
+  status: "DRAFT",
   title: "",
   categoryId: "",
   resourceType: "DIRECTIVE_DOCUMENT",
@@ -92,9 +102,11 @@ function fileIcon(type: string) {
 export function ResourceManager({
   resources,
   categories,
+  total,
 }: {
   resources: Resource[];
   categories: Category[];
+  total:number;
 }) {
   const router = useRouter();
   const [tab, setTab] = useState<"resources" | "categories">("resources");
@@ -148,23 +160,23 @@ export function ResourceManager({
     };
   }, [overlayOpen]);
 
-  const filtered = useMemo(
-    () =>
-      resources.filter(
-        (item) =>
-          item.title.toLowerCase().includes(query.trim().toLowerCase()) &&
-          (!categoryFilter || item.categoryId === categoryFilter) &&
-          (!typeFilter || item.resourceType === typeFilter) &&
-          (!documentFilter || item.documentType === documentFilter),
-      ),
-    [resources, query, categoryFilter, typeFilter, documentFilter],
-  );
-  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
-  const currentPage = Math.min(page, totalPages);
-  const paged = filtered.slice(
-    (currentPage - 1) * pageSize,
-    currentPage * pageSize,
-  );
+  const [result,setResult]=useState({resources:resources.slice(0,10),pagination:{total}});
+  const [listLoading,setListLoading]=useState(false);
+  useEffect(()=>{
+    const controller=new AbortController();
+    const timer=window.setTimeout(()=>{
+      setListLoading(true);
+      const params=new URLSearchParams({q:query,page:String(page),limit:String(pageSize)});
+      if(categoryFilter)params.set("categoryId",categoryFilter);
+      if(typeFilter)params.set("resourceType",typeFilter);
+      if(documentFilter)params.set("documentType",documentFilter);
+      fetch("/api/cms/resources?"+params,{cache:"no-store",signal:controller.signal}).then(async response=>{const payload=await response.json();if(!response.ok)throw Error(payload.message||"Không tải được tài nguyên.");setResult(payload.data);}).catch(reason=>{if(!controller.signal.aborted)setError(reason.message);}).finally(()=>{if(!controller.signal.aborted)setListLoading(false);});
+    },200);
+    return()=>{window.clearTimeout(timer);controller.abort();};
+  },[query,categoryFilter,typeFilter,documentFilter,page,resources,pageSize]);
+  const totalPages=Math.max(1,Math.ceil(result.pagination.total/pageSize));
+  const currentPage=page;
+  const paged=result.resources;
   const isDocument =
     form.resourceType === "DIRECTIVE_DOCUMENT" ||
     form.resourceType === "EXECUTION_DOCUMENT";
@@ -182,6 +194,9 @@ export function ResourceManager({
   function openEdit(item: Resource) {
     setForm({
       id: item.id,
+      revision: item.updatedAt,
+      locale: item.locale,
+      status: item.status,
       title: item.title,
       categoryId: item.categoryId,
       resourceType: item.resourceType,
@@ -257,7 +272,8 @@ export function ResourceManager({
     if (!form.categoryId) return setError("Vui lòng chọn danh mục.");
     setLoading(true);
     const payload = {
-      locale: "vi",
+      locale: form.locale,
+      ...(form.id ? {revision:form.revision} : {}),
       title: form.title,
       categoryId: form.categoryId,
       resourceType: form.resourceType,
@@ -272,7 +288,7 @@ export function ResourceManager({
       fileUrl: form.fileUrl,
       fileType: form.fileType,
       fileSize: form.fileSize,
-      status: "PUBLISHED",
+      status: form.status,
     };
     try {
       const response = await fetch(
@@ -337,7 +353,7 @@ export function ResourceManager({
     const endpoint =
       confirming.kind === "resource" ? "resources" : "resource-categories";
     try {
-      const response = await fetch(`/api/cms/${endpoint}/${confirming.id}`, {
+      const response = await fetch(`/api/cms/${endpoint}/${confirming.id}${confirming.kind==="resource"?"?revision="+encodeURIComponent(paged.find(item=>item.id===confirming.id)?.updatedAt??""):""}`, {
         method: "DELETE",
       });
       const result = await response.json();
@@ -382,7 +398,7 @@ export function ResourceManager({
           onClick={() => setTab("resources")}
           type="button"
         >
-          Tài nguyên <span>{resources.length}</span>
+          Tài nguyên <span>{result.pagination.total}</span>
         </button>
         <button
           className={tab === "categories" ? "active" : ""}
@@ -395,6 +411,7 @@ export function ResourceManager({
 
       {tab === "resources" ? (
         <section className="admin-card resource-panel">
+          {listLoading&&<p role="status">Đang tải tài nguyên…</p>}
           <div className="resource-toolbar">
             <input
               aria-label="Tìm kiếm theo tên"
@@ -477,7 +494,7 @@ export function ResourceManager({
                 {paged.map((item) => (
                   <tr key={item.id}>
                     <td>
-                      <strong>{item.title}</strong>
+                      <strong>{item.title}</strong><small>{item.status==="PUBLISHED"?" · Công khai":item.status==="ARCHIVED"?" · Lưu trữ":" · Nháp"}</small>
                     </td>
                     <td>{item.category.name}</td>
                     <td>
@@ -546,10 +563,10 @@ export function ResourceManager({
               <span>Hãy thay đổi bộ lọc hoặc thêm tài nguyên mới.</span>
             </div>
           )}
-          {filtered.length > pageSize && (
+          {result.pagination.total > pageSize && (
             <div className="resource-pagination">
               <button
-                disabled={page <= 1}
+                disabled={listLoading || page <= 1}
                 onClick={() => setPage((value) => value - 1)}
               >
                 ← Trước
@@ -558,7 +575,7 @@ export function ResourceManager({
                 Trang {currentPage} / {totalPages}
               </span>
               <button
-                disabled={page >= totalPages}
+                disabled={listLoading || page >= totalPages}
                 onClick={() => setPage((value) => value + 1)}
               >
                 Sau →
@@ -669,7 +686,10 @@ export function ResourceManager({
                 ×
               </button>
             </header>
+            {form.id && <ResourceHistory id={form.id} disabled={loading || uploading} onSelect={resource => { setForm(current => ({ ...current, ...resource, id:current.id, revision:current.revision, locale:current.locale, status:"DRAFT" })); setMessage("Đã nạp phiên bản cũ vào biểu mẫu. Kiểm tra và lưu nháp trước khi công khai."); }} />}
             <form onSubmit={submitResource}>
+              <label className="field">Trạng thái<select value={form.status} onChange={event=>setForm(current=>({...current,status:event.target.value}))}><option value="DRAFT">Chưa công khai</option><option value="PUBLISHED">Công khai</option><option value="ARCHIVED">Lưu trữ</option></select></label>
+              {form.status === "PUBLISHED" && <p>Lưu thay đổi sẽ cập nhật tài nguyên trên website. Phiên bản tệp cũ được giữ trong lịch sử.</p>}
               <label className="field">
                 Loại tài nguyên *
                 <select
@@ -935,12 +955,12 @@ export function ResourceManager({
             <b>!</b>
             <h2>
               {confirming.kind === "resource"
-                ? "Xóa tài nguyên?"
+                ? "Lưu trữ tài nguyên?"
                 : "Xóa danh mục?"}
             </h2>
             <p>
               {confirming.kind === "resource"
-                ? "Bạn có chắc muốn xóa tài nguyên này? Hành động này có thể không thể khôi phục."
+                ? "Tài nguyên sẽ ngừng hiển thị trên website. Tệp và các phiên bản được giữ lại; có thể mở chỉnh sửa để khôi phục."
                 : `Bạn có chắc muốn xóa danh mục “${confirming.name}”?`}
             </p>
             <div>
@@ -957,7 +977,7 @@ export function ResourceManager({
                 type="button"
                 onClick={confirmDelete}
               >
-                {loading ? "ĐANG XÓA…" : "Xóa"}
+                {loading ? "ĐANG XỬ LÝ…" : confirming.kind==="resource"?"Lưu trữ":"Xóa"}
               </button>
             </div>
           </div>

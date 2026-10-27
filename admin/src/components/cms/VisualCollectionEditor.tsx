@@ -10,12 +10,16 @@ export function VisualCollectionEditor({
   onChange,
   disabled,
   canUpload,
+  canBrowse = true,
+  publicOrigin = "",
 }: {
   path: string;
   items: Item[];
   onChange: (items: Item[]) => void;
   disabled: boolean;
   canUpload: boolean;
+  canBrowse?: boolean;
+  publicOrigin?: string;
 }) {
   if (path === "cmsCurriculum") return <CurriculumEditor items={items} onChange={onChange} disabled={disabled} />;
   const keys =
@@ -54,6 +58,7 @@ export function VisualCollectionEditor({
                     role: "Chức danh",
                     image: "Ảnh đại diện",
                     title: "Tiêu đề",
+                    hidden: "Hiển thị câu hỏi",
                     text: "Nội dung",
                   } as Record<string, string>
                 )[key] ?? cmsFieldLabel(key)}
@@ -84,6 +89,9 @@ export function VisualCollectionEditor({
                     )
                   }
                   canUpload={canUpload}
+                  canBrowse={canBrowse}
+                  publicOrigin={publicOrigin}
+                  disabled={disabled}
                 />
               )}
             </div>

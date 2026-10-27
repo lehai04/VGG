@@ -13,7 +13,7 @@ import styles from "@/features/news/components/NewsDetail.module.css";
 import { headers } from "next/headers";
 import { defaultLocale, isLocale } from "@/lib/i18n";
 
-type Props = { params: Promise<{ slug: string }> };
+type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ cmsNewsPreview?: string }> };
 function canonicalNewsUrl(post: { canonicalUrl?: string | null; slug: string }, locale: string) {
   const base = process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn";
   const fallback = new URL(`/${locale}/news/${post.slug}`, base).toString();
@@ -22,7 +22,9 @@ function canonicalNewsUrl(post: { canonicalUrl?: string | null; slug: string }, 
     return requested.origin === new URL(base).origin ? requested.toString() : fallback;
   } catch { return fallback; }
 }
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
+  const token=(await searchParams).cmsNewsPreview;
+  if(token)return {title:"Xem trước tin tức",robots:{index:false,follow:false}};
   const post = await getNewsPost((await params).slug);
   if (!post) return {};
   const requestHeaders = await headers();
@@ -52,9 +54,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function NewsDetailPage({ params }: Props) {
+export default async function NewsDetailPage({ params, searchParams }: Props) {
   const { slug } = await params;
-  const post = await getNewsPost(slug);
+  const post = await getNewsPost(slug, (await searchParams).cmsNewsPreview);
   if (!post) {
     const legacyHref = legacyNewsHref(slug);
     if (legacyHref) redirect(await localizedRedirectPath(legacyHref));

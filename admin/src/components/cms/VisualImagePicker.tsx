@@ -6,10 +6,16 @@ export function VisualImagePicker({
   value,
   onChange,
   canUpload,
+  disabled = false,
+  canBrowse = true,
+  publicOrigin = "",
 }: {
   value: string;
   onChange: (url: string) => void;
   canUpload: boolean;
+  disabled?: boolean;
+  canBrowse?: boolean;
+  publicOrigin?: string;
 }) {
   const [assets, setAssets] = useState<Asset[]>([]);
   const [opened, setOpened] = useState(false);
@@ -17,6 +23,7 @@ export function VisualImagePicker({
   const [busy, setBusy] = useState(false);
   const [search, setSearch] = useState("");
   async function library() {
+    if (disabled || !canBrowse) return;
     setOpened(true);
     setBusy(true);
     setError("");
@@ -34,7 +41,7 @@ export function VisualImagePicker({
     }
   }
   async function upload(file?: File) {
-    if (!file) return;
+    if (!file || disabled || !canUpload) return;
     if (file.size > 8 * 1024 * 1024) {
       setError("Ảnh tối đa 8 MB.");
       return;
@@ -60,8 +67,8 @@ export function VisualImagePicker({
   }
   return (
     <div>
-      {value && (/^\/(?!\/)/.test(value) || value.startsWith("https://")) && <Image unoptimized src={value} alt="Ảnh đang chọn" width={320} height={180} style={{ display: "block", width: "100%", maxWidth: 320, height: "auto", maxHeight: 180, objectFit: "cover", borderRadius: 10, marginBottom: 12 }} />}
-      <button type="button" onClick={library} disabled={busy}>
+      {value && (/^\/(?!\/)/.test(value) || value.startsWith("https://")) && <Image unoptimized src={value.startsWith("/images/") ? `${publicOrigin.replace(/\/$/, "")}${value}` : value} alt="Ảnh đang chọn" width={320} height={180} style={{ display: "block", width: "100%", maxWidth: 320, height: "auto", maxHeight: 180, objectFit: "cover", borderRadius: 10, marginBottom: 12 }} />}
+      <button type="button" onClick={library} disabled={busy || disabled || !canBrowse}>
         Chọn ảnh từ thư viện
       </button>
       {canUpload && (
@@ -70,7 +77,7 @@ export function VisualImagePicker({
           <input
             type="file"
             accept="image/jpeg,image/png,image/webp,image/avif"
-            disabled={busy}
+            disabled={busy || disabled}
             onChange={(event) => upload(event.target.files?.[0])}
           />
         </label>
@@ -104,6 +111,7 @@ export function VisualImagePicker({
                   key={asset.url}
                   type="button"
                   aria-pressed={asset.url === value}
+                  disabled={disabled}
                   onClick={() => {
                     onChange(asset.url);
                     setOpened(false);

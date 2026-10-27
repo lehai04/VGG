@@ -29,6 +29,8 @@ import { siteSeoInput } from "./cms.routes.js";
 import { programmeStateInput, programmeStateKey } from "./programme-lifecycle.js";
 import { applyContentPatch } from "./content-patch.js";
 import { cmsVersionSchema } from "./version-history.js";
+import { mergeContentOnly, mergeContentLists, hasPresentationChanges } from "./content-only.js";
+import { publicationSchedules } from "./publication-schedules.js";
 
 const query = z.object({
   id: z.string().max(150),
@@ -141,6 +143,7 @@ function validateValues(
     );
 }
 export async function websiteRoutes(app: FastifyInstance) {
+  await publicationSchedules(app, publishWebsite);
   app.get("/api/admin/website/seo", async (request, reply) => {
     if (!(await allow(request, reply, "website.view"))) return;
     const { id, locale } = query.parse(request.query);
@@ -519,14 +522,15 @@ export async function websiteRoutes(app: FastifyInstance) {
   );
   app.get("/api/admin/website/media", async (request, reply) => {
     if (!(await allow(request, reply, "media.view"))) return;
-    const [records, uploads, news] = await Promise.all([
+    const [records, uploads, news, resources] = await Promise.all([
       prisma.siteContent.findMany({
-        where: { section: { in: ["cms-draft", "cms-published"] } },
+        where: { section: { in: ["cms-draft", "cms-published", "cms-version", "cms-news-draft", "cms-news-version", "cms-resource-version"] } },
       }),
       prisma.siteContent.findMany({ where: { section: "cms-media" } }),
       prisma.newsPost.findMany({
-        select: { title: true, coverImage: true, content: true },
+        select: { title: true, coverImage: true, ogImage: true, content: true },
       }),
+      prisma.resourceFile.findMany({ select: { title: true, fileUrl: true } }),
     ]);
     const media = new Map<
       string,
@@ -557,6 +561,7 @@ export async function websiteRoutes(app: FastifyInstance) {
       }
     }
     for (const post of news) {
+      if (post.ogImage) add(post.ogImage, post.title, `Ảnh chia sẻ: ${post.title}`);
       if (post.coverImage)
         add(post.coverImage, post.title, `Tin tức: ${post.title}`);
       for (const match of post.content.matchAll(
@@ -564,6 +569,17 @@ export async function websiteRoutes(app: FastifyInstance) {
       ))
         add(match[1], post.title, `Tin tức: ${post.title}`);
     }
+    // Values include nested version snapshots, serialized collections and rich HTML.
+    const scan = (value: unknown, title: string, usage: string): void => {
+      if (Array.isArray(value)) { for (const item of value) scan(item, title, usage); return; }
+      if (value && typeof value === "object") { for (const item of Object.values(value)) scan(item, title, usage); return; }
+      if (typeof value !== "string") return;
+      if (/^(?:\/images\/|\/api\/media\/|https?:\/\/)/i.test(value) && !/[\s<>]/.test(value)) add(value, title, usage);
+      for (const match of value.matchAll(/(?:src|href)=["']([^"']+)["']/gi)) add(match[1], title, usage);
+      if (/^[\[{]/.test(value.trim())) { try { scan(JSON.parse(value), title, usage); } catch { /* Plain text is not JSON. */ } }
+    };
+    for (const row of records) scan(row.value, row.title ?? row.key, `${row.title} · ${row.locale} · ${row.section.includes("version") ? "phiên bản lưu trữ" : row.published ? "xuất bản" : "nháp"}`);
+    for (const resource of resources) add(resource.fileUrl, resource.title, `Tài nguyên: ${resource.title}`);
     for (const row of uploads) {
       const value = row.value as {
         url: string;
@@ -768,11 +784,14 @@ export async function websiteRoutes(app: FastifyInstance) {
       ),
     );
     reply.header("Cache-Control", "private, no-store");
+    const workflow = await prisma.siteContent.findUnique({ where: { key: keyFor(id, locale, "workflow") } });
     return ok(reply, {
       page: {
         id,
         title: page.title,
         path: page.path,
+        kind: page.kind,
+        locales: page.locales,
         fields: editableFields(
           page,
           (draft?.value ?? published?.value ?? {}) as Record<string, string>,
@@ -785,7 +804,66 @@ export async function websiteRoutes(app: FastifyInstance) {
       values: draft?.value ?? published?.value ?? {},
       revision: draft?.updatedAt.toISOString() ?? null,
       publishedAt: published?.updatedAt ?? null,
+      presentationConflict: hasPresentationChanges((draft?.value ?? published?.value ?? {}) as Record<string,string>, (published?.value ?? {}) as Record<string,string>),
+      workflow: workflow?.value ?? null,
     });
+  });
+  app.post("/api/admin/website/workflow", async (request, reply) => {
+    const body = query.extend({ revision: z.string(), action: z.enum(["submit", "approve", "request-changes"]), comment: z.string().trim().max(2000).default("") }).strict().parse(request.body);
+    const user = await allow(request, reply, body.action === "submit" ? "website.update" : "website.publish");
+    if (!user) return;
+    if (body.action === "request-changes" && !body.comment) return fail(reply, 400, "Nhập yêu cầu chỉnh sửa để người biên tập biết cần sửa gì.", "COMMENT_REQUIRED");
+    const page = await pageFor(body.id, body.locale);
+    if (!page) return fail(reply, 404, "Không tìm thấy trang.", "NOT_FOUND");
+    try {
+      const workflow = await prisma.$transaction(async tx => {
+        const draft = await tx.siteContent.findUnique({ where: { key: keyFor(body.id, body.locale, "draft") } });
+        if (!draft || draft.updatedAt.toISOString() !== body.revision) throw Error("CMS_CONFLICT");
+        const key = keyFor(body.id, body.locale, "workflow");
+        const current = await tx.siteContent.findUnique({ where: { key } });
+        const state = current?.value as { revision?: string; status?: string } | undefined;
+        if (body.action !== "submit" && (state?.revision !== body.revision || state.status !== "IN_REVIEW")) throw Error("WORKFLOW_STATE");
+        if (body.action === "submit" && state?.revision === body.revision && ["IN_REVIEW", "APPROVED"].includes(state.status ?? "")) throw Error("WORKFLOW_STATE");
+        const value = { revision: body.revision, status: body.action === "submit" ? "IN_REVIEW" : body.action === "approve" ? "APPROVED" : "CHANGES_REQUESTED", comment: body.comment, actorId: user.id, updatedAt: new Date().toISOString() };
+        const data = { locale: body.locale, page: page.path, title: page.title, section: "cms-workflow", published: false, authorId: user.id, value };
+        await tx.siteContent.upsert({ where: { key }, create: { key, ...data }, update: data });
+        await tx.auditLog.create({ data: { action: "ACCOUNT_UPDATED", actorAdminId: user.id, targetType: "website", targetId: body.id, metadata: { operation: `CMS_WORKFLOW_${body.action}`, locale: body.locale, revision: body.revision, comment: body.comment } } });
+        return value;
+      }, { isolationLevel: "Serializable" });
+      return ok(reply, { workflow }, "Đã cập nhật trạng thái biên tập.");
+    } catch (error) {
+      if (error instanceof Error && error.message === "WORKFLOW_STATE") return fail(reply, 409, "Trạng thái duyệt đã thay đổi. Tải lại trước khi tiếp tục.", "WORKFLOW_STATE");
+      if ((error instanceof Error && error.message === "CMS_CONFLICT") || (error instanceof Prisma.PrismaClientKnownRequestError && ["P2034", "P2002"].includes(error.code))) return fail(reply, 409, "Bản nháp đã thay đổi. Tải lại trước khi duyệt.", "CMS_CONFLICT");
+      throw error;
+    }
+  });
+  app.put("/api/admin/website/content", async (request, reply) => {
+    const user = await allow(request, reply, "website.update");
+    if (!user) return;
+    const body = query.extend({ revision: z.string().nullable(), changes: z.record(z.string(), z.string().max(20000)), collections: z.record(z.string(), z.unknown()).default({}) }).strict().parse(request.body);
+    const page = await pageFor(body.id, body.locale);
+    if (!page) return fail(reply, 404, "Không tìm thấy trang.", "NOT_FOUND");
+    try {
+      const row = await prisma.$transaction(async tx => {
+        const key = keyFor(body.id, body.locale, "draft");
+        const current = await tx.siteContent.findUnique({ where: { key } });
+        if ((current?.updatedAt.toISOString() ?? null) !== body.revision) throw Error("CMS_CONFLICT");
+        const published = await tx.siteContent.findUnique({ where: { key: keyFor(body.id, body.locale, "published") } });
+        const baseline = mergeContentLists(body.id, (current?.value ?? published?.value ?? {}) as Record<string,string>, body.collections);
+        if (Object.keys(body.changes).some(path => Object.keys(body.collections).some(list => path.startsWith(`${list}.`)))) throw Error("CONTENT_FIELD_INVALID");
+        const values = mergeContentOnly(body.id, page.defaults, baseline, body.changes);
+        const data = { locale: body.locale, page: page.path, section: "cms-draft", title: page.title, value: values as Prisma.InputJsonValue, published: false, authorId: user.id };
+        const saved = await tx.siteContent.upsert({ where: { key }, create: { key, ...data }, update: data });
+        await tx.auditLog.create({ data: { action: "ACCOUNT_UPDATED", actorAdminId: user.id, targetType: "website", targetId: body.id, metadata: { operation: "CMS_CONTENT_SAVE", locale: body.locale, fields: Object.keys(body.changes), collections: Object.keys(body.collections) } } });
+        return saved;
+      }, { isolationLevel: "Serializable" });
+      return ok(reply, { revision: row.updatedAt.toISOString() }, "Đã lưu nội dung vào bản nháp, giữ nguyên cấu trúc.");
+    } catch (error) {
+      if (error instanceof Error && error.message === "CONTENT_FIELD_INVALID") return fail(reply, 400, "Trường nội dung không hợp lệ. Không được thay cấu trúc hoặc bố cục.", "CONTENT_FIELD_INVALID");
+      if ((error instanceof Error && error.message === "CMS_CONFLICT") || (error instanceof Prisma.PrismaClientKnownRequestError && ["P2034", "P2002"].includes(error.code)))
+        return fail(reply, 409, "Bản nháp đã thay đổi ở phiên khác. Nội dung đang nhập được giữ lại; hãy sao chép trước khi tải lại.", "CMS_CONFLICT");
+      throw error;
+    }
   });
   app.put("/api/admin/website/page", async (request, reply) => {
     const user = await allow(request, reply, "website.update");
@@ -886,57 +964,15 @@ export async function websiteRoutes(app: FastifyInstance) {
   app.post("/api/admin/website/publish", async (request, reply) => {
     const user = await allow(request, reply, "website.publish");
     if (!user) return;
-    const body = query.extend({ revision: z.string() }).parse(request.body);
+    const body = query.extend({ revision: z.string(), preservePresentation: z.boolean().optional() }).parse(request.body);
     const page = await pageFor(body.id, body.locale);
     if (!page) return fail(reply, 404, "Không tìm thấy trang.", "NOT_FOUND");
     try {
       await prisma.$transaction(
         async (tx) => {
-          const draft = await tx.siteContent.findUnique({
-            where: { key: keyFor(body.id, body.locale, "draft") },
-          });
-          if (!draft || draft.updatedAt.toISOString() !== body.revision)
-            throw new Error("CMS_CONFLICT");
-          if (!validateValues(page, draft.value as Record<string,string>)) throw Error("PROGRAMME_INVALID:Nội dung bản nháp không còn hợp lệ với schema hiện tại.");
-          if (body.id.startsWith("programme:")) {
-            const state = await tx.siteContent.findUnique({ where: { key: programmeStateKey(body.id) } });
-            if (["hidden", "archived"].includes((state?.value as { status?: string } | undefined)?.status ?? ""))
-              throw Error("PROGRAMME_INVALID:Khôi phục chuyên ngành trong danh sách trước khi xuất bản.");
-            const content = applyContentPatch(applyCollections(page.defaults, draft.value as Record<string, string>, page.id), draft.value as Record<string, string>);
-            const hero = (content.pageContent as { hero?: { heroLead?: string; heroImage?: string } } | undefined)?.hero;
-            if (!String(content.title ?? "").trim() || !String(content.summary ?? "").trim() || !String(hero?.heroLead ?? "").trim() || !safeContentImage(hero?.heroImage || String(content.bannerImage ?? "")))
-              throw Error("PROGRAMME_INVALID:Cần có tên ngành, giới thiệu ngắn, mô tả banner và ảnh banner hợp lệ trước khi xuất bản.");
-          }
-          const key = keyFor(body.id, body.locale, "published");
-          const previous = await tx.siteContent.findUnique({ where: { key } });
-          const versionCount = await tx.siteContent.count({ where: { section: "cms-version", page: page.path, locale: body.locale, value: { path: ["id"], equals: body.id } } });
-          if (previous && !versionCount) {
-            await tx.siteContent.create({ data: { key: `cms.version.${randomBytes(16).toString("hex")}`, locale: body.locale, page: page.path, section: "cms-version", title: `Bản công khai trước nâng cấp · ${page.title}`, published: false, authorId: previous.authorId, value: { schemaVersion: 1, id: body.id, locale: body.locale, values: previous.value, sourceRevision: previous.updatedAt.toISOString(), event: "baseline" } as Prisma.InputJsonValue } });
-          }
-          await tx.siteContent.create({ data: { key: `cms.version.${randomBytes(16).toString("hex")}`, locale: body.locale, page: page.path, section: "cms-version", title: page.title, published: false, authorId: user.id, value: { schemaVersion: 1, id: body.id, locale: body.locale, values: draft.value, sourceRevision: draft.updatedAt.toISOString(), event: "publish" } as Prisma.InputJsonValue } });
-          const data = {
-            locale: body.locale,
-            page: page.path,
-            section: "cms-published",
-            title: page.title,
-            value: draft.value as Prisma.InputJsonValue,
-            published: true,
-            authorId: user.id,
-          };
-          await tx.siteContent.upsert({
-            where: { key },
-            create: { key, ...data },
-            update: data,
-          });
-          await tx.auditLog.create({ data: { action: "ACCOUNT_UPDATED", actorAdminId: user.id, targetType: "website", targetId: body.id, metadata: { operation: "CMS_PUBLISH", locale: body.locale, sourceRevision: draft.updatedAt.toISOString() } } });
-          if (body.id.startsWith("programme:"))
-            await tx.siteContent.updateMany({
-              where: {
-                key: `cms.programme.${body.id.slice(10)}`,
-                section: "cms-programme",
-              },
-              data: { published: true },
-            });
+          await publishWebsite(tx, body, user.id, page);
+          const scheduled = await tx.siteContent.findUnique({ where: { key: keyFor(body.id, body.locale, "schedule") } });
+          if (scheduled && (scheduled.value as { status?: string }).status === "PENDING") await tx.siteContent.update({ where: { key: scheduled.key }, data: { value: { ...(scheduled.value as Prisma.JsonObject), status: "CANCELLED", error: "Đã xuất bản thủ công." } } });
         },
         { isolationLevel: "Serializable" },
       );
@@ -976,4 +1012,59 @@ export async function websiteRoutes(app: FastifyInstance) {
       );
     return ok(reply, {}, "Đã bỏ bản nháp, giữ nguyên bản đã xuất bản.");
   });
+}
+
+export async function publishWebsite(tx: Prisma.TransactionClient, body: { id: string; locale: string; revision: string; preservePresentation?: boolean }, authorId: string, page: CmsPageDefinition) {
+          const draft = await tx.siteContent.findUnique({
+            where: { key: keyFor(body.id, body.locale, "draft") },
+          });
+          if (!draft || draft.updatedAt.toISOString() !== body.revision)
+            throw new Error("CMS_CONFLICT");
+          if (body.preservePresentation) {
+            const decision = await tx.siteContent.findUnique({ where: { key: keyFor(body.id, body.locale, "workflow") } });
+            const review = decision?.value as { revision?: string; status?: string } | undefined;
+            if (review?.revision !== body.revision || review.status !== "APPROVED") throw Error("PROGRAMME_INVALID:Phiên bản này chưa được duyệt. Gửi duyệt và duyệt đúng phiên bản trước khi xuất bản.");
+          }
+          if (!validateValues(page, draft.value as Record<string,string>)) throw Error("PROGRAMME_INVALID:Nội dung bản nháp không còn hợp lệ với schema hiện tại.");
+          if (body.id.startsWith("programme:")) {
+            const state = await tx.siteContent.findUnique({ where: { key: programmeStateKey(body.id) } });
+            if (["hidden", "archived"].includes((state?.value as { status?: string } | undefined)?.status ?? ""))
+              throw Error("PROGRAMME_INVALID:Khôi phục chuyên ngành trong danh sách trước khi xuất bản.");
+            const content = applyContentPatch(applyCollections(page.defaults, draft.value as Record<string, string>, page.id), draft.value as Record<string, string>);
+            const hero = (content.pageContent as { hero?: { heroLead?: string; heroImage?: string } } | undefined)?.hero;
+            if (!String(content.title ?? "").trim() || !String(content.summary ?? "").trim() || !String(hero?.heroLead ?? "").trim() || !safeContentImage(hero?.heroImage || String(content.bannerImage ?? "")))
+              throw Error("PROGRAMME_INVALID:Cần có tên ngành, giới thiệu ngắn, mô tả banner và ảnh banner hợp lệ trước khi xuất bản.");
+          }
+          const key = keyFor(body.id, body.locale, "published");
+          const previous = await tx.siteContent.findUnique({ where: { key } });
+          if (body.preservePresentation && hasPresentationChanges(draft.value as Record<string,string>, (previous?.value ?? {}) as Record<string,string>))
+            throw Error("PROGRAMME_INVALID:Bản nháp cũ có thay đổi bố cục hoặc banner. Cần xử lý riêng trước khi xuất bản từ CMS mới.");
+          const versionCount = await tx.siteContent.count({ where: { section: "cms-version", page: page.path, locale: body.locale, value: { path: ["id"], equals: body.id } } });
+          if (previous && !versionCount) {
+            await tx.siteContent.create({ data: { key: `cms.version.${randomBytes(16).toString("hex")}`, locale: body.locale, page: page.path, section: "cms-version", title: `Bản công khai trước nâng cấp · ${page.title}`, published: false, authorId: previous.authorId, value: { schemaVersion: 1, id: body.id, locale: body.locale, values: previous.value, sourceRevision: previous.updatedAt.toISOString(), event: "baseline" } as Prisma.InputJsonValue } });
+          }
+          await tx.siteContent.create({ data: { key: `cms.version.${randomBytes(16).toString("hex")}`, locale: body.locale, page: page.path, section: "cms-version", title: page.title, published: false, authorId: authorId, value: { schemaVersion: 1, id: body.id, locale: body.locale, values: draft.value, sourceRevision: draft.updatedAt.toISOString(), event: "publish" } as Prisma.InputJsonValue } });
+          const data = {
+            locale: body.locale,
+            page: page.path,
+            section: "cms-published",
+            title: page.title,
+            value: draft.value as Prisma.InputJsonValue,
+            published: true,
+            authorId: authorId,
+          };
+          await tx.siteContent.upsert({
+            where: { key },
+            create: { key, ...data },
+            update: data,
+          });
+          await tx.auditLog.create({ data: { action: "ACCOUNT_UPDATED", actorAdminId: authorId, targetType: "website", targetId: body.id, metadata: { operation: "CMS_PUBLISH", locale: body.locale, sourceRevision: draft.updatedAt.toISOString() } } });
+          if (body.id.startsWith("programme:"))
+            await tx.siteContent.updateMany({
+              where: {
+                key: `cms.programme.${body.id.slice(10)}`,
+                section: "cms-programme",
+              },
+              data: { published: true },
+            });
 }

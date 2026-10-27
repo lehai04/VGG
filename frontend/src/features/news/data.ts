@@ -84,16 +84,18 @@ export async function getPaginatedNewsPosts(options: {
     pagination: { page: options.page, limit: options.limit, total, totalPages: Math.ceil(total / options.limit) },
   };
 }
-export async function getNewsPost(slug: string) {
+export async function getNewsPost(slug: string, previewToken?: string) {
   const backend = process.env.BACKEND_INTERNAL_URL;
   if (!backend) return null;
   try {
-    const response = await fetch(`${backend}/api/public/news/${encodeURIComponent(slug)}`, {
+    if (previewToken && !/^[a-f0-9]{64}$/.test(previewToken)) return null;
+    const response = await fetch(previewToken ? `${backend}/api/public/news-preview` : `${backend}/api/public/news/${encodeURIComponent(slug)}`, {
       cache: "no-store",
+      ...(previewToken ? { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ token: previewToken }) } : {}),
     });
     if (!response.ok) return null;
     const payload = (await response.json()) as { data: { post: NewsPost } };
-    return payload.data.post;
+    return payload.data.post.slug === slug ? payload.data.post : null;
   } catch {
     return null;
   }

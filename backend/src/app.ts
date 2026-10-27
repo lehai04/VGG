@@ -1,3 +1,5 @@
+import { workQueueRoutes } from "./modules/cms/work-queue.routes.js";
+import { newsSchedules } from "./modules/cms/news-schedules.js";
 import Fastify, { type FastifyError } from "fastify";
 import cookie from "@fastify/cookie";
 import cors from "@fastify/cors";
@@ -7,8 +9,10 @@ import { env } from "./config/environment.js";
 import { prisma } from "./shared/database/prisma.js";
 import { authRoutes } from "./modules/auth/auth.routes.js";
 import { consultationRoutes } from "./modules/consultations/consultations.routes.js";
+import { consultationWorkspaceRoutes } from "./modules/consultations/workspace.routes.js";
 import { cmsRoutes } from "./modules/cms/cms.routes.js";
 import { websiteRoutes } from "./modules/cms/website.routes.js";
+import { newsWorkspaceRoutes } from "./modules/cms/news-workspace.routes.js";
 import { ZodError } from 'zod';
 
 /** Lắp ráp backend: cấu hình HTTP → plugin → endpoint sức khỏe → module nghiệp vụ.
@@ -40,8 +44,12 @@ export async function buildApp() {
   app.setErrorHandler((error: FastifyError, request, reply) => { if (error instanceof ZodError) return reply.code(400).send({ success: false, message: 'Dữ liệu gửi lên không hợp lệ.', code: 'VALIDATION_ERROR' }); request.log.error(error); const status = error.statusCode && error.statusCode >= 400 ? error.statusCode : 500; reply.code(status).send({ success: false, message: status < 500 ? error.message : "Hệ thống đang bận.", code: "INTERNAL_ERROR" }); });
   await app.register(authRoutes);
   await app.register(consultationRoutes);
+  await app.register(consultationWorkspaceRoutes);
   await app.register(cmsRoutes);
   await app.register(websiteRoutes);
+  await app.register(newsWorkspaceRoutes);
+  await app.register(newsSchedules);
+  await app.register(workQueueRoutes);
   // Khi app đóng có kiểm soát, giải phóng client database dùng chung.
   app.addHook("onClose", () => prisma.$disconnect());
   return app;
