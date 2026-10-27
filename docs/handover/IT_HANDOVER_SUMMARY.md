@@ -9,8 +9,9 @@
 * **Phiên Bản (Release Version):** `v1.0.2` (Production Release).
 * **Nhánh Triển Khai (Branch):** `main` (hoặc release tag `v1.0.2`).
 * **Kiến Trúc Ngăn Xếp (Stack):**
-  - **Frontend:** Next.js 16.3.1 (Cổng thông tin công khai — Port `3000`).
-  - **Admin:** Next.js 16.3.1 (Cổng CMS & Quản lý Nhân sự — Port `3001`).
+  - **Frontend:** Next.js 16.4.3 (Cổng thông tin công khai — Port `3000`).
+  - **Admin:** Next.js 16.4.3 (Cổng CMS & Quản lý Nhân sự — Port `3001`).
+  - **Runtime cập nhật 27/10/2026:** Node.js 26.12.1 cho nội bộ; Vercel dùng nhánh 24.x từ 24.22.1. Xem [kết quả và giới hạn kiểm chứng](16_RUNTIME_UPGRADE_2026-10-27.md); thay đổi local chưa được triển khai production.
   - **Backend API:** Fastify 5.2.1 (REST API lõi — Port `4000`).
   - **Database:** PostgreSQL 17 (Prisma ORM — Port nội bộ `127.0.0.1:5433`).
   - **Media Storage:** MinIO on-premise, bucket private (ảnh bài viết và tài liệu).

@@ -2,7 +2,7 @@
 
 ## 1. Môi Trường Thực Thi (Runtime & Environment)
 
-* **Node.js:** `v22.13.0` trở lên (Khuyến nghị bản Node.js 22 LTS mới nhất).
+* **Node.js:** `26.12.1` cho môi trường nội bộ theo `.nvmrc`; nhánh `24.x` từ `24.22.1` cho Vercel. Xem [ghi chú nâng cấp 27/10/2026](16_RUNTIME_UPGRADE_2026-10-27.md) để biết kết quả kiểm thử và giới hạn.
 * **Package Manager:** `npm >= 10.0.0` (Hỗ trợ NPM Workspaces).
 * **Database Engine:** PostgreSQL 17.
 * **In-memory Cache (Tùy chọn):** Redis 7.

@@ -41,7 +41,8 @@ Toàn bộ tài liệu chi tiết cho IT / DevOps được lưu trữ tại thư
 
 ## 1. Yêu cầu Môi trường (System Requirements)
 
-- **Node.js**: `>= 22.13.0` (LTS khuyến nghị)
+- **Node.js**: `26.12.1` cho phát triển/server nội bộ (`.nvmrc`); Vercel dùng nhánh `24.x`, tối thiểu `24.22.1`. `engines.node` chấp nhận hai nhánh đã vá này vì Vercel chưa hỗ trợ Node.js 26.
+- **Next.js**: `16.4.3` cho frontend và admin; xem [ghi chú nâng cấp](docs/handover/16_RUNTIME_UPGRADE_2026-10-27.md).
 - **npm**: `>= 10.0.0`
 - **Docker & Docker Compose**: Quản lý PostgreSQL 17
 - **Database**: PostgreSQL 17

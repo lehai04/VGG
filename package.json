@@ -23,7 +23,7 @@
   },
   "type": "module",
   "engines": {
-    "node": ">=22.13.0"
+    "node": "^24.22.1 || ^26.12.1"
   },
   "allowScripts": {
     "argon2@0.45.1": true,

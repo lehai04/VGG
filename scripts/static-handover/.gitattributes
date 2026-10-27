@@ -1,0 +1,2 @@
+# Keep release bytes identical across Linux and Windows for SHA-256 verification.
+* -text
