@@ -16,7 +16,7 @@ import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import defaultContent from "@/data/discover-introduction.json";
 import { websiteContent,websiteLayout,websiteBanner } from '@/lib/website-content';
-import {CmsPageSections} from '@/shared/components/CmsPageSections';
+import {ContentPageSections} from '@/shared/components/ContentPageSections';
 import { discoverMedia, discoverActions } from '@/data/discover-media';
 import { leadershipProfiles, departmentHeads } from "@/data/discover-leadership";
 import styles from "./DiscoverIntroduction.module.css";
@@ -65,12 +65,12 @@ function Actions({ actions }: { actions: typeof discoverActions }) {
 export async function DiscoverIntroduction() {
   const layout=await websiteLayout('discover');
   const banner=await websiteBanner('discover');
-  const { leaders: cmsLeaders, media, actions, ...content } = await websiteContent('discover', { ...defaultContent, leaders, media: discoverMedia, actions: discoverActions });
+  const { leaders: contentLeaders, media, actions, ...content } = await websiteContent('discover', { ...defaultContent, leaders, media: discoverMedia, actions: discoverActions });
   return (
     <main className={`subpage ${styles.page}`} id="main-content">
       <SiteHeader compact />
-      <CmsPageSections layout={layout} pageId="discover">
-      <section data-site-banner data-cms-slot="hero" className={styles.hero} aria-labelledby="discover-title">
+      <ContentPageSections layout={layout} pageId="discover">
+      <section data-site-banner data-content-slot="hero" className={styles.hero} aria-labelledby="discover-title">
         {banner?.kind==='video'?<video className={styles.cover} style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}} src={banner.src} poster={banner.poster} autoPlay muted loop playsInline/>:<Image
           src={banner?.src??media.hero.image}
           alt={banner?.alt??media.hero.alt}
@@ -229,7 +229,7 @@ export async function DiscoverIntroduction() {
             <Paragraphs items={content.leadership.paragraphs} />
           </div>
           <div id="phu-trach-cac-bo-phan" className={styles.leadersGrid}>
-            {cmsLeaders.map((person) => (
+            {contentLeaders.map((person) => (
               <article className={styles.leaderCard} key={person.name}>
                 <div className={styles.portrait}>
                   {person.image && (
@@ -250,7 +250,7 @@ export async function DiscoverIntroduction() {
           </div>
         </div>
       </section>
-      <section data-cms-slot="closing" className={`${styles.section} ${styles.closing}`} aria-labelledby="closing-title">
+      <section data-content-slot="closing" className={`${styles.section} ${styles.closing}`} aria-labelledby="closing-title">
         <Image
           src={media.closing.image}
           alt={media.closing.alt}
@@ -267,7 +267,7 @@ export async function DiscoverIntroduction() {
           <Actions actions={actions} />
         </div>
       </section>
-      </CmsPageSections>
+      </ContentPageSections>
       <SiteFooter />
     </main>
   );

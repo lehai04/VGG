@@ -58,7 +58,7 @@
   display: flex;
   align-items: baseline;
   gap: 14px;
-  font-size: 13px;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.07em;
   line-height: 1.5;
@@ -318,10 +318,10 @@
 }
 :root body .departmentName {
   margin: 0 0 8px;
-  font-size: clamp(12px, 1.2vw, 17px) !important;
+  font-size: var(--type-control) !important;
   line-height: 1.35 !important;
   text-align: center !important;
-  white-space: nowrap;
+  white-space: normal;
 }
 .leaderCopy p {
   color: #c8102e;
@@ -417,7 +417,7 @@
   }
   .label {
     letter-spacing: 0.02em;
-    font-size: 12px;
+    font-size: var(--type-small);
     gap: 10px;
   }
   .benefitItem {

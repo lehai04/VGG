@@ -1,6 +1,6 @@
 /**
  * Kiểm tra dữ liệu form tư vấn, không phụ thuộc giao diện hay framework.
- * API public, admin và worker có thể dùng chung rule validation này.
+ * API public và frontend có thể dùng chung rule validation này.
  */
 
 export type Consultation = {

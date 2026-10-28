@@ -77,9 +77,9 @@ export function getCurriculumCourses(groups: readonly CurriculumGroup[]): Curric
 }
 
 export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
-  if (programme.cmsCurriculum) {
+  if (programme.contentCurriculum) {
     return (["Ứng dụng", "Nghiên cứu"] as const).flatMap((orientation, index) => {
-      const rows = programme.cmsCurriculum!.filter((row) => row.track === orientation);
+      const rows = programme.contentCurriculum!.filter((row) => row.track === orientation);
       if (!rows.length) return [];
       const groups: CurriculumGroup[] = [];
       for (const row of rows) {

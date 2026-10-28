@@ -1,6 +1,6 @@
 import { AdmissionsReference } from "@/features/admissions/AdmissionsReference";
 import { websiteContent,websiteLayout,websiteProgrammes } from '@/lib/website-content';
-import { admissionsDefaults, admissionsHtml } from '@/features/admissions/cms-template';
+import { admissionsDefaults, admissionsHtml } from '@/features/admissions/content-template';
 import {programmes} from '@/data/programmes';
 import {withPageSeo} from '@/lib/page-seo';
 const defaultMetadata = {

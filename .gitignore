@@ -8,7 +8,6 @@ coverage/
 *.log
 .DS_Store
 tsconfig.tsbuildinfo
-admin/generated/
 backend/generated/
 backend/src/generated/
 backend/dist/
@@ -22,6 +21,6 @@ database_backup*.sql
 # Local scratch/cache output; existing tracked evidence is retained separately.
 __pycache__/
 *.py[cod]
-/admin/tmp/
 /work/github-check/
 /outputs/node26-runtime/
+/.worktrees/

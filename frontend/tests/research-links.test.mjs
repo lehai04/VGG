@@ -10,7 +10,7 @@ new Function(
   ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText,
 )(exports);
 
-test("research links preserve the source URL and keep CMS articles attached to their own slug", () => {
+test("research links preserve the source URL and keep content articles attached to their own slug", () => {
   assert.equal(
     exports.researchPostHref("https://www.vlu.edu.vn/projects/du-an-1"),
     "https://www.vlu.edu.vn/projects/du-an-1",

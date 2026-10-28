@@ -13,7 +13,7 @@ import styles from "@/features/news/components/NewsDetail.module.css";
 import { headers } from "next/headers";
 import { defaultLocale, isLocale } from "@/lib/i18n";
 
-type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ cmsNewsPreview?: string }> };
+type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ contentNewsPreview?: string }> };
 function canonicalNewsUrl(post: { canonicalUrl?: string | null; slug: string }, locale: string) {
   const base = process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn";
   const fallback = new URL(`/${locale}/news/${post.slug}`, base).toString();
@@ -23,7 +23,7 @@ function canonicalNewsUrl(post: { canonicalUrl?: string | null; slug: string }, 
   } catch { return fallback; }
 }
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
-  const token=(await searchParams).cmsNewsPreview;
+  const token=(await searchParams).contentNewsPreview;
   if(token)return {title:"Xem trước tin tức",robots:{index:false,follow:false}};
   const post = await getNewsPost((await params).slug);
   if (!post) return {};
@@ -56,7 +56,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
 export default async function NewsDetailPage({ params, searchParams }: Props) {
   const { slug } = await params;
-  const post = await getNewsPost(slug, (await searchParams).cmsNewsPreview);
+  const post = await getNewsPost(slug, (await searchParams).contentNewsPreview);
   if (!post) {
     const legacyHref = legacyNewsHref(slug);
     if (legacyHref) redirect(await localizedRedirectPath(legacyHref));

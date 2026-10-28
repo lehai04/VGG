@@ -167,7 +167,7 @@ export function metadataForPageSeo(seo: PageSeo, locale: Locale): Metadata {
       : {}),
   };
 }
-/** Page metadata is resolved after layout metadata; apply page-specific CMS values here too. */
+/** Page metadata is resolved after layout metadata; apply page-specific content values here too. */
 export async function withPageSeo(defaults: Metadata): Promise<Metadata> {
   const { locale, seo } = await requestPageSeo();
   if (!Object.keys(seo).length) return defaults;

@@ -7,8 +7,8 @@ import { initializeAdmissions } from "./reference-engine";
 import { initializeAdmissionsMotion } from "./admissions-motion";
 import "./reference.css";
 import "./admissions-redesign.css";
-import { applyAdmissionsLayout } from "./cms-layout";
-import type { CmsComposition } from "../../../../backend/src/modules/cms/visual-model";
+import { applyAdmissionsLayout } from "./content-layout";
+import type { ContentComposition } from "../../../../backend/src/modules/content/visual-model";
 /** Reviewed static reference markup also renders on the server. */
 export function AdmissionsReference({
   html = content.html,
@@ -18,7 +18,7 @@ export function AdmissionsReference({
 }: {
   html?: string;
   editorial?: typeof editorialContent;
-  layout?: CmsComposition;
+  layout?: ContentComposition;
   programmeOptions?: Array<{ id: string; title: string; degree: string; sourceTitle?: string }>;
 }) {
   const bannerHtml = html

@@ -17,9 +17,8 @@ import { StickyActions } from "@/shared/components/layout/SiteFooter";
 import { LocaleProvider } from "@/i18n/components/LocaleProvider";
 import { defaultLocale, isLocale } from "@/lib/i18n";
 import { VisitTracker } from "@/shared/analytics/components/VisitTracker";
-import { CmsVisualBridge } from "@/shared/components/CmsVisualBridge";
 import { metadataForPageSeo, requestPageSeo } from "@/lib/page-seo";
-import { websiteContent, websitePreviewStatus, websiteProgrammes } from '@/lib/website-content';
+import { websiteContent, websiteProgrammes } from '@/lib/website-content';
 import viMessages from '@/messages/vi.json';
 import enMessages from '@/messages/en.json';
 import { chromeContent } from '@/data/chrome-content';
@@ -112,14 +111,11 @@ export default async function RootLayout({
   const resolvedProgrammes=await websiteProgrammes();
   const labels = new Map(programmes.map(programme=>[programme.title,resolvedProgrammes.find(item=>item.id===programme.id)?.title??programme.title]));
   const programmeOptions = [...defaultProgrammeOptions.filter(title => !programmes.some(source => source.title === title && !resolvedProgrammes.some(item => item.id === source.id))).map(title => labels.get(title) ?? title),...resolvedProgrammes.filter(item=>!programmes.some(source=>source.id===item.id)).map(item=>item.title)];
-  const preview = await websitePreviewStatus();
   return (
     // Trình duyệt/extension có thể chèn thuộc tính vào html hoặc body trước hydration.
     <html lang={locale} suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
-        {preview && !preview.editor && <aside role="status" style={{ padding: '12px 20px', background: '#fff0d1', color: '#553300', position: 'relative', zIndex: 9999 }}>{preview.valid ? 'BẢN XEM TRƯỚC · Nội dung này chưa được xuất bản.' : 'Bản xem trước đã hết hạn hoặc không đúng trang. Đang hiển thị nội dung công khai.'}</aside>}
-        {!preview && <VisitTracker />}
-        {preview?.editor && <CmsVisualBridge context={preview.editor} />}
+        <VisitTracker />
         <a className="skip-link" href="#main-content">
           Bỏ qua điều hướng
         </a>

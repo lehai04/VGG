@@ -42,14 +42,14 @@ export async function getNewsPosts(
   return posts;
 }
 
-/** Published CMS posts come first; demo cards remain available after them. */
+/** Published content posts come first; demo cards remain available after them. */
 export async function getPaginatedNewsPosts(options: {
   category?: string;
   limit: number;
   page: number;
   q?: string;
 }) {
-  const demos = process.env.VGG_DEMO_NEWS !== "false" ? getDemoNewsPosts(options) : [];
+  const demos = process.env.VGG_DEMO_NEWS === "true" ? getDemoNewsPosts(options) : [];
   const backend = process.env.BACKEND_INTERNAL_URL;
   let posts: NewsPost[] = [];
   let backendTotal = 0;
@@ -72,7 +72,7 @@ export async function getPaginatedNewsPosts(options: {
       posts = payload.data.posts;
       backendTotal = payload.data.pagination.total;
     } catch {
-      // Keep the existing demo cards available when the CMS cannot be reached.
+      // Keep the existing demo cards available when the content cannot be reached.
     }
   }
   const start = (options.page - 1) * options.limit;

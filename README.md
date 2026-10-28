@@ -1,102 +1,23 @@
-# Bản đồ mã nguồn website
+# VGG — Cổng thông tin Viện Sau Đại học
 
-Xem [frontend/README.md](frontend/README.md) để tra cây thư mục hiện hành và bảng URL → component. Các component trang cũ không được route sử dụng đã được dọn khỏi frontend.
+Website công khai gồm Next.js, API Fastify, PostgreSQL và kho media MinIO.
+Hỗ trợ nội dung VI/EN, chương trình đào tạo, tuyển sinh, tin tức, tài liệu và form tư vấn.
 
-# VGG Platform — Hệ thống Cổng thông tin & Quản trị Viện Sau Đại học
+## Khởi chạy
 
-Monorepo bao gồm Cổng thông tin đào tạo công khai (Frontend), Hệ thống Quản trị Nội dung & Tuyển sinh (Admin Portal), và Dịch vụ Xử lý Dữ liệu Tập trung (Backend API).
-
-```text
-├── frontend/        # Website public Next.js 16 (Port 3000) - SSR, SSG, đa ngôn ngữ VI/EN
-├── backend/         # REST API Fastify + Prisma ORM (Port 4000) - Auth, Consultations, CMS, Logs
-├── admin/           # CMS & CRM Admin Next.js 16 (Port 3001) - Quản lý tin tức, biểu mẫu, phân quyền
-├── docs/handover/   # HỒ SƠ BÀN GIAO TRIỂN KHAI CHO IT / DEVOPS (16 tài liệu chi tiết)
-└── compose.yaml     # Docker Compose quản lý PostgreSQL 17 Alpine
+```sh
+cp .env.example .env
+# Điền mật khẩu và PUBLIC_APP_URL trong .env
+docker compose up -d --build
 ```
 
----
+Xem [hướng dẫn bàn giao](HANDOVER.md) để triển khai, nạp dữ liệu và nghiệm thu.
 
-## 📚 HỒ SƠ BÀN GIAO DEPLOY CHO BỘ PHẬN IT (HANDOVER PACKAGE)
+## Mã nguồn
 
-Toàn bộ tài liệu chi tiết cho IT / DevOps được lưu trữ tại thư mục [`docs/handover/`](docs/handover/):
+- `frontend/`: giao diện và API cùng origin.
+- `backend/`: API public, schema PostgreSQL, migration và seed.
+- `scripts/`: kiểm tra tích hợp và chuyển dữ liệu website.
+- `compose.yaml`, `Dockerfile`: triển khai toàn bộ hệ thống.
 
-1. 📄 [Tóm tắt Bàn giao IT (1-2 trang)](docs/handover/IT_HANDOVER_SUMMARY.md)
-2. 🌐 [01. Tổng quan Hệ thống](docs/handover/01_SYSTEM_OVERVIEW.md)
-3. 🏛️ [02. Kiến trúc Hệ thống](docs/handover/02_ARCHITECTURE.md)
-4. 🚀 [03. Hướng dẫn Triển khai Production](docs/handover/03_DEPLOYMENT_GUIDE.md)
-5. 🔑 [04. Danh mục Biến Môi trường](docs/handover/04_ENVIRONMENT_VARIABLES.md)
-6. 🗄️ [05. Hướng dẫn Cơ sở Dữ liệu](docs/handover/05_DATABASE_GUIDE.md)
-7. ⚙️ [06. Hướng dẫn Build & Run](docs/handover/06_BUILD_AND_RUN.md)
-8. 🖥️ [07. Yêu cầu Hạ tầng Máy chủ](docs/handover/07_SERVER_REQUIREMENTS.md)
-9. 🛡️ [08. Bảng Kiểm tra Bảo mật](docs/handover/08_SECURITY_CHECKLIST.md)
-10. 💾 [09. Sao lưu & Phục hồi Dữ liệu](docs/handover/09_BACKUP_AND_RESTORE.md)
-11. 🔄 [10. Quy trình Rollback Sự cố](docs/handover/10_ROLLBACK_GUIDE.md)
-12. ✅ [11. Bảng Kiểm tra Sau Deploy](docs/handover/11_POST_DEPLOY_CHECKLIST.md)
-13. 🛠️ [12. Hướng dẫn Xử lý Sự cố (Troubleshooting)](docs/handover/12_TROUBLESHOOTING.md)
-14. 📌 [13. Danh sách Vấn đề Đã biết](docs/handover/13_KNOWN_ISSUES.md)
-15. 📋 [14. Checklist Bàn giao IT](docs/handover/14_IT_HANDOVER_CHECKLIST.md)
-16. 📦 [15. Thông tin Bản phát hành](docs/handover/15_RELEASE_NOTES.md)
-
----
-
-## 1. Yêu cầu Môi trường (System Requirements)
-
-- **Node.js**: `26.12.1` cho phát triển/server nội bộ (`.nvmrc`); Vercel dùng nhánh `24.x`, tối thiểu `24.22.1`. `engines.node` chấp nhận hai nhánh đã vá này vì Vercel chưa hỗ trợ Node.js 26.
-- **Next.js**: `16.4.3` cho frontend và admin; xem [ghi chú nâng cấp](docs/handover/16_RUNTIME_UPGRADE_2026-10-27.md).
-- **npm**: `>= 10.0.0`
-- **Docker & Docker Compose**: Quản lý PostgreSQL 17
-- **Database**: PostgreSQL 17
-
----
-
-## 2. Hướng dẫn Khởi động Nhanh (Local Development)
-
-Demo tài nguyên: chạy `npm install` rồi `npm run dev` và mở
-`http://localhost:3000/resources`. Danh sách tài nguyên mặc định dùng dữ liệu cố định
-và các PDF trong `frontend/public/documents/demo`, không cần chạy backend hay database
-để tra cứu, xem trước và tải tài liệu. Đặt `VGG_DEMO_RESOURCES=false` trong
-`frontend/.env.local` rồi khởi động lại frontend khi muốn dùng tài nguyên từ CMS.
-
-```bash
-# Bước 1: Khởi động PostgreSQL và MinIO nội bộ
-docker compose up -d
-
-# Bước 2: Cài đặt Dependencies
-npm install
-
-# Bước 3: Thiết lập Biến Môi trường
-# Sao chép từ các file .env.example sang backend/.env, frontend/.env.local, admin/.env.local
-
-# Bước 4: Migrate Database & Tạo Tài khoản Quản trị Ban đầu
-npm run db:deploy
-npm run db:bootstrap-admin
-
-# Bước 5: Khởi chạy Ứng dụng
-npm run dev           # Frontend tại http://localhost:3000
-npm run dev:backend   # Backend API tại http://localhost:4000
-npm run dev:admin     # Admin Portal tại http://localhost:3001
-```
-
----
-
-## 3. Kiểm tra Chất lượng & Build Production
-
-```bash
-# Chạy toàn bộ kiểm tra chất lượng trước khi deploy (Lint, Typecheck, Test, Build)
-npm run check
-
-# Hoặc chạy từng công đoạn riêng lẻ:
-npm run lint          # Kiểm tra cú pháp ESLint
-npm run typecheck     # Kiểm tra TypeScript type safety
-npm run test          # Chạy Unit & Integration tests
-npm run build         # Build production bundle cho Frontend
-npm run build:admin   # Build production bundle cho Admin
-npm run build:backend # Biên dịch Backend API
-```
-
----
-
-## 4. Phân Quyền Quản Trị (Roles & Permissions)
-
-- **QTV Cấp 1 — Super Admin (`SUPER_ADMIN`)**: Toàn quyền quản trị hệ thống, bao gồm toàn quyền Quản lý Nhân sự (xem, sửa, phân quyền, khóa, xóa).
-- **QTV Cấp 2 (`ADMIN_LEVEL_2`)**: Toàn quyền quản lý Dashboard, Tin tức, Tài nguyên biểu mẫu, và Lịch tư vấn tuyển sinh; **không có quyền truy cập Nhân sự**.
+Kiểm tra: `npm run build`, `npm test`, `npm run lint`.

@@ -6,12 +6,6 @@ datasource db {
   provider = "postgresql"
 }
 
-enum AdminStatus {
-  ACTIVE
-  INACTIVE
-  LOCKED
-}
-
 enum ConsultationStatus {
   NEW
   RECEIVED
@@ -20,31 +14,6 @@ enum ConsultationStatus {
   COMPLETED
   UNREACHABLE
   CANCELLED
-}
-
-enum AuditAction {
-  LOGIN_SUCCESS
-  LOGIN_FAILED
-  LOGOUT
-  PASSWORD_CHANGED
-  PASSWORD_RESET
-  ACCOUNT_CREATED
-  ACCOUNT_UPDATED
-  ACCOUNT_DISABLED
-  ACCOUNT_ENABLED
-  ACCOUNT_DELETED
-  ROLE_CHANGED
-  PERMISSION_CHANGED
-  NEWS_CREATED
-  NEWS_UPDATED
-  NEWS_DELETED
-  RESOURCE_CREATED
-  RESOURCE_UPDATED
-  RESOURCE_DELETED
-  CONSULTATION_CREATED
-  CONSULTATION_UPDATED
-  CONSULTATION_ASSIGNED
-  CONSULTATION_NOTE_ADDED
 }
 
 enum ContentStatus {
@@ -66,43 +35,6 @@ enum ResourceDocumentType {
   PROCESS
   NOTICE
   GUIDELINE
-}
-
-model Admin {
-  id                  String                @id @default(cuid())
-  username            String                @unique @db.VarChar(50)
-  passwordHash        String                @map("password_hash")
-  fullName            String                @map("full_name") @db.VarChar(120)
-  email               String?               @db.VarChar(190)
-  phone               String?               @db.VarChar(30)
-  roleId              String                @map("role_id")
-  role                Role                  @relation(fields: [roleId], references: [id])
-  status              AdminStatus           @default(ACTIVE)
-  mustChangePassword  Boolean               @default(true) @map("must_change_password")
-  failedLoginAttempts Int                   @default(0) @map("failed_login_attempts")
-  lockedUntil         DateTime?             @map("locked_until")
-  lastLoginAt         DateTime?             @map("last_login_at")
-  passwordChangedAt   DateTime?             @map("password_changed_at")
-  createdById         String?               @map("created_by")
-  createdBy           Admin?                @relation("AdminCreator", fields: [createdById], references: [id], onDelete: SetNull)
-  createdAdmins       Admin[]               @relation("AdminCreator")
-  sessions            Session[]
-  auditLogs           AuditLog[]            @relation("AuditActor")
-  targetAuditLogs     AuditLog[]            @relation("AuditTarget")
-  consultations       Consultation[]        @relation("ConsultationAssignee")
-  consultationNotes   ConsultationNote[]
-  consultationHistory ConsultationHistory[]
-  passwordResetTokens PasswordResetToken[]
-  createdAt           DateTime              @default(now()) @map("created_at")
-  updatedAt           DateTime              @updatedAt @map("updated_at")
-  newsPosts           NewsPost[]
-  resourceFiles       ResourceFile[]
-  siteContents        SiteContent[]
-
-  @@index([roleId])
-  @@index([status])
-  @@index([email])
-  @@map("admins")
 }
 
 model NewsPost {
@@ -128,8 +60,6 @@ model NewsPost {
   status      ContentStatus @default(DRAFT)
   publishedAt DateTime?     @map("published_at")
   authorName  String?       @map("author_name") @db.VarChar(120)
-  authorId    String        @map("author_id")
-  author      Admin         @relation(fields: [authorId], references: [id])
   createdAt   DateTime      @default(now()) @map("created_at")
   updatedAt   DateTime      @updatedAt @map("updated_at")
 
@@ -157,8 +87,6 @@ model ResourceFile {
   fileSize             Int                    @map("file_size")
   status               ContentStatus          @default(PUBLISHED)
   publishedAt          DateTime?               @map("published_at")
-  authorId             String                 @map("author_id")
-  author               Admin                  @relation(fields: [authorId], references: [id])
   createdAt            DateTime                @default(now()) @map("created_at")
   updatedAt            DateTime                @updatedAt @map("updated_at")
 
@@ -186,8 +114,6 @@ model SiteContent {
   title     String?  @db.VarChar(250)
   value     Json
   published Boolean  @default(false)
-  authorId  String   @map("author_id")
-  author    Admin    @relation(fields: [authorId], references: [id])
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
@@ -207,70 +133,6 @@ model PageVisit {
   @@map("page_visits")
 }
 
-model Application {
-  id        String   @id @default(cuid())
-  fullName  String   @map("full_name") @db.VarChar(120)
-  email     String   @db.VarChar(190)
-  phone     String   @db.VarChar(30)
-  programme String?  @db.VarChar(190)
-  status    String   @default("NEW") @db.VarChar(50)
-  metadata  Json?
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
-
-  @@index([status, createdAt])
-  @@map("applications")
-}
-
-model Role {
-  id          String           @id @default(cuid())
-  code        String           @unique @db.VarChar(50)
-  name        String           @db.VarChar(100)
-  level       Int              @unique
-  admins      Admin[]
-  permissions RolePermission[]
-  createdAt   DateTime         @default(now()) @map("created_at")
-  updatedAt   DateTime         @updatedAt @map("updated_at")
-
-  @@map("roles")
-}
-
-model Permission {
-  id          String           @id @default(cuid())
-  code        String           @unique @db.VarChar(100)
-  description String?          @db.VarChar(255)
-  roles       RolePermission[]
-  createdAt   DateTime         @default(now()) @map("created_at")
-
-  @@map("permissions")
-}
-
-model RolePermission {
-  roleId       String     @map("role_id")
-  permissionId String     @map("permission_id")
-  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
-  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
-
-  @@id([roleId, permissionId])
-  @@map("role_permissions")
-}
-
-model Session {
-  id         String   @id @default(cuid())
-  tokenHash  String   @unique @map("token_hash") @db.Char(64)
-  adminId    String   @map("admin_id")
-  admin      Admin    @relation(fields: [adminId], references: [id], onDelete: Cascade)
-  expiresAt  DateTime @map("expires_at")
-  createdAt  DateTime @default(now()) @map("created_at")
-  lastSeenAt DateTime @default(now()) @map("last_seen_at")
-  ipAddress  String?  @map("ip_address") @db.VarChar(64)
-  userAgent  String?  @map("user_agent") @db.VarChar(500)
-
-  @@index([adminId])
-  @@index([expiresAt])
-  @@map("admin_sessions")
-}
-
 model Consultation {
   id                 String                @id @default(cuid())
   fullName           String                @map("full_name") @db.VarChar(120)
@@ -285,37 +147,18 @@ model Consultation {
   sourcePage         String?               @map("source_page") @db.VarChar(500)
   sourceComponent    String?               @map("source_component") @db.VarChar(120)
   status             ConsultationStatus    @default(NEW)
-  assignedAdminId    String?               @map("assigned_admin_id")
-  assignedAdmin      Admin?                @relation("ConsultationAssignee", fields: [assignedAdminId], references: [id], onDelete: SetNull)
-  notes              ConsultationNote[]
   history            ConsultationHistory[]
   createdAt          DateTime              @default(now()) @map("created_at")
   updatedAt          DateTime              @updatedAt @map("updated_at")
 
   @@index([status, createdAt])
-  @@index([assignedAdminId])
   @@map("consultations")
-}
-
-model ConsultationNote {
-  id             String       @id @default(cuid())
-  consultationId String       @map("consultation_id")
-  consultation   Consultation @relation(fields: [consultationId], references: [id], onDelete: Cascade)
-  adminId        String       @map("admin_id")
-  admin          Admin        @relation(fields: [adminId], references: [id])
-  content        String
-  createdAt      DateTime     @default(now()) @map("created_at")
-
-  @@index([consultationId])
-  @@map("consultation_notes")
 }
 
 model ConsultationHistory {
   id             String              @id @default(cuid())
   consultationId String              @map("consultation_id")
   consultation   Consultation        @relation(fields: [consultationId], references: [id], onDelete: Cascade)
-  adminId        String?             @map("admin_id")
-  admin          Admin?              @relation(fields: [adminId], references: [id], onDelete: SetNull)
   action         String              @db.VarChar(100)
   oldStatus      ConsultationStatus? @map("old_status")
   newStatus      ConsultationStatus? @map("new_status")
@@ -324,39 +167,4 @@ model ConsultationHistory {
 
   @@index([consultationId, createdAt])
   @@map("consultation_history")
-}
-
-model AuditLog {
-  id            String      @id @default(cuid())
-  action        AuditAction
-  actorAdminId  String?     @map("actor_admin_id")
-  actor         Admin?      @relation("AuditActor", fields: [actorAdminId], references: [id], onDelete: SetNull)
-  targetAdminId String?     @map("target_admin_id")
-  target        Admin?      @relation("AuditTarget", fields: [targetAdminId], references: [id], onDelete: SetNull)
-  targetType    String?     @map("target_type") @db.VarChar(100)
-  targetId      String?     @map("target_id")
-  username      String?     @db.VarChar(50)
-  ipAddress     String?     @map("ip_address") @db.VarChar(64)
-  userAgent     String?     @map("user_agent") @db.VarChar(500)
-  metadata      Json?
-  createdAt     DateTime    @default(now()) @map("created_at")
-
-  @@index([actorAdminId])
-  @@index([targetAdminId])
-  @@index([action, createdAt])
-  @@map("audit_logs")
-}
-
-model PasswordResetToken {
-  id        String    @id @default(cuid())
-  tokenHash String    @unique @map("token_hash") @db.Char(64)
-  adminId   String    @map("admin_id")
-  admin     Admin     @relation(fields: [adminId], references: [id], onDelete: Cascade)
-  expiresAt DateTime  @map("expires_at")
-  usedAt    DateTime? @map("used_at")
-  createdAt DateTime  @default(now()) @map("created_at")
-
-  @@index([adminId])
-  @@index([expiresAt])
-  @@map("password_reset_tokens")
 }

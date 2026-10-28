@@ -1,4 +1,4 @@
-/* Public banners share one geometry and typography scale, including CMS previews. */
+/* Public banners share one geometry and typography scale, including content previews. */
 :root body [data-site-banner] {
   --banner-gutter: clamp(20px, 4vw, 72px);
   --banner-heading: clamp(44px, 3.5vw, 64px);
@@ -95,7 +95,7 @@
     padding-block: 48px 48px !important;
   }
   :root body [data-banner-copy] [data-banner-label],
-  :root body [data-banner-copy] [data-banner-label] :is(p,span,div) { font-size: 13px !important; letter-spacing: .08em !important; overflow-wrap: anywhere; }
+  :root body [data-banner-copy] [data-banner-label] :is(p,span,div) { font-size: var(--type-small) !important; letter-spacing: .08em !important; overflow-wrap: anywhere; }
   :root body [data-banner-copy] [data-banner-title] { min-height: 0; }
   :root body [data-banner-copy] [data-banner-description] { font-size: 16px !important; }
   :root body [data-banner-copy] [data-banner-title] { margin-bottom: 24px !important; }
