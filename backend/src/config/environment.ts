@@ -14,8 +14,11 @@ const schema = z.object({
   // Chỉ chuỗi chính xác "true" bật TLS; "1" hoặc "TRUE" không được coi là true.
   STORAGE_USE_SSL: z.string().default("false").transform((value) => value === "true"),
   STORAGE_BUCKET: z.string().min(3).default("vgg-media"),
-  STORAGE_ACCESS_KEY: z.string().min(3),
-  STORAGE_SECRET_KEY: z.string().min(8),
+  STORAGE_ACCESS_KEY: z.preprocess(value => value === "" ? undefined : value, z.string().min(3).optional()),
+  STORAGE_SECRET_KEY: z.preprocess(value => value === "" ? undefined : value, z.string().min(8).optional()),
+}).refine(value => Boolean(value.STORAGE_ACCESS_KEY) === Boolean(value.STORAGE_SECRET_KEY), {
+  message: "Cấu hình đồng thời STORAGE_ACCESS_KEY và STORAGE_SECRET_KEY, hoặc bỏ cả hai khi không dùng object storage.",
+  path: ["STORAGE_SECRET_KEY"],
 });
 
 // Export cấu hình đã kiểm tra thay vì đọc process.env rải rác trong từng module.

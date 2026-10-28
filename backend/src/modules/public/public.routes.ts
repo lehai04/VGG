@@ -28,6 +28,7 @@ export async function publicRoutes(app: FastifyInstance) {
   app.get("/api/public/media/*", async (request, reply) => {
     const key = (request.params as { "*": string })["*"] ?? "";
     if (!key || key.includes("..") || key.startsWith("/")) return fail(reply, 400, "Đường dẫn file không hợp lệ.", "INVALID_MEDIA_PATH");
+    if (!mediaStorage) return fail(reply, 503, "Kho media chưa được cấu hình.", "MEDIA_STORAGE_UNAVAILABLE");
     try {
       const stat = await mediaStorage.statObject(mediaBucket, key);
       const stream = await mediaStorage.getObject(mediaBucket, key);
