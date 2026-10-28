@@ -1,4 +1,56 @@
 services:
+  backend:
+    build: .
+    image: vgg-public:local
+    restart: unless-stopped
+    environment: &backend_environment
+      NODE_ENV: production
+      DATABASE_URL: postgresql://${POSTGRES_USER:-vgg}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}@postgres:5432/${POSTGRES_DB:-vgg}
+      PUBLIC_APP_URL: ${PUBLIC_APP_URL:-http://localhost:3000}
+      STORAGE_ENDPOINT: minio
+      STORAGE_PORT: 9000
+      STORAGE_USE_SSL: "false"
+      STORAGE_BUCKET: ${STORAGE_BUCKET:-vgg-media}
+      STORAGE_ACCESS_KEY: ${MINIO_APP_ACCESS_KEY:?MINIO_APP_ACCESS_KEY is required}
+      STORAGE_SECRET_KEY: ${MINIO_APP_SECRET_KEY:?MINIO_APP_SECRET_KEY is required}
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      minio-init:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:4000/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  migrate:
+    image: vgg-public:local
+    build: .
+    restart: "no"
+    command: ["sh", "-c", "npm run db:deploy && npm run db:seed"]
+    environment: *backend_environment
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    image: vgg-public:local
+    build: .
+    restart: unless-stopped
+    command: ["npm", "run", "start"]
+    environment:
+      NODE_ENV: production
+      BACKEND_INTERNAL_URL: http://backend:4000
+      PUBLIC_APP_URL: ${PUBLIC_APP_URL:-http://localhost:3000}
+      VGG_DEMO_NEWS: "false"
+      VGG_DEMO_RESOURCES: "false"
+    ports:
+      - "${PUBLIC_PORT:-3000}:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+
   postgres:
     image: postgres:17-alpine
     restart: unless-stopped
@@ -6,8 +58,6 @@ services:
       POSTGRES_DB: ${POSTGRES_DB:-vgg}
       POSTGRES_USER: ${POSTGRES_USER:-vgg}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
-    ports:
-      - "127.0.0.1:5433:5432"
     volumes:
       - vgg_postgres_data_2026:/var/lib/postgresql/data
     healthcheck:
@@ -27,9 +77,6 @@ services:
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER:?MINIO_ROOT_USER is required}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?MINIO_ROOT_PASSWORD is required}
-    ports:
-      - "127.0.0.1:9000:9000"
-      - "127.0.0.1:9001:9001"
     volumes:
       - vgg_minio_data_2026:/data
     healthcheck:

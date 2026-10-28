@@ -49,7 +49,7 @@ export async function getPaginatedNewsPosts(options: {
   page: number;
   q?: string;
 }) {
-  const demos = process.env.VGG_DEMO_NEWS !== "false" ? getDemoNewsPosts(options) : [];
+  const demos = process.env.VGG_DEMO_NEWS === "true" ? getDemoNewsPosts(options) : [];
   const backend = process.env.BACKEND_INTERNAL_URL;
   let posts: NewsPost[] = [];
   let backendTotal = 0;

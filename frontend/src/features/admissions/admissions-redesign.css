@@ -42,7 +42,7 @@
 }
 .admissions-reference .admission-step .section-number {
   color: #697386;
-  font-size: 13px;
+  font-size: var(--type-small);
   letter-spacing: 0.06em;
 }
 .admissions-reference .admission-step-03 .degree-tabs {
@@ -110,7 +110,7 @@
 }
 .admissions-reference .document-kind {
   color: #a51b32;
-  font-size: 12px;
+  font-size: var(--type-small);
   font-weight: 700;
   letter-spacing: 0.06em;
 }

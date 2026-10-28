@@ -501,10 +501,10 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  --text-xs: 0.8125rem;
-  --text-sm: 0.875rem;
+  --text-xs: var(--type-small);
+  --text-sm: var(--type-control);
   --text-base: 1rem;
-  --text-md: 1.0625rem;
+  --text-md: var(--type-body);
   --text-lg: 1.125rem;
   --text-xl: 1.25rem;
   --heading-sm: clamp(1.5rem, 2vw, 2rem);

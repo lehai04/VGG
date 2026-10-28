@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import ts from 'typescript';
 const compiled=ts.transpileModule(readFileSync(new URL('../src/features/resources/data.ts',import.meta.url),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
-test('explicit CMS mode retains empty categories and all supported types',async()=>{
+test('default public mode reads the database catalogue and retains empty categories',async()=>{
   const previous={demo:process.env.VGG_DEMO_RESOURCES,backend:process.env.BACKEND_INTERNAL_URL};
-  process.env.VGG_DEMO_RESOURCES='false';process.env.BACKEND_INTERNAL_URL='http://test.invalid';
+  delete process.env.VGG_DEMO_RESOURCES;process.env.BACKEND_INTERNAL_URL='http://test.invalid';
   try {
     const loaded={exports:{}};
     const data={resources:[],categories:[{id:'empty',name:'Danh mục chưa có tài liệu'}],resourceTypes:['DIRECTIVE_DOCUMENT','EXECUTION_DOCUMENT','BROCHURE','PDF_DOCUMENT']};
@@ -19,9 +19,9 @@ test('explicit CMS mode retains empty categories and all supported types',async(
   }
 });
 
-test('default demo loads real local PDFs without fetching the backend', async () => {
+test('explicit demo option loads real local PDFs without fetching the backend', async () => {
   const previous = process.env.VGG_DEMO_RESOURCES;
-  delete process.env.VGG_DEMO_RESOURCES;
+  process.env.VGG_DEMO_RESOURCES = 'true';
   try {
     const demoModule = { exports: {} };
     const demoCode = ts.transpileModule(readFileSync(new URL('../src/features/resources/demo-resources.ts', import.meta.url), 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText;

@@ -32,12 +32,17 @@
   --type-h4: 18px;
   --type-h5: 18px;
   --type-h6: 16px;
+  /* Roles measured against vlu.edu.vn; never shrink navigation with vw. */
+  --type-body: 18px;
+  --type-control: 16px;
+  --type-small: 14px;
+  --type-navigation: 15px;
   --text-20: 20px;
   --text-18: 18px;
   --text-16: 16px;
-  --text-14: 16px;
-  --text-12: 14px;
-  --text-10: 14px;
+  --text-14: var(--type-control);
+  --text-12: var(--type-small);
+  --text-10: var(--type-small);
   --text-lg: var(--text-20);
   --text-md: var(--text-16);
   --text-sm: var(--text-14);
@@ -104,6 +109,7 @@ body :is(button, input, select, textarea, optgroup) {
 }
 @media (max-width: 767px) {
   :root {
+    --type-body: 16px;
     --type-h1: 36px;
     --type-h2: 28px;
     --type-h3: 24px;
@@ -226,11 +232,11 @@ body :is(button, input, select, textarea, optgroup) {
 @media (min-width: 1101px) {
   :root body .home-page .nav > a,
   :root body .home-page .navTitle {
-    font-size: clamp(12px, 0.95vw, 14px) !important;
+    font-size: var(--type-navigation) !important;
   }
 
   :root body .home-page .header .navTitle {
-    white-space: nowrap;
+    white-space: normal;
   }
 }
 :root body .home-page .topbar,
@@ -278,7 +284,7 @@ body :is(button, input, select, textarea, optgroup) {
   font-family: inherit !important;
 }
 :root body main p:not([data-section-label]):not([data-section-subtitle]):not([data-banner-label]):not([data-banner-description]):not([class*="eyebrow"]):not([class*="kicker"]):not([class*="caption"]):not([class*="meta"]) {
-  font-size: 16px !important;
+  font-size: var(--type-body) !important;
   line-height: 1.5 !important;
 }
 :root body :is(.type-h1, .type-h2, .type-h3, .type-h4, .type-h5, .type-h6, .type-card-title, .type-list-title, .type-career-title) {

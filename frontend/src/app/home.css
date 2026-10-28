@@ -2680,9 +2680,9 @@
   }
 
   .home-page .navTitle {
-    font-size: clamp(11px, 0.88vw, 14px);
-    line-height: 1.2;
-    white-space: nowrap;
+    font-size: var(--type-navigation);
+    line-height: 1.4;
+    white-space: normal;
   }
 }
 
@@ -3479,6 +3479,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    justify-content: flex-start;
     gap: 0;
     border-top: 1px solid #e6e2dc;
     background: #fff;
@@ -3500,6 +3501,7 @@
   }
   .home-page .nav > a:not(.navCta) {
     min-height: 58px;
+    flex-shrink: 0;
     padding: 18px 10px;
     justify-content: flex-start;
     border-bottom: 1px solid #e9e7e2;
@@ -3507,6 +3509,9 @@
   .home-page .navTitle {
     font-size: var(--text-14);
     line-height: 1.35;
+    min-width: 0;
+    white-space: normal;
+    text-align: left;
   }
 }
 
