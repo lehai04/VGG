@@ -24,7 +24,6 @@ export function proxy(request: NextRequest) {
   // Ghi đè header locale bằng giá trị đã kiểm tra từ URL để Server Component đọc được.
   headers.set("x-vgg-locale", locale);
   headers.set("x-vgg-pathname", pathname);
-  headers.delete('x-vgg-cms-preview');
   return NextResponse.rewrite(rewriteUrl, { request: { headers } });
 }
 

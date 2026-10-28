@@ -1,6 +1,5 @@
 import { publicRoutes } from "./modules/public/public.routes.js";
 import Fastify, { type FastifyError } from "fastify";
-import cookie from "@fastify/cookie";
 import cors from "@fastify/cors";
 import helmet from "@fastify/helmet";
 import rateLimit from "@fastify/rate-limit";
@@ -21,7 +20,6 @@ export async function buildApp() {
   });
   // Đăng ký plugin trước route để các handler dùng được cookie và cấu hình bảo vệ.
   await app.register(helmet);
-  await app.register(cookie);
   await app.register(cors, { origin: [env.PUBLIC_APP_URL], credentials: true, methods: ["GET", "POST", "PUT", "PATCH", "DELETE"] });
   // global:false không giới hạn mọi route; route cần giới hạn phải cấu hình riêng.
   await app.register(rateLimit, { global: false });

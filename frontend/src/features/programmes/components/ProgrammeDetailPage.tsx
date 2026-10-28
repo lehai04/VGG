@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { CmsRichText } from "@/shared/components/CmsRichText";
+import { ContentRichText } from "@/shared/components/ContentRichText";
 import Link from "@/i18n/components/LocalizedLink";
 import {
   ArrowRight,
@@ -38,8 +38,8 @@ import {
 } from "@/data/curricula";
 import { type Programme, getProgrammeTuition } from "@/data/programmes";
 import styles from "./ProgrammeDetailPage.module.css";
-import {CmsPageSections,CmsSlot} from '@/shared/components/CmsPageSections';
-import type {CmsComposition} from '../../../../../backend/src/modules/cms/visual-model';
+import {ContentPageSections,ContentSlot} from '@/shared/components/ContentPageSections';
+import type {ContentComposition} from '../../../../../backend/src/modules/content/visual-model';
 import { ProgrammeCurriculumGroups } from "./ProgrammeCurriculumGroups";
 import {
   ProgrammeAdmissions,
@@ -144,7 +144,7 @@ interface FaqQuestion {
 /* ──────────────────────────────────────────────────────────────
    Main Component: ProgrammeDetailPage
    ────────────────────────────────────────────────────────────── */
-export function ProgrammeDetailPage({ programme,layout }: { programme: Programme;layout?:CmsComposition }) {
+export function ProgrammeDetailPage({ programme,layout }: { programme: Programme;layout?:ContentComposition }) {
   const pageContent = programme.pageContent;
   const curricula = getProgrammeCurricula(programme);
 
@@ -266,8 +266,8 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
       {/* ────────────────────────────────────────────────────────
           HERO BANNER
           ──────────────────────────────────────────────────────── */}
-      <CmsPageSections pageId={`programme:${programme.id}`} layout={layout}>
-      <section data-site-banner data-cms-slot="hero" data-cms-path="pageContent.hero.heroImage" className={styles.hero} aria-labelledby="programme-title">
+      <ContentPageSections pageId={`programme:${programme.id}`} layout={layout}>
+      <section data-site-banner data-content-slot="hero" data-content-path="pageContent.hero.heroImage" className={styles.hero} aria-labelledby="programme-title">
         <Image
           className={styles.heroBackground}
           src={
@@ -293,7 +293,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
 
           <div data-banner-copy data-banner-inset className={styles.heroContent}>
             <span data-banner-label className={styles.heroDegree}>{programme.englishTitle}</span>
-            <h1 data-banner-title id="programme-title" className={styles.heroTitle} data-cms-path="pageContent.hero.heroTitle">
+            <h1 data-banner-title id="programme-title" className={styles.heroTitle} data-content-path="pageContent.hero.heroTitle">
               {(pageContent.hero.heroTitle ?? programme.title).split("\n").map((line, index) => (
                 <React.Fragment key={line}>
                   {index > 0 && " "}
@@ -301,13 +301,13 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 </React.Fragment>
               ))}
             </h1>
-            <p data-banner-description className={styles.heroLead} data-cms-path="pageContent.hero.heroLead">{pageContent.hero.heroLead}</p>
+            <p data-banner-description className={styles.heroLead} data-content-path="pageContent.hero.heroLead">{pageContent.hero.heroLead}</p>
 
             <div className={styles.heroCtas}>
-              <a data-cms-path="pageContent.hero.consultation.text" className={styles.btnPrimary} href={pageContent.hero.consultation.href}>
+              <a data-content-path="pageContent.hero.consultation.text" className={styles.btnPrimary} href={pageContent.hero.consultation.href}>
                 {pageContent.hero.consultation.text} <ArrowRight size={17} aria-hidden="true" />
               </a>
-              <Link data-cms-path="pageContent.hero.admissions.text" className={styles.btnSecondary} href={pageContent.hero.admissions.href}>
+              <Link data-content-path="pageContent.hero.admissions.text" className={styles.btnSecondary} href={pageContent.hero.admissions.href}>
                 {pageContent.hero.admissions.text} <ArrowRight size={17} aria-hidden="true" />
               </Link>
             </div>
@@ -318,7 +318,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
       {/* ────────────────────────────────────────────────────────
           QUICK INFO FACTS BAR
           ──────────────────────────────────────────────────────── */}
-      <div data-cms-slot="facts" className={styles.factsBarWrapper}>
+      <div data-content-slot="facts" className={styles.factsBarWrapper}>
         <div
           className={`${styles.factsBar} ${pageContent.facts.quickFactsDetailed ? styles.factsBarDetailed : ""}`}
         >
@@ -406,7 +406,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
               {pageContent.section01.headline && (
                 <h3 data-section-subtitle className={styles.contentHeadline}>{pageContent.section01.headline}</h3>
               )}
-              {programme.cmsOverview?.[0]?.html ? <div data-cms-path="cmsOverview.0.html"><CmsRichText html={programme.cmsOverview[0].html} /></div> : overviewParagraphs.map((para, i) => (
+              {programme.contentOverview?.[0]?.html ? <div data-content-path="contentOverview.0.html"><ContentRichText html={programme.contentOverview[0].html} /></div> : overviewParagraphs.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
 
@@ -435,7 +435,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 {pageContent.section01.overviewImage !== null && (
                   <div className={styles.overviewImageWrap}>
                     <Image
-                      data-cms-path="pageContent.section01.overviewImage"
+                      data-content-path="pageContent.section01.overviewImage"
                       src={
                         pageContent.section01.overviewImage ?? pageContent.section01.imageFallback
                       }
@@ -548,7 +548,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
             <figure className={styles.audienceIllustration}>
               <div className={styles.audienceIllustrationImage}>
                 <Image
-                  data-cms-path="pageContent.section03.illustration.src"
+                  data-content-path="pageContent.section03.illustration.src"
                   src={pageContent.section03.illustration.src}
                   alt={pageContent.section03.illustration.alt}
                   fill
@@ -588,7 +588,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           04 / CƠ HỘI NGHỀ NGHIỆP VÀ PHÁT TRIỂN
           ──────────────────────────────────────────────────────── */}
       {(careersList.length > 0) && (
-      <section id="nghe-nghiep" data-cms-path="pageContent.section04.careerImage" className={styles.sectionCareers} aria-labelledby="sec-04-title">
+      <section id="nghe-nghiep" data-content-path="pageContent.section04.careerImage" className={styles.sectionCareers} aria-labelledby="sec-04-title">
         <Image
           className={styles.careersBackground}
           src={
@@ -721,9 +721,9 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
         </div>
       </section>
 
-      <CmsSlot slot="fees"><ProgrammeFees programme={programme} /></CmsSlot>
-      {programme.cmsApplication?.length ? <section id="ho-so-dang-ky" className={styles.sectionAudience} aria-label="Hồ sơ và quy trình đăng ký"><div className={styles.container}><ProgrammeAdmissions blocks={programme.cmsApplication.map((item) => ({ title: item.title, paragraphs: [item.text] }))} /></div></section> : null}
-      {programme.cmsSupport?.length ? <section id="chinh-sach-ho-tro" className={styles.sectionAudience} aria-label="Chính sách hỗ trợ"><div className={styles.container}><ProgrammeAdmissions blocks={programme.cmsSupport.map((item) => ({ title: item.title, paragraphs: [item.text] }))} /></div></section> : null}
+      <ContentSlot slot="fees"><ProgrammeFees programme={programme} /></ContentSlot>
+      {programme.contentApplication?.length ? <section id="ho-so-dang-ky" className={styles.sectionAudience} aria-label="Hồ sơ và quy trình đăng ký"><div className={styles.container}><ProgrammeAdmissions blocks={programme.contentApplication.map((item) => ({ title: item.title, paragraphs: [item.text] }))} /></div></section> : null}
+      {programme.contentSupport?.length ? <section id="chinh-sach-ho-tro" className={styles.sectionAudience} aria-label="Chính sách hỗ trợ"><div className={styles.container}><ProgrammeAdmissions blocks={programme.contentSupport.map((item) => ({ title: item.title, paragraphs: [item.text] }))} /></div></section> : null}
 
       {/* ────────────────────────────────────────────────────────
           CALL TO ACTION BANNER
@@ -858,11 +858,11 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
       {/* ────────────────────────────────────────────────────────
           CONSULTATION SECTION & FOOTER (Preserved as required)
           ──────────────────────────────────────────────────────── */}
-      <CmsSlot slot="consultation"><ResourcesConsultation
+      <ContentSlot slot="consultation"><ResourcesConsultation
         initialProgramme={programme.title}
         intro={programme.pageContent?.consultation.formIntro}
-      /></CmsSlot>
-      </CmsPageSections>
+      /></ContentSlot>
+      </ContentPageSections>
       <SiteFooter />
     </main>
   );

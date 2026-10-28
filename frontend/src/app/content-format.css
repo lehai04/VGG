@@ -1,7 +1,7 @@
 /* Public content formatting shared by all routes, including imported admissions content.
    Keep controls, navigation, table values and footer layouts in their own components. */
 
-/* Intrinsic sizing prevents long CMS content and native controls widening grids. */
+/* Intrinsic sizing prevents long content content and native controls widening grids. */
 #main-content :is(input, select, textarea) {
   min-width: 0;
   max-width: 100%;

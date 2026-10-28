@@ -8,6 +8,6 @@ RUN npm ci
 COPY . .
 RUN DATABASE_URL=postgresql://build:build@localhost:5432/build npm run build
 ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1
-RUN chown -R node:node /app
+RUN chown -R node:node /app/frontend/.next
 USER node
 CMD ["npm", "run", "start:backend"]

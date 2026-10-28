@@ -222,12 +222,12 @@ export type Programme = {
   creditsLabel?: string;
   summary?: string;
   detailsPending?: boolean;
-  /** Ngành CMS mới chưa có khung chương trình đã được phê duyệt. */
+  /** Ngành content mới chưa có khung chương trình đã được phê duyệt. */
   curriculaPending?: boolean;
-  cmsCurriculum?: { name: string; credits: string; group: string; track: "Ứng dụng" | "Nghiên cứu"; note: string }[];
-  cmsApplication?: { title: string; text: string }[];
-  cmsOverview?: { html: string }[];
-  cmsSupport?: { title: string; text: string }[];
+  contentCurriculum?: { name: string; credits: string; group: string; track: "Ứng dụng" | "Nghiên cứu"; note: string }[];
+  contentApplication?: { title: string; text: string }[];
+  contentOverview?: { html: string }[];
+  contentSupport?: { title: string; text: string }[];
   duration: string;
   tuition: string;
   schedule?: string;

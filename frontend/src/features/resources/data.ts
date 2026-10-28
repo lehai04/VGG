@@ -38,7 +38,7 @@ export type ResourceCatalogue = {
 };
 export async function getPublicResourceCatalogue(): Promise<ResourceCatalogue> {
   const empty: ResourceCatalogue = { resources: [], categories: [], resourceTypes: Object.keys(resourceTypeLabels) };
-  // Demo works without a backend/database. Opt in to CMS resources explicitly.
+  // Demo works without a backend/database. Opt in to content resources explicitly.
   if (process.env.VGG_DEMO_RESOURCES === "true") return {
     resources: demoResources,
     categories: Array.from(new Map(demoResources.map((item) => [item.category.id, item.category])).values()),

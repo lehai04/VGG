@@ -1,4 +1,4 @@
-/* Public banners share one geometry and typography scale, including CMS previews. */
+/* Public banners share one geometry and typography scale, including content previews. */
 :root body [data-site-banner] {
   --banner-gutter: clamp(20px, 4vw, 72px);
   --banner-heading: clamp(44px, 3.5vw, 64px);

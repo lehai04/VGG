@@ -43,14 +43,14 @@ export async function publicRoutes(app: FastifyInstance) {
     const query = z.object({ category: newsCategory.optional(), q: z.string().trim().max(100).optional(), locale: z.enum(["vi", "en"]).default("vi"), limit: z.coerce.number().int().min(1).max(100).default(30), page: z.coerce.number().int().min(1).default(1) }).parse(request.query);
     const where = { status: "PUBLISHED" as const, locale: query.locale, ...(query.category ? { category: query.category } : {}), ...(query.q ? { OR: [{ title: { contains: query.q, mode: "insensitive" as const } }, { excerpt: { contains: query.q, mode: "insensitive" as const } }] } : {}) };
     const [posts, total] = await Promise.all([
-      prisma.newsPost.findMany({ where, orderBy: { publishedAt: "desc" }, skip: (query.page - 1) * query.limit, take: query.limit, include: { author: { select: { fullName: true } } } }),
+      prisma.newsPost.findMany({ where, orderBy: { publishedAt: "desc" }, skip: (query.page - 1) * query.limit, take: query.limit }),
       prisma.newsPost.count({ where }),
     ]);
     return ok(reply, { posts, pagination: { page: query.page, limit: query.limit, total, totalPages: Math.ceil(total / query.limit) } });
   });
   app.get("/api/public/news/:slug", async (request, reply) => {
     const params = z.object({ slug }).parse(request.params);
-    const post = await prisma.newsPost.findFirst({ where: { slug: params.slug, status: "PUBLISHED" }, include: { author: { select: { fullName: true } } } });
+    const post = await prisma.newsPost.findFirst({ where: { slug: params.slug, status: "PUBLISHED" } });
     if (!post) return fail(reply, 404, "Không tìm thấy bài viết.", "NEWS_NOT_FOUND");
     return ok(reply, { post });
   });
@@ -104,14 +104,6 @@ export async function publicRoutes(app: FastifyInstance) {
           },
         },
       });
-      await prisma.auditLog.create({
-        data: {
-          action: "CONSULTATION_CREATED",
-          targetType: "consultation",
-          targetId: consultation.id,
-          ipAddress: request.ip,
-        },
-      });
       return reply.code(201).send({
         success: true,
         data: { id: consultation.id },
@@ -122,10 +114,10 @@ export async function publicRoutes(app: FastifyInstance) {
 
   app.get("/api/public/website/programmes", async (_request, reply) => {
     const rows = await prisma.siteContent.findMany({
-      where: { section: "cms-programme", published: true },
+      where: { section: "content-programme", published: true },
     });
-    const states = await prisma.siteContent.findMany({ where: { section: "cms-programme-state" } });
-    const hiddenIds = states.filter((row) => ["hidden", "archived"].includes((row.value as { status?: string }).status ?? "")).map((row) => row.key.slice("cms.programme-state.programme:".length));
+    const states = await prisma.siteContent.findMany({ where: { section: "content-programme-state" } });
+    const hiddenIds = states.filter((row) => ["hidden", "archived"].includes((row.value as { status?: string }).status ?? "")).map((row) => row.key.slice("content.programme-state.programme:".length));
     return ok(reply, {
       hiddenIds,
       programmes: rows.filter((row) => !hiddenIds.includes((row.value as unknown as PublicPageDefinition).id.slice(10))).map(

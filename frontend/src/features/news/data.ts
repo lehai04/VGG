@@ -42,7 +42,7 @@ export async function getNewsPosts(
   return posts;
 }
 
-/** Published CMS posts come first; demo cards remain available after them. */
+/** Published content posts come first; demo cards remain available after them. */
 export async function getPaginatedNewsPosts(options: {
   category?: string;
   limit: number;
@@ -72,7 +72,7 @@ export async function getPaginatedNewsPosts(options: {
       posts = payload.data.posts;
       backendTotal = payload.data.pagination.total;
     } catch {
-      // Keep the existing demo cards available when the CMS cannot be reached.
+      // Keep the existing demo cards available when the content cannot be reached.
     }
   }
   const start = (options.page - 1) * options.limit;

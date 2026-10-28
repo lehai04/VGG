@@ -7,6 +7,8 @@ const marker = '/tmp/vgg-public-smoke.json';
 const phase = process.argv[2] || 'create';
 try {
   if (phase === 'create') {
+    const tables = await prisma.$queryRaw`SELECT tablename FROM pg_tables WHERE schemaname = 'public' AND tablename <> '_prisma_migrations' ORDER BY tablename`;
+    assert.deepEqual(tables.map(row => row.tablename), ['consultation_history', 'consultations', 'news_posts', 'page_visits', 'resource_categories', 'resource_files', 'site_contents']);
     for (const path of ['/vi', '/en', '/vi/programmes', '/vi/admissions', '/vi/news', '/vi/resources']) {
       const response = await fetch(`http://frontend:3000${path}`);
       assert.equal(response.status, 200, path);
@@ -16,9 +18,6 @@ try {
       const response = await fetch(`http://127.0.0.1:4000${path}`);
       assert.equal(response.status, 200, path);
       assert.equal((await response.json()).success, true);
-    }
-    for (const path of ['/api/admin/news', '/api/auth/login', '/api/public/website/preview']) {
-      assert.equal((await fetch(`http://127.0.0.1:4000${path}`, { method: 'POST' })).status, 404, path);
     }
     const email = `smoke-${Date.now()}@example.invalid`;
     const response = await fetch('http://frontend:3000/api/consultations', {
@@ -40,7 +39,6 @@ try {
     const { id, counts } = JSON.parse(await readFile(marker, 'utf8'));
     assert.ok(await prisma.consultation.findUnique({ where: { id } }), 'Consultation survives restart and seed');
     assert.deepEqual({ contents: await prisma.siteContent.count(), news: await prisma.newsPost.count(), resources: await prisma.resourceFile.count() }, counts);
-    await prisma.auditLog.deleteMany({ where: { targetId: id } });
     await prisma.consultation.delete({ where: { id } });
     await unlink(marker);
     console.log('PASS: persistence after restart, seed idempotence; smoke consultation removed.');

@@ -4,10 +4,10 @@ process.env.DATABASE_URL ||= 'postgresql://unused:unused@127.0.0.1:1/unused';
 process.env.STORAGE_ACCESS_KEY ||= 'test-storage';
 process.env.STORAGE_SECRET_KEY ||= 'test-storage-password';
 const { buildApp } = await import('../dist/app.js');
-test('public build exposes no admin/auth/preview routes and validates real consultation input', async () => {
+test('public build rejects unknown routes and validates consultation input', async () => {
   const app = await buildApp();
   try {
-    for (const url of ['/api/admin/news', '/api/admin/website/pages', '/api/admin/consultations', '/api/auth/login', '/api/public/website/preview']) {
+    for (const url of ['/api/private/unknown', '/api/unknown']) {
       for (const method of ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']) {
         assert.equal((await app.inject({ method, url })).statusCode, 404, `${method} ${url}`);
       }

@@ -151,7 +151,7 @@ body :is(button, input, select, textarea, optgroup) {
   line-height: 1.4 !important;
 }
 
-/* Optional reusable classes for CMS/editorial content. */
+/* Optional reusable classes for content/editorial content. */
 .type-h1 {
   font-size: var(--type-h1);
   line-height: 1.2;

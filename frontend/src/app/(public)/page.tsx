@@ -16,7 +16,7 @@ import {
 import { ScrollReveal } from "@/features/home/components/ScrollReveal";
 import ProgrammeSearch from "@/features/programmes/components/ProgrammeSearch";
 import { websiteContent, websiteLayout } from '@/lib/website-content';
-import {CmsPageSections,CmsSlot} from '@/shared/components/CmsPageSections';
+import {ContentPageSections,ContentSlot} from '@/shared/components/ContentPageSections';
 import { homeContent } from '@/data/home-content';
 export default async function Home() {
   const content = await websiteContent('home', homeContent);
@@ -26,18 +26,18 @@ export default async function Home() {
       <ScrollReveal />
       {/* Header dùng liên kết trực tiếp; mobile mở bằng nút MENU */}
       <Header />
-      <CmsPageSections layout={layout}>
-      <CmsSlot slot="hero"><Hero /></CmsSlot>
+      <ContentPageSections layout={layout}>
+      <ContentSlot slot="hero"><Hero /></ContentSlot>
       {/* Bộ lọc chương trình dùng chung với /programmes */}
-      <CmsSlot slot="search"><ProgrammeSearch content={content.programmeSearch} /></CmsSlot>
-      <CmsSlot slot="overview"><Programmes /></CmsSlot>
-      <CmsSlot slot="research"><Research /></CmsSlot>
-      <CmsSlot slot="programmes"><ProgrammeCatalog /></CmsSlot>
-      {/* Năm bài viết đã xuất bản gần nhất từ CMS */}
-      <CmsSlot slot="news"><News /></CmsSlot>
+      <ContentSlot slot="search"><ProgrammeSearch content={content.programmeSearch} /></ContentSlot>
+      <ContentSlot slot="overview"><Programmes /></ContentSlot>
+      <ContentSlot slot="research"><Research /></ContentSlot>
+      <ContentSlot slot="programmes"><ProgrammeCatalog /></ContentSlot>
+      {/* Năm bài viết đã xuất bản gần nhất từ content */}
+      <ContentSlot slot="news"><News /></ContentSlot>
       {/* Form POST tới /api/consultations */}
-      <CmsSlot slot="consultation"><ResourcesConsultation /></CmsSlot>
-      </CmsPageSections>
+      <ContentSlot slot="consultation"><ResourcesConsultation /></ContentSlot>
+      </ContentPageSections>
       <Footer />
     </main>
   );

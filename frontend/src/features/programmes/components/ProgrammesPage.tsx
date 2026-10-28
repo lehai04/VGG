@@ -8,7 +8,7 @@ import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import ProgrammeDirectory from "@/features/programmes/components/ProgrammeDirectory";
 import { NextStepCTA } from "@/features/content/components/NextStepCTA";
 import { websiteContent,websiteProgrammes,websiteLayout } from '@/lib/website-content';
-import {CmsPageSections,CmsSlot} from '@/shared/components/CmsPageSections';
+import {ContentPageSections,ContentSlot} from '@/shared/components/ContentPageSections';
 
 export async function ProgrammesLanding() {
   const content = await websiteContent('catalogue', { ProgrammesPage: catalogueCopy.ProgrammesPage, ProgrammeDirectory: catalogueCopy.ProgrammeDirectory });
@@ -19,8 +19,8 @@ export async function ProgrammesLanding() {
     <main className={`subpage ${styles["programmes-page"]}`} id="main-content">
       <SiteHeader compact />
 
-      <CmsPageSections pageId="catalogue" layout={layout}>
-      <section data-site-banner data-cms-slot="hero" className={`${styles["programmes-hero"]}`} aria-labelledby="programmes-title">
+      <ContentPageSections pageId="catalogue" layout={layout}>
+      <section data-site-banner data-content-slot="hero" className={`${styles["programmes-hero"]}`} aria-labelledby="programmes-title">
         <Image
           src={copy.programmes_hero.src_images_pages_programmes_content_campus_jpg}
           alt={copy.programmes_hero.alt_khuon_vien_truong_dai_hoc_van}
@@ -80,8 +80,8 @@ export async function ProgrammesLanding() {
         </div>
       </section>
 
-      <CmsSlot slot="directory"><ProgrammeDirectory content={content.ProgrammeDirectory} entries={entries} /></CmsSlot>
-      </CmsPageSections>
+      <ContentSlot slot="directory"><ProgrammeDirectory content={content.ProgrammeDirectory} entries={entries} /></ContentSlot>
+      </ContentPageSections>
       <NextStepCTA />
       <SiteFooter />
     </main>

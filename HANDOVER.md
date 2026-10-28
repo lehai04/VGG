@@ -1,41 +1,51 @@
-# Bàn giao website public — giai đoạn không CMS
+# Bàn giao website VGG
 
-Branch: `codex/static-no-cms`. Website chạy Next.js + Fastify + PostgreSQL;
-đây là bản ứng dụng có backend và lưu dữ liệu thật. Không triển khai admin portal,
-đăng nhập quản trị, API chỉnh sửa nội dung, preview CMS hoặc lịch xuất bản.
+## Cài đặt mới
 
-## Cài đặt bằng Docker
-
-1. Cài Docker Engine/Desktop với Compose và Git LFS. Chạy `git lfs pull` sau khi clone
-   để lấy đủ PDF và media (không dùng file pointer LFS làm tài liệu).
-2. Sao chép `.env.example` thành `.env`, thay các mật khẩu và `PUBLIC_APP_URL`.
-   Mật khẩu PostgreSQL dùng trong URL: dùng chuỗi hex dài, hoặc percent-encode ký tự đặc biệt.
+1. Cài Docker Engine/Desktop với Compose và Git LFS; chạy `git lfs pull` sau khi clone.
+2. Sao chép `.env.example` thành `.env`. Thay mật khẩu, đặt `PUBLIC_APP_URL` theo domain.
+   Mật khẩu PostgreSQL dùng trong URL: chọn chuỗi hex dài hoặc percent-encode ký tự đặc biệt.
 3. Chạy `docker compose up -d --build`.
-4. Xem `docker compose logs migrate`: phải hoàn thành toàn bộ migration và seed.
-   Kiểm tra `docker compose ps`, rồi mở `http://localhost:3000/vi`.
+4. Kiểm tra `docker compose logs migrate` và `docker compose ps`.
+   Mở `http://localhost:3000/vi` hoặc domain đã cấu hình.
 
-Compose dựng PostgreSQL, MinIO, backend và frontend. Service `migrate` chạy xong trước
-backend; frontend đợi backend kết nối được database. Backend không mở cổng ra ngoài.
-MinIO phục vụ media đã nhập; PDF bàn giao nằm trong `frontend/public/documents/demo`.
-Tên thư mục `demo` được giữ để các URL tài liệu hiện hữu không bị hỏng.
-Khi triển khai domain thật, đặt reverse proxy HTTPS trước cổng 3000.
+Frontend chờ backend khỏe; backend chờ migrate và seed thành công. PostgreSQL và MinIO
+chỉ mở trong mạng Docker. Reverse proxy HTTPS trỏ tới cổng 3000 của frontend.
+`PUBLIC_PORT` cho phép đổi cổng host nếu cần.
 
-## Migration và dữ liệu
+## Database và nội dung
 
-- Schema và lịch sử SQL: `backend/prisma/schema.prisma`, `backend/prisma/migrations/`.
-- Dữ liệu trang: `backend/src/modules/cms/page-defaults.json`.
-- Seed: `backend/prisma/seed-public.ts`. Nhập nội dung trang VI/EN, danh mục tài liệu,
-  PDF sẵn có và các tin tóm tắt kèm link bài gốc VLU. Không có dữ liệu người đăng ký giả.
-- Seed dùng upsert với `update: {}`: chạy lại không ghi đè nội dung hoặc yêu cầu tư vấn.
-- Giữ lịch sử schema tương thích với giai đoạn CMS sau này. Các bảng author/role vẫn
-  tồn tại vì khóa ngoại; seed chỉ tạo một bản ghi tác giả khóa vĩnh viễn, không tạo tài khoản đăng nhập.
-- Các tiện ích thuần xử lý nội dung trong `backend/src/modules/cms` được frontend dùng
-  để render nội dung; chúng không cung cấp API quản trị.
-- Đây là dữ liệu có trong mã nguồn bàn giao, không phải bản sao database production.
-  Nếu cần chuyển dữ liệu đang vận hành, IT phải backup/restore PostgreSQL và đồng bộ bucket MinIO;
-  không chỉ copy schema. Không đưa bản backup chứa thông tin cá nhân vào Git.
+Schema mới chỉ gồm bài viết, tài liệu, danh mục tài liệu, nội dung trang, lượt truy cập,
+yêu cầu tư vấn và lịch sử yêu cầu. Tác giả bài viết được lưu bằng tên hiển thị.
 
-Chạy thủ công khi đã cấu hình `backend/.env` và `frontend/.env.local`:
+- Schema: `backend/prisma/schema.prisma`.
+- Migration khởi tạo: `backend/prisma/migrations/20261028000000_public_foundation/`.
+- Seed: `npm run db:seed` — 58 bản ghi nội dung, 4 tin tóm tắt có nguồn và 8 tài liệu.
+- Dữ liệu trang: `backend/src/modules/content/page-defaults.json`.
+- PDF: `frontend/public/documents/demo/`; giữ URL cũ để các liên kết tài liệu còn hoạt động.
+- Seed không ghi đè bản ghi đã có và không tạo người đăng ký giả.
+
+Migration này dành cho database trống. Không chạy chồng lên database đang có lịch sử
+migration khác. Volume mới được đặt tên `vgg_public_postgres_data`; volume cũ không bị xóa.
+Khi chuyển hệ thống đang có dữ liệu: sao lưu trước, tạo database mới, chạy migration,
+chuyển dữ liệu website bằng script bên dưới, sau đó seed và kiểm tra trước khi đổi kết nối.
+
+```sh
+# Thiết lập SOURCE_DATABASE_URL và DATABASE_URL bằng biến môi trường.
+# Database đích đã migrate và chưa seed; database nguồn chỉ được đọc.
+node scripts/transfer-public-data.mjs
+npm run db:seed
+```
+
+Script chỉ chuyển các bảng website được liệt kê rõ ràng và những cột còn trong schema mới.
+Database đích phải trống; toàn bộ thao tác ghi nằm trong một transaction. Media MinIO cần
+được đồng bộ riêng nếu dữ liệu cũ tham chiếu tới object storage.
+
+## Chạy trực tiếp bằng Node.js
+
+Node theo `.nvmrc`. Cấu hình `backend/.env` và `frontend/.env.local` từ file mẫu.
+`DATABASE_URL` phải có khi build/generate Prisma. PostgreSQL và MinIO cần được cung cấp
+riêng khi chạy ngoài Compose.
 
 ```sh
 npm ci
@@ -47,35 +57,15 @@ npm run start:backend
 npm start
 ```
 
-Node theo `.nvmrc`/`package.json`. `DATABASE_URL` phải có khi Prisma generate/build.
-Không chạy bootstrap admin. `VGG_DEMO_NEWS=false`, `VGG_DEMO_RESOURCES=false` để tin
-và tài liệu đọc từ database; đây cũng là mặc định của branch này.
+## Nghiệm thu và sao lưu
 
-## Nghiệm thu
+- Mở VI/EN, danh mục/chi tiết chương trình, tuyển sinh, nghiên cứu, tin và tài liệu.
+- Kiểm tra tìm kiếm/lọc tin, tải PDF và gửi form tư vấn; xác nhận dòng mới trong `consultations`.
+- Khởi động lại backend rồi kiểm tra dữ liệu vẫn còn. Seed lại không nhân đôi nội dung.
+- Backend `/ready` phải trả 200. Các API public chỉ phục vụ đọc nội dung, ghi lượt truy cập
+  và nhận yêu cầu tư vấn.
+- Dùng `pg_dump` để backup PostgreSQL và sao lưu MinIO riêng. Kiểm tra restore trước bàn giao.
+- Script `scripts/smoke-public.mjs` có phase `create` và `check`, chạy trên database kiểm thử
+  riêng với `ALLOW_PUBLIC_SMOKE=true`. Phase `check` dọn bản ghi tư vấn mà script đã tạo.
 
-1. Mở trang VI/EN, danh mục và chi tiết chương trình, tuyển sinh, nghiên cứu.
-2. Tìm kiếm/lọc tin, mở bài; tra cứu, xem và tải PDF.
-3. Gửi một form tư vấn hợp lệ, xác nhận hàng mới trong bảng `consultations`.
-   Khởi động lại backend rồi kiểm tra hàng vẫn tồn tại.
-4. Backend `/ready` trả 200; `/api/admin/*`, `/api/auth/*` và preview CMS trả 404.
-5. Chạy lại `npm run db:seed`, xác nhận không nhân đôi dữ liệu và không mất form đã gửi.
-
-Không dùng gói HTML snapshot `VGG-STATIC-IT` cũ để triển khai bản này.
-Các tài liệu CMS cũ còn trong lịch sử Git chỉ dành cho giai đoạn sau; dùng tài liệu này
-làm đầu mối triển khai branch public.
-
-## Kết quả xác minh ngày 28/10/2026
-
-- Build production frontend/backend trên Windows và trong Docker: đạt.
-- Bộ kiểm thử: 2 backend + 45 frontend, tất cả đạt; lint và kiểm tra whitespace đạt.
-- Khởi tạo PostgreSQL trống: cả 9 migration thành công; seed tạo 58 bản ghi nội dung,
-  4 tin tóm tắt có nguồn và 8 tài liệu.
-- Smoke test HTTP: trang VI/EN, chương trình, tuyển sinh, tin tức, tài liệu và PDF đạt.
-- Form tư vấn gửi qua API frontend, backend lưu vào PostgreSQL và ghi lịch sử thành công.
-- Restart backend và chạy seed lần hai: form còn nguyên, số lượng nội dung không đổi.
-  Bản ghi form kiểm thử đã được xóa sau xác minh.
-- Các route quản trị/auth/preview đã kiểm tra trả 404.
-
-Script `scripts/smoke-public.mjs` hỗ trợ kiểm tra lại trên database thử nghiệm riêng:
-chạy phase `create`, restart backend và seed lại, rồi chạy phase `check`.
-Phải đặt `ALLOW_PUBLIC_SMOKE=true`; không chạy script này trên database production.
+Kết quả kiểm tra của bản hiện tại được ghi tại `docs/VERIFICATION.md`.

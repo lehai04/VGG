@@ -506,7 +506,7 @@ export function getQuanLyTaiNguyenMoiTruongCurricula(): CurriculumTrack[] {
               credits: 3,
             },
             {
-              code: "81CMSE70313",
+              code: "81contentE70313",
               name: "Quản lý carbon cho môi trường bền vững · Carbon Management for Sustainable Environment",
               credits: 3,
             },

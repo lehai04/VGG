@@ -1,15 +1,23 @@
-# VGG — Website public không CMS
+# VGG — Cổng thông tin Viện Sau Đại học
 
-Bản bàn giao giai đoạn 1: frontend Next.js, backend Fastify, PostgreSQL và MinIO.
-Form tư vấn lưu vào database; tin tức, tài liệu và nội dung trang đọc dữ liệu đã bàn giao.
+Website công khai gồm Next.js, API Fastify, PostgreSQL và kho media MinIO.
+Hỗ trợ nội dung VI/EN, chương trình đào tạo, tuyển sinh, tin tức, tài liệu và form tư vấn.
 
-Xem [hướng dẫn triển khai và nghiệm thu](HANDOVER.md).
+## Khởi chạy
 
 ```sh
 cp .env.example .env
-# Điền mật khẩu và domain trong .env
+# Điền mật khẩu và PUBLIC_APP_URL trong .env
 docker compose up -d --build
 ```
 
-Không có ứng dụng admin hay API quản trị trong branch này. Lịch sử migration và
-các tiện ích render nội dung được giữ để bảo toàn dữ liệu và tương thích giai đoạn sau.
+Xem [hướng dẫn bàn giao](HANDOVER.md) để triển khai, nạp dữ liệu và nghiệm thu.
+
+## Mã nguồn
+
+- `frontend/`: giao diện và API cùng origin.
+- `backend/`: API public, schema PostgreSQL, migration và seed.
+- `scripts/`: kiểm tra tích hợp và chuyển dữ liệu website.
+- `compose.yaml`, `Dockerfile`: triển khai toàn bộ hệ thống.
+
+Kiểm tra: `npm run build`, `npm test`, `npm run lint`.

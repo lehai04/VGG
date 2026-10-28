@@ -10,7 +10,7 @@ import styles from "./ResearchLanding.module.css";
 import researchCopy from '@/data/research-copy.json';
 import partners from '@/data/research-partners.json';
 import { websiteContent,websiteLayout } from '@/lib/website-content';
-import {CmsPageSections} from '@/shared/components/CmsPageSections';
+import {ContentPageSections} from '@/shared/components/ContentPageSections';
 
 const goals = [
   { title: "Nâng cao chất lượng nghiên cứu", text: "Phát triển năng lực nghiên cứu của giảng viên và người học, gia tăng chất lượng công bố và khả năng tham gia các mạng lưới học thuật." },
@@ -65,8 +65,8 @@ export async function ResearchLanding() {
     <main className={styles.vluResearch} id="main-content">
       <SiteHeader compact />
 
-      <CmsPageSections pageId="research" layout={layout}>
-      <section data-site-banner data-cms-slot="hero" className={styles.hero}>
+      <ContentPageSections pageId="research" layout={layout}>
+      <section data-site-banner data-content-slot="hero" className={styles.hero}>
         <Image src={content.hero.image} alt={content.hero.alt} fill priority sizes="100vw" />
         <div className={styles.heroShade} />
         <div data-banner-copy className={styles.heroCopy} data-reveal>
@@ -122,7 +122,7 @@ export async function ResearchLanding() {
 
       <ResearchHighlights />
 
-      <section data-cms-slot="partners" className={styles.partners} aria-labelledby="strategic-partners-title">
+      <section data-content-slot="partners" className={styles.partners} aria-labelledby="strategic-partners-title">
         <header className={styles.partnerLead} data-reveal>
           <h2 data-section-label id="strategic-partners-title">{content.partnersHeading.title}</h2>
           <p>{content.partnersHeading.text}</p>
@@ -157,7 +157,7 @@ export async function ResearchLanding() {
         </div>
       </section>
 
-      </CmsPageSections>
+      </ContentPageSections>
       <NextStepCTA />
       <SiteFooter />
     </main>

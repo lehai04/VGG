@@ -46,7 +46,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             }
           }
         } catch {
-          /* CMS SEO settings are optional for the sitemap fallback. */
+          /* content SEO settings are optional for the sitemap fallback. */
         }
       }),
     );
