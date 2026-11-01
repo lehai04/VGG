@@ -161,7 +161,7 @@ export const khoaHocMoiTruongPageContent: ProgrammePageContent = {
 
 export const khoaHocMoiTruongProgramme: Programme = {
   id: "khoa-hoc-moi-truong",
-  code: "D-01",
+  code: "9440301",
 
   title: "Khoa học Môi trường",
   englishTitle: "Doctor of Philosophy in Environmental Science",

@@ -2,6 +2,7 @@
 
 import Link from "@/i18n/components/LocalizedLink";
 import { useWebsiteChrome } from '../WebsiteChromeProvider';
+import { isPublicSectionVisible } from "@/lib/public-sections";
 import { FooterIcon } from "./FooterIcon";
 import { useLocale } from "@/i18n/components/LocaleProvider";
 
@@ -16,9 +17,9 @@ function LinkColumn({
 }) {
   return (
     <section className="university-footer-column">
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <ul>
-        {links.map((link) => (
+        {links.filter((link) => isPublicSectionVisible(link.href)).map((link) => (
           <li key={link.label}>
             <Link href={link.href}>{link.label}</Link>
           </li>
@@ -30,13 +31,13 @@ function LinkColumn({
 export function FooterAbout() {
   const { aboutLinks } = useWebsiteChrome();
   const { locale } = useLocale();
-  const labels = locale === "en" ? ["News", "Events", "Careers", "Quality Assurance", "English Testing Centre"] : aboutLinks.map((item) => item.label);
-  return <LinkColumn title={locale === "en" ? "About us" : "Về chúng tôi"} links={aboutLinks.map((item,index) => ({...item,label:labels[index]}))} />;
+  const labels = locale === "en" ? ["Introduction", "Vision and Mission", "Educational Philosophy", "Core Values", "Why choose us", "Leadership"] : aboutLinks.map((item) => item.label);
+  return <LinkColumn title={locale === "en" ? "About the Institute" : "Về Viện Sau đại học"} links={aboutLinks.map((item,index) => ({...item,label:labels[index] ?? item.label}))} />;
 }
 export function FooterQuickLinks() {
   const { quickLinks } = useWebsiteChrome();
   const { locale } = useLocale();
-  const labels = locale === "en" ? ["Home", "About Viện Sau Đại học", "Programmes", "Admissions", "Research & Innovation", "Global Opportunities", "Student Success", "News & Events", "Resources", "Contact"] : quickLinks.map((item) => item.label);
+  const labels = locale === "en" ? ["Home", "About Viện Sau đại học", "Programmes", "Admissions", "Research & Innovation", "Global Opportunities", "Student Success", "News & Events", "Resources", "Contact"] : quickLinks.map((item) => item.label);
   return <LinkColumn title={locale === "en" ? "Quick links" : "Truy cập nhanh"} links={quickLinks.map((item,index) => ({...item,label:labels[index] ?? item.label}))} />;
 }
 export function FooterSocial() {
@@ -44,7 +45,7 @@ export function FooterSocial() {
   const { locale } = useLocale();
   return (
     <section className="university-footer-column university-footer-social">
-      <h2>{locale === "en" ? "Follow us" : "Theo dõi"}</h2>
+      <h3>{locale === "en" ? "Follow us" : "Theo dõi"}</h3>
       <ul>
         {socialLinks.map((link) => (
           <li key={link.label}>

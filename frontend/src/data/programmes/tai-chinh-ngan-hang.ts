@@ -154,7 +154,7 @@ export const taiChinhNganHangPageContent: ProgrammePageContent = {
       {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
-          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ.",
+          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ.",
         ],
         groups: [
           {
@@ -195,7 +195,7 @@ export const taiChinhNganHangPageContent: ProgrammePageContent = {
       },
       {
         title: "Nghiên cứu và giảng dạy",
-        sub: "Giảng dạy, nghiên cứu và tiếp tục học tiến sĩ.",
+        sub: "Giảng dạy, nghiên cứu và tiếp tục học Tiến sĩ.",
       },
     ],
   },
@@ -236,7 +236,7 @@ export const taiChinhNganHangPageContent: ProgrammePageContent = {
     ctaBody:
       "Trao đổi về chương trình Tài chính - Ngân hàng, điều kiện đầu vào và lộ trình đăng ký.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ mục tiêu học tập của bạn."],
       body: "Trao đổi về chương trình Tài chính - Ngân hàng, điều kiện đầu vào và lộ trình đăng ký.",
       benefits: [],
@@ -280,7 +280,7 @@ export const taiChinhNganHangPageContent: ProgrammePageContent = {
   },
   fees: {
     heading: "Chủ động chuẩn bị cho hành trình học.",
-    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."],
+    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."],
     intake: "TUYỂN SINH THẠC SĨ 2027",
     language: "Tiếng Việt",
     total: "85.000.000 đồng",
@@ -342,7 +342,7 @@ export const taiChinhNganHangProgramme: Programme = {
   summary:
     "Cập nhật kiến thức tài chính – ngân hàng, công nghệ tài chính và quản trị rủi ro; phát triển năng lực phân tích, hoạch định và dẫn dắt thay đổi.",
   tuition: "85.000.000 VNĐ",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   orientations: ["Ứng dụng", "Nghiên cứu"],
 };
 export function getTaiChinhNganHangCurricula(): CurriculumTrack[] {

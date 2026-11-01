@@ -157,7 +157,7 @@ export const ngonNguAnhPageContent: ProgrammePageContent = {
       {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
-          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ.",
+          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ.",
         ],
         groups: [
           {
@@ -187,7 +187,7 @@ export const ngonNguAnhPageContent: ProgrammePageContent = {
       },
       {
         title: "Nghiên cứu học thuật",
-        sub: "Nghiên cứu tại cơ sở giáo dục, viện nghiên cứu; tiếp tục học tiến sĩ.",
+        sub: "Nghiên cứu tại cơ sở giáo dục, viện nghiên cứu; tiếp tục học Tiến sĩ.",
       },
       {
         title: "Biên phiên dịch",
@@ -233,7 +233,7 @@ export const ngonNguAnhPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình Ngôn ngữ Anh, điều kiện đầu vào và lộ trình đăng ký.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ mục tiêu học tập của bạn."],
       body: "Trao đổi về chương trình Ngôn ngữ Anh, điều kiện đầu vào và lộ trình đăng ký.",
       benefits: [],
@@ -276,7 +276,7 @@ export const ngonNguAnhPageContent: ProgrammePageContent = {
   },
   fees: {
     heading: "Chủ động chuẩn bị cho hành trình học.",
-    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."],
+    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."],
     intake: "TUYỂN SINH THẠC SĨ 2027",
     language: "Tiếng Việt",
     total: "85.000.000 đồng",
@@ -338,7 +338,7 @@ export const ngonNguAnhProgramme: Programme = {
   summary:
     "Đào sâu ngôn ngữ học ứng dụng, phương pháp giảng dạy và nghiên cứu tiếng Anh; tích hợp công nghệ số và trí tuệ nhân tạo vào môi trường giáo dục hiện đại.",
   tuition: "85.000.000 VNĐ",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   orientations: ["Ứng dụng", "Nghiên cứu"],
 };
 export function getNgonNguAnhCurricula(): CurriculumTrack[] {

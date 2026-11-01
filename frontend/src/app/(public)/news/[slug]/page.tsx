@@ -1,3 +1,5 @@
+import { publicSiteOrigin } from "@/lib/public-site";
+import { isPublicSectionVisible } from "@/lib/public-sections";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowUpRight, CalendarDays, UserRound } from "lucide-react";
@@ -15,7 +17,7 @@ import { defaultLocale, isLocale } from "@/lib/i18n";
 
 type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ contentNewsPreview?: string }> };
 function canonicalNewsUrl(post: { canonicalUrl?: string | null; slug: string }, locale: string) {
-  const base = process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn";
+  const base = publicSiteOrigin();
   const fallback = new URL(`/${locale}/news/${post.slug}`, base).toString();
   try {
     const requested = new URL(post.canonicalUrl || fallback, base);
@@ -44,7 +46,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     openGraph: {
       type: "article",
       locale: locale === "vi" ? "vi_VN" : "en_US",
-      siteName: "Van Lang Global Graduate",
+      siteName: "Viện Sau đại học",
       url,
       title: post.ogTitle || post.metaTitle || post.title,
       description: post.ogDescription || post.metaDescription || post.excerpt || undefined,
@@ -55,6 +57,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 }
 
 export default async function NewsDetailPage({ params, searchParams }: Props) {
+  if (!isPublicSectionVisible("/news")) notFound();
   const { slug } = await params;
   const post = await getNewsPost(slug, (await searchParams).contentNewsPreview);
   if (!post) {
@@ -72,12 +75,12 @@ export default async function NewsDetailPage({ params, searchParams }: Props) {
   const headerLocale = requestHeaders.get("x-vgg-locale");
   const locale = isLocale(headerLocale) ? headerLocale : defaultLocale;
   const canonicalUrl = canonicalNewsUrl(post, locale);
-  const author = post.authorName || post.author?.fullName || "Viện Sau Đại học";
-  const publicBase = (process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn").replace(/\/$/, "");
+  const author = post.authorName || post.author?.fullName || "Viện Sau đại học";
+  const publicBase = publicSiteOrigin();
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "NewsArticle", "@id": `${canonicalUrl}#article`, headline: post.title, description: post.metaDescription || post.excerpt || undefined, datePublished: post.publishedAt || undefined, dateModified: post.publishedAt || undefined, author: { "@type": "Person", name: author }, image: post.coverImage ? [new URL(post.coverImage, process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn").toString()] : undefined, mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl }, publisher: { "@type": "EducationalOrganization", name: "Viện Sau Đại học Văn Lang", url: process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn" } },
+      { "@type": "NewsArticle", "@id": `${canonicalUrl}#article`, headline: post.title, description: post.metaDescription || post.excerpt || undefined, datePublished: post.publishedAt || undefined, dateModified: post.publishedAt || undefined, author: { "@type": "Person", name: author }, image: post.coverImage ? [new URL(post.coverImage, publicSiteOrigin()).toString()] : undefined, mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl }, publisher: { "@type": "EducationalOrganization", name: "Viện Sau đại học Văn Lang", url: publicSiteOrigin() } },
       { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Trang chủ", item: `${publicBase}/${locale}` }, { "@type": "ListItem", position: 2, name: "Tin tức", item: `${publicBase}/${locale}/news` }, { "@type": "ListItem", position: 3, name: post.title, item: canonicalUrl }] },
       ...(post.customJsonLd ? [post.customJsonLd] : []),
     ],
@@ -95,7 +98,7 @@ export default async function NewsDetailPage({ params, searchParams }: Props) {
             <div className={styles.meta}>
               <span>
                 <UserRound />
-                Tác giả <b>{post.authorName || post.author?.fullName || "Viện Sau Đại học"}</b>
+                Tác giả <b>{post.authorName || post.author?.fullName || "Viện Sau đại học"}</b>
               </span>
               <time>
                 <CalendarDays />
@@ -122,7 +125,7 @@ export default async function NewsDetailPage({ params, searchParams }: Props) {
                 <strong>{post.excerpt}</strong>
               </p>
             )}
-            <div className={styles.content} dangerouslySetInnerHTML={{ __html: post.content }} />
+            <div className={`${styles.content} cms-rich-content`} dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
           <aside className={styles.recent} aria-labelledby="recent-news">
             <h2 id="recent-news">Tin tức gần đây</h2>

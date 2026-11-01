@@ -11,29 +11,19 @@ export async function Hero() {
   return (
     <section data-site-banner className="hero" id="top">
       <div className="heroMedia" aria-hidden="true">
-        {banner?.kind === "image" ? (
-          <Image fill sizes="100vw" className="heroBackground" src={banner.src} alt={banner.alt} />
-        ) : (
-          <video
-            className="heroBackground"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster={banner?.poster ?? hero.posterImage}
-          >
-            <source
-              src={banner?.src ?? "/video/video-banner.webm"}
-              type={banner?.src.endsWith(".mp4") ? "video/mp4" : "video/webm"}
-            />
-          </video>
-        )}
+        <Image
+          fill
+          preload
+          sizes="100vw"
+          quality={75}
+          className="heroBackground"
+          src={banner?.kind === "image" ? banner.src : (banner?.poster || (hero.posterImage === "/images/pages/home/banner/banner-01.jpg" ? "/images/pages/home/banner/banner-01.webp" : hero.posterImage))}
+          alt={banner?.alt || ""}
+        />
       </div>
       <div className="heroOverlay" aria-hidden="true" />
 
       <div data-banner-copy data-banner-inset>
-      <div data-banner-label className="eyebrow">VAN LANG GLOBAL GRADUATE</div>
       <h1 data-banner-title>
         {hero.title} <em>{hero.emphasis}</em>
       </h1>

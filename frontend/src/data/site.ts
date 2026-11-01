@@ -23,11 +23,11 @@ export const menuGroups: readonly MenuGroup[] = [
   {
     slug: "discover",
     en: "About Van Lang Institute Of Postgraduate Education",
-    vi: "Về Viện Sau Đại học",
+    vi: "Về Viện Sau đại học",
     kicker: "Van Lang Institute Of Postgraduate Education",
-    headline: "Khám phá một Viện Sau Đại học lấy người học làm trung tâm.",
+    headline: "Khám phá một Viện Sau đại học lấy người học làm trung tâm.",
     intro:
-      "Viện Sau Đại học kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",
+      "Viện Sau đại học kiến tạo môi trường học thuật khai phóng, nơi người học phát triển chuyên môn, tư duy nghiên cứu và năng lực tạo tác động.",
     items: [],
     itemsEn: [],
     image:
@@ -62,7 +62,7 @@ export const menuGroups: readonly MenuGroup[] = [
     slug: "admissions",
     en: "Admissions",
     vi: "Tuyển sinh",
-    kicker: "Your Viện Sau Đại học journey starts here",
+    kicker: "Your Viện Sau đại học journey starts here",
     headline: "Thông tin rõ ràng. Hành trình tinh gọn.",
     intro: "Tìm hiểu điều kiện, học phí, học bổng, quy trình hồ sơ và các mốc quan trọng.",
     items: [
@@ -85,11 +85,11 @@ export const menuGroups: readonly MenuGroup[] = [
   {
     slug: "research",
     en: "Research & Global Opportunities",
-    vi: "Nghiên cứu khoa học & Hợp tác quốc tế",
+    vi: "Nghiên cứu khoa học",
     kicker: "Knowledge for real-world impact",
     headline: "Nghiên cứu chuyên sâu. Kết nối tri thức toàn cầu.",
     intro:
-      "Viện Sau Đại học kết nối nhà khoa học, doanh nghiệp, cộng đồng và mạng lưới đối tác quốc tế để kiến tạo tri thức, giải pháp thực tiễn và những cơ hội học tập vượt ra ngoài biên giới.",
+      "Viện Sau đại học kết nối nhà khoa học, doanh nghiệp, cộng đồng và mạng lưới đối tác quốc tế để kiến tạo tri thức, giải pháp thực tiễn và những cơ hội học tập vượt ra ngoài biên giới.",
     items: [
       "Các cụm nghiên cứu",
       "Dự án nghiên cứu",
@@ -180,7 +180,7 @@ export const menuGroups: readonly MenuGroup[] = [
     kicker: "The pulse of our academic community",
     headline: "Theo dòng chuyển động học thuật.",
     intro:
-      "Cập nhật tin tức, sự kiện, seminar và những khoảnh khắc nổi bật trong cộng đồng Viện Sau Đại học.",
+      "Cập nhật tin tức, sự kiện, seminar và những khoảnh khắc nổi bật trong cộng đồng Viện Sau đại học.",
     items: [
       "Tin tức",
       "Sự kiện",
@@ -208,7 +208,7 @@ export const menuGroups: readonly MenuGroup[] = [
 /** Danh sách ngành cho form tư vấn. Phải khớp option trong ResourcesConsultation. */
 export const programmes = [
   "Marketing",
-  "Công nghệ thông tin",
+  "Công nghệ Thông tin",
   "Khoa học Môi trường",
   "Quản trị Kinh doanh",
   "Kinh doanh Thương mại",
@@ -292,7 +292,7 @@ export const sectionSubpages: Record<string, SectionSubpage[]> = Object.fromEntr
         title,
         eyebrow: `${group.en} / ${String(index + 1).padStart(2, "0")}`,
         headline: `${title}: kiến tạo một hành trình có chiều sâu.`,
-        summary: `Khám phá thông tin, cơ hội và nguồn lực dành cho ${title.toLowerCase()} tại Viện Sau Đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm.`,
+        summary: `Khám phá thông tin, cơ hội và nguồn lực dành cho ${title.toLowerCase()} tại Viện Sau đại học — được thiết kế rõ ràng, thực tiễn và lấy người học làm trung tâm.`,
       })),
     ]),
 );
@@ -316,7 +316,7 @@ export const unifiedSectionDetails: Record<string, readonly UnifiedDetailBlock[]
     },
     {
       title: "Điều kiện ngoại ngữ",
-      text: "Đáp ứng yêu cầu về năng lực ngoại ngữ theo Quy chế tuyển sinh trình độ thạc sĩ của Bộ Giáo dục và Đào tạo, bao gồm một trong các điều kiện sau:",
+      text: "Đáp ứng yêu cầu về năng lực ngoại ngữ theo Quy chế tuyển sinh trình độ Thạc sĩ của Bộ Giáo dục và Đào tạo, bao gồm một trong các điều kiện sau:",
       points: [
         "Có chứng chỉ ngoại ngữ đạt trình độ tương đương Bậc 3 trở lên theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam còn hiệu lực.",
         "Có bằng tốt nghiệp đại học ngành ngôn ngữ nước ngoài.",

@@ -138,7 +138,7 @@ export const quanTriKinhDoanhPageContent: ProgrammePageContent = {
       {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
-          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ.",
+          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ.",
         ],
         groups: [
           {
@@ -220,7 +220,7 @@ export const quanTriKinhDoanhPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình Quản trị kinh doanh, điều kiện đầu vào và lộ trình đăng ký.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ mục tiêu học tập của bạn."],
       body: "Trao đổi về chương trình Quản trị kinh doanh, điều kiện đầu vào và lộ trình đăng ký.",
       benefits: [],
@@ -263,7 +263,7 @@ export const quanTriKinhDoanhPageContent: ProgrammePageContent = {
   },
   fees: {
     heading: "Chủ động chuẩn bị cho hành trình học.",
-    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."],
+    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."],
     intake: "TUYỂN SINH THẠC SĨ 2027",
     language: "Tiếng Việt",
     total: "85.000.000 đồng",
@@ -325,7 +325,7 @@ export const quanTriKinhDoanhProgramme: Programme = {
   summary:
     "Nâng cao năng lực quản trị, phân tích kinh doanh và lãnh đạo trong môi trường số; vận dụng dữ liệu, công nghệ và tư duy bền vững vào quyết định doanh nghiệp.",
   tuition: "85.000.000 VNĐ",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
 };
 export function getQuanTriKinhDoanhCurricula(): CurriculumTrack[] {
   return [

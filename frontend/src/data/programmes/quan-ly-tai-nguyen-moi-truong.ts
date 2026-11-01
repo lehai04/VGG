@@ -48,7 +48,7 @@ export const quanLyTaiNguyenMoiTruongPageContent: ProgrammePageContent = {
     headline: "Kiến thức chuyên sâu. Năng lực tạo tác động.",
     overview: [
       "Chương trình cung cấp kiến thức chuyên sâu về quản lý chất lượng môi trường, sử dụng tài nguyên hiệu quả, chính sách, kinh tế môi trường và các công cụ phân tích hiện đại. Nội dung gắn với phát triển bền vững, tăng trưởng xanh và thích ứng biến đổi khí hậu.",
-      "Theo danh mục tuyển sinh 2027, chương trình tuyển định hướng nghiên cứu. Khối tốt nghiệp gồm chuyên đề nghiên cứu và luận văn, tạo nền tảng cho công việc chuyên gia, nghiên cứu, giảng dạy hoặc học tiếp tiến sĩ.",
+      "Theo danh mục tuyển sinh 2027, chương trình tuyển định hướng nghiên cứu. Khối tốt nghiệp gồm chuyên đề nghiên cứu và luận văn, tạo nền tảng cho công việc chuyên gia, nghiên cứu, giảng dạy hoặc học tiếp Tiến sĩ.",
     ],
     overviewImage:
       "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/296673760_3424521084455298_2982558230818820073_n_207fc67abf.jpg",
@@ -154,7 +154,7 @@ export const quanLyTaiNguyenMoiTruongPageContent: ProgrammePageContent = {
       {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
-          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ.",
+          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ.",
         ],
         groups: [
           {
@@ -195,7 +195,7 @@ export const quanLyTaiNguyenMoiTruongPageContent: ProgrammePageContent = {
       },
       {
         title: "Phát triển học thuật",
-        sub: "Tiếp tục học chương trình tiến sĩ trong và ngoài nước.",
+        sub: "Tiếp tục học chương trình Tiến sĩ trong và ngoài nước.",
       },
     ],
   },
@@ -236,7 +236,7 @@ export const quanLyTaiNguyenMoiTruongPageContent: ProgrammePageContent = {
     ctaBody:
       "Trao đổi về chương trình Quản lý tài nguyên và môi trường, điều kiện đầu vào và lộ trình đăng ký.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ mục tiêu học tập của bạn."],
       body: "Trao đổi về chương trình Quản lý tài nguyên và môi trường, điều kiện đầu vào và lộ trình đăng ký.",
       benefits: [],
@@ -279,7 +279,7 @@ export const quanLyTaiNguyenMoiTruongPageContent: ProgrammePageContent = {
   },
   fees: {
     heading: "Chủ động chuẩn bị cho hành trình học.",
-    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."],
+    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."],
     intake: "TUYỂN SINH THẠC SĨ 2027",
     language: "Tiếng Việt",
     total: "85.000.000 đồng",
@@ -341,7 +341,7 @@ export const quanLyTaiNguyenMoiTruongProgramme: Programme = {
   summary:
     "Phát triển năng lực nghiên cứu, phân tích dữ liệu và đề xuất giải pháp quản lý tài nguyên, môi trường theo hướng tăng trưởng xanh, thích ứng biến đổi khí hậu.",
   tuition: "85.000.000 VNĐ",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
 };
 export function getQuanLyTaiNguyenMoiTruongCurricula(): CurriculumTrack[] {
   return [

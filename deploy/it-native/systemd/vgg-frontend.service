@@ -1,0 +1,18 @@
+[Unit]
+Description=Saudaihoc Next.js frontend
+After=network.target vgg-backend.service
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/opt/saudaihoc/deploy/release/frontend
+EnvironmentFile=/etc/saudaihoc/frontend.env
+ExecStart=/usr/local/bin/node /var/opt/saudaihoc/deploy/release/frontend/server.js
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

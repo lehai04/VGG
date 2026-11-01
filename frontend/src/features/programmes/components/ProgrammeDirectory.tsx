@@ -1,4 +1,5 @@
 "use client";
+import { EmptyContent } from "@/shared/components/EmptyContent";
 
 import styles from "./ProgrammeCatalogue.module.css";
 
@@ -295,12 +296,12 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
                     </div>
 
                     <div className={`${styles["vgg-pd-card__stat"]}`}>
-                      <strong>{programme.creditsLabel ?? programme.credits}</strong>
+                      <strong>{programme.id === "cong-nghe-thong-tin" ? "45-60" : (programme.creditsLabel ?? programme.credits)}</strong>
                       <span>{copy.programme_directory.tin_chi}</span>
                     </div>
 
                     <div className={`${styles["vgg-pd-card__stat"]}`}>
-                      <strong>{programme.duration}</strong>
+                      <strong>{programme.id === "cong-nghe-thong-tin" ? "18-24" : programme.duration}</strong>
                       <span>{copy.programme_directory.thoi_gian}</span>
                     </div>
 
@@ -468,14 +469,14 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
             })}
 
             {filteredProgrammes.length === 0 && (
-              <div className={`${styles["vgg-pd__empty"]}`}>
-                <Search size={32} strokeWidth={1.4} />
-                <h3>{copy.programme_directory.khong_tim_thay_chuong_trinh}</h3>
-                <p>{copy.programme_directory.hay_thu_thay_doi_tu_khoa_hoac}</p>
-                <button type="button" onClick={clearAll}>
-                  {copy.programme_directory.xoa_toan_bo_bo_loc}
-                </button>
-              </div>
+              <EmptyContent
+                title={copy.programme_directory.khong_tim_thay_chuong_trinh}
+                description={activeFilters.length || keyword
+                  ? copy.programme_directory.hay_thu_thay_doi_tu_khoa_hoac
+                  : "Thông tin chương trình đang được cập nhật. Vui lòng quay lại sau."}
+                actionLabel={activeFilters.length || keyword ? "Xem tất cả chương trình" : undefined}
+                onReset={clearAll}
+              />
             )}
           </div>
         </div>

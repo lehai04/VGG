@@ -1,55 +1,113 @@
+name: vgg
+
+x-app-build: &app-build
+  context: .
+  target: runtime
+  args:
+    NEXT_PUBLIC_WEBSITE_URL: ${PUBLIC_APP_URL:?Set HTTPS website URL}
+x-hardening: &hardening
+  init: true
+  restart: unless-stopped
+  security_opt: [no-new-privileges:true]
+  cap_drop: [ALL]
+  pids_limit: 256
+  logging:
+    driver: json-file
+    options: {max-size: 10m, max-file: "3"}
+x-backend-env: &backend-env
+  NODE_ENV: production
+  DATABASE_URL: postgresql://${POSTGRES_USER:-vgg}:${POSTGRES_PASSWORD:?Set database password}@postgres:5432/${POSTGRES_DB:-vgg}
+  PUBLIC_APP_URL: ${PUBLIC_APP_URL:?Set website URL}
+  CMS_APP_URL: ${CMS_APP_URL:?Set separate CMS URL}
+  STORAGE_ENDPOINT: ${STORAGE_ENDPOINT:-minio}
+  STORAGE_PORT: 9000
+  STORAGE_USE_SSL: "false"
+  STORAGE_BUCKET: ${STORAGE_BUCKET:-vgg-media}
+  STORAGE_ACCESS_KEY: ${MINIO_APP_ACCESS_KEY:-}
+  STORAGE_SECRET_KEY: ${MINIO_APP_SECRET_KEY:-}
+
 services:
-  backend:
-    build: .
-    image: vgg-public:local
+  gateway:
+    image: nginx:1.28-alpine
     restart: unless-stopped
-    environment: &backend_environment
-      NODE_ENV: production
-      DATABASE_URL: postgresql://${POSTGRES_USER:-vgg}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}@postgres:5432/${POSTGRES_DB:-vgg}
-      PUBLIC_APP_URL: ${PUBLIC_APP_URL:-http://localhost:3000}
-      STORAGE_ENDPOINT: minio
-      STORAGE_PORT: 9000
-      STORAGE_USE_SSL: "false"
-      STORAGE_BUCKET: ${STORAGE_BUCKET:-vgg-media}
-      STORAGE_ACCESS_KEY: ${MINIO_APP_ACCESS_KEY:?MINIO_APP_ACCESS_KEY is required}
-      STORAGE_SECRET_KEY: ${MINIO_APP_SECRET_KEY:?MINIO_APP_SECRET_KEY is required}
+    security_opt: [no-new-privileges:true]
+    ports: ["${HTTP_PORT:-80}:80", "${HTTPS_PORT:-443}:443"]
+    environment:
+      WEBSITE_HOST: ${WEBSITE_HOST:?Set website hostname without scheme}
+      CMS_HOST: ${CMS_HOST:?Set CMS hostname without scheme}
+    volumes:
+      - ./deploy/nginx/default.conf.template:/etc/nginx/templates/default.conf.template:ro
+      - ${TLS_DIRECTORY:?Set absolute TLS directory}:/etc/nginx/tls:ro
+    networks: [app]
+    depends_on: [frontend, cms]
+    logging:
+      driver: json-file
+      options: {max-size: 10m, max-file: "3"}
+
+  backend:
+    <<: *hardening
+    build: *app-build
+    image: ${APP_IMAGE:-vgg-app:local}
+    read_only: true
+    tmpfs: [/tmp]
+    environment: *backend-env
+    networks: [app, data]
     depends_on:
-      migrate:
-        condition: service_completed_successfully
-      minio-init:
-        condition: service_completed_successfully
+      migrate: {condition: service_completed_successfully}
     healthcheck:
-      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:4000/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
-      interval: 10s
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:4000/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 15s
       timeout: 5s
-      retries: 12
+      retries: 10
 
   migrate:
-    image: vgg-public:local
-    build: .
+    build:
+      context: .
+      target: tools
+      args: {NEXT_PUBLIC_WEBSITE_URL: "${PUBLIC_APP_URL}"}
+    image: ${TOOLS_IMAGE:-vgg-tools:local}
     restart: "no"
-    command: ["sh", "-c", "npm run db:deploy && npm run db:seed"]
-    environment: *backend_environment
+    security_opt: [no-new-privileges:true]
+    command: [npm, run, db:deploy]
+    environment: *backend-env
+    networks: [data]
     depends_on:
-      postgres:
-        condition: service_healthy
+      postgres: {condition: service_healthy}
 
   frontend:
-    image: vgg-public:local
-    build: .
-    restart: unless-stopped
-    command: ["npm", "run", "start"]
+    <<: *hardening
+    build: *app-build
+    image: ${APP_IMAGE:-vgg-app:local}
+    command: [npm, run, start]
+    read_only: true
+    tmpfs: [/tmp, /app/frontend/.next/cache:uid=1000,gid=1000]
+    environment:
+      NODE_ENV: production
+      HOSTNAME: localhost
+      NODE_OPTIONS: --dns-result-order=ipv4first
+      BACKEND_INTERNAL_URL: http://backend:4000
+      PUBLIC_APP_URL: ${PUBLIC_APP_URL}
+      SITE_INDEXABLE: ${SITE_INDEXABLE:-false}
+    networks:
+      app: {ipv4_address: "${VGG_FRONTEND_IP:-172.30.10.10}"}
+    depends_on:
+      backend: {condition: service_healthy}
+
+  cms:
+    <<: *hardening
+    build: *app-build
+    image: ${APP_IMAGE:-vgg-app:local}
+    command: [npm, run, start:cms]
+    read_only: true
+    tmpfs: [/tmp, /app/cms/.next/cache:uid=1000,gid=1000]
     environment:
       NODE_ENV: production
       BACKEND_INTERNAL_URL: http://backend:4000
-      PUBLIC_APP_URL: ${PUBLIC_APP_URL:-http://localhost:3000}
-      VGG_DEMO_NEWS: "false"
-      VGG_DEMO_RESOURCES: "false"
-    ports:
-      - "${PUBLIC_PORT:-3000}:3000"
+      CMS_APP_URL: ${CMS_APP_URL}
+    networks:
+      app: {ipv4_address: "${VGG_CMS_IP:-172.30.10.11}"}
     depends_on:
-      backend:
-        condition: service_healthy
+      backend: {condition: service_healthy}
 
   postgres:
     image: postgres:17-alpine
@@ -57,54 +115,32 @@ services:
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-vgg}
       POSTGRES_USER: ${POSTGRES_USER:-vgg}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
-    volumes:
-      - vgg_public_postgres_data:/var/lib/postgresql/data
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set database password}
+    networks: [data]
+    volumes: [vgg_public_postgres_data:/var/lib/postgresql/data]
     healthcheck:
-      test:
-        [
-          "CMD-SHELL",
-          "pg_isready -U ${POSTGRES_USER:-vgg} -d ${POSTGRES_DB:-vgg}",
-        ]
+      test: [CMD-SHELL, "pg_isready -U ${POSTGRES_USER:-vgg} -d ${POSTGRES_DB:-vgg}"]
       interval: 5s
       timeout: 5s
       retries: 10
 
+  # Existing MinIO storage is retained; no ports are published.
   minio:
     image: minio/minio:RELEASE.2025-09-07T16-13-09Z
     restart: unless-stopped
-    command: server /data --console-address ":9001"
+    command: server /data --console-address :9001
     environment:
-      MINIO_ROOT_USER: ${MINIO_ROOT_USER:?MINIO_ROOT_USER is required}
-      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?MINIO_ROOT_PASSWORD is required}
-    volumes:
-      - vgg_public_media_data:/data
-    healthcheck:
-      test: ["CMD", "mc", "ready", "local"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:?Set MinIO root user}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?Set MinIO root password}
+    networks: [app]
+    volumes: [vgg_public_media_data:/data]
 
-  minio-init:
-    image: minio/mc:RELEASE.2025-08-13T08-35-41Z
-    depends_on:
-      minio:
-        condition: service_healthy
-    restart: "no"
-    entrypoint: >-
-      /bin/sh -c "
-      mc alias set local http://minio:9000 $$MINIO_ROOT_USER $$MINIO_ROOT_PASSWORD &&
-      mc mb --ignore-existing local/$$STORAGE_BUCKET &&
-      (mc admin user add local $$MINIO_APP_ACCESS_KEY $$MINIO_APP_SECRET_KEY || true) &&
-      mc admin policy attach local readwrite --user $$MINIO_APP_ACCESS_KEY
-      "
-    environment:
-      MINIO_ROOT_USER: ${MINIO_ROOT_USER:?MINIO_ROOT_USER is required}
-      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?MINIO_ROOT_PASSWORD is required}
-      MINIO_APP_ACCESS_KEY: ${MINIO_APP_ACCESS_KEY:?MINIO_APP_ACCESS_KEY is required}
-      MINIO_APP_SECRET_KEY: ${MINIO_APP_SECRET_KEY:?MINIO_APP_SECRET_KEY is required}
-      STORAGE_BUCKET: ${STORAGE_BUCKET:-vgg-media}
-
+networks:
+  app:
+    ipam:
+      config: [{subnet: "${VGG_APP_SUBNET:-172.30.10.0/24}"}]
+  data:
+    internal: true
 volumes:
   vgg_public_postgres_data:
   vgg_public_media_data:

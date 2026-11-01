@@ -199,7 +199,7 @@ export const kyThuatOToPageContent: ProgrammePageContent = {
         title: "Các hình thức minh chứng ngoại ngữ đầu vào",
         paragraphs: [
           "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
           "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
         ],
         points: [
@@ -213,7 +213,7 @@ export const kyThuatOToPageContent: ProgrammePageContent = {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
           "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã tích lũy để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-          "Nội dung bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+          "Nội dung bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
           "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
         ],
         groups: [
@@ -339,7 +339,7 @@ export const kyThuatOToPageContent: ProgrammePageContent = {
       {
         group: "Nghiên cứu và phát triển học thuật",
         title: "Giảng dạy và học tập nâng cao",
-        sub: "Phát triển theo hướng giảng dạy tại cơ sở giáo dục hoặc tiếp tục học trình độ tiến sĩ khi đáp ứng các điều kiện của vị trí, chương trình.",
+        sub: "Phát triển theo hướng giảng dạy tại cơ sở giáo dục hoặc tiếp tục học trình độ Tiến sĩ khi đáp ứng các điều kiện của vị trí, chương trình.",
       },
     ],
   },
@@ -359,7 +359,7 @@ export const kyThuatOToPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ", "mục tiêu của bạn."],
       body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Kỹ thuật ô tô. Đội ngũ tư vấn sẽ hỗ trợ bạn lựa chọn định hướng học tập và chuẩn bị hồ sơ phù hợp.",
       benefits: [
@@ -483,7 +483,7 @@ export const kyThuatOToPageContent: ProgrammePageContent = {
 
 export const kyThuatOToProgramme: Programme = {
   id: "ky-thuat-o-to",
-  code: "520130",
+  code: "8520130",
   title: "Kỹ thuật ô tô",
   englishTitle: "Master of Automotive Engineering",
   degree: "Thạc sĩ",
@@ -492,7 +492,7 @@ export const kyThuatOToProgramme: Programme = {
   credits: 60,
   duration: "18–24 tháng",
   studyMode: "Chính quy tập trung, tiếng Việt",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   summary:
     "Phát triển năng lực thiết kế, mô phỏng và tối ưu hóa hệ thống ô tô; tiếp cận công nghệ xe điện, pin và trí tuệ nhân tạo để giải quyết các bài toán kỹ thuật trong công nghiệp và nghiên cứu.",
   schedule:

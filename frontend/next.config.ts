@@ -7,7 +7,6 @@ import { join } from "node:path";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  transpilePackages: ["@vgg/backend"],
   turbopack: {
     // Dùng root monorepo để Turbopack resolve workspace package và node_modules hoisted.
     root: join(process.cwd(), ".."),
@@ -34,11 +33,17 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: [
           { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "Content-Security-Policy", value: "base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
           { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
         ],
       },
+      ...["/api/resources/file", "/api/media/:path*"].map(source => ({source,headers:[
+        {key:"X-Frame-Options",value:"SAMEORIGIN"},
+        {key:"Content-Security-Policy",value:"default-src 'none'; frame-ancestors 'self'; base-uri 'none'"},
+      ]})),
     ];
   },
 };

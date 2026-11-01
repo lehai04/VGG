@@ -209,7 +209,7 @@ export const myThuatUngDungPageContent: ProgrammePageContent = {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
           "Khoa và Viện Sau đại học đối chiếu ngành tốt nghiệp, nội dung chương trình và bảng điểm để xác định học phần cần bổ sung trước khi xét tuyển.",
-          "Các học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ.",
+          "Các học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ.",
         ],
         groups: [
           {
@@ -255,7 +255,7 @@ export const myThuatUngDungPageContent: ProgrammePageContent = {
             ],
             points: [
               "Báo chí & truyền thông Thiết kế truyền thông đa phương tiện; Công nghệ truyền thông.",
-              "Công nghệ thông tin Khoa học máy tính; Trí tuệ nhân tạo; Khoa học dữ liệu.",
+              "Công nghệ Thông tin Khoa học máy tính; Trí tuệ nhân tạo; Khoa học dữ liệu.",
             ],
           },
           {
@@ -441,7 +441,7 @@ export const myThuatUngDungPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ định hướng sáng tạo của bạn."],
       body: "Trao đổi với Viện Sau đại học để được tư vấn về chương trình Mỹ thuật ứng dụng, điều kiện đầu vào và lộ trình đăng ký.",
       benefits: [
@@ -565,7 +565,7 @@ export const myThuatUngDungPageContent: ProgrammePageContent = {
 
 export const myThuatUngDungProgramme: Programme = {
   id: "my-thuat-ung-dung",
-  code: "210410",
+  code: "8210410",
   title: "Mỹ thuật Ứng dụng",
   englishTitle: "Master of Applied Arts",
   degree: "Thạc sĩ",
@@ -574,7 +574,7 @@ export const myThuatUngDungProgramme: Programme = {
   credits: 60,
   duration: "18–24 tháng",
   studyMode: "Chính quy tập trung, tiếng Việt",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   summary:
     "Phát triển tư duy sáng tạo, năng lực nghiên cứu và khả năng dẫn dắt thực hành thiết kế; kết nối văn hóa, công nghệ và trải nghiệm thực tiễn để tạo ra các giải pháp mỹ thuật ứng dụng có giá trị cho cộng đồng.",
   schedule:

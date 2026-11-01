@@ -93,15 +93,11 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
         <Link className="topBarUniversity" href="/">
           {messages.navigation.university}
         </Link>
-        <nav className="topBarLinks" aria-label="Liên kết nhanh">
-          <Link href="/news">{messages.navigation.news}</Link>
-          <Link href="/resources">{messages.navigation.resources}</Link>
-        </nav>
       </div>
 
       <div className="headerShell" ref={headerRef}>
         <header className="header">
-          <Link className="brand" href="/" aria-label="Trang chủ Viện Sau Đại học" onClick={() => { setOpen(false); }}>
+          <Link className="brand" href="/" aria-label="Trang chủ Viện Sau đại học" onClick={() => { setOpen(false); }}>
             <Image
               className="brandLogo"
               src={chrome.brand.image || LOGO_SRC}

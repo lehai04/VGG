@@ -153,6 +153,12 @@ model Consultation {
 
   @@index([status, createdAt])
   @@map("consultations")
+  assignedStaffId String? @map("assigned_staff_id")
+  assignedStaff ConsultationStaff? @relation(fields: [assignedStaffId], references: [id], onDelete: SetNull)
+  outcome String? @db.VarChar(30)
+  nextContactAt DateTime? @map("next_contact_at")
+  @@index([nextContactAt])
+
 }
 
 model ConsultationHistory {
@@ -167,4 +173,43 @@ model ConsultationHistory {
 
   @@index([consultationId, createdAt])
   @@map("consultation_history")
+}
+
+model ConsultationStaff {
+  id           String   @id @default(cuid())
+  email        String   @unique @db.VarChar(190)
+  fullName     String   @map("full_name") @db.VarChar(120)
+  passwordHash String   @map("password_hash")
+  canUpdate    Boolean  @default(true) @map("can_update")
+  canManageContent Boolean @default(false) @map("can_manage_content")
+  assignedConsultations Consultation[]
+  disabled     Boolean  @default(false)
+  createdAt    DateTime @default(now()) @map("created_at")
+  sessions     ConsultationSession[]
+
+  @@map("consultation_staff")
+}
+
+model ConsultationSession {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique @map("token_hash") @db.VarChar(64)
+  staffId   String   @map("staff_id")
+  staff     ConsultationStaff @relation(fields: [staffId], references: [id], onDelete: Cascade)
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([expiresAt])
+  @@map("consultation_sessions")
+}
+
+model CmsRevision {
+  id String @id @default(cuid())
+  entityType String @map("entity_type") @db.VarChar(30)
+  entityId String @map("entity_id")
+  actorName String @map("actor_name") @db.VarChar(120)
+  action String @db.VarChar(30)
+  snapshot Json
+  createdAt DateTime @default(now()) @map("created_at")
+  @@index([entityType, entityId, createdAt])
+  @@map("cms_revisions")
 }

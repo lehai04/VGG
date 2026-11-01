@@ -9,7 +9,12 @@ export async function POST(request: NextRequest) {
   try {
     const response = await fetch(`${backend}/api/public/visits`, {
       method: "POST",
-      headers: { "content-type": "application/json" },
+      // Nginx must overwrite this header and be the only public ingress to Next.js.
+      headers: {
+        "content-type": "application/json",
+        "x-forwarded-for": request.headers.get("x-forwarded-for") || "",
+        "user-agent": request.headers.get("user-agent") || "",
+      },
       body: await request.text(),
       signal: AbortSignal.timeout(3000),
       cache: "no-store",
@@ -17,7 +22,12 @@ export async function POST(request: NextRequest) {
 
     return new NextResponse(await response.text(), {
       status: response.status,
-      headers: { "content-type": "application/json" },
+      headers: {
+        "content-type": "application/json",
+        ...(response.headers.has("retry-after")
+          ? { "retry-after": response.headers.get("retry-after")! }
+          : {}),
+      },
     });
   } catch {
     // Analytics is best-effort: an unavailable backend must never break a public page.

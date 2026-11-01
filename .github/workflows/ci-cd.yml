@@ -1,0 +1,46 @@
+name: VGG checks and Docker build
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      DATABASE_URL: postgresql://vgg:ci_only_password@127.0.0.1:5432/vgg
+      ADMIN_TEST_DATABASE_URL: postgresql://vgg:ci_only_password@127.0.0.1:5432/vgg
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: vgg
+          POSTGRES_PASSWORD: ci_only_password
+          POSTGRES_DB: vgg
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready --health-interval 5s
+          --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+        with: {lfs: true}
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run check:repository
+      - run: npm run db:deploy
+      - run: npm run build
+      - run: npm test
+      - run: npm run lint
+      - run: npm audit --omit=dev --audit-level=moderate
+      - run: docker compose --env-file .env.example config --quiet
+      - run: docker build --target runtime -t vgg:ci .
+      - run: node scripts/smoke-docker.mjs vgg:ci
+      - run: docker build --target tools -t vgg-tools:ci .
+# No server credentials, registry push, automatic deployment or rollback.
+# IT deploys an approved revision with the root compose.yaml; see HANDOVER.md.

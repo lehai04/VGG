@@ -11,7 +11,7 @@ export function FooterLocation() {
   const [mainLocation, ...otherLocations] = locations;
   return (
     <section className="university-footer-location">
-      <h2>{locale === "en" ? "Locations" : "Địa chỉ"}</h2>
+      <h3>{locale === "en" ? "Locations" : "Địa chỉ"}</h3>
       <a
         className="university-footer-map"
         href={mainLocation.mapUrl}

@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-29",
+  "scope": "Local source, isolated PostgreSQL and temporary containers; no production deployment",
+  "checks": {
+    "repository_guard": "pass",
+    "frontend_tests": 45,
+    "backend_tests": 9,
+    "isolated_database_integration": 1,
+    "lint_website_and_cms": "pass",
+    "website_submission_to_separate_cms": "pass",
+    "origin_and_private_route_checks": "pass",
+    "production_dependency_vulnerabilities": 0,
+    "compose_config": "pass",
+    "nginx_tls_config": "pass",
+    "docker_runtime_build": "pass",
+    "read_only_container_smoke_website_cms": "pass",
+    "actual_minio_isolated_head_get_bytes": "pass",
+    "legacy_archive_paths": 11,
+    "docker_tools_build": "pass"
+  },
+  "limitations": [
+    "No production data or MinIO objects changed",
+    "TLS/DNS/firewall/backup restoration must be accepted by IT on staging",
+    "Dependency audit is not a penetration test",
+    "Media report is local HTTP fallback measurement, not live production browser network",
+    "Rate limit storage is per process; replicas require shared storage"
+  ],
+  "deployment": "CI checks/builds only; IT deploys root Compose",
+  "legacy": "deploy/legacy retains previous deployment/rollback tools; restore paths are in paths.json"
+}

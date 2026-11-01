@@ -2,21 +2,21 @@ import { CountUp } from "./CountUp";
 import { homeContent } from '@/data/home-content';
 import { websiteContent } from '@/lib/website-content';
 
-/** HOMEPAGE SECTION: Giới thiệu Viện Sau Đại học và các số liệu đào tạo. */
+/** HOMEPAGE SECTION: Giới thiệu Viện Sau đại học và các số liệu đào tạo. */
 export async function Programmes() {
   const { overview } = await websiteContent('home', homeContent);
   return (
-    // Tổng quan Viện Sau Đại học gồm phần giới thiệu và số liệu nổi bật.
+    // Tổng quan Viện Sau đại học gồm phần giới thiệu và số liệu nổi bật.
     <section className="overview" id="about">
       <div className="overviewFeature">
         <div className="overviewIntro">
           <div className="overviewCopy">
-            <p data-section-label>{overview.label}</p>
-            <h2 data-section-subtitle>
+            <p data-section-label>{overview.label.replace(/\s*[·|–—-]?\s*van lang global graduate/gi, "").trim()}</p>
+            <h3 data-section-subtitle>
               {overview.title}
               {" "}
               <em>{overview.emphasis}</em>
-            </h2>
+            </h3>
           </div>
           <p className="overviewDescription">
             {overview.text}

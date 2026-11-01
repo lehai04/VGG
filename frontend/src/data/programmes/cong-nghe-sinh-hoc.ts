@@ -108,7 +108,7 @@ export const congNgheSinhHocPageContent: ProgrammePageContent = {
       },
       {
         title: "Phát triển cùng môi trường nghiên cứu",
-        text: "Học viên được tạo điều kiện đăng ký đề tài nghiên cứu khoa học cấp trường. Học viên đáp ứng năng lực ngoại ngữ được giới thiệu tham gia các dự án nghiên cứu quốc tế; với kết quả nghiên cứu tốt, học viên được giảng viên hướng dẫn công bố bài báo khoa học và giới thiệu cơ hội học tiến sĩ.",
+        text: "Học viên được tạo điều kiện đăng ký đề tài nghiên cứu khoa học cấp trường. Học viên đáp ứng năng lực ngoại ngữ được giới thiệu tham gia các dự án nghiên cứu quốc tế; với kết quả nghiên cứu tốt, học viên được giảng viên hướng dẫn công bố bài báo khoa học và giới thiệu cơ hội học Tiến sĩ.",
       },
     ],
     learningOutcomes: {
@@ -133,7 +133,7 @@ export const congNgheSinhHocPageContent: ProgrammePageContent = {
         {
           code: "PLO4",
           title: "Phân tích và trình bày dữ liệu",
-          text: "Phân tích, xử lý và trình bày dữ liệu nghiên cứu khoa học bằng các công cụ và phương pháp phù hợp, đáp ứng yêu cầu báo cáo và công bố khoa học ở trình độ thạc sĩ.",
+          text: "Phân tích, xử lý và trình bày dữ liệu nghiên cứu khoa học bằng các công cụ và phương pháp phù hợp, đáp ứng yêu cầu báo cáo và công bố khoa học ở trình độ Thạc sĩ.",
         },
         {
           code: "PLO5",
@@ -166,7 +166,7 @@ export const congNgheSinhHocPageContent: ProgrammePageContent = {
       },
       {
         title: "Người hướng đến giảng dạy và học tiếp",
-        text: "Củng cố kiến thức chuyên sâu và năng lực nghiên cứu để chuẩn bị cho công việc học thuật hoặc hành trình học tập ở trình độ tiến sĩ.",
+        text: "Củng cố kiến thức chuyên sâu và năng lực nghiên cứu để chuẩn bị cho công việc học thuật hoặc hành trình học tập ở trình độ Tiến sĩ.",
       },
     ],
     requirements: [
@@ -192,7 +192,7 @@ export const congNgheSinhHocPageContent: ProgrammePageContent = {
         title: "Các hình thức minh chứng ngoại ngữ đầu vào",
         paragraphs: [
           "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
           "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
         ],
         points: [
@@ -206,7 +206,7 @@ export const congNgheSinhHocPageContent: ProgrammePageContent = {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
           "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã học để xác định học phần cần bổ sung. Ứng viên phải hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-          "Với các ngành liên quan trong danh mục: bổ sung tối đa 6 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình thạc sĩ.",
+          "Với các ngành liên quan trong danh mục: bổ sung tối đa 6 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình Thạc sĩ.",
           "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
         ],
         groups: [
@@ -300,8 +300,8 @@ export const congNgheSinhHocPageContent: ProgrammePageContent = {
       },
       {
         group: "Nghiên cứu và học thuật",
-        title: "Học tiếp trình độ tiến sĩ",
-        sub: "Tiếp tục đào sâu một hướng nghiên cứu tại các chương trình tiến sĩ trong và ngoài nước khi đáp ứng điều kiện tuyển sinh.",
+        title: "Học tiếp trình độ Tiến sĩ",
+        sub: "Tiếp tục đào sâu một hướng nghiên cứu tại các chương trình Tiến sĩ trong và ngoài nước khi đáp ứng điều kiện tuyển sinh.",
       },
       {
         group: "Phát triển và chuyển giao",
@@ -505,7 +505,7 @@ export const congNgheSinhHocPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ", "mục tiêu của bạn."],
       body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Công nghệ sinh học. Đội ngũ tư vấn sẽ hỗ trợ bạn tìm hiểu chương trình và chuẩn bị hồ sơ phù hợp.",
       benefits: [
@@ -634,7 +634,7 @@ export const congNgheSinhHocPageContent: ProgrammePageContent = {
 
 export const congNgheSinhHocProgramme: Programme = {
   id: "cong-nghe-sinh-hoc",
-  code: "420201",
+  code: "8420201",
   title: "Công nghệ Sinh học",
   englishTitle: "Master of Engineering in Biotechnology",
   degree: "Thạc sĩ",
@@ -643,7 +643,7 @@ export const congNgheSinhHocProgramme: Programme = {
   credits: 60,
   duration: "24 tháng",
   studyMode: "Chính quy tập trung, tiếng Việt",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   summary:
     "Phát triển kiến thức chuyên sâu và năng lực nghiên cứu để khám phá các cơ chế của sự sống, ứng dụng công nghệ sinh học trong y sinh, sức khỏe và phát triển bền vững.",
   schedule:

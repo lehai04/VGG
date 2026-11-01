@@ -161,7 +161,7 @@ export const quanTriDuLichPageContent: ProgrammePageContent = {
 
 export const quanTriDuLichProgramme: Programme = {
   id: "quan-tri-du-lich",
-  code: "S-11",
+  code: "8810103",
 
   title: "Quản trị Dịch vụ Du lịch và Lữ hành",
 

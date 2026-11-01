@@ -136,7 +136,7 @@ test("every programme is selectable by the shared consultation form", () => {
 test("Marketing source keeps the research curriculum and semester plan consistent", () => {
   const programme = programmes.find((p) => p.id === "marketing");
   assert.equal(programme.detailsPending, undefined);
-  assert.equal(programme.code, "340115");
+  assert.equal(programme.code, "8340115");
   assert.equal(programme.credits, 60);
   assert.equal(programme.duration, "24 tháng");
   assert.equal(programme.tuition, "90.000.000 VNĐ");
@@ -224,7 +224,7 @@ test("Marketing financial and academic requirements do not leak into other progr
 
 test("Economic Law rejects the accidental Accounting facts and keeps its own credits and internship", () => {
   const p = programmes.find((p) => p.id === "luat-kinh-te");
-  assert.equal(p.code, "380107");
+  assert.equal(p.code, "8380107");
   assert.equal(p.duration, "18 tháng");
   const content = JSON.stringify(p.pageContent);
   assert.ok(!content.includes("340301") && !content.includes("8340301"));
@@ -241,7 +241,7 @@ test("Economic Law rejects the accidental Accounting facts and keeps its own cre
 
 test("Applied Arts uses interview admission and the six-semester reference plan without old publication rules", () => {
   const p = programmes.find((p) => p.id === "my-thuat-ung-dung");
-  assert.equal(p.code, "210410");
+  assert.equal(p.code, "8210410");
   assert.equal(p.duration, "18–24 tháng");
   assert.equal(p.orientation, "Ứng dụng");
   const [track] = getProgrammeCurricula(p);
@@ -265,7 +265,7 @@ test("Applied Arts uses interview admission and the six-semester reference plan 
 
 test("Art Theory follows its research source, bridging limits and 100-million tuition", () => {
   const p = programmes.find((p) => p.id === "ly-luan-lich-su-my-thuat");
-  assert.equal(p.code, "210401");
+  assert.equal(p.code, "8210401");
   assert.equal(p.duration, "24 tháng");
   const [track] = getProgrammeCurricula(p);
   assert.equal(track.orientation, "Nghiên cứu");
@@ -286,7 +286,7 @@ test("Art Theory follows its research source, bridging limits and 100-million tu
 
 test("Logistics separates language tuition, entry conditions and track elective allocations", () => {
   const p = programmes.find((p) => p.id === "logistics");
-  assert.equal(p.code, "340123");
+  assert.equal(p.code, "8340123");
   const [applied, research] = getProgrammeCurricula(p);
   const ac = getCurriculumCourses(applied.groups),
     rc = getCurriculumCourses(research.groups);
@@ -315,7 +315,7 @@ test("Logistics separates language tuition, entry conditions and track elective 
 
 test("Automotive Engineering keeps distinct elective choices and final projects without inventing semesters", () => {
   const p = programmes.find((p) => p.id === "ky-thuat-o-to");
-  assert.equal(p.code, "520130");
+  assert.equal(p.code, "8520130");
   const [applied, research] = getProgrammeCurricula(p);
   for (const [track, electiveCredits] of [
     [applied, 9],
@@ -349,7 +349,7 @@ test("Automotive Engineering keeps distinct elective choices and final projects 
 
 test("Architecture follows seven elective groups and the 150-credit admission condition", () => {
   const p = programmes.find((p) => p.id === "kien-truc");
-  assert.equal(p.code, "580101");
+  assert.equal(p.code, "8580101");
   assert.equal(p.duration, "18 tháng");
   const [track] = getProgrammeCurricula(p);
   const courses = getCurriculumCourses(track.groups);
@@ -370,7 +370,7 @@ test("Architecture follows seven elective groups and the 150-credit admission co
 
 test("Accounting preserves five elective groups, six semesters and the eight-credit project", () => {
   const p = programmes.find((p) => p.id === "ke-toan");
-  assert.equal(p.code, "340301");
+  assert.equal(p.code, "8340301");
   assert.equal(p.duration, "24 tháng");
   const track = getProgrammeCurricula(p)[0];
   const courses = getCurriculumCourses(track.groups);
@@ -387,7 +387,7 @@ test("Accounting preserves five elective groups, six semesters and the eight-cre
 
 test("Environmental Engineering keeps applied and research plans and completion rules separate", () => {
   const p = programmes.find((p) => p.id === "ky-thuat-moi-truong");
-  assert.equal(p.code, "520320");
+  assert.equal(p.code, "8520320");
   assert.ok(p.pageContent.faq.faqs.every((faq) => faq.answer.length > 0));
   assert.match(JSON.stringify(p.pageContent.section03.requirements), /từ loại Khá/);
   const [applied, research] = getProgrammeCurricula(p);
@@ -427,7 +427,7 @@ test("Environmental Engineering keeps applied and research plans and completion 
 
 test("Commerce keeps its own applied curriculum, elective groups and graduation project", () => {
   const p = programmes.find((p) => p.id === "kinh-doanh-thuong-mai");
-  assert.equal(p.code, "340121");
+  assert.equal(p.code, "8340121");
   assert.equal(p.duration, "24 tháng");
   assert.equal(p.englishTitle, "Master of Commerce");
   const tracks = getProgrammeCurricula(p);
@@ -463,7 +463,7 @@ test("Commerce keeps its own applied curriculum, elective groups and graduation 
 
 test("Biotechnology follows its own six-semester source and elective allocation", () => {
   const p = programmes.find((p) => p.id === "cong-nghe-sinh-hoc");
-  assert.equal(p.code, "420201");
+  assert.equal(p.code, "8420201");
   assert.equal(p.duration, "24 tháng");
   assert.equal(p.englishTitle, "Master of Engineering in Biotechnology");
   const tracks = getProgrammeCurricula(p);

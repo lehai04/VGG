@@ -13,11 +13,7 @@ import { Header } from "@/features/home/components/Header";
 function UtilityBar() {
   return (
     <div className="utility">
-      <span>VIỆN SAU ĐẠI HỌC – TRƯỜNG ĐẠI HỌC VĂN LANG</span>
-      <div>
-        <Link href="/news">Tin tức</Link>
-        <Link href="/resources">Tài nguyên</Link>
-      </div>
+      <span>Viện Sau đại học – TRƯỜNG ĐẠI HỌC VĂN LANG</span>
     </div>
   );
 }
@@ -25,7 +21,7 @@ function UtilityBar() {
 function BrandLink({ className }: { className: string }) {
   const { brand } = useWebsiteChrome();
   return (
-    <Link href="/" className={className} aria-label="Trang chủ Viện Sau Đại học">
+    <Link href="/" className={className} aria-label="Trang chủ Viện Sau đại học">
       <Image
         src={brand.image}
         alt={brand.alt}

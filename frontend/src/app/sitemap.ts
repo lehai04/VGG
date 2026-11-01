@@ -1,14 +1,16 @@
+import { publicSiteOrigin } from "@/lib/public-site";
 import type { MetadataRoute } from "next";
+import { isPublicSectionVisible } from "@/lib/public-sections";
 import { menuGroups } from "@/data/site";
 import { websiteProgrammes } from '@/lib/website-content';
 import { locales } from "@/lib/i18n";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const programmes=await websiteProgrammes();
-  const base = (process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn").replace(/\/$/, "");
+  const base = publicSiteOrigin();
   const paths = [
     { path: "", changeFrequency: "weekly" as const, priority: 1 },
-    ...menuGroups.map((group) => ({
+    ...menuGroups.filter((group) => isPublicSectionVisible(`/${group.slug}`)).map((group) => ({
       path: `/${group.slug}`,
       changeFrequency: "weekly" as const,
       priority: 0.8,
@@ -27,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         try {
           const response = await fetch(`${backend}/api/public/site-content?locale=${locale}`, {
             cache: "no-store",
+            signal: AbortSignal.timeout(4000),
           });
           if (!response.ok) return;
           const result = (await response.json()) as {
@@ -111,7 +114,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
   );
 
-  if (!backend) return staticEntries;
+  if (!backend || !isPublicSectionVisible("/news")) return staticEntries;
   try {
     const newsEntries: MetadataRoute.Sitemap = [];
     for (const locale of locales) {

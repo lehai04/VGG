@@ -1,4 +1,5 @@
 import type { FastifyInstance } from "fastify";
+import { createVisitLimit } from "./visit-limit.js";
 import { z } from "zod";
 import { prisma } from "../../shared/database/prisma.js";
 import { fail, ok } from "../../shared/http/response.js";
@@ -32,7 +33,12 @@ export async function publicRoutes(app: FastifyInstance) {
     try {
       const stat = await mediaStorage.statObject(mediaBucket, key);
       const stream = await mediaStorage.getObject(mediaBucket, key);
-      reply.header("Content-Type", String(stat.metaData["content-type"] ?? "application/octet-stream"));
+      const type = String(stat.metaData["content-type"] ?? "application/octet-stream");
+      reply.header("Content-Type", type);
+      if (!/^(application\/pdf|image\/(png|jpeg|webp|avif|gif))(;|$)/i.test(type)) {
+        reply.header("Content-Disposition", "attachment");
+        reply.header("Content-Security-Policy", "sandbox; default-src 'none'");
+      }
       reply.header("Content-Length", stat.size);
       reply.header("Cache-Control", String(stat.metaData["cache-control"] ?? "public, max-age=300"));
       return reply.send(stream);
@@ -64,11 +70,21 @@ export async function publicRoutes(app: FastifyInstance) {
     return ok(reply, { resources, categories, resourceTypes: resourceType.options });
   });
   app.get("/api/public/site-content", async (request, reply) => { const query = z.object({ locale: z.enum(["vi", "en"]).default("vi") }).parse(request.query); reply.header('Cache-Control', 'no-store'); return ok(reply, { contents: await prisma.siteContent.findMany({ where: { locale: query.locale, published: true } }) }); });
-  app.post("/api/public/visits", async (request, reply) => { const input = z.object({ path: z.string().max(500), locale: z.string().max(5).optional(), visitorId: z.string().max(100).optional() }).parse(request.body); await prisma.pageVisit.create({ data: input }); return reply.code(201).send({ success: true, data: {}, message: "" }); });
+  app.post("/api/public/visits", {
+    bodyLimit: 4096,
+    // onRequest rejects excess traffic before parsing or writing to the database.
+    // Shared networks may count distinct user agents independently.
+    // Ignore visitorId and page path so neither can bypass the hourly quota.
+    onRequest: createVisitLimit(),
+  }, async (request, reply) => {
+    const input = z.object({ path: z.string().min(1).max(500).startsWith("/"), locale: z.string().max(5).optional(), visitorId: z.string().max(100).optional() }).parse(request.body);
+    await prisma.pageVisit.create({ data: input });
+    return reply.code(201).send({ success: true, data: {}, message: "" });
+  });
 
   app.post(
     "/api/public/consultations",
-    { config: { rateLimit: { max: 5, timeWindow: "10 minutes" } } },
+    { bodyLimit: 16384, config: { rateLimit: { max: 5, timeWindow: "10 minutes", hook: "onRequest" } } },
     async (request, reply) => {
       const parsed = createSchema.safeParse(request.body);
       if (!parsed.success)

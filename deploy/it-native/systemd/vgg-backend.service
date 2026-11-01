@@ -1,0 +1,20 @@
+[Unit]
+Description=Saudaihoc Fastify API
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/opt/saudaihoc/deploy/release/backend
+EnvironmentFile=/etc/saudaihoc/backend.env
+Environment=NODE_ENV=production
+ExecStartPre=/usr/local/bin/node /var/opt/saudaihoc/deploy/release/backend/scripts/check-runtime.mjs backend
+ExecStart=/usr/local/bin/node /var/opt/saudaihoc/deploy/release/backend/dist/server.js
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

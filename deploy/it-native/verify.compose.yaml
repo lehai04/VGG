@@ -1,0 +1,43 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: verify
+      POSTGRES_PASSWORD: local-verification-only
+      POSTGRES_DB: verify
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U verify]
+      interval: 2s
+      retries: 30
+    tmpfs: /var/lib/postgresql/data
+  app:
+    image: vgg-it-native:verify
+    working_dir: /release
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://verify:local-verification-only@postgres:5432/verify
+      BACKEND_HOST: 127.0.0.1
+      BACKEND_PORT: 4000
+      BACKEND_INTERNAL_URL: http://127.0.0.1:4000
+      CMS_APP_URL: https://sdh.vlu.edu.vn/cms
+      PUBLIC_APP_URL: https://sdh.vlu.edu.vn
+      SITE_INDEXABLE: 'true'
+      NEXT_PUBLIC_CMS_BASE_PATH: /cms
+    volumes:
+      - ./tests:/verify:ro
+      - ../../outputs/it-handover:/artifact:ro
+      - tls:/var/ssl
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: [sh, /verify/start.sh]
+  nginx:
+    image: nginx:1.28-alpine
+    network_mode: service:app
+    volumes:
+      - ./nginx/sdh.vlu.edu.vn.conf:/etc/nginx/conf.d/default.conf:ro
+      - tls:/var/ssl:ro
+    depends_on: [app]
+    entrypoint: [sh, -c, 'while [ ! -s /var/ssl/fullchain.pem ]; do sleep 1; done; nginx -t && exec nginx -g "daemon off;"']
+volumes:
+  tls:

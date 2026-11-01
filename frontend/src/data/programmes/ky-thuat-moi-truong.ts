@@ -207,7 +207,7 @@ export const kyThuatMoiTruongPageContent: ProgrammePageContent = {
         title: "Các hình thức minh chứng ngoại ngữ đầu vào",
         paragraphs: [
           "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
           "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
         ],
         points: [
@@ -221,7 +221,7 @@ export const kyThuatMoiTruongPageContent: ProgrammePageContent = {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
           "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã tích lũy để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-          "Nội dung bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+          "Nội dung bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
           "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
         ],
         groups: [
@@ -329,7 +329,7 @@ export const kyThuatMoiTruongPageContent: ProgrammePageContent = {
       {
         group: "Nghiên cứu và phát triển học thuật",
         title: "Tiếp tục học tập nâng cao",
-        sub: "Phát triển năng lực nghiên cứu độc lập và nền tảng chuyên môn để dự tuyển trình độ tiến sĩ khi đáp ứng điều kiện của chương trình.",
+        sub: "Phát triển năng lực nghiên cứu độc lập và nền tảng chuyên môn để dự tuyển trình độ Tiến sĩ khi đáp ứng điều kiện của chương trình.",
       },
     ],
   },
@@ -349,7 +349,7 @@ export const kyThuatMoiTruongPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ", "mục tiêu của bạn."],
       body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Kỹ thuật môi trường. Đội ngũ tư vấn sẽ hỗ trợ bạn lựa chọn định hướng học tập và chuẩn bị hồ sơ phù hợp.",
       benefits: [
@@ -473,7 +473,7 @@ export const kyThuatMoiTruongPageContent: ProgrammePageContent = {
 
 export const kyThuatMoiTruongProgramme: Programme = {
   id: "ky-thuat-moi-truong",
-  code: "520320",
+  code: "8520320",
   title: "Kỹ thuật Môi trường",
   englishTitle: "Master of Science in Environmental Engineering",
   degree: "Thạc sĩ",
@@ -482,7 +482,7 @@ export const kyThuatMoiTruongProgramme: Programme = {
   credits: 60,
   duration: "18–24 tháng",
   studyMode: "Chính quy tập trung, tiếng Việt",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   summary:
     "Phát triển kiến thức chuyên sâu và năng lực phân tích, thiết kế giải pháp công nghệ để xử lý ô nhiễm, sử dụng hiệu quả tài nguyên và giải quyết các vấn đề môi trường trong thực tiễn.",
   schedule:

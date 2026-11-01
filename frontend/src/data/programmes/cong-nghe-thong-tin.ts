@@ -7,8 +7,8 @@ import type { CurriculumTrack } from "../curricula";
 
 export const congNgheThongTinProgramme = {
   id: "cong-nghe-thong-tin",
-  code: "480201",
-  title: "Công nghệ thông tin",
+  code: "8480201",
+  title: "Công nghệ Thông tin",
   englishTitle: "Master of Information Technology",
   degree: "Thạc sĩ",
   field: "Kỹ thuật, Môi trường & Công nghệ",
@@ -18,7 +18,7 @@ export const congNgheThongTinProgramme = {
   creditsLabel: "45 (ứng dụng) / 60 (nghiên cứu)",
   duration: "18 tháng (ứng dụng) / 24 tháng (nghiên cứu)",
   studyMode: "Chính quy, tiếng Việt",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   summary:
     "Nâng cao năng lực thiết kế, phát triển và quản lý các giải pháp công nghệ thông tin, với trọng tâm trí tuệ nhân tạo, dữ liệu lớn và điện toán đám mây.",
   detailsPending: false,
@@ -34,7 +34,7 @@ export const congNgheThongTinPageContent: ProgrammePageContent = {
   hero: {
     ...programmeSharedContent.hero,
     heroLead: congNgheThongTinProgramme.summary,
-    heroTitle: "Công nghệ thông tin",
+    heroTitle: "Công nghệ Thông tin",
     heroSlogan: "FUTURE",
     heroImage:
       "https://images.unsplash.com/photo-1564035105550-e1f02aa8556b?auto=format&fit=crop&w=2400&q=85",
@@ -64,12 +64,12 @@ export const congNgheThongTinPageContent: ProgrammePageContent = {
     overviewTitle: "Tổng quan chương trình",
     overview: [
       "Từ kiến thức chuyên sâu đến giải pháp công nghệ.",
-      "Chương trình Thạc sĩ Công nghệ thông tin tại Văn Lang kết hợp kiến thức công nghệ hiện đại với năng lực nghiên cứu, phát triển và quản lý giải pháp CNTT.",
+      "Chương trình Thạc sĩ Công nghệ Thông tin tại Văn Lang kết hợp kiến thức công nghệ hiện đại với năng lực nghiên cứu, phát triển và quản lý giải pháp CNTT.",
       "Trọng tâm chương trình gồm trí tuệ nhân tạo, dữ liệu lớn và điện toán đám mây, gắn với nhu cầu phát triển hệ thống, sản phẩm công nghệ và chuyển đổi số. Người học đồng thời rèn luyện tư duy phản biện, kỹ năng làm việc trong môi trường đa ngành và trách nhiệm nghề nghiệp.",
-      "Hai định hướng ứng dụng và nghiên cứu dùng chung nền tảng kiến thức, sau đó phân nhánh theo mục tiêu học tập. Hình thức đào tạo chính quy, ngôn ngữ giảng dạy là tiếng Việt. Văn bằng tốt nghiệp: Thạc sĩ Công nghệ thông tin — Master of Information Technology.",
+      "Hai định hướng ứng dụng và nghiên cứu dùng chung nền tảng kiến thức, sau đó phân nhánh theo mục tiêu học tập. Hình thức đào tạo chính quy, ngôn ngữ giảng dạy là tiếng Việt. Văn bằng tốt nghiệp: Thạc sĩ Công nghệ Thông tin — Master of Information Technology.",
     ],
     ...programmeSharedContent.overview,
-    tags: ["Công nghệ thông tin", "Trí tuệ nhân tạo", "Dữ liệu lớn", "Điện toán đám mây"],
+    tags: ["Công nghệ Thông tin", "Trí tuệ nhân tạo", "Dữ liệu lớn", "Điện toán đám mây"],
 
 
   },
@@ -86,11 +86,11 @@ export const congNgheThongTinPageContent: ProgrammePageContent = {
       },
       {
         title: "Phát triển giải pháp qua thực hành",
-        text: "Hoạt động học tập kết hợp lý thuyết, thực hành phòng máy, dự án, seminar và phản biện. Định hướng ứng dụng có 6 tín chỉ thực tập chuyên môn và 9 tín chỉ đề án thạc sĩ.",
+        text: "Hoạt động học tập kết hợp lý thuyết, thực hành phòng máy, dự án, seminar và phản biện. Định hướng ứng dụng có 6 tín chỉ thực tập chuyên môn và 9 tín chỉ đề án Thạc sĩ.",
       },
       {
         title: "Dành thời lượng cho nghiên cứu",
-        text: "Định hướng nghiên cứu bố trí hai chuyên đề, mỗi chuyên đề 6 tín chỉ, và luận văn thạc sĩ 15 tín chỉ để phát triển năng lực nghiên cứu chuyên sâu.",
+        text: "Định hướng nghiên cứu bố trí hai chuyên đề, mỗi chuyên đề 6 tín chỉ, và luận văn Thạc sĩ 15 tín chỉ để phát triển năng lực nghiên cứu chuyên sâu.",
       },
       {
         title: "Kỹ năng chuyên môn đi cùng trách nhiệm",
@@ -103,7 +103,7 @@ export const congNgheThongTinPageContent: ProgrammePageContent = {
         {
           code: "PLO1",
           title: "Đánh giá công nghệ và nền tảng lý thuyết",
-          text: "Đánh giá các nền tảng lý thuyết, nguyên lý và công nghệ tiên tiến trong lĩnh vực Công nghệ thông tin (trí tuệ nhân tạo, dữ liệu lớn, điện toán đám mây).",
+          text: "Đánh giá các nền tảng lý thuyết, nguyên lý và công nghệ tiên tiến trong lĩnh vực Công nghệ Thông tin (trí tuệ nhân tạo, dữ liệu lớn, điện toán đám mây).",
         },
         {
           code: "PLO2",
@@ -149,7 +149,7 @@ export const congNgheThongTinPageContent: ProgrammePageContent = {
     audience: [
       {
         title: "Người có nền tảng CNTT",
-        text: "Người tốt nghiệp các ngành thuộc nhóm Máy tính và Công nghệ thông tin, muốn học sâu hơn về công nghệ, phát triển hệ thống hoặc quản lý giải pháp CNTT.",
+        text: "Người tốt nghiệp các ngành thuộc nhóm Máy tính và Công nghệ Thông tin, muốn học sâu hơn về công nghệ, phát triển hệ thống hoặc quản lý giải pháp CNTT.",
       },
       {
         title: "Người tốt nghiệp ngành gần",
@@ -157,7 +157,7 @@ export const congNgheThongTinPageContent: ProgrammePageContent = {
       },
       {
         title: "Người hướng đến nghiên cứu",
-        text: "Người mong muốn phát triển năng lực nghiên cứu, tham gia hoạt động R&D, giảng dạy hoặc chuẩn bị nền tảng để tiếp tục học tập ở trình độ tiến sĩ.",
+        text: "Người mong muốn phát triển năng lực nghiên cứu, tham gia hoạt động R&D, giảng dạy hoặc chuẩn bị nền tảng để tiếp tục học tập ở trình độ Tiến sĩ.",
       },
     ].map((item, index) => ({
       ...item,
@@ -200,7 +200,7 @@ export const congNgheThongTinPageContent: ProgrammePageContent = {
       },
       {
         title: "Nghiên cứu, giảng dạy và học tiếp",
-        sub: "Làm việc tại viện nghiên cứu hoặc đơn vị R&D; giảng dạy CNTT tại trường đại học, cao đẳng; hoặc tiếp tục học tiến sĩ tùy điều kiện dự tuyển.",
+        sub: "Làm việc tại viện nghiên cứu hoặc đơn vị R&D; giảng dạy CNTT tại trường đại học, cao đẳng; hoặc tiếp tục học Tiến sĩ tùy điều kiện dự tuyển.",
       },
     ],
   },
@@ -211,8 +211,8 @@ export const congNgheThongTinPageContent: ProgrammePageContent = {
   section05: {
     sectionNumber: "05",
     curriculumIntro: [
-      "Định hướng ứng dụng tập trung thiết kế, triển khai và chuyển giao giải pháp công nghệ trong thực tiễn nghề nghiệp. Phần cuối chương trình gồm thực tập chuyên môn và đề án thạc sĩ.",
-      "Định hướng nghiên cứu tập trung thiết kế nghiên cứu, kiểm chứng thực nghiệm và phát triển tri thức trong lĩnh vực CNTT. Hoạt động nghiên cứu gồm hai chuyên đề và luận văn thạc sĩ.",
+      "Định hướng ứng dụng tập trung thiết kế, triển khai và chuyển giao giải pháp công nghệ trong thực tiễn nghề nghiệp. Phần cuối chương trình gồm thực tập chuyên môn và đề án Thạc sĩ.",
+      "Định hướng nghiên cứu tập trung thiết kế nghiên cứu, kiểm chứng thực nghiệm và phát triển tri thức trong lĩnh vực CNTT. Hoạt động nghiên cứu gồm hai chuyên đề và luận văn Thạc sĩ.",
     ],
     trackCredits: ["45 tín chỉ", "60 tín chỉ"],
     trackDurations: ["18 tháng", "24 tháng"],
@@ -237,22 +237,22 @@ export const congNgheThongTinPageContent: ProgrammePageContent = {
       {
         question: "Hai định hướng đào tạo khác nhau như thế nào?",
         answer:
-          "Định hướng ứng dụng có 45 tín chỉ, thời gian đào tạo 18 tháng với kế hoạch 5 học kỳ, kết thúc bằng thực tập chuyên môn và đề án thạc sĩ. Định hướng nghiên cứu có 60 tín chỉ, thời gian đào tạo 24 tháng với kế hoạch 6 học kỳ, gồm hai chuyên đề nghiên cứu và luận văn thạc sĩ.",
+          "Định hướng ứng dụng có 45 tín chỉ, thời gian đào tạo 18 tháng với kế hoạch 5 học kỳ, kết thúc bằng thực tập chuyên môn và đề án Thạc sĩ. Định hướng nghiên cứu có 60 tín chỉ, thời gian đào tạo 24 tháng với kế hoạch 6 học kỳ, gồm hai chuyên đề nghiên cứu và luận văn Thạc sĩ.",
       },
       {
-        question: "Điều kiện dự tuyển Thạc sĩ Công nghệ thông tin là gì?",
+        question: "Điều kiện dự tuyển Thạc sĩ Công nghệ Thông tin là gì?",
         answer:
           "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp và đáp ứng điều kiện đầu vào. Chương trình tuyển sinh theo hình thức xét tuyển. Với định hướng nghiên cứu, nguồn yêu cầu hạng tốt nghiệp đại học từ khá trở lên hoặc có công bố khoa học liên quan. Ngành tốt nghiệp, chương trình đã học và bảng điểm được Khoa và Viện đối chiếu; yêu cầu cụ thể căn cứ quy định và thông báo tuyển sinh của Trường.",
       },
       {
         question: "Ngành gần cần học bổ sung những học phần nào?",
         answer:
-          "Nhóm thuộc diện bổ sung kiến thức phải hoàn tất 5 học phần, tổng 15 tín chỉ: Kỹ thuật lập trình; Cấu trúc dữ liệu và giải thuật; Cơ sở dữ liệu; Xác suất thống kê ứng dụng; Nhập môn Trí tuệ nhân tạo. Danh mục không cần bổ sung gồm Máy tính (74801): Khoa học máy tính (7480101), Mạng máy tính và truyền thông dữ liệu (7480102), Kỹ thuật phần mềm (7480103), Hệ thống thông tin (7480104), Kỹ thuật máy tính (7480106), Trí tuệ nhân tạo (7480107), Công nghệ kỹ thuật máy tính (7480108); và Công nghệ thông tin (74802): Công nghệ thông tin (7480201), An ninh mạng (7480208). Danh mục ngành gần cần đối chiếu gồm Khoa học dữ liệu, Toán tin, Kỹ thuật điện tử – viễn thông, Kỹ thuật điều khiển và tự động hóa, Kỹ thuật cơ khí và Kỹ thuật cơ điện tử. Ngành chưa được liệt kê được Khoa và Viện xem xét riêng theo văn bằng và bảng điểm. Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
+          "Nhóm thuộc diện bổ sung kiến thức phải hoàn tất 5 học phần, tổng 15 tín chỉ: Kỹ thuật lập trình; Cấu trúc dữ liệu và giải thuật; Cơ sở dữ liệu; Xác suất thống kê ứng dụng; Nhập môn Trí tuệ nhân tạo. Danh mục không cần bổ sung gồm Máy tính (74801): Khoa học máy tính (7480101), Mạng máy tính và truyền thông dữ liệu (7480102), Kỹ thuật phần mềm (7480103), Hệ thống thông tin (7480104), Kỹ thuật máy tính (7480106), Trí tuệ nhân tạo (7480107), Công nghệ kỹ thuật máy tính (7480108); và Công nghệ Thông tin (74802): Công nghệ Thông tin (7480201), An ninh mạng (7480208). Danh mục ngành gần cần đối chiếu gồm Khoa học dữ liệu, Toán tin, Kỹ thuật điện tử – viễn thông, Kỹ thuật điều khiển và tự động hóa, Kỹ thuật cơ khí và Kỹ thuật cơ điện tử. Ngành chưa được liệt kê được Khoa và Viện xem xét riêng theo văn bằng và bảng điểm. Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
       },
       {
         question: "Yêu cầu ngoại ngữ đầu vào và tốt nghiệp ra sao?",
         answer:
-          "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên theo một hình thức được Trường công nhận: bằng ngành ngôn ngữ nước ngoài hoặc chương trình chủ yếu giảng dạy bằng ngoại ngữ; văn bằng/chứng chỉ còn hiệu lực; kỳ đánh giá hoặc chương trình do Trường tổ chức/công nhận; hoặc bằng đại học Văn Lang cấp trong 2 năm gần nhất với chuẩn đầu ra ngoại ngữ từ Bậc 3. Trước khi bảo vệ đề án hoặc luận văn, học viên cần đạt mức tương đương Bậc 4 trở lên. Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường, không cấp chứng chỉ ngoại ngữ. Ứng viên nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học từ chương trình giảng dạy bằng tiếng Việt.",
+          "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên theo một hình thức được Trường công nhận: bằng ngành ngôn ngữ nước ngoài hoặc chương trình chủ yếu giảng dạy bằng ngoại ngữ; văn bằng/chứng chỉ còn hiệu lực; kỳ đánh giá hoặc chương trình do Trường tổ chức/công nhận; hoặc bằng đại học Văn Lang cấp trong 2 năm gần nhất với chuẩn đầu ra ngoại ngữ từ Bậc 3. Trước khi bảo vệ đề án hoặc luận văn, học viên cần đạt mức tương đương Bậc 4 trở lên. Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường, không cấp chứng chỉ ngoại ngữ. Ứng viên nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học từ chương trình giảng dạy bằng tiếng Việt.",
       },
       {
         question: "Lịch học được sắp xếp như thế nào?",
@@ -397,7 +397,7 @@ export const congNgheThongTinCurricula: CurriculumTrack[] = [
           },
           {
             code: "81ITGR40209",
-            name: "Đề án thạc sĩ",
+            name: "Đề án Thạc sĩ",
             englishName: "Master's Graduation Project",
             credits: 9,
           },
@@ -528,12 +528,12 @@ export const congNgheThongTinCurricula: CurriculumTrack[] = [
         ],
       },
       {
-        title: "Luận văn thạc sĩ · 15 tín chỉ",
+        title: "Luận văn Thạc sĩ · 15 tín chỉ",
         totalCreditsLabel: "15 tín chỉ",
         courses: [
           {
             code: "81ITGR40315",
-            name: "Luận văn thạc sĩ",
+            name: "Luận văn Thạc sĩ",
             englishName: "Master's Thesis",
             credits: 15,
           },

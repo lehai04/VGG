@@ -1,0 +1,972 @@
+[
+  {
+    "path": "shared",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 6157.0
+  },
+  {
+    "path": "work\\ba-build",
+    "action": "preserved-checkout-or-link"
+  },
+  {
+    "path": "work\\leadership-preview",
+    "action": "deleted-generated-or-unused",
+    "files": 5,
+    "bytes": 98415.0
+  },
+  {
+    "path": "work\\logistics-brochure",
+    "action": "deleted-generated-or-unused",
+    "files": 2,
+    "bytes": 4047388.0
+  },
+  {
+    "path": "work\\admissions_html.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1866.0
+  },
+  {
+    "path": "work\\admissions-before-redesign.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 98153.0
+  },
+  {
+    "path": "work\\analyze-vgg-audit.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 2892.0
+  },
+  {
+    "path": "work\\audit-admissions-source.cjs",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 982.0
+  },
+  {
+    "path": "work\\audit-vgg-repository.mjs",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 3354.0
+  },
+  {
+    "path": "work\\audit-vgg-source.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 2270.0
+  },
+  {
+    "path": "work\\campus-restore.tar",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 5775360.0
+  },
+  {
+    "path": "work\\career-content-preview.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 26037.0
+  },
+  {
+    "path": "work\\career-prospects-preview.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 40038.0
+  },
+  {
+    "path": "work\\check-vgg-routes.mjs",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1726.0
+  },
+  {
+    "path": "work\\consultation-github.tsx",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 7350.0
+  },
+  {
+    "path": "work\\curriculum-preview.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 88475.0
+  },
+  {
+    "path": "work\\discover-seminar-community.jpg",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 859157.0
+  },
+  {
+    "path": "work\\discover-seminar-discussion.jpg",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 871751.0
+  },
+  {
+    "path": "work\\discover-source-paragraphs.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 13232.0
+  },
+  {
+    "path": "work\\download-programme-images.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1250.0
+  },
+  {
+    "path": "work\\inspect-admissions.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 736.0
+  },
+  {
+    "path": "work\\inspect-website-deck.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 3804.0
+  },
+  {
+    "path": "work\\logistics-desktop.jpg",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 104188.0
+  },
+  {
+    "path": "work\\logistics-mobile.jpg",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 46647.0
+  },
+  {
+    "path": "work\\programme-image-sources.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 7564.0
+  },
+  {
+    "path": "work\\programme-photo-contact.cjs",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 740.0
+  },
+  {
+    "path": "work\\redesign-admissions.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 8443.0
+  },
+  {
+    "path": "work\\scope-admissions-reference.cjs",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 608.0
+  },
+  {
+    "path": "work\\verify-biotech-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1297.0
+  },
+  {
+    "path": "work\\verify-commerce-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1303.0
+  },
+  {
+    "path": "work\\verify-ke-toan-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1308.0
+  },
+  {
+    "path": "work\\verify-kien-truc-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1312.0
+  },
+  {
+    "path": "work\\verify-ky-thuat-moi-truong-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1332.0
+  },
+  {
+    "path": "work\\verify-ky-thuat-o-to-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1320.0
+  },
+  {
+    "path": "work\\verify-logistics-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1338.0
+  },
+  {
+    "path": "work\\verify-luat-kinh-te-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1318.0
+  },
+  {
+    "path": "work\\verify-ly-luan-lich-su-my-thuat-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1354.0
+  },
+  {
+    "path": "work\\verify-marketing-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1309.0
+  },
+  {
+    "path": "work\\verify-my-thuat-ung-dung-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1332.0
+  },
+  {
+    "path": "work\\verify-ngon-ngu-anh-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1318.0
+  },
+  {
+    "path": "work\\verify-preserved-programmes.mjs",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1459.0
+  },
+  {
+    "path": "work\\verify-quan-he-cong-chung-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1330.0
+  },
+  {
+    "path": "work\\verify-quan-ly-tai-nguyen-moi-truong-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1355.0
+  },
+  {
+    "path": "work\\verify-quan-tri-khach-san-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1330.0
+  },
+  {
+    "path": "work\\verify-quan-tri-kinh-doanh-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1332.0
+  },
+  {
+    "path": "work\\verify-tai-chinh-ngan-hang-coverage.py",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1332.0
+  },
+  {
+    "path": "outputs\\biotech-update",
+    "action": "deleted-generated-or-unused",
+    "files": 12,
+    "bytes": 490838.0
+  },
+  {
+    "path": "outputs\\commerce-update",
+    "action": "deleted-generated-or-unused",
+    "files": 7,
+    "bytes": 267832.0
+  },
+  {
+    "path": "outputs\\consultation-admin",
+    "action": "deleted-generated-or-unused",
+    "files": 2,
+    "bytes": 151699.0
+  },
+  {
+    "path": "outputs\\font-size-vlu",
+    "action": "deleted-generated-or-unused",
+    "files": 6,
+    "bytes": 215265.0
+  },
+  {
+    "path": "outputs\\footer-responsive",
+    "action": "deleted-generated-or-unused",
+    "files": 4,
+    "bytes": 159816.0
+  },
+  {
+    "path": "outputs\\it-deployment",
+    "action": "deleted-generated-or-unused",
+    "files": 14,
+    "bytes": 821424.0
+  },
+  {
+    "path": "outputs\\ke-toan-update",
+    "action": "deleted-generated-or-unused",
+    "files": 7,
+    "bytes": 383460.0
+  },
+  {
+    "path": "outputs\\kien-truc-update",
+    "action": "deleted-generated-or-unused",
+    "files": 5,
+    "bytes": 217769.0
+  },
+  {
+    "path": "outputs\\ky-thuat-moi-truong-update",
+    "action": "deleted-generated-or-unused",
+    "files": 7,
+    "bytes": 454911.0
+  },
+  {
+    "path": "outputs\\ky-thuat-o-to-update",
+    "action": "deleted-generated-or-unused",
+    "files": 6,
+    "bytes": 280782.0
+  },
+  {
+    "path": "outputs\\logistics-update",
+    "action": "deleted-generated-or-unused",
+    "files": 6,
+    "bytes": 319281.0
+  },
+  {
+    "path": "outputs\\luat-kinh-te-update",
+    "action": "deleted-generated-or-unused",
+    "files": 5,
+    "bytes": 149474.0
+  },
+  {
+    "path": "outputs\\ly-luan-lich-su-my-thuat-update",
+    "action": "deleted-generated-or-unused",
+    "files": 5,
+    "bytes": 236319.0
+  },
+  {
+    "path": "outputs\\media-budget",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 3839.0
+  },
+  {
+    "path": "outputs\\my-thuat-ung-dung-update",
+    "action": "deleted-generated-or-unused",
+    "files": 5,
+    "bytes": 226628.0
+  },
+  {
+    "path": "outputs\\ngon-ngu-anh-update",
+    "action": "deleted-generated-or-unused",
+    "files": 4,
+    "bytes": 152843.0
+  },
+  {
+    "path": "outputs\\programme-refactor",
+    "action": "deleted-generated-or-unused",
+    "files": 5,
+    "bytes": 214118.0
+  },
+  {
+    "path": "outputs\\quan-he-cong-chung-update",
+    "action": "deleted-generated-or-unused",
+    "files": 3,
+    "bytes": 64912.0
+  },
+  {
+    "path": "outputs\\quan-ly-tai-nguyen-moi-truong-update",
+    "action": "deleted-generated-or-unused",
+    "files": 2,
+    "bytes": 114491.0
+  },
+  {
+    "path": "outputs\\quan-tri-khach-san-update",
+    "action": "deleted-generated-or-unused",
+    "files": 3,
+    "bytes": 44800.0
+  },
+  {
+    "path": "outputs\\quan-tri-kinh-doanh-update",
+    "action": "deleted-generated-or-unused",
+    "files": 4,
+    "bytes": 137583.0
+  },
+  {
+    "path": "outputs\\responsive",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 55751.0
+  },
+  {
+    "path": "outputs\\sdh-handover",
+    "action": "deleted-generated-or-unused",
+    "files": 13,
+    "bytes": 611174751.0
+  },
+  {
+    "path": "outputs\\sdh-handover-linux-amd64",
+    "action": "deleted-generated-or-unused",
+    "files": 13,
+    "bytes": 611174751.0
+  },
+  {
+    "path": "outputs\\sdh-handover-v2",
+    "action": "deleted-generated-or-unused",
+    "files": 21,
+    "bytes": 662147550.0
+  },
+  {
+    "path": "outputs\\sdh-handover-v2-linux-amd64",
+    "action": "deleted-generated-or-unused",
+    "files": 23,
+    "bytes": 1982972225.0
+  },
+  {
+    "path": "outputs\\sdh-test-tls",
+    "action": "deleted-generated-or-unused",
+    "files": 2,
+    "bytes": 2831.0
+  },
+  {
+    "path": "outputs\\sdh-v2-build-source",
+    "action": "deleted-generated-or-unused",
+    "files": 430,
+    "bytes": 429040062.0
+  },
+  {
+    "path": "outputs\\seo-inventory-2026-10-23",
+    "action": "deleted-generated-or-unused",
+    "files": 0,
+    "bytes": null
+  },
+  {
+    "path": "outputs\\tai-chinh-ngan-hang-update",
+    "action": "deleted-generated-or-unused",
+    "files": 3,
+    "bytes": 58310.0
+  },
+  {
+    "path": "outputs\\technology-audit",
+    "action": "deleted-generated-or-unused",
+    "files": 9,
+    "bytes": 339226.0
+  },
+  {
+    "path": "outputs\\vgg-content-audit",
+    "action": "deleted-generated-or-unused",
+    "files": 124,
+    "bytes": 8269092.0
+  },
+  {
+    "path": "outputs\\website-edit-reference",
+    "action": "deleted-generated-or-unused",
+    "files": 70,
+    "bytes": 15062826.0
+  },
+  {
+    "path": "outputs\\website-edit-verification",
+    "action": "deleted-generated-or-unused",
+    "files": 11,
+    "bytes": 999323.0
+  },
+  {
+    "path": "outputs\\admissions-desktop.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 78733.0
+  },
+  {
+    "path": "outputs\\admissions-faq-spacing.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 75689.0
+  },
+  {
+    "path": "outputs\\admissions-fees-readable.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 57913.0
+  },
+  {
+    "path": "outputs\\admissions-mobile.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 43379.0
+  },
+  {
+    "path": "outputs\\admissions-polish-audit.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 620.0
+  },
+  {
+    "path": "outputs\\admissions-polished-banner.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 113104.0
+  },
+  {
+    "path": "outputs\\admissions-polished-consultation.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 58716.0
+  },
+  {
+    "path": "outputs\\admissions-redesign-browser.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 704.0
+  },
+  {
+    "path": "outputs\\admissions-redesign-desktop.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 100562.0
+  },
+  {
+    "path": "outputs\\admissions-redesign-mobile.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 55659.0
+  },
+  {
+    "path": "outputs\\admissions-redesign-source-audit.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 57.0
+  },
+  {
+    "path": "outputs\\admissions-reference.css",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 68602.0
+  },
+  {
+    "path": "outputs\\admissions-responsive.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1086.0
+  },
+  {
+    "path": "outputs\\admissions-script-0.js",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 241.0
+  },
+  {
+    "path": "outputs\\admissions-script-1.js",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 4129.0
+  },
+  {
+    "path": "outputs\\admissions-script-3.js",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 222461.0
+  },
+  {
+    "path": "outputs\\admissions-shared-header.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 85905.0
+  },
+  {
+    "path": "outputs\\art-logistics-browser.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1588.0
+  },
+  {
+    "path": "outputs\\auto-architecture-browser.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1272.0
+  },
+  {
+    "path": "outputs\\biotech-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 26443.0
+  },
+  {
+    "path": "outputs\\biotech-structure.html",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 44088.0
+  },
+  {
+    "path": "outputs\\card-typography-browser.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 5235.0
+  },
+  {
+    "path": "outputs\\card-typography-preview.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 119528.0
+  },
+  {
+    "path": "outputs\\career-icons-top-aligned.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 107886.0
+  },
+  {
+    "path": "outputs\\career-titles-smaller.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 91377.0
+  },
+  {
+    "path": "outputs\\commerce-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 27077.0
+  },
+  {
+    "path": "outputs\\compact-header-titles.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 91808.0
+  },
+  {
+    "path": "outputs\\content-format-aligned.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 85869.0
+  },
+  {
+    "path": "outputs\\content-format-audit.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 72817.0
+  },
+  {
+    "path": "outputs\\discover-introduction-audit.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1441.0
+  },
+  {
+    "path": "outputs\\discover-introduction-desktop.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 114247.0
+  },
+  {
+    "path": "outputs\\discover-introduction-leaders.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 83293.0
+  },
+  {
+    "path": "outputs\\discover-introduction-mobile.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 60918.0
+  },
+  {
+    "path": "outputs\\discover-introduction-values.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 93574.0
+  },
+  {
+    "path": "outputs\\discover-leaders-three-per-row.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 117248.0
+  },
+  {
+    "path": "outputs\\discover-single-page-audit.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 832.0
+  },
+  {
+    "path": "outputs\\discover-single-page-team.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 96547.0
+  },
+  {
+    "path": "outputs\\english-pr-responsive.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1248.0
+  },
+  {
+    "path": "outputs\\fees-accordion-reference.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 98655.0
+  },
+  {
+    "path": "outputs\\finance-resources-responsive.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1440.0
+  },
+  {
+    "path": "outputs\\hospitality-business-accordions.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 415.0
+  },
+  {
+    "path": "outputs\\hospitality-business-responsive.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1320.0
+  },
+  {
+    "path": "outputs\\ke-toan-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 28633.0
+  },
+  {
+    "path": "outputs\\kien-truc-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 24209.0
+  },
+  {
+    "path": "outputs\\ky-thuat-moi-truong-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 38633.0
+  },
+  {
+    "path": "outputs\\ky-thuat-o-to-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 32090.0
+  },
+  {
+    "path": "outputs\\law-art-responsive.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 5741.0
+  },
+  {
+    "path": "outputs\\law-structure.html",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 38941.0
+  },
+  {
+    "path": "outputs\\logistics-va-quan-ly-chuoi-cung-ung-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 27111.0
+  },
+  {
+    "path": "outputs\\luat-kinh-te-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 16377.0
+  },
+  {
+    "path": "outputs\\ly-luan-va-lich-su-my-thuat-ung-dung-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 24942.0
+  },
+  {
+    "path": "outputs\\my-thuat-ung-dung-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 19560.0
+  },
+  {
+    "path": "outputs\\programme-cards-aligned.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 85455.0
+  },
+  {
+    "path": "outputs\\programme-image-downloads.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 9184.0
+  },
+  {
+    "path": "outputs\\programme-images-browser.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 5541.0
+  },
+  {
+    "path": "outputs\\programme-images-no-captions.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 79124.0
+  },
+  {
+    "path": "outputs\\programme-images-preview.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 101792.0
+  },
+  {
+    "path": "outputs\\programme-no-photo-captions.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 108409.0
+  },
+  {
+    "path": "outputs\\programme-photo-contact-sheet.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 3128073.0
+  },
+  {
+    "path": "outputs\\programme-sync-audit.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 2929.0
+  },
+  {
+    "path": "outputs\\programme-sync-contact.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 72576.0
+  },
+  {
+    "path": "outputs\\programmes-hero-wrap-fixed.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 132542.0
+  },
+  {
+    "path": "outputs\\quan-tri-khach-san-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 8636.0
+  },
+  {
+    "path": "outputs\\quan-tri-kinh-doanh-source.txt",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 9189.0
+  },
+  {
+    "path": "outputs\\sdh_hosoyeucau.zip",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 662150756.0
+  },
+  {
+    "path": "outputs\\sdh-handover-linux-amd64.zip",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 611176709.0
+  },
+  {
+    "path": "outputs\\sdh-handover-v2-audit.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 26909.0
+  },
+  {
+    "path": "outputs\\sdh-handover-v2-linux-amd64.zip.sha256",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 99.0
+  },
+  {
+    "path": "outputs\\sdh-v2-source-manifest.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 55542.0
+  },
+  {
+    "path": "outputs\\so-do-kien-truc-it.svg",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 6772.0
+  },
+  {
+    "path": "outputs\\two-programmes-browser.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 1021.0
+  },
+  {
+    "path": "outputs\\typography-browser.json",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 3958.0
+  },
+  {
+    "path": "outputs\\typography-preview.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 85455.0
+  },
+  {
+    "path": "outputs\\ui-review-toc.png",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 267276.0
+  },
+  {
+    "path": "outputs\\vgg-live-home.html",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 72745.0
+  },
+  {
+    "path": "outputs\\vgg-live-sitemap.xml",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 7916.0
+  },
+  {
+    "path": "outputs\\visit-security-test.log",
+    "action": "deleted-generated-or-unused",
+    "files": 1,
+    "bytes": 43577.0
+  },
+  {
+    "path": "work/ba-build",
+    "action": "deleted-unreferenced-source-and-content-checked",
+    "files": 3,
+    "bytes": 7527.0
+  },
+  {
+    "path": "frontend/public/video/video-banner.webm",
+    "action": "deleted-unreferenced-source-and-content-checked",
+    "files": 1,
+    "bytes": 21864237.0
+  },
+  {
+    "path": "frontend/public/fonts/maison-neue",
+    "action": "deleted-unreferenced-source-and-content-checked",
+    "files": 6,
+    "bytes": 478466.0
+  },
+  {
+    "path": "frontend/public/fonts/vlu/IBMPlexSans-Variable.ttf",
+    "action": "deleted-unreferenced-source-and-content-checked",
+    "files": 1,
+    "bytes": 537244.0
+  },
+  {
+    "path": "frontend/public/fonts/vlu/PlusJakartaSans-Variable.ttf",
+    "action": "deleted-unreferenced-source-and-content-checked",
+    "files": 1,
+    "bytes": 176288.0
+  }
+]

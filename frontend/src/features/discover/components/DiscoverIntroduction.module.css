@@ -216,6 +216,7 @@
   background: #fff;
 }
 .values {
+  --section-heading-color: #fff;
   color: #fff;
   background: #171d45;
 }
@@ -352,6 +353,7 @@
   margin-bottom: 16px;
 }
 .closing {
+  --section-heading-color: #fff;
   position: relative;
   color: #fff;
   isolation: isolate;

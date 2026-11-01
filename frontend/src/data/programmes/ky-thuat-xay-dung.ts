@@ -161,7 +161,7 @@ export const kyThuatXayDungPageContent: ProgrammePageContent = {
 
 export const kyThuatXayDungProgramme: Programme = {
   id: "ky-thuat-xay-dung",
-  code: "S-04",
+  code: "8580201",
 
   title: "Kỹ thuật Xây dựng",
   englishTitle: "Master of Civil Engineering",

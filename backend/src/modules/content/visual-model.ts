@@ -74,7 +74,7 @@ export function contentSections(id: string): ContentSection[] {
     return [
       section("hero", "Banner", ["hero"], "top"),
       section("search", "Tìm chương trình", ["programmeSearch"]),
-      section("overview", "Van Lang Global Graduate", ["overview"], "about"),
+      section("overview", "Viện Sau Đại học", ["overview"], "about"),
       section(
         "research",
         "Nghiên cứu",

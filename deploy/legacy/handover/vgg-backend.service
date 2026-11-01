@@ -1,0 +1,20 @@
+[Unit]
+Description=VGG public Fastify backend
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=vgg
+Group=vgg
+WorkingDirectory=/opt/vgg/current/be/backend
+EnvironmentFile=/etc/vgg/backend.env
+ExecStart=/usr/local/bin/node /opt/vgg/current/be/backend/dist/server.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0027
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

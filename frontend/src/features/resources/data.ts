@@ -44,10 +44,10 @@ export async function getPublicResourceCatalogue(): Promise<ResourceCatalogue> {
     categories: Array.from(new Map(demoResources.map((item) => [item.category.id, item.category])).values()),
     resourceTypes: Object.keys(resourceTypeLabels),
   };
-  const backend = process.env.BACKEND_INTERNAL_URL ?? process.env.NEXT_PUBLIC_BACKEND_URL;
+  const backend = process.env.BACKEND_INTERNAL_URL;
   if (!backend) return empty;
   try {
-    const response = await fetch(`${backend}/api/public/resources`, { cache: "no-store" });
+    const response = await fetch(`${backend}/api/public/resources`, { cache: "no-store", signal: AbortSignal.timeout(4000) });
     if (!response.ok) return empty;
     const payload = (await response.json()) as { data?: Partial<ResourceCatalogue> };
     const resources = payload.data?.resources ?? [];

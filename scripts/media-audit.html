@@ -1,0 +1,15 @@
+<!doctype html><meta charset="utf-8"><title>Local page-size audit</title><style>body{font:14px monospace}iframe{width:1440px;height:900px;border:0}pre{white-space:pre-wrap}</style><h1>Cold-load homepage audit</h1><pre id="result">Running…</pre><iframe src="/vi"></iframe><script>
+const frame=document.querySelector('iframe');
+frame.onload=async()=>{
+ const w=frame.contentWindow;w.performance.setResourceTimingBufferSize(5000);
+ const pause=ms=>new Promise(r=>setTimeout(r,ms));
+ await pause(6000);
+ const initial=w.performance.getEntriesByType('resource').reduce((s,r)=>s+r.transferSize,0)+w.performance.getEntriesByType('navigation')[0].transferSize;
+ for(let y=0;y<w.document.body.scrollHeight;y+=700){w.scrollTo(0,y);await pause(450)}
+ await pause(6000);w.scrollTo(0,0);
+ const rows=[...w.performance.getEntriesByType('navigation'),...w.performance.getEntriesByType('resource')].map(r=>({url:r.name,bytes:r.transferSize,encoded:r.encodedBodySize,kind:r.initiatorType||'document'}));
+ const unknown=rows.filter(r=>r.bytes===0&&r.encoded===0&&!r.url.startsWith(location.origin));
+ const total=rows.reduce((s,r)=>s+r.bytes,0);
+ document.querySelector('#result').textContent=JSON.stringify({initialBytes:initial,fullScrollBytes:total,passed:total<3000000&&unknown.length===0,unknown,resources:rows.sort((a,b)=>b.bytes-a.bytes)},null,2);
+};
+</script>

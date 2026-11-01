@@ -1,3 +1,5 @@
+import "../../../shared/styles/cms-rich-content.css";
+import { publicSiteOrigin } from "@/lib/public-site";
 /**
  * Root layout — bọc mọi page.
  * - Dùng bộ font sans-serif toàn hệ thống từ globals.css
@@ -34,14 +36,14 @@ export const viewport: Viewport = {
 
 // Metadata nền tảng được mọi route kế thừa; từng page chỉ cần ghi đè title/description riêng.
 const baseMetadata: Metadata = {
-  metadataBase: new URL(process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn"),
+  metadataBase: new URL(publicSiteOrigin()),
   title: {
-    default: "Viện Sau Đại học Văn Lang",
-    template: "%s | Viện Sau Đại học",
+    default: "Viện Sau đại học Văn Lang",
+    template: "%s | Viện Sau đại học",
   },
-  description: "Cổng thông tin Viện Sau Đại học, Trường Đại học Văn Lang.",
-  applicationName: "Van Lang Global Graduate",
-  keywords: ["Viện Sau Đại học", "Văn Lang", "sau đại học", "thạc sĩ", "tiến sĩ"],
+  description: "Cổng thông tin Viện Sau đại học, Trường Đại học Văn Lang.",
+  applicationName: "Viện Sau đại học",
+  keywords: ["Viện Sau đại học", "Văn Lang", "sau đại học", "Thạc sĩ", "Tiến sĩ"],
   robots: {
     index: true,
     follow: true,
@@ -56,16 +58,16 @@ const baseMetadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "vi_VN",
-    siteName: "Van Lang Global Graduate",
-    title: "Viện Sau Đại học Văn Lang",
+    siteName: "Viện Sau đại học",
+    title: "Viện Sau đại học Văn Lang",
     description:
-      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ người học Viện Sau Đại học.",
+      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ người học Viện Sau đại học.",
   },
   twitter: {
     card: "summary",
-    title: "Viện Sau Đại học Văn Lang",
+    title: "Viện Sau đại học Văn Lang",
     description:
-      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ người học Viện Sau Đại học.",
+      "Cổng thông tin chương trình sau đại học, tuyển sinh, nghiên cứu và dịch vụ người học Viện Sau đại học.",
   },
   icons: {
     icon: "/favicon.svg",

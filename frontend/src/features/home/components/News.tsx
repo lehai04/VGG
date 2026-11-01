@@ -11,9 +11,9 @@ export async function News() {
       <div className="newsHeading">
         <div>
           <p data-section-label>NEWS &amp; EVENTS</p>
-          <h2 data-section-subtitle>
+          <h3 data-section-subtitle>
             Tin tức <em>&amp; Sự kiện</em>
-          </h2>
+          </h3>
         </div>
         <Link href="/news">
           Xem thêm <span>↗</span>

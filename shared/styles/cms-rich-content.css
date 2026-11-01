@@ -1,0 +1,26 @@
+/* One set of defaults for the CMS editor, preview and published article.
+   No !important: safe formatting in saved HTML always takes precedence. */
+#main-content .cms-rich-content.cms-rich-content {font-family:var(--font-body,var(--font-sans));font-size:16px;line-height:1.8;color:#303441;text-align:start;}
+#main-content .cms-rich-content.cms-rich-content :is(p,div,li){text-align:inherit;text-align-last:auto;text-indent:0;font-size:inherit;line-height:inherit;color:inherit;}
+#main-content .cms-rich-content.cms-rich-content p{margin:0 0 1em;font-weight:400;}
+#main-content .cms-rich-content.cms-rich-content :is(strong,b){font-weight:700;}
+#main-content .cms-rich-content.cms-rich-content :is(em,i){font-style:italic;}
+#main-content .cms-rich-content.cms-rich-content :is(h1,h2,h3,h4,h5,h6){font-family:var(--font-heading);font-weight:700;color:inherit;line-height:1.35;margin:1.2em 0 .5em;text-align:inherit;word-spacing:normal;letter-spacing:normal;white-space:normal;text-wrap:wrap;}
+#main-content .cms-rich-content.cms-rich-content h1{font-size:32px;}
+#main-content .cms-rich-content.cms-rich-content h2{font-size:28px;}
+#main-content .cms-rich-content.cms-rich-content h3{font-size:24px;}
+#main-content .cms-rich-content.cms-rich-content h4{font-size:20px;}
+#main-content .cms-rich-content.cms-rich-content h5{font-size:18px;}
+#main-content .cms-rich-content.cms-rich-content h6{font-size:16px;}
+#main-content .cms-rich-content.cms-rich-content :is(ul,ol){padding-left:1.6em;margin:1em 0;line-height:inherit;color:inherit;}
+#main-content .cms-rich-content.cms-rich-content li{margin:.3em 0;}
+#main-content .cms-rich-content.cms-rich-content blockquote{margin:1em 0;padding:8px 16px;border-left:3px solid #d7193f;background:#fff5f6;border-radius:0;font-size:inherit;font-weight:inherit;line-height:inherit;}
+#main-content .cms-rich-content.cms-rich-content img{max-width:100%;height:auto;}
+#main-content .cms-rich-content.cms-rich-content table{border-collapse:collapse;max-width:100%;}
+#main-content .cms-rich-content.cms-rich-content :is(th,td){border:1px solid #ccd5e0;padding:.7em;text-align:inherit;}
+
+#main-content .cms-rich-content.cms-rich-content :is(h1,h2,h3,h4,h5,h6) :is(span,strong,b,em,i,a){font-family:inherit;font-size:inherit;line-height:inherit;color:inherit;}
+#main-content .cms-rich-content.cms-rich-content [align="left"]{text-align:left;}
+#main-content .cms-rich-content.cms-rich-content [align="center"]{text-align:center;}
+#main-content .cms-rich-content.cms-rich-content [align="right"]{text-align:right;}
+#main-content .cms-rich-content.cms-rich-content [align="justify"]{text-align:justify;}

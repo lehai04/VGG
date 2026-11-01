@@ -1,4 +1,5 @@
 import { publicRoutes } from "./modules/public/public.routes.js";
+import { consultationAdminRoutes } from "./modules/consultation-admin/admin.routes.js";
 import Fastify, { type FastifyError } from "fastify";
 import cors from "@fastify/cors";
 import helmet from "@fastify/helmet";
@@ -10,12 +11,12 @@ import { ZodError } from 'zod';
 /** Lắp ráp backend: cấu hình HTTP → plugin → endpoint sức khỏe → module nghiệp vụ.
  * Hàm chỉ tạo app; server.ts chịu trách nhiệm listen trên host/port đã cấu hình. */
 export async function buildApp() {
-  // bodyLimit giới hạn body ở 1.000.000 byte; maxParamLength giới hạn tham số route.
-  // trustProxy=true dùng thông tin proxy, cần đối chiếu cấu hình reverse proxy khi triển khai.
+  // Default request ceiling: 50 MiB. Small JSON routes retain their own lower limits.
+  // Backend is internal-only; frontend/CMS forward the gateway's client address.
   const app = Fastify({
-    logger: true,
-    trustProxy: true,
-    bodyLimit: 1_000_000,
+    logger: { redact: ["req.headers.authorization", "req.headers.cookie", "res.headers['set-cookie']"] },
+    trustProxy: ["loopback", "uniquelocal"],
+    bodyLimit: 50 * 1024 * 1024,
     routerOptions: { maxParamLength: 300 },
   });
   // Đăng ký plugin trước route để các handler dùng được cookie và cấu hình bảo vệ.
@@ -34,6 +35,7 @@ export async function buildApp() {
   // Ghi lỗi chi tiết phía server, nhưng lỗi 5xx chỉ trả thông báo chung cho client.
   app.setErrorHandler((error: FastifyError, request, reply) => { if (error instanceof ZodError) return reply.code(400).send({ success: false, message: 'Dữ liệu gửi lên không hợp lệ.', code: 'VALIDATION_ERROR' }); request.log.error(error); const status = error.statusCode && error.statusCode >= 400 ? error.statusCode : 500; reply.code(status).send({ success: false, message: status < 500 ? error.message : "Hệ thống đang bận.", code: "INTERNAL_ERROR" }); });
   await app.register(publicRoutes);
+  await app.register(consultationAdminRoutes);
   // Khi app đóng có kiểm soát, giải phóng client database dùng chung.
   app.addHook("onClose", () => prisma.$disconnect());
   return app;

@@ -2,7 +2,7 @@
 export const leadershipProfiles = [
   {
     name: "PGS. TS. Nguyễn Văn Thành",
-    title: "Phó Viện trưởng Phụ trách Viện Sau Đại học",
+    title: "Viện trưởng Viện Sau đại học",
     quote:
       "Tại Trường Đại học Văn Lang, chúng tôi tin rằng giá trị lớn nhất của đào tạo sau đại học không chỉ nằm ở văn bằng, mà ở sự trưởng thành của người học. Đó là những con người có tư duy chiến lược; biết kết nối tri thức với công nghệ, dữ liệu và đổi mới sáng tạo; có năng lực nghiên cứu, phản biện và ra quyết định dựa trên bằng chứng; đồng thời tạo ra giá trị mới cho tổ chức và cộng đồng.",
     image: "/images/pages/discover/leadership/thay2.png",

@@ -154,25 +154,6 @@
   line-height: 1.85;
   text-wrap: wrap;
 }
-@media (min-width: 768px) {
-  .content p {
-    text-align: start;
-    text-justify: inter-word;
-  }
-}
-.content p strong,
-.content p b,
-.content li strong,
-.content li b {
-  font-weight: 400;
-}
-.content div,
-.content li {
-  text-align: justify !important;
-  text-align-last: start;
-  text-indent: 0;
-  text-justify: inter-word;
-}
 .content h2 {
   margin: 55px 0 22px;
   font-size: clamp(1.8rem, 3vw, 2.7rem);
@@ -340,3 +321,4 @@
     min-height: 92px;
   }
 }
+

@@ -1,0 +1,16 @@
+[Unit]
+Description=VGG CMS
+After=network.target
+
+[Service]
+Type=simple
+User=vgg
+WorkingDirectory=/opt/vgg/current/cms
+Environment=NODE_ENV=production
+EnvironmentFile=/etc/vgg/cms.env
+ExecStart=/usr/bin/node /opt/vgg/current/node_modules/next/dist/bin/next start -H 127.0.0.1 -p 3001
+Restart=on-failure
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

@@ -77,19 +77,19 @@ export async function ResearchLanding() {
         <a href="#overview" className={styles.heroDown} aria-label="Xem nội dung"><ArrowDown /></a>
       </section>
 
-      <section className={styles.overview} id="overview" data-reveal>
+      <section className={styles.overview} id="overview" aria-labelledby="overview-title" data-reveal>
         <div>
-          <p data-section-label>{content.overview.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</p>
-          <h2 data-section-subtitle>{content.overview.title}</h2>
+          <h2 data-section-label id="overview-title">{content.overview.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</h2>
+          <h3 data-section-subtitle>{content.overview.title}</h3>
           <p>{content.overview.text}</p>
         </div>
         <figure><Image src={content.overview.image} alt={content.overview.alt} fill sizes="(max-width: 800px) 100vw, 42vw" /></figure>
       </section>
 
-      <section className={styles.goals} id="goals">
+      <section className={styles.goals} id="goals" aria-labelledby="goals-title">
         <header data-reveal>
-          <p data-section-label>{content.goalsHeading.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</p>
-          <h2 data-section-subtitle>{content.goalsHeading.title}</h2>
+          <h2 data-section-label id="goals-title">{content.goalsHeading.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</h2>
+          <h3 data-section-subtitle>{content.goalsHeading.title}</h3>
           <span>{content.goalsHeading.intro}</span>
         </header>
         <div>
@@ -103,10 +103,10 @@ export async function ResearchLanding() {
         </div>
       </section>
 
-      <section className={styles.fields} id="fields">
+      <section className={styles.fields} id="fields" aria-labelledby="fields-title">
         <header data-reveal>
-          <p data-section-label>{content.fieldsHeading.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</p>
-          <h2 data-section-subtitle>{content.fieldsHeading.title}</h2>
+          <h2 data-section-label id="fields-title">{content.fieldsHeading.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</h2>
+          <h3 data-section-subtitle>{content.fieldsHeading.title}</h3>
           <span>{content.fieldsHeading.intro}</span>
         </header>
         <div className={styles.fieldGrid}>
@@ -165,5 +165,5 @@ export async function ResearchLanding() {
 }
 
 export function ResearchGateway({ activeHref = "/research" }: { activeHref?: string }) {
-  return <section className={styles.admissionGateway} aria-labelledby="research-admission-title"><div className={styles.admissionScene}><Image src="/images/pages/research/content/campus.jpg" alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang" fill sizes="100vw" /><div className={styles.admissionCard} data-reveal><h2>Khám phá thêm</h2><p>Tìm hiểu các cụm nghiên cứu, dự án, công bố khoa học và hoạt động đổi mới để kết nối sâu hơn với hệ sinh thái nghiên cứu của Viện Sau Đại học.</p><div><Link href="/research/cum-nghien-cuu">Các cụm nghiên cứu</Link><Link href="/research/du-an">Dự án nghiên cứu</Link></div></div></div><div className={styles.admissionNav}><h2 id="research-admission-title">Nghiên cứu &amp; Đổi mới</h2><nav aria-label="Điều hướng Nghiên cứu và Đổi mới">{researchLinks.map((item) => <Link className={item.href === activeHref ? styles.activeAdmissionLink : undefined} href={item.href} key={item.href}>{item.label}</Link>)}</nav></div></section>;
+  return <section className={styles.admissionGateway} aria-labelledby="research-admission-title"><div className={styles.admissionScene}><Image src="/images/pages/research/content/campus.jpg" alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang" fill sizes="100vw" /><div className={styles.admissionCard} data-reveal><h2>Khám phá thêm</h2><p>Tìm hiểu các cụm nghiên cứu, dự án, công bố khoa học và hoạt động đổi mới để kết nối sâu hơn với hệ sinh thái nghiên cứu của Viện Sau đại học.</p><div><Link href="/research/cum-nghien-cuu">Các cụm nghiên cứu</Link><Link href="/research/du-an">Dự án nghiên cứu</Link></div></div></div><div className={styles.admissionNav}><h2 id="research-admission-title">Nghiên cứu &amp; Đổi mới</h2><nav aria-label="Điều hướng Nghiên cứu và Đổi mới">{researchLinks.map((item) => <Link className={item.href === activeHref ? styles.activeAdmissionLink : undefined} href={item.href} key={item.href}>{item.label}</Link>)}</nav></div></section>;
 }

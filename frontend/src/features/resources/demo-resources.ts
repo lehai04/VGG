@@ -45,7 +45,7 @@ export const demoResources: PublicResource[] = [
   {
     "id": "demo-don-dang-ky-hoc-bong-2026",
     "slug": "don-dang-ky-hoc-bong-2026",
-    "title": "Đơn đăng ký học bổng dành cho tuyển sinh thạc sĩ năm 2026",
+    "title": "Đơn đăng ký học bổng dành cho tuyển sinh Thạc sĩ năm 2026",
     "description": null,
     "resourceType": "PDF_DOCUMENT",
     "documentType": null,
@@ -85,7 +85,7 @@ export const demoResources: PublicResource[] = [
   {
     "id": "demo-23-2021-tt-bgddt",
     "slug": "23-2021-tt-bgddt",
-    "title": "Quy chế tuyển sinh và đào tạo trình độ thạc sĩ",
+    "title": "Quy chế tuyển sinh và đào tạo trình độ Thạc sĩ",
     "description": null,
     "resourceType": "DIRECTIVE_DOCUMENT",
     "documentType": null,
@@ -93,7 +93,7 @@ export const demoResources: PublicResource[] = [
     "issueDate": "2021-08-30",
     "issuingOrganization": "Bộ Giáo dục và Đào tạo",
     "fileUrl": "/documents/demo/23-2021-tt-bgddt.pdf",
-    "fileName": "23.2021.TT-BGDĐT_30.08.2021_Quy chế TS_ĐT trình độ thạc sĩ.pdf",
+    "fileName": "23.2021.TT-BGDĐT_30.08.2021_Quy chế TS_ĐT trình độ Thạc sĩ.pdf",
     "fileType": "application/pdf",
     "fileSize": 7621633,
     "publishedAt": "2021-08-30",
@@ -105,7 +105,7 @@ export const demoResources: PublicResource[] = [
   {
     "id": "demo-1781-bgddt-gddh-2022",
     "slug": "1781-bgddt-gddh-2022",
-    "title": "Hướng dẫn Quy chế tuyển sinh và đào tạo trình độ thạc sĩ",
+    "title": "Hướng dẫn Quy chế tuyển sinh và đào tạo trình độ Thạc sĩ",
     "description": null,
     "resourceType": "DIRECTIVE_DOCUMENT",
     "documentType": null,
@@ -125,7 +125,7 @@ export const demoResources: PublicResource[] = [
   {
     "id": "demo-18-2021-tt-bgddt",
     "slug": "18-2021-tt-bgddt",
-    "title": "Quy chế tuyển sinh và đào tạo trình độ tiến sĩ",
+    "title": "Quy chế tuyển sinh và đào tạo trình độ Tiến sĩ",
     "description": null,
     "resourceType": "DIRECTIVE_DOCUMENT",
     "documentType": null,

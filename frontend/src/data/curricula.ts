@@ -64,7 +64,7 @@ export function getCurriculumGraduationProject(track: CurriculumTrack | undefine
   return (
     track?.graduationProject ??
     (track ? getCurriculumCourses(track.groups) : []).find((course) =>
-      /luận văn|luận án|đề án tốt nghiệp|đề án thạc sĩ/i.test(course.name),
+      /luận văn|luận án|đề án tốt nghiệp|đề án Thạc sĩ/i.test(course.name),
     )?.name
   );
 }
@@ -118,8 +118,8 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   const graduationCourses: CurriculumCourse[] =
     programme.degree === "Tiến sĩ"
       ? [
-          { name: "Chuyên đề tiến sĩ", credits: 12 },
-          { name: "Luận án tiến sĩ", credits: 60 },
+          { name: "Chuyên đề Tiến sĩ", credits: 12 },
+          { name: "Luận án Tiến sĩ", credits: 60 },
         ]
       : programme.orientation === "Nghiên cứu"
         ? [

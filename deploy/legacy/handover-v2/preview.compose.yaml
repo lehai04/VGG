@@ -1,0 +1,5 @@
+# Local Windows preview only; deployment package remains native Linux/Node.js.
+services:
+  app:
+    ports:
+      - "127.0.0.1:3443:443"

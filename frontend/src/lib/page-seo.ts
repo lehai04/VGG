@@ -1,3 +1,4 @@
+import { publicSiteOrigin } from "@/lib/public-site";
 import { headers } from "next/headers";
 import { cache } from "react";
 import type { Metadata } from "next";
@@ -18,7 +19,7 @@ type PageSeo = {
   customJsonLd?: Record<string, unknown>;
 };
 
-const publicBase = (process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn").replace(/\/$/, "");
+const publicBase = publicSiteOrigin();
 
 function sameSiteUrl(value: unknown) {
   if (typeof value !== "string" || !value.trim()) return undefined;
@@ -36,6 +37,7 @@ export const pageSeoFor = cache(async (locale: Locale, path: string): Promise<Pa
   try {
     const response = await fetch(`${backend}/api/public/site-content?locale=${locale}`, {
       cache: "no-store",
+            signal: AbortSignal.timeout(4000),
     });
     if (!response.ok) return {};
     const payload = (await response.json()) as {
@@ -135,7 +137,7 @@ export function metadataForPageSeo(seo: PageSeo, locale: Locale): Metadata {
           openGraph: {
             ...(seo.ogType ? { type: seo.ogType } : {}),
             locale: locale === "vi" ? "vi_VN" : "en_US",
-            siteName: "Van Lang Global Graduate",
+            siteName: "Viện Sau đại học",
             ...(seo.canonicalUrl ? { url: seo.canonicalUrl } : {}),
             ...(seo.ogTitle || seo.metaTitle ? { title: seo.ogTitle || seo.metaTitle } : {}),
             ...(seo.ogDescription || seo.metaDescription

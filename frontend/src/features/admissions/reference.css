@@ -2843,7 +2843,7 @@
   margin: 4px 0 18px;
 }
 .admissions-reference .fee-link {
-  color: #f2cf9d !important;
+  color: var(--red-dark);
   font-size: var(--text-10);
   display: inline-flex;
   margin: 0 0 24px;

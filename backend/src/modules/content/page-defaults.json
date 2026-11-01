@@ -12,26 +12,26 @@
       "hero": {
         "image": "/images/pages/research/content/banner.jpg",
         "alt": "Không gian nghiên cứu tại Văn Lang",
-        "label": "RESEARCH & GLOBAL OPPORTUNITIES · Viện Sau Đại học",
-        "title": "Nghiên cứu khoa học & Hợp tác quốc tế",
-        "intro": "Viện Sau Đại học phát triển tri thức mới, giải pháp thực tiễn và kết nối người học với các chương trình, đối tác cùng trải nghiệm học thuật trên phạm vi toàn cầu."
+        "label": "RESEARCH & GLOBAL OPPORTUNITIES · Viện Sau đại học",
+        "title": "Nghiên cứu khoa học",
+        "intro": "Viện Sau đại học phát triển tri thức mới, giải pháp thực tiễn và kết nối người học với các chương trình, đối tác cùng trải nghiệm học thuật trên phạm vi toàn cầu."
       },
       "overview": {
         "image": "/images/pages/research/content/Cô Diệu.avif",
         "alt": "Nhà nghiên cứu tại Văn Lang",
         "label": "01 · TỔNG QUAN",
         "title": "Đặt nền móng cho những tác động truyền cảm hứng",
-        "text": "Nền tảng của đổi mới nằm ở những khám phá mới. Thông qua các dự án nghiên cứu mang tính ứng dụng, những ý tưởng tiềm năng được cộng đồng Viện Sau Đại học đào sâu để phát triển thành phương pháp, kỹ thuật và giải pháp có thể đóng góp cải thiện xã hội."
+        "text": "Nền tảng của đổi mới nằm ở những khám phá mới. Thông qua các dự án nghiên cứu mang tính ứng dụng, những ý tưởng tiềm năng được cộng đồng Viện Sau đại học đào sâu để phát triển thành phương pháp, kỹ thuật và giải pháp có thể đóng góp cải thiện xã hội."
       },
       "goalsHeading": {
         "label": "02 · ĐỊNH HƯỚNG",
         "title": "Mục tiêu nghiên cứu",
-        "intro": "Nghiên cứu tại Viện Sau Đại học hướng đến chất lượng học thuật, giá trị ứng dụng và khả năng kết nối cộng đồng tri thức trong nước lẫn quốc tế."
+        "intro": "Nghiên cứu tại Viện Sau đại học hướng đến chất lượng học thuật, giá trị ứng dụng và khả năng kết nối cộng đồng tri thức trong nước lẫn quốc tế."
       },
       "fieldsHeading": {
         "label": "03 · RESEARCH AREAS",
         "title": "Lĩnh vực nghiên cứu trọng tâm",
-        "intro": "Cộng đồng Viện Sau Đại học tiếp cận các vấn đề từ nhiều lĩnh vực để tạo ra góc nhìn liên ngành và những kết quả có giá trị cho xã hội."
+        "intro": "Cộng đồng Viện Sau đại học tiếp cận các vấn đề từ nhiều lĩnh vực để tạo ra góc nhìn liên ngành và những kết quả có giá trị cho xã hội."
       },
       "partnersHeading": {
         "title": "Các đối tác chiến lược",
@@ -39,7 +39,7 @@
       },
       "industry": {
         "image": "/images/pages/research/content/hoptac.JPG",
-        "alt": "Đối tác doanh nghiệp và hợp tác chiến lược tại Viện Sau Đại học",
+        "alt": "Đối tác doanh nghiệp và hợp tác chiến lược tại Viện Sau đại học",
         "captionLine1": "Chương trình đào tạo",
         "captionLine2": "đảm bảo tính thực tiễn cao",
         "count": "700+",
@@ -47,7 +47,7 @@
         "intro": "Đến từ hơn 30 quốc gia và toàn cầu",
         "text": "Chương trình đảm bảo bám sát với thực tế và tương lai của công việc, có tính ứng dụng cao.",
         "logoImage": "/images/pages/research/content/partner-logos.png",
-        "logoAlt": "Logo các đối tác doanh nghiệp thuộc nhiều lĩnh vực của Viện Sau Đại học"
+        "logoAlt": "Logo các đối tác doanh nghiệp thuộc nhiều lĩnh vực của Viện Sau đại học"
       },
       "goals": [
         {
@@ -164,7 +164,7 @@
         "text_002": "Thông báo và lịch tuyển sinh",
         "text_003": "Bậc đào tạo đang xem",
         "text_004": "Thạc sĩ: thông tin tuyển sinh 2027. Tiến sĩ: thông báo PDF hiện có áp dụng năm 2026. Vui lòng chọn đúng bậc đào tạo để xem điều kiện và lịch tương ứng.",
-        "text_005": "Tuyển sinh thạc sĩ 2027",
+        "text_005": "Tuyển sinh Thạc sĩ 2027",
         "text_006": " Kế hoạch tuyển sinh 2027",
         "text_007": "Trình độ đang xem",
         "text_008": "Thông báo tuyển sinh ",
@@ -173,7 +173,7 @@
         "text_011": "Tham khảo kế hoạch tuyển sinh và các mốc nhận hồ sơ bên dưới. Chưa có bản PDF thông báo Thạc sĩ 2027 để tải xuống tại đây; vui lòng liên hệ Viện để nhận văn bản chính thức.",
         "text_012": "Xem nội dung thông báo",
         "text_013": "TIẾN SĨ 2026 · PDF",
-        "text_014": "Thông báo tuyển sinh tiến sĩ",
+        "text_014": "Thông báo tuyển sinh Tiến sĩ",
         "text_015": "Tài liệu hiện có dành cho chương trình Khoa học Môi trường, năm 2026; không phải thông báo tuyển sinh năm 2027.",
         "url_016": "/admissions/thong-bao-tuyen-sinh-tien-si-2026.pdf",
         "text_017": "Xem PDF",
@@ -192,7 +192,7 @@
         "text_030": "02",
         "text_031": "Nộp hồ sơ",
         "text_032": "Nộp đủ theo hướng dẫn của Viện",
-        "text_033": "Hồ sơ học bổng được nộp cùng hồ sơ ứng tuyển tiến sĩ nếu có đăng ký.",
+        "text_033": "Hồ sơ học bổng được nộp cùng hồ sơ ứng tuyển Tiến sĩ nếu có đăng ký.",
         "text_034": "03",
         "text_035": "Tham gia xét tuyển",
         "text_036": "Hình thức trực tiếp",
@@ -227,7 +227,7 @@
         "text_019": "01",
         "text_020": "Văn bằng và ngành phù hợp",
         "text_021": "Đáp ứng một trong các diện đầu vào:",
-        "text_022": "Đã tốt nghiệp thạc sĩ ngành phù hợp.",
+        "text_022": "Đã tốt nghiệp Thạc sĩ ngành phù hợp.",
         "text_023": "Đã tốt nghiệp đại học hạng giỏi trở lên ngành phù hợp.",
         "text_024": "Tốt nghiệp trình độ tương đương Bậc 7 theo Khung trình độ quốc gia Việt Nam ở một số ngành đào tạo chuyên sâu đặc thù phù hợp.",
         "text_025": "Đồng thời đáp ứng chuẩn đầu vào của chương trình. Học phần bổ sung kiến thức, nếu có, được xác định theo ngành tốt nghiệp và hồ sơ cụ thể.",
@@ -235,7 +235,7 @@
         "text_027": "02",
         "text_028": "Kinh nghiệm nghiên cứu",
         "text_029": "Thể hiện bằng một trong các hình thức:",
-        "text_030": "Luận văn thạc sĩ của chương trình định hướng nghiên cứu.",
+        "text_030": "Luận văn Thạc sĩ của chương trình định hướng nghiên cứu.",
         "text_031": "Bài báo hoặc báo cáo khoa học đã công bố.",
         "text_032": "Có từ 02 năm (24 tháng) công tác là giảng viên hoặc nghiên cứu viên tại cơ sở đào tạo, tổ chức khoa học và công nghệ.",
         "text_033": "Chuẩn bị minh chứng tương ứng để Hội đồng xem xét.",
@@ -253,7 +253,7 @@
         "text_045": "Gợi ý chuẩn bị đề cương ",
         "text_046": "05",
         "text_047": "Ứng viên là công dân nước ngoài",
-        "text_048": "Người đăng ký chương trình tiến sĩ bằng tiếng Việt phải có chứng chỉ tiếng Việt tối thiểu Bậc 4 theo Khung năng lực tiếng Việt dùng cho người nước ngoài, đồng thời đáp ứng các điều kiện dự tuyển của chương trình."
+        "text_048": "Người đăng ký chương trình Tiến sĩ bằng tiếng Việt phải có chứng chỉ tiếng Việt tối thiểu Bậc 4 theo Khung năng lực tiếng Việt dùng cho người nước ngoài, đồng thời đáp ứng các điều kiện dự tuyển của chương trình."
       },
       "hoc-phi-hoc-bong": {
         "text_001": "04",
@@ -285,7 +285,7 @@
         "text_027": "TIẾN SĨ · KHOA HỌC MÔI TRƯỜNG",
         "text_028": "Học phí toàn khóa",
         "text_029": "145.000.000 đ",
-        "text_030": "Học phí toàn khóa · Chương trình tiến sĩ",
+        "text_030": "Học phí toàn khóa · Chương trình Tiến sĩ",
         "text_031": "Năm 1",
         "text_032": "50.000.000 đ",
         "text_033": "Năm 2",
@@ -322,7 +322,7 @@
         "text_010": "Tài liệu để bạn bắt đầu.",
         "text_011": "Tải danh sách chuẩn bị để ghi chú, hoặc xem hướng dẫn các bước đăng ký.",
         "text_012": "Danh sách chuẩn bị hồ sơ",
-        "text_013": "Tuyển sinh thạc sĩ 2027 · TXT",
+        "text_013": "Tuyển sinh Thạc sĩ 2027 · TXT",
         "text_014": "Thông tin tuyển sinh & biểu mẫu",
         "text_015": "Tra cứu nội dung và cổng đăng ký",
         "text_016": "Xem hướng dẫn đăng ký ",
@@ -332,9 +332,9 @@
         "text_020": "Bỏ đánh dấu",
         "text_021": "Tài liệu cho bước chuẩn bị đầu tiên.",
         "text_022": "Tải danh sách hồ sơ và thông báo tuyển sinh để chuẩn bị.",
-        "text_023": "Checklist hồ sơ tiến sĩ",
+        "text_023": "Checklist hồ sơ Tiến sĩ",
         "text_024": "24 mục · TXT",
-        "text_025": "Thông báo tuyển sinh tiến sĩ 2026",
+        "text_025": "Thông báo tuyển sinh Tiến sĩ 2026",
         "text_026": "Kèm 3 phụ lục · PDF, 13 trang",
         "text_027": "Dự tuyển từ trình độ đại học?",
         "text_028": "Liên hệ Viện để được hướng dẫn hồ sơ phù hợp với văn bằng dự tuyển.",
@@ -349,7 +349,7 @@
         "text_005": "Chọn từng bước để xem việc cần làm. Thao tác nộp hồ sơ chính thức được thực hiện trên cổng tuyển sinh của Trường.",
         "text_006": "Hướng dẫn đăng ký",
         "text_007": "Từng bước chuẩn bị cho kỳ dự tuyển.",
-        "text_008": "Chọn một bước để xem việc cần làm. Viện Sau đại học hướng dẫn việc tiếp nhận hồ sơ và xét tuyển tiến sĩ.",
+        "text_008": "Chọn một bước để xem việc cần làm. Viện Sau đại học hướng dẫn việc tiếp nhận hồ sơ và xét tuyển Tiến sĩ.",
         "text_009": "Kết quả & nhập học",
         "text_010": "Theo dõi hồ sơ. Sẵn sàng cho bước tiếp theo.",
         "text_011": "Sử dụng thông tin và hướng dẫn chính thức của đợt tuyển sinh để theo dõi kết quả, hoàn tất thủ tục đúng thời hạn.",
@@ -374,11 +374,11 @@
         "text_002": "Câu hỏi thường gặp (FAQ)",
         "text_003": "Câu hỏi thường gặp",
         "text_004": "Giải đáp những điều bạn đang băn khoăn.",
-        "text_005": "Những thông tin cần làm rõ trước khi đăng ký dự tuyển thạc sĩ 2027.",
+        "text_005": "Những thông tin cần làm rõ trước khi đăng ký dự tuyển Thạc sĩ 2027.",
         "text_006": "Gửi câu hỏi cho đội ngũ tư vấn ",
         "text_007": "Câu hỏi thường gặp",
         "text_008": "Làm rõ trước khi bắt đầu nghiên cứu.",
-        "text_009": "Giải đáp về điều kiện, học phí, học bổng và cách chuẩn bị hồ sơ tiến sĩ.",
+        "text_009": "Giải đáp về điều kiện, học phí, học bổng và cách chuẩn bị hồ sơ Tiến sĩ.",
         "text_010": "Gửi câu hỏi cho Viện "
       },
       "tu-van": {
@@ -430,7 +430,7 @@
         "url_046": "tel:+84988486869",
         "text_047": "Hotline: 0988 48 6869",
         "text_048": "Câu hỏi thường gặp",
-        "text_049": "VIỆN SAU ĐẠI HỌC · TRƯỜNG ĐẠI HỌC VĂN LANG",
+        "text_049": "Viện Sau đại học · TRƯỜNG ĐẠI HỌC VĂN LANG",
         "text_050": "Tuyển sinh sau đại học",
         "text_051": "Xem điều kiện",
         "text_052": "Đăng ký dự tuyển "
@@ -440,7 +440,7 @@
           {
             "title": "Đăng ký trực tuyến",
             "detail": "Chọn ngành và gửi hồ sơ dự tuyển",
-            "text": "Truy cập cổng tuyển sinh thạc sĩ của Trường, chọn ngành dự tuyển, khai thông tin và tải hồ sơ điện tử theo hướng dẫn.",
+            "text": "Truy cập cổng tuyển sinh Thạc sĩ của Trường, chọn ngành dự tuyển, khai thông tin và tải hồ sơ điện tử theo hướng dẫn.",
             "items": [
               "Kiểm tra điều kiện và giấy tờ trước khi đăng ký.",
               "Lệ phí xét tuyển: 500.000 đồng, thu một lần khi đăng ký và nộp hồ sơ.",
@@ -548,11 +548,11 @@
           {
             "title": "Đối chiếu điều kiện",
             "detail": "Xác định diện dự tuyển",
-            "text": "Đối chiếu văn bằng, ngành tốt nghiệp, kinh nghiệm nghiên cứu và ngoại ngữ với yêu cầu chương trình tiến sĩ Khoa học Môi trường.",
+            "text": "Đối chiếu văn bằng, ngành tốt nghiệp, kinh nghiệm nghiên cứu và ngoại ngữ với yêu cầu chương trình Tiến sĩ Khoa học Môi trường.",
             "items": [
               "Chuẩn bị bằng tốt nghiệp và bảng điểm.",
               "Tra cứu danh mục ngành phù hợp.",
-              "Đối chiếu minh chứng ngoại ngữ theo điều kiện tiến sĩ."
+              "Đối chiếu minh chứng ngoại ngữ theo điều kiện Tiến sĩ."
             ],
             "action": "Tra cứu ngành phù hợp",
             "target": "bsk"
@@ -608,24 +608,24 @@
         ],
         "doctorFaq": [
           {
-            "question": "Chưa có bằng thạc sĩ có được dự tuyển không?",
+            "question": "Chưa có bằng Thạc sĩ có được dự tuyển không?",
             "answer": "Có thể dự tuyển từ đại học hạng giỏi trở lên thuộc ngành phù hợp và đáp ứng các điều kiện còn lại. Bốn ngành đại học phù hợp gồm: Kỹ thuật môi trường, Khoa học môi trường, Công nghệ kỹ thuật môi trường, Quản lý tài nguyên và môi trường. Hồ sơ ngoài danh mục được Hội đồng xem xét theo bảng điểm."
           },
           {
             "question": "Phải có bài báo khoa học mới đủ điều kiện không?",
-            "answer": "Kinh nghiệm nghiên cứu có thể thể hiện qua luận văn thạc sĩ của chương trình định hướng nghiên cứu; hoặc bài báo, báo cáo khoa học đã công bố; hoặc từ 24 tháng làm giảng viên, nghiên cứu viên tại cơ sở đào tạo, tổ chức khoa học và công nghệ. Cần chuẩn bị minh chứng tương ứng và đáp ứng các điều kiện đầu vào khác."
+            "answer": "Kinh nghiệm nghiên cứu có thể thể hiện qua luận văn Thạc sĩ của chương trình định hướng nghiên cứu; hoặc bài báo, báo cáo khoa học đã công bố; hoặc từ 24 tháng làm giảng viên, nghiên cứu viên tại cơ sở đào tạo, tổ chức khoa học và công nghệ. Cần chuẩn bị minh chứng tương ứng và đáp ứng các điều kiện đầu vào khác."
           },
           {
-            "question": "Ngoại ngữ đầu vào tiến sĩ yêu cầu mức nào?",
-            "answer": "Ngoại ngữ được chứng minh bằng văn bằng phù hợp hoặc chứng chỉ tương đương Bậc 4. Chứng chỉ phải còn hiệu lực đến ngày đăng ký dự tuyển và đáp ứng yêu cầu về đơn vị tổ chức thi, cấp chứng chỉ. Xem bảng riêng của tiến sĩ trong phần điều kiện."
+            "question": "Ngoại ngữ đầu vào Tiến sĩ yêu cầu mức nào?",
+            "answer": "Ngoại ngữ được chứng minh bằng văn bằng phù hợp hoặc chứng chỉ tương đương Bậc 4. Chứng chỉ phải còn hiệu lực đến ngày đăng ký dự tuyển và đáp ứng yêu cầu về đơn vị tổ chức thi, cấp chứng chỉ. Xem bảng riêng của Tiến sĩ trong phần điều kiện."
           },
           {
-            "question": "Thời gian học tiến sĩ là bao lâu?",
-            "answer": "Chính quy tập trung, thời gian chuẩn 3 năm với người có bằng thạc sĩ và 4 năm với người có bằng đại học. Tổng thời gian đào tạo không quá 6 năm theo quy định. Lịch học bố trí buổi tối trong tuần, thứ Bảy và Chủ nhật."
+            "question": "Thời gian học Tiến sĩ là bao lâu?",
+            "answer": "Chính quy tập trung, thời gian chuẩn 3 năm với người có bằng Thạc sĩ và 4 năm với người có bằng đại học. Tổng thời gian đào tạo không quá 6 năm theo quy định. Lịch học bố trí buổi tối trong tuần, thứ Bảy và Chủ nhật."
           },
           {
             "question": "Có cần học bổ sung kiến thức không?",
-            "answer": "Một số ngành thạc sĩ được miễn học bổ sung kiến thức. Với các nhóm ngành còn lại và ứng viên từ đại học, Hội đồng bảo vệ đề cương quyết định học phần bổ sung theo định hướng nghiên cứu. Học phí bổ sung kiến thức là 1.500.000 đồng/môn."
+            "answer": "Một số ngành Thạc sĩ được miễn học bổ sung kiến thức. Với các nhóm ngành còn lại và ứng viên từ đại học, Hội đồng bảo vệ đề cương quyết định học phần bổ sung theo định hướng nghiên cứu. Học phí bổ sung kiến thức là 1.500.000 đồng/môn."
           },
           {
             "question": "Học phí 145 triệu được đóng thế nào?",
@@ -668,7 +668,7 @@
           "chuong_trinh_dao_tao": "Chương trình đào tạo",
           "hoc_de_tien_xa": "CHỌN CHƯƠNG TRÌNH HỌC",
           "dan_dat_tuong_lai": "CHO BƯỚC TIẾN TIẾP THEO",
-          "kien_tao_lo_trinh_hoc_thuat_phu": "Khám phá các chương trình thạc sĩ và tiến sĩ tại Văn Lang để phát triển chuyên môn, theo đuổi nghiên cứu và vận dụng kiến thức vào thực tiễn. Lựa chọn chương trình phù hợp với nền tảng và mục tiêu phát triển của bạn.",
+          "kien_tao_lo_trinh_hoc_thuat_phu": "Khám phá các chương trình Thạc sĩ và Tiến sĩ tại Văn Lang để phát triển chuyên môn, theo đuổi nghiên cứu và vận dụng kiến thức vào thực tiễn. Lựa chọn chương trình phù hợp với nền tảng và mục tiêu phát triển của bạn.",
           "aria_label_thong_tin_tong_quan_chuong": "Thông tin tổng quan chương trình",
           "value_2": "20",
           "chuong_trinh": "Chương trình",
@@ -810,7 +810,7 @@
       ],
       "programmeSearch": {
         "programme_search_wrapper": {
-          "tim_kiem_chuong_trinh_phu_hop_voi": "Khám phá các chương trình thạc sĩ và tiến sĩ tại Văn Lang theo lĩnh vực quan tâm và định hướng phát triển của bạn.",
+          "tim_kiem_chuong_trinh_phu_hop_voi": "Khám phá các chương trình Thạc sĩ và Tiến sĩ tại Văn Lang theo lĩnh vực quan tâm và định hướng phát triển của bạn.",
           "chon_dieu_ban_muon_kham_pha": "Tra cứu chương trình",
           "aria_label_tim_kiem_chuong_trinh": "Tìm kiếm chương trình",
           "placeholder_nhap_ten_chuong_trinh_hoac_linh": "Nhập tên chương trình hoặc lĩnh vực bạn quan tâm",
@@ -825,7 +825,7 @@
         "label": "CHƯƠNG TRÌNH SAU ĐẠI HỌC",
         "title": "Nâng tầm tri thức",
         "emphasis": "Chủ động dẫn đầu.",
-        "intro": "Trường Đại học Văn Lang mang đến 20 chương trình thạc sĩ và 01 chương trình tiến sĩ, 01 chương trình liên kết quốc tế giúp bạn phát triển chuyên môn, nâng cao năng lực nghiên cứu và mở rộng cơ hội nghề nghiệp.",
+        "intro": "Trường Đại học Văn Lang mang đến 20 chương trình Thạc sĩ và 01 chương trình Tiến sĩ, 01 chương trình liên kết quốc tế giúp bạn phát triển chuyên môn, nâng cao năng lực nghiên cứu và mở rộng cơ hội nghề nghiệp.",
         "posterImage": "/images/pages/home/banner/banner-01.jpg",
         "primary": {
           "label": "Khám phá chương trình →",
@@ -837,7 +837,7 @@
         }
       },
       "overview": {
-        "label": "Viện Sau Đại học · VAN LANG GLOBAL GRADUATE",
+        "label": "Viện Sau đại học",
         "title": "Nâng tầm tri thức,",
         "emphasis": "Chủ động dẫn đầu.",
         "text": "Tại Viện Sau đại học Trường Đại học Văn Lang, mỗi hành trình học tập là cơ hội để đào sâu tri thức, mở rộng tư duy và phát triển năng lực lãnh đạo. Gắn kết đào tạo với nghiên cứu và thực tiễn nghề nghiệp, Viện đồng hành cùng người học chuyển hóa ý tưởng thành giải pháp, tạo nên những bước tiến trong sự nghiệp và những đóng góp thiết thực cho cộng đồng."
@@ -874,7 +874,7 @@
         {
           "slug": "discover",
           "en": "About Van Lang Institute Of Postgraduate Education",
-          "vi": "Về Viện Sau Đại học"
+          "vi": "Về Viện Sau đại học"
         },
         {
           "slug": "programmes",
@@ -889,7 +889,7 @@
         {
           "slug": "research",
           "en": "Research & Global Opportunities",
-          "vi": "Nghiên cứu khoa học & Hợp tác quốc tế"
+          "vi": "Nghiên cứu khoa học"
         },
         {
           "slug": "student-success",
@@ -929,20 +929,28 @@
       ],
       "aboutLinks": [
         {
-          "label": "Tin tức",
-          "href": "/news"
+          "label": "Giới thiệu",
+          "href": "/discover#gioi-thieu"
         },
         {
-          "label": "Sự kiện",
-          "href": "/news"
+          "label": "Tầm nhìn và Sứ mệnh",
+          "href": "/discover#tam-nhin-su-menh"
+        },
+        {
+          "label": "Triết lý giáo dục",
+          "href": "/discover#triet-ly-giao-duc"
         },
         {
           "label": "Giá trị cốt lõi",
           "href": "/discover#gia-tri-cot-loi"
         },
         {
-          "label": "Trung tâm khảo thí tiếng Anh",
-          "href": "/resources"
+          "label": "Vì sao chọn Viện Sau đại học",
+          "href": "/discover#vi-sao-chon-vgg"
+        },
+        {
+          "label": "Đội ngũ lãnh đạo",
+          "href": "/discover#doi-ngu-lanh-dao"
         }
       ],
       "quickLinks": [
@@ -951,7 +959,7 @@
           "href": "/"
         },
         {
-          "label": "Về Viện Sau Đại học",
+          "label": "Về Viện Sau đại học",
           "href": "/discover"
         },
         {
@@ -963,7 +971,7 @@
           "href": "/admissions"
         },
         {
-          "label": "Nghiên cứu khoa học & Hợp tác quốc tế",
+          "label": "Nghiên cứu khoa học",
           "href": "/research"
         },
         {
@@ -1040,8 +1048,8 @@
     "defaults": {
       "hero": {
         "image": "/images/pages/student-success/content/banner.JPG",
-        "alt": "Cộng đồng người học Viện Sau Đại học",
-        "label": "HÀNH TRÌNH NGƯỜI HỌC · Viện Sau Đại học",
+        "alt": "Cộng đồng người học Viện Sau đại học",
+        "label": "HÀNH TRÌNH NGƯỜI HỌC · Viện Sau đại học",
         "title": "HỌC SÂU HƠN. KẾT NỐI XA HƠN.",
         "intro": "Một cộng đồng học thuật năng động, nơi mỗi người học được hỗ trợ để phát triển chuyên môn, mở rộng quan hệ và tạo dấu ấn riêng."
       },
@@ -1065,7 +1073,7 @@
       },
       "experience": {
         "label": "03 · TRẢI NGHIỆM NGƯỜI HỌC",
-        "title": "Đời sống tại Viện Sau Đại học",
+        "title": "Đời sống tại Viện Sau đại học",
         "intro": "Hệ sinh thái hỗ trợ được thiết kế để người học chủ động học tập, kết nối và phát triển trong suốt chương trình.",
         "action": "Tìm hiểu thêm"
       },
@@ -1108,26 +1116,26 @@
         {
           "id": "ngoai-khoa",
           "title": "Hoạt động ngoại khóa",
-          "text": "Những hành trình phát triển truyền cảm hứng từ cộng đồng người học và cựu người học Viện Sau Đại học.",
+          "text": "Những hành trình phát triển truyền cảm hứng từ cộng đồng người học và cựu người học Viện Sau đại học.",
           "href": "https://www.vlu.edu.vn/life-at-vlu/student-clubs",
           "image": "/images/pages/student-success/content/nk.jpg"
         }
       ],
       "moments": {
-        "label": "04 · Viện Sau Đại học MOMENTS",
+        "label": "04 · Viện Sau đại học MOMENTS",
         "title": "Khoảnh khắc người học",
         "images": [
           {
             "image": "/images/pages/student-success/content/kk7.jpg",
-            "alt": "Khoảnh khắc học tập tại Viện Sau Đại học"
+            "alt": "Khoảnh khắc học tập tại Viện Sau đại học"
           },
           {
             "image": "/images/pages/student-success/content/kk2.avif",
-            "alt": "Người học Viện Sau Đại học tại khuôn viên"
+            "alt": "Người học Viện Sau đại học tại khuôn viên"
           },
           {
             "image": "/images/pages/student-success/content/kk3.jpg",
-            "alt": "Hoạt động cộng đồng của người học Viện Sau Đại học"
+            "alt": "Hoạt động cộng đồng của người học Viện Sau đại học"
           },
           {
             "image": "/images/pages/student-success/content/kk5.jpg",
@@ -1135,11 +1143,11 @@
           },
           {
             "image": "/images/pages/student-success/content/kk6.jpg",
-            "alt": "Cộng đồng cựu người học Viện Sau Đại học"
+            "alt": "Cộng đồng cựu người học Viện Sau đại học"
           },
           {
             "image": "/images/pages/student-success/content/kk4.jpg",
-            "alt": "Hoạt động học thuật tại Viện Sau Đại học"
+            "alt": "Hoạt động học thuật tại Viện Sau đại học"
           }
         ]
       }
@@ -1148,7 +1156,7 @@
   {
     "id": "programme:cong-nghe-thong-tin",
     "path": "/programmes/cong-nghe-thong-tin",
-    "title": "Công nghệ thông tin",
+    "title": "Công nghệ Thông tin",
     "kind": "programme",
     "locales": [
       "vi",
@@ -1156,8 +1164,8 @@
     ],
     "defaults": {
       "id": "cong-nghe-thong-tin",
-      "code": "480201",
-      "title": "Công nghệ thông tin",
+      "code": "8480201",
+      "title": "Công nghệ Thông tin",
       "englishTitle": "Master of Information Technology",
       "degree": "Thạc sĩ",
       "field": "Kỹ thuật, Môi trường & Công nghệ",
@@ -1170,7 +1178,7 @@
       "creditsLabel": "45 (ứng dụng) / 60 (nghiên cứu)",
       "duration": "18 tháng (ứng dụng) / 24 tháng (nghiên cứu)",
       "studyMode": "Chính quy, tiếng Việt",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Nâng cao năng lực thiết kế, phát triển và quản lý các giải pháp công nghệ thông tin, với trọng tâm trí tuệ nhân tạo, dữ liệu lớn và điện toán đám mây.",
       "detailsPending": false,
       "tuition": "90.000.000 VNĐ",
@@ -1194,7 +1202,7 @@
             "href": "/admissions"
           },
           "heroLead": "Nâng cao năng lực thiết kế, phát triển và quản lý các giải pháp công nghệ thông tin, với trọng tâm trí tuệ nhân tạo, dữ liệu lớn và điện toán đám mây.",
-          "heroTitle": "Công nghệ thông tin",
+          "heroTitle": "Công nghệ Thông tin",
           "heroSlogan": "FUTURE",
           "heroImage": "/images/programme-library/coding.jpg",
           "imageAlt": "Mã nguồn trên màn hình máy tính",
@@ -1252,9 +1260,9 @@
           "overviewTitle": "Tổng quan chương trình",
           "overview": [
             "Từ kiến thức chuyên sâu đến giải pháp công nghệ.",
-            "Chương trình Thạc sĩ Công nghệ thông tin tại Văn Lang kết hợp kiến thức công nghệ hiện đại với năng lực nghiên cứu, phát triển và quản lý giải pháp CNTT.",
+            "Chương trình Thạc sĩ Công nghệ Thông tin tại Văn Lang kết hợp kiến thức công nghệ hiện đại với năng lực nghiên cứu, phát triển và quản lý giải pháp CNTT.",
             "Trọng tâm chương trình gồm trí tuệ nhân tạo, dữ liệu lớn và điện toán đám mây, gắn với nhu cầu phát triển hệ thống, sản phẩm công nghệ và chuyển đổi số. Người học đồng thời rèn luyện tư duy phản biện, kỹ năng làm việc trong môi trường đa ngành và trách nhiệm nghề nghiệp.",
-            "Hai định hướng ứng dụng và nghiên cứu dùng chung nền tảng kiến thức, sau đó phân nhánh theo mục tiêu học tập. Hình thức đào tạo chính quy, ngôn ngữ giảng dạy là tiếng Việt. Văn bằng tốt nghiệp: Thạc sĩ Công nghệ thông tin — Master of Information Technology."
+            "Hai định hướng ứng dụng và nghiên cứu dùng chung nền tảng kiến thức, sau đó phân nhánh theo mục tiêu học tập. Hình thức đào tạo chính quy, ngôn ngữ giảng dạy là tiếng Việt. Văn bằng tốt nghiệp: Thạc sĩ Công nghệ Thông tin — Master of Information Technology."
           ],
           "imageFallback": "/images/pages/programmes/logistics/campus-building.jpg",
           "imageAlt": "Nhóm quản lý phân tích số liệu kinh doanh",
@@ -1265,7 +1273,7 @@
           },
           "ribbonTitle": "Định hướng đào tạo",
           "tags": [
-            "Công nghệ thông tin",
+            "Công nghệ Thông tin",
             "Trí tuệ nhân tạo",
             "Dữ liệu lớn",
             "Điện toán đám mây"
@@ -1284,11 +1292,11 @@
             },
             {
               "title": "Phát triển giải pháp qua thực hành",
-              "text": "Hoạt động học tập kết hợp lý thuyết, thực hành phòng máy, dự án, seminar và phản biện. Định hướng ứng dụng có 6 tín chỉ thực tập chuyên môn và 9 tín chỉ đề án thạc sĩ."
+              "text": "Hoạt động học tập kết hợp lý thuyết, thực hành phòng máy, dự án, seminar và phản biện. Định hướng ứng dụng có 6 tín chỉ thực tập chuyên môn và 9 tín chỉ đề án Thạc sĩ."
             },
             {
               "title": "Dành thời lượng cho nghiên cứu",
-              "text": "Định hướng nghiên cứu bố trí hai chuyên đề, mỗi chuyên đề 6 tín chỉ, và luận văn thạc sĩ 15 tín chỉ để phát triển năng lực nghiên cứu chuyên sâu."
+              "text": "Định hướng nghiên cứu bố trí hai chuyên đề, mỗi chuyên đề 6 tín chỉ, và luận văn Thạc sĩ 15 tín chỉ để phát triển năng lực nghiên cứu chuyên sâu."
             },
             {
               "title": "Kỹ năng chuyên môn đi cùng trách nhiệm",
@@ -1301,7 +1309,7 @@
               {
                 "code": "PLO1",
                 "title": "Đánh giá công nghệ và nền tảng lý thuyết",
-                "text": "Đánh giá các nền tảng lý thuyết, nguyên lý và công nghệ tiên tiến trong lĩnh vực Công nghệ thông tin (trí tuệ nhân tạo, dữ liệu lớn, điện toán đám mây)."
+                "text": "Đánh giá các nền tảng lý thuyết, nguyên lý và công nghệ tiên tiến trong lĩnh vực Công nghệ Thông tin (trí tuệ nhân tạo, dữ liệu lớn, điện toán đám mây)."
               },
               {
                 "code": "PLO2",
@@ -1344,7 +1352,7 @@
           "audience": [
             {
               "title": "Người có nền tảng CNTT",
-              "text": "Người tốt nghiệp các ngành thuộc nhóm Máy tính và Công nghệ thông tin, muốn học sâu hơn về công nghệ, phát triển hệ thống hoặc quản lý giải pháp CNTT.",
+              "text": "Người tốt nghiệp các ngành thuộc nhóm Máy tính và Công nghệ Thông tin, muốn học sâu hơn về công nghệ, phát triển hệ thống hoặc quản lý giải pháp CNTT.",
               "image": "/images/programme-library/coding.jpg",
               "alt": "Mã nguồn trên màn hình máy tính",
               "imageSource": "https://unsplash.com/photos/computer-screen-displaying-code-and-terminal-output-fmH6yLBwEPw"
@@ -1358,7 +1366,7 @@
             },
             {
               "title": "Người hướng đến nghiên cứu",
-              "text": "Người mong muốn phát triển năng lực nghiên cứu, tham gia hoạt động R&D, giảng dạy hoặc chuẩn bị nền tảng để tiếp tục học tập ở trình độ tiến sĩ.",
+              "text": "Người mong muốn phát triển năng lực nghiên cứu, tham gia hoạt động R&D, giảng dạy hoặc chuẩn bị nền tảng để tiếp tục học tập ở trình độ Tiến sĩ.",
               "image": "/images/programme-library/coding.jpg",
               "alt": "Mã nguồn trên màn hình máy tính",
               "imageSource": "https://unsplash.com/photos/computer-screen-displaying-code-and-terminal-output-fmH6yLBwEPw"
@@ -1392,15 +1400,15 @@
             },
             {
               "title": "Nghiên cứu, giảng dạy và học tiếp",
-              "sub": "Làm việc tại viện nghiên cứu hoặc đơn vị R&D; giảng dạy CNTT tại trường đại học, cao đẳng; hoặc tiếp tục học tiến sĩ tùy điều kiện dự tuyển."
+              "sub": "Làm việc tại viện nghiên cứu hoặc đơn vị R&D; giảng dạy CNTT tại trường đại học, cao đẳng; hoặc tiếp tục học Tiến sĩ tùy điều kiện dự tuyển."
             }
           ]
         },
         "section05": {
           "sectionNumber": "05",
           "curriculumIntro": [
-            "Định hướng ứng dụng tập trung thiết kế, triển khai và chuyển giao giải pháp công nghệ trong thực tiễn nghề nghiệp. Phần cuối chương trình gồm thực tập chuyên môn và đề án thạc sĩ.",
-            "Định hướng nghiên cứu tập trung thiết kế nghiên cứu, kiểm chứng thực nghiệm và phát triển tri thức trong lĩnh vực CNTT. Hoạt động nghiên cứu gồm hai chuyên đề và luận văn thạc sĩ."
+            "Định hướng ứng dụng tập trung thiết kế, triển khai và chuyển giao giải pháp công nghệ trong thực tiễn nghề nghiệp. Phần cuối chương trình gồm thực tập chuyên môn và đề án Thạc sĩ.",
+            "Định hướng nghiên cứu tập trung thiết kế nghiên cứu, kiểm chứng thực nghiệm và phát triển tri thức trong lĩnh vực CNTT. Hoạt động nghiên cứu gồm hai chuyên đề và luận văn Thạc sĩ."
           ],
           "trackCredits": [
             "45 tín chỉ",
@@ -1454,19 +1462,19 @@
           "faqs": [
             {
               "question": "Hai định hướng đào tạo khác nhau như thế nào?",
-              "answer": "Định hướng ứng dụng có 45 tín chỉ, thời gian đào tạo 18 tháng với kế hoạch 5 học kỳ, kết thúc bằng thực tập chuyên môn và đề án thạc sĩ. Định hướng nghiên cứu có 60 tín chỉ, thời gian đào tạo 24 tháng với kế hoạch 6 học kỳ, gồm hai chuyên đề nghiên cứu và luận văn thạc sĩ."
+              "answer": "Định hướng ứng dụng có 45 tín chỉ, thời gian đào tạo 18 tháng với kế hoạch 5 học kỳ, kết thúc bằng thực tập chuyên môn và đề án Thạc sĩ. Định hướng nghiên cứu có 60 tín chỉ, thời gian đào tạo 24 tháng với kế hoạch 6 học kỳ, gồm hai chuyên đề nghiên cứu và luận văn Thạc sĩ."
             },
             {
-              "question": "Điều kiện dự tuyển Thạc sĩ Công nghệ thông tin là gì?",
+              "question": "Điều kiện dự tuyển Thạc sĩ Công nghệ Thông tin là gì?",
               "answer": "Ứng viên đã tốt nghiệp hoặc đủ điều kiện được công nhận tốt nghiệp từ trình độ đại học trở lên, có ngành phù hợp và đáp ứng điều kiện đầu vào. Chương trình tuyển sinh theo hình thức xét tuyển. Với định hướng nghiên cứu, nguồn yêu cầu hạng tốt nghiệp đại học từ khá trở lên hoặc có công bố khoa học liên quan. Ngành tốt nghiệp, chương trình đã học và bảng điểm được Khoa và Viện đối chiếu; yêu cầu cụ thể căn cứ quy định và thông báo tuyển sinh của Trường."
             },
             {
               "question": "Ngành gần cần học bổ sung những học phần nào?",
-              "answer": "Nhóm thuộc diện bổ sung kiến thức phải hoàn tất 5 học phần, tổng 15 tín chỉ: Kỹ thuật lập trình; Cấu trúc dữ liệu và giải thuật; Cơ sở dữ liệu; Xác suất thống kê ứng dụng; Nhập môn Trí tuệ nhân tạo. Danh mục không cần bổ sung gồm Máy tính (74801): Khoa học máy tính (7480101), Mạng máy tính và truyền thông dữ liệu (7480102), Kỹ thuật phần mềm (7480103), Hệ thống thông tin (7480104), Kỹ thuật máy tính (7480106), Trí tuệ nhân tạo (7480107), Công nghệ kỹ thuật máy tính (7480108); và Công nghệ thông tin (74802): Công nghệ thông tin (7480201), An ninh mạng (7480208). Danh mục ngành gần cần đối chiếu gồm Khoa học dữ liệu, Toán tin, Kỹ thuật điện tử – viễn thông, Kỹ thuật điều khiển và tự động hóa, Kỹ thuật cơ khí và Kỹ thuật cơ điện tử. Ngành chưa được liệt kê được Khoa và Viện xem xét riêng theo văn bằng và bảng điểm. Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
+              "answer": "Nhóm thuộc diện bổ sung kiến thức phải hoàn tất 5 học phần, tổng 15 tín chỉ: Kỹ thuật lập trình; Cấu trúc dữ liệu và giải thuật; Cơ sở dữ liệu; Xác suất thống kê ứng dụng; Nhập môn Trí tuệ nhân tạo. Danh mục không cần bổ sung gồm Máy tính (74801): Khoa học máy tính (7480101), Mạng máy tính và truyền thông dữ liệu (7480102), Kỹ thuật phần mềm (7480103), Hệ thống thông tin (7480104), Kỹ thuật máy tính (7480106), Trí tuệ nhân tạo (7480107), Công nghệ kỹ thuật máy tính (7480108); và Công nghệ Thông tin (74802): Công nghệ Thông tin (7480201), An ninh mạng (7480208). Danh mục ngành gần cần đối chiếu gồm Khoa học dữ liệu, Toán tin, Kỹ thuật điện tử – viễn thông, Kỹ thuật điều khiển và tự động hóa, Kỹ thuật cơ khí và Kỹ thuật cơ điện tử. Ngành chưa được liệt kê được Khoa và Viện xem xét riêng theo văn bằng và bảng điểm. Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
             },
             {
               "question": "Yêu cầu ngoại ngữ đầu vào và tốt nghiệp ra sao?",
-              "answer": "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên theo một hình thức được Trường công nhận: bằng ngành ngôn ngữ nước ngoài hoặc chương trình chủ yếu giảng dạy bằng ngoại ngữ; văn bằng/chứng chỉ còn hiệu lực; kỳ đánh giá hoặc chương trình do Trường tổ chức/công nhận; hoặc bằng đại học Văn Lang cấp trong 2 năm gần nhất với chuẩn đầu ra ngoại ngữ từ Bậc 3. Trước khi bảo vệ đề án hoặc luận văn, học viên cần đạt mức tương đương Bậc 4 trở lên. Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường, không cấp chứng chỉ ngoại ngữ. Ứng viên nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học từ chương trình giảng dạy bằng tiếng Việt."
+              "answer": "Chương trình giảng dạy bằng tiếng Việt. Ứng viên đáp ứng yêu cầu ngoại ngữ tương đương Bậc 3/6 trở lên theo một hình thức được Trường công nhận: bằng ngành ngôn ngữ nước ngoài hoặc chương trình chủ yếu giảng dạy bằng ngoại ngữ; văn bằng/chứng chỉ còn hiệu lực; kỳ đánh giá hoặc chương trình do Trường tổ chức/công nhận; hoặc bằng đại học Văn Lang cấp trong 2 năm gần nhất với chuẩn đầu ra ngoại ngữ từ Bậc 3. Trước khi bảo vệ đề án hoặc luận văn, học viên cần đạt mức tương đương Bậc 4 trở lên. Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường, không cấp chứng chỉ ngoại ngữ. Ứng viên nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học từ chương trình giảng dạy bằng tiếng Việt."
             },
             {
               "question": "Lịch học được sắp xếp như thế nào?",
@@ -1492,7 +1500,7 @@
     ],
     "defaults": {
       "id": "marketing",
-      "code": "340115",
+      "code": "8340115",
       "title": "Marketing",
       "englishTitle": "Master of Marketing",
       "degree": "Thạc sĩ",
@@ -1501,7 +1509,7 @@
       "credits": 60,
       "duration": "24 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Phát triển tư duy chiến lược và năng lực nghiên cứu Marketing, kết nối dữ liệu, công nghệ và hiểu biết về khách hàng để giải quyết các vấn đề kinh doanh trong bối cảnh chuyển đổi số.",
       "schedule": "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
       "tuition": "90.000.000 VNĐ",
@@ -1728,7 +1736,7 @@
               "title": "Các hình thức minh chứng ngoại ngữ đầu vào",
               "paragraphs": [
                 "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
                 "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học từ chương trình được giảng dạy bằng tiếng Việt."
               ],
               "points": [
@@ -1742,7 +1750,7 @@
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
                 "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã học để xác định học phần cần bổ sung. Ứng viên phải hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-                "Tối đa 4 học phần, tổng 12 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình thạc sĩ.",
+                "Tối đa 4 học phần, tổng 12 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình Thạc sĩ.",
                 "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
               ],
               "groups": [
@@ -2090,7 +2098,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ",
               "mục tiêu của bạn."
@@ -2225,7 +2233,7 @@
     ],
     "defaults": {
       "id": "khoa-hoc-moi-truong",
-      "code": "D-01",
+      "code": "9440301",
       "title": "Khoa học Môi trường",
       "englishTitle": "Doctor of Philosophy in Environmental Science",
       "degree": "Tiến sĩ",
@@ -2442,7 +2450,7 @@
     ],
     "defaults": {
       "id": "ky-thuat-moi-truong",
-      "code": "520320",
+      "code": "8520320",
       "title": "Kỹ thuật Môi trường",
       "englishTitle": "Master of Science in Environmental Engineering",
       "degree": "Thạc sĩ",
@@ -2451,7 +2459,7 @@
       "credits": 60,
       "duration": "18–24 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Phát triển kiến thức chuyên sâu và năng lực phân tích, thiết kế giải pháp công nghệ để xử lý ô nhiễm, sử dụng hiệu quả tài nguyên và giải quyết các vấn đề môi trường trong thực tiễn.",
       "schedule": "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
       "tuition": "85.000.000 VNĐ",
@@ -2696,7 +2704,7 @@
               "title": "Các hình thức minh chứng ngoại ngữ đầu vào",
               "paragraphs": [
                 "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
                 "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt."
               ],
               "points": [
@@ -2710,7 +2718,7 @@
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
                 "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã tích lũy để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-                "Nội dung bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+                "Nội dung bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
                 "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
               ],
               "groups": [
@@ -2817,7 +2825,7 @@
             {
               "group": "Nghiên cứu và phát triển học thuật",
               "title": "Tiếp tục học tập nâng cao",
-              "sub": "Phát triển năng lực nghiên cứu độc lập và nền tảng chuyên môn để dự tuyển trình độ tiến sĩ khi đáp ứng điều kiện của chương trình."
+              "sub": "Phát triển năng lực nghiên cứu độc lập và nền tảng chuyên môn để dự tuyển trình độ Tiến sĩ khi đáp ứng điều kiện của chương trình."
             }
           ]
         },
@@ -2861,7 +2869,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ",
               "mục tiêu của bạn."
@@ -3007,7 +3015,7 @@
       "studyMode": "Chính quy · Tiếng Việt",
       "summary": "Phát triển năng lực nghiên cứu, phân tích dữ liệu và đề xuất giải pháp quản lý tài nguyên, môi trường theo hướng tăng trưởng xanh, thích ứng biến đổi khí hậu.",
       "tuition": "85.000.000 VNĐ",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "pageContent": {
         "hero": {
           "fallbackImage": "https://images.unsplash.com/photo-1564035105550-e1f02aa8556b?auto=format&fit=crop&w=2400&q=85",
@@ -3085,7 +3093,7 @@
           "headline": "Kiến thức chuyên sâu. Năng lực tạo tác động.",
           "overview": [
             "Chương trình cung cấp kiến thức chuyên sâu về quản lý chất lượng môi trường, sử dụng tài nguyên hiệu quả, chính sách, kinh tế môi trường và các công cụ phân tích hiện đại. Nội dung gắn với phát triển bền vững, tăng trưởng xanh và thích ứng biến đổi khí hậu.",
-            "Theo danh mục tuyển sinh 2027, chương trình tuyển định hướng nghiên cứu. Khối tốt nghiệp gồm chuyên đề nghiên cứu và luận văn, tạo nền tảng cho công việc chuyên gia, nghiên cứu, giảng dạy hoặc học tiếp tiến sĩ."
+            "Theo danh mục tuyển sinh 2027, chương trình tuyển định hướng nghiên cứu. Khối tốt nghiệp gồm chuyên đề nghiên cứu và luận văn, tạo nền tảng cho công việc chuyên gia, nghiên cứu, giảng dạy hoặc học tiếp Tiến sĩ."
           ],
           "overviewImage": "/images/programme-library/water.jpg",
           "imageCredit": {
@@ -3192,7 +3200,7 @@
             {
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
-                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ."
+                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ."
               ],
               "groups": [
                 {
@@ -3237,7 +3245,7 @@
             },
             {
               "title": "Phát triển học thuật",
-              "sub": "Tiếp tục học chương trình tiến sĩ trong và ngoài nước."
+              "sub": "Tiếp tục học chương trình Tiến sĩ trong và ngoài nước."
             }
           ]
         },
@@ -3299,7 +3307,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình Quản lý tài nguyên và môi trường, điều kiện đầu vào và lộ trình đăng ký.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ mục tiêu học tập của bạn."
             ],
@@ -3344,7 +3352,7 @@
         "fees": {
           "heading": "Chủ động chuẩn bị cho hành trình học.",
           "intro": [
-            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."
+            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."
           ],
           "intake": "TUYỂN SINH THẠC SĨ 2027",
           "language": "Tiếng Việt",
@@ -3408,7 +3416,7 @@
     ],
     "defaults": {
       "id": "cong-nghe-sinh-hoc",
-      "code": "420201",
+      "code": "8420201",
       "title": "Công nghệ Sinh học",
       "englishTitle": "Master of Engineering in Biotechnology",
       "degree": "Thạc sĩ",
@@ -3417,7 +3425,7 @@
       "credits": 60,
       "duration": "24 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Phát triển kiến thức chuyên sâu và năng lực nghiên cứu để khám phá các cơ chế của sự sống, ứng dụng công nghệ sinh học trong y sinh, sức khỏe và phát triển bền vững.",
       "schedule": "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
       "tuition": "85.000.000 VNĐ",
@@ -3550,7 +3558,7 @@
             },
             {
               "title": "Phát triển cùng môi trường nghiên cứu",
-              "text": "Học viên được tạo điều kiện đăng ký đề tài nghiên cứu khoa học cấp trường. Học viên đáp ứng năng lực ngoại ngữ được giới thiệu tham gia các dự án nghiên cứu quốc tế; với kết quả nghiên cứu tốt, học viên được giảng viên hướng dẫn công bố bài báo khoa học và giới thiệu cơ hội học tiến sĩ."
+              "text": "Học viên được tạo điều kiện đăng ký đề tài nghiên cứu khoa học cấp trường. Học viên đáp ứng năng lực ngoại ngữ được giới thiệu tham gia các dự án nghiên cứu quốc tế; với kết quả nghiên cứu tốt, học viên được giảng viên hướng dẫn công bố bài báo khoa học và giới thiệu cơ hội học Tiến sĩ."
             }
           ],
           "learningOutcomes": {
@@ -3574,7 +3582,7 @@
               {
                 "code": "PLO4",
                 "title": "Phân tích và trình bày dữ liệu",
-                "text": "Phân tích, xử lý và trình bày dữ liệu nghiên cứu khoa học bằng các công cụ và phương pháp phù hợp, đáp ứng yêu cầu báo cáo và công bố khoa học ở trình độ thạc sĩ."
+                "text": "Phân tích, xử lý và trình bày dữ liệu nghiên cứu khoa học bằng các công cụ và phương pháp phù hợp, đáp ứng yêu cầu báo cáo và công bố khoa học ở trình độ Thạc sĩ."
               },
               {
                 "code": "PLO5",
@@ -3613,7 +3621,7 @@
             },
             {
               "title": "Người hướng đến giảng dạy và học tiếp",
-              "text": "Củng cố kiến thức chuyên sâu và năng lực nghiên cứu để chuẩn bị cho công việc học thuật hoặc hành trình học tập ở trình độ tiến sĩ.",
+              "text": "Củng cố kiến thức chuyên sâu và năng lực nghiên cứu để chuẩn bị cho công việc học thuật hoặc hành trình học tập ở trình độ Tiến sĩ.",
               "image": "/images/programme-library/classroom.jpg",
               "alt": "Người học đọc tài liệu trong lớp học",
               "imageSource": "https://unsplash.com/photos/students-reading-textbooks-in-classroom-BCBGahg0MH0"
@@ -3642,7 +3650,7 @@
               "title": "Các hình thức minh chứng ngoại ngữ đầu vào",
               "paragraphs": [
                 "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
                 "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt."
               ],
               "points": [
@@ -3656,7 +3664,7 @@
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
                 "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã học để xác định học phần cần bổ sung. Ứng viên phải hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-                "Với các ngành liên quan trong danh mục: bổ sung tối đa 6 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình thạc sĩ.",
+                "Với các ngành liên quan trong danh mục: bổ sung tối đa 6 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình Thạc sĩ.",
                 "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
               ],
               "groups": [
@@ -3749,8 +3757,8 @@
             },
             {
               "group": "Nghiên cứu và học thuật",
-              "title": "Học tiếp trình độ tiến sĩ",
-              "sub": "Tiếp tục đào sâu một hướng nghiên cứu tại các chương trình tiến sĩ trong và ngoài nước khi đáp ứng điều kiện tuyển sinh."
+              "title": "Học tiếp trình độ Tiến sĩ",
+              "sub": "Tiếp tục đào sâu một hướng nghiên cứu tại các chương trình Tiến sĩ trong và ngoài nước khi đáp ứng điều kiện tuyển sinh."
             },
             {
               "group": "Phát triển và chuyển giao",
@@ -3975,7 +3983,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ",
               "mục tiêu của bạn."
@@ -4114,7 +4122,7 @@
     ],
     "defaults": {
       "id": "ky-thuat-xay-dung",
-      "code": "S-04",
+      "code": "8580201",
       "title": "Kỹ thuật Xây dựng",
       "englishTitle": "Master of Civil Engineering",
       "degree": "Thạc sĩ",
@@ -4331,7 +4339,7 @@
     ],
     "defaults": {
       "id": "ky-thuat-o-to",
-      "code": "520130",
+      "code": "8520130",
       "title": "Kỹ thuật ô tô",
       "englishTitle": "Master of Automotive Engineering",
       "degree": "Thạc sĩ",
@@ -4340,7 +4348,7 @@
       "credits": 60,
       "duration": "18–24 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Phát triển năng lực thiết kế, mô phỏng và tối ưu hóa hệ thống ô tô; tiếp cận công nghệ xe điện, pin và trí tuệ nhân tạo để giải quyết các bài toán kỹ thuật trong công nghiệp và nghiên cứu.",
       "schedule": "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
       "tuition": "85.000.000 VNĐ",
@@ -4576,7 +4584,7 @@
               "title": "Các hình thức minh chứng ngoại ngữ đầu vào",
               "paragraphs": [
                 "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
                 "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt."
               ],
               "points": [
@@ -4590,7 +4598,7 @@
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
                 "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã tích lũy để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-                "Nội dung bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+                "Nội dung bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
                 "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
               ],
               "groups": [
@@ -4719,7 +4727,7 @@
             {
               "group": "Nghiên cứu và phát triển học thuật",
               "title": "Giảng dạy và học tập nâng cao",
-              "sub": "Phát triển theo hướng giảng dạy tại cơ sở giáo dục hoặc tiếp tục học trình độ tiến sĩ khi đáp ứng các điều kiện của vị trí, chương trình."
+              "sub": "Phát triển theo hướng giảng dạy tại cơ sở giáo dục hoặc tiếp tục học trình độ Tiến sĩ khi đáp ứng các điều kiện của vị trí, chương trình."
             }
           ]
         },
@@ -4763,7 +4771,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ",
               "mục tiêu của bạn."
@@ -4909,7 +4917,7 @@
       "studyMode": "Chính quy · Tiếng Việt",
       "summary": "Nâng cao năng lực quản trị, phân tích kinh doanh và lãnh đạo trong môi trường số; vận dụng dữ liệu, công nghệ và tư duy bền vững vào quyết định doanh nghiệp.",
       "tuition": "85.000.000 VNĐ",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "pageContent": {
         "hero": {
           "fallbackImage": "https://images.unsplash.com/photo-1564035105550-e1f02aa8556b?auto=format&fit=crop&w=2400&q=85",
@@ -5078,7 +5086,7 @@
             {
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
-                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ."
+                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ."
               ],
               "groups": [
                 {
@@ -5186,7 +5194,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình Quản trị kinh doanh, điều kiện đầu vào và lộ trình đăng ký.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ mục tiêu học tập của bạn."
             ],
@@ -5231,7 +5239,7 @@
         "fees": {
           "heading": "Chủ động chuẩn bị cho hành trình học.",
           "intro": [
-            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."
+            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."
           ],
           "intake": "TUYỂN SINH THẠC SĨ 2027",
           "language": "Tiếng Việt",
@@ -5295,16 +5303,16 @@
     ],
     "defaults": {
       "id": "kinh-doanh-thuong-mai",
-      "code": "340121",
+      "code": "8340121",
       "title": "Kinh doanh Thương mại",
       "englishTitle": "Master of Commerce",
       "degree": "Thạc sĩ",
-      "field": "Kỹ thuật, Môi trường & Công nghệ",
+      "field": "Kinh doanh & Quản lý",
       "orientation": "Ứng dụng",
       "credits": 60,
       "duration": "24 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Phát triển năng lực quản trị thương mại, phân tích dữ liệu và triển khai giải pháp kinh doanh trong môi trường số, gắn kiến thức chuyên sâu với những vấn đề thực tiễn của doanh nghiệp.",
       "schedule": "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
       "tuition": "85.000.000 VNĐ",
@@ -5549,7 +5557,7 @@
               "title": "Các hình thức minh chứng ngoại ngữ đầu vào",
               "paragraphs": [
                 "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
                 "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt."
               ],
               "points": [
@@ -5563,7 +5571,7 @@
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
                 "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã học để xác định các học phần cần bổ sung. Ứng viên phải hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-                "Đối với các ngành khác: bổ sung tối đa 12 tín chỉ, gồm 4 học phần, mỗi học phần 3 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình thạc sĩ.",
+                "Đối với các ngành khác: bổ sung tối đa 12 tín chỉ, gồm 4 học phần, mỗi học phần 3 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình Thạc sĩ.",
                 "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
               ],
               "groups": [
@@ -5890,7 +5898,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ",
               "mục tiêu của bạn."
@@ -6044,7 +6052,7 @@
       "studyMode": "Chính quy · Tiếng Việt",
       "summary": "Cập nhật kiến thức tài chính – ngân hàng, công nghệ tài chính và quản trị rủi ro; phát triển năng lực phân tích, hoạch định và dẫn dắt thay đổi.",
       "tuition": "85.000.000 VNĐ",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "orientations": [
         "Ứng dụng",
         "Nghiên cứu"
@@ -6233,7 +6241,7 @@
             {
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
-                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ."
+                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ."
               ],
               "groups": [
                 {
@@ -6278,7 +6286,7 @@
             },
             {
               "title": "Nghiên cứu và giảng dạy",
-              "sub": "Giảng dạy, nghiên cứu và tiếp tục học tiến sĩ."
+              "sub": "Giảng dạy, nghiên cứu và tiếp tục học Tiến sĩ."
             }
           ]
         },
@@ -6342,7 +6350,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình Tài chính - Ngân hàng, điều kiện đầu vào và lộ trình đăng ký.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ mục tiêu học tập của bạn."
             ],
@@ -6387,7 +6395,7 @@
         "fees": {
           "heading": "Chủ động chuẩn bị cho hành trình học.",
           "intro": [
-            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."
+            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."
           ],
           "intake": "TUYỂN SINH THẠC SĨ 2027",
           "language": "Tiếng Việt",
@@ -6451,7 +6459,7 @@
     ],
     "defaults": {
       "id": "ke-toan",
-      "code": "340301",
+      "code": "8340301",
       "title": "Kế toán",
       "englishTitle": "Master of Accounting",
       "degree": "Thạc sĩ",
@@ -6460,7 +6468,7 @@
       "credits": 60,
       "duration": "24 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Phát triển chuyên môn kế toán, kiểm toán và năng lực phân tích thông tin để hỗ trợ quyết định quản trị trong bối cảnh chuyển đổi số, hội nhập quốc tế và phát triển bền vững.",
       "schedule": "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
       "tuition": "85.000.000 VNĐ",
@@ -6685,7 +6693,7 @@
               "title": "Các hình thức minh chứng ngoại ngữ đầu vào",
               "paragraphs": [
                 "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
                 "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt."
               ],
               "points": [
@@ -6699,7 +6707,7 @@
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
                 "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã tích lũy để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-                "Các ngành liên quan trong danh mục bổ sung tối đa 12 tín chỉ, gồm 4 học phần, mỗi học phần 3 tín chỉ. Phần bổ sung kiến thức nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+                "Các ngành liên quan trong danh mục bổ sung tối đa 12 tín chỉ, gồm 4 học phần, mỗi học phần 3 tín chỉ. Phần bổ sung kiến thức nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
                 "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
               ],
               "groups": [
@@ -6794,7 +6802,7 @@
             {
               "group": "Nghiên cứu và phát triển học thuật",
               "title": "Tiếp tục học tập nâng cao",
-              "sub": "Củng cố nền tảng chuyên môn và phương pháp nghiên cứu để tiếp tục phát triển học thuật, dự tuyển trình độ tiến sĩ khi đáp ứng điều kiện."
+              "sub": "Củng cố nền tảng chuyên môn và phương pháp nghiên cứu để tiếp tục phát triển học thuật, dự tuyển trình độ Tiến sĩ khi đáp ứng điều kiện."
             }
           ]
         },
@@ -7151,7 +7159,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ",
               "mục tiêu của bạn."
@@ -7200,7 +7208,7 @@
             },
             {
               "question": "Bổ sung kiến thức gồm những học phần nào?",
-              "answer": "Danh mục gồm Nguyên lý kế toán, Kế toán tài chính, Kế toán quản trị, Kiểm toán và dịch vụ đảm bảo, mỗi học phần 3 tín chỉ. Các học phần cần học được xác định từ văn bằng, bảng điểm và nội dung đã tích lũy. Phần bổ sung kiến thức nằm ngoài 60 tín chỉ của chương trình thạc sĩ."
+              "answer": "Danh mục gồm Nguyên lý kế toán, Kế toán tài chính, Kế toán quản trị, Kiểm toán và dịch vụ đảm bảo, mỗi học phần 3 tín chỉ. Các học phần cần học được xác định từ văn bằng, bảng điểm và nội dung đã tích lũy. Phần bổ sung kiến thức nằm ngoài 60 tín chỉ của chương trình Thạc sĩ."
             },
             {
               "question": "Các học phần tự chọn được đăng ký như thế nào?",
@@ -7298,7 +7306,7 @@
     ],
     "defaults": {
       "id": "logistics",
-      "code": "340123",
+      "code": "8340123",
       "title": "Logistics và Quản lý chuỗi cung ứng",
       "englishTitle": "Master of Logistics and Supply Chain Management",
       "degree": "Thạc sĩ",
@@ -7307,7 +7315,7 @@
       "credits": 60,
       "duration": "18–24 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt hoặc tiếng Anh",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Phát triển góc nhìn hệ thống và năng lực phân tích để tổ chức vận hành, thiết kế và cải tiến chuỗi cung ứng; kết nối kiến thức chuyên sâu với quyết định quản trị và nghiên cứu.",
       "schedule": "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
       "tuition": "Từ 85.000.000 VNĐ",
@@ -7407,7 +7415,7 @@
             "Chương trình Thạc sĩ Logistics và Quản lý chuỗi cung ứng tại Văn Lang phát triển kiến thức chuyên sâu về quản lý vận hành, phân tích và cải tiến hoạt động logistics. Người học tiếp cận chuỗi cung ứng như một hệ thống, từ đó nâng cao khả năng nhận diện vấn đề, thiết kế giải pháp và hỗ trợ quyết định trong thực tiễn.",
             "Nền tảng chung kết hợp phương pháp nghiên cứu khoa học với kỹ thuật hệ thống, kinh tế kỹ thuật, vận trù học, thống kê trong công nghiệp và quản lý chất lượng. Danh mục chuyên ngành mở rộng sang thu mua, vận tải, tồn kho, tinh gọn, hệ thống thông tin và các công cụ quản trị; cơ cấu bắt buộc, tự chọn khác nhau theo từng định hướng.",
             "Cả hai định hướng đều có khối lượng 60 tín chỉ. Hướng ứng dụng kết nối học tập với thực tập tốt nghiệp 6 tín chỉ và đề án tốt nghiệp 9 tín chỉ. Hướng nghiên cứu dành 12 tín chỉ cho hai chuyên đề Quản lý chuỗi cung ứng và 15 tín chỉ cho luận văn, hỗ trợ người học đào sâu một vấn đề chuyên môn.",
-            "Văn bằng tốt nghiệp: Thạc sĩ Logistics và quản lý chuỗi cung ứng Master of Logistics and Supply Chain Management"
+            "Văn bằng tốt nghiệp: Thạc sĩ Logistics và Quản lý chuỗi cung ứng Master of Logistics and Supply Chain Management"
           ],
           "overviewImage": "/images/pages/programmes/logistics/programme-overview.jpg",
           "imageCredit": {
@@ -7478,7 +7486,7 @@
               {
                 "code": "Cả hai định hướng",
                 "title": "Tiếp tục phát triển chuyên môn",
-                "text": "Xây dựng nền tảng để tiếp tục học tập nâng cao trình độ hoặc tham gia đào tạo tiến sĩ ở ngành gần, liên quan khi đáp ứng điều kiện của chương trình."
+                "text": "Xây dựng nền tảng để tiếp tục học tập nâng cao trình độ hoặc tham gia đào tạo Tiến sĩ ở ngành gần, liên quan khi đáp ứng điều kiện của chương trình."
               }
             ]
           }
@@ -7517,13 +7525,13 @@
             {
               "title": "Ngành tốt nghiệp có phù hợp?",
               "paragraphs": [
-                "Người tốt nghiệp Logistics và quản lý chuỗi cung ứng, Kỹ thuật hệ thống công nghiệp hoặc Quản lý công nghiệp không cần học bổ sung kiến thức. Với các ngành khác, Viện và Khoa đối chiếu hồ sơ để xác định mức độ phù hợp và các học phần cần bổ sung, tối đa 6 tín chỉ."
+                "Người tốt nghiệp Logistics và Quản lý chuỗi cung ứng, Kỹ thuật hệ thống công nghiệp hoặc Quản lý công nghiệp không cần học bổ sung kiến thức. Với các ngành khác, Viện và Khoa đối chiếu hồ sơ để xác định mức độ phù hợp và các học phần cần bổ sung, tối đa 6 tín chỉ."
               ]
             },
             {
               "title": "Phương thức tuyển sinh",
               "paragraphs": [
-                "Xét tuyển cho cả định hướng ứng dụng và nghiên cứu. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Logistics và quản lý chuỗi cung ứng.",
+                "Xét tuyển cho cả định hướng ứng dụng và nghiên cứu. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Logistics và Quản lý chuỗi cung ứng.",
                 "Hồ sơ sử dụng văn bằng đại học do cơ sở giáo dục nước ngoài cấp cần kèm giấy công nhận hoặc xác nhận văn bằng theo quy định.",
                 "Chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 trở lên cần được đáp ứng trước thời điểm xét tốt nghiệp, theo các hình thức được Trường công nhận."
               ]
@@ -7549,7 +7557,7 @@
                   "title": "Chương trình bằng tiếng Việt",
                   "paragraphs": [
                     "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-                    "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ."
+                    "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ."
                   ],
                   "points": [
                     "Bằng đại học trở lên ngành ngôn ngữ nước ngoài hoặc chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
@@ -7572,7 +7580,7 @@
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
                 "Viện và Khoa đối chiếu ngành tốt nghiệp, chương trình đào tạo và bảng điểm để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-                "Các học phần bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+                "Các học phần bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
                 "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
               ],
               "groups": [
@@ -7586,7 +7594,7 @@
                         "Ứng viên vẫn phải đáp ứng đầy đủ các điều kiện dự tuyển của định hướng và ngôn ngữ đào tạo đăng ký."
                       ],
                       "points": [
-                        "Logistics và quản lý chuỗi cung ứng.",
+                        "Logistics và Quản lý chuỗi cung ứng.",
                         "Kỹ thuật Hệ thống Công nghiệp.",
                         "Quản lý Công nghiệp."
                       ]
@@ -7648,7 +7656,7 @@
             {
               "group": "Phân tích và tư vấn",
               "title": "Tư vấn chuyên môn",
-              "sub": "Vận dụng kiến thức, kết quả nghiên cứu và công cụ phân tích trong hoạt động tư vấn về logistics và quản lý chuỗi cung ứng."
+              "sub": "Vận dụng kiến thức, kết quả nghiên cứu và công cụ phân tích trong hoạt động tư vấn về Logistics và Quản lý chuỗi cung ứng."
             },
             {
               "group": "Nghiên cứu và giảng dạy",
@@ -7702,12 +7710,12 @@
           ],
           "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ",
               "mục tiêu của bạn."
             ],
-            "body": "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Logistics và quản lý chuỗi cung ứng. Đội ngũ tư vấn sẽ hỗ trợ bạn lựa chọn định hướng học tập và chuẩn bị hồ sơ phù hợp.",
+            "body": "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Logistics và Quản lý chuỗi cung ứng. Đội ngũ tư vấn sẽ hỗ trợ bạn lựa chọn định hướng học tập và chuẩn bị hồ sơ phù hợp.",
             "benefits": [
               "Tư vấn chương trình và định hướng học",
               "Hướng dẫn học phí và chính sách hỗ trợ",
@@ -7755,7 +7763,7 @@
             },
             {
               "question": "Tốt nghiệp ngành khác có thể dự tuyển không?",
-              "answer": "Người tốt nghiệp các ngành Logistics và quản lý chuỗi cung ứng, Kỹ thuật hệ thống công nghiệp hoặc Quản lý công nghiệp không cần học bổ sung kiến thức. Các ngành khác được đối chiếu hồ sơ để xác định mức độ phù hợp và các học phần cần bổ sung, tối đa 6 tín chỉ. Ứng viên vẫn cần đáp ứng các điều kiện dự tuyển của định hướng và ngôn ngữ đào tạo đăng ký."
+              "answer": "Người tốt nghiệp các ngành Logistics và Quản lý chuỗi cung ứng, Kỹ thuật hệ thống công nghiệp hoặc Quản lý công nghiệp không cần học bổ sung kiến thức. Các ngành khác được đối chiếu hồ sơ để xác định mức độ phù hợp và các học phần cần bổ sung, tối đa 6 tín chỉ. Ứng viên vẫn cần đáp ứng các điều kiện dự tuyển của định hướng và ngôn ngữ đào tạo đăng ký."
             },
             {
               "question": "Yêu cầu ngoại ngữ của chương trình tiếng Việt và tiếng Anh có khác nhau?",
@@ -7881,7 +7889,7 @@
     ],
     "defaults": {
       "id": "quan-tri-du-lich",
-      "code": "S-11",
+      "code": "8810103",
       "title": "Quản trị Dịch vụ Du lịch và Lữ hành",
       "englishTitle": "Master of Tourism and Travel Service Management",
       "degree": "Thạc sĩ",
@@ -8109,7 +8117,7 @@
       "studyMode": "Chính quy · Tiếng Việt",
       "summary": "Phát triển năng lực quản trị chiến lược, vận hành, tài chính, công nghệ và trải nghiệm khách hàng trong ngành khách sạn theo hướng đổi mới và bền vững.",
       "tuition": "85.000.000 VNĐ",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "pageContent": {
         "hero": {
           "fallbackImage": "https://images.unsplash.com/photo-1564035105550-e1f02aa8556b?auto=format&fit=crop&w=2400&q=85",
@@ -8278,7 +8286,7 @@
             {
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
-                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ."
+                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ."
               ],
               "groups": [
                 {
@@ -8323,7 +8331,7 @@
             },
             {
               "title": "Nghiên cứu và đào tạo",
-              "sub": "Giảng dạy, nghiên cứu hoặc tiếp tục học ở bậc tiến sĩ."
+              "sub": "Giảng dạy, nghiên cứu hoặc tiếp tục học ở bậc Tiến sĩ."
             }
           ]
         },
@@ -8385,7 +8393,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình Quản trị khách sạn, điều kiện đầu vào và lộ trình đăng ký.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ mục tiêu học tập của bạn."
             ],
@@ -8430,7 +8438,7 @@
         "fees": {
           "heading": "Chủ động chuẩn bị cho hành trình học.",
           "intro": [
-            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."
+            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."
           ],
           "intake": "TUYỂN SINH THẠC SĨ 2027",
           "language": "Tiếng Việt",
@@ -8494,7 +8502,7 @@
     ],
     "defaults": {
       "id": "luat-kinh-te",
-      "code": "380107",
+      "code": "8380107",
       "title": "Luật Kinh tế",
       "englishTitle": "Master of Laws in Economic Law",
       "degree": "Thạc sĩ",
@@ -8503,7 +8511,7 @@
       "credits": 60,
       "duration": "18 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Phát triển năng lực phân tích, tư vấn và giải quyết các vấn đề pháp lý trong hoạt động doanh nghiệp, đầu tư, thương mại và cạnh tranh trong bối cảnh hội nhập.",
       "schedule": "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
       "tuition": "85.000.000 VNĐ",
@@ -8762,7 +8770,7 @@
             {
               "group": "",
               "title": "Nghiên cứu & giảng dạy",
-              "sub": "Giảng dạy, nghiên cứu tại trường đại học, viện nghiên cứu, trung tâm đào tạo; tiếp tục học lên trình độ tiến sĩ theo quy định."
+              "sub": "Giảng dạy, nghiên cứu tại trường đại học, viện nghiên cứu, trung tâm đào tạo; tiếp tục học lên trình độ Tiến sĩ theo quy định."
             }
           ]
         },
@@ -8884,7 +8892,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ mục tiêu của bạn."
             ],
@@ -9033,7 +9041,7 @@
       "studyMode": "Chính quy · Tiếng Việt",
       "summary": "Phát triển năng lực hoạch định chiến lược, quản trị truyền thông, sáng tạo nội dung và nghiên cứu quan hệ công chúng trong môi trường số.",
       "tuition": "110.000.000 VNĐ",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "orientations": [
         "Ứng dụng",
         "Nghiên cứu"
@@ -9239,7 +9247,7 @@
             {
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
-                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ."
+                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ."
               ],
               "groups": [
                 {
@@ -9284,7 +9292,7 @@
             },
             {
               "title": "Nghiên cứu và giảng dạy",
-              "sub": "Nghiên cứu, giảng dạy và tiếp tục học ở trình độ tiến sĩ."
+              "sub": "Nghiên cứu, giảng dạy và tiếp tục học ở trình độ Tiến sĩ."
             }
           ]
         },
@@ -9353,7 +9361,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình Quan hệ công chúng, điều kiện đầu vào và lộ trình đăng ký.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ mục tiêu học tập của bạn."
             ],
@@ -9398,7 +9406,7 @@
         "fees": {
           "heading": "Chủ động chuẩn bị cho hành trình học.",
           "intro": [
-            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."
+            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."
           ],
           "intake": "TUYỂN SINH THẠC SĨ 2027",
           "language": "Tiếng Việt",
@@ -9473,7 +9481,7 @@
       "studyMode": "Chính quy · Tiếng Việt",
       "summary": "Đào sâu ngôn ngữ học ứng dụng, phương pháp giảng dạy và nghiên cứu tiếng Anh; tích hợp công nghệ số và trí tuệ nhân tạo vào môi trường giáo dục hiện đại.",
       "tuition": "85.000.000 VNĐ",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "orientations": [
         "Ứng dụng",
         "Nghiên cứu"
@@ -9667,7 +9675,7 @@
             {
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
-                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ."
+                "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ."
               ],
               "groups": [
                 {
@@ -9704,7 +9712,7 @@
             },
             {
               "title": "Nghiên cứu học thuật",
-              "sub": "Nghiên cứu tại cơ sở giáo dục, viện nghiên cứu; tiếp tục học tiến sĩ."
+              "sub": "Nghiên cứu tại cơ sở giáo dục, viện nghiên cứu; tiếp tục học Tiến sĩ."
             },
             {
               "title": "Biên phiên dịch",
@@ -9779,7 +9787,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình Ngôn ngữ Anh, điều kiện đầu vào và lộ trình đăng ký.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ mục tiêu học tập của bạn."
             ],
@@ -9824,7 +9832,7 @@
         "fees": {
           "heading": "Chủ động chuẩn bị cho hành trình học.",
           "intro": [
-            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."
+            "Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."
           ],
           "intake": "TUYỂN SINH THẠC SĨ 2027",
           "language": "Tiếng Việt",
@@ -9888,7 +9896,7 @@
     ],
     "defaults": {
       "id": "kien-truc",
-      "code": "580101",
+      "code": "8580101",
       "title": "Kiến trúc",
       "englishTitle": "Master of Architecture",
       "degree": "Thạc sĩ",
@@ -9897,7 +9905,7 @@
       "credits": 60,
       "duration": "18 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Phát triển tư duy thiết kế, khả năng tích hợp kiến thức và năng lực quản lý dự án để đề xuất giải pháp kiến trúc sáng tạo, bền vững và phù hợp bối cảnh.",
       "schedule": "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
       "tuition": "85.000.000 VNĐ",
@@ -10143,7 +10151,7 @@
               "title": "Các hình thức minh chứng ngoại ngữ đầu vào",
               "paragraphs": [
                 "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
                 "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt."
               ],
               "points": [
@@ -10157,7 +10165,7 @@
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
                 "Viện và Khoa đối chiếu ngành tốt nghiệp, chương trình đào tạo và bảng điểm để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-                "Các học phần bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+                "Các học phần bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
                 "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
               ],
               "groups": [
@@ -10247,7 +10255,7 @@
             },
             {
               "group": "Nghiên cứu và phát triển học thuật",
-              "title": "Tiếp tục học trình độ tiến sĩ",
+              "title": "Tiếp tục học trình độ Tiến sĩ",
               "sub": "Củng cố nền tảng lý luận và phương pháp nghiên cứu để tiếp tục học tập ở trình độ cao hơn theo điều kiện của chương trình dự tuyển."
             }
           ]
@@ -10328,7 +10336,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ",
               "mục tiêu của bạn."
@@ -10463,7 +10471,7 @@
     ],
     "defaults": {
       "id": "my-thuat-ung-dung",
-      "code": "210410",
+      "code": "8210410",
       "title": "Mỹ thuật Ứng dụng",
       "englishTitle": "Master of Applied Arts",
       "degree": "Thạc sĩ",
@@ -10472,7 +10480,7 @@
       "credits": 60,
       "duration": "18–24 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Phát triển tư duy sáng tạo, năng lực nghiên cứu và khả năng dẫn dắt thực hành thiết kế; kết nối văn hóa, công nghệ và trải nghiệm thực tiễn để tạo ra các giải pháp mỹ thuật ứng dụng có giá trị cho cộng đồng.",
       "schedule": "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
       "tuition": "100.000.000 VNĐ",
@@ -10721,7 +10729,7 @@
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
                 "Khoa và Viện Sau đại học đối chiếu ngành tốt nghiệp, nội dung chương trình và bảng điểm để xác định học phần cần bổ sung trước khi xét tuyển.",
-                "Các học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ."
+                "Các học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ."
               ],
               "groups": [
                 {
@@ -10770,7 +10778,7 @@
                   ],
                   "points": [
                     "Báo chí & truyền thông Thiết kế truyền thông đa phương tiện; Công nghệ truyền thông.",
-                    "Công nghệ thông tin Khoa học máy tính; Trí tuệ nhân tạo; Khoa học dữ liệu."
+                    "Công nghệ Thông tin Khoa học máy tính; Trí tuệ nhân tạo; Khoa học dữ liệu."
                   ]
                 },
                 {
@@ -10981,7 +10989,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ định hướng sáng tạo của bạn."
             ],
@@ -11115,7 +11123,7 @@
     ],
     "defaults": {
       "id": "ly-luan-lich-su-my-thuat",
-      "code": "210401",
+      "code": "8210401",
       "title": "Lý luận và Lịch sử Mỹ thuật Ứng dụng",
       "englishTitle": "Master of Applied Art Theory and History",
       "degree": "Thạc sĩ",
@@ -11124,7 +11132,7 @@
       "credits": 60,
       "duration": "24 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt",
-      "intake": "Tuyển sinh thạc sĩ 2027",
+      "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Kết nối lý luận, lịch sử mỹ thuật và thực tiễn thiết kế; phát triển tư duy phản biện cùng năng lực nghiên cứu để phân tích, lý giải và làm rõ giá trị của mỹ thuật ứng dụng trong đời sống.",
       "schedule": "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
       "tuition": "100.000.000 VNĐ",
@@ -11365,7 +11373,7 @@
               "title": "Các hình thức minh chứng ngoại ngữ đầu vào",
               "paragraphs": [
                 "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+                "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
                 "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt."
               ],
               "groups": [],
@@ -11380,7 +11388,7 @@
               "title": "Bổ sung kiến thức đầu vào",
               "paragraphs": [
                 "Viện và Khoa đối chiếu ngành tốt nghiệp, chương trình đào tạo và bảng điểm để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-                "Các học phần bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+                "Các học phần bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
                 "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu."
               ],
               "groups": [
@@ -11583,7 +11591,7 @@
           ],
           "ctaBody": "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
           "formIntro": {
-            "eyebrow": "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+            "eyebrow": "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
             "titleLines": [
               "Bắt đầu từ",
               "mục tiêu của bạn."
@@ -11714,7 +11722,7 @@
   {
     "id": "discover",
     "path": "/discover",
-    "title": "Về Viện Sau Đại học",
+    "title": "Về Viện Sau đại học",
     "kind": "discover",
     "locales": [
       "vi",
@@ -11723,17 +11731,17 @@
     "defaults": {
       "hero": {
         "title": [
-          "VIỆN SAU ĐẠI HỌC",
+          "Viện Sau đại học",
           "TRƯỜNG ĐẠI HỌC VĂN LANG"
         ],
         "english": "Graduate Education for Global Impact",
         "message": "Làm chủ tri thức – Giải quyết vấn đề – Kiến tạo tác động",
-        "intro": "Viện Sau Đại học – Trường Đại học Văn Lang hướng đến xây dựng môi trường đào tạo và nghiên cứu hiện đại, nơi tri thức học thuật được kết nối với thực tiễn, thúc đẩy đổi mới sáng tạo và phát triển nguồn nhân lực trình độ cao trong bối cảnh hội nhập quốc tế."
+        "intro": "Viện Sau đại học – Trường Đại học Văn Lang hướng đến xây dựng môi trường đào tạo và nghiên cứu hiện đại, nơi tri thức học thuật được kết nối với thực tiễn, thúc đẩy đổi mới sáng tạo và phát triển nguồn nhân lực trình độ cao trong bối cảnh hội nhập quốc tế."
       },
       "introduction": {
         "title": "Nơi tri thức kết nối với thực tiễn và kiến tạo giá trị",
         "paragraphs": [
-          "Viện Sau Đại học – Trường Đại học Văn Lang (VGG) là đơn vị tổ chức, quản lý và phát triển các chương trình đào tạo trình độ thạc sĩ, tiến sĩ, hướng đến xây dựng một hệ sinh thái giáo dục sau đại học hiện đại, chất lượng cao, gắn kết giữa đào tạo, nghiên cứu khoa học, đổi mới sáng tạo và thực tiễn nghề nghiệp.",
+          "Viện Sau đại học – Trường Đại học Văn Lang (VGG) là đơn vị tổ chức, quản lý và phát triển các chương trình đào tạo trình độ Thạc sĩ, Tiến sĩ, hướng đến xây dựng một hệ sinh thái giáo dục sau đại học hiện đại, chất lượng cao, gắn kết giữa đào tạo, nghiên cứu khoa học, đổi mới sáng tạo và thực tiễn nghề nghiệp.",
           "Với định hướng lấy người học làm trung tâm, Viện chú trọng phát triển các chương trình đào tạo chuyên sâu, liên ngành và ứng dụng, đồng thời tạo dựng môi trường học tập linh hoạt, phù hợp với nhu cầu phát triển chuyên môn và nghề nghiệp của người học.",
           "Thông qua việc kết nối đội ngũ giảng viên, nhà khoa học, chuyên gia và cộng đồng doanh nghiệp, Viện khuyến khích người học phát triển tư duy phản biện, năng lực nghiên cứu độc lập, khả năng lãnh đạo và giải quyết các vấn đề thực tiễn.",
           "Song song với hoạt động đào tạo, Viện từng bước mở rộng hợp tác trong nước và quốc tế, thúc đẩy nghiên cứu ứng dụng, chuyển giao tri thức và đổi mới sáng tạo, góp phần phát triển nguồn nhân lực trình độ cao và tạo ra những giá trị bền vững cho cộng đồng, doanh nghiệp và xã hội."
@@ -11744,7 +11752,7 @@
         "english": "Vision",
         "paragraphs": [
           "Trở thành đơn vị đào tạo sau đại học và nghiên cứu ứng dụng có uy tín trong khu vực châu Á, kết nối chuẩn mực học thuật quốc tế với thực tiễn doanh nghiệp và xã hội.",
-          "Đến năm 2030, Viện Sau Đại học hướng đến xây dựng hệ sinh thái đào tạo và nghiên cứu hiện đại, nơi tri thức học thuật và kết quả nghiên cứu được chuyển hóa thành các giải pháp có giá trị ứng dụng, tạo tác động tích cực và bền vững đối với doanh nghiệp, cộng đồng và xã hội."
+          "Đến năm 2030, Viện Sau đại học hướng đến xây dựng hệ sinh thái đào tạo và nghiên cứu hiện đại, nơi tri thức học thuật và kết quả nghiên cứu được chuyển hóa thành các giải pháp có giá trị ứng dụng, tạo tác động tích cực và bền vững đối với doanh nghiệp, cộng đồng và xã hội."
         ]
       },
       "mission": {
@@ -11758,7 +11766,7 @@
       "philosophy": {
         "title": "Học để làm chủ tri thức – Học để giải quyết vấn đề – Học để tạo tác động",
         "paragraphs": [
-          "Viện Sau Đại học tin rằng giá trị của giáo dục sau đại học không chỉ nằm ở việc tích lũy kiến thức hay đạt được văn bằng, mà còn ở khả năng làm chủ tri thức, vận dụng kiến thức vào thực tiễn và tạo ra những đóng góp có ý nghĩa cho xã hội.",
+          "Viện Sau đại học tin rằng giá trị của giáo dục sau đại học không chỉ nằm ở việc tích lũy kiến thức hay đạt được văn bằng, mà còn ở khả năng làm chủ tri thức, vận dụng kiến thức vào thực tiễn và tạo ra những đóng góp có ý nghĩa cho xã hội.",
           "Triết lý giáo dục được thể hiện thông qua ba định hướng xuyên suốt:"
         ],
         "items": [
@@ -11781,7 +11789,7 @@
       },
       "values": {
         "title": "LEAD – Kiến tạo giá trị, hướng đến sự xuất sắc, thích ứng và tận tâm",
-        "intro": "Hệ giá trị cốt lõi LEAD là nền tảng định hướng văn hóa học thuật, hoạt động đào tạo, nghiên cứu và phục vụ người học tại Viện Sau Đại học. Đồng thời, LEAD thể hiện những phẩm chất và năng lực mà Viện mong muốn phát triển ở người học trong môi trường nghề nghiệp hiện đại.",
+        "intro": "Hệ giá trị cốt lõi LEAD là nền tảng định hướng văn hóa học thuật, hoạt động đào tạo, nghiên cứu và phục vụ người học tại Viện Sau đại học. Đồng thời, LEAD thể hiện những phẩm chất và năng lực mà Viện mong muốn phát triển ở người học trong môi trường nghề nghiệp hiện đại.",
         "items": [
           {
             "name": "L – LEGACY",
@@ -11804,12 +11812,12 @@
             "text": "Đề cao tinh thần trách nhiệm, sự chuyên nghiệp và cam kết đồng hành cùng người học, đối tác và cộng đồng trong quá trình học tập, nghiên cứu và phát triển."
           }
         ],
-        "message": "LEAD không chỉ là hệ giá trị định hướng hoạt động của Viện Sau Đại học mà còn là nền tảng hình thành những cá nhân có tri thức, bản lĩnh, trách nhiệm và khả năng tạo ra những tác động tích cực cho xã hội."
+        "message": "LEAD không chỉ là hệ giá trị định hướng hoạt động của Viện Sau đại học mà còn là nền tảng hình thành những cá nhân có tri thức, bản lĩnh, trách nhiệm và khả năng tạo ra những tác động tích cực cho xã hội."
       },
       "benefits": {
         "title": "Vì sao lựa chọn học sau đại học tại Văn Lang?",
         "message": "Môi trường học tập hiện đại – Kiến thức ứng dụng – Kết nối phát triển",
-        "intro": "Viện Sau Đại học – Trường Đại học Văn Lang hướng đến mang lại trải nghiệm học tập chất lượng, linh hoạt và gắn với nhu cầu phát triển nghề nghiệp, giúp người học không chỉ nâng cao trình độ chuyên môn mà còn mở rộng cơ hội nghiên cứu, kết nối và phát triển bản thân.",
+        "intro": "Viện Sau đại học – Trường Đại học Văn Lang hướng đến mang lại trải nghiệm học tập chất lượng, linh hoạt và gắn với nhu cầu phát triển nghề nghiệp, giúp người học không chỉ nâng cao trình độ chuyên môn mà còn mở rộng cơ hội nghiên cứu, kết nối và phát triển bản thân.",
         "items": [
           {
             "title": "CHƯƠNG TRÌNH ĐÀO TẠO HIỆN ĐẠI VÀ ỨNG DỤNG",
@@ -11832,23 +11840,23 @@
       "strategy": {
         "title": "Phát triển giáo dục sau đại học chất lượng, ứng dụng và hội nhập quốc tế",
         "paragraphs": [
-          "Hướng đến năm 2030, Viện Sau Đại học tập trung xây dựng hệ sinh thái đào tạo và nghiên cứu hiện đại, gắn kết chặt chẽ giữa chất lượng học thuật, nghiên cứu ứng dụng và nhu cầu phát triển của doanh nghiệp, tổ chức và xã hội.",
-          "Viện chú trọng mở rộng các chương trình đào tạo thạc sĩ, tiến sĩ theo hướng đa ngành và liên ngành; nâng cao chất lượng giảng dạy và nghiên cứu; tăng cường hợp tác quốc tế và phát triển các chương trình đào tạo bằng tiếng Anh.",
+          "Hướng đến năm 2030, Viện Sau đại học tập trung xây dựng hệ sinh thái đào tạo và nghiên cứu hiện đại, gắn kết chặt chẽ giữa chất lượng học thuật, nghiên cứu ứng dụng và nhu cầu phát triển của doanh nghiệp, tổ chức và xã hội.",
+          "Viện chú trọng mở rộng các chương trình đào tạo Thạc sĩ, Tiến sĩ theo hướng đa ngành và liên ngành; nâng cao chất lượng giảng dạy và nghiên cứu; tăng cường hợp tác quốc tế và phát triển các chương trình đào tạo bằng tiếng Anh.",
           "Đồng thời, Viện đẩy mạnh chuyển đổi số trong quản lý và tổ chức đào tạo, nâng cao chất lượng dịch vụ và trải nghiệm người học, hướng đến môi trường học tập linh hoạt, chuyên nghiệp và lấy người học làm trung tâm.",
-          "Thông qua các định hướng này, Viện Sau Đại học góp phần thực hiện chiến lược phát triển của Trường Đại học Văn Lang, từng bước nâng cao chất lượng và vị thế giáo dục sau đại học trong nước và quốc tế."
+          "Thông qua các định hướng này, Viện Sau đại học góp phần thực hiện chiến lược phát triển của Trường Đại học Văn Lang, từng bước nâng cao chất lượng và vị thế giáo dục sau đại học trong nước và quốc tế."
         ]
       },
       "leadership": {
-        "title": "Đội ngũ lãnh đạo Viện Sau Đại học",
+        "title": "Đội ngũ lãnh đạo Viện Sau đại học",
         "paragraphs": [
-          "Đội ngũ lãnh đạo Viện Sau Đại học giữ vai trò định hướng chiến lược, tổ chức và phát triển các hoạt động đào tạo, nghiên cứu khoa học, hợp tác và phục vụ người học.",
-          "Với tinh thần trách nhiệm, đổi mới và tận tâm, đội ngũ lãnh đạo hướng đến xây dựng môi trường học thuật chất lượng, nâng cao hiệu quả quản trị và thúc đẩy sự phát triển bền vững của Viện Sau Đại học trong giai đoạn mới."
+          "Đội ngũ lãnh đạo Viện Sau đại học giữ vai trò định hướng chiến lược, tổ chức và phát triển các hoạt động đào tạo, nghiên cứu khoa học, hợp tác và phục vụ người học.",
+          "Với tinh thần trách nhiệm, đổi mới và tận tâm, đội ngũ lãnh đạo hướng đến xây dựng môi trường học thuật chất lượng, nâng cao hiệu quả quản trị và thúc đẩy sự phát triển bền vững của Viện Sau đại học trong giai đoạn mới."
         ]
       },
       "closing": {
         "title": "KHÁM PHÁ HÀNH TRÌNH HỌC TẬP SAU ĐẠI HỌC TẠI VĂN LANG",
         "message": "Nâng tầm tri thức – Phát triển năng lực – Kiến tạo tương lai",
-        "intro": "Khám phá các chương trình đào tạo thạc sĩ, tiến sĩ tại Trường Đại học Văn Lang và lựa chọn hành trình học tập phù hợp với mục tiêu phát triển chuyên môn, nghiên cứu và sự nghiệp của bạn."
+        "intro": "Khám phá các chương trình đào tạo Thạc sĩ, Tiến sĩ tại Trường Đại học Văn Lang và lựa chọn hành trình học tập phù hợp với mục tiêu phát triển chuyên môn, nghiên cứu và sự nghiệp của bạn."
       },
       "media": {
         "hero": {
@@ -11857,7 +11865,7 @@
         },
         "introduction": {
           "image": "/images/pages/discover/introduction/seminar-discussion.webp",
-          "alt": "Học viên trao đổi tại hội thảo Dẫn nhập nghiên cứu khoa học của Viện Sau Đại học Văn Lang"
+          "alt": "Học viên trao đổi tại hội thảo Dẫn nhập nghiên cứu khoa học của Viện Sau đại học Văn Lang"
         },
         "strategy": {
           "image": "/images/pages/discover/content/campus.jpg",
@@ -11881,7 +11889,7 @@
       "leaders": [
         {
           "name": "PGS. TS. Nguyễn Văn Thành",
-          "role": "Phó Viện trưởng Phụ trách Viện Sau Đại học",
+          "role": "Viện trưởng Viện Sau đại học",
           "image": "/images/pages/discover/leadership/thay2.png"
         },
         {
@@ -11927,7 +11935,7 @@
     ],
     "defaults": {
       "navigation": {
-        "university": "VIỆN SAU ĐẠI HỌC – TRƯỜNG ĐẠI HỌC VĂN LANG",
+        "university": "Viện Sau đại học – TRƯỜNG ĐẠI HỌC VĂN LANG",
         "news": "Tin tức",
         "resources": "Tài nguyên"
       },
@@ -11951,7 +11959,7 @@
         "chooseProgramme": "Chọn chương trình",
         "submit": "Gửi yêu cầu tư vấn",
         "submitting": "Đang gửi...",
-        "success": "Đã gửi yêu cầu. Viện Sau Đại học sẽ sớm liên hệ với bạn.",
+        "success": "Đã gửi yêu cầu. Viện Sau đại học sẽ sớm liên hệ với bạn.",
         "invalid": "Thông tin chưa hợp lệ. Vui lòng kiểm tra lại.",
         "connectionError": "Không thể kết nối máy chủ. Vui lòng thử lại sau.",
         "privacy": "Thông tin bạn cung cấp được sử dụng để liên hệ và hỗ trợ tư vấn tuyển sinh."
@@ -11992,7 +12000,7 @@
         "chooseProgramme": "Choose a programme",
         "submit": "Submit request",
         "submitting": "Submitting...",
-        "success": "Your request has been sent. Viện Sau Đại học will contact you soon.",
+        "success": "Your request has been sent. Viện Sau đại học will contact you soon.",
         "invalid": "Some information is invalid. Please check and try again.",
         "connectionError": "Unable to connect to the server. Please try again later.",
         "privacy": "Your information is confidential and used only for admissions counselling."

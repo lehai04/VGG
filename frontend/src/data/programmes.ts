@@ -250,7 +250,7 @@ export function getProgrammeGraduationRequirements(programme: Programme): string
   ];
 }
 
-/** Học phí toàn khóa theo danh mục tuyển sinh do Viện Sau Đại học công bố. */
+/** Học phí toàn khóa theo danh mục tuyển sinh do Viện Sau đại học công bố. */
 export function getProgrammeTuition(programme: Programme) {
   return programme.tuition;
 }

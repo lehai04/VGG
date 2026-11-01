@@ -95,7 +95,7 @@ export async function DiscoverIntroduction() {
           <Link
             href="#gioi-thieu"
             className={styles.scrollLink}
-            aria-label="Đọc giới thiệu Viện Sau Đại học"
+            aria-label="Đọc giới thiệu Viện Sau đại học"
           >
             <ArrowDown size={20} aria-hidden="true" />
           </Link>
@@ -104,8 +104,8 @@ export async function DiscoverIntroduction() {
       <section id="gioi-thieu" className={styles.section} aria-labelledby="introduction-title">
         <div className={`${styles.container} ${styles.split}`}>
           <div>
-            <SectionLabel number="02">GIỚI THIỆU VIỆN SAU ĐẠI HỌC</SectionLabel>
-            <h2 data-section-subtitle id="introduction-title">{content.introduction.title}</h2>
+            <SectionLabel number="02">GIỚI THIỆU Viện Sau đại học</SectionLabel>
+            <h3 data-section-subtitle id="introduction-title">{content.introduction.title}</h3>
             <Paragraphs items={content.introduction.paragraphs} />
             <Link className={styles.textLink} href="#tam-nhin-su-menh">
               Tìm hiểu thêm <ArrowUpRight size={18} aria-hidden="true" />
@@ -129,7 +129,7 @@ export async function DiscoverIntroduction() {
       >
         <div className={styles.container}>
           <SectionLabel number="03">TẦM NHÌN & SỨ MỆNH</SectionLabel>
-          <h2 data-section-subtitle id="vision-title">Tầm nhìn và Sứ mệnh</h2>
+          <h3 data-section-subtitle id="vision-title">Tầm nhìn và Sứ mệnh</h3>
           <div className={styles.visionGrid}>
             {[content.vision, content.mission].map((item, i) => (
               <article className={styles.visionBlock} key={item.title}>
@@ -149,7 +149,7 @@ export async function DiscoverIntroduction() {
       <section id="triet-ly-giao-duc" className={styles.section} aria-labelledby="philosophy-title">
         <div className={styles.container}>
           <SectionLabel number="04">TRIẾT LÝ GIÁO DỤC</SectionLabel>
-          <h2 data-section-subtitle id="philosophy-title">{content.philosophy.title}</h2>
+          <h3 data-section-subtitle id="philosophy-title">{content.philosophy.title}</h3>
           <div className={styles.sectionIntro}>
             <Paragraphs items={content.philosophy.paragraphs} />
           </div>
@@ -175,7 +175,7 @@ export async function DiscoverIntroduction() {
       >
         <div className={styles.container}>
           <SectionLabel number="05">GIÁ TRỊ CỐT LÕI LEAD</SectionLabel>
-          <h2 data-section-subtitle id="values-title">{content.values.title}</h2>
+          <h3 data-section-subtitle id="values-title">{content.values.title}</h3>
           <p className={styles.sectionIntro}>{content.values.intro}</p>
           <div className={styles.fourGrid}>
             {content.values.items.map((item, i) => {
@@ -199,7 +199,7 @@ export async function DiscoverIntroduction() {
       <section id="vi-sao-chon-vgg" className={styles.section} aria-labelledby="benefits-title">
         <div className={styles.container}>
           <SectionLabel number="06">LỢI THẾ DÀNH CHO NGƯỜI HỌC</SectionLabel>
-          <h2 data-section-subtitle id="benefits-title">{content.benefits.title}</h2>
+          <h3 data-section-subtitle id="benefits-title">{content.benefits.title}</h3>
           <p className={styles.statement}>{content.benefits.message}</p>
           <p className={styles.sectionIntro}>{content.benefits.intro}</p>
           <div className={styles.benefitsGrid}>
@@ -224,7 +224,7 @@ export async function DiscoverIntroduction() {
       <section id="doi-ngu-lanh-dao" className={styles.section} aria-labelledby="leaders-title">
         <div className={styles.container}>
           <SectionLabel number="07">ĐỘI NGŨ LÃNH ĐẠO</SectionLabel>
-          <h2 data-section-subtitle id="leaders-title">{content.leadership.title}</h2>
+          <h3 data-section-subtitle id="leaders-title">{content.leadership.title}</h3>
           <div className={styles.sectionIntro}>
             <Paragraphs items={content.leadership.paragraphs} />
           </div>
@@ -261,7 +261,7 @@ export async function DiscoverIntroduction() {
         <div className={styles.heroShade} />
         <div className={`${styles.container} ${styles.closingCopy}`}>
           <SectionLabel number="09">HÀNH TRÌNH TIẾP THEO</SectionLabel>
-          <h2 data-section-subtitle id="closing-title">{content.closing.title}</h2>
+          <h3 data-section-subtitle id="closing-title">{content.closing.title}</h3>
           <p className={styles.statement}>{content.closing.message}</p>
           <p>{content.closing.intro}</p>
           <Actions actions={actions} />

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+umask 077
+# Install as /etc/vgg/pre-deploy (0700, root-owned).
+# /etc/vgg/backup.env is shell syntax, root-owned 0600; contains PGHOST,
+# PGPORT, PGUSER, PGDATABASE and PGPASSFILE. No password on command line.
+set -a
+source /etc/vgg/backup.env
+set +a
+mkdir -p /var/backups/vgg
+archive="$(mktemp /var/backups/vgg/pre-deploy-XXXXXXXX.dump)"
+pg_dump --format=custom --file="$archive"
+pg_restore --list "$archive" >/dev/null
+sha256sum "$archive" >"$archive.sha256"
+# This validates the archive structure. A restore drill on a separate database
+# is still required before enabling CD and periodically thereafter.
+printf 'Backup created: %s\n' "$archive"

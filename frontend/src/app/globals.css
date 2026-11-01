@@ -1091,8 +1091,7 @@ em {
   min-height: calc(100dvh - 88px);
   position: relative;
   color: #fff;
-  background: url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=88")
-    center/cover;
+  background: #202653;
   display: flex;
   align-items: flex-end;
   padding: 7vw 7vw 8vw;
@@ -1223,8 +1222,7 @@ em {
   color: #fff;
 }
 .experience-image {
-  background: url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=85")
-    center/cover;
+  background-color: #202653;
   position: relative;
 }
 .experience-image:after {
@@ -1375,13 +1373,13 @@ em {
   letter-spacing: 0.15em;
 }
 .image-0 {
-  background-image: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80");
+  background-color: #202653;
 }
 .image-1 {
-  background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80");
+  background-color: #202653;
 }
 .image-2 {
-  background-image: url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=80");
+  background-color: #202653;
 }
 .news-grid article > small {
   font-size: var(--text-10);
@@ -1678,7 +1676,7 @@ footer > div > small {
 }
 .vgg-hero {
   min-height: calc(100dvh - 138px);
-  background-image: url("https://vgs.edu.vn/_next/image?q=100&url=https%3A%2F%2Fvgs.edu.vn%2Fapi%2Fmedia%2Ffile%2Fstaff-hero.jpg%3F2026-03-15T02%253A35%253A18.430Z&w=1920");
+  background-color: #202653;
 }
 .vgg-hero .hero-content {
   padding-bottom: 25px;
@@ -3373,7 +3371,7 @@ textarea {
   gap: clamp(30px, 5vw, 84px);
   padding: 46px 0;
 }
-.university-footer h2 {
+.university-footer h3 {
   margin: 0 0 18px;
   color: #fff;
   font-size: var(--text-10);
@@ -3382,7 +3380,7 @@ textarea {
 .university-footer :is(.university-footer-column, .university-footer-bottom, .university-footer-bottom > *) {
   min-width: 0;
 }
-.university-footer .university-footer-content h2 {
+.university-footer .university-footer-content h3 {
   white-space: normal;
 }
 .university-footer :is(li a, .university-footer-addresses span) {
@@ -5614,7 +5612,7 @@ main:not(.subpage) .main-menu > a.active small {
 }
 
 /* Final normalization layer for legacy page-specific CSS. */
-main p:not([data-section-label]):not([data-banner-label]):not([data-banner-description]):not([class*="eyebrow"]):not([class*="kicker"]):not([class*="caption"]):not([class*="meta"]) {
+main p:not([data-section-label]):not([data-banner-label]):not([data-banner-description]):not([class*="eyebrow"]):not([class*="kicker"]):not([class*="caption"]):not([class*="meta"]):not(:where(.cms-rich-content *)) {
   font-family: var(--font-sans) !important;
   font-size: clamp(1rem, 1.05vw, 1.0625rem) !important;
   font-weight: 400 !important;

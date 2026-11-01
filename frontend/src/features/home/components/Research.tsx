@@ -4,7 +4,7 @@ import { homeContent } from '@/data/home-content';
 import { websiteContent } from '@/lib/website-content';
 
 // Ảnh đại diện cho khu vực Nghiên cứu & Đổi mới.
-const RESEARCH_IMAGE_SRC = "/images/pages/home/sections/campus.jpg";
+const RESEARCH_IMAGE_SRC = "/images/pages/home/sections/campus.webp";
 
 // Danh sách các hướng nghiên cứu nổi bật.
 const RESEARCH_LINKS = [
@@ -32,11 +32,11 @@ export async function Research() {
 
       <div className="researchContent">
         <p data-section-label className="researchEyebrow">{research.label}</p>
-        <h2 data-section-subtitle>
+        <h3 data-section-subtitle>
           {research.title}
           {" "}
           <em>{research.emphasis}</em>
-        </h2>
+        </h3>
         <p className="researchDescription">
           {research.text}
         </p>

@@ -2,9 +2,9 @@ import { DiscoverIntroduction } from "@/features/discover/components/DiscoverInt
 import {withPageSeo} from '@/lib/page-seo';
 
 const defaultMetadata = {
-  title: "Viện Sau Đại học | Về Viện Sau Đại học",
+  title: "Viện Sau đại học | Về Viện Sau đại học",
   description:
-    "Viện Sau Đại học – Trường Đại học Văn Lang: tầm nhìn, sứ mệnh, triết lý giáo dục, giá trị LEAD và định hướng phát triển đến năm 2030.",
+    "Viện Sau đại học – Trường Đại học Văn Lang: tầm nhìn, sứ mệnh, triết lý giáo dục, giá trị LEAD và định hướng phát triển đến năm 2030.",
 };
 export async function generateMetadata(){return withPageSeo(defaultMetadata);}
 

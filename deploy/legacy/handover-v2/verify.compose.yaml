@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: vgg
+      POSTGRES_PASSWORD: handover_v2_test_only
+      POSTGRES_DB: vgg_public
+    volumes:
+      - ../../outputs/sdh-handover-v2/database/website-full.sql:/docker-entrypoint-initdb.d/01-website.sql:ro
+      - ../../outputs/sdh-handover-v2/database/verify.sql:/docker-entrypoint-initdb.d/02-verify.sql:ro
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U vgg -d vgg_public']
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  app:
+    build:
+      context: .
+      dockerfile: test.Dockerfile
+    environment:
+      DATABASE_URL: postgresql://vgg:handover_v2_test_only@db:5432/vgg_public
+    volumes:
+      - ../../outputs/sdh-handover-v2:/bundle:ro
+    depends_on:
+      db:
+        condition: service_healthy

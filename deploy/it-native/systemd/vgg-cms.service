@@ -1,0 +1,23 @@
+[Unit]
+Description=Saudaihoc Next.js CMS
+After=network.target vgg-backend.service
+Requires=vgg-backend.service
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/opt/saudaihoc/deploy/release/cms
+EnvironmentFile=/etc/saudaihoc/cms.env
+Environment=NODE_ENV=production
+Environment=PORT=3001
+Environment=HOSTNAME=127.0.0.1
+ExecStartPre=/usr/local/bin/node /var/opt/saudaihoc/deploy/release/backend/scripts/check-runtime.mjs cms
+ExecStart=/usr/local/bin/node server.js
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

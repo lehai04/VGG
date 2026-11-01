@@ -1,9 +1,12 @@
-/** Next.js tự phục vụ GET /robots.txt. Chặn crawl /api/ vì đó là endpoint form. */
 import type { MetadataRoute } from "next";
+import { publicSiteOrigin, siteIsIndexable } from "@/lib/public-site";
+
+// Evaluate deployment settings at request time rather than freezing them at build.
+export const dynamic = "force-dynamic";
 export default function robots(): MetadataRoute.Robots {
-  const base = (process.env.PUBLIC_APP_URL || "https://vgg.vlu.edu.vn").replace(/\/$/, "");
+  if (!siteIsIndexable()) return { rules: { userAgent: "*", disallow: "/" } };
   return {
-    rules: { userAgent: "*", allow: "/", disallow: "/api/" },
-    sitemap: `${base}/sitemap.xml`,
+    rules: { userAgent: "*", allow: "/", disallow: ["/api/", "/admin"] },
+    sitemap: `${publicSiteOrigin()}/sitemap.xml`,
   };
 }

@@ -12,7 +12,7 @@ export const catalogueCopy = {
       hoc_de_tien_xa: "CHỌN CHƯƠNG TRÌNH HỌC",
       dan_dat_tuong_lai: "CHO BƯỚC TIẾN TIẾP THEO",
       kien_tao_lo_trinh_hoc_thuat_phu:
-        "Khám phá các chương trình thạc sĩ và tiến sĩ tại Văn Lang để phát triển chuyên môn, theo đuổi nghiên cứu và vận dụng kiến thức vào thực tiễn. Lựa chọn chương trình phù hợp với nền tảng và mục tiêu phát triển của bạn.",
+        "Khám phá các chương trình Thạc sĩ và Tiến sĩ tại Văn Lang để phát triển chuyên môn, theo đuổi nghiên cứu và vận dụng kiến thức vào thực tiễn. Lựa chọn chương trình phù hợp với nền tảng và mục tiêu phát triển của bạn.",
       aria_label_thong_tin_tong_quan_chuong: "Thông tin tổng quan chương trình",
       value_2: "20",
       chuong_trinh: "Chương trình",
@@ -84,7 +84,7 @@ export const catalogueCopy = {
       src_images_pages_programmes_content_graduates_jpg:
         "/images/pages/programmes/content/graduates.jpg",
       alt_nguoi_hoc_chuong_trinh_thac_si: "Người học chương trình Thạc sĩ Văn Lang",
-      vien_sau_dai_hoc_master_programmes: "Viện Sau Đại học · MASTER PROGRAMMES",
+      vien_sau_dai_hoc_master_programmes: "Viện Sau đại học · MASTER PROGRAMMES",
       chuong_trinh: "Chương trình",
       thac_si: "Thạc sĩ",
       value_1: "20 chương trình · 05 khối ngành · 18–24 tháng",
@@ -107,16 +107,16 @@ export const catalogueCopy = {
       chuong_trinh_sau_dai_hoc_tai_van:
         "Chương trình Sau đại học tại Văn Lang không ngừng được cập nhật theo định hướng gắn kết học thuật với thực tiễn. Với lộ trình đào tạo từ 18 đến 24 tháng, mỗi ngành học mang đến mục tiêu phát triển và cơ hội nghề nghiệp rõ ràng.",
       vien_sau_dai_hoc_hien_trien_khai:
-        "Viện Sau Đại học hiện triển khai 20 chương trình Thạc sĩ thuộc 05 khối ngành, trang bị cho người học năng lực chuyên môn nâng cao, tư duy nghiên cứu, khả năng giải quyết vấn đề và nền tảng để phát triển sự nghiệp bền vững.",
+        "Viện Sau đại học hiện triển khai 20 chương trình Thạc sĩ thuộc 05 khối ngành, trang bị cho người học năng lực chuyên môn nâng cao, tư duy nghiên cứu, khả năng giải quyết vấn đề và nền tảng để phát triển sự nghiệp bền vững.",
       src_images_pages_programmes_content_campus_jpg: "/images/pages/programmes/content/campus.jpg",
       alt_khong_gian_dao_tao_va_nghien: "Không gian đào tạo và nghiên cứu tại Văn Lang",
-      vien_sau_dai_hoc_knowledge_in_practice: "Viện Sau Đại học · KNOWLEDGE IN PRACTICE",
+      vien_sau_dai_hoc_knowledge_in_practice: "Viện Sau đại học · KNOWLEDGE IN PRACTICE",
     },
     leadershipquote: {
       value_4: "“",
       sau_hon_30_nam_xay_dung_va:
-        "Sau hơn 30 năm xây dựng và trưởng thành, Văn Lang không ngừng cung cấp nguồn nhân lực chất lượng cao, đáp ứng yêu cầu từ các nhà tuyển dụng trong và ngoài nước. Chương trình sau đại học trang bị nền tảng vững chắc cho các nhà quản lý, chuyên gia, nhà nghiên cứu và giảng viên tương lai. Đến nay, Viện Sau Đại học đã triển khai 20 chương trình Thạc sĩ thuộc nhiều lĩnh vực chuyên sâu.",
-      ban_lanh_dao_vien_sau_dai_hoc: "Ban lãnh đạo Viện Sau Đại học",
+        "Sau hơn 30 năm xây dựng và trưởng thành, Văn Lang không ngừng cung cấp nguồn nhân lực chất lượng cao, đáp ứng yêu cầu từ các nhà tuyển dụng trong và ngoài nước. Chương trình sau đại học trang bị nền tảng vững chắc cho các nhà quản lý, chuyên gia, nhà nghiên cứu và giảng viên tương lai. Đến nay, Viện Sau đại học đã triển khai 20 chương trình Thạc sĩ thuộc nhiều lĩnh vực chuyên sâu.",
+      ban_lanh_dao_vien_sau_dai_hoc: "Ban lãnh đạo Viện Sau đại học",
       vien_sau_dai_hoc_truong_dai_hoc: "Viện Sau đại học · Trường Đại học Văn Lang",
       src_images_pages_programmes_content_academic_leader:
         "/images/pages/programmes/content/academic-leader.avif",
@@ -124,7 +124,7 @@ export const catalogueCopy = {
     },
     why: {
       tai_sao_nen_chon_chuong_trinh_thac:
-        "Tại sao nên chọn chương trình Thạc sĩ tại Viện Sau Đại học?",
+        "Tại sao nên chọn chương trình Thạc sĩ tại Viện Sau đại học?",
       mot_lo_trinh_duoc_thiet_ke_cho:
         "Một lộ trình được thiết kế cho người học muốn tiến xa hơn trong chuyên môn mà không tách rời thực tiễn nghề nghiệp.",
     },
@@ -154,13 +154,13 @@ export const catalogueCopy = {
     special_overview: {
       src_images_pages_programmes_content_campus_jpg: "/images/pages/programmes/content/campus.jpg",
       alt_khong_gian_dao_tao_va_nghien: "Không gian đào tạo và nghiên cứu tại Văn Lang",
-      vien_sau_dai_hoc_knowledge_without_borders: "Viện Sau Đại học · KNOWLEDGE WITHOUT BORDERS",
+      vien_sau_dai_hoc_knowledge_without_borders: "Viện Sau đại học · KNOWLEDGE WITHOUT BORDERS",
     },
     leadershipquote_quoteimageright: {
       value_3: "“",
       src_images_pages_programmes_content_academic_leader:
         "/images/pages/programmes/content/academic-leader.avif",
-      alt_dai_dien_lanh_dao_hoc_thuat: "Đại diện lãnh đạo học thuật Viện Sau Đại học",
+      alt_dai_dien_lanh_dao_hoc_thuat: "Đại diện lãnh đạo học thuật Viện Sau đại học",
     },
     directory: {
       href_programmes: "/programmes",
@@ -170,7 +170,7 @@ export const catalogueCopy = {
   ProgrammeSearch: {
     programme_search_wrapper: {
       tim_kiem_chuong_trinh_phu_hop_voi:
-        "Khám phá các chương trình thạc sĩ và tiến sĩ tại Văn Lang theo lĩnh vực quan tâm và định hướng phát triển của bạn.",
+        "Khám phá các chương trình Thạc sĩ và Tiến sĩ tại Văn Lang theo lĩnh vực quan tâm và định hướng phát triển của bạn.",
       chon_dieu_ban_muon_kham_pha: "Tra cứu chương trình",
       aria_label_tim_kiem_chuong_trinh: "Tìm kiếm chương trình",
       placeholder_nhap_ten_chuong_trinh_hoac_linh:

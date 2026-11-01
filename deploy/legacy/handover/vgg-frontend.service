@@ -1,0 +1,20 @@
+[Unit]
+Description=VGG public Next.js frontend
+After=network-online.target vgg-backend.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=vgg
+Group=vgg
+WorkingDirectory=/opt/vgg/current/fe/frontend
+EnvironmentFile=/etc/vgg/frontend.env
+ExecStart=/usr/local/bin/node /opt/vgg/current/fe/frontend/server.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0027
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

@@ -196,7 +196,7 @@ export const marketingPageContent: ProgrammePageContent = {
         title: "Các hình thức minh chứng ngoại ngữ đầu vào",
         paragraphs: [
           "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
           "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học từ chương trình được giảng dạy bằng tiếng Việt.",
         ],
         points: [
@@ -210,7 +210,7 @@ export const marketingPageContent: ProgrammePageContent = {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
           "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã học để xác định học phần cần bổ sung. Ứng viên phải hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-          "Tối đa 4 học phần, tổng 12 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình thạc sĩ.",
+          "Tối đa 4 học phần, tổng 12 tín chỉ. Phần bổ sung kiến thức nằm ngoài khối lượng 60 tín chỉ của chương trình Thạc sĩ.",
           "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
         ],
         groups: [
@@ -537,7 +537,7 @@ export const marketingPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ", "mục tiêu của bạn."],
       body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Marketing. Đội ngũ tư vấn sẽ hỗ trợ bạn tìm hiểu chương trình và chuẩn bị hồ sơ phù hợp.",
       benefits: [
@@ -661,7 +661,7 @@ export const marketingPageContent: ProgrammePageContent = {
 
 export const marketingProgramme: Programme = {
   id: "marketing",
-  code: "340115",
+  code: "8340115",
   title: "Marketing",
   englishTitle: "Master of Marketing",
   degree: "Thạc sĩ",
@@ -670,7 +670,7 @@ export const marketingProgramme: Programme = {
   credits: 60,
   duration: "24 tháng",
   studyMode: "Chính quy tập trung, tiếng Việt",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   summary:
     "Phát triển tư duy chiến lược và năng lực nghiên cứu Marketing, kết nối dữ liệu, công nghệ và hiểu biết về khách hàng để giải quyết các vấn đề kinh doanh trong bối cảnh chuyển đổi số.",
   schedule:

@@ -1,14 +1,14 @@
 {
   "hero": {
-    "title": ["VIỆN SAU ĐẠI HỌC", "TRƯỜNG ĐẠI HỌC VĂN LANG"],
+    "title": ["Viện Sau đại học", "TRƯỜNG ĐẠI HỌC VĂN LANG"],
     "english": "Graduate Education for Global Impact",
     "message": "Làm chủ tri thức – Giải quyết vấn đề – Kiến tạo tác động",
-    "intro": "Viện Sau Đại học – Trường Đại học Văn Lang hướng đến xây dựng môi trường đào tạo và nghiên cứu hiện đại, nơi tri thức học thuật được kết nối với thực tiễn, thúc đẩy đổi mới sáng tạo và phát triển nguồn nhân lực trình độ cao trong bối cảnh hội nhập quốc tế."
+    "intro": "Viện Sau đại học – Trường Đại học Văn Lang hướng đến xây dựng môi trường đào tạo và nghiên cứu hiện đại, nơi tri thức học thuật được kết nối với thực tiễn, thúc đẩy đổi mới sáng tạo và phát triển nguồn nhân lực trình độ cao trong bối cảnh hội nhập quốc tế."
   },
   "introduction": {
     "title": "Nơi tri thức kết nối với thực tiễn và kiến tạo giá trị",
     "paragraphs": [
-      "Viện Sau Đại học – Trường Đại học Văn Lang (VGG) là đơn vị tổ chức, quản lý và phát triển các chương trình đào tạo trình độ thạc sĩ, tiến sĩ, hướng đến xây dựng một hệ sinh thái giáo dục sau đại học hiện đại, chất lượng cao, gắn kết giữa đào tạo, nghiên cứu khoa học, đổi mới sáng tạo và thực tiễn nghề nghiệp.",
+      "Viện Sau đại học – Trường Đại học Văn Lang (VGG) là đơn vị tổ chức, quản lý và phát triển các chương trình đào tạo trình độ Thạc sĩ, Tiến sĩ, hướng đến xây dựng một hệ sinh thái giáo dục sau đại học hiện đại, chất lượng cao, gắn kết giữa đào tạo, nghiên cứu khoa học, đổi mới sáng tạo và thực tiễn nghề nghiệp.",
       "Với định hướng lấy người học làm trung tâm, Viện chú trọng phát triển các chương trình đào tạo chuyên sâu, liên ngành và ứng dụng, đồng thời tạo dựng môi trường học tập linh hoạt, phù hợp với nhu cầu phát triển chuyên môn và nghề nghiệp của người học.",
       "Thông qua việc kết nối đội ngũ giảng viên, nhà khoa học, chuyên gia và cộng đồng doanh nghiệp, Viện khuyến khích người học phát triển tư duy phản biện, năng lực nghiên cứu độc lập, khả năng lãnh đạo và giải quyết các vấn đề thực tiễn.",
       "Song song với hoạt động đào tạo, Viện từng bước mở rộng hợp tác trong nước và quốc tế, thúc đẩy nghiên cứu ứng dụng, chuyển giao tri thức và đổi mới sáng tạo, góp phần phát triển nguồn nhân lực trình độ cao và tạo ra những giá trị bền vững cho cộng đồng, doanh nghiệp và xã hội."
@@ -19,7 +19,7 @@
     "english": "Vision",
     "paragraphs": [
       "Trở thành đơn vị đào tạo sau đại học và nghiên cứu ứng dụng có uy tín trong khu vực châu Á, kết nối chuẩn mực học thuật quốc tế với thực tiễn doanh nghiệp và xã hội.",
-      "Đến năm 2030, Viện Sau Đại học hướng đến xây dựng hệ sinh thái đào tạo và nghiên cứu hiện đại, nơi tri thức học thuật và kết quả nghiên cứu được chuyển hóa thành các giải pháp có giá trị ứng dụng, tạo tác động tích cực và bền vững đối với doanh nghiệp, cộng đồng và xã hội."
+      "Đến năm 2030, Viện Sau đại học hướng đến xây dựng hệ sinh thái đào tạo và nghiên cứu hiện đại, nơi tri thức học thuật và kết quả nghiên cứu được chuyển hóa thành các giải pháp có giá trị ứng dụng, tạo tác động tích cực và bền vững đối với doanh nghiệp, cộng đồng và xã hội."
     ]
   },
   "mission": {
@@ -33,7 +33,7 @@
   "philosophy": {
     "title": "Học để làm chủ tri thức – Học để giải quyết vấn đề – Học để tạo tác động",
     "paragraphs": [
-      "Viện Sau Đại học tin rằng giá trị của giáo dục sau đại học không chỉ nằm ở việc tích lũy kiến thức hay đạt được văn bằng, mà còn ở khả năng làm chủ tri thức, vận dụng kiến thức vào thực tiễn và tạo ra những đóng góp có ý nghĩa cho xã hội.",
+      "Viện Sau đại học tin rằng giá trị của giáo dục sau đại học không chỉ nằm ở việc tích lũy kiến thức hay đạt được văn bằng, mà còn ở khả năng làm chủ tri thức, vận dụng kiến thức vào thực tiễn và tạo ra những đóng góp có ý nghĩa cho xã hội.",
       "Triết lý giáo dục được thể hiện thông qua ba định hướng xuyên suốt:"
     ],
     "items": [
@@ -56,7 +56,7 @@
   },
   "values": {
     "title": "LEAD – Kiến tạo giá trị, hướng đến sự xuất sắc, thích ứng và tận tâm",
-    "intro": "Hệ giá trị cốt lõi LEAD là nền tảng định hướng văn hóa học thuật, hoạt động đào tạo, nghiên cứu và phục vụ người học tại Viện Sau Đại học. Đồng thời, LEAD thể hiện những phẩm chất và năng lực mà Viện mong muốn phát triển ở người học trong môi trường nghề nghiệp hiện đại.",
+    "intro": "Hệ giá trị cốt lõi LEAD là nền tảng định hướng văn hóa học thuật, hoạt động đào tạo, nghiên cứu và phục vụ người học tại Viện Sau đại học. Đồng thời, LEAD thể hiện những phẩm chất và năng lực mà Viện mong muốn phát triển ở người học trong môi trường nghề nghiệp hiện đại.",
     "items": [
       {
         "name": "L – LEGACY",
@@ -79,12 +79,12 @@
         "text": "Đề cao tinh thần trách nhiệm, sự chuyên nghiệp và cam kết đồng hành cùng người học, đối tác và cộng đồng trong quá trình học tập, nghiên cứu và phát triển."
       }
     ],
-    "message": "LEAD không chỉ là hệ giá trị định hướng hoạt động của Viện Sau Đại học mà còn là nền tảng hình thành những cá nhân có tri thức, bản lĩnh, trách nhiệm và khả năng tạo ra những tác động tích cực cho xã hội."
+    "message": "LEAD không chỉ là hệ giá trị định hướng hoạt động của Viện Sau đại học mà còn là nền tảng hình thành những cá nhân có tri thức, bản lĩnh, trách nhiệm và khả năng tạo ra những tác động tích cực cho xã hội."
   },
   "benefits": {
     "title": "Vì sao lựa chọn học sau đại học tại Văn Lang?",
     "message": "Môi trường học tập hiện đại – Kiến thức ứng dụng – Kết nối phát triển",
-    "intro": "Viện Sau Đại học – Trường Đại học Văn Lang hướng đến mang lại trải nghiệm học tập chất lượng, linh hoạt và gắn với nhu cầu phát triển nghề nghiệp, giúp người học không chỉ nâng cao trình độ chuyên môn mà còn mở rộng cơ hội nghiên cứu, kết nối và phát triển bản thân.",
+    "intro": "Viện Sau đại học – Trường Đại học Văn Lang hướng đến mang lại trải nghiệm học tập chất lượng, linh hoạt và gắn với nhu cầu phát triển nghề nghiệp, giúp người học không chỉ nâng cao trình độ chuyên môn mà còn mở rộng cơ hội nghiên cứu, kết nối và phát triển bản thân.",
     "items": [
       {
         "title": "CHƯƠNG TRÌNH ĐÀO TẠO HIỆN ĐẠI VÀ ỨNG DỤNG",
@@ -107,22 +107,22 @@
   "strategy": {
     "title": "Phát triển giáo dục sau đại học chất lượng, ứng dụng và hội nhập quốc tế",
     "paragraphs": [
-      "Hướng đến năm 2030, Viện Sau Đại học tập trung xây dựng hệ sinh thái đào tạo và nghiên cứu hiện đại, gắn kết chặt chẽ giữa chất lượng học thuật, nghiên cứu ứng dụng và nhu cầu phát triển của doanh nghiệp, tổ chức và xã hội.",
-      "Viện chú trọng mở rộng các chương trình đào tạo thạc sĩ, tiến sĩ theo hướng đa ngành và liên ngành; nâng cao chất lượng giảng dạy và nghiên cứu; tăng cường hợp tác quốc tế và phát triển các chương trình đào tạo bằng tiếng Anh.",
+      "Hướng đến năm 2030, Viện Sau đại học tập trung xây dựng hệ sinh thái đào tạo và nghiên cứu hiện đại, gắn kết chặt chẽ giữa chất lượng học thuật, nghiên cứu ứng dụng và nhu cầu phát triển của doanh nghiệp, tổ chức và xã hội.",
+      "Viện chú trọng mở rộng các chương trình đào tạo Thạc sĩ, Tiến sĩ theo hướng đa ngành và liên ngành; nâng cao chất lượng giảng dạy và nghiên cứu; tăng cường hợp tác quốc tế và phát triển các chương trình đào tạo bằng tiếng Anh.",
       "Đồng thời, Viện đẩy mạnh chuyển đổi số trong quản lý và tổ chức đào tạo, nâng cao chất lượng dịch vụ và trải nghiệm người học, hướng đến môi trường học tập linh hoạt, chuyên nghiệp và lấy người học làm trung tâm.",
-      "Thông qua các định hướng này, Viện Sau Đại học góp phần thực hiện chiến lược phát triển của Trường Đại học Văn Lang, từng bước nâng cao chất lượng và vị thế giáo dục sau đại học trong nước và quốc tế."
+      "Thông qua các định hướng này, Viện Sau đại học góp phần thực hiện chiến lược phát triển của Trường Đại học Văn Lang, từng bước nâng cao chất lượng và vị thế giáo dục sau đại học trong nước và quốc tế."
     ]
   },
   "leadership": {
     "title": "",
     "paragraphs": [
-      "Đội ngũ lãnh đạo Viện Sau Đại học giữ vai trò định hướng chiến lược, tổ chức và phát triển các hoạt động đào tạo, nghiên cứu khoa học, hợp tác và phục vụ người học.",
-      "Với tinh thần trách nhiệm, đổi mới và tận tâm, đội ngũ lãnh đạo hướng đến xây dựng môi trường học thuật chất lượng, nâng cao hiệu quả quản trị và thúc đẩy sự phát triển bền vững của Viện Sau Đại học trong giai đoạn mới."
+      "Đội ngũ lãnh đạo Viện Sau đại học giữ vai trò định hướng chiến lược, tổ chức và phát triển các hoạt động đào tạo, nghiên cứu khoa học, hợp tác và phục vụ người học.",
+      "Với tinh thần trách nhiệm, đổi mới và tận tâm, đội ngũ lãnh đạo hướng đến xây dựng môi trường học thuật chất lượng, nâng cao hiệu quả quản trị và thúc đẩy sự phát triển bền vững của Viện Sau đại học trong giai đoạn mới."
     ]
   },
   "closing": {
     "title": "KHÁM PHÁ HÀNH TRÌNH HỌC TẬP SAU ĐẠI HỌC TẠI VĂN LANG",
     "message": "Nâng tầm tri thức – Phát triển năng lực – Kiến tạo tương lai",
-    "intro": "Khám phá các chương trình đào tạo thạc sĩ, tiến sĩ tại Trường Đại học Văn Lang và lựa chọn hành trình học tập phù hợp với mục tiêu phát triển chuyên môn, nghiên cứu và sự nghiệp của bạn."
+    "intro": "Khám phá các chương trình đào tạo Thạc sĩ, Tiến sĩ tại Trường Đại học Văn Lang và lựa chọn hành trình học tập phù hợp với mục tiêu phát triển chuyên môn, nghiên cứu và sự nghiệp của bạn."
   }
 }

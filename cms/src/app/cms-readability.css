@@ -1,0 +1,46 @@
+/* Shared reading and table hierarchy for the restored CMS screens. */
+#main-content .restoredCms {--admin-text:#202c43;--admin-muted:#526079;--admin-border:#b9c6d6;--border:#bdc9d8;color:#202c43;font-size:16px;line-height:1.6;}
+#main-content .restoredCms :is(h1,h2,h3,h4,h5,h6) {font-family:var(--font-heading);color:#1f2850;line-height:1.4;letter-spacing:-.02em;}
+#main-content .restoredCms h1 {font-size:30px;font-weight:700;margin:0 0 12px;}
+#main-content .restoredCms h2 {font-size:22px;font-weight:700;}
+#main-content .restoredCms h3 {font-size:18px;font-weight:600;}
+#main-content .restoredCms :is(input,select,textarea,button) {font-family:var(--font-body);font-size:15px;}
+#main-content .restoredCms :is(input,select,textarea) {color:#202c43;border-color:#a8b8cc;}
+#main-content .restoredCms :is(input,textarea)::placeholder {color:#64728a;opacity:1;}
+#main-content .restoredCms :is(.admin-table,.resource-table) {width:100%;border-collapse:collapse;border:1px solid #aebed1;background:#fff;text-align:left;}
+#main-content .restoredCms :is(.admin-table,.resource-table) th {background:#eaf0f7;color:#263653;font-size:14px;font-weight:600;letter-spacing:.02em;text-transform:none;border:1px solid #b4c2d3;padding:14px 16px;line-height:1.5;}
+#main-content .restoredCms :is(.admin-table,.resource-table) td {border:1px solid #c1cddb;padding:15px 16px;font-size:15px;line-height:1.65;color:#26334b;vertical-align:middle;}
+#main-content .restoredCms :is(.admin-table,.resource-table) tbody tr:nth-child(even) {background:#f7f9fc;}
+#main-content .restoredCms :is(.admin-table,.resource-table) tbody tr:hover {background:#eef4fc;}
+#main-content .restoredCms :is(.admin-table,.resource-table) td :is(small,p) {font-size:14px;color:#52617a;}
+#main-content .restoredCms :is(.admin-table-wrap,.resource-table-scroll) {border-radius:8px;overflow-x:auto;}
+#main-content .restoredCms :is(.vgg-card,.vgg-kpi-card) {border:1px solid #bdc9d8;box-shadow:0 2px 6px #182c4a08;}
+#main-content .restoredCms :is(.vgg-card-sub,.vgg-growth-sub,.vgg-kpi-label,.vgg-axis-lbl) {color:#526079;font-size:14px;}
+#main-content .restoredCms .vgg-kpi-val {color:#1f2850;}
+#main-content .restoredCms .dashboard-hero :is(h2,p) {color:#fff;}
+#main-content .restoredCms :focus-visible {outline:3px solid #4678d6;outline-offset:2px;}
+@media(max-width:700px){#main-content .restoredCms h1{font-size:25px;}#main-content .restoredCms :is(.admin-table,.resource-table) :is(th,td){padding:12px;}}
+
+/* Resource metadata is grouped so names and actions retain usable widths. */
+#main-content .restoredCms .resource-table {table-layout:fixed;min-width:1100px;}
+#main-content .restoredCms .resource-table th:nth-child(1){width:25%;}
+#main-content .restoredCms .resource-table th:nth-child(2){width:11%;}
+#main-content .restoredCms .resource-table th:nth-child(3){width:11%;}
+#main-content .restoredCms .resource-table th:nth-child(4){width:16%;}
+#main-content .restoredCms .resource-table th:nth-child(5){width:15%;}
+#main-content .restoredCms .resource-table th:nth-child(6){width:10%;}
+#main-content .restoredCms .resource-table th:nth-child(7){width:174px;}
+#main-content .restoredCms .resource-table :is(th,td){padding:14px 12px;overflow-wrap:break-word;word-break:normal;vertical-align:top;}
+#main-content .restoredCms .resource-table td:first-child{min-width:0;}
+#main-content .restoredCms .resource-table td:nth-child(6){white-space:nowrap;}
+#main-content .restoredCms .resource-table .file-chip{display:flex;max-width:100%;align-items:flex-start;gap:8px;}
+#main-content .restoredCms .resource-file-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;line-height:1.6;}
+#main-content .restoredCms .resource-table .resource-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;min-width:0;}
+#main-content .restoredCms .resource-table .resource-actions :is(button,a){width:100%;min-width:0;gap:5px;padding:7px 8px;white-space:nowrap;}
+#main-content .restoredCms .resource-actions .resource-edit{background:#fff7e8;border-color:#eed6ac;color:#925500;}
+#main-content .restoredCms .resource-actions .resource-edit:hover{background:#ffedcb;}
+
+#main-content .restoredCms .resource-table :is(th,td):last-child{position:sticky;right:0;z-index:1;background:#fff;box-shadow:-3px 0 6px #233d5c0a;}
+#main-content .restoredCms .resource-table th:last-child{background:#eaf0f7;z-index:2;}
+#main-content .restoredCms .resource-table tr:hover td:last-child{background:#eef4fc;}
+

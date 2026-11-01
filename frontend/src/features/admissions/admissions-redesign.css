@@ -216,6 +216,7 @@
   text-align: end;
 }
 .admissions-reference .admission-step-08 {
+  --section-heading-color: #fff;
   padding-block: 64px;
 }
 .admissions-reference .consent-field label {
@@ -358,6 +359,7 @@
   color: #dce2f0;
 }
 .admissions-reference .admission-step-08 .consult-form-wrap {
+  --section-heading-color: var(--color-brand-blue);
   background: #fff;
   color: #192342;
   border-radius: 16px;
@@ -564,4 +566,30 @@
   .admissions-reference #dieu-kien-phuong-thuc .accordion .answer {
     padding: 0 20px 20px;
   }
+}
+.admissions-reference .section-nav-shell {
+  top: var(--admissions-header-height, 108px);
+}
+html:has(.admissions-reference) {
+  scroll-padding-top: 0;
+}
+#main-content.admissions-reference [id] {
+  scroll-margin-top: calc(var(--admissions-header-height, 108px) + var(--admissions-nav-height, 60px) + 20px);
+}
+.admissions-reference .fee-panel .btn.ghost {
+  color: #fff;
+  background: #a41227;
+  border-color: #a41227;
+}
+.admissions-reference .fee-panel .btn.ghost:hover {
+  background: #861020;
+  border-color: #861020;
+}
+.admissions-reference .fee-panel .fee-link {
+  color: #a41227;
+}
+
+/* Section headings do not display ordinal numbers. */
+.admissions-reference .admission-step-number {
+  display: none;
 }

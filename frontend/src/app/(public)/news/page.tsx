@@ -1,6 +1,6 @@
 import { sectionMetadata } from "@/lib/section-metadata";
 import { NewsLanding } from "@/features/news/components/NewsLanding";
-import { getNewsPosts, getPaginatedNewsPosts, newsCategories } from "@/features/news/data";
+import { newsCategories, getPaginatedNewsPosts, getNewsPosts } from "@/features/news/data";
 
 // PAGE DÙNG TEMPLATE CHUNG: nội dung route lấy từ data/site.ts.
 export const metadata = sectionMetadata("news");
@@ -15,19 +15,19 @@ export default async function NewsPage({
     ? requestedCategory
     : undefined;
   const query = filters.q?.trim().slice(0, 100) || undefined;
-  const requestedPage = Number.parseInt(filters.page ?? "1", 10);
-  const page = Number.isSafeInteger(requestedPage) && requestedPage > 0 ? requestedPage : 1;
-  const [{ posts, pagination }, newestPosts] = await Promise.all([
+  const requestedPage = Number(filters.page ?? 1);
+  const page = Number.isSafeInteger(requestedPage) && requestedPage > 0 && requestedPage <= 100000 ? requestedPage : 1;
+  const [listing, latest] = await Promise.all([
     getPaginatedNewsPosts({ category: activeCategory, q: query, page, limit: 6 }),
     getNewsPosts({ limit: 1 }),
   ]);
   return (
     <NewsLanding
-      posts={posts}
-      newestPostId={newestPosts[0]?.id}
+      posts={listing.posts}
+      newestPostId={latest[0]?.id}
       activeCategory={activeCategory}
       query={query}
-      pagination={pagination}
+      pagination={listing.pagination}
     />
   );
 }

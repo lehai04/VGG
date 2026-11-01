@@ -1,3 +1,4 @@
+import { resourceUpstream } from "@/lib/resource-upstream";
 import { NextRequest, NextResponse } from "next/server";
 import { demoResources } from "@/features/resources/demo-resources";
 
@@ -29,17 +30,22 @@ export async function GET(request: NextRequest) {
   if ((!source.startsWith("/api/media/") && !isDemoFile) || source.includes(".."))
     return NextResponse.json({ message: "Nguồn tài liệu không được hỗ trợ." }, { status: 403 });
   try {
-    const upstream = await fetch(new URL(source, request.nextUrl.origin), { cache: "no-store" });
+    const upstream = await resourceUpstream(source);
     if (!upstream.ok || !upstream.body)
       return NextResponse.json(
         { message: "Không thể mở tài liệu." },
         { status: upstream.status || 502 },
       );
     const headers = new Headers();
-    headers.set("content-type", contentTypeFor(name, upstream.headers.get("content-type")));
+    const type = contentTypeFor(name, upstream.headers.get("content-type"));
+    const safeInline = /^(application\/pdf|image\/(png|jpeg|webp|avif|gif))(;|$)/i.test(type);
+    headers.set("content-type", type);
+    headers.set("x-content-type-options", "nosniff");
+    headers.set("x-frame-options", "SAMEORIGIN");
+    headers.set("content-security-policy", safeInline ? "default-src 'none'; frame-ancestors 'self'; base-uri 'none'" : "sandbox; default-src 'none'; frame-ancestors 'self'");
     headers.set(
       "content-disposition",
-      `${download ? "attachment" : "inline"}; filename*=UTF-8''${encodeURIComponent(name)}`,
+      `${download || !safeInline ? "attachment" : "inline"}; filename*=UTF-8''${encodeURIComponent(name)}`,
     );
     headers.set("cache-control", "public, max-age=300");
     const length = upstream.headers.get("content-length");

@@ -228,7 +228,7 @@ export const luatKinhTePageContent: ProgrammePageContent = {
       {
         group: "",
         title: "Nghiên cứu & giảng dạy",
-        sub: "Giảng dạy, nghiên cứu tại trường đại học, viện nghiên cứu, trung tâm đào tạo; tiếp tục học lên trình độ tiến sĩ theo quy định.",
+        sub: "Giảng dạy, nghiên cứu tại trường đại học, viện nghiên cứu, trung tâm đào tạo; tiếp tục học lên trình độ Tiến sĩ theo quy định.",
       },
     ],
   },
@@ -324,7 +324,7 @@ export const luatKinhTePageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ mục tiêu của bạn."],
       body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Luật kinh tế. Đội ngũ tư vấn sẽ hỗ trợ bạn đối chiếu điều kiện, học phí và hồ sơ dự tuyển.",
       benefits: [
@@ -450,7 +450,7 @@ export const luatKinhTePageContent: ProgrammePageContent = {
 
 export const luatKinhTeProgramme: Programme = {
   id: "luat-kinh-te",
-  code: "380107",
+  code: "8380107",
   title: "Luật Kinh tế",
   englishTitle: "Master of Laws in Economic Law",
   degree: "Thạc sĩ",
@@ -459,7 +459,7 @@ export const luatKinhTeProgramme: Programme = {
   credits: 60,
   duration: "18 tháng",
   studyMode: "Chính quy tập trung, tiếng Việt",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   summary:
     "Phát triển năng lực phân tích, tư vấn và giải quyết các vấn đề pháp lý trong hoạt động doanh nghiệp, đầu tư, thương mại và cạnh tranh trong bối cảnh hội nhập.",
   schedule:

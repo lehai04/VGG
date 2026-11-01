@@ -16,10 +16,12 @@ export const contactItems = [
 ] as const;
 
 export const aboutLinks = [
-  { label: "Tin tức", href: "/news" },
-  { label: "Sự kiện", href: "/news" },
+  { label: "Giới thiệu", href: "/discover#gioi-thieu" },
+  { label: "Tầm nhìn và Sứ mệnh", href: "/discover#tam-nhin-su-menh" },
+  { label: "Triết lý giáo dục", href: "/discover#triet-ly-giao-duc" },
   { label: "Giá trị cốt lõi", href: "/discover#gia-tri-cot-loi" },
-  { label: "Trung tâm khảo thí tiếng Anh", href: "/resources" },
+  { label: "Vì sao chọn Viện Sau đại học", href: "/discover#vi-sao-chon-vgg" },
+  { label: "Đội ngũ lãnh đạo", href: "/discover#doi-ngu-lanh-dao" },
 ] as const;
 
 export const quickLinks = [

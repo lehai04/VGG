@@ -166,7 +166,7 @@ export const quanHeCongChungPageContent: ProgrammePageContent = {
       {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
-          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ.",
+          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ.",
         ],
         groups: [
           {
@@ -204,7 +204,7 @@ export const quanHeCongChungPageContent: ProgrammePageContent = {
       },
       {
         title: "Nghiên cứu và giảng dạy",
-        sub: "Nghiên cứu, giảng dạy và tiếp tục học ở trình độ tiến sĩ.",
+        sub: "Nghiên cứu, giảng dạy và tiếp tục học ở trình độ Tiến sĩ.",
       },
     ],
   },
@@ -246,7 +246,7 @@ export const quanHeCongChungPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình Quan hệ công chúng, điều kiện đầu vào và lộ trình đăng ký.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ mục tiêu học tập của bạn."],
       body: "Trao đổi về chương trình Quan hệ công chúng, điều kiện đầu vào và lộ trình đăng ký.",
       benefits: [],
@@ -289,7 +289,7 @@ export const quanHeCongChungPageContent: ProgrammePageContent = {
   },
   fees: {
     heading: "Chủ động chuẩn bị cho hành trình học.",
-    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."],
+    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."],
     intake: "TUYỂN SINH THẠC SĨ 2027",
     language: "Tiếng Việt",
     total: "110.000.000 đồng",
@@ -351,7 +351,7 @@ export const quanHeCongChungProgramme: Programme = {
   summary:
     "Phát triển năng lực hoạch định chiến lược, quản trị truyền thông, sáng tạo nội dung và nghiên cứu quan hệ công chúng trong môi trường số.",
   tuition: "110.000.000 VNĐ",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   orientations: ["Ứng dụng", "Nghiên cứu"],
   creditsLabel: "60–61",
 };

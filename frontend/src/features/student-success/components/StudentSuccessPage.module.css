@@ -64,7 +64,7 @@
   color: #fff;
   background:
     linear-gradient(rgba(152, 13, 31, 0.91), rgba(152, 13, 31, 0.91)),
-    url("/images/pages/student-success/content/campus.jpg") center/cover;
+    url("/images/pages/student-success/content/campus.webp") center/cover;
   border-radius: 0 0 18px 18px;
 }
 .statement h2 {
@@ -91,6 +91,7 @@
   order: 2;
 }
 .zigzag.reverse {
+  --section-heading-color: #fff;
   color: #fff;
   background: #171d45;
 }
@@ -188,10 +189,6 @@
 }
 .card img {
   object-fit: cover;
-  transition: transform 0.45s;
-}
-.card:hover img {
-  transform: scale(1.04);
 }
 .card h3 {
   margin: 0 0 10px;
@@ -250,7 +247,7 @@
   color: #fff;
   background:
     linear-gradient(90deg, rgba(18, 25, 63, 0.94), rgba(18, 25, 63, 0.25)),
-    url("/images/pages/student-success/content/campus.jpg") center/cover;
+    url("/images/pages/student-success/content/campus.webp") center/cover;
 }
 .community > div {
   max-width: 790px;

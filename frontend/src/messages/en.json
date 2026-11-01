@@ -8,8 +8,8 @@
     "university": "VAN LANG UNIVERSITY"
   },
   "common": {
-    "discoverMore": "Explore Viện Sau Đại học",
-    "aboutVgg": "About Viện Sau Đại học",
+    "discoverMore": "Explore Viện Sau đại học",
+    "aboutVgg": "About Viện Sau đại học",
     "readMore": "Learn more",
     "contact": "Contact us",
     "applyNow": "Apply now"
@@ -37,7 +37,7 @@
     "chooseProgramme": "Choose a programme",
     "submit": "Submit request",
     "submitting": "Submitting...",
-    "success": "Your request has been sent. Viện Sau Đại học will contact you soon.",
+    "success": "Your request has been sent. Viện Sau đại học will contact you soon.",
     "invalid": "Some information is invalid. Please check and try again.",
     "connectionError": "Unable to connect to the server. Please try again later.",
     "privacy": "Your information is confidential and used only for admissions counselling."

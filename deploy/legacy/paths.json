@@ -1,0 +1,46 @@
+[
+  {
+    "from": "deploy/bootstrap.conf",
+    "to": "deploy\\legacy\\bootstrap.conf"
+  },
+  {
+    "from": "deploy/release.py",
+    "to": "deploy\\legacy\\release.py"
+  },
+  {
+    "from": "deploy/tests",
+    "to": "deploy\\legacy\\release-tests"
+  },
+  {
+    "from": ".github/workflows/rollback.yml",
+    "to": "deploy\\legacy\\rollback.yml"
+  },
+  {
+    "from": "scripts/static-handover",
+    "to": "deploy\\legacy\\static-handover"
+  },
+  {
+    "from": "deploy/handover",
+    "to": "deploy\\legacy\\handover"
+  },
+  {
+    "from": "deploy/handover-v2",
+    "to": "deploy\\legacy\\handover-v2"
+  },
+  {
+    "from": "ecosystem.config.cjs",
+    "to": "deploy\\legacy\\ecosystem.config.cjs"
+  },
+  {
+    "from": "deploy/pre-deploy.example",
+    "to": "deploy\\legacy\\pre-deploy.example"
+  },
+  {
+    "from": "deploy/Dockerfile",
+    "to": "deploy\\legacy\\Dockerfile"
+  },
+  {
+    "from": "deploy/cms",
+    "to": "deploy\\legacy\\native-cms"
+  }
+]

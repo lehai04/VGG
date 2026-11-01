@@ -3,14 +3,14 @@
    Font sources and OFL licenses are bundled in public/fonts/vlu. */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("/fonts/vlu/PlusJakartaSans-Variable.ttf") format("truetype");
+  src: url("/fonts/vlu/PlusJakartaSans-Variable.woff2") format("woff2");
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/vlu/IBMPlexSans-Variable.ttf") format("truetype");
+  src: url("/fonts/vlu/IBMPlexSans-Variable.woff2") format("woff2");
   font-weight: 100 700;
   font-style: normal;
   font-display: swap;
@@ -28,6 +28,8 @@
   --weight-bold: 700;
   --type-h1: 56px;
   --type-h2: 40px;
+  --section-heading-color: var(--color-brand-blue, #1f2251);
+  --section-heading-gap: 24px;
   --type-h3: 24px;
   --type-h4: 18px;
   --type-h5: 18px;
@@ -52,6 +54,33 @@
   --heading-md: var(--type-h2);
   --heading-sm: var(--type-h3);
 }
+/* One H2 contract for public content, including legacy label/subtitle markup.
+   The public main ID deliberately outranks page-specific !important rules.
+   Footer/navigation and dialogs retain their compact interface typography. */
+:root body #main-content h2:not(:where(footer *, nav *, dialog *, [role="dialog"] *, .cms-rich-content *)) {
+  color: var(--section-heading-color) !important;
+  font-family: var(--font-heading) !important;
+  font-size: var(--type-h2) !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+  text-wrap: balance !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  margin-block: 0 var(--section-heading-gap);
+}
+:root body #main-content h2:not(:where(footer *, nav *, dialog *, [role="dialog"] *, .cms-rich-content *)) :is(em, strong, b, span, a) {
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  font-style: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+}
 html body {
   font-family: var(--font-sans);
   font-size: var(--text-16);
@@ -61,37 +90,37 @@ html body {
 body :is(button, input, select, textarea, optgroup) {
   font-family: var(--font-sans);
 }
-:root body h1 {
+:root body h1:not(:where(.cms-rich-content *)) {
   font-size: var(--type-h1) !important;
   line-height: 1.12 !important;
 }
-:root body h2 {
+:root body h2:not(:where(.cms-rich-content *)) {
   font-size: var(--type-h2) !important;
   line-height: 1.3 !important;
 }
-:root body h3 {
+:root body h3:not(:where(.cms-rich-content *)) {
   font-size: var(--type-h3) !important;
   line-height: 1.291667 !important;
 }
-:root body h4 {
+:root body h4:not(:where(.cms-rich-content *)) {
   font-size: var(--type-h4) !important;
   line-height: 1.277778 !important;
 }
-:root body h5 {
+:root body h5:not(:where(.cms-rich-content *)) {
   font-size: var(--type-h5) !important;
   line-height: 1.3 !important;
 }
-:root body h6 {
+:root body h6:not(:where(.cms-rich-content *)) {
   font-size: var(--type-h6) !important;
   line-height: 1.35 !important;
 }
-:root body :is(h1, h2, h3, h4, h5, h6) {
+:root body :is(h1, h2, h3, h4, h5, h6):not(:where(.cms-rich-content *)) {
   font-family: var(--font-heading) !important;
   font-weight: 700 !important;
   overflow-wrap: anywhere;
 }
 /* Explicit Book variants for editorial headings. */
-:root body :is(h1, h2, h3, h4, h5, h6).type-book {
+:root body :is(h1, h2, h3, h4, h5, h6):not(:where(.cms-rich-content *)).type-book {
   font-weight: 400 !important;
 }
 .type-italic {
@@ -210,7 +239,7 @@ body :is(button, input, select, textarea, optgroup) {
   overflow-wrap: break-word !important;
   max-width: 100%;
 }
-:root body :is(h1, h2, h3, h4, h5, h6) {
+:root body :is(h1, h2, h3, h4, h5, h6):not(:where(.cms-rich-content *)) {
   max-width: 100% !important;
 }
 @media (max-width: 767px) {
@@ -248,6 +277,47 @@ body :is(button, input, select, textarea, optgroup) {
 :root body .type-career-title {font-size:24px!important;line-height:1.35!important;}
 @media(max-width:767px){:root body .type-career-title {font-size:20px!important;}}
 
+/* Section labels have the same appearance whether rendered as H2 or a label.
+   This role must outrank the generic H2 rule above. */
+:root body #main-content [data-section-label],
+:root body #main-content.admissions-reference .admission-step-heading h2 {
+  color: #ff98a8 !important;
+  font-family: var(--font-heading) !important;
+  font-size: var(--type-h2) !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.01em !important;
+  margin-block: 0 14px;
+}
+
+/* Blue supporting headings stay subordinate to the pink section labels. */
+:root body #main-content [data-section-subtitle] {
+  color: var(--section-heading-color) !important;
+  font-family: var(--font-heading) !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+  /* The bundled heading font has no italic face; allow its oblique rendering. */
+  font-synthesis: style;
+  line-height: 1.45 !important;
+  letter-spacing: normal !important;
+  margin-block: 0 24px;
+}
+:root body #main-content [data-section-subtitle] :is(em, strong, b, span) {
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  font-style: inherit !important;
+  line-height: inherit !important;
+}
+@media (max-width: 767px) {
+  :root body #main-content [data-section-subtitle] {
+    font-size: 20px !important;
+  }
+}
+
 /* Semantic roles take precedence over legacy page-specific declarations. */
 :root body main [data-section-label],
 :root body main .admissions-reference .section-number,
@@ -280,7 +350,7 @@ body :is(button, input, select, textarea, optgroup) {
 :root body main :is(p, li, td, th) {
   font-size: max(1em, 16px);
 }
-:root body :is(h1, h2, h3, h4, h5, h6) :is(em, strong) {
+:root body :is(h1, h2, h3, h4, h5, h6):not(:where(.cms-rich-content *)) :is(em, strong) {
   font-family: inherit !important;
 }
 :root body main p:not([data-section-label]):not([data-section-subtitle]):not([data-banner-label]):not([data-banner-description]):not([class*="eyebrow"]):not([class*="kicker"]):not([class*="caption"]):not([class*="meta"]) {

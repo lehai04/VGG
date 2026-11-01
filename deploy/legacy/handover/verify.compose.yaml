@@ -1,0 +1,52 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: vgg
+      POSTGRES_PASSWORD: handover_test_only
+      POSTGRES_DB: vgg_public
+    volumes:
+      - ./sql/01-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U vgg -d vgg_public']
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  app:
+    image: node:26.12.1-bookworm-slim
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://vgg:handover_test_only@db:5432/vgg_public
+      PUBLIC_APP_URL: https://sdh.vlu.edu.vn
+      BACKEND_HOST: 127.0.0.1
+      BACKEND_PORT: 4000
+      BACKEND_INTERNAL_URL: http://127.0.0.1:4000
+      HOSTNAME: localhost
+      NODE_OPTIONS: --dns-result-order=ipv4first
+      PORT: 3000
+      VGG_DEMO_NEWS: 'false'
+      VGG_DEMO_RESOURCES: 'false'
+    volumes:
+      - ../../outputs/sdh-handover/builds:/archives:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    entrypoint: [sh, -ec]
+    command:
+      - |
+        mkdir -p /runtime/fe /runtime/be
+        cd /archives && sha256sum -c SHA256SUMS
+        tar -xzf /archives/be-linux-amd64.tar.gz -C /runtime/be
+        tar -xzf /archives/fe-linux-amd64.tar.gz -C /runtime/fe
+        node /runtime/be/backend/dist/seed-public.mjs
+        node /runtime/be/backend/dist/server.js &
+        node /runtime/fe/frontend/server.js &
+        wait
+  nginx:
+    image: nginx:stable-bookworm
+    network_mode: service:app
+    volumes:
+      - ./sdh.nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ../../outputs/sdh-test-tls:/etc/nginx/tls/sdh.vlu.edu.vn:ro
+    depends_on:
+      - app

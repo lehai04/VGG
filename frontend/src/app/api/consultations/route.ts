@@ -15,10 +15,18 @@ export async function POST(request: NextRequest) {
       signal: AbortSignal.timeout(8000),
       cache: "no-store",
     });
-    // Chỉ chuyển thông báo và mã HTTP về UI; không phơi toàn bộ payload nội bộ.
-    const payload = await response.json() as { message?: string };
-    return NextResponse.json({ message: payload.message || (response.ok ? "Gửi yêu cầu thành công." : "Không thể gửi yêu cầu.") }, { status: response.status });
-  // Bao gồm lỗi mạng, timeout và JSON không hợp lệ; trả thông báo chung bằng 502.
+    // Backend/proxy upstream có thể trả trang HTML/text khi lỗi gateway. Đừng
+    // biến lỗi HTTP thật đó thành 502 chỉ vì body không phải JSON.
+    const body = await response.text();
+    let message: string | undefined;
+    try {
+      const payload = JSON.parse(body) as { message?: unknown };
+      if (typeof payload.message === "string") message = payload.message;
+    } catch {
+      // Không chuyển tiếp nội dung upstream thô vì có thể chứa chi tiết nội bộ.
+    }
+    return NextResponse.json({ message: message || (response.ok ? "Gửi yêu cầu thành công." : "Không thể gửi yêu cầu.") }, { status: response.status });
+  // Chỉ lỗi kết nối/timeout mới thành 502.
   } catch {
     return NextResponse.json({ message: "Hệ thống đang bận. Vui lòng thử lại sau." }, { status: 502 });
   }

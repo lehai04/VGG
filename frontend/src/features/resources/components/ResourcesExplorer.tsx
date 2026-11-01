@@ -1,4 +1,5 @@
 "use client";
+import { EmptyContent } from "@/shared/components/EmptyContent";
 import { type FormEvent, useEffect, useMemo, useState } from "react";
 import {
   Building2,
@@ -210,22 +211,20 @@ export function ResourcesExplorer({ resources, categories, resourceTypes: types 
             ))}
           </div>
         ) : (
-          <div className={styles.empty}>
-            <Search />
-            <h3>Không tìm thấy tài liệu</h3>
-            <p>Hãy thử từ khóa hoặc bộ lọc khác.</p>
-            <button
-              onClick={() => {
-                setQuery("");
-                setAppliedQuery("");
-                setCategory("ALL");
-                setType("ALL");
-                setPage(1);
-              }}
-            >
-              Xóa bộ lọc
-            </button>
-          </div>
+          <EmptyContent
+            title="Không tìm thấy tài liệu"
+            description={appliedQuery || category !== "ALL" || type !== "ALL"
+              ? 'Hãy thử từ khóa khác hoặc chọn “Tất cả” để xem những tài liệu mới nhất.'
+              : 'Tài liệu đang được cập nhật. Vui lòng quay lại sau để xem những tài nguyên mới nhất.'}
+            actionLabel={appliedQuery || category !== "ALL" || type !== "ALL" ? "Xem tất cả tài liệu" : undefined}
+            onReset={() => {
+              setQuery("");
+              setAppliedQuery("");
+              setCategory("ALL");
+              setType("ALL");
+              setPage(1);
+            }}
+          />
         )}
         {totalPages > 1 && (
           <nav className={styles.pagination} aria-label="Phân trang tài nguyên">

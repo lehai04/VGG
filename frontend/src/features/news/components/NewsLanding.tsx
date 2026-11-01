@@ -1,3 +1,4 @@
+import { EmptyContent } from "@/shared/components/EmptyContent";
 import Image from "next/image";
 import { ArrowRight, Search, UserRound } from "lucide-react";
 import Link from "@/i18n/components/LocalizedLink";
@@ -43,7 +44,7 @@ export function NewsLanding({
       <header data-site-banner className={styles.hero} data-reveal>
         <Image
           src="/images/pages/news/content/banner.jpg"
-          alt="Tin tức và sự kiện Viện Sau Đại học"
+          alt="Tin tức và sự kiện Viện Sau đại học"
           fill
           priority
           sizes="100vw"
@@ -112,7 +113,7 @@ export function NewsLanding({
                   <h3 className="type-card-title">{post.title}</h3>
                   <div className={styles.byline}>
                     <UserRound />
-                    <b>{post.authorName || post.author?.fullName || "Viện Sau Đại học"}</b>
+                    <b>{post.authorName || post.author?.fullName || "Viện Sau đại học"}</b>
                     <i>·</i>
                     <time>
                       {post.publishedAt
@@ -129,12 +130,14 @@ export function NewsLanding({
             ))}
           </div>
         ) : (
-          <div className={styles.empty}>
-            <Search />
-            <h3>Không tìm thấy bài viết</h3>
-            <p>Hãy thử từ khóa khác hoặc chọn “Tất cả” để xem những nội dung mới nhất.</p>
-            <Link href="/news">Xem tất cả bài viết</Link>
-          </div>
+          <div className={styles.emptyContainer}><EmptyContent
+            title="Không tìm thấy bài viết"
+            description={query || activeCategory || pagination.page > 1
+              ? 'Hãy thử từ khóa khác hoặc chọn “Tất cả” để xem những nội dung mới nhất.'
+              : 'Nội dung đang được cập nhật. Vui lòng quay lại sau để xem những bài viết mới nhất.'}
+            href="/news"
+            actionLabel={query || activeCategory || pagination.page > 1 ? "Xem tất cả bài viết" : undefined}
+          /></div>
         )}
         {pagination.totalPages > 1 && (
           <nav className={styles.pagination} aria-label="Phân trang tin tức">

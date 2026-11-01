@@ -136,7 +136,7 @@ export const quanTriKhachSanPageContent: ProgrammePageContent = {
       {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
-          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình thạc sĩ.",
+          "Lưu ý: học phần bổ sung kiến thức không tính vào 60 tín chỉ của chương trình Thạc sĩ.",
         ],
         groups: [
           {
@@ -176,7 +176,7 @@ export const quanTriKhachSanPageContent: ProgrammePageContent = {
       },
       {
         title: "Nghiên cứu và đào tạo",
-        sub: "Giảng dạy, nghiên cứu hoặc tiếp tục học ở bậc tiến sĩ.",
+        sub: "Giảng dạy, nghiên cứu hoặc tiếp tục học ở bậc Tiến sĩ.",
       },
     ],
   },
@@ -216,7 +216,7 @@ export const quanTriKhachSanPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình Quản trị khách sạn, điều kiện đầu vào và lộ trình đăng ký.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ mục tiêu học tập của bạn."],
       body: "Trao đổi về chương trình Quản trị khách sạn, điều kiện đầu vào và lộ trình đăng ký.",
       benefits: [],
@@ -258,7 +258,7 @@ export const quanTriKhachSanPageContent: ProgrammePageContent = {
   },
   fees: {
     heading: "Chủ động chuẩn bị cho hành trình học.",
-    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh thạc sĩ 2027."],
+    intro: ["Học phí toàn khóa được chia thành ba đợt theo thông báo tuyển sinh Thạc sĩ 2027."],
     intake: "TUYỂN SINH THẠC SĨ 2027",
     language: "Tiếng Việt",
     total: "85.000.000 đồng",
@@ -320,7 +320,7 @@ export const quanTriKhachSanProgramme: Programme = {
   summary:
     "Phát triển năng lực quản trị chiến lược, vận hành, tài chính, công nghệ và trải nghiệm khách hàng trong ngành khách sạn theo hướng đổi mới và bền vững.",
   tuition: "85.000.000 VNĐ",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
 };
 export function getQuanTriKhachSanCurricula(): CurriculumTrack[] {
   return [

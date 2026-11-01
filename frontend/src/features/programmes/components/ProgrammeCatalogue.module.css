@@ -1353,7 +1353,7 @@
   display: grid;
 
   grid-template-columns:
-    58px
+    64px
     minmax(0, 1fr)
     88px
     145px
@@ -1368,6 +1368,7 @@
 /* DANH MỤC NGÀNH - BỘ LỌC, THẺ VÀ CHƯƠNG TRÌNH */
 
 .vgg-pd-card__code {
+  white-space: nowrap;
   align-self: start;
 
   padding-top: 4px;
@@ -1990,77 +1991,6 @@
 
 /* DANH MỤC NGÀNH - BỘ LỌC, THẺ VÀ CHƯƠNG TRÌNH */
 
-.vgg-pd__empty {
-  min-height: 300px;
-
-  padding: 50px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  flex-direction: column;
-
-  border: 1px solid #dedfe4;
-
-  border-radius: 13px;
-
-  background: #ffffff;
-
-  text-align: center;
-}
-
-/* DANH MỤC NGÀNH - BỘ LỌC, THẺ VÀ CHƯƠNG TRÌNH */
-
-.vgg-pd__empty svg {
-  margin-bottom: 18px;
-
-  color: var(--vgg-pd-red);
-}
-
-/* DANH MỤC NGÀNH - BỘ LỌC, THẺ VÀ CHƯƠNG TRÌNH */
-
-.vgg-pd__empty h3 {
-  margin: 0 0 8px;
-
-  color: var(--vgg-pd-blue);
-
-  font-size: 23px;
-}
-
-/* DANH MỤC NGÀNH - BỘ LỌC, THẺ VÀ CHƯƠNG TRÌNH */
-
-.vgg-pd__empty p {
-  margin: 0 0 22px;
-
-  color: var(--vgg-pd-muted);
-
-  font-size: var(--text-12);
-}
-
-/* DANH MỤC NGÀNH - BỘ LỌC, THẺ VÀ CHƯƠNG TRÌNH */
-
-.vgg-pd__empty button {
-  min-height: 42px;
-
-  padding: 0 16px;
-
-  border: 0;
-
-  background: var(--vgg-pd-red);
-
-  color: #ffffff;
-
-  font-family: var(--font-sans);
-
-  font-size: var(--text-10);
-
-  font-weight: 700;
-
-  cursor: pointer;
-}
 
 @media (max-width: 950px) {
   .vgg-pd__intro {
@@ -2164,7 +2094,7 @@
     min-height: 132px;
 
     grid-template-columns:
-      40px
+      64px
       minmax(0, 1fr)
       36px;
 
@@ -2313,7 +2243,7 @@
 
 @container programme-results (max-width: 400px) {
   .vgg-pd-card__row {
-    grid-template-columns: 40px repeat(4, minmax(0, 1fr)) 44px;
+    grid-template-columns: 64px repeat(4, minmax(0, 1fr)) 44px;
     gap: 12px 6px;
   }
   .vgg-pd-card__stat:nth-child(3) {

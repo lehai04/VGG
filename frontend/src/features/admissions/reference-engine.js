@@ -1,8 +1,9 @@
 // Adapted from the user-supplied admissions reference, 25/10/2026.
 // Data and UI logic are bundled as a local module; no source scripts are evaluated.
 import { sendAdmissionConsultation } from "./consultation-request";
+import { admissionProgrammeSlugs } from "./programme-links";
 /** @param {HTMLElement} root @param {typeof import('./editorial-content.json') | null} [editorial] */
-export function initializeAdmissions(root, editorial = null) {
+export function initializeAdmissions(root, editorial = null, catalogue = []) {
   const originalTitle = globalThis.document.title;
   const controller = new AbortController();
   const timers = new Set();
@@ -771,7 +772,7 @@ export function initializeAdmissions(root, editorial = null) {
           {
             group: "Kinh doanh (73401)",
             eligible_majors:
-              "Quản trị kinh doanh (7340101); Marketing (7340115); Bất động sản (7340116); Kinh doanh quốc tế (7340120); Kinh doanh thương mại (7340121); Thương mại điện tử (7340122); Logistics và quản lý chuỗi cung ứng (7340123/7510605).",
+              "Quản trị kinh doanh (7340101); Marketing (7340115); Bất động sản (7340116); Kinh doanh quốc tế (7340120); Kinh doanh thương mại (7340121); Thương mại điện tử (7340122); Logistics và Quản lý chuỗi cung ứng (7340123/7510605).",
             supplementary_requirement:
               "Ứng viên sẽ học tối đa 19TC bổ sung kiến thức gồm 6 môn học*:\n1. Luật Doanh nghiệp (3TC),\n2. Luật Thương mại (3TC),\n3. Luật Dân sự và Luật tố tụng dân sự (4TC),\n4. Luật Thương mại quốc tế (3TC),\n5. Luật Hiến pháp và Luật Hành chính (3TC),\n6. Luật Hình sự và Luật Tố tụng hình sự (3TC).\n(*): Học viên được xét công nhận và chuyển đổi tín chỉ đối với các học phần trong danh mục này nếu đã học trong chương trình đào tạo đại học. Hội đồng chuyên môn xem xét công nhận, chuyển đổi tín chỉ trên cơ sở đối sánh chuẩn đầu ra, nội dung và khối lượng học tập, cách thức đánh giá học phần và các điều kiện bảo đảm chất lượng thực hiện chương trình.",
           },
@@ -941,7 +942,7 @@ export function initializeAdmissions(root, editorial = null) {
               "Ứng viên sẽ học tối đa 10TC bổ sung kiến thức gồm 5 môn học:\n1. Tư duy thiết kế (2TC),\n2. Mỹ thuật học (2TC).\n3. Lịch sử Mỹ thuật (3TC)\n4. Văn hóa dân tộc học nghệ thuật (3TC).",
           },
           {
-            group: "Công nghệ thông tin (7480201)",
+            group: "Công nghệ Thông tin (7480201)",
             eligible_majors:
               "Khoa học máy tính (7480101), trí tuệ nhân tạo (AI) (7480107), khoa học dữ liệu (7460108)",
             supplementary_requirement:
@@ -1309,7 +1310,7 @@ export function initializeAdmissions(root, editorial = null) {
       },
       {
         id: "logistics",
-        name: "Logistics và quản lý chuỗi cung ứng",
+        name: "Logistics và Quản lý chuỗi cung ứng",
         code: "8510605",
         tracks: [
           { name: "Ứng dụng", duration_months: 18 },
@@ -1336,7 +1337,7 @@ export function initializeAdmissions(root, editorial = null) {
         bsk_groups: [
           {
             group: "Kinh doanh (73401)",
-            eligible_majors: "Logistics và quản lý chuỗi cung ứng (7340123/7510605)",
+            eligible_majors: "Logistics và Quản lý chuỗi cung ứng (7340123/7510605)",
             supplementary_requirement: "Ứng viên không cần học bổ sung kiến thức.",
           },
           {
@@ -1536,7 +1537,7 @@ export function initializeAdmissions(root, editorial = null) {
       },
       {
         id: "it",
-        name: "Công nghệ thông tin",
+        name: "Công nghệ Thông tin",
         code: "8480201",
         tracks: [
           { name: "Ứng dụng", duration_months: 18 },
@@ -1561,8 +1562,8 @@ export function initializeAdmissions(root, editorial = null) {
             supplementary_requirement: "Ứng viên không cần học bổ sung kiến thức.",
           },
           {
-            group: "Công nghệ thông tin (74802)",
-            eligible_majors: "Công nghệ thông tin (7480201); An ninh mạng (7480208).",
+            group: "Công nghệ Thông tin (74802)",
+            eligible_majors: "Công nghệ Thông tin (7480201); An ninh mạng (7480208).",
             supplementary_requirement: "Ứng viên không cần học bổ sung kiến thức.",
           },
           {
@@ -1588,7 +1589,7 @@ export function initializeAdmissions(root, editorial = null) {
             group: "Khác",
             eligible_majors: "Những ngành không được liệt kê ở trên.",
             supplementary_requirement:
-              "Hội đồng tuyển sinh và Hội đồng Khoa học Khoa Công nghệ thông tin sẽ xem xét từng trường hợp cụ thể và đề xuất các học phần bổ sung kiến thức phù hợp với văn bằng, bảng điểm và định hướng đào tạo của ứng viên, tối đa 15 tín chỉ.",
+              "Hội đồng tuyển sinh và Hội đồng Khoa học Khoa Công nghệ Thông tin sẽ xem xét từng trường hợp cụ thể và đề xuất các học phần bổ sung kiến thức phù hợp với văn bằng, bảng điểm và định hướng đào tạo của ứng viên, tối đa 15 tín chỉ.",
           },
         ],
       },
@@ -1620,8 +1621,8 @@ export function initializeAdmissions(root, editorial = null) {
           },
         ],
         eligibility: [
-          "Đã trúng tuyển chương trình thạc sĩ.",
-          "Tính từ được công nhận tốt nghiệp đại học đến được công nhận trúng tuyển thạc sĩ không quá24 tháng.",
+          "Đã trúng tuyển chương trình Thạc sĩ.",
+          "Tính từ được công nhận tốt nghiệp đại học đến được công nhận trúng tuyển Thạc sĩ không quá24 tháng.",
           "Xếp loại và danh hiệu theo văn bằng, bảng điểm, quyết định hoặc minh chứng hợp lệ của cơ sở đào tạo.",
         ],
         ambiguous_salutatorian:
@@ -1989,14 +1990,14 @@ export function initializeAdmissions(root, editorial = null) {
         note: "Bắt buộc theo bảng hồ sơ dự tuyển.",
       },
       {
-        title: "Bằng tốt nghiệp thạc sĩ",
+        title: "Bằng tốt nghiệp Thạc sĩ",
         quantity: "02 bản",
         mode: "Sao y",
         required: true,
         note: "Bảng hồ sơ trong Thông báo ghi bắt buộc. Điều kiện dự tuyển đồng thời cho phép ứng viên tốt nghiệp đại học hạng giỏi trở lên; ứng viên dự tuyển từ đại học cần liên hệ Viện để được hướng dẫn áp dụng hồ sơ văn bằng phù hợp.",
       },
       {
-        title: "Bảng điểm tốt nghiệp thạc sĩ",
+        title: "Bảng điểm tốt nghiệp Thạc sĩ",
         quantity: "02 bản",
         mode: "Sao y",
         required: true,
@@ -2211,7 +2212,7 @@ export function initializeAdmissions(root, editorial = null) {
       { name: "Phát triển nông thôn", code: "8620116", group: "Nông nghiệp (86201)" },
       { name: "Quản lý tài nguyên rừng", code: "8620211", group: "Lâm nghiệp (86202)" },
       { name: "Quản lý thủy sản", code: "8620305", group: "Thủy sản (86203)" },
-      { name: "Công nghệ thông tin", code: "8480201", group: "Công nghệ thông tin (84802)" },
+      { name: "Công nghệ Thông tin", code: "8480201", group: "Công nghệ Thông tin (84802)" },
       { name: "Y tế công cộng", code: "8720701", group: "Y tế công cộng (87207)" },
     ],
     bachelor_majors: [
@@ -2408,6 +2409,7 @@ export function initializeAdmissions(root, editorial = null) {
     hospitality: "hospitality",
   };
   const programs = DATA.programs.map((p) => ({ ...p, group: groupMap[p.id], degree: "master" }));
+  const additionalFeePrograms = catalogue.filter((p) => p.degree === "Thạc sĩ" && !Object.values(admissionProgrammeSlugs).includes(p.id));
   const PORTAL = "https://tuyensinh.vlu.edu.vn/xet-tuyen/thac-si";
   const rounds = [
     { id: 1, start: "tháng 10/2026", end: "31/12/2026" },
@@ -2468,7 +2470,7 @@ export function initializeAdmissions(root, editorial = null) {
       shown = state.showAll || filtering ? filtered : filtered.slice(0, 6);
     $("#program-result-count").textContent = filtering
       ? filtered.length + " ngành phù hợp"
-      : "Hiển thị " + shown.length + " / 19 ngành thạc sĩ";
+      : "Hiển thị " + shown.length + " / 19 ngành Thạc sĩ";
     $("#program-grid").innerHTML = shown.length
       ? shown
           .map(
@@ -2493,7 +2495,7 @@ export function initializeAdmissions(root, editorial = null) {
               p.id +
               '">Thông tin dự tuyển ' +
               icon("arrow") +
-              "</button></article>",
+              '</button><a class="text-link" href="/' + catalogueLocale + '/programmes/' + admissionProgrammeSlugs[p.id] + '">Xem chi tiết ngành ' + escapeHtml(p.name) + ' ' + icon("arrow") + '</a></article>',
           )
           .join("")
       : '<div class="program-empty"><h3>Chưa tìm thấy chương trình phù hợp.</h3><p>Thử tìm theo tên, mã ngành hoặc bỏ bộ lọc.</p><button class="text-link" id="clear-search">Xóa tìm kiếm và bộ lọc</button></div>';
@@ -2620,8 +2622,26 @@ export function initializeAdmissions(root, editorial = null) {
   }
   function updateFee(reset = false) {
     const p = programs.find((p) => p.id === $("#fee-program").value);
-    if (!p) return;
-    $("#fee-program-name").textContent = p.name;
+    const additional = additionalFeePrograms.find((item) => item.id === $("#fee-program").value);
+    if (!p && !additional) return;
+    const name = p?.name ?? additional.title;
+    $("#fee-program-name").textContent = name;
+    let detailLink = $("#fee-program-detail");
+    if (!detailLink) {
+      detailLink = globalThis.document.createElement("a");
+      detailLink.id = "fee-program-detail";
+      detailLink.className = "text-link";
+      $("#fee-program-name").after(detailLink);
+    }
+    detailLink.href = `/${catalogueLocale}/programmes/${p ? admissionProgrammeSlugs[p.id] : additional.id}`;
+    detailLink.textContent = `Xem chi tiết ngành ${name} →`;
+    if (!p) {
+      $("#fee-variant-field").hidden = true;
+      $("#fee-amount").textContent = additional.tuition || "Liên hệ Viện";
+      $("#fee-caption").textContent = "Theo thông tin chương trình; liên hệ Viện để xác nhận mức áp dụng cho đợt tuyển sinh.";
+      $("#fee-installments").textContent = "Lịch đóng học phí được xác nhận theo thông báo của chương trình.";
+      return;
+    }
     if (reset) {
       $("#fee-variant").innerHTML = p.tuition_variants
         .map(
@@ -2707,7 +2727,7 @@ export function initializeAdmissions(root, editorial = null) {
     {
       title: "Đăng ký trực tuyến",
       detail: "Chọn ngành và gửi hồ sơ dự tuyển",
-      text: "Truy cập cổng tuyển sinh thạc sĩ của Trường, chọn ngành dự tuyển, khai thông tin và tải hồ sơ điện tử theo hướng dẫn.",
+      text: "Truy cập cổng tuyển sinh Thạc sĩ của Trường, chọn ngành dự tuyển, khai thông tin và tải hồ sơ điện tử theo hướng dẫn.",
       items: [
         "Kiểm tra điều kiện và giấy tờ trước khi đăng ký.",
         "Lệ phí xét tuyển: 500.000 đồng, thu một lần khi đăng ký và nộp hồ sơ.",
@@ -2869,7 +2889,7 @@ export function initializeAdmissions(root, editorial = null) {
       .join("");
   }
   let lastDialogTrigger = null;
-  function openDialog(title, body, badge = "Tuyển sinh thạc sĩ 2027", wide = false) {
+  function openDialog(title, body, badge = "Tuyển sinh Thạc sĩ 2027", wide = false) {
     const d = $("#info-dialog");
     if (!d.open) lastDialogTrigger = document.activeElement;
     $("#dialog-title").textContent = title;
@@ -2888,8 +2908,8 @@ export function initializeAdmissions(root, editorial = null) {
       return;
     }
     openDialog(
-      "Kế hoạch tuyển sinh thạc sĩ 2027",
-      '<p>Chọn trong 19 ngành thạc sĩ, với định hướng ứng dụng và/hoặc nghiên cứu tùy chương trình. Ba đợt nhận hồ sơ:</p><div class="notice-rounds">' +
+      "Kế hoạch tuyển sinh Thạc sĩ 2027",
+      '<p>Chọn trong 19 ngành Thạc sĩ, với định hướng ứng dụng và/hoặc nghiên cứu tùy chương trình. Ba đợt nhận hồ sơ:</p><div class="notice-rounds">' +
         rounds
           .map(
             (r) =>
@@ -2905,8 +2925,8 @@ export function initializeAdmissions(root, editorial = null) {
         '</div><h3>Phương thức tuyển sinh</h3><p>Xét tuyển kết hợp phỏng vấn: <strong>Quản trị kinh doanh, Quan hệ công chúng, Mỹ thuật ứng dụng.</strong> Các ngành còn lại xét tuyển.</p><h3>Hình thức và thời gian học</h3><p>Chính quy. Định hướng ứng dụng: 18 tháng; nghiên cứu: 24 tháng. Lịch học bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật.</p><p>Lịch phỏng vấn, công bố kết quả và nhập học được thông báo theo từng đợt tuyển sinh.</p><div class="dialog-actions"><button class="btn primary" data-apply>Xem cổng đăng ký ' +
         icon("arrow") +
         '</button><button class="btn secondary" data-dialog-target="ho-so">Xem hồ sơ cần chuẩn bị</button></div>' +
-        source("Đề án tuyển sinh thạc sĩ 2027, mục II.2 và II.3"),
-      "Tuyển sinh thạc sĩ 2027",
+        source("Đề án tuyển sinh Thạc sĩ 2027, mục II.2 và II.3"),
+      "Tuyển sinh Thạc sĩ 2027",
       true,
     );
   }
@@ -2953,8 +2973,8 @@ export function initializeAdmissions(root, editorial = null) {
         '</button><button class="btn secondary" data-consult="Tư vấn chương trình" data-select-program="' +
         p.id +
         '">Tư vấn ngành này</button></div>' +
-        source("Đề án tuyển sinh thạc sĩ 2027, mục I.5, II.2.2 và Phụ lục 1"),
-      "Chương trình thạc sĩ",
+        source("Đề án tuyển sinh Thạc sĩ 2027, mục I.5, II.2.2 và Phụ lục 1"),
+      "Chương trình Thạc sĩ",
     );
   }
   function showBsk(id) {
@@ -2962,7 +2982,7 @@ export function initializeAdmissions(root, editorial = null) {
     const chosen = programs.some((p) => p.id === id) ? id : $("#fee-program").value || "mba";
     openDialog(
       "Tra cứu ngành phù hợp & bổ sung kiến thức",
-      '<p>Chọn chương trình thạc sĩ và tìm theo tên ngành đại học đã tốt nghiệp. Khoa và Viện sẽ đối chiếu bảng điểm để xác nhận yêu cầu cho từng hồ sơ.</p><div class="lookup-filters"><div class="field"><label for="bsk-program">Chương trình thạc sĩ</label><select id="bsk-program">' +
+      '<p>Chọn chương trình Thạc sĩ và tìm theo tên ngành đại học đã tốt nghiệp. Khoa và Viện sẽ đối chiếu bảng điểm để xác nhận yêu cầu cho từng hồ sơ.</p><div class="lookup-filters"><div class="field"><label for="bsk-program">Chương trình Thạc sĩ</label><select id="bsk-program">' +
         optionsHtml(programs) +
         '</select></div><div class="field"><label for="bsk-search">Ngành đại học / nhóm ngành</label><input id="bsk-search" type="search" placeholder="Ví dụ: quản trị, kỹ thuật…" autocomplete="off"></div></div><div id="bsk-warning"></div><div class="lookup-count" id="bsk-count" aria-live="polite"></div><div id="bsk-results"></div><div class="review-note">Kết quả này là danh mục đối chiếu, chưa xác nhận đủ điều kiện dự tuyển. Hoàn thành bổ sung kiến thức trước khi xét tuyển; kết quả có giá trị 02 năm kể từ khi đạt yêu cầu và được công nhận. Học phí: 1.200.000 đồng/môn.</div>' +
         source(
@@ -3034,13 +3054,13 @@ export function initializeAdmissions(root, editorial = null) {
       return;
     }
     openDialog(
-      "Đăng ký dự tuyển thạc sĩ 2027",
+      "Đăng ký dự tuyển Thạc sĩ 2027",
       '<p>Đăng ký trực tuyến trên Cổng tuyển sinh Trường Đại học Văn Lang.</p><ol><li>Chọn đúng chương trình và đợt tuyển sinh đang mở trên cổng.</li><li>Khai thông tin, tải hồ sơ điện tử và kiểm tra lại trước khi gửi.</li><li>Thực hiện lệ phí xét tuyển 500.000 đồng theo hướng dẫn chính thức.</li><li>Lưu thông tin xác nhận và theo dõi yêu cầu bổ sung.</li></ol><p>Hoàn tất đăng ký và thanh toán theo hướng dẫn trên Cổng tuyển sinh.</p><div class="dialog-actions"><a class="btn primary" href="' +
         PORTAL +
         '" target="_blank" rel="noopener noreferrer">Mở cổng tuyển sinh Văn Lang ' +
         icon("up-right") +
         '</a><button class="btn secondary" data-dialog-target="ho-so">Kiểm tra hồ sơ</button></div>' +
-        source("Đề án tuyển sinh thạc sĩ 2027, mục II.3.7"),
+        source("Đề án tuyển sinh Thạc sĩ 2027, mục II.3.7"),
       "Cổng đăng ký chính thức",
     );
   }
@@ -3073,15 +3093,15 @@ export function initializeAdmissions(root, editorial = null) {
         ) +
         "<h3>Điều kiện xét</h3>" +
         listHtml([
-          "Đã trúng tuyển chương trình thạc sĩ.",
-          "Từ ngày được công nhận tốt nghiệp đại học đến ngày được công nhận trúng tuyển thạc sĩ không quá 24 tháng.",
+          "Đã trúng tuyển chương trình Thạc sĩ.",
+          "Từ ngày được công nhận tốt nghiệp đại học đến ngày được công nhận trúng tuyển Thạc sĩ không quá 24 tháng.",
           "Xếp loại và danh hiệu được chứng minh bằng văn bằng, bảng điểm, quyết định hoặc giấy tờ hợp lệ của cơ sở đào tạo.",
         ]) +
         "<p>Trường hợp tốt nghiệp từ Giỏi trở lên có danh hiệu Á khoa nhưng không phân biệt Á khoa 1/2: xếp loại Xuất sắc được xét 40%, Giỏi 25%. Dấu “—” là mức không quy định trong bảng cho trường hợp tương ứng.</p><h3>Điều kiện duy trì</h3>" +
         listHtml(s.development.maintenance) +
         "<p>Ngừng áp dụng từ thời điểm không còn đáp ứng điều kiện.</p>" +
         policyNote() +
-        source("Đề án tuyển sinh thạc sĩ 2027, mục II.3.5.2–3.5.3");
+        source("Đề án tuyển sinh Thạc sĩ 2027, mục II.3.5.2–3.5.3");
     } else if (kind === "stem") {
       title = "Học bổng đồng hành STEM";
       body =
@@ -3095,7 +3115,7 @@ export function initializeAdmissions(root, editorial = null) {
         ) +
         "" +
         policyNote() +
-        source("Đề án tuyển sinh thạc sĩ 2027, mục II.3.5.4");
+        source("Đề án tuyển sinh Thạc sĩ 2027, mục II.3.5.4");
     } else if (kind === "support") {
       title = "16 nhóm được xét hỗ trợ tài chính";
       wide = true;
@@ -3110,7 +3130,7 @@ export function initializeAdmissions(root, editorial = null) {
           ]),
         ) +
         policyNote() +
-        source("Đề án tuyển sinh thạc sĩ 2027, mục II.3.4");
+        source("Đề án tuyển sinh Thạc sĩ 2027, mục II.3.4");
     } else if (kind === "research") {
       title = "Hỗ trợ nghiên cứu khoa học";
       body =
@@ -3122,7 +3142,7 @@ export function initializeAdmissions(root, editorial = null) {
           "Nếu không hoàn thành sản phẩm theo cam kết, khoản thù lao đã nhận được xử lý theo hợp đồng nghiên cứu và quy định của Trường.",
         ]) +
         '<div class="review-note">Đây là cơ chế hỗ trợ nghiên cứu, không phải khoản giảm học phí tự động khi trúng tuyển.</div>' +
-        source("Đề án tuyển sinh thạc sĩ 2027, mục II.3.6");
+        source("Đề án tuyển sinh Thạc sĩ 2027, mục II.3.6");
     } else {
       title = "Các khoản thu ngoài học phí toàn khóa";
       wide = true;
@@ -3134,7 +3154,7 @@ export function initializeAdmissions(root, editorial = null) {
             .map((f) => [f.name, f.amount_as_written, f.applies]),
         ) +
         "<h3>Thanh toán học phí</h3><p>Học phí toàn khóa chia thành ba đợt: <strong>35% – 30% – 35%</strong>. Chọn chương trình tại phần học phí để xem số tiền từng đợt. Hạn đóng và kênh thanh toán thực hiện theo thông báo của Trường.</p><p>Chỉ sử dụng thông tin thanh toán được công bố hoặc gửi qua kênh chính thức.</p>" +
-        source("Đề án tuyển sinh thạc sĩ 2027, mục II.3.11 và Phụ lục 1");
+        source("Đề án tuyển sinh Thạc sĩ 2027, mục II.3.11 và Phụ lục 1");
     }
     body +=
       '<div class="dialog-actions"><button class="btn primary" data-consult="' +
@@ -3163,7 +3183,7 @@ export function initializeAdmissions(root, editorial = null) {
         '" target="_blank" rel="noopener noreferrer">Mở cổng tuyển sinh ' +
         icon("up-right") +
         '</a><button class="btn secondary" data-consult="Hỗ trợ theo dõi hồ sơ">Liên hệ Viện</button></div>' +
-        source("Đề án tuyển sinh thạc sĩ 2027, mục II.3.7 và II.3.15"),
+        source("Đề án tuyển sinh Thạc sĩ 2027, mục II.3.7 và II.3.15"),
       "Kết quả & nhập học",
     );
   }
@@ -3191,7 +3211,7 @@ export function initializeAdmissions(root, editorial = null) {
       "Viện Sau đại học · Trường Đại học Văn Lang",
       "Loại hồ sơ: " + (state.doc === "application" ? "Dự tuyển" : "Nhập học"),
       "",
-      "Danh mục hồ sơ tuyển sinh thạc sĩ năm 2027.",
+      "Danh mục hồ sơ tuyển sinh Thạc sĩ năm 2027.",
       "Các mục có điều kiện chỉ áp dụng với trường hợp tương ứng.",
       "",
       ...docs().map(
@@ -3398,7 +3418,7 @@ export function initializeAdmissions(root, editorial = null) {
   let navUpdatePending = false;
   function updateSectionNav() {
     const sections = sectionLinks.map((a) => $(a.getAttribute("href"))).filter(Boolean);
-    const marker = $(".section-nav-shell").getBoundingClientRect().height + 24;
+    const marker = $(".section-nav-shell").getBoundingClientRect().bottom + 24;
     let current = sections[0];
     sections.forEach((s) => {
       if (s.getBoundingClientRect().top <= marker) current = s;
@@ -3454,7 +3474,7 @@ export function initializeAdmissions(root, editorial = null) {
     $("#admissions-degree").value = degree;
     $("#contact-degree").value = degree;
     $(".section-nav").hidden = false;
-    $("#intake-title").textContent = master ? initialEditorialCopy.intakeTitle : "Tuyển sinh tiến sĩ";
+    $("#intake-title").textContent = master ? initialEditorialCopy.intakeTitle : "Tuyển sinh Tiến sĩ";
     $("#intake-badge").innerHTML =
       master ? initialEditorialCopy.intakeBadge : '<span class="dot"></span> Nhận hồ sơ thường xuyên';
     $("#intake-select").disabled = !master;
@@ -3473,8 +3493,8 @@ export function initializeAdmissions(root, editorial = null) {
       ? originalContactAddress
       : "Phòng 2.01, Tòa A, Cơ sở chính<br>69/68 Đặng Thùy Trâm, phường Bình Lợi Trung, TP. Hồ Chí Minh.";
     document.title = master
-      ? "Tuyển sinh thạc sĩ 2027 | Viện Sau đại học Văn Lang"
-      : "Tuyển sinh tiến sĩ Khoa học Môi trường | Viện Sau đại học Văn Lang";
+      ? "Tuyển sinh Thạc sĩ 2027 | Viện Sau đại học Văn Lang"
+      : "Tuyển sinh Tiến sĩ Khoa học Môi trường | Viện Sau đại học Văn Lang";
     $$('a[href^="#"]').forEach((a) => {
       const href = a.getAttribute("href");
       const base =
@@ -3495,7 +3515,7 @@ export function initializeAdmissions(root, editorial = null) {
           Object.entries(groups)
             .map(([k, v]) => '<option value="' + k + '">' + escapeHtml(v) + "</option>")
             .join("");
-      $("#fee-program").innerHTML = optionsHtml(programs);
+      $("#fee-program").innerHTML = optionsHtml(programs) + optionsHtml(additionalFeePrograms.map((p) => ({ id: p.id, name: p.title })));
       $("#fee-program").value = "mba";
       renderPrograms();
       renderConditions();
@@ -3515,13 +3535,13 @@ export function initializeAdmissions(root, editorial = null) {
       }
     }
     $("#context-announcement").textContent = master
-      ? "Đang xem tuyển sinh thạc sĩ 2027, 19 ngành."
-      : "Đang xem tuyển sinh tiến sĩ Khoa học Môi trường.";
+      ? "Đang xem tuyển sinh Thạc sĩ 2027, 19 ngành."
+      : "Đang xem tuyển sinh Tiến sĩ Khoa học Môi trường.";
     requestNavUpdate();
   }
   function doctorDocNote(i) {
     if (i === 4 || i === 5)
-      return "Áp dụng với người dự tuyển từ trình độ thạc sĩ. Người dự tuyển từ đại học liên hệ Viện để được hướng dẫn hồ sơ phù hợp với văn bằng dự tuyển.";
+      return "Áp dụng với người dự tuyển từ trình độ Thạc sĩ. Người dự tuyển từ đại học liên hệ Viện để được hướng dẫn hồ sơ phù hợp với văn bằng dự tuyển.";
     if (i === 9)
       return "Người dự tuyển cần đáp ứng yêu cầu về kinh nghiệm nghiên cứu và cung cấp minh chứng phù hợp.";
     return "";
@@ -3630,17 +3650,17 @@ export function initializeAdmissions(root, editorial = null) {
       new Blob(["\ufeff" + lines.join("\n")], { type: "text/plain;charset=utf-8" }),
       "danh-sach-ho-so-tien-si.txt",
     );
-    toast("Đã tạo danh sách hồ sơ tiến sĩ để tải xuống.");
+    toast("Đã tạo danh sách hồ sơ Tiến sĩ để tải xuống.");
   }
   const doctorProcessSteps = editorial?.doctorProcess ?? [
     {
       title: "Đối chiếu điều kiện",
       detail: "Xác định diện dự tuyển",
-      text: "Đối chiếu văn bằng, ngành tốt nghiệp, kinh nghiệm nghiên cứu và ngoại ngữ với yêu cầu chương trình tiến sĩ Khoa học Môi trường.",
+      text: "Đối chiếu văn bằng, ngành tốt nghiệp, kinh nghiệm nghiên cứu và ngoại ngữ với yêu cầu chương trình Tiến sĩ Khoa học Môi trường.",
       items: [
         "Chuẩn bị bằng tốt nghiệp và bảng điểm.",
         "Tra cứu danh mục ngành phù hợp.",
-        "Đối chiếu minh chứng ngoại ngữ theo điều kiện tiến sĩ.",
+        "Đối chiếu minh chứng ngoại ngữ theo điều kiện Tiến sĩ.",
       ],
       action: "Tra cứu ngành phù hợp",
       target: "bsk",
@@ -3744,24 +3764,24 @@ export function initializeAdmissions(root, editorial = null) {
   function renderDoctorFAQ() {
     const rows = editorial?.doctorFaq?.map(item => [item.question, item.answer]) ?? [
       [
-        "Chưa có bằng thạc sĩ có được dự tuyển không?",
+        "Chưa có bằng Thạc sĩ có được dự tuyển không?",
         "Có thể dự tuyển từ đại học hạng giỏi trở lên thuộc ngành phù hợp và đáp ứng các điều kiện còn lại. Bốn ngành đại học phù hợp gồm: Kỹ thuật môi trường, Khoa học môi trường, Công nghệ kỹ thuật môi trường, Quản lý tài nguyên và môi trường. Hồ sơ ngoài danh mục được Hội đồng xem xét theo bảng điểm.",
       ],
       [
         "Phải có bài báo khoa học mới đủ điều kiện không?",
-        "Kinh nghiệm nghiên cứu có thể thể hiện qua luận văn thạc sĩ của chương trình định hướng nghiên cứu; hoặc bài báo, báo cáo khoa học đã công bố; hoặc từ 24 tháng làm giảng viên, nghiên cứu viên tại cơ sở đào tạo, tổ chức khoa học và công nghệ. Cần chuẩn bị minh chứng tương ứng và đáp ứng các điều kiện đầu vào khác.",
+        "Kinh nghiệm nghiên cứu có thể thể hiện qua luận văn Thạc sĩ của chương trình định hướng nghiên cứu; hoặc bài báo, báo cáo khoa học đã công bố; hoặc từ 24 tháng làm giảng viên, nghiên cứu viên tại cơ sở đào tạo, tổ chức khoa học và công nghệ. Cần chuẩn bị minh chứng tương ứng và đáp ứng các điều kiện đầu vào khác.",
       ],
       [
-        "Ngoại ngữ đầu vào tiến sĩ yêu cầu mức nào?",
-        "Ngoại ngữ được chứng minh bằng văn bằng phù hợp hoặc chứng chỉ tương đương Bậc 4. Chứng chỉ phải còn hiệu lực đến ngày đăng ký dự tuyển và đáp ứng yêu cầu về đơn vị tổ chức thi, cấp chứng chỉ. Xem bảng riêng của tiến sĩ trong phần điều kiện.",
+        "Ngoại ngữ đầu vào Tiến sĩ yêu cầu mức nào?",
+        "Ngoại ngữ được chứng minh bằng văn bằng phù hợp hoặc chứng chỉ tương đương Bậc 4. Chứng chỉ phải còn hiệu lực đến ngày đăng ký dự tuyển và đáp ứng yêu cầu về đơn vị tổ chức thi, cấp chứng chỉ. Xem bảng riêng của Tiến sĩ trong phần điều kiện.",
       ],
       [
-        "Thời gian học tiến sĩ là bao lâu?",
-        "Chính quy tập trung, thời gian chuẩn 3 năm với người có bằng thạc sĩ và 4 năm với người có bằng đại học. Tổng thời gian đào tạo không quá 6 năm theo quy định. Lịch học bố trí buổi tối trong tuần, thứ Bảy và Chủ nhật.",
+        "Thời gian học Tiến sĩ là bao lâu?",
+        "Chính quy tập trung, thời gian chuẩn 3 năm với người có bằng Thạc sĩ và 4 năm với người có bằng đại học. Tổng thời gian đào tạo không quá 6 năm theo quy định. Lịch học bố trí buổi tối trong tuần, thứ Bảy và Chủ nhật.",
       ],
       [
         "Có cần học bổ sung kiến thức không?",
-        "Một số ngành thạc sĩ được miễn học bổ sung kiến thức. Với các nhóm ngành còn lại và ứng viên từ đại học, Hội đồng bảo vệ đề cương quyết định học phần bổ sung theo định hướng nghiên cứu. Học phí bổ sung kiến thức là 1.500.000 đồng/môn.",
+        "Một số ngành Thạc sĩ được miễn học bổ sung kiến thức. Với các nhóm ngành còn lại và ứng viên từ đại học, Hội đồng bảo vệ đề cương quyết định học phần bổ sung theo định hướng nghiên cứu. Học phí bổ sung kiến thức là 1.500.000 đồng/môn.",
       ],
       [
         "Học phí 145 triệu được đóng thế nào?",
@@ -3795,8 +3815,8 @@ export function initializeAdmissions(root, editorial = null) {
   }
   function showDoctorNotice() {
     openDialog(
-      "Tuyển sinh tiến sĩ Khoa học Môi trường",
-      "<p>Tìm hiểu chương trình, điều kiện và kế hoạch dự tuyển tiến sĩ Khoa học Môi trường.</p>" +
+      "Tuyển sinh Tiến sĩ Khoa học Môi trường",
+      "<p>Tìm hiểu chương trình, điều kiện và kế hoạch dự tuyển Tiến sĩ Khoa học Môi trường.</p>" +
         table(
           ["Nội dung", "Thông tin"],
           [
@@ -3804,37 +3824,37 @@ export function initializeAdmissions(root, editorial = null) {
             ["Phương thức / hình thức tuyển sinh", "Xét tuyển · Trực tiếp"],
             ["Nhận hồ sơ", "Thường xuyên; xét tuyển sau khi nộp đủ hồ sơ"],
             ["Hình thức đào tạo", "Chính quy tập trung"],
-            ["Thời gian chuẩn", "3 năm từ thạc sĩ; 4 năm từ đại học"],
+            ["Thời gian chuẩn", "3 năm từ Thạc sĩ; 4 năm từ đại học"],
             ["Học phí toàn khóa", "145.000.000 đồng"],
             ["Học bổng", "Xét đến 100% học phí toàn khóa, có điều kiện và cam kết"],
           ],
         ) +
-        '<div class="dialog-actions"><button class="btn primary" data-doctor-pdf>Tải thông báo tuyển sinh tiến sĩ 2026 ' +
+        '<div class="dialog-actions"><button class="btn primary" data-doctor-pdf>Tải thông báo tuyển sinh Tiến sĩ 2026 ' +
         icon("download") +
         '</button><button class="btn secondary" data-doctor-apply>Hướng dẫn nộp hồ sơ</button></div>' +
         doctorSource("Mục 1–11 và Phụ lục 01–03"),
-      "Tuyển sinh tiến sĩ",
+      "Tuyển sinh Tiến sĩ",
       true,
     );
   }
   function showDoctorApply() {
     openDialog(
-      "Hướng dẫn đăng ký dự tuyển tiến sĩ",
+      "Hướng dẫn đăng ký dự tuyển Tiến sĩ",
       '<p>Liên hệ <strong>Viện Sau đại học – Trường Đại học Văn Lang</strong> để nhận biểu mẫu, đối chiếu điều kiện và hướng dẫn nộp hồ sơ.</p><ol><li>Chuẩn bị văn bằng, bảng điểm, minh chứng ngoại ngữ và kinh nghiệm nghiên cứu.</li><li>Chuẩn bị dự thảo đề cương và kế hoạch học tập, nghiên cứu toàn khóa.</li><li>Hoàn thiện danh mục hồ sơ, các tài liệu của người hướng dẫn và lệ phí xét tuyển 500.000 đồng.</li><li>Nộp hồ sơ học bổng cùng hồ sơ ứng tuyển nếu có đăng ký; theo dõi lịch xét tuyển được hướng dẫn.</li></ol><h3>Đầu mối tiếp nhận</h3><p>Điện thoại: <a href="tel:+84988486869">0988 48 6869</a> hoặc <a href="tel:+842871016869">028 7101 6869</a>.<br>Email: <a href="mailto:tuyensinh.sdh@vlu.edu.vn">tuyensinh.sdh@vlu.edu.vn</a>.</p><p>Địa chỉ tiếp nhận: <strong>Phòng 2.01, Tòa A, Cơ sở chính</strong>, 69/68 Đặng Thùy Trâm, P. Bình Lợi Trung, TP. Hồ Chí Minh.</p><div class="dialog-actions"><button class="btn primary" data-dialog-target="ts-ho-so">Xem checklist hồ sơ</button><a class="btn secondary" href="mailto:tuyensinh.sdh@vlu.edu.vn?subject=Tu%20van%20du%20tuyen%20tien%20si%20Khoa%20hoc%20Moi%20truong">Soạn email cho Viện ' +
         icon("mail") +
         "</a></div>" +
         doctorSource("Mục 4–6, 8 và 11, trang 1–5"),
-      "Đăng ký dự tuyển tiến sĩ",
+      "Đăng ký dự tuyển Tiến sĩ",
     );
   }
   function showDoctorStudy() {
     openDialog(
-      "Thời gian & địa điểm học tiến sĩ",
+      "Thời gian & địa điểm học Tiến sĩ",
       table(
         ["Nội dung", "Thông tin"],
         [
           ["Hình thức đào tạo", "Chính quy tập trung"],
-          ["Có bằng thạc sĩ", "Thời gian chuẩn: 03 năm"],
+          ["Có bằng Thạc sĩ", "Thời gian chuẩn: 03 năm"],
           ["Có bằng đại học", "Thời gian chuẩn: 04 năm"],
           ["Giới hạn thời gian", "Không quá 06 năm / 72 tháng"],
           ["Lịch học", "Buổi tối trong tuần, thứ Bảy và Chủ nhật"],
@@ -3848,14 +3868,14 @@ export function initializeAdmissions(root, editorial = null) {
           "Cơ sở 2: 233A Phan Văn Trị, P. Bình Lợi Trung, TP. Hồ Chí Minh.",
         ]) +
         doctorSource("Mục 10, trang 4–5"),
-      "Kế hoạch đào tạo tiến sĩ",
+      "Kế hoạch đào tạo Tiến sĩ",
       true,
     );
   }
   function showDoctorProposal() {
     openDialog(
       "Gợi ý chuẩn bị đề cương nghiên cứu",
-      '<p>Hồ sơ cần có <strong>dự thảo đề cương nghiên cứu và dự kiến kế hoạch học tập, nghiên cứu toàn khóa</strong>. Các nội dung sau giúp bạn chuẩn bị cho buổi trao đổi với Viện và người hướng dẫn.</p><ol><li><strong>Tên đề tài dự kiến:</strong> chủ đề, đối tượng và phạm vi nghiên cứu.</li><li><strong>Vấn đề nghiên cứu:</strong> bối cảnh, lý do lựa chọn, khoảng trống cần tìm hiểu.</li><li><strong>Mục tiêu và câu hỏi nghiên cứu:</strong> kết quả muốn đạt và các câu hỏi chính.</li><li><strong>Tổng quan tài liệu:</strong> công trình liên quan, cách tiếp cận đã có và hướng phát triển.</li><li><strong>Phương pháp:</strong> thiết kế nghiên cứu, dữ liệu, cách thu thập và phân tích; nguồn lực cần thiết.</li><li><strong>Kết quả dự kiến:</strong> đóng góp khoa học, khả năng ứng dụng, sản phẩm nghiên cứu.</li><li><strong>Kế hoạch toàn khóa:</strong> các giai đoạn học tập, triển khai nghiên cứu, công bố và hoàn thiện luận án.</li><li><strong>Tài liệu tham khảo:</strong> nguồn đã đọc và dùng để xây dựng đề xuất.</li></ol><div class="review-note">Liên hệ Viện và Khoa để được hướng dẫn cấu trúc, độ dài, hình thức trình bày và yêu cầu cụ thể.</div><div class="dialog-actions"><button class="btn primary" data-consult="Xin hướng dẫn đề cương nghiên cứu và biểu mẫu tiến sĩ">Nhận hướng dẫn từ Viện ' +
+      '<p>Hồ sơ cần có <strong>dự thảo đề cương nghiên cứu và dự kiến kế hoạch học tập, nghiên cứu toàn khóa</strong>. Các nội dung sau giúp bạn chuẩn bị cho buổi trao đổi với Viện và người hướng dẫn.</p><ol><li><strong>Tên đề tài dự kiến:</strong> chủ đề, đối tượng và phạm vi nghiên cứu.</li><li><strong>Vấn đề nghiên cứu:</strong> bối cảnh, lý do lựa chọn, khoảng trống cần tìm hiểu.</li><li><strong>Mục tiêu và câu hỏi nghiên cứu:</strong> kết quả muốn đạt và các câu hỏi chính.</li><li><strong>Tổng quan tài liệu:</strong> công trình liên quan, cách tiếp cận đã có và hướng phát triển.</li><li><strong>Phương pháp:</strong> thiết kế nghiên cứu, dữ liệu, cách thu thập và phân tích; nguồn lực cần thiết.</li><li><strong>Kết quả dự kiến:</strong> đóng góp khoa học, khả năng ứng dụng, sản phẩm nghiên cứu.</li><li><strong>Kế hoạch toàn khóa:</strong> các giai đoạn học tập, triển khai nghiên cứu, công bố và hoàn thiện luận án.</li><li><strong>Tài liệu tham khảo:</strong> nguồn đã đọc và dùng để xây dựng đề xuất.</li></ol><div class="review-note">Liên hệ Viện và Khoa để được hướng dẫn cấu trúc, độ dài, hình thức trình bày và yêu cầu cụ thể.</div><div class="dialog-actions"><button class="btn primary" data-consult="Xin hướng dẫn đề cương nghiên cứu và biểu mẫu Tiến sĩ">Nhận hướng dẫn từ Viện ' +
         icon("arrow") +
         '</button><button class="btn secondary" data-doctor-checklist>Tải checklist hồ sơ</button></div>' +
         doctorSource("Yêu cầu đề cương: mục 5.1(d) và 6, trang 1–2"),
@@ -3864,7 +3884,7 @@ export function initializeAdmissions(root, editorial = null) {
   }
   function showDoctorStatus() {
     openDialog(
-      "Theo dõi hồ sơ & kết quả tiến sĩ",
+      "Theo dõi hồ sơ & kết quả Tiến sĩ",
       "<p>Trao đổi với đầu mối tiếp nhận của Viện để biết yêu cầu bổ sung, lịch xét tuyển và cách nhận kết quả.</p>" +
         listHtml([
           "Lưu biên nhận hoặc thông tin xác nhận khi nộp hồ sơ.",
@@ -3872,16 +3892,16 @@ export function initializeAdmissions(root, editorial = null) {
           "Hội đồng tuyển sinh quyết định danh sách trúng tuyển căn cứ kế hoạch và quy định.",
           "Khi số người đủ điều kiện vượt chỉ tiêu, Hội đồng có thể xem xét ưu tiên trình độ đã tốt nghiệp và kinh nghiệm nghiên cứu.",
         ]) +
-        '<p>Kết quả của từng hồ sơ được thông báo qua kênh chính thức của Trường.</p><div class="dialog-actions"><button class="btn primary" data-consult="Hỗ trợ theo dõi hồ sơ dự tuyển tiến sĩ">Liên hệ Viện ' +
+        '<p>Kết quả của từng hồ sơ được thông báo qua kênh chính thức của Trường.</p><div class="dialog-actions"><button class="btn primary" data-consult="Hỗ trợ theo dõi hồ sơ dự tuyển Tiến sĩ">Liên hệ Viện ' +
         icon("arrow") +
         '</button><button class="btn secondary" data-doctor-enrollment>Chuẩn bị nhập học</button></div>' +
         doctorSource("Mục 9 và 11, trang 4–5"),
-      "Kết quả tuyển sinh tiến sĩ",
+      "Kết quả tuyển sinh Tiến sĩ",
     );
   }
   function showDoctorEnrollment() {
     openDialog(
-      "Chuẩn bị nhập học chương trình tiến sĩ",
+      "Chuẩn bị nhập học chương trình Tiến sĩ",
       listHtml([
         "Đọc thông báo trúng tuyển và thực hiện đúng hướng dẫn nhập học của Trường.",
         "Đối chiếu, bổ sung hồ sơ theo yêu cầu của đơn vị tiếp nhận.",
@@ -3889,9 +3909,9 @@ export function initializeAdmissions(root, editorial = null) {
         "Theo dõi kết quả xét học bổng, các cam kết và nghĩa vụ tài chính nếu được cấp.",
         "Nhận kế hoạch học tập, nghiên cứu và thời khóa biểu chính thức.",
       ]) +
-        '<p>Viện hướng dẫn danh mục hồ sơ và thời hạn nhập học khi ứng viên trúng tuyển.</p><div class="dialog-actions"><button class="btn primary" data-consult="Hướng dẫn nhập học chương trình tiến sĩ">Nhận hướng dẫn nhập học</button><button class="btn secondary" data-doctor-policy="fees">Xem học phí & lệ phí</button></div>' +
+        '<p>Viện hướng dẫn danh mục hồ sơ và thời hạn nhập học khi ứng viên trúng tuyển.</p><div class="dialog-actions"><button class="btn primary" data-consult="Hướng dẫn nhập học chương trình Tiến sĩ">Nhận hướng dẫn nhập học</button><button class="btn secondary" data-doctor-policy="fees">Xem học phí & lệ phí</button></div>' +
         doctorSource("Mục 7.2, 8–11, trang 3–5"),
-      "Nhập học tiến sĩ",
+      "Nhập học Tiến sĩ",
     );
   }
   listen(root, "click", (e) => {
@@ -3971,17 +3991,17 @@ export function initializeAdmissions(root, editorial = null) {
   });
   function showDoctorBsk() {
     const body =
-      "<p>Đối chiếu ngành đã tốt nghiệp với danh mục tuyển sinh tiến sĩ Khoa học Môi trường. Kết quả tra cứu giúp chuẩn bị hồ sơ; yêu cầu cụ thể được xác định qua văn bằng, bảng điểm và định hướng nghiên cứu.</p>" +
-      '<div class="lookup-filters"><div class="field"><label for="doctor-qualification">Văn bằng dùng để dự tuyển</label><select id="doctor-qualification"><option value="master">Đã tốt nghiệp thạc sĩ</option><option value="bachelor">Đại học loại Giỏi trở lên</option><option value="other">Ngành hoặc trường hợp khác</option></select></div><div class="field"><label for="doctor-bsk-search">Tên ngành, mã ngành hoặc nhóm ngành</label><input id="doctor-bsk-search" type="search" placeholder="Ví dụ: môi trường, 8520320…" autocomplete="off"></div></div>' +
+      "<p>Đối chiếu ngành đã tốt nghiệp với danh mục tuyển sinh Tiến sĩ Khoa học Môi trường. Kết quả tra cứu giúp chuẩn bị hồ sơ; yêu cầu cụ thể được xác định qua văn bằng, bảng điểm và định hướng nghiên cứu.</p>" +
+      '<div class="lookup-filters"><div class="field"><label for="doctor-qualification">Văn bằng dùng để dự tuyển</label><select id="doctor-qualification"><option value="master">Đã tốt nghiệp Thạc sĩ</option><option value="bachelor">Đại học loại Giỏi trở lên</option><option value="other">Ngành hoặc trường hợp khác</option></select></div><div class="field"><label for="doctor-bsk-search">Tên ngành, mã ngành hoặc nhóm ngành</label><input id="doctor-bsk-search" type="search" placeholder="Ví dụ: môi trường, 8520320…" autocomplete="off"></div></div>' +
       '<div id="doctor-bsk-note"></div><div class="lookup-count" id="doctor-bsk-count" aria-live="polite"></div><div id="doctor-bsk-results"></div>' +
       '<div class="review-note">Hội đồng bảo vệ đề cương quyết định học phần bổ sung kiến thức theo định hướng nghiên cứu và hồ sơ của ứng viên. Học phí bổ sung kiến thức: <strong>1.500.000 đồng/môn</strong>.</div>' +
-      '<div class="dialog-actions"><button class="btn primary" data-consult="Đối chiếu ngành tốt nghiệp và bổ sung kiến thức tiến sĩ">Nhờ Viện đối chiếu hồ sơ ' +
+      '<div class="dialog-actions"><button class="btn primary" data-consult="Đối chiếu ngành tốt nghiệp và bổ sung kiến thức Tiến sĩ">Nhờ Viện đối chiếu hồ sơ ' +
       icon("arrow") +
-      '</button><button class="btn secondary" data-doctor-pdf>Tải thông báo tuyển sinh tiến sĩ 2026 ' +
+      '</button><button class="btn secondary" data-doctor-pdf>Tải thông báo tuyển sinh Tiến sĩ 2026 ' +
       icon("file") +
       "</button></div>" +
       doctorSource("Phụ lục 1, trang 6–8; mục 8, trang 4");
-    openDialog("Ngành phù hợp & bổ sung kiến thức", body, "Tuyển sinh tiến sĩ", true);
+    openDialog("Ngành phù hợp & bổ sung kiến thức", body, "Tuyển sinh Tiến sĩ", true);
     $("#doctor-qualification").addEventListener("change", renderDoctorBsk);
     $("#doctor-bsk-search").addEventListener("input", renderDoctorBsk);
     renderDoctorBsk();
@@ -4020,7 +4040,7 @@ export function initializeAdmissions(root, editorial = null) {
     );
     $("#doctor-bsk-note").innerHTML =
       qualification === "master"
-        ? "<p>Danh mục gồm các ngành thạc sĩ không yêu cầu bổ sung kiến thức và các ngành được hội đồng xác định học phần theo định hướng nghiên cứu.</p>"
+        ? "<p>Danh mục gồm các ngành Thạc sĩ không yêu cầu bổ sung kiến thức và các ngành được hội đồng xác định học phần theo định hướng nghiên cứu.</p>"
         : '<div class="callout"><strong>Điều kiện văn bằng: tốt nghiệp đại học loại Giỏi trở lên.</strong>Danh mục có 4 ngành đại học dưới đây. Ứng viên đồng thời phải đáp ứng các điều kiện về kinh nghiệm nghiên cứu, ngoại ngữ và hồ sơ dự tuyển.</div>';
     $("#doctor-bsk-count").textContent =
       rows.length +
@@ -4051,14 +4071,14 @@ export function initializeAdmissions(root, editorial = null) {
         DOCTOR.languages.map((x) => [x.language + " · " + x.certificate, x.validity, x.level]),
       ) +
       '<div class="review-note">Chứng chỉ phải đáp ứng yêu cầu về hiệu lực và được cấp qua các đơn vị tổ chức thi được Bộ Giáo dục và Đào tạo cho phép. Viện kiểm tra loại chứng chỉ, đơn vị cấp và phạm vi áp dụng theo hồ sơ.</div>' +
-      "<h3>Ứng viên là công dân nước ngoài</h3><p>Nếu đăng ký học chương trình tiến sĩ bằng tiếng Việt, phải có chứng chỉ tiếng Việt tối thiểu Bậc 4 theo Khung năng lực tiếng Việt dùng cho người nước ngoài.</p>" +
-      '<div class="dialog-actions"><button class="btn primary" data-consult="Đối chiếu minh chứng ngoại ngữ dự tuyển tiến sĩ">Tư vấn minh chứng ngoại ngữ ' +
+      "<h3>Ứng viên là công dân nước ngoài</h3><p>Nếu đăng ký học chương trình Tiến sĩ bằng tiếng Việt, phải có chứng chỉ tiếng Việt tối thiểu Bậc 4 theo Khung năng lực tiếng Việt dùng cho người nước ngoài.</p>" +
+      '<div class="dialog-actions"><button class="btn primary" data-consult="Đối chiếu minh chứng ngoại ngữ dự tuyển Tiến sĩ">Tư vấn minh chứng ngoại ngữ ' +
       icon("arrow") +
-      '</button><button class="btn secondary" data-doctor-pdf>Tải thông báo tuyển sinh tiến sĩ 2026 ' +
+      '</button><button class="btn secondary" data-doctor-pdf>Tải thông báo tuyển sinh Tiến sĩ 2026 ' +
       icon("file") +
       "</button></div>" +
       doctorSource("Mục 5.2–5.3, trang 1–2; Phụ lục 2, trang 9–10");
-    openDialog("Ngoại ngữ đầu vào tiến sĩ", body, "Tuyển sinh tiến sĩ", true);
+    openDialog("Ngoại ngữ đầu vào Tiến sĩ", body, "Tuyển sinh Tiến sĩ", true);
   }
 
   function showDoctorPolicy(kind) {
@@ -4067,14 +4087,14 @@ export function initializeAdmissions(root, editorial = null) {
       sourceText = "",
       wide = false;
     if (kind === "scholarship") {
-      title = "Học bổng tiến sĩ đến 100% học phí";
+      title = "Học bổng Tiến sĩ đến 100% học phí";
       wide = true;
       body =
         "<p>Ứng viên đủ điều kiện trúng tuyển có thể đăng ký xét học bổng <strong>đến 100% học phí toàn khóa</strong>. Kết quả được Nhà trường xét duyệt và công bố sau khi có dữ liệu trúng tuyển, nhập học.</p>" +
         "<h3>Điều kiện nhận và duy trì</h3>" +
         listHtml([
           "Thực hiện đúng tiến độ đào tạo trong kế hoạch học tập, nghiên cứu toàn khóa căn cứ quyết định công nhận trúng tuyển.",
-          "Cam kết nghiên cứu và công bố khoa học vượt chuẩn điều kiện đầu ra tiến sĩ.",
+          "Cam kết nghiên cứu và công bố khoa học vượt chuẩn điều kiện đầu ra Tiến sĩ.",
           "Đăng ký học bổng trên ứng dụng VLU SDH – Financial Aid for Approvers theo hướng dẫn của Trường.",
           "Vị trí tác giả được tính theo quy định: tác giả chính, chủ nhiệm đề tài, chủ biên hoặc tác giả chính của bằng sáng chế.",
           "Ghi tên đơn vị, địa chỉ và email theo quy định của Nhà trường; dùng email do Trường Đại học Văn Lang cung cấp.",
@@ -4124,7 +4144,7 @@ export function initializeAdmissions(root, editorial = null) {
         '<div class="review-note">Học bổng gắn với cam kết và kết quả thực hiện. Mức khen thưởng, thu hồi được xác định theo mức sản phẩm được ghi nhận và chính sách nghiên cứu khoa học của Trường.</div>';
       sourceText = "Mục 7.2, trang 3; Phụ lục 3, trang 11–13";
     } else if (kind === "discount") {
-      title = "Miễn giảm học phí tiến sĩ";
+      title = "Miễn giảm học phí Tiến sĩ";
       wide = true;
       body =
         "<p>Chính sách giảm học phí toàn khóa theo nhóm đối tượng:</p>" +
@@ -4223,7 +4243,7 @@ export function initializeAdmissions(root, editorial = null) {
             ["Tên tài khoản", "TRƯỜNG ĐẠI HỌC VĂN LANG"],
             ["Số tài khoản", "1602201363522"],
             ["Ngân hàng thụ hưởng", "Ngân hàng Agribank CN3 - HCM"],
-            ["Nội dung chuyển khoản", "SDH - Họ và tên - Số điện thoại - Lệ phí/học phí tiến sĩ"],
+            ["Nội dung chuyển khoản", "SDH - Họ và tên - Số điện thoại - Lệ phí/học phí Tiến sĩ"],
           ],
         ) +
         '<div class="review-note">Trước khi thanh toán, đối chiếu thông tin nhận tiền, nội dung chuyển khoản và thời hạn với hướng dẫn đang áp dụng của Trường.</div>' +
@@ -4234,16 +4254,27 @@ export function initializeAdmissions(root, editorial = null) {
     }
     body +=
       '<div class="dialog-actions"><button class="btn primary" data-consult="' +
-      escapeHtml(title + " tiến sĩ") +
+      escapeHtml(title + " Tiến sĩ") +
       '">Trao đổi với bộ phận tư vấn ' +
       icon("arrow") +
-      '</button><button class="btn secondary" data-doctor-pdf>Tải thông báo tuyển sinh tiến sĩ 2026 ' +
+      '</button><button class="btn secondary" data-doctor-pdf>Tải thông báo tuyển sinh Tiến sĩ 2026 ' +
       icon("file") +
       "</button></div>" +
       doctorSource(sourceText);
-    openDialog(title, body, "Tuyển sinh tiến sĩ", wide);
+    openDialog(title, body, "Tuyển sinh Tiến sĩ", wide);
   }
-  setDegree("master");
+  const requested = new URLSearchParams(globalThis.location.search);
+  setDegree(requested.get("degree") === "doctor" || requested.get("programme") === "khoa-hoc-moi-truong" ? "doctor" : "master");
+  const requestedProgram = Object.keys(admissionProgrammeSlugs).find(
+    (id) => admissionProgrammeSlugs[id] === requested.get("programme"),
+  ) ?? additionalFeePrograms.find((p) => p.id === requested.get("programme"))?.id;
+  if (state.degree === "master" && requestedProgram) {
+    $("#fee-program").value = requestedProgram;
+    updateFee(true);
+  }
+  if (["#hoc-phi", "#ts-hoc-phi"].includes(globalThis.location.hash)) {
+    requestAnimationFrame(() => $(state.degree === "doctor" ? "#ts-hoc-phi" : "#hoc-phi").scrollIntoView());
+  }
 
   return () => {
     controller.abort();

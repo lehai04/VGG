@@ -1,0 +1,22 @@
+name: VGG emergency rollback
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        options: [staging, production]
+        required: true
+permissions:
+  contents: read
+jobs:
+  rollback:
+    if: github.ref == 'refs/heads/main'
+    environment: ${{ inputs.environment }}
+    runs-on: [self-hosted, linux, 'vgg-${{ inputs.environment }}']
+    concurrency:
+      group: vgg-${{ inputs.environment }}
+      cancel-in-progress: false
+    timeout-minutes: 10
+    steps:
+      # Use the operator-installed controller, not a build of the broken release.
+      - run: sudo -n /usr/bin/python3 /opt/vgg/controller/release.py rollback

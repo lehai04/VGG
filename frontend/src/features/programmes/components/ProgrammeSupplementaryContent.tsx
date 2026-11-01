@@ -200,7 +200,7 @@ export function ProgrammeFees({ programme }: { programme: Programme }) {
       <div className={detailStyles.container}>
         <div className={styles.feesGrid}>
           <div>
-            <h2 id="programme-fees-title">{content?.heading ?? "Học phí chương trình"}</h2>
+            <h2 data-section-label id="programme-fees-title">{content?.heading ?? "Học phí chương trình"}</h2>
             {content?.intro.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -225,7 +225,7 @@ export function ProgrammeFees({ programme }: { programme: Programme }) {
             {content?.notes.map((note) => (
               <p key={note}>{note}</p>
             ))}
-            <Link className={styles.link} href="/admissions#hoc-phi">
+            <Link className={styles.link} href={`/admissions?programme=${encodeURIComponent(programme.id)}&degree=${programme.degree === "Tiến sĩ" ? "doctor" : "master"}#${programme.degree === "Tiến sĩ" ? "ts-hoc-phi" : "hoc-phi"}`}>
               Xem thông tin tuyển sinh ↗
             </Link>
           </div>

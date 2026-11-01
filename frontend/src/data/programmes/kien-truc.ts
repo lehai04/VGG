@@ -208,7 +208,7 @@ export const kienTrucPageContent: ProgrammePageContent = {
         title: "Các hình thức minh chứng ngoại ngữ đầu vào",
         paragraphs: [
           "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
           "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
         ],
         points: [
@@ -222,7 +222,7 @@ export const kienTrucPageContent: ProgrammePageContent = {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
           "Viện và Khoa đối chiếu ngành tốt nghiệp, chương trình đào tạo và bảng điểm để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-          "Các học phần bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+          "Các học phần bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
           "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
         ],
         groups: [
@@ -313,7 +313,7 @@ export const kienTrucPageContent: ProgrammePageContent = {
       },
       {
         group: "Nghiên cứu và phát triển học thuật",
-        title: "Tiếp tục học trình độ tiến sĩ",
+        title: "Tiếp tục học trình độ Tiến sĩ",
         sub: "Củng cố nền tảng lý luận và phương pháp nghiên cứu để tiếp tục học tập ở trình độ cao hơn theo điều kiện của chương trình dự tuyển.",
       },
     ],
@@ -372,7 +372,7 @@ export const kienTrucPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ", "mục tiêu của bạn."],
       body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Kiến trúc. Đội ngũ tư vấn sẽ hỗ trợ bạn tìm hiểu lộ trình học tập và chuẩn bị hồ sơ phù hợp.",
       benefits: [
@@ -496,7 +496,7 @@ export const kienTrucPageContent: ProgrammePageContent = {
 
 export const kienTrucProgramme: Programme = {
   id: "kien-truc",
-  code: "580101",
+  code: "8580101",
   title: "Kiến trúc",
   englishTitle: "Master of Architecture",
   degree: "Thạc sĩ",
@@ -505,7 +505,7 @@ export const kienTrucProgramme: Programme = {
   credits: 60,
   duration: "18 tháng",
   studyMode: "Chính quy tập trung, tiếng Việt",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   summary:
     "Phát triển tư duy thiết kế, khả năng tích hợp kiến thức và năng lực quản lý dự án để đề xuất giải pháp kiến trúc sáng tạo, bền vững và phù hợp bối cảnh.",
   schedule:

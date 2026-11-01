@@ -186,7 +186,7 @@ export const keToanPageContent: ProgrammePageContent = {
         title: "Các hình thức minh chứng ngoại ngữ đầu vào",
         paragraphs: [
           "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+          "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
           "Ứng viên là công dân nước ngoài cần đạt tiếng Việt từ Bậc 4 trở lên hoặc đã tốt nghiệp đại học hay tương đương trở lên từ chương trình được giảng dạy bằng tiếng Việt.",
         ],
         points: [
@@ -200,7 +200,7 @@ export const keToanPageContent: ProgrammePageContent = {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
           "Viện và Khoa đối chiếu ngành tốt nghiệp, bảng điểm và nội dung đã tích lũy để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-          "Các ngành liên quan trong danh mục bổ sung tối đa 12 tín chỉ, gồm 4 học phần, mỗi học phần 3 tín chỉ. Phần bổ sung kiến thức nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+          "Các ngành liên quan trong danh mục bổ sung tối đa 12 tín chỉ, gồm 4 học phần, mỗi học phần 3 tín chỉ. Phần bổ sung kiến thức nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
           "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
         ],
         groups: [
@@ -293,7 +293,7 @@ export const keToanPageContent: ProgrammePageContent = {
       {
         group: "Nghiên cứu và phát triển học thuật",
         title: "Tiếp tục học tập nâng cao",
-        sub: "Củng cố nền tảng chuyên môn và phương pháp nghiên cứu để tiếp tục phát triển học thuật, dự tuyển trình độ tiến sĩ khi đáp ứng điều kiện.",
+        sub: "Củng cố nền tảng chuyên môn và phương pháp nghiên cứu để tiếp tục phát triển học thuật, dự tuyển trình độ Tiến sĩ khi đáp ứng điều kiện.",
       },
     ],
   },
@@ -620,7 +620,7 @@ export const keToanPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ", "mục tiêu của bạn."],
       body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Kế toán. Đội ngũ tư vấn sẽ hỗ trợ bạn tìm hiểu chương trình và chuẩn bị hồ sơ phù hợp.",
       benefits: [
@@ -666,7 +666,7 @@ export const keToanPageContent: ProgrammePageContent = {
       {
         question: "Bổ sung kiến thức gồm những học phần nào?",
         answer:
-          "Danh mục gồm Nguyên lý kế toán, Kế toán tài chính, Kế toán quản trị, Kiểm toán và dịch vụ đảm bảo, mỗi học phần 3 tín chỉ. Các học phần cần học được xác định từ văn bằng, bảng điểm và nội dung đã tích lũy. Phần bổ sung kiến thức nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+          "Danh mục gồm Nguyên lý kế toán, Kế toán tài chính, Kế toán quản trị, Kiểm toán và dịch vụ đảm bảo, mỗi học phần 3 tín chỉ. Các học phần cần học được xác định từ văn bằng, bảng điểm và nội dung đã tích lũy. Phần bổ sung kiến thức nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
       },
       {
         question: "Các học phần tự chọn được đăng ký như thế nào?",
@@ -759,7 +759,7 @@ export const keToanPageContent: ProgrammePageContent = {
 
 export const keToanProgramme: Programme = {
   id: "ke-toan",
-  code: "340301",
+  code: "8340301",
   title: "Kế toán",
   englishTitle: "Master of Accounting",
   degree: "Thạc sĩ",
@@ -768,7 +768,7 @@ export const keToanProgramme: Programme = {
   credits: 60,
   duration: "24 tháng",
   studyMode: "Chính quy tập trung, tiếng Việt",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   summary:
     "Phát triển chuyên môn kế toán, kiểm toán và năng lực phân tích thông tin để hỗ trợ quyết định quản trị trong bối cảnh chuyển đổi số, hội nhập quốc tế và phát triển bền vững.",
   schedule:

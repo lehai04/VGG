@@ -7,7 +7,6 @@ import {
   Footer,
   Header,
   Hero,
-  News,
   ProgrammeCatalog,
   Programmes,
   Research,
@@ -33,8 +32,6 @@ export default async function Home() {
       <ContentSlot slot="overview"><Programmes /></ContentSlot>
       <ContentSlot slot="research"><Research /></ContentSlot>
       <ContentSlot slot="programmes"><ProgrammeCatalog /></ContentSlot>
-      {/* Năm bài viết đã xuất bản gần nhất từ content */}
-      <ContentSlot slot="news"><News /></ContentSlot>
       {/* Form POST tới /api/consultations */}
       <ContentSlot slot="consultation"><ResourcesConsultation /></ContentSlot>
       </ContentPageSections>

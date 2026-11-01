@@ -334,7 +334,6 @@
 }
 .actions a,
 .actions button,
-.empty button,
 .modal footer a {
   display: inline-flex;
   height: 42px;
@@ -361,26 +360,6 @@
 .actions svg,
 .modal footer svg {
   width: 15px;
-}
-.empty {
-  padding: 90px 30px;
-  text-align: center;
-  border-bottom: 1px solid #e2e4e8;
-}
-.empty > svg {
-  width: 40px;
-  height: 40px;
-  color: #a4a8b1;
-}
-.empty h3 {
-  margin: 18px 0 8px;
-  font-size: 1.6rem;
-}
-.empty p {
-  color: #747986;
-}
-.empty button {
-  margin-top: 12px;
 }
 .pagination {
   display: flex;

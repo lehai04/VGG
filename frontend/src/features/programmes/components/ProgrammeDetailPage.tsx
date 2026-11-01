@@ -757,7 +757,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
             {/* Left: FAQs list */}
             <div>
               <div className={styles.faqColHeader}>
-                <h2 id="sec-faq-title" className={styles.faqColTitle}>
+                <h2 data-section-label id="sec-faq-title" className={styles.faqColTitle}>
                   {pageContent.faq.heading}
                 </h2>
                 <a className={styles.faqViewAllLink} href={pageContent.faq.link.href}>

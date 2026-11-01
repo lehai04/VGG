@@ -7,12 +7,14 @@ const schema = z.object({
   DATABASE_URL: z.string().min(1),
   BACKEND_HOST: z.string().default("0.0.0.0"),
   // Biến môi trường là chuỗi; coerce đổi sang số trước khi kiểm tra số nguyên dương.
-  BACKEND_PORT: z.coerce.number().int().positive().default(4000),
+  BACKEND_PORT: z.coerce.number().int().min(1).max(65535).default(4000),
+  CMS_APP_URL: z.url().default("http://localhost:3001"),
   PUBLIC_APP_URL: z.url().default("http://localhost:3000"),
   STORAGE_ENDPOINT: z.string().min(1).default("127.0.0.1"),
-  STORAGE_PORT: z.coerce.number().int().positive().default(9000),
+  STORAGE_PORT: z.coerce.number().int().min(1).max(65535).default(9000),
   // Chỉ chuỗi chính xác "true" bật TLS; "1" hoặc "TRUE" không được coi là true.
-  STORAGE_USE_SSL: z.string().default("false").transform((value) => value === "true"),
+  STORAGE_USE_SSL: z.enum(["true", "false"]).default("false").transform((value) => value === "true"),
+  STORAGE_REGION: z.string().min(1).default("us-east-1"),
   STORAGE_BUCKET: z.string().min(3).default("vgg-media"),
   STORAGE_ACCESS_KEY: z.preprocess(value => value === "" ? undefined : value, z.string().min(3).optional()),
   STORAGE_SECRET_KEY: z.preprocess(value => value === "" ? undefined : value, z.string().min(8).optional()),

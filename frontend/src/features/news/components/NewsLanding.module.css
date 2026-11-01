@@ -142,7 +142,7 @@
 }
 .results > header,
 .grid,
-.empty {
+.emptyContainer {
   width: min(calc(100% - 2 * var(--page-gutter, 6vw)), 1546px);
   margin-right: auto;
   margin-left: auto;
@@ -278,35 +278,6 @@
 }
 .readMore svg {
   width: 16px;
-}
-.empty {
-  padding: 80px 30px;
-  border: 1px dashed #ccd0d8;
-  border-radius: 14px;
-  text-align: center;
-}
-.empty > svg {
-  width: 38px;
-  height: 38px;
-  color: #a4a7af;
-}
-.empty h3 {
-  margin: 18px 0 8px;
-  font-size: 1.6rem;
-}
-.empty p {
-  color: #737783;
-}
-.empty a {
-  display: inline-flex;
-  margin-top: 15px;
-  padding: 11px 16px;
-  border-radius: 8px;
-  background: #e31e36;
-  color: #fff;
-  font-size: var(--text-12);
-  font-weight: 700;
-  text-decoration: none;
 }
 .pagination {
   display: flex;

@@ -61,7 +61,7 @@ export const logisticsPageContent: ProgrammePageContent = {
       "Chương trình Thạc sĩ Logistics và Quản lý chuỗi cung ứng tại Văn Lang phát triển kiến thức chuyên sâu về quản lý vận hành, phân tích và cải tiến hoạt động logistics. Người học tiếp cận chuỗi cung ứng như một hệ thống, từ đó nâng cao khả năng nhận diện vấn đề, thiết kế giải pháp và hỗ trợ quyết định trong thực tiễn.",
       "Nền tảng chung kết hợp phương pháp nghiên cứu khoa học với kỹ thuật hệ thống, kinh tế kỹ thuật, vận trù học, thống kê trong công nghiệp và quản lý chất lượng. Danh mục chuyên ngành mở rộng sang thu mua, vận tải, tồn kho, tinh gọn, hệ thống thông tin và các công cụ quản trị; cơ cấu bắt buộc, tự chọn khác nhau theo từng định hướng.",
       "Cả hai định hướng đều có khối lượng 60 tín chỉ. Hướng ứng dụng kết nối học tập với thực tập tốt nghiệp 6 tín chỉ và đề án tốt nghiệp 9 tín chỉ. Hướng nghiên cứu dành 12 tín chỉ cho hai chuyên đề Quản lý chuỗi cung ứng và 15 tín chỉ cho luận văn, hỗ trợ người học đào sâu một vấn đề chuyên môn.",
-      "Văn bằng tốt nghiệp: Thạc sĩ Logistics và quản lý chuỗi cung ứng Master of Logistics and Supply Chain Management",
+      "Văn bằng tốt nghiệp: Thạc sĩ Logistics và Quản lý chuỗi cung ứng Master of Logistics and Supply Chain Management",
     ],
     overviewImage: "/images/pages/programmes/logistics/programme-overview.jpg",
     imageAlt: "Sinh viên Văn Lang tìm hiểu hoạt động logistics tại Cảng Vận tải Quốc tế SP–ITC.",
@@ -143,7 +143,7 @@ export const logisticsPageContent: ProgrammePageContent = {
         {
           code: "Cả hai định hướng",
           title: "Tiếp tục phát triển chuyên môn",
-          text: "Xây dựng nền tảng để tiếp tục học tập nâng cao trình độ hoặc tham gia đào tạo tiến sĩ ở ngành gần, liên quan khi đáp ứng điều kiện của chương trình.",
+          text: "Xây dựng nền tảng để tiếp tục học tập nâng cao trình độ hoặc tham gia đào tạo Tiến sĩ ở ngành gần, liên quan khi đáp ứng điều kiện của chương trình.",
         },
       ],
     },
@@ -174,13 +174,13 @@ export const logisticsPageContent: ProgrammePageContent = {
       {
         title: "Ngành tốt nghiệp có phù hợp?",
         paragraphs: [
-          "Người tốt nghiệp Logistics và quản lý chuỗi cung ứng, Kỹ thuật hệ thống công nghiệp hoặc Quản lý công nghiệp không cần học bổ sung kiến thức. Với các ngành khác, Viện và Khoa đối chiếu hồ sơ để xác định mức độ phù hợp và các học phần cần bổ sung, tối đa 6 tín chỉ.",
+          "Người tốt nghiệp Logistics và Quản lý chuỗi cung ứng, Kỹ thuật hệ thống công nghiệp hoặc Quản lý công nghiệp không cần học bổ sung kiến thức. Với các ngành khác, Viện và Khoa đối chiếu hồ sơ để xác định mức độ phù hợp và các học phần cần bổ sung, tối đa 6 tín chỉ.",
         ],
       },
       {
         title: "Phương thức tuyển sinh",
         paragraphs: [
-          "Xét tuyển cho cả định hướng ứng dụng và nghiên cứu. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Logistics và quản lý chuỗi cung ứng.",
+          "Xét tuyển cho cả định hướng ứng dụng và nghiên cứu. Hồ sơ được đánh giá theo điều kiện đầu vào và yêu cầu của chương trình Thạc sĩ Logistics và Quản lý chuỗi cung ứng.",
           "Hồ sơ sử dụng văn bằng đại học do cơ sở giáo dục nước ngoài cấp cần kèm giấy công nhận hoặc xác nhận văn bằng theo quy định.",
           "Chuẩn ngoại ngữ đầu ra tương đương Bậc 4/6 trở lên cần được đáp ứng trước thời điểm xét tốt nghiệp, theo các hình thức được Trường công nhận.",
         ],
@@ -206,7 +206,7 @@ export const logisticsPageContent: ProgrammePageContent = {
             title: "Chương trình bằng tiếng Việt",
             paragraphs: [
               "Ứng viên đáp ứng ít nhất một trong các điều kiện sau:",
-              "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
+              "Kỳ thi tiếng Anh đầu vào tại Văn Lang cấp giấy chứng nhận kết quả thi, có giá trị 12 tháng khi dự tuyển Thạc sĩ tại Trường; không cấp chứng chỉ ngoại ngữ.",
             ],
             points: [
               "Bằng đại học trở lên ngành ngôn ngữ nước ngoài hoặc chương trình được giảng dạy chủ yếu bằng ngôn ngữ nước ngoài.",
@@ -229,7 +229,7 @@ export const logisticsPageContent: ProgrammePageContent = {
         title: "Bổ sung kiến thức đầu vào",
         paragraphs: [
           "Viện và Khoa đối chiếu ngành tốt nghiệp, chương trình đào tạo và bảng điểm để xác định các học phần cần bổ sung. Ứng viên hoàn thành các học phần được yêu cầu trước khi xét tuyển.",
-          "Các học phần bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình thạc sĩ.",
+          "Các học phần bổ sung kiến thức được xác định theo hồ sơ từng ứng viên và nằm ngoài 60 tín chỉ của chương trình Thạc sĩ.",
           "Kết quả bổ sung kiến thức có giá trị 2 năm kể từ ngày được công nhận đạt yêu cầu.",
         ],
         groups: [
@@ -243,7 +243,7 @@ export const logisticsPageContent: ProgrammePageContent = {
                   "Ứng viên vẫn phải đáp ứng đầy đủ các điều kiện dự tuyển của định hướng và ngôn ngữ đào tạo đăng ký.",
                 ],
                 points: [
-                  "Logistics và quản lý chuỗi cung ứng.",
+                  "Logistics và Quản lý chuỗi cung ứng.",
                   "Kỹ thuật Hệ thống Công nghiệp.",
                   "Quản lý Công nghiệp.",
                 ],
@@ -306,7 +306,7 @@ export const logisticsPageContent: ProgrammePageContent = {
       {
         group: "Phân tích và tư vấn",
         title: "Tư vấn chuyên môn",
-        sub: "Vận dụng kiến thức, kết quả nghiên cứu và công cụ phân tích trong hoạt động tư vấn về logistics và quản lý chuỗi cung ứng.",
+        sub: "Vận dụng kiến thức, kết quả nghiên cứu và công cụ phân tích trong hoạt động tư vấn về Logistics và Quản lý chuỗi cung ứng.",
       },
       {
         group: "Nghiên cứu và giảng dạy",
@@ -336,9 +336,9 @@ export const logisticsPageContent: ProgrammePageContent = {
     ctaHeading: ["Sẵn sàng cho bước học tiếp theo?"],
     ctaBody: "Trao đổi về chương trình, nền tảng đã học và mục tiêu của bạn để chuẩn bị phù hợp.",
     formIntro: {
-      eyebrow: "VIỆN SAU ĐẠI HỌC · LIÊN HỆ TƯ VẤN",
+      eyebrow: "Viện Sau đại học · LIÊN HỆ TƯ VẤN",
       titleLines: ["Bắt đầu từ", "mục tiêu của bạn."],
-      body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Logistics và quản lý chuỗi cung ứng. Đội ngũ tư vấn sẽ hỗ trợ bạn lựa chọn định hướng học tập và chuẩn bị hồ sơ phù hợp.",
+      body: "Chia sẻ điều bạn quan tâm về chương trình Thạc sĩ Logistics và Quản lý chuỗi cung ứng. Đội ngũ tư vấn sẽ hỗ trợ bạn lựa chọn định hướng học tập và chuẩn bị hồ sơ phù hợp.",
       benefits: [
         "Tư vấn chương trình và định hướng học",
         "Hướng dẫn học phí và chính sách hỗ trợ",
@@ -387,7 +387,7 @@ export const logisticsPageContent: ProgrammePageContent = {
       {
         question: "Tốt nghiệp ngành khác có thể dự tuyển không?",
         answer:
-          "Người tốt nghiệp các ngành Logistics và quản lý chuỗi cung ứng, Kỹ thuật hệ thống công nghiệp hoặc Quản lý công nghiệp không cần học bổ sung kiến thức. Các ngành khác được đối chiếu hồ sơ để xác định mức độ phù hợp và các học phần cần bổ sung, tối đa 6 tín chỉ. Ứng viên vẫn cần đáp ứng các điều kiện dự tuyển của định hướng và ngôn ngữ đào tạo đăng ký.",
+          "Người tốt nghiệp các ngành Logistics và Quản lý chuỗi cung ứng, Kỹ thuật hệ thống công nghiệp hoặc Quản lý công nghiệp không cần học bổ sung kiến thức. Các ngành khác được đối chiếu hồ sơ để xác định mức độ phù hợp và các học phần cần bổ sung, tối đa 6 tín chỉ. Ứng viên vẫn cần đáp ứng các điều kiện dự tuyển của định hướng và ngôn ngữ đào tạo đăng ký.",
       },
       {
         question: "Yêu cầu ngoại ngữ của chương trình tiếng Việt và tiếng Anh có khác nhau?",
@@ -505,7 +505,7 @@ export const logisticsPageContent: ProgrammePageContent = {
 
 export const logisticsProgramme: Programme = {
   id: "logistics",
-  code: "340123",
+  code: "8340123",
   title: "Logistics và Quản lý chuỗi cung ứng",
   englishTitle: "Master of Logistics and Supply Chain Management",
   degree: "Thạc sĩ",
@@ -514,7 +514,7 @@ export const logisticsProgramme: Programme = {
   credits: 60,
   duration: "18–24 tháng",
   studyMode: "Chính quy tập trung, tiếng Việt hoặc tiếng Anh",
-  intake: "Tuyển sinh thạc sĩ 2027",
+  intake: "Tuyển sinh Thạc sĩ 2027",
   summary:
     "Phát triển góc nhìn hệ thống và năng lực phân tích để tổ chức vận hành, thiết kế và cải tiến chuỗi cung ứng; kết nối kiến thức chuyên sâu với quyết định quản trị và nghiên cứu.",
   schedule:

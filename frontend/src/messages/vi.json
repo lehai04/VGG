@@ -5,11 +5,11 @@
     "overview": "Tổng quan",
     "menu": "MENU",
     "close": "ĐÓNG",
-    "university": "VIỆN SAU ĐẠI HỌC – TRƯỜNG ĐẠI HỌC VĂN LANG"
+    "university": "Viện Sau đại học – TRƯỜNG ĐẠI HỌC VĂN LANG"
   },
   "common": {
     "discoverMore": "Khám phá thêm",
-    "aboutVgg": "About Viện Sau Đại học",
+    "aboutVgg": "About Viện Sau đại học",
     "readMore": "Tìm hiểu thêm",
     "contact": "Liên hệ tư vấn",
     "applyNow": "Đăng ký ngay"
@@ -37,7 +37,7 @@
     "chooseProgramme": "Chọn chương trình",
     "submit": "Gửi yêu cầu tư vấn",
     "submitting": "Đang gửi...",
-    "success": "Đã gửi yêu cầu. Viện Sau Đại học sẽ sớm liên hệ với bạn.",
+    "success": "Đã gửi yêu cầu. Viện Sau đại học sẽ sớm liên hệ với bạn.",
     "invalid": "Thông tin chưa hợp lệ. Vui lòng kiểm tra lại.",
     "connectionError": "Không thể kết nối máy chủ. Vui lòng thử lại sau.",
     "privacy": "Thông tin bạn cung cấp được sử dụng để liên hệ và hỗ trợ tư vấn tuyển sinh."

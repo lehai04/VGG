@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-30",
+  "scope": "Frontend/backend cleanup and deployment configuration review",
+  "live_site": {
+    "url": "https://sdh.vlu.edu.vn/",
+    "role": "Temporary test deployment, confirmed by owner",
+    "observed_on": "2026-10-29",
+    "canonical_and_sitemap_origin": "https://saudaihoc.vlu.edu.vn",
+    "production_domain": "Not confirmed; no live settings changed"
+  },
+  "removed_unused": [
+    "backend/src/index.ts",
+    "backend/src/consultation.ts",
+    "frontend/src/data/research-cards.json",
+    "frontend dependency @vgg/backend and unused transpilePackages setting",
+    "NEXT_PUBLIC_BACKEND_URL fallback"
+  ],
+  "preserved": [
+    "Active public content defaults and opt-in demo data",
+    "Shared content helpers used by frontend",
+    "Database schema/migrations and current MinIO documents",
+    "Existing .env files and deployed service"
+  ],
+  "changes": [
+    "Single public origin helper for metadata/canonical/sitemap/robots",
+    "Separate local env samples and root Compose settings",
+    "Runtime SITE_INDEXABLE=false for staging robots and noindex response header",
+    "PDF download no longer self-fetches port 3000",
+    "Bounded public PDF filesystem access; encoded traversal rejected",
+    "Backend port range and explicit storage TLS flag validation",
+    "Timeouts on resource catalogue/SEO reads",
+    "Static fonts/assets excluded from locale rewrites"
+  ],
+  "validation": {
+    "frontend_tests": 49,
+    "backend_tests": 9,
+    "database_integration": "Not repeated in this follow-up; default suite skips without test DB",
+    "lint": "passed",
+    "typecheck": "passed",
+    "repository_guard": "passed",
+    "docker": "Passed final runtime build on Node 26.12.1 and read-only container smoke for website/CMS, runtime origin, staging noindex/robots, PDF bytes, font route and missing website admin API",
+    "file_tracing": "Final build has no whole-project filesystem tracing warning",
+    "local_build": "passed",
+    "production_dependency_audit_in_image": 0
+  },
+  "deployment": "Not deployed; IT must apply and verify settings on staging"
+}

@@ -1,0 +1,123 @@
+{
+  "page": "http://localhost:3500/vi",
+  "limitBytes": 3000000,
+  "transferBytes": 1232367,
+  "passed": true,
+  "resources": [
+    {
+      "url": "http://localhost:3500/_next/image?url=%2Fimages%2Fpages%2Fhome%2Fbanner%2Fbanner-01.webp&w=3840&q=75",
+      "bytes": 247554,
+      "type": "image/webp"
+    },
+    {
+      "url": "http://localhost:3500/fonts/vlu/IBMPlexSans-Variable.woff2",
+      "bytes": 230196,
+      "type": "font/woff2"
+    },
+    {
+      "url": "http://localhost:3500/images/pages/student-success/content/campus.webp",
+      "bytes": 203392,
+      "type": "image/webp"
+    },
+    {
+      "url": "http://localhost:3500/_next/image?url=%2Fimages%2Fpages%2Fhome%2Fsections%2Fcampus.webp&w=3840&q=75",
+      "bytes": 122538,
+      "type": "image/webp"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/0na77hsdd0e2h.js",
+      "bytes": 88366,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/216iyidhmrh3u.js",
+      "bytes": 71899,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/fonts/vlu/PlusJakartaSans-Variable.woff2",
+      "bytes": 60244,
+      "type": "font/woff2"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/2e268anpfvdoc.js",
+      "bytes": 46367,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "bytes": 39627,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/image?url=%2Fimages%2Flogo%2Flogo-vgg.png&w=640&q=75",
+      "bytes": 21036,
+      "type": "image/webp"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/3k9fhu7wzjl02.css",
+      "bytes": 17268,
+      "type": "text/css; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/vi",
+      "bytes": 14727,
+      "type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/1jsvay95q4d89.js",
+      "bytes": 14001,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/3n7_83yrq-kzz.css",
+      "bytes": 13908,
+      "type": "text/css; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/0-30f--3k7ciq.js",
+      "bytes": 9516,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/20usw4xcjb1jk.css",
+      "bytes": 9210,
+      "type": "text/css; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/2r4s4h5xul1n-.js",
+      "bytes": 7624,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/37vz3o75_1e4t.js",
+      "bytes": 6873,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+      "bytes": 3940,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/1ckvzn7sfprko.js",
+      "bytes": 2035,
+      "type": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/favicon.svg",
+      "bytes": 718,
+      "type": "image/svg+xml"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/11tcj84sx_cuu.css",
+      "bytes": 698,
+      "type": "text/css; charset=UTF-8"
+    },
+    {
+      "url": "http://localhost:3500/_next/static/chunks/2hl7vvkol7esz.js",
+      "bytes": 630,
+      "type": "application/javascript; charset=UTF-8"
+    }
+  ]
+}
