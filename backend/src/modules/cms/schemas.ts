@@ -97,6 +97,8 @@ export const cleanNewsHtml = (value: string) =>
         ],
         "text-align": [/^(?:left|right|center|justify|start|end)$/],
         "text-align-last": [/^(?:auto|left|right|center|justify|start|end)$/],
+        width: safeCssLength,
+        height: safeCssLength,
         "word-spacing": [/^(?:normal|-?\d+(?:\.\d+)?(?:px|em|rem|pt)?)$/i],
         "text-indent": safeCssLength,
         "line-height": [/^(?:normal|\d+(?:\.\d+)?(?:px|em|rem|%|pt)?)$/i],

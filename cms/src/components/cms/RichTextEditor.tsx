@@ -58,9 +58,13 @@ function sanitizePastedHtml(doc: Document | DocumentFragment) {
 export function RichTextEditor({ value, onChange, onImportedExcerpt }: Props) {
   const editorRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const imageFileRef = useRef<HTMLInputElement>(null);
+  const imageInsertRangeRef = useRef<Range | null>(null);
   const isInternalChangeRef = useRef(false);
   const [importing, setImporting] = useState(false);
   const [uploadingImage, setUploadingImage] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<HTMLImageElement | null>(null);
+  const [imageWidthPercent, setImageWidthPercent] = useState(100);
   const [notice, setNotice] = useState("");
   const characterCount = value.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").length;
 
@@ -129,6 +133,79 @@ export function RichTextEditor({ value, onChange, onImportedExcerpt }: Props) {
     const result = await response.json();
     if (!response.ok) throw new Error(result.message || "Không thể tải ảnh vừa dán.");
     return result.data as UploadedImage;
+  }
+
+  function openImagePicker() {
+    const selection = window.getSelection();
+    const range = selection?.rangeCount ? selection.getRangeAt(0) : null;
+    imageInsertRangeRef.current = range && editorRef.current?.contains(range.commonAncestorContainer)
+      ? range.cloneRange()
+      : null;
+    imageFileRef.current?.click();
+  }
+
+  async function insertImage(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+    if (!file) return;
+    setUploadingImage(true);
+    setNotice("Đang tải ảnh lên kho nội bộ…");
+    try {
+      const uploaded = await uploadImageFile(file);
+      const image = document.createElement("img");
+      image.src = uploaded.url;
+      image.alt = imageAlt("", file.name);
+      image.setAttribute("srcset", uploaded.srcSet);
+      image.setAttribute("sizes", "(max-width: 800px) 100vw, 785px");
+      image.width = uploaded.width;
+      image.height = uploaded.height;
+
+      const editor = editorRef.current;
+      if (!editor) return;
+      const range = imageInsertRangeRef.current;
+      if (range && editor.contains(range.commonAncestorContainer)) {
+        range.deleteContents();
+        range.insertNode(image);
+        range.setStartAfter(image);
+        range.collapse(true);
+        const selection = window.getSelection();
+        selection?.removeAllRanges();
+        selection?.addRange(range);
+      } else {
+        editor.append(image);
+      }
+
+      setSelectedImage(image);
+      image.setAttribute("data-selected-for-resize", "true");
+      setImageWidthPercent(100);
+      isInternalChangeRef.current = true;
+      onChange(editor.innerHTML);
+      setNotice("Đã tải và chèn ảnh. Chọn ảnh để chỉnh kích thước.");
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : "Không thể tải ảnh lên.");
+    } finally {
+      imageInsertRangeRef.current = null;
+      setUploadingImage(false);
+    }
+  }
+
+  function selectImageForResize(image: HTMLImageElement) {
+    selectedImage?.removeAttribute("data-selected-for-resize");
+    image.setAttribute("data-selected-for-resize", "true");
+    setSelectedImage(image);
+    const editorWidth = editorRef.current?.clientWidth || image.clientWidth;
+    const displayedWidth = image.getBoundingClientRect().width || image.width;
+    setImageWidthPercent(Math.max(25, Math.min(100, Math.round((displayedWidth / editorWidth) * 100))));
+  }
+
+  function resizeSelectedImage(value: number) {
+    setImageWidthPercent(value);
+    if (!selectedImage || !editorRef.current?.contains(selectedImage)) return;
+    selectedImage.style.width = `${value}%`;
+    selectedImage.style.height = "auto";
+    isInternalChangeRef.current = true;
+    onChange(editorRef.current.innerHTML);
+    selectedImage.setAttribute("data-selected-for-resize", "true");
   }
 
   function imageAlt(current: string, filename = "") {
@@ -264,11 +341,33 @@ export function RichTextEditor({ value, onChange, onImportedExcerpt }: Props) {
         <button type="button" title="Chèn liên kết" onClick={() => { const url = window.prompt("Nhập liên kết https://…"); if (url) run("createLink", url); }}>
           🔗
         </button>
+        <button type="button" title="Tải ảnh và chèn vào bài" disabled={uploadingImage} onMouseDown={(event) => event.preventDefault()} onClick={openImagePicker}>
+          {uploadingImage ? "ĐANG TẢI ẢNH…" : "↑ CHÈN ẢNH"}
+        </button>
+        <input ref={imageFileRef} type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" hidden onChange={insertImage} />
         <button className="word-import-button" type="button" disabled={importing} onClick={() => fileRef.current?.click()}>
           {importing ? "ĐANG NHẬP…" : "↑ IMPORT WORD"}
         </button>
         <input ref={fileRef} type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden onChange={importWord} />
       </div>
+      {selectedImage && editorRef.current?.contains(selectedImage) && (
+        <div className="rich-editor__image-size">
+          <label htmlFor="rich-editor-image-width">Kích thước ảnh</label>
+          <input
+            id="rich-editor-image-width"
+            type="range"
+            min="25"
+            max="100"
+            step="5"
+            value={imageWidthPercent}
+            onChange={(event) => resizeSelectedImage(Number(event.target.value))}
+          />
+          <output>{imageWidthPercent}%</output>
+          <button type="button" onClick={() => { selectedImage.removeAttribute("data-selected-for-resize"); setSelectedImage(null); }}>
+            Xong
+          </button>
+        </div>
+      )}
       <div
         ref={editorRef}
         className="rich-editor__surface cms-rich-content"
@@ -281,13 +380,21 @@ export function RichTextEditor({ value, onChange, onImportedExcerpt }: Props) {
           onChange(event.currentTarget.innerHTML);
         }}
         onClick={(event) => {
+          if (event.target instanceof HTMLImageElement && editorRef.current?.contains(event.target)) {
+            selectImageForResize(event.target);
+            return;
+          }
+          if (selectedImage) {
+            selectedImage.removeAttribute("data-selected-for-resize");
+            setSelectedImage(null);
+          }
           if (event.target === editorRef.current) {
             editorRef.current.focus();
           }
         }}
       />
       <div className="rich-editor__status">
-        <span>{notice || "Hỗ trợ dán ảnh, gõ phím mượt mà, cuộn nội dung độc lập và import Word .docx"}</span>
+        <span>{notice || "Có thể tải ảnh, dán ảnh hoặc import Word; chọn ảnh trong bài để chỉnh kích thước."}</span>
         <span>{uploadingImage ? "Đang tải ảnh…" : `${characterCount} ký tự`}</span>
       </div>
     </div>

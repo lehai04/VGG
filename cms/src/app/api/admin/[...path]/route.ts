@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cmsCookie } from "@/lib/cms-path";
 
+const NEWS_POST_BODY_LIMIT = 10 * 1024 * 1024;
+
 const allowed =
   /^(?:login|logout|me|dashboard|upload-image|upload-resource|import-word|news(?:\/[a-zA-Z0-9_-]{1,100})?|resource-categories(?:\/[a-zA-Z0-9_-]{1,100})?|resources(?:\/[a-zA-Z0-9_-]{1,100}(?:\/versions)?)?|consultation-workspace(?:\/[a-zA-Z0-9_-]{1,100})?|consultations(?:\/[a-zA-Z0-9_-]{1,100})?)$/;
 async function forward(
@@ -44,7 +46,9 @@ async function forward(
       ? 101 * 1024 * 1024
       : ["login", "logout"].includes(path)
         ? 16_384
-        : 1024 * 1024;
+        : path === "news" || /^news\/[a-zA-Z0-9_-]{1,100}$/.test(path)
+          ? NEWS_POST_BODY_LIMIT
+          : 1024 * 1024;
     if (Number(request.headers.get("content-length") || 0) > limit)
       return NextResponse.json(
         { message: "Dữ liệu quá lớn." },
@@ -115,7 +119,12 @@ async function forward(
     const cookie = upstream.headers.get("set-cookie");
     if (cookie) response.headers.set("set-cookie", cmsCookie(cookie));
     return response;
-  } catch {
+  } catch (error) {
+    if (error instanceof Error && error.message === "BODY_LIMIT")
+      return NextResponse.json(
+        { message: "Dữ liệu quá lớn." },
+        { status: 413, headers },
+      );
     return NextResponse.json(
       { message: "Không thể kết nối máy chủ. Vui lòng thử lại." },
       { status: 502, headers },

@@ -61,14 +61,76 @@ export async function uploadRoutes(app: FastifyInstance) {
               "File Word quá lớn hoặc không hợp lệ.",
               "FILE_SIZE",
             );
+          const imageWarnings: string[] = [];
+          let importedImageCount = 0;
           const result = await mammoth.convertToHtml(
             { buffer },
             {
               externalFileAccess: false,
-              convertImage: mammoth.images.imgElement(async () => ({
-                src: "",
-                alt: "Ảnh từ Word: tải ảnh riêng để chèn vào bài.",
-              })),
+              convertImage: mammoth.images.imgElement(async (image) => {
+                importedImageCount += 1;
+                if (importedImageCount > 50) {
+                  if (importedImageCount === 51)
+                    imageWarnings.push("Chỉ nhập tối đa 50 ảnh từ mỗi file Word.");
+                  return { src: "" };
+                }
+                if (!mediaStorage) {
+                  imageWarnings.push(
+                    "Kho file chưa được cấu hình; không thể nhập ảnh từ Word.",
+                  );
+                  return { src: "" };
+                }
+
+                try {
+                  const source = await image.read();
+                  const metadata = await sharp(source, {
+                    limitInputPixels: 40_000_000,
+                    animated: false,
+                  }).metadata();
+                  if (
+                    !metadata.format ||
+                    !["jpeg", "png", "webp", "gif", "tiff", "bmp"].includes(
+                      metadata.format,
+                    )
+                  )
+                    throw new Error("Unsupported Word image format");
+
+                  const originalTypes: Record<string, { extension: string; contentType: string }> = {
+                    jpeg: { extension: "jpg", contentType: "image/jpeg" },
+                    png: { extension: "png", contentType: "image/png" },
+                    webp: { extension: "webp", contentType: "image/webp" },
+                    gif: { extension: "gif", contentType: "image/gif" },
+                  };
+                  const original = originalTypes[metadata.format];
+                  const stored = original
+                    ? { buffer: source, ...original }
+                    : {
+                        buffer: await sharp(source, {
+                          limitInputPixels: 40_000_000,
+                          animated: false,
+                        })
+                          .rotate()
+                          .resize({ width: 1600, withoutEnlargement: true })
+                          .webp({ quality: 82 })
+                          .toBuffer(),
+                        extension: "webp",
+                        contentType: "image/webp",
+                      };
+                  const key = `cms/news/${randomUUID()}.${stored.extension}`;
+                  await mediaStorage.putObject(
+                    mediaBucket,
+                    key,
+                    stored.buffer,
+                    stored.contentType,
+                  );
+                  return { src: `/api/media/${key}` };
+                } catch {
+                  imageWarnings.push(
+                    `Không thể nhập ảnh Word thứ ${importedImageCount}; hãy tải ảnh riêng để chèn vào bài.`,
+                  );
+                  return { src: "" };
+                }
+              }),
             },
           );
           const html = cleanNewsHtml(result.value);
@@ -79,7 +141,10 @@ export async function uploadRoutes(app: FastifyInstance) {
               .replace(/\s+/g, " ")
               .trim()
               .slice(0, 300),
-            warnings: result.messages.map((message) => message.message),
+            warnings: [
+              ...result.messages.map((message) => message.message),
+              ...imageWarnings,
+            ],
           });
         }
         if (kind === "upload-image") {
