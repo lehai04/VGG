@@ -529,7 +529,10 @@ async function workspaceRoutes(app: FastifyInstance) {
     const [rows, total] = await prisma.$transaction([
       prisma.consultation.findMany({
         where,
-        include: { assignedStaff: { select: { id: true, fullName: true } } },
+        include: {
+          assignedStaff: { select: { id: true, fullName: true } },
+          history: { orderBy: { createdAt: "desc" }, take: 100 },
+        },
         orderBy: { createdAt: "desc" },
         skip: (q.page - 1) * 25,
         take: 25,
@@ -537,13 +540,30 @@ async function workspaceRoutes(app: FastifyInstance) {
       prisma.consultation.count({ where }),
     ]);
     return ok(reply, {
-      consultations: rows.map((row) => ({
-        ...row,
-        assignedAdmin: row.assignedStaff,
-      })),
+      consultations: rows.map(shape),
       total,
     });
   });
+  app.delete(
+    "/api/admin/consultation-workspace/bulk",
+    async (request, reply) => {
+      const user = (await staffFor(request))!;
+      if (!user.canManageContent)
+        return fail(
+          reply,
+          403,
+          "Chỉ quản trị viên được xóa hồ sơ tư vấn.",
+          "FORBIDDEN",
+        );
+      const { ids: selectedIds } = z
+        .object({ ids: z.array(z.string().min(1).max(100)).min(1).max(5000) })
+        .parse(request.body);
+      const result = await prisma.consultation.deleteMany({
+        where: { id: { in: [...new Set(selectedIds)] } },
+      });
+      return ok(reply, { deleted: result.count });
+    },
+  );
   app.get(
     "/api/admin/consultation-workspace/assignees",
     async (_request, reply) =>

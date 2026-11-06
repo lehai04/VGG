@@ -115,6 +115,25 @@
   font-weight: 600;
   color: #263653;
 }
+.selectionActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.selectionActions > span {
+  color: #526079;
+  font-size: 13px;
+}
+.selectionActions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.selectionActions .dangerButton {
+  color: #a7192e;
+  border-color: #dbaab1;
+}
 @media (max-width: 1250px) {
   .filters {
     grid-template-columns: repeat(2, minmax(0, 1fr));
