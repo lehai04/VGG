@@ -515,7 +515,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
               <div className={styles.outcomesGrid}>
                 {pageContent.section02.learningOutcomes.items.map((outcome) => (
                   <article className={styles.outcomeItem} key={`${outcome.code}-${outcome.title}`}>
-                    <span className={styles.outcomeCode}>{outcome.code}</span>
+                    <span className={styles.outcomeCode}>{outcome.code.replace(/^PLO/i, "")}</span>
                     {outcome.title && <h3>{outcome.title}</h3>}
                     <p>{outcome.text}</p>
                   </article>
