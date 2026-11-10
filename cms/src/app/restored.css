@@ -851,17 +851,20 @@
 /* 12-Column Grid Rows (7 cols & 5 cols) */
 .restoredCms .vgg-dashboard-grid-12 {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 12px;
   width: 100%;
+  min-width: 0;
 }
 .restoredCms .vgg-col-7 {
   grid-column: span 7 / span 7;
   display: flex;
+  min-width: 0;
 }
 .restoredCms .vgg-col-5 {
   grid-column: span 5 / span 5;
   display: flex;
+  min-width: 0;
 }
 .restoredCms .vgg-card {
   background: var(--surface, #ffffff);
@@ -870,6 +873,7 @@
   padding: 18px 20px;
   box-shadow: var(--shadow, 0 1px 3px rgba(15, 23, 42, 0.06));
   width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1083,6 +1087,9 @@
 .restoredCms .vgg-consultation-stat-box {
   text-align: right;
 }
+.restoredCms .vgg-card--consultations {
+  overflow: hidden;
+}
 .restoredCms .vgg-consultation-num-row {
   display: flex;
   align-items: baseline;
@@ -1135,11 +1142,18 @@
   position: relative;
   height: 180px;
   margin-bottom: 10px;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
 }
 .restoredCms .vgg-bars-wrapper {
   position: relative;
   height: 100%;
-  width: 100%;
+  min-width: 100%;
 }
 .restoredCms .vgg-grid-lines {
   position: absolute;
@@ -1163,7 +1177,7 @@
   padding: 10px 10px 0;
 }
 .restoredCms .vgg-bar-col {
-  flex: 1;
+  flex: 0 0 26px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1223,6 +1237,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 12px;
   font-size: var(--text-10);
   color: #94a3b8;
   padding-top: 8px;

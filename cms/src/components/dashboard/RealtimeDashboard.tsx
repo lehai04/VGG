@@ -827,7 +827,10 @@ function ConsultationsBarCard({
         {points.length === 0 ? (
           <div className="vgg-empty-box">Chưa có dữ liệu đặt lịch trong kỳ này.</div>
         ) : (
-          <div className="vgg-bars-wrapper">
+          <div
+            className="vgg-bars-wrapper"
+            style={{ width: `max(100%, ${points.length * 34}px)` }}
+          >
             {/* Grid ngang xám nhạt nét đứt */}
             <div className="vgg-grid-lines">
               <span className="vgg-grid-line" />
