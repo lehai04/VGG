@@ -6,7 +6,7 @@ export const quanLyTaiNguyenMoiTruongPageContent: ProgrammePageContent = {
   hero: {
     ...programmeSharedContent.hero,
     heroLead:
-      "Phát triển năng lực nghiên cứu, phân tích dữ liệu và đề xuất giải pháp quản lý tài nguyên, môi trường theo hướng tăng trưởng xanh, thích ứng biến đổi khí hậu.",
+      "Phát triển năng lực quản lý, nghiên cứu và đề xuất giải pháp về tài nguyên, môi trường theo hướng tăng trưởng xanh, thích ứng biến đổi khí hậu.",
     heroSlogan: "FUTURE",
     heroImage:
       "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/296673760_3424521084455298_2982558230818820073_n_207fc67abf.jpg",
@@ -25,7 +25,7 @@ export const quanLyTaiNguyenMoiTruongPageContent: ProgrammePageContent = {
       },
       {
         label: "Định hướng",
-        value: "Nghiên cứu",
+        value: "Ứng dụng · Nghiên cứu",
       },
       {
         label: "Thời gian",
@@ -48,7 +48,7 @@ export const quanLyTaiNguyenMoiTruongPageContent: ProgrammePageContent = {
     headline: "Kiến thức chuyên sâu. Năng lực tạo tác động.",
     overview: [
       "Chương trình cung cấp kiến thức chuyên sâu về quản lý chất lượng môi trường, sử dụng tài nguyên hiệu quả, chính sách, kinh tế môi trường và các công cụ phân tích hiện đại. Nội dung gắn với phát triển bền vững, tăng trưởng xanh và thích ứng biến đổi khí hậu.",
-      "Theo danh mục tuyển sinh 2027, chương trình tuyển định hướng nghiên cứu. Khối tốt nghiệp gồm chuyên đề nghiên cứu và luận văn, tạo nền tảng cho công việc chuyên gia, nghiên cứu, giảng dạy hoặc học tiếp Tiến sĩ.",
+      "Chương trình có định hướng ứng dụng và định hướng nghiên cứu. Học viên chọn lộ trình phù hợp: thực tập và đề án tốt nghiệp để phát triển năng lực nghề nghiệp, hoặc chuyên đề nghiên cứu và luận văn để đi sâu vào nghiên cứu học thuật.",
     ],
     overviewImage:
       "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/296673760_3424521084455298_2982558230818820073_n_207fc67abf.jpg",
@@ -74,8 +74,8 @@ export const quanLyTaiNguyenMoiTruongPageContent: ProgrammePageContent = {
         text: "Giải quyết bài toán biến đổi khí hậu, carbon và phát triển bền vững.",
       },
       {
-        title: "Nghiên cứu chuyên sâu",
-        text: "30 tín chỉ dành cho chuyên đề nghiên cứu và luận văn tốt nghiệp.",
+        title: "Hai định hướng đào tạo",
+        text: "Chọn định hướng ứng dụng với thực tập và đề án, hoặc định hướng nghiên cứu với chuyên đề và luận văn.",
       },
     ],
     outcomesHeading: "Chuẩn đầu ra của chương trình",
@@ -203,14 +203,14 @@ export const quanLyTaiNguyenMoiTruongPageContent: ProgrammePageContent = {
     ...programmeSharedContent.curriculum,
     sectionNumber: "05",
     curriculumIntro: [
-      "3 tín chỉ kiến thức chung; 11–16 tín chỉ kiến thức cơ sở; 11 tín chỉ chuyên ngành bắt buộc; nhóm tự chọn theo quy tắc của chương trình; 15 tín chỉ chuyên đề nghiên cứu và 15 tín chỉ luận văn.",
+      "Chương trình gồm 60 tín chỉ với hai lộ trình tốt nghiệp: định hướng ứng dụng có 6 tín chỉ thực tập chuyên ngành và 9 tín chỉ đề án; định hướng nghiên cứu có 15 tín chỉ chuyên đề nghiên cứu và 15 tín chỉ luận văn.",
     ],
-    trackLabels: ["Định hướng nghiên cứu"],
-    graduationProjects: ["Luận văn tốt nghiệp · 15 tín chỉ"],
+    trackLabels: ["Định hướng ứng dụng", "Định hướng nghiên cứu"],
+    graduationProjects: ["Đề án tốt nghiệp · 9 tín chỉ", "Luận văn tốt nghiệp · 15 tín chỉ"],
     studyMode: "Chính quy tập trung",
     notes: [
       "60 tín chỉ theo lộ trình rõ ràng.",
-      "Lộ trình mẫu: Ba học kỳ đầu hoàn thành học phần và đề cương; giai đoạn cuối dành cho chuyên đề nghiên cứu và luận văn tối thiểu 6 tháng.",
+      "Định hướng ứng dụng gồm thực tập chuyên ngành 6 tín chỉ và đề án tốt nghiệp 9 tín chỉ; định hướng nghiên cứu gồm chuyên đề nghiên cứu 15 tín chỉ và luận văn tốt nghiệp 15 tín chỉ.",
     ],
     generalFacts: [
       {
@@ -247,8 +247,8 @@ export const quanLyTaiNguyenMoiTruongPageContent: ProgrammePageContent = {
     ...programmeSharedContent.faq,
     faqs: [
       {
-        question: "Năm 2027 tuyển định hướng nào?",
-        answer: "Chương trình tuyển sinh theo định hướng nghiên cứu trong kế hoạch năm 2027.",
+        question: "Chương trình có những định hướng nào?",
+        answer: "Chương trình có định hướng ứng dụng và định hướng nghiên cứu. Định hướng ứng dụng gồm thực tập chuyên ngành 6 tín chỉ và đề án tốt nghiệp 9 tín chỉ; định hướng nghiên cứu gồm chuyên đề nghiên cứu 15 tín chỉ và luận văn tốt nghiệp 15 tín chỉ.",
       },
       {
         question: "Ngành nào được dự tuyển trực tiếp?",
@@ -334,18 +334,17 @@ export const quanLyTaiNguyenMoiTruongProgramme: Programme = {
   englishTitle: "Master of Natural Resources and Environmental Management",
   degree: "Thạc sĩ",
   field: "Kỹ thuật, Môi trường & Công nghệ",
-  orientation: "Nghiên cứu",
+  orientation: "Ứng dụng",
   credits: 60,
   duration: "18–24 tháng",
   studyMode: "Chính quy · Tiếng Việt",
   summary:
-    "Phát triển năng lực nghiên cứu, phân tích dữ liệu và đề xuất giải pháp quản lý tài nguyên, môi trường theo hướng tăng trưởng xanh, thích ứng biến đổi khí hậu.",
+    "Chương trình có định hướng ứng dụng và nghiên cứu, phát triển năng lực quản lý tài nguyên, môi trường và thích ứng biến đổi khí hậu.",
   tuition: "85.000.000 VNĐ",
   intake: "Tuyển sinh Thạc sĩ 2027",
 };
 export function getQuanLyTaiNguyenMoiTruongCurricula(): CurriculumTrack[] {
-  return [
-    {
+  const researchTrack: CurriculumTrack = {
       number: "05",
       title: "Định hướng nghiên cứu",
       orientation: "Nghiên cứu",
@@ -541,6 +540,43 @@ export function getQuanLyTaiNguyenMoiTruongCurricula(): CurriculumTrack[] {
           "Luận văn tốt nghiệp Graduation Thesis · 15 tín chỉ",
         ],
       },
+    };
+  const sharedCourseGroups = researchTrack.groups.slice(0, -1).map((group) => ({
+    ...group,
+    courses: group.courses.map((course) =>
+      course.code === "81RPDE70092"
+        ? {
+            code: "81PPDE70102",
+            name: "Đề cương thực hiện Đề án tốt nghiệp và bảo vệ đề cương · Project proposal and defense",
+            credits: 2,
+          }
+        : { ...course },
+    ),
+  }));
+  const applicationTrack: CurriculumTrack = {
+    number: "05",
+    title: "Định hướng ứng dụng",
+    orientation: "Ứng dụng",
+    subtitle: "18–24 tháng · 60 tín chỉ",
+    graduationProject: "Đề án tốt nghiệp · 9 tín chỉ",
+    intro: "Lộ trình ứng dụng gồm các học phần chuyên môn, thực tập chuyên ngành 6 tín chỉ và đề án tốt nghiệp 9 tín chỉ.",
+    notes: ["Hoàn thành 60 tín chỉ theo cơ cấu chương trình và yêu cầu của định hướng ứng dụng."],
+    generalFacts: researchTrack.generalFacts,
+    groups: [
+      ...sharedCourseGroups,
+      {
+        title: "Thực tập và đề án tốt nghiệp",
+        totalCreditsLabel: "15 tín chỉ",
+        courses: [
+          { code: "81INTE70356", name: "Thực tập chuyên ngành · Internship", credits: 6 },
+          { code: "81GRPR70369", name: "Đề án tốt nghiệp · Graduation Project", credits: 9 },
+        ],
+      },
+    ],
+    completion: {
+      heading: "Đề án tốt nghiệp",
+      items: ["Thực tập chuyên ngành · 6 tín chỉ", "Đề án tốt nghiệp · Graduation Project · 9 tín chỉ"],
     },
-  ];
+  };
+  return [applicationTrack, researchTrack];
 }

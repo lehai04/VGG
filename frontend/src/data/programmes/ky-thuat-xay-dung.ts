@@ -24,6 +24,14 @@ export const kyThuatXayDungPageContent: ProgrammePageContent = {
   // --------------------------------------------------
   facts: {
     ...programmeSharedContent.facts,
+    quickFactsDetailed: [
+      { label: "Trình độ", value: "Thạc sĩ" },
+      { label: "Mã ngành", value: "8580201" },
+      { label: "Thời gian đào tạo", value: "18–24 tháng" },
+      { label: "Định hướng", value: "Nghiên cứu · Ứng dụng" },
+      { label: "Lịch học", value: "Ngoài giờ hành chính" },
+      { label: "Học phí", value: "85.000.000 VNĐ" },
+    ],
   },
 
   // --------------------------------------------------
@@ -171,6 +179,7 @@ export const kyThuatXayDungProgramme: Programme = {
   field: "Kỹ thuật, Môi trường & Công nghệ",
 
   orientation: "Ứng dụng",
+  orientations: ["Nghiên cứu", "Ứng dụng"],
 
   credits: 60,
 

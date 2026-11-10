@@ -59,6 +59,7 @@ export async function websiteBanner(id: string) {
     return undefined;
   }
 }
+const hiddenSourceProgrammeIds = new Set(["quan-tri-du-lich"]);
 export const websiteProgrammes = cache(async () => {
   let all = [...sourceProgrammes];
   try {
@@ -82,7 +83,8 @@ export const websiteProgrammes = cache(async () => {
   } catch {
     /* Keep the source catalogue available during outages. */
   }
+  const visible = all.filter((programme) => !hiddenSourceProgrammeIds.has(programme.id));
   return Promise.all(
-    all.map((programme) => websiteContent(`programme:${programme.id}`, programme)),
+    visible.map((programme) => websiteContent(`programme:${programme.id}`, programme)),
   );
 });
