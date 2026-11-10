@@ -4,6 +4,7 @@ import { cache } from "react";
 import { programmes as sourceProgrammes } from "@/data/programmes";
 import {
   parseComposition,
+  contentSections,
   bannerSchema,
   applyCollections,
 } from "../../../backend/src/modules/content/visual-model";
@@ -50,7 +51,18 @@ async function pagePatch(id: string) {
   return data.contents.find((row) => row.key === `page.published.${data.locale}.${id}`)?.value ?? {};
 }
 export async function websiteLayout(id: string) {
-  return parseComposition(id, (await pagePatch(id)).$layout);
+  const layout = parseComposition(id, (await pagePatch(id)).$layout);
+  if (!layout || !id.startsWith("programme:")) return layout;
+
+  // Programme detail pages share one section order. Keep CMS-authored added
+  // sections, but don't let per-programme hide/order settings change the template.
+  const standardOrder = contentSections(id).map((section) => section.id);
+  const addedOrder = layout.added.map((section) => section.id);
+  return {
+    ...layout,
+    order: [...new Set([...standardOrder, ...addedOrder])],
+    hidden: [],
+  };
 }
 export async function websiteBanner(id: string) {
   try {
