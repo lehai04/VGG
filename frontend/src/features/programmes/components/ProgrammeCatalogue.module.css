@@ -874,10 +874,11 @@
 
 .vgg-pd__consult {
   position: relative;
+  container-type: inline-size;
 
   margin-top: 27px;
 
-  padding: 25px;
+  padding: 25px 12px;
 
   overflow: hidden;
 
@@ -935,9 +936,10 @@
 
   color: #ffffff;
 
-  font-size: var(--text-16);
+  --type-h3: clamp(14px, 5.7cqi, 20px);
 
   line-height: 1.28;
+  text-wrap: balance;
 }
 
 /* DANH MỤC NGÀNH - BỘ LỌC, THẺ VÀ CHƯƠNG TRÌNH */
@@ -1481,6 +1483,15 @@
 }
 
 /* DANH MỤC NGÀNH - BỘ LỌC, THẺ VÀ CHƯƠNG TRÌNH */
+
+.vgg-pd-card__stat:nth-child(3) {
+  padding-inline-start: min(12px, 3%);
+}
+
+.vgg-pd-card__stat:nth-child(3) span {
+  white-space: nowrap;
+  letter-spacing: 0.045em;
+}
 
 .vgg-pd-card__stat span {
   margin-top: 7px;
@@ -2243,18 +2254,30 @@
 
 @container programme-results (max-width: 400px) {
   .vgg-pd-card__row {
-    grid-template-columns: 64px repeat(4, minmax(0, 1fr)) 44px;
-    gap: 12px 6px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .vgg-pd-card__code {
+    align-self: center;
+  }
+  .vgg-pd-card__toggle {
+    grid-column: 2;
+  }
+  .vgg-pd-card__main {
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
   .vgg-pd-card__stat:nth-child(3) {
-    grid-column: 1 / 4;
+    grid-column: 1;
+    grid-row: 3;
   }
   .vgg-pd-card__stat:nth-child(4) {
-    grid-column: 4 / 7;
+    grid-column: 2;
+    grid-row: 3;
   }
   .vgg-pd-card__tuition {
     grid-column: 1 / -1;
-    grid-row: 3;
+    grid-row: 4;
   }
   .vgg-pd-card__details {
     padding-inline: 14px;

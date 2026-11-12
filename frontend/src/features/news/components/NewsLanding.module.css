@@ -259,14 +259,10 @@
   font-style: normal;
 }
 .cardBody > p {
-  display: -webkit-box;
-  overflow: hidden;
   margin: 18px 0 0;
   color: #656976;
   font-size: var(--text-14);
   line-height: 1.6;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
 }
 .readMore {
   display: flex;

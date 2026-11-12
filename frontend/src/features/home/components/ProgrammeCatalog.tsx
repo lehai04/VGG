@@ -1,3 +1,4 @@
+import { requestCopy } from "@/i18n/request-copy";
 import Link from "@/i18n/components/LocalizedLink";
 import { homeContent } from '@/data/home-content';
 import { websiteContent } from '@/lib/website-content';
@@ -49,9 +50,10 @@ const MASTER_FIELDS = [
 
 /** HOMEPAGE SECTION: Danh mục các nhóm chương trình và liên kết sang /programmes. */
 export async function ProgrammeCatalog() {
+  const t = await requestCopy();
   const content = await websiteContent('home', homeContent);
   return (
-    <section className="programmeCatalog" aria-label="Chương trình đào tạo" id="programmes">
+    <section className="programmeCatalog" aria-label={t("Chương trình đào tạo")} id="programmes">
       {/* Các nhóm ngành dẫn tới danh mục với bộ lọc tương ứng. */}
       <div className="programmeFieldGrid">
         {content.fields.map((field, fieldIndex) => (
@@ -63,13 +65,13 @@ export async function ProgrammeCatalog() {
           >
             <header>
               <span>{String(fieldIndex + 1).padStart(2, "0")}</span>
-              <b>{field.code === "PHD" ? "CHƯƠNG TRÌNH TIẾN SĨ" : "CHƯƠNG TRÌNH THẠC SĨ"}</b>
+              <b>{t(field.code === "PHD" ? "CHƯƠNG TRÌNH TIẾN SĨ" : "CHƯƠNG TRÌNH THẠC SĨ")}</b>
             </header>
             <p>{field.english}</p>
-            <h3>{field.title}</h3>
-            <p className="programmeFieldDescription">{field.description}</p>
+            <h3>{t(field.title)}</h3>
+            <p className="programmeFieldDescription">{t(field.description)}</p>
             <Link className="programmeFieldLink" href={field.code === "PHD" ? "/programmes?degree=Tiến sĩ" : `/programmes?degree=Thạc sĩ&field=${encodeURIComponent(MASTER_FIELDS[fieldIndex].title)}`}>
-              Tìm hiểu chương trình <b aria-hidden="true">→</b>
+              {t("Tìm hiểu chương trình")} <b aria-hidden="true">→</b>
             </Link>
           </article>
         ))}

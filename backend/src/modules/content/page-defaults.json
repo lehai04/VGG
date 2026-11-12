@@ -521,7 +521,7 @@
           },
           {
             "question": "Lịch học có phù hợp với người đang đi làm không?",
-            "answer": "Chương trình đào tạo theo hình thức chính quy. Lịch học bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu cụ thể được công bố theo học kỳ. Thời gian chuẩn là 18 tháng với định hướng ứng dụng, 24 tháng với định hướng nghiên cứu."
+            "answer": "Chương trình đào tạo theo hình thức chính quy. Lịch học bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu cụ thể được công bố theo học kỳ. Thời gian đào tạo chuẩn tùy chương trình và định hướng. Riêng ngành Luật Kinh tế có thời gian chuẩn 24 tháng."
           },
           {
             "question": "Học phí toàn khóa đã bao gồm tất cả các khoản chưa?",
@@ -670,14 +670,14 @@
           "dan_dat_tuong_lai": "CHO BƯỚC TIẾN TIẾP THEO",
           "kien_tao_lo_trinh_hoc_thuat_phu": "Khám phá các chương trình Thạc sĩ và Tiến sĩ tại Văn Lang để phát triển chuyên môn, theo đuổi nghiên cứu và vận dụng kiến thức vào thực tiễn. Lựa chọn chương trình phù hợp với nền tảng và mục tiêu phát triển của bạn.",
           "aria_label_thong_tin_tong_quan_chuong": "Thông tin tổng quan chương trình",
-          "value_2": "20",
+          "value_2": "21+",
           "chuong_trinh": "Chương trình",
           "thac_si": "Thạc sĩ",
           "value_3": "01",
           "tien_si": "Tiến sĩ",
           "value_4": "01",
           "nhom_nganh": "Chương trình",
-          "chuyen_sau": "Quốc tế"
+          "chuyen_sau": "Thạc sĩ liên kết quốc tế"
         }
       },
       "ProgrammeDirectory": {
@@ -825,7 +825,7 @@
         "label": "CHƯƠNG TRÌNH SAU ĐẠI HỌC",
         "title": "Nâng tầm tri thức",
         "emphasis": "Chủ động dẫn đầu.",
-        "intro": "Trường Đại học Văn Lang mang đến 20 chương trình Thạc sĩ và 01 chương trình Tiến sĩ, 01 chương trình liên kết quốc tế giúp bạn phát triển chuyên môn, nâng cao năng lực nghiên cứu và mở rộng cơ hội nghề nghiệp.",
+        "intro": "Trường Đại học Văn Lang mang đến 21+ chương trình Thạc sĩ, 01 chương trình Tiến sĩ và 01 chương trình Thạc sĩ liên kết quốc tế giúp bạn phát triển chuyên môn, nâng cao năng lực nghiên cứu và mở rộng cơ hội nghề nghiệp.",
         "posterImage": "/images/pages/home/banner/banner-01.jpg",
         "primary": {
           "label": "Khám phá chương trình →",
@@ -8509,7 +8509,7 @@
       "field": "Luật, Nhân văn & Truyền thông",
       "orientation": "Ứng dụng",
       "credits": 60,
-      "duration": "18 tháng",
+      "duration": "24 tháng",
       "studyMode": "Chính quy tập trung, tiếng Việt",
       "intake": "Tuyển sinh Thạc sĩ 2027",
       "summary": "Phát triển năng lực phân tích, tư vấn và giải quyết các vấn đề pháp lý trong hoạt động doanh nghiệp, đầu tư, thương mại và cạnh tranh trong bối cảnh hội nhập.",
@@ -8571,7 +8571,7 @@
             },
             {
               "label": "Thời gian chuẩn",
-              "value": "18 tháng",
+              "value": "24 tháng",
               "detail": ""
             },
             {
@@ -8805,7 +8805,7 @@
           "generalFacts": [
             {
               "label": "Thời gian đào tạo",
-              "value": "18 tháng"
+              "value": "24 tháng"
             },
             {
               "label": "Định hướng",
@@ -8928,7 +8928,7 @@
           "faqs": [
             {
               "question": "Chương trình đào tạo theo định hướng nào?",
-              "answer": "Chương trình Thạc sĩ Luật kinh tế theo định hướng ứng dụng, khối lượng 60 tín chỉ. Thông tin tuyển sinh 2027 xác định thời gian đào tạo chuẩn 18 tháng."
+              "answer": "Chương trình Thạc sĩ Luật kinh tế theo định hướng ứng dụng, khối lượng 60 tín chỉ. Thông tin tuyển sinh 2027 xác định thời gian đào tạo chuẩn 24 tháng."
             },
             {
               "question": "Tôi cần đáp ứng điều kiện gì để dự tuyển?",

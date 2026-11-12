@@ -225,7 +225,9 @@ test("Marketing financial and academic requirements do not leak into other progr
 test("Economic Law rejects the accidental Accounting facts and keeps its own credits and internship", () => {
   const p = programmes.find((p) => p.id === "luat-kinh-te");
   assert.equal(p.code, "8380107");
-  assert.equal(p.duration, "18 tháng");
+  assert.equal(p.duration, "24 tháng");
+  assert.match(JSON.stringify(p.pageContent.faq.faqs), /2 buổi tối.*1 ngày Chủ nhật/);
+  assert.match(JSON.stringify(p.pageContent.faq.faqs), /30% khối lượng chương trình/);
   const content = JSON.stringify(p.pageContent);
   assert.ok(!content.includes("340301") && !content.includes("8340301"));
   assert.ok(content.includes("8380107"));

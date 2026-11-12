@@ -45,5 +45,5 @@ export function proxy(request: NextRequest) {
 // Loại các prefix API và tài nguyên liệt kê bên dưới khỏi xử lý locale.
 // Đây là biểu thức matcher cụ thể, không phải cơ chế tự nhận biết mọi phần mở rộng file.
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.svg|images|fonts/|assets/|documents/|robots.txt|sitemap.xml).*)"],
+  matcher: ["/((?!api|_next/|favicon.svg|images|fonts/|assets/|documents/|robots.txt|sitemap.xml).*)"],
 };

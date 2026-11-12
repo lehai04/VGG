@@ -9,11 +9,15 @@ import Link from "@/i18n/components/LocalizedLink";
 import { useState } from "react";
 import { useWebsiteChrome } from './WebsiteChromeProvider';
 import { Header } from "@/features/home/components/Header";
+import { LanguageSwitch } from "@/i18n/components/LanguageSwitch";
+import { useWebsiteCopy } from "@/i18n/components/WebsiteCopy";
 
 function UtilityBar() {
+  const t = useWebsiteCopy();
   return (
     <div className="utility">
-      <span>Viện Sau đại học – TRƯỜNG ĐẠI HỌC VĂN LANG</span>
+      <span>{t("Viện Sau đại học – TRƯỜNG ĐẠI HỌC VĂN LANG")}</span>
+      <LanguageSwitch />
     </div>
   );
 }

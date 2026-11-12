@@ -3,6 +3,60 @@ import { programmeSharedContent } from "./shared-content";
 import type { Programme, ProgrammePageContent } from "../programmes";
 import type { CurriculumTrack } from "../curricula";
 
+const lawSchedule = "Dự kiến học 2 buổi tối trong tuần và 1 ngày Chủ nhật. Kế hoạch này có thể thay đổi tùy thuộc tình hình thực tế và nhu cầu của người học.";
+
+const lawStudyFaqs = [
+  {
+    question: "Lịch học như thế nào?",
+    answer: lawSchedule,
+  },
+  {
+    question: "Chương trình có giảng dạy online không?",
+    answer: "Có, khoảng 30% khối lượng chương trình được giảng dạy online.",
+  },
+];
+
+export function applyLuatKinhTeStudyUpdate(programme: Programme): Programme {
+  const content = programme.pageContent;
+  if (!content) return { ...programme, duration: "24 tháng", schedule: lawSchedule };
+
+  // Keep the stored FAQ indexes stable, then place the new questions after the first FAQ.
+  const faqList = content.faq.faqs.filter(({ question }) =>
+    !lawStudyFaqs.some((faq) => faq.question === question) &&
+    question !== "What is the class schedule?" &&
+    question !== "Is any of the program taught online?"
+  ).map((faq) => {
+    const answer = faq.answer.replace(
+      "Thông tin tuyển sinh 2027 xác định thời gian đào tạo chuẩn 18 tháng.",
+      "Thời gian đào tạo chuẩn là 24 tháng.",
+    ).replace("the standard program duration of 18 months", "the standard program duration of 24 months");
+    return { ...faq, answer };
+  });
+  faqList.splice(1, 0, ...lawStudyFaqs);
+  const updateDuration = <T extends { value: string }>(fact: T): T =>
+    /^18 (tháng|months)$/.test(fact.value) ? { ...fact, value: "24 tháng" } : fact;
+
+  return {
+    ...programme,
+    duration: "24 tháng",
+    schedule: lawSchedule,
+    pageContent: {
+      ...content,
+      facts: {
+        ...content.facts,
+        displayDuration: content.facts.displayDuration === undefined ? undefined : "24 tháng",
+        quickFactsDetailed: content.facts.quickFactsDetailed?.map(updateDuration),
+      },
+      section05: {
+        ...content.section05,
+        generalFacts: content.section05.generalFacts?.map(updateDuration),
+        trackDurations: content.section05.trackDurations?.map((value) => updateDuration({ value }).value),
+      },
+      faq: { ...content.faq, faqs: faqList },
+    },
+  };
+}
+
 export const luatKinhTePageContent: ProgrammePageContent = {
   hero: {
     ...programmeSharedContent.hero,
@@ -35,7 +89,7 @@ export const luatKinhTePageContent: ProgrammePageContent = {
       },
       {
         label: "Thời gian chuẩn",
-        value: "18 tháng",
+        value: "24 tháng",
         detail: "",
       },
       {
@@ -244,7 +298,7 @@ export const luatKinhTePageContent: ProgrammePageContent = {
     generalFacts: [
       {
         label: "Thời gian đào tạo",
-        value: "18 tháng",
+        value: "24 tháng",
       },
       {
         label: "Định hướng",
@@ -355,7 +409,7 @@ export const luatKinhTePageContent: ProgrammePageContent = {
       {
         question: "Chương trình đào tạo theo định hướng nào?",
         answer:
-          "Chương trình Thạc sĩ Luật kinh tế theo định hướng ứng dụng, khối lượng 60 tín chỉ. Thông tin tuyển sinh 2027 xác định thời gian đào tạo chuẩn 18 tháng.",
+          "Chương trình Thạc sĩ Luật kinh tế theo định hướng ứng dụng, khối lượng 60 tín chỉ. Thời gian đào tạo chuẩn là 24 tháng.",
       },
       {
         question: "Tôi cần đáp ứng điều kiện gì để dự tuyển?",
@@ -387,6 +441,7 @@ export const luatKinhTePageContent: ProgrammePageContent = {
         answer:
           "Học phí toàn khóa là 85.000.000 đồng, chia thành ba đợt 29.750.000 đồng, 25.500.000 đồng và 29.750.000 đồng. Các khoản lệ phí và bổ sung kiến thức được thu riêng khi áp dụng.",
       },
+      ...lawStudyFaqs,
     ],
   },
   fees: {
@@ -457,13 +512,12 @@ export const luatKinhTeProgramme: Programme = {
   field: "Luật, Nhân văn & Truyền thông",
   orientation: "Ứng dụng",
   credits: 60,
-  duration: "18 tháng",
+  duration: "24 tháng",
   studyMode: "Chính quy tập trung, tiếng Việt",
   intake: "Tuyển sinh Thạc sĩ 2027",
   summary:
     "Phát triển năng lực phân tích, tư vấn và giải quyết các vấn đề pháp lý trong hoạt động doanh nghiệp, đầu tư, thương mại và cạnh tranh trong bối cảnh hội nhập.",
-  schedule:
-    "Buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu theo từng học kỳ.",
+  schedule: lawSchedule,
   tuition: "85.000.000 VNĐ",
 };
 
@@ -473,14 +527,14 @@ export function getLuatKinhTeCurricula(): CurriculumTrack[] {
       number: "05",
       title: "Định hướng ứng dụng",
       orientation: "Ứng dụng",
-      subtitle: "18 tháng · 60 tín chỉ",
+      subtitle: "24 tháng · 60 tín chỉ",
       graduationProject: "Đề án tốt nghiệp · 9 tín chỉ",
       intro:
         "Chương trình gồm 10 tín chỉ kiến thức chung, 33 tín chỉ kiến thức cơ sở và chuyên ngành, cùng 17 tín chỉ thực tập và đề án tốt nghiệp.",
       generalFacts: [
         {
           label: "Thời gian đào tạo",
-          value: "18 tháng",
+          value: "24 tháng",
         },
         {
           label: "Định hướng",

@@ -18,6 +18,9 @@ export type NewsPostItem = {
   title: string;
   excerpt: string | null;
   content: string;
+  enTitle?: string | null;
+  enExcerpt?: string | null;
+  enContent?: string | null;
   coverImage: string | null;
   coverImageAlt?: string | null;
   metaTitle?: string | null;

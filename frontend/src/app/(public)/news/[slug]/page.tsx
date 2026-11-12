@@ -12,8 +12,7 @@ import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { categoryLabel, getNewsPost, getNewsPosts } from "@/features/news/data";
 import { NewsShare } from "@/features/news/components/NewsShare";
 import styles from "@/features/news/components/NewsDetail.module.css";
-import { headers } from "next/headers";
-import { defaultLocale, isLocale } from "@/lib/i18n";
+import { requestCopy, requestLanguage } from "@/i18n/request-copy";
 
 type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ contentNewsPreview?: string }> };
 function canonicalNewsUrl(post: { canonicalUrl?: string | null; slug: string }, locale: string) {
@@ -27,11 +26,9 @@ function canonicalNewsUrl(post: { canonicalUrl?: string | null; slug: string }, 
 export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const token=(await searchParams).contentNewsPreview;
   if(token)return {title:"Xem trước tin tức",robots:{index:false,follow:false}};
-  const post = await getNewsPost((await params).slug);
+  const { locale } = await requestLanguage();
+  const post = await getNewsPost((await params).slug, undefined, locale);
   if (!post) return {};
-  const requestHeaders = await headers();
-  const headerLocale = requestHeaders.get("x-vgg-locale");
-  const locale = isLocale(headerLocale) ? headerLocale : defaultLocale;
   const url = canonicalNewsUrl(post, locale);
   const image = post.ogImage || post.coverImage;
   return {
@@ -59,21 +56,25 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 export default async function NewsDetailPage({ params, searchParams }: Props) {
   if (!isPublicSectionVisible("/news")) notFound();
   const { slug } = await params;
-  const post = await getNewsPost(slug, (await searchParams).contentNewsPreview);
+  const { locale } = await requestLanguage();
+  const t = await requestCopy();
+  const post = await getNewsPost(slug, (await searchParams).contentNewsPreview, locale);
   if (!post) {
     const legacyHref = legacyNewsHref(slug);
     if (legacyHref) redirect(await localizedRedirectPath(legacyHref));
     notFound();
   }
-  const recent = (await getNewsPosts({ limit: 6 }))
+  const recent = (await getNewsPosts({ limit: 4, locale }))
     .filter((item) => item.slug !== post.slug)
-    .slice(0, 5);
+    .slice(0, 3);
+  const recentDateFormat = new Intl.DateTimeFormat(locale === "en" ? "en-US" : "vi-VN", {
+    day: "2-digit",
+    month: locale === "en" ? "short" : "2-digit",
+    year: "numeric",
+  });
   const date = post.publishedAt
-    ? new Date(post.publishedAt).toLocaleDateString("vi-VN")
-    : "Mới cập nhật";
-  const requestHeaders = await headers();
-  const headerLocale = requestHeaders.get("x-vgg-locale");
-  const locale = isLocale(headerLocale) ? headerLocale : defaultLocale;
+    ? new Date(post.publishedAt).toLocaleDateString(locale === "en" ? "en-US" : "vi-VN")
+    : t("Mới cập nhật", "Recently updated");
   const canonicalUrl = canonicalNewsUrl(post, locale);
   const author = post.authorName || post.author?.fullName || "Viện Sau đại học";
   const publicBase = publicSiteOrigin();
@@ -90,19 +91,19 @@ export default async function NewsDetailPage({ params, searchParams }: Props) {
       <SiteHeader compact />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <article>
-        <nav aria-label="Breadcrumb"><Link href="/">Trang chủ</Link> / <Link href="/news">Tin tức</Link> / <span>{post.title}</span></nav>
+        <nav aria-label="Breadcrumb"><Link href="/">{t("Trang chủ", "Home")}</Link> / <Link href="/news">{t("Tin tức", "News")}</Link> / <span>{post.title}</span></nav>
         <header className={styles.articleHeader}>
-          <p>{categoryLabel(post.category)}</p>
-          <h1>{post.title}</h1>
+          <p>{t(categoryLabel(post.category))}</p>
+          <h1 lang={post.locale}>{post.title}</h1>
           <div className={styles.infoRow}>
             <div className={styles.meta}>
               <span>
                 <UserRound />
-                Tác giả <b>{post.authorName || post.author?.fullName || "Viện Sau đại học"}</b>
+                {t("Tác giả", "Author")} <b>{post.authorName || post.author?.fullName || "Viện Sau đại học"}</b>
               </span>
               <time>
                 <CalendarDays />
-                Ngày đăng <b>{date}</b>
+                {t("Ngày đăng", "Published")} <b>{date}</b>
               </time>
             </div>
             <NewsShare title={post.title} />
@@ -119,7 +120,10 @@ export default async function NewsDetailPage({ params, searchParams }: Props) {
           />
         </figure>
         <div className={styles.bodyLayout}>
-          <div className={styles.articleBody}>
+          <div className={styles.articleBody} lang={post.locale}>
+            {locale === "en" && post.locale === "vi" && (
+              <p lang="en">English translation unavailable. The original Vietnamese article is shown below.</p>
+            )}
             {post.excerpt && (
               <p className={styles.lead}>
                 <strong>{post.excerpt}</strong>
@@ -128,12 +132,13 @@ export default async function NewsDetailPage({ params, searchParams }: Props) {
             <div className={`${styles.content} cms-rich-content`} dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
           <aside className={styles.recent} aria-labelledby="recent-news">
-            <h2 id="recent-news">Tin tức gần đây</h2>
+            <h2 id="recent-news">{t("Tin tức gần đây", "Recent news")}</h2>
             {recent.length ? (
               <>
-                <div>
+                <div className={styles.recentList}>
                   {recent.map((item) => (
                     <Link
+                      className={styles.recentItem}
                       href={item.externalUrl ?? `/news/${item.slug}`}
                       target={item.externalUrl ? "_blank" : undefined}
                       rel={item.externalUrl ? "noopener noreferrer" : undefined}
@@ -143,29 +148,36 @@ export default async function NewsDetailPage({ params, searchParams }: Props) {
                         <Image
                           src={item.coverImage || "/images/pages/news/content/banner.jpg"}
                           unoptimized={item.coverImage?.startsWith("/uploads/")}
-                          alt={item.coverImageAlt || item.title}
+                          alt=""
                           fill
-                          sizes="150px"
+                          sizes="118px"
                         />
                       </figure>
-                      <div>
-                        <p>{categoryLabel(item.category)}</p>
-                        <h3>{item.title}</h3>
-                        <time>
-                          {item.publishedAt
-                            ? new Date(item.publishedAt).toLocaleDateString("vi-VN")
-                            : "Mới cập nhật"}
-                        </time>
+                      <div className={styles.recentCopy}>
+                        <span className={styles.recentCategory} data-category={item.category}>
+                          {t(categoryLabel(item.category))}
+                        </span>
+                        <h3 lang={item.locale}>{item.title}</h3>
+                        <div className={styles.recentDate}>
+                          <CalendarDays aria-hidden="true" />
+                          {item.publishedAt ? (
+                            <time dateTime={item.publishedAt}>
+                              {recentDateFormat.format(new Date(item.publishedAt))}
+                            </time>
+                          ) : (
+                            <span>{t("Mới cập nhật", "Recently updated")}</span>
+                          )}
+                        </div>
                       </div>
                     </Link>
                   ))}
                 </div>
                 <Link className={styles.exploreMore} href="/news">
-                  Khám phá tất cả <ArrowUpRight />
+                  {t("Khám phá tất cả", "Explore all news")} <ArrowUpRight aria-hidden="true" />
                 </Link>
               </>
             ) : (
-              <p className={styles.noRecent}>Chưa có tin tức</p>
+              <p className={styles.noRecent}>{t("Chưa có tin tức", "No news yet")}</p>
             )}
           </aside>
         </div>

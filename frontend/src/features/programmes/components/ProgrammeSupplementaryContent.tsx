@@ -1,5 +1,6 @@
 "use client";
 
+import { useWebsiteCopy } from "@/i18n/components/WebsiteCopy";
 import { useState } from "react";
 import Link from "@/i18n/components/LocalizedLink";
 import type { CurriculumTrack } from "@/data/curricula";
@@ -14,15 +15,16 @@ import styles from "./ProgrammeSupplementaryContent.module.css";
 import detailStyles from "./ProgrammeDetailPage.module.css";
 
 function InformationBody({ block }: { block: ProgrammeInformationBlock }) {
+  const t = useWebsiteCopy();
   return (
     <>
       {block.paragraphs?.map((paragraph) => (
-        <p key={paragraph}>{paragraph}</p>
+        <p key={paragraph}>{t(paragraph)}</p>
       ))}
       {!!block.points?.length && (
         <ul>
           {block.points.map((point) => (
-            <li key={point}>{point}</li>
+            <li key={point}>{t(point)}</li>
           ))}
         </ul>
       )}
@@ -34,9 +36,10 @@ function InformationBody({ block }: { block: ProgrammeInformationBlock }) {
 }
 
 function InformationBlock({ block }: { block: ProgrammeInformationBlock }) {
+  const t = useWebsiteCopy();
   return (
     <details className={styles.admissionAccordion}>
-      <summary>{block.title}</summary>
+      <summary>{t(block.title)}</summary>
       <div className={styles.admissionAccordionBody}>
         <InformationBody block={block} />
       </div>
@@ -45,6 +48,7 @@ function InformationBlock({ block }: { block: ProgrammeInformationBlock }) {
 }
 
 export function ProgrammeAdmissions({ blocks }: { blocks?: readonly ProgrammeInformationBlock[] }) {
+  const t = useWebsiteCopy();
   const content = blocks ?? [
     {
       title: "Ngành tốt nghiệp có phù hợp?",
@@ -88,7 +92,7 @@ export function ProgrammeAdmissions({ blocks }: { blocks?: readonly ProgrammeInf
     <div className={styles.admissions} aria-label="Điều kiện dự tuyển và bổ sung kiến thức">
       {eligibility.map((block) => (
         <article className={styles.eligibilitySummary} key={block.title}>
-          <h3>{block.title}</h3>
+          <h3>{t(block.title)}</h3>
           <InformationBody block={block} />
         </article>
       ))}
@@ -96,7 +100,7 @@ export function ProgrammeAdmissions({ blocks }: { blocks?: readonly ProgrammeInf
         <div className={styles.entryCards}>
           {cards.map((block) => (
             <article className={styles.entryCard} key={block.title}>
-              <h3>{block.title}</h3>
+              <h3>{t(block.title)}</h3>
               <InformationBody block={block} />
             </article>
           ))}
@@ -107,7 +111,7 @@ export function ProgrammeAdmissions({ blocks }: { blocks?: readonly ProgrammeInf
       ))}
       {bridge && (
         <article className={styles.bridgePanel}>
-          <h3>{bridge.title}</h3>
+          <h3>{t(bridge.title)}</h3>
           {bridge.paragraphs
             ?.filter((paragraph) => !paragraph.startsWith("Kết quả bổ sung"))
             .map((paragraph) => (
@@ -115,7 +119,7 @@ export function ProgrammeAdmissions({ blocks }: { blocks?: readonly ProgrammeInf
                 className={paragraph.includes("nằm ngoài") ? styles.bridgeNotice : undefined}
                 key={paragraph}
               >
-                {paragraph}
+                {t(paragraph)}
               </p>
             ))}
           {!!bridge.points?.length && (
@@ -132,11 +136,11 @@ export function ProgrammeAdmissions({ blocks }: { blocks?: readonly ProgrammeInf
             ?.filter((paragraph) => paragraph.startsWith("Kết quả bổ sung"))
             .map((paragraph) => (
               <p className={styles.admissionFootnote} key={paragraph}>
-                {paragraph}
+                {t(paragraph)}
               </p>
             ))}
           <Link className={styles.admissionLink} href="#consultation">
-            Tư vấn về ngành đầu vào ↗
+            {t("Tư vấn về ngành đầu vào ↗")}
           </Link>
         </article>
       )}
@@ -151,17 +155,18 @@ export function ProgrammeSemesterPlan({
   programme: Programme;
   track?: CurriculumTrack;
 }) {
+  const t = useWebsiteCopy();
   const plan = track?.semesters ?? programme.pageContent?.section05.semesters;
   if (!plan) return null;
   return (
     <details className={styles.block}>
-      <summary>{plan.heading}</summary>
+      <summary>{t(plan.heading)}</summary>
       <div className={styles.blockBody}>
-        <p>{plan.intro}</p>
+        <p>{t(plan.intro)}</p>
         {plan.items.map((semester) => (
-          <section className={styles.semester} key={semester.title} aria-label={semester.title}>
-            <h3>{semester.title}</h3>
-            <p>{semester.subtitle}</p>
+          <section className={styles.semester} key={semester.title} aria-label={t(semester.title)}>
+            <h3>{t(semester.title)}</h3>
+            <p>{t(semester.subtitle)}</p>
             <ProgrammeCurriculumGroups groups={semester.groups} />
           </section>
         ))}
@@ -177,13 +182,14 @@ export function ProgrammeCompletion({
   programme: Programme;
   track?: CurriculumTrack;
 }) {
+  const t = useWebsiteCopy();
   const completion = track?.completion ?? programme.pageContent?.section05.completion;
   return (
     <div className={styles.completion}>
-      <h3>{completion?.heading ?? "Hoàn thành chương trình"}</h3>
+      <h3>{t(completion?.heading ?? "Hoàn thành chương trình")}</h3>
       <ul>
         {(completion?.items ?? getProgrammeGraduationRequirements(programme)).map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item}>{t(item)}</li>
         ))}
       </ul>
     </div>
@@ -192,6 +198,7 @@ export function ProgrammeCompletion({
 
 /** Chỉ bổ sung lịch thanh toán/khoản thu khi chính ngành có nguồn chi tiết. */
 export function ProgrammeFees({ programme }: { programme: Programme }) {
+  const t = useWebsiteCopy();
   const content = programme.pageContent?.fees;
   const [variantIndex, setVariantIndex] = useState(0);
   const selectedFee = content?.variants?.[variantIndex] ?? content;
@@ -200,21 +207,21 @@ export function ProgrammeFees({ programme }: { programme: Programme }) {
       <div className={detailStyles.container}>
         <div className={styles.feesGrid}>
           <div>
-            <h2 data-section-label id="programme-fees-title">{content?.heading ?? "Học phí chương trình"}</h2>
+            <h2 data-section-label id="programme-fees-title">{t(content?.heading ?? "Học phí chương trình")}</h2>
             {content?.intro.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+              <p key={paragraph}>{t(paragraph)}</p>
             ))}
             {content && (
               <details className={`${styles.block} ${styles.feeDisclosure}`}>
-                <summary>Các khoản thu riêng khi áp dụng</summary>
+                <summary>{t("Các khoản thu riêng khi áp dụng")}</summary>
                 <div className={styles.blockBody}>
                   <dl className={styles.additionalFees}>
                     {content.additionalFees.map((fee) => (
                       <div key={fee.title}>
-                        <dt>{fee.title}</dt>
+                        <dt>{t(fee.title)}</dt>
                         <dd>
-                          <strong>{fee.amount}</strong>
-                          <p>{fee.note}</p>
+                          <strong>{t(fee.amount)}</strong>
+                          <p>{t(fee.note)}</p>
                         </dd>
                       </div>
                     ))}
@@ -223,48 +230,48 @@ export function ProgrammeFees({ programme }: { programme: Programme }) {
               </details>
             )}
             {content?.notes.map((note) => (
-              <p key={note}>{note}</p>
+              <p key={note}>{t(note)}</p>
             ))}
             <Link className={styles.link} href={`/admissions?programme=${encodeURIComponent(programme.id)}&degree=${programme.degree === "Tiến sĩ" ? "doctor" : "master"}#${programme.degree === "Tiến sĩ" ? "ts-hoc-phi" : "hoc-phi"}`}>
-              Xem thông tin tuyển sinh ↗
+              {t("Xem thông tin tuyển sinh ↗")}
             </Link>
           </div>
-          <aside className={styles.feeCard} aria-label="Học phí toàn khóa">
-            <p>{content?.intake ?? programme.intake}</p>
+          <aside className={styles.feeCard} aria-label={t("Học phí toàn khóa")}>
+            <p>{t(content?.intake ?? programme.intake)}</p>
             {!!content?.variants?.length && (
               <label className={styles.feeLanguage}>
-                <span>Ngôn ngữ đào tạo</span>
+                <span>{t("Ngôn ngữ đào tạo")}</span>
                 <select
                   value={variantIndex}
                   onChange={(event) => setVariantIndex(Number(event.target.value))}
                 >
                   {content.variants.map((variant, index) => (
                     <option value={index} key={variant.language}>
-                      {variant.language} · {variant.total}
+                      {t(variant.language)} · {t(variant.total)}
                     </option>
                   ))}
                 </select>
               </label>
             )}
-            <h3>Học phí toàn khóa{selectedFee ? ` · ${selectedFee.language}` : ""}</h3>
+            <h3>{t("Học phí toàn khóa")}{selectedFee && ` · ${t(selectedFee.language)}`}</h3>
             <strong className={styles.total} aria-live="polite" aria-atomic="true">
-              {selectedFee?.total ?? getProgrammeTuition(programme)}
+              {t(selectedFee?.total ?? getProgrammeTuition(programme))}
             </strong>
             {selectedFee && (
               <table className={styles.paymentTable}>
-                <caption>Ba đợt thanh toán học phí</caption>
+                <caption>{t("Ba đợt thanh toán học phí")}</caption>
                 <tbody>
                   {selectedFee.installments.map((installment) => (
                     <tr key={installment.label}>
-                      <th scope="row">{installment.label}</th>
-                      <td>{installment.amount}</td>
+                      <th scope="row">{t(installment.label)}</th>
+                      <td>{t(installment.amount)}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             )}
             <Link href="#consultation" className={styles.link}>
-              Tư vấn về học phí ↗
+              {t("Tư vấn về học phí ↗")}
             </Link>
           </aside>
         </div>

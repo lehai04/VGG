@@ -1,5 +1,8 @@
 "use client";
 
+import { useWebsiteCopy } from "@/i18n/components/WebsiteCopy";
+import { useLocale } from "@/i18n/components/LocaleProvider";
+import { localizedHref } from "@/lib/i18n";
 import styles from "./ProgrammeCatalogue.module.css";
 
 import { catalogueCopy } from "@/data/programmes/catalogue-copy";
@@ -10,6 +13,8 @@ import { ArrowRight, Search, SlidersHorizontal } from "lucide-react";
 import { programmeDegrees, programmeFields, programmeOrientations } from "@/data/programmes";
 
 export default function ProgrammeSearch({ content = catalogueCopy.ProgrammeSearch }: { content?: typeof catalogueCopy.ProgrammeSearch } = {}) {
+  const t = useWebsiteCopy();
+  const { locale } = useLocale();
   const copy = content;
   const router = useRouter();
   const [keyword, setKeyword] = useState("");
@@ -24,7 +29,7 @@ export default function ProgrammeSearch({ content = catalogueCopy.ProgrammeSearc
     if (field) params.set("field", field);
     if (orientation) params.set("orientation", orientation);
     const suffix = params.size ? `?${params.toString()}` : "";
-    router.push(`/programmes${suffix}`);
+    router.push(localizedHref(locale, `/programmes${suffix}`));
   };
 
   return (
@@ -34,7 +39,7 @@ export default function ProgrammeSearch({ content = catalogueCopy.ProgrammeSearc
     >
       <div className={`${styles["programme-search-heading"]}`}>
         <h2 id="programme-search-title">
-          {copy.programme_search_wrapper.tim_kiem_chuong_trinh_phu_hop_voi}
+          {t(copy.programme_search_wrapper.tim_kiem_chuong_trinh_phu_hop_voi)}
         </h2>
 
       </div>
@@ -42,7 +47,7 @@ export default function ProgrammeSearch({ content = catalogueCopy.ProgrammeSearc
       <div className={`${styles["programme-search-panel"]}`}>
         <div className={`${styles["programme-search-panel-head"]}`}>
           <div>
-            <strong>{copy.programme_search_wrapper.chon_dieu_ban_muon_kham_pha}</strong>
+            <strong>{t(copy.programme_search_wrapper.chon_dieu_ban_muon_kham_pha)}</strong>
           </div>
         </div>
         <div className={`${styles["programme-search-top"]}`}>
@@ -51,9 +56,9 @@ export default function ProgrammeSearch({ content = catalogueCopy.ProgrammeSearc
 
             <input
               type="text"
-              aria-label={copy.programme_search_wrapper.aria_label_tim_kiem_chuong_trinh}
+              aria-label={t(copy.programme_search_wrapper.aria_label_tim_kiem_chuong_trinh)}
               placeholder={
-                copy.programme_search_wrapper.placeholder_nhap_ten_chuong_trinh_hoac_linh
+                t(copy.programme_search_wrapper.placeholder_nhap_ten_chuong_trinh_hoac_linh)
               }
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
@@ -66,38 +71,38 @@ export default function ProgrammeSearch({ content = catalogueCopy.ProgrammeSearc
           </div>
 
           <button className={`${styles["programme-search-button"]}`} onClick={handleSearch}>
-            {copy.programme_search_wrapper.kham_pha}
+            {t(copy.programme_search_wrapper.kham_pha)}
             <ArrowRight size={18} aria-hidden="true" />
           </button>
         </div>
 
         <div className={`${styles["programme-search-filters"]}`}>
           <span className={`${styles["programme-search-filter-label"]}`}>
-            <SlidersHorizontal size={15} /> {copy.programme_search_wrapper.loc_nhanh}
+            <SlidersHorizontal size={15} /> {t(copy.programme_search_wrapper.loc_nhanh)}
           </span>
           <select value={degree} onChange={(e) => setDegree(e.target.value)}>
-            <option value="">{copy.programme_search_wrapper.bac_dao_tao}</option>
+            <option value="">{t(copy.programme_search_wrapper.bac_dao_tao)}</option>
             {programmeDegrees.map((item) => (
               <option key={item} value={item}>
-                {item}
+                {t(item)}
               </option>
             ))}
           </select>
 
           <select value={field} onChange={(e) => setField(e.target.value)}>
-            <option value="">{copy.programme_search_wrapper.linh_vuc}</option>
+            <option value="">{t(copy.programme_search_wrapper.linh_vuc)}</option>
             {programmeFields.map((item) => (
               <option key={item} value={item}>
-                {item}
+                {t(item)}
               </option>
             ))}
           </select>
 
           <select value={orientation} onChange={(e) => setOrientation(e.target.value)}>
-            <option value="">{copy.programme_search_wrapper.dinh_huong_dao_tao}</option>
+            <option value="">{t(copy.programme_search_wrapper.dinh_huong_dao_tao)}</option>
             {programmeOrientations.map((item) => (
               <option key={item} value={item}>
-                {item}
+                {t(item)}
               </option>
             ))}
           </select>

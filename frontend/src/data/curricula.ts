@@ -76,6 +76,25 @@ export function getCurriculumCourses(groups: readonly CurriculumGroup[]): Curric
   ]);
 }
 
+function normalizeNgonNguAnhCourseName(name: string) {
+  let normalized = name.replace(/([^\s(])\(/g, "$1 (");
+  if (normalized.startsWith("Computational Linguistics (Ngôn ngữ Máy tính)")) {
+    normalized = normalized.replace(
+      "Computational Linguistics (Ngôn ngữ Máy tính)",
+      "Computational Linguistics (Ngôn ngữ học máy tính)",
+    );
+  }
+  normalized = normalized.replace(
+    /^(Seminar on Second Language Acquisition \()(?!Chuyên đề về)/,
+    "$1Chuyên đề về ",
+  );
+  normalized = normalized.replace(
+    /^(Seminar on Advanced Methods of Teaching Language \()(?!Chuyên đề về)/,
+    "$1Chuyên đề về ",
+  );
+  return normalized;
+}
+
 export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
   if (programme.contentCurriculum) {
     return (["Ứng dụng", "Nghiên cứu"] as const).flatMap((orientation, index) => {
@@ -85,8 +104,9 @@ export function getProgrammeCurricula(programme: Programme): CurriculumTrack[] {
       for (const row of rows) {
         let group = groups.find((item) => item.title === row.group);
         if (!group) { group = { title: row.group, courses: [] }; groups.push(group); }
-        group.courses.push({ name: row.name, credits: Number(row.credits) });
-        if (row.note) group.description = [...(group.description ?? []), `${row.name}: ${row.note}`];
+        const name = programme.id === "ngon-ngu-anh" ? normalizeNgonNguAnhCourseName(row.name) : row.name;
+        group.courses.push({ name, credits: Number(row.credits) });
+        if (row.note) group.description = [...(group.description ?? []), `${name}: ${row.note}`];
       }
       return [{ number: String(index + 1).padStart(2, "0"), title: `Định hướng ${orientation.toLocaleLowerCase("vi")}`, orientation, groups }];
     });

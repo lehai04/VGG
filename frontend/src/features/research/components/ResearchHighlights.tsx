@@ -1,3 +1,4 @@
+import { requestCopy } from "@/i18n/request-copy";
 import Link from "@/i18n/components/LocalizedLink";
 import { ArrowUpRight } from "lucide-react";
 import styles from "./ResearchLanding.module.css";
@@ -29,31 +30,32 @@ async function getResearchPosts() {
 }
 
 export async function ResearchHighlights() {
+  const t = await requestCopy();
   const posts = await getResearchPosts();
   const projects = posts.filter((post) => post.category === "RESEARCH_PROJECT").slice(0, 3);
   const publications = posts.filter((post) => post.category === "RESEARCH_PUBLICATION").slice(0, 3);
   return (
     <section className={styles.achievements} id="achievements">
-      <h2 data-section-label>Dự án &amp; Công bố nổi bật</h2>
-      <div className={styles.projectHead}><h3 data-section-subtitle>Dự án khoa học</h3><Link href="https://www.vlu.edu.vn/research/projects/search">Xem tất cả dự án <ArrowUpRight /></Link></div>
-      <div id="du-an" className={styles.projectGrid}>{projects.map((post) => <article key={post.id} className={styles.projectCard}><div className={styles.projectImage} style={{ backgroundImage: `url("${post.coverImage || "/images/pages/research/content/campus.jpg"}")` }} /><h3 className="type-card-title"><Link href={researchPostHref(post.slug)}>{post.title}</Link></h3>{post.excerpt && <p>{post.excerpt}</p>}</article>)}</div>
+      <h2 data-section-label>{t("Dự án & Công bố nổi bật")}</h2>
+      <div className={styles.projectHead}><h3 data-section-subtitle>{t("Dự án khoa học")}</h3><Link href="https://www.vlu.edu.vn/research/projects/search">{t("Xem tất cả dự án")} <ArrowUpRight /></Link></div>
+      <div id="du-an" className={styles.projectGrid}>{projects.map((post) => <article key={post.id} className={styles.projectCard}><div className={styles.projectImage} style={{ backgroundImage: `url("${post.coverImage || "/images/pages/research/content/campus.jpg"}")` }} /><h3 className="type-card-title"><Link href={researchPostHref(post.slug)}>{t(post.title)}</Link></h3>{post.excerpt && <p>{t(post.excerpt)}</p>}</article>)}</div>
       <div id="cong-bo" className={styles.publicationBlock}>
         <div className={styles.publicationHead}>
-          <h3 data-section-subtitle>Công bố khoa học</h3>
+          <h3 data-section-subtitle>{t("Công bố khoa học")}</h3>
           <Link href="https://www.vlu.edu.vn/research/publications/search">
-            Xem tất cả công bố <ArrowUpRight />
+            {t("Xem tất cả công bố")} <ArrowUpRight />
           </Link>
         </div>
         <div className={styles.publicationTextList}>
           {publications.map((post, index) => (
             <article key={post.id} className={styles.publicationTextCard}>
-              <span className={styles.publicationTag}>CÔNG BỐ KHOA HỌC · 0{index + 1}</span>
+              <span className={styles.publicationTag}>{t("CÔNG BỐ KHOA HỌC")} · 0{index + 1}</span>
               <h3 className="type-card-title">
-                <Link href={researchPostHref(post.slug)}>{post.title}</Link>
+                <Link href={researchPostHref(post.slug)}>{t(post.title)}</Link>
               </h3>
-              {post.excerpt && <p>{post.excerpt}</p>}
+              {post.excerpt && <p>{t(post.excerpt)}</p>}
               <Link href={researchPostHref(post.slug)} className={styles.publicationReadMore}>
-                Xem chi tiết <ArrowUpRight />
+                {t("Xem chi tiết")} <ArrowUpRight />
               </Link>
             </article>
           ))}

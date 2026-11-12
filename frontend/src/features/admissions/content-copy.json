@@ -273,7 +273,6 @@
       "text_022": "*",
       "text_023": "Chương trình quan tâm ",
       "text_024": "*",
-      "text_025": "Nội dung cần tư vấn",
       "text_026": "Bậc đào tạo quan tâm",
       "text_027": " Tôi đồng ý để Viện liên hệ và sử dụng thông tin trên nhằm hỗ trợ tư vấn tuyển sinh.",
       "text_028": "Website",
@@ -1917,393 +1916,386 @@
     {
       "section": "cau-hoi-thuong-gap",
       "key": "text_007",
-      "start": 84844,
-      "end": 84862,
+      "start": 84865,
+      "end": 84883,
       "type": "text"
     },
     {
       "section": "cau-hoi-thuong-gap",
       "key": "text_008",
-      "start": 84895,
-      "end": 84931,
+      "start": 84916,
+      "end": 84952,
       "type": "text"
     },
     {
       "section": "cau-hoi-thuong-gap",
       "key": "text_009",
-      "start": 84939,
-      "end": 85011,
+      "start": 84960,
+      "end": 85032,
       "type": "text"
     },
     {
       "section": "cau-hoi-thuong-gap",
       "key": "text_010",
-      "start": 85100,
-      "end": 85121,
+      "start": 85121,
+      "end": 85142,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_001",
-      "start": 85504,
-      "end": 85521,
+      "start": 85525,
+      "end": 85542,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_002",
-      "start": 85551,
-      "end": 85581,
+      "start": 85572,
+      "end": 85602,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_003",
-      "start": 85589,
-      "end": 85695,
+      "start": 85610,
+      "end": 85716,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_004",
-      "start": 85798,
-      "end": 85841,
+      "start": 85819,
+      "end": 85862,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_005",
-      "start": 85946,
-      "end": 85983,
+      "start": 85967,
+      "end": 86004,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_006",
-      "start": 86088,
-      "end": 86120,
+      "start": 86109,
+      "end": 86141,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "url_007",
-      "start": 86162,
-      "end": 86178,
+      "start": 86183,
+      "end": 86199,
       "type": "url"
     },
     {
       "section": "tu-van",
       "key": "text_008",
-      "start": 86250,
-      "end": 86271,
+      "start": 86271,
+      "end": 86292,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "url_009",
-      "start": 86284,
-      "end": 86301,
+      "start": 86305,
+      "end": 86322,
       "type": "url"
     },
     {
       "section": "tu-van",
       "key": "text_010",
-      "start": 86373,
-      "end": 86398,
+      "start": 86394,
+      "end": 86419,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "url_011",
-      "start": 86411,
-      "end": 86442,
+      "start": 86432,
+      "end": 86463,
       "type": "url"
     },
     {
       "section": "tu-van",
       "key": "text_012",
-      "start": 86513,
-      "end": 86537,
+      "start": 86534,
+      "end": 86558,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_013",
-      "start": 86571,
-      "end": 86602,
+      "start": 86592,
+      "end": 86623,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_014",
-      "start": 86606,
-      "end": 86666,
+      "start": 86627,
+      "end": 86687,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_015",
-      "start": 86721,
-      "end": 86743,
+      "start": 86742,
+      "end": 86764,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_016",
-      "start": 86770,
-      "end": 86827,
+      "start": 86791,
+      "end": 86848,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_017",
-      "start": 86947,
-      "end": 86957,
+      "start": 86968,
+      "end": 86978,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_018",
-      "start": 86963,
-      "end": 86964,
+      "start": 86984,
+      "end": 86985,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_019",
-      "start": 87159,
-      "end": 87173,
+      "start": 87180,
+      "end": 87194,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_020",
-      "start": 87179,
-      "end": 87180,
+      "start": 87200,
+      "end": 87201,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_021",
-      "start": 87492,
-      "end": 87498,
+      "start": 87513,
+      "end": 87519,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_022",
-      "start": 87504,
-      "end": 87505,
+      "start": 87525,
+      "end": 87526,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_023",
-      "start": 87713,
-      "end": 87735,
+      "start": 87734,
+      "end": 87756,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_024",
-      "start": 87741,
-      "end": 87742,
-      "type": "text"
-    },
-    {
-      "section": "tu-van",
-      "key": "text_025",
-      "start": 87882,
-      "end": 87901,
+      "start": 87762,
+      "end": 87763,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_026",
-      "start": 88093,
-      "end": 88113,
+      "start": 87901,
+      "end": 87921,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_027",
-      "start": 88369,
-      "end": 88453,
+      "start": 88177,
+      "end": 88261,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_028",
-      "start": 88548,
-      "end": 88555,
+      "start": 88356,
+      "end": 88363,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_029",
-      "start": 88705,
-      "end": 88723,
+      "start": 88513,
+      "end": 88531,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_030",
-      "start": 88758,
-      "end": 88889,
+      "start": 88566,
+      "end": 88697,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_031",
-      "start": 89230,
-      "end": 89255,
+      "start": 89038,
+      "end": 89063,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "image_032",
-      "start": 89294,
-      "end": 89322,
+      "start": 89102,
+      "end": 89130,
       "type": "image"
     },
     {
       "section": "tu-van",
       "key": "text_033",
-      "start": 89339,
-      "end": 89381,
+      "start": 89147,
+      "end": 89189,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_034",
-      "start": 89385,
-      "end": 89419,
+      "start": 89193,
+      "end": 89227,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_035",
-      "start": 89423,
-      "end": 89462,
+      "start": 89231,
+      "end": 89270,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_036",
-      "start": 89504,
-      "end": 89524,
+      "start": 89312,
+      "end": 89332,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "url_037",
-      "start": 89564,
-      "end": 89575,
+      "start": 89372,
+      "end": 89383,
       "type": "url"
     },
     {
       "section": "tu-van",
       "key": "text_038",
-      "start": 89577,
-      "end": 89597,
+      "start": 89385,
+      "end": 89405,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_039",
-      "start": 89622,
-      "end": 89640,
+      "start": 89430,
+      "end": 89448,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_040",
-      "start": 89663,
-      "end": 89691,
+      "start": 89471,
+      "end": 89499,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_041",
-      "start": 89712,
-      "end": 89729,
+      "start": 89520,
+      "end": 89537,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_042",
-      "start": 89777,
-      "end": 89793,
+      "start": 89585,
+      "end": 89601,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_043",
-      "start": 89842,
-      "end": 89856,
+      "start": 89650,
+      "end": 89664,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "url_044",
-      "start": 89869,
-      "end": 89900,
+      "start": 89677,
+      "end": 89708,
       "type": "url"
     },
     {
       "section": "tu-van",
       "key": "text_045",
-      "start": 89902,
-      "end": 89926,
+      "start": 89710,
+      "end": 89734,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "url_046",
-      "start": 89939,
-      "end": 89955,
+      "start": 89747,
+      "end": 89763,
       "type": "url"
     },
     {
       "section": "tu-van",
       "key": "text_047",
-      "start": 89957,
-      "end": 89978,
+      "start": 89765,
+      "end": 89786,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_048",
-      "start": 90001,
-      "end": 90019,
+      "start": 89809,
+      "end": 89827,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_049",
-      "start": 90074,
-      "end": 90116,
+      "start": 89882,
+      "end": 89924,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_050",
-      "start": 90129,
-      "end": 90151,
+      "start": 89937,
+      "end": 89959,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_051",
-      "start": 90250,
-      "end": 90263,
+      "start": 90058,
+      "end": 90071,
       "type": "text"
     },
     {
       "section": "tu-van",
       "key": "text_052",
-      "start": 90309,
-      "end": 90326,
+      "start": 90117,
+      "end": 90134,
       "type": "text"
     }
   ]

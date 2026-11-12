@@ -3,11 +3,23 @@ import { localizedRedirectPath } from "@/lib/serverLocale";
 import type { Metadata } from "next";
 import {withPageSeo} from '@/lib/page-seo';
 import { ProgrammeDetailPage } from "@/features/programmes/components/ProgrammeDetailPage";
-import { websiteContent,websiteLayout,websiteProgrammes } from '@/lib/website-content';
+import { websiteLayout,websiteProgrammes } from '@/lib/website-content';
+import { requestLanguage, requestProgrammeCopy } from "@/i18n/request-copy";
+import { websiteCopy } from "@/i18n/website-copy";
+import { ProgrammeCopyProvider } from "@/i18n/components/WebsiteCopy";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const programme = (await websiteProgrammes()).find(item => item.id === slug);
+  const { locale, pathname } = await requestLanguage();
+  if (locale === "en" && programme) {
+    const t = websiteCopy(locale, pathname, await requestProgrammeCopy());
+    const title = t(programme.title, programme.englishTitle ?? programme.title);
+    return withPageSeo({
+      title,
+      description: t(programme.summary ?? "", `Explore the ${title} program at Van Lang University.`),
+    });
+  }
   const isInformationTechnology = programme?.id === "cong-nghe-thong-tin";
   const isMarketing = programme?.id === "marketing";
   return withPageSeo(programme ? {
@@ -27,7 +39,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const programme = (await websiteProgrammes()).find(item => item.id === slug);
-  if (programme) return <ProgrammeDetailPage key={programme.id} layout={await websiteLayout(`programme:${programme.id}`)} programme={await websiteContent(`programme:${programme.id}`, programme)} />;
+  if (programme) {
+    const [dictionary, layout] = await Promise.all([
+      requestProgrammeCopy(),
+      websiteLayout(`programme:${programme.id}`),
+    ]);
+    return (
+      <ProgrammeCopyProvider dictionary={dictionary}>
+        <ProgrammeDetailPage key={programme.id} layout={layout} programme={programme} />
+      </ProgrammeCopyProvider>
+    );
+  }
   const degree = slug === "thac-si" ? "Thạc sĩ" : slug === "tien-si" ? "Tiến sĩ" : undefined;
   redirect(await localizedRedirectPath(degree ? `/programmes?degree=${encodeURIComponent(degree)}` : "/programmes"));
 }

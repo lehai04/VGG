@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { useLocale } from "@/i18n/components/LocaleProvider";
+import { useWebsiteCopy } from "@/i18n/components/WebsiteCopy";
+import { translateAdmissions } from "./translate-reference";
 import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import content from "./reference-content.json";
 import type editorialContent from "./editorial-content.json";
@@ -23,6 +25,7 @@ export function AdmissionsReference({
   programmeOptions?: Array<{ id: string; title: string; degree: string; tuition?: string; sourceTitle?: string }>;
 }) {
   const { locale } = useLocale();
+  const t = useWebsiteCopy();
   const bannerHtml = html
     .replace('<h3 class="fee-program-name" id="fee-program-name"></h3>', `<h3 class="fee-program-name" id="fee-program-name"></h3><a id="fee-program-detail" class="text-link" href="/${locale}/programmes/quan-tri-kinh-doanh">Xem chi tiết ngành Quản trị kinh doanh →</a>`)
     .replace('id="ts-hoc-phi" hidden=""><div class="wrap">', `id="ts-hoc-phi" hidden=""><div class="wrap"><a class="text-link" href="/${locale}/programmes/khoa-hoc-moi-truong">Xem chi tiết ngành Khoa học môi trường →</a>`)
@@ -68,12 +71,13 @@ export function AdmissionsReference({
       for (const programme of programmeOptions.filter((item) => item.degree === degree)) {
         const existing = [...selector.options].find(
           (option) =>
-            normalize(option.textContent ?? "") === normalize(programme.title) ||
+            option.value === programme.id ||
+            normalize(option.dataset.vggSourceLabel ?? option.textContent ?? "") === normalize(programme.title) ||
             (programme.sourceTitle &&
-              normalize(option.textContent ?? "").startsWith(normalize(programme.sourceTitle))),
+              normalize(option.dataset.vggSourceLabel ?? option.textContent ?? "").startsWith(normalize(programme.sourceTitle))),
         );
         if (existing) {
-          if (existing.textContent !== programme.title) existing.textContent = programme.title;
+          if (existing.textContent !== t(programme.title)) existing.textContent = programme.title;
         } else {
           const option = document.createElement("option");
           option.value = programme.id;
@@ -85,14 +89,16 @@ export function AdmissionsReference({
     syncOptions();
     const observer = new MutationObserver(syncOptions);
     if (selector) observer.observe(selector, { childList: true });
+    const cleanupTranslation = locale === "en" ? translateAdmissions(container, t) : undefined;
     return () => {
+      cleanupTranslation?.();
       cleanupMotion();
       cleanupEngine();
       observer.disconnect();
       resizeObserver.disconnect();
       window.removeEventListener("resize", measureNavigation);
     };
-  }, [bannerHtml, editorial, layout, programmeOptions]);
+  }, [bannerHtml, editorial, layout, programmeOptions, locale, t]);
   return (
     <>
       <SiteHeader compact />

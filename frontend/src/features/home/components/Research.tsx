@@ -1,3 +1,4 @@
+import { requestCopy } from "@/i18n/request-copy";
 import Image from "next/image";
 import { EditorialAccordion } from "./EditorialAccordion";
 import { homeContent } from '@/data/home-content';
@@ -16,6 +17,7 @@ const RESEARCH_LINKS = [
 
 /** HOMEPAGE SECTION: Tổng quan nghiên cứu, đổi mới và các hướng nghiên cứu chính. */
 export async function Research() {
+  const t = await requestCopy();
   const { research, researchLinks } = await websiteContent('home', homeContent);
   return (
     // Bố cục chia đôi: hình ảnh bên trái và nội dung bên phải.
@@ -23,22 +25,22 @@ export async function Research() {
       <div className="researchImage">
         <Image
           src={research.image || RESEARCH_IMAGE_SRC}
-          alt={research.alt}
+          alt={t(research.alt)}
           fill
           sizes="(max-width: 900px) 100vw, 50vw"
         />
-        <span>{research.caption}</span>
+        <span>{t(research.caption)}</span>
       </div>
 
       <div className="researchContent">
-        <p data-section-label className="researchEyebrow">{research.label}</p>
+        <p data-section-label className="researchEyebrow">{t(research.label)}</p>
         <h3 data-section-subtitle>
-          {research.title}
+          {t(research.title)}
           {" "}
-          <em>{research.emphasis}</em>
+          <em>{t(research.emphasis)}</em>
         </h3>
         <p className="researchDescription">
-          {research.text}
+          {t(research.text)}
         </p>
 
         <EditorialAccordion items={researchLinks.length ? researchLinks : RESEARCH_LINKS} label="Các hướng nghiên cứu" className="researchLinks" />

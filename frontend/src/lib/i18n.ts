@@ -13,7 +13,7 @@ export function stripLocale(pathname: string) {
 
 export function localizedHref(locale: Locale, href: string) {
   if (!href.startsWith("/") || href.startsWith("//") || href.startsWith("/api/")) return href;
-  const [path, hash = ""] = href.split("#");
+  const [path] = href.split(/[?#]/, 1);
   const cleanPath = stripLocale(path || "/");
-  return `/${locale}${cleanPath === "/" ? "" : cleanPath}${hash ? `#${hash}` : ""}`;
+  return `/${locale}${cleanPath === "/" ? "" : cleanPath}${href.slice(path.length)}`;
 }

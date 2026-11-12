@@ -415,17 +415,17 @@ export function getNgonNguAnhCurricula(): CurriculumTrack[] {
             },
             {
               code: "81COMP5283",
-              name: "Computational Linguistics (Ngôn ngữ Máy tính)",
+              name: "Computational Linguistics (Ngôn ngữ học máy tính)",
               credits: 3,
             },
             {
               code: "81IFLT6093",
-              name: "IT in Foreign Language Teaching(CNTT trong Giảng dạy tiếng Anh)",
+              name: "IT in Foreign Language Teaching (CNTT trong Giảng dạy tiếng Anh)",
               credits: 3,
             },
             {
               code: "81AMTL5103",
-              name: "Advanced Methods of Teaching Language(Phương pháp Giảng dạy Ngôn ngữ nâng cao)",
+              name: "Advanced Methods of Teaching Language (Phương pháp Giảng dạy Ngôn ngữ nâng cao)",
               credits: 3,
             },
             {
@@ -549,7 +549,7 @@ export function getNgonNguAnhCurricula(): CurriculumTrack[] {
             },
             {
               code: "81SLAC6223",
-              name: "Seminar on Second Language Acquisition (Thụ đắc ngôn ngữ thứ hai)",
+              name: "Seminar on Second Language Acquisition (Chuyên đề về Thụ đắc ngôn ngữ thứ hai)",
               credits: 3,
             },
             {
@@ -574,17 +574,17 @@ export function getNgonNguAnhCurricula(): CurriculumTrack[] {
             },
             {
               code: "81COMP5283",
-              name: "Computational Linguistics (Ngôn ngữ Máy tính)",
+              name: "Computational Linguistics (Ngôn ngữ học máy tính)",
               credits: 3,
             },
             {
               code: "81IFLT6093",
-              name: "IT in Foreign Language Teaching(CNTT trong Giảng dạy tiếng Anh)",
+              name: "IT in Foreign Language Teaching (CNTT trong Giảng dạy tiếng Anh)",
               credits: 3,
             },
             {
               code: "81AMTL5233",
-              name: "Seminar on Advanced Methods of Teaching Language (Phương pháp Giảng dạy Ngôn ngữ nâng cao)",
+              name: "Seminar on Advanced Methods of Teaching Language (Chuyên đề về Phương pháp Giảng dạy Ngôn ngữ nâng cao)",
               credits: 3,
             },
             {
@@ -629,7 +629,7 @@ export function getNgonNguAnhCurricula(): CurriculumTrack[] {
             },
             {
               code: "81ATRT5183",
-              name: "Advanced Translation Theories(Lý thuyết dịch)",
+              name: "Advanced Translation Theories (Lý thuyết dịch)",
               credits: 3,
             },
             {
@@ -639,7 +639,7 @@ export function getNgonNguAnhCurricula(): CurriculumTrack[] {
             },
             {
               code: "81TEPR7213",
-              name: "Teaching Practicum(Thực tập tại Doanh nghiệp)",
+              name: "Teaching Practicum (Thực tập tại Doanh nghiệp)",
               credits: 3,
             },
           ],

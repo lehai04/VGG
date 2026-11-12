@@ -14,14 +14,14 @@ export const catalogueCopy = {
       kien_tao_lo_trinh_hoc_thuat_phu:
         "Khám phá các chương trình Thạc sĩ và Tiến sĩ tại Văn Lang để phát triển chuyên môn, theo đuổi nghiên cứu và vận dụng kiến thức vào thực tiễn. Lựa chọn chương trình phù hợp với nền tảng và mục tiêu phát triển của bạn.",
       aria_label_thong_tin_tong_quan_chuong: "Thông tin tổng quan chương trình",
-      value_2: "20",
+      value_2: "21+",
       chuong_trinh: "Chương trình",
       thac_si: "Thạc sĩ",
       value_3: "01",
       tien_si: "Tiến sĩ",
       value_4: "01",
       nhom_nganh: "Chương trình",
-      chuyen_sau: "Quốc tế",
+      chuyen_sau: "Thạc sĩ liên kết quốc tế",
     },
   },
   ProgrammeDirectory: {
@@ -87,7 +87,7 @@ export const catalogueCopy = {
       vien_sau_dai_hoc_master_programmes: "Viện Sau đại học · MASTER PROGRAMMES",
       chuong_trinh: "Chương trình",
       thac_si: "Thạc sĩ",
-      value_1: "20 chương trình · 05 khối ngành · 18–24 tháng",
+      value_1: "21+ chương trình · 18–24 tháng",
       href_master_overview: "#master-overview",
       aria_label_xem_tong_quan: "Xem tổng quan",
     },
@@ -107,7 +107,7 @@ export const catalogueCopy = {
       chuong_trinh_sau_dai_hoc_tai_van:
         "Chương trình Sau đại học tại Văn Lang không ngừng được cập nhật theo định hướng gắn kết học thuật với thực tiễn. Với lộ trình đào tạo từ 18 đến 24 tháng, mỗi ngành học mang đến mục tiêu phát triển và cơ hội nghề nghiệp rõ ràng.",
       vien_sau_dai_hoc_hien_trien_khai:
-        "Viện Sau đại học hiện triển khai 20 chương trình Thạc sĩ thuộc 05 khối ngành, trang bị cho người học năng lực chuyên môn nâng cao, tư duy nghiên cứu, khả năng giải quyết vấn đề và nền tảng để phát triển sự nghiệp bền vững.",
+        "Viện Sau đại học hiện triển khai 21+ chương trình Thạc sĩ thuộc nhiều nhóm ngành, trang bị cho người học năng lực chuyên môn nâng cao, tư duy nghiên cứu, khả năng giải quyết vấn đề và nền tảng để phát triển sự nghiệp bền vững.",
       src_images_pages_programmes_content_campus_jpg: "/images/pages/programmes/content/campus.jpg",
       alt_khong_gian_dao_tao_va_nghien: "Không gian đào tạo và nghiên cứu tại Văn Lang",
       vien_sau_dai_hoc_knowledge_in_practice: "Viện Sau đại học · KNOWLEDGE IN PRACTICE",
@@ -115,7 +115,7 @@ export const catalogueCopy = {
     leadershipquote: {
       value_4: "“",
       sau_hon_30_nam_xay_dung_va:
-        "Sau hơn 30 năm xây dựng và trưởng thành, Văn Lang không ngừng cung cấp nguồn nhân lực chất lượng cao, đáp ứng yêu cầu từ các nhà tuyển dụng trong và ngoài nước. Chương trình sau đại học trang bị nền tảng vững chắc cho các nhà quản lý, chuyên gia, nhà nghiên cứu và giảng viên tương lai. Đến nay, Viện Sau đại học đã triển khai 20 chương trình Thạc sĩ thuộc nhiều lĩnh vực chuyên sâu.",
+        "Sau hơn 30 năm xây dựng và trưởng thành, Văn Lang không ngừng cung cấp nguồn nhân lực chất lượng cao, đáp ứng yêu cầu từ các nhà tuyển dụng trong và ngoài nước. Chương trình sau đại học trang bị nền tảng vững chắc cho các nhà quản lý, chuyên gia, nhà nghiên cứu và giảng viên tương lai. Đến nay, Viện Sau đại học đã triển khai 21+ chương trình Thạc sĩ thuộc nhiều lĩnh vực chuyên sâu.",
       ban_lanh_dao_vien_sau_dai_hoc: "Ban lãnh đạo Viện Sau đại học",
       vien_sau_dai_hoc_truong_dai_hoc: "Viện Sau đại học · Trường Đại học Văn Lang",
       src_images_pages_programmes_content_academic_leader:
@@ -130,7 +130,7 @@ export const catalogueCopy = {
     },
     directory: {
       nganh_dao_tao: "NGÀNH ĐÀO TẠO",
-      kham_pha_20_nganh_thac_si: "Khám phá 20 ngành Thạc sĩ",
+      kham_pha_nganh_thac_si: "Khám phá 21+ chương trình Thạc sĩ",
       href_programmes_degree_thac_si: "/programmes?degree=Thạc sĩ",
       xem_danh_muc_day_du: "Xem danh mục đầy đủ",
     },

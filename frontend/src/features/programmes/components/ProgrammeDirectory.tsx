@@ -1,4 +1,8 @@
 "use client";
+import { useWebsiteCopy } from "@/i18n/components/WebsiteCopy";
+import { useLocale } from "@/i18n/components/LocaleProvider";
+import { loadProgrammeCopy } from "@/i18n/programme-copy";
+import { websiteCopy, type CopyDictionary } from "@/i18n/website-copy";
 import { EmptyContent } from "@/shared/components/EmptyContent";
 
 import styles from "./ProgrammeCatalogue.module.css";
@@ -32,6 +36,8 @@ function normalizeText(value: string) {
 }
 
 export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDirectory, entries = defaultProgrammes }: { content?: typeof catalogueCopy.ProgrammeDirectory; entries?: typeof defaultProgrammes } = {}) {
+  const t = useWebsiteCopy();
+  const { locale } = useLocale();
   const copy = content;
   const programmes = entries;
   const [keyword, setKeyword] = useState("");
@@ -40,6 +46,17 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
   const [orientations, setOrientations] = useState<ProgrammeOrientation[]>([]);
   const [sort, setSort] = useState<"az" | "za">("az");
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [expandedCopy, setExpandedCopy] = useState<{ id: string; dictionary?: CopyDictionary }>();
+
+  useEffect(() => {
+    if (locale !== "en" || !expandedId) return;
+    let active = true;
+    loadProgrammeCopy(expandedId).then(
+      (dictionary) => { if (active) setExpandedCopy({ id: expandedId, dictionary }); },
+      () => { if (active) setExpandedCopy({ id: expandedId }); },
+    );
+    return () => { active = false; };
+  }, [locale, expandedId]);
 
   // Chỉ đọc query string lúc component mount; đây là giá trị khởi tạo từ form trang chủ.
   // Bộ lọc thay đổi sau đó nằm trong state, không tự đồng bộ ngược lên URL.
@@ -157,9 +174,9 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
     <section className={`${styles["vgg-pd"]}`} id="programme-directory">
       <div className={`${styles["vgg-pd__intro"]}`}>
         <div className={`${styles["vgg-pd__intro-copy"]}`}>
-          <h2>{copy.programme_directory.kham_pha_cac_nganh_hoc}</h2>
+          <h2>{t(copy.programme_directory.kham_pha_cac_nganh_hoc)}</h2>
           <p className={`${styles["vgg-pd__lead"]}`}>
-            {copy.programme_directory.kham_pha_chuong_trinh_sau_dai_hoc}
+            {t(copy.programme_directory.kham_pha_chuong_trinh_sau_dai_hoc)}
           </p>
         </div>
       </div>
@@ -169,21 +186,21 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
           <div className={`${styles["vgg-pd__sidebar-head"]}`}>
             <div className={`${styles["vgg-pd__sidebar-title"]}`}>
               <SlidersHorizontal size={18} strokeWidth={1.8} />
-              <strong>{copy.programme_directory.bo_loc}</strong>
+              <strong>{t(copy.programme_directory.bo_loc)}</strong>
               {activeFilterCount > 0 && (
                 <span className={`${styles["vgg-pd__active-count"]}`}>{activeFilterCount}</span>
               )}
             </div>
             <button type="button" className={`${styles["vgg-pd__clear"]}`} onClick={clearAll}>
               <RotateCcw size={13} />
-              {copy.programme_directory.xoa_tat_ca}
+              {t(copy.programme_directory.xoa_tat_ca)}
             </button>
           </div>
 
           {filterSections.map((sec) => (
             <details className={`${styles["vgg-pd__filter"]}`} open key={sec.title}>
               <summary>
-                <span>{sec.title}</span>
+                <span>{t(sec.title)}</span>
                 <ChevronDown size={16} />
               </summary>
               <div className={`${styles["vgg-pd__filter-list"]}`}>
@@ -195,7 +212,7 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
                       onChange={() => sec.toggleItem(item)}
                     />
                     <span className={`${styles["vgg-pd__checkbox"]}`} />
-                    <span className={`${styles["vgg-pd__option-name"]}`}>{item}</span>
+                    <span className={`${styles["vgg-pd__option-name"]}`}>{t(item)}</span>
                     <span className={`${styles["vgg-pd__option-count"]}`}>{sec.count(item)}</span>
                   </label>
                 ))}
@@ -204,15 +221,11 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
           ))}
 
           <div className={`${styles["vgg-pd__consult"]}`}>
-            <span>{copy.programme_directory.need_guidance}</span>
-            <h3>
-              {copy.programme_directory.chua_chac_nen}
-              {" "}
-              {copy.programme_directory.chon_chuong_trinh_nao}
-            </h3>
-            <p>{copy.programme_directory.trao_doi_voi_doi_ngu_vien_sau}</p>
+            <span>{t(copy.programme_directory.need_guidance)}</span>
+            <h3>{t(`${copy.programme_directory.chua_chac_nen} ${copy.programme_directory.chon_chuong_trinh_nao}`)}</h3>
+            <p>{t(copy.programme_directory.trao_doi_voi_doi_ngu_vien_sau)}</p>
             <Link href={copy.programme_directory.href_admissions_consultation}>
-              {copy.programme_directory.nhan_tu_van}
+              {t(copy.programme_directory.nhan_tu_van)}
               <ArrowUpRight size={16} />
             </Link>
           </div>
@@ -224,18 +237,18 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
               <Search size={20} strokeWidth={1.7} />
               <input
                 type="search"
-                aria-label={copy.programme_directory.aria_label_tim_chuong_trinh}
-                placeholder={copy.programme_directory.placeholder_ban_muon_hoc_gi}
+                aria-label={t(copy.programme_directory.aria_label_tim_chuong_trinh)}
+                placeholder={t(copy.programme_directory.placeholder_ban_muon_hoc_gi)}
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
               />
             </label>
 
             <label className={`${styles["vgg-pd__sort"]}`}>
-              <span>{copy.programme_directory.sort_by}</span>
+              <span>{t(copy.programme_directory.sort_by)}</span>
               <select value={sort} onChange={(e) => setSort(e.target.value as "az" | "za")}>
-                <option value="az">{copy.programme_directory.ten_a_z}</option>
-                <option value="za">{copy.programme_directory.ten_z_a}</option>
+                <option value="az">{t(copy.programme_directory.ten_a_z)}</option>
+                <option value="za">{t(copy.programme_directory.ten_z_a)}</option>
               </select>
             </label>
           </div>
@@ -243,16 +256,16 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
           {activeFilters.length > 0 && (
             <div
               className={`${styles["vgg-pd__active-filters"]}`}
-              aria-label={copy.programme_directory.aria_label_bo_loc_dang_chon}
+              aria-label={t(copy.programme_directory.aria_label_bo_loc_dang_chon)}
             >
-              <span>{copy.programme_directory.dang_loc}</span>
+              <span>{t(copy.programme_directory.dang_loc)}</span>
               {activeFilters.map((filter) => (
                 <button
                   type="button"
                   key={`${filter.type}-${filter.value}`}
                   onClick={() => removeFilter(filter.type, filter.value)}
                 >
-                  {filter.value} <X size={13} aria-hidden="true" />
+                  {t(filter.value)} <X size={13} aria-hidden="true" />
                 </button>
               ))}
               <button
@@ -260,22 +273,24 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
                 className={`${styles["vgg-pd__clear-chips"]}`}
                 onClick={clearAll}
               >
-                {copy.programme_directory.xoa_loc}
+                {t(copy.programme_directory.xoa_loc)}
               </button>
             </div>
           )}
 
           <div className={`${styles["vgg-pd__result-meta"]}`}>
             <p>
-              {copy.programme_directory.hien_thi} <strong>{filteredProgrammes.length}</strong>{" "}
-              {copy.programme_directory.chuong_trinh}
+              {t(copy.programme_directory.hien_thi)} <strong>{filteredProgrammes.length}</strong>{" "}
+              {t(copy.programme_directory.chuong_trinh)}
             </p>
-            <span>{copy.programme_directory.van_lang_graduate}</span>
+            <span>{t(copy.programme_directory.van_lang_graduate)}</span>
           </div>
 
           <div className={`${styles["vgg-pd__list"]}`}>
             {filteredProgrammes.map((programme) => {
               const expanded = expandedId === programme.id;
+              const loadingCopy = expanded && locale === "en" && expandedCopy?.id !== programme.id;
+              const detailCopy = websiteCopy(locale, `/programmes/${programme.id}`, expandedCopy?.id === programme.id ? expandedCopy.dictionary : undefined);
               const details = getProgrammeDetails(programme);
 
               return (
@@ -287,36 +302,36 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
                     <span className={`${styles["vgg-pd-card__code"]}`}>{programme.code}</span>
                     <div className={`${styles["vgg-pd-card__main"]}`}>
                       <div className={`${styles["vgg-pd-card__meta"]}`}>
-                        <span>{programme.degree}</span>
-                        <span>{programme.field}</span>
+                        <span>{t(programme.degree)}</span>
+                        <span>{t(programme.field)}</span>
                       </div>
                       <h3 className="type-list-title">
-                        <Link href={`/programmes/${programme.id}`}>{programme.title}</Link>
+                        <Link href={`/programmes/${programme.id}`}>{t(programme.title, programme.englishTitle || programme.title)}</Link>
                       </h3>
                     </div>
 
                     <div className={`${styles["vgg-pd-card__stat"]}`}>
                       <strong>{programme.id === "cong-nghe-thong-tin" ? "45-60" : (programme.creditsLabel ?? programme.credits)}</strong>
-                      <span>{copy.programme_directory.tin_chi}</span>
+                      <span>{t(copy.programme_directory.tin_chi)}</span>
                     </div>
 
                     <div className={`${styles["vgg-pd-card__stat"]}`}>
-                      <strong>{programme.id === "cong-nghe-thong-tin" ? "18-24" : programme.duration}</strong>
-                      <span>{copy.programme_directory.thoi_gian}</span>
+                      <strong>{t(programme.id === "cong-nghe-thong-tin" ? "18-24" : programme.duration)}</strong>
+                      <span>{t(copy.programme_directory.thoi_gian)}</span>
                     </div>
 
                     <div
                       className={`${styles["vgg-pd-card__stat"]} ${styles["vgg-pd-card__tuition"]}`}
                     >
-                      <strong>{getProgrammeTuition(programme)}</strong>
-                      <span>{copy.programme_directory.hoc_phi_toan_khoa}</span>
+                      <strong>{t(getProgrammeTuition(programme))}</strong>
+                      <span>{t(copy.programme_directory.hoc_phi_toan_khoa)}</span>
                     </div>
 
                     {programme.id === "logistics" ? (
                       <Link
                         href={`/programmes/${programme.id}`}
                         className={`${styles["vgg-pd-card__toggle"]}`}
-                        aria-label={`Khám phá ngành ${programme.title}`}
+                        aria-label={t(`Khám phá ngành ${programme.title}`)}
                       >
                         <ArrowUpRight size={18} />
                       </Link>
@@ -326,7 +341,7 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
                         className={`${styles["vgg-pd-card__toggle"]}`}
                         aria-expanded={expanded}
                         aria-label={
-                          expanded ? `Thu gọn ${programme.title}` : `Xem thêm ${programme.title}`
+                          t(expanded ? `Thu gọn ${programme.title}` : `Xem thêm ${programme.title}`)
                         }
                         onClick={() => setExpandedId(expanded ? null : programme.id)}
                       >
@@ -335,17 +350,17 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
                     )}
                   </div>
 
-                  {expanded && programme.detailsPending && (
+                  {loadingCopy && <p role="status">Loading program details</p>}
+                  {expanded && !loadingCopy && programme.detailsPending && (
                     <div className={`${styles["vgg-pd-card__details"]}`}>
                       <p className={`${styles["vgg-pd-card__intro"]}`}>
-                        {programme.summary ??
-                          `Thông tin chi tiết ngành ${programme.title} đang được cập nhật.`}
+                        {detailCopy(programme.summary) ?? (locale === "en" ? "Program details are being updated." : `Thông tin chi tiết ngành ${programme.title} đang được cập nhật.`)}
                       </p>
                     </div>
                   )}
-                  {expanded && !programme.detailsPending && (
+                  {expanded && !loadingCopy && !programme.detailsPending && (
                     <div className={`${styles["vgg-pd-card__details"]}`}>
-                      <p className={`${styles["vgg-pd-card__intro"]}`}>{details.intro}</p>
+                      <p className={`${styles["vgg-pd-card__intro"]}`}>{detailCopy(details.intro)}</p>
 
                       <div className={`${styles["vgg-pd-card__content-grid"]}`}>
                         {[
@@ -361,11 +376,11 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
                           <section key={number as string}>
                             <h4>
                               <span>{number as string}</span>
-                              {title as string}
+                              {detailCopy(title as string)}
                             </h4>
                             <ul>
                               {(items as string[]).map((item) => (
-                                <li key={item}>{item}</li>
+                                <li key={item}>{detailCopy(item)}</li>
                               ))}
                             </ul>
                           </section>
@@ -380,12 +395,12 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
                           <header>
                             <span>{curriculum.number}</span>
                             <div>
-                              <p>{copy.vgg_pd_card_curriculum.noi_dung_chuong_trinh}</p>
-                              <h4>{curriculum.title}</h4>
+                              <p>{detailCopy(copy.vgg_pd_card_curriculum.noi_dung_chuong_trinh)}</p>
+                              <h4>{detailCopy(curriculum.title)}</h4>
                             </div>
                             <strong>
-                              {programme.creditsLabel ?? programme.credits}{" "}
-                              {copy.vgg_pd_card_curriculum.tin_chi}
+                              {detailCopy(programme.creditsLabel ?? programme.credits)}{" "}
+                              {detailCopy(copy.vgg_pd_card_curriculum.tin_chi)}
                             </strong>
                           </header>
 
@@ -395,7 +410,7 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
                                 <h5>
                                   <span>{String(groupIndex + 1).padStart(2, "0")}</span>
                                   <span className={`${styles["vgg-pd-card__group-header"]}`}>
-                                    <strong>{group.title}</strong>
+                                    <strong>{detailCopy(group.title)}</strong>
                                   </span>
                                 </h5>
                                 <ul>
@@ -405,16 +420,16 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
                                         {String(courseIndex + 1).padStart(2, "0")}
                                       </span>
                                       <span className={`${styles["vgg-pd-card__course-name"]}`}>
-                                        <span>{course.name}</span>
+                                        <span>{locale === "en" && course.code ? detailCopy(`course:${course.code}`, detailCopy(course.name, course.englishName ?? course.name), course.name) : detailCopy(course.name, course.englishName ?? course.name)}</span>
                                       </span>
                                       <div>
                                         {course.elective && (
-                                          <small>{copy.vgg_pd_card_curriculum.tu_chon}</small>
+                                          <small>{detailCopy(copy.vgg_pd_card_curriculum.tu_chon)}</small>
                                         )}
                                         {typeof course.credits === "number" &&
                                           course.credits > 0 && (
                                             <b>
-                                              {course.credits} {copy.vgg_pd_card_curriculum.tin_chi}
+                                              {course.credits} {detailCopy(copy.vgg_pd_card_curriculum.tin_chi)}
                                             </b>
                                           )}
                                       </div>
@@ -429,20 +444,20 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
 
                       <div className={`${styles["vgg-pd-card__detail-grid"]}`}>
                         <div>
-                          <span>{copy.programme_directory.hinh_thuc_hoc}</span>
-                          <strong>{programme.studyMode}</strong>
+                          <span>{detailCopy(copy.programme_directory.hinh_thuc_hoc)}</span>
+                          <strong>{detailCopy(programme.studyMode)}</strong>
                         </div>
                         <div>
-                          <span>{copy.programme_directory.ky_tuyen_sinh}</span>
-                          <strong>{programme.intake}</strong>
+                          <span>{detailCopy(copy.programme_directory.ky_tuyen_sinh)}</span>
+                          <strong>{detailCopy(programme.intake)}</strong>
                         </div>
                         <div>
-                          <span>{copy.programme_directory.thoi_gian_1}</span>
-                          <strong>{programme.duration}</strong>
+                          <span>{detailCopy(copy.programme_directory.thoi_gian_1)}</span>
+                          <strong>{detailCopy(programme.duration)}</strong>
                         </div>
                         <div>
-                          <span>{copy.programme_directory.dinh_huong}</span>
-                          <strong>{programme.orientation}</strong>
+                          <span>{detailCopy(copy.programme_directory.dinh_huong)}</span>
+                          <strong>{detailCopy(programme.orientation)}</strong>
                         </div>
                       </div>
 
@@ -451,14 +466,14 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
                           href={copy.programme_directory.href_admissions}
                           className={`${styles["vgg-pd-card__primary"]} vgg-cta-pill`}
                         >
-                          {copy.programme_directory.thong_tin_tuyen_sinh}
+                          {detailCopy(copy.programme_directory.thong_tin_tuyen_sinh)}
                           <ArrowUpRight size={16} />
                         </Link>
                         <Link
                           href={copy.programme_directory.href_admissions_consultation}
                           className={`${styles["vgg-pd-card__secondary"]} vgg-cta-pill`}
                         >
-                          {copy.programme_directory.lien_he_tu_van}
+                          {detailCopy(copy.programme_directory.lien_he_tu_van)}
                           <ArrowUpRight size={16} />
                         </Link>
                       </div>
@@ -470,10 +485,10 @@ export default function ProgrammeDirectory({ content = catalogueCopy.ProgrammeDi
 
             {filteredProgrammes.length === 0 && (
               <EmptyContent
-                title={copy.programme_directory.khong_tim_thay_chuong_trinh}
-                description={activeFilters.length || keyword
+                title={t(copy.programme_directory.khong_tim_thay_chuong_trinh)}
+                description={t(activeFilters.length || keyword
                   ? copy.programme_directory.hay_thu_thay_doi_tu_khoa_hoac
-                  : "Thông tin chương trình đang được cập nhật. Vui lòng quay lại sau."}
+                  : "Thông tin chương trình đang được cập nhật. Vui lòng quay lại sau.")}
                 actionLabel={activeFilters.length || keyword ? "Xem tất cả chương trình" : undefined}
                 onReset={clearAll}
               />

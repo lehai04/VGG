@@ -1,3 +1,4 @@
+import { requestCopy } from "@/i18n/request-copy";
 import Image from "next/image";
 import {
   ArrowDown,
@@ -32,11 +33,12 @@ const leaders = [
   })),
   ...departmentHeads,
 ];
-function Paragraphs({ items }: { items: readonly string[] }) {
+async function Paragraphs({ items }: { items: readonly string[] }) {
+  const t = await requestCopy();
   return (
     <>
       {items.map((text) => (
-        <p key={text}>{text}</p>
+        <p key={text}>{t(text)}</p>
       ))}
     </>
   );
@@ -49,20 +51,22 @@ function SectionLabel({ number, children }: { number: string; children: React.Re
     </div>
   );
 }
-function Actions({ actions }: { actions: typeof discoverActions }) {
+async function Actions({ actions }: { actions: typeof discoverActions }) {
+  const t = await requestCopy();
   return (
     <div className={styles.actions}>
       <Link className={styles.primary} href={actions.primary.href}>
-        {actions.primary.label} <ArrowUpRight size={18} aria-hidden="true" />
+        {t(actions.primary.label)} <ArrowUpRight size={18} aria-hidden="true" />
       </Link>
       <Link className={styles.secondary} href={actions.secondary.href}>
-        {actions.secondary.label} <ArrowUpRight size={18} aria-hidden="true" />
+        {t(actions.secondary.label)} <ArrowUpRight size={18} aria-hidden="true" />
       </Link>
     </div>
   );
 }
 
 export async function DiscoverIntroduction() {
+  const t = await requestCopy();
   const layout=await websiteLayout('discover');
   const banner=await websiteBanner('discover');
   const { leaders: contentLeaders, media, actions, ...content } = await websiteContent('discover', { ...defaultContent, leaders, media: discoverMedia, actions: discoverActions });
@@ -85,12 +89,12 @@ export async function DiscoverIntroduction() {
           <div data-banner-label><SectionLabel number="">ABOUT THE INSTITUTE OF POSTGRADUATE EDUCATION</SectionLabel></div>
           <h1 data-banner-title id="discover-title">
             {content.hero.title.map((line) => (
-              <span key={line}>{line}</span>
+              <span key={line}>{t(line)}</span>
             ))}
           </h1>
           <div data-banner-description className={styles.english}>{content.hero.english}</div>
-          <p data-banner-description className={styles.heroMessage}>{content.hero.message}</p>
-          <p data-banner-description className={styles.heroIntro}>{content.hero.intro}</p>
+          <p data-banner-description className={styles.heroMessage}>{t(content.hero.message)}</p>
+          <p data-banner-description className={styles.heroIntro}>{t(content.hero.intro)}</p>
           <Actions actions={actions} />
           <Link
             href="#gioi-thieu"
@@ -104,17 +108,17 @@ export async function DiscoverIntroduction() {
       <section id="gioi-thieu" className={styles.section} aria-labelledby="introduction-title">
         <div className={`${styles.container} ${styles.split}`}>
           <div>
-            <SectionLabel number="02">GIỚI THIỆU Viện Sau đại học</SectionLabel>
-            <h3 data-section-subtitle id="introduction-title">{content.introduction.title}</h3>
+            <SectionLabel number="02">{t("GIỚI THIỆU Viện Sau đại học")}</SectionLabel>
+            <h3 data-section-subtitle id="introduction-title">{t(content.introduction.title)}</h3>
             <Paragraphs items={content.introduction.paragraphs} />
             <Link className={styles.textLink} href="#tam-nhin-su-menh">
-              Tìm hiểu thêm <ArrowUpRight size={18} aria-hidden="true" />
+              {t("Tìm hiểu thêm")} <ArrowUpRight size={18} aria-hidden="true" />
             </Link>
           </div>
           <figure className={styles.introMedia}>
             <Image
               src={media.introduction.image}
-              alt={media.introduction.alt}
+              alt={t(media.introduction.alt)}
               fill
               sizes="(max-width: 900px) 100vw, 45vw"
               className={styles.cover}
@@ -128,8 +132,8 @@ export async function DiscoverIntroduction() {
         aria-labelledby="vision-title"
       >
         <div className={styles.container}>
-          <SectionLabel number="03">TẦM NHÌN & SỨ MỆNH</SectionLabel>
-          <h3 data-section-subtitle id="vision-title">Tầm nhìn và Sứ mệnh</h3>
+          <SectionLabel number="03">{t("TẦM NHÌN & SỨ MỆNH")}</SectionLabel>
+          <h3 data-section-subtitle id="vision-title">{t("Tầm nhìn và Sứ mệnh")}</h3>
           <div className={styles.visionGrid}>
             {[content.vision, content.mission].map((item, i) => (
               <article className={styles.visionBlock} key={item.title}>
@@ -139,7 +143,7 @@ export async function DiscoverIntroduction() {
                   <Target className={styles.icon} size={34} aria-hidden="true" />
                 )}
                 <div className={styles.cardEnglish}>{item.english}</div>
-                <h3 className="type-card-title">{item.title}</h3>
+                <h3 className="type-card-title">{t(item.title)}</h3>
                 <Paragraphs items={item.paragraphs} />
               </article>
             ))}
@@ -148,8 +152,8 @@ export async function DiscoverIntroduction() {
       </section>
       <section id="triet-ly-giao-duc" className={styles.section} aria-labelledby="philosophy-title">
         <div className={styles.container}>
-          <SectionLabel number="04">TRIẾT LÝ GIÁO DỤC</SectionLabel>
-          <h3 data-section-subtitle id="philosophy-title">{content.philosophy.title}</h3>
+          <SectionLabel number="04">{t("TRIẾT LÝ GIÁO DỤC")}</SectionLabel>
+          <h3 data-section-subtitle id="philosophy-title">{t(content.philosophy.title)}</h3>
           <div className={styles.sectionIntro}>
             <Paragraphs items={content.philosophy.paragraphs} />
           </div>
@@ -160,8 +164,8 @@ export async function DiscoverIntroduction() {
                 <article className={styles.philosophyCard} key={item.english}>
                   <Icon className={styles.icon} size={32} aria-hidden="true" />
                   <div className={styles.cardEnglish}>{item.english}</div>
-                  <h3 className="type-card-title">{item.title}</h3>
-                  <p>{item.text}</p>
+                  <h3 className="type-card-title">{t(item.title)}</h3>
+                  <p>{t(item.text)}</p>
                 </article>
               );
             })}
@@ -174,34 +178,34 @@ export async function DiscoverIntroduction() {
         aria-labelledby="values-title"
       >
         <div className={styles.container}>
-          <SectionLabel number="05">GIÁ TRỊ CỐT LÕI LEAD</SectionLabel>
-          <h3 data-section-subtitle id="values-title">{content.values.title}</h3>
-          <p className={styles.sectionIntro}>{content.values.intro}</p>
+          <SectionLabel number="05">{t("GIÁ TRỊ CỐT LÕI LEAD")}</SectionLabel>
+          <h3 data-section-subtitle id="values-title">{t(content.values.title)}</h3>
+          <p className={styles.sectionIntro}>{t(content.values.intro)}</p>
           <div className={styles.fourGrid}>
             {content.values.items.map((item, i) => {
               const Icon = valueIcons[i];
               return (
                 <article className={styles.valueItem} key={item.name}>
                   <div className={styles.valueTop}>
-                    <span aria-hidden="true">{item.name[0]}</span>
+                    <span aria-hidden="true">{t(item.name[0])}</span>
                     <Icon size={28} aria-hidden="true" />
                   </div>
-                  <div className={styles.cardEnglish}>{item.name}</div>
-                  <h3 className="type-card-title">{item.title}</h3>
-                  <p>{item.text}</p>
+                  <div className={styles.cardEnglish}>{t(item.name)}</div>
+                  <h3 className="type-card-title">{t(item.title)}</h3>
+                  <p>{t(item.text)}</p>
                 </article>
               );
             })}
           </div>
-          <p className={styles.valueMessage}>{content.values.message}</p>
+          <p className={styles.valueMessage}>{t(content.values.message)}</p>
         </div>
       </section>
       <section id="vi-sao-chon-vgg" className={styles.section} aria-labelledby="benefits-title">
         <div className={styles.container}>
-          <SectionLabel number="06">LỢI THẾ DÀNH CHO NGƯỜI HỌC</SectionLabel>
-          <h3 data-section-subtitle id="benefits-title">{content.benefits.title}</h3>
-          <p className={styles.statement}>{content.benefits.message}</p>
-          <p className={styles.sectionIntro}>{content.benefits.intro}</p>
+          <SectionLabel number="06">{t("LỢI THẾ DÀNH CHO NGƯỜI HỌC")}</SectionLabel>
+          <h3 data-section-subtitle id="benefits-title">{t(content.benefits.title)}</h3>
+          <p className={styles.statement}>{t(content.benefits.message)}</p>
+          <p className={styles.sectionIntro}>{t(content.benefits.intro)}</p>
           <div className={styles.benefitsGrid}>
             {content.benefits.items.map((item, i) => {
               const Icon = benefitIcons[i];
@@ -209,22 +213,22 @@ export async function DiscoverIntroduction() {
                 <article className={styles.benefitItem} key={item.title}>
                   <Icon className={styles.icon} size={30} aria-hidden="true" />
                   <div>
-                    <h3 className="type-card-title">{item.title}</h3>
-                    <p>{item.text}</p>
+                    <h3 className="type-card-title">{t(item.title)}</h3>
+                    <p>{t(item.text)}</p>
                   </div>
                 </article>
               );
             })}
           </div>
           <Link className={styles.textLink} href="/programmes">
-            Khám phá các chương trình đào tạo <ArrowUpRight size={18} aria-hidden="true" />
+            {t("Khám phá các chương trình đào tạo")} <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
         </div>
       </section>
       <section id="doi-ngu-lanh-dao" className={styles.section} aria-labelledby="leaders-title">
         <div className={styles.container}>
-          <SectionLabel number="07">ĐỘI NGŨ LÃNH ĐẠO</SectionLabel>
-          <h3 data-section-subtitle id="leaders-title">{content.leadership.title}</h3>
+          <SectionLabel number="07">{t("ĐỘI NGŨ LÃNH ĐẠO")}</SectionLabel>
+          <h3 data-section-subtitle id="leaders-title">{t(content.leadership.title)}</h3>
           <div className={styles.sectionIntro}>
             <Paragraphs items={content.leadership.paragraphs} />
           </div>
@@ -235,15 +239,15 @@ export async function DiscoverIntroduction() {
                   {person.image && (
                     <Image
                       src={person.image}
-                      alt={`Chân dung ${person.name}`}
+                      alt={t(`Chân dung ${person.name}`)}
                       fill
                       sizes="(max-width: 440px) 260px, (max-width: 680px) 50vw, (max-width: 1000px) 33vw, 25vw"
                     />
                   )}
                 </div>
                 <div className={styles.leaderCopy}>
-                  <h3 className={styles.departmentName}>{person.name}</h3>
-                  <p>{person.role}</p>
+                  <h3 className={styles.departmentName}>{t(person.name)}</h3>
+                  <p>{t(person.role)}</p>
                 </div>
               </article>
             ))}
@@ -253,17 +257,17 @@ export async function DiscoverIntroduction() {
       <section data-content-slot="closing" className={`${styles.section} ${styles.closing}`} aria-labelledby="closing-title">
         <Image
           src={media.closing.image}
-          alt={media.closing.alt}
+          alt={t(media.closing.alt)}
           fill
           sizes="100vw"
           className={styles.cover}
         />
         <div className={styles.heroShade} />
         <div className={`${styles.container} ${styles.closingCopy}`}>
-          <SectionLabel number="09">HÀNH TRÌNH TIẾP THEO</SectionLabel>
-          <h3 data-section-subtitle id="closing-title">{content.closing.title}</h3>
-          <p className={styles.statement}>{content.closing.message}</p>
-          <p>{content.closing.intro}</p>
+          <SectionLabel number="09">{t("HÀNH TRÌNH TIẾP THEO")}</SectionLabel>
+          <h3 data-section-subtitle id="closing-title">{t(content.closing.title)}</h3>
+          <p className={styles.statement}>{t(content.closing.message)}</p>
+          <p>{t(content.closing.intro)}</p>
           <Actions actions={actions} />
         </div>
       </section>

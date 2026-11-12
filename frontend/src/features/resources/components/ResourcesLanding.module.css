@@ -607,3 +607,15 @@
     display: none;
   }
 }
+
+@media (max-width: 420px) {
+  .card dl div {
+    flex-wrap: wrap;
+  }
+  .card dl svg {
+    flex-shrink: 0;
+  }
+  .modal footer > span {
+    min-width: 0;
+  }
+}

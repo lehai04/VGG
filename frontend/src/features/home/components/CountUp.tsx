@@ -9,11 +9,12 @@ import { useEffect, useRef, useState } from "react";
 type CountUpProps = {
   end: number;
   pad?: number;
+  suffix?: string;
   duration?: number;
 };
 
 /** UI UTILITY: chạy hiệu ứng đếm số khi phần tử xuất hiện trong viewport. */
-export function CountUp({ end, pad = 2, duration = 1400 }: CountUpProps) {
+export function CountUp({ end, pad = 2, suffix = "", duration = 1400 }: CountUpProps) {
   const [value, setValue] = useState(0);
   const elementRef = useRef<HTMLElement>(null);
 
@@ -56,8 +57,8 @@ export function CountUp({ end, pad = 2, duration = 1400 }: CountUpProps) {
   }, [duration, end]);
 
   return (
-    <strong ref={elementRef} aria-label={String(end)}>
-      {String(value).padStart(pad, "0")}
+    <strong ref={elementRef} aria-label={String(end) + suffix}>
+      {String(value).padStart(pad, "0")}{suffix}
     </strong>
   );
 }

@@ -10,6 +10,10 @@ import { CenterToast } from "../common/CenterToast";
 
 const emptyForm = {
   id: "",
+  locale: "vi",
+  enTitle: "",
+  enExcerpt: "",
+  enContent: "",
   title: "",
   slug: "",
   category: "ADMISSIONS",
@@ -62,6 +66,10 @@ export function NewsEditor({
     if (initialPost) {
       return {
         id: initialPost.id,
+        locale: initialPost.locale ?? "vi",
+        enTitle: initialPost.enTitle ?? "",
+        enExcerpt: initialPost.enExcerpt ?? "",
+        enContent: initialPost.enContent ?? "",
         title: initialPost.title,
         slug: initialPost.slug,
         category: initialPost.category,
@@ -87,6 +95,8 @@ export function NewsEditor({
     return { ...emptyForm, authorName };
   });
 
+  const [activeTab, setActiveTab] = useState<"vi" | "en">("vi");
+  const isEnglish = activeTab === "en" && form.locale === "vi";
   const [revision, setRevision] = useState(initialPost?.updatedAt ?? "");
   const [loading, setLoading] = useState(false);
   const [fetchingPost, setFetchingPost] = useState(Boolean(editId && (!initialPost || initialPost.id !== editId)));
@@ -122,6 +132,10 @@ export function NewsEditor({
           setRevision(post.updatedAt);
           setForm({
             id: post.id,
+            locale: post.locale ?? "vi",
+            enTitle: post.enTitle ?? "",
+            enExcerpt: post.enExcerpt ?? "",
+            enContent: post.enContent ?? "",
             title: post.title,
             slug: post.slug,
             category: post.category,
@@ -158,13 +172,13 @@ export function NewsEditor({
   const isCoverValid = form.coverImage.trim().length > 0;
   const isContentValid = form.content.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim().length >= 20;
 
-  const showTitleError = (touched.title || forceValidated) && !isTitleValid;
+  const showTitleError = !isEnglish && (touched.title || forceValidated) && !isTitleValid;
   const showCategoryError = (touched.category || forceValidated) && !isCategoryValid;
   const showAuthorError = (touched.authorName || forceValidated) && !isAuthorValid;
   const showDateError = (touched.publishedAt || forceValidated) && !isDateValid;
-  const showExcerptError = (touched.excerpt || forceValidated) && !isExcerptValid;
+  const showExcerptError = !isEnglish && (touched.excerpt || forceValidated) && !isExcerptValid;
   const showCoverError = (touched.coverImage || forceValidated) && !isCoverValid;
-  const showContentError = (touched.content || forceValidated) && !isContentValid;
+  const showContentError = !isEnglish && (touched.content || forceValidated) && !isContentValid;
 
   const isFormCompletelyValid =
     isTitleValid &&
@@ -182,6 +196,26 @@ export function NewsEditor({
       ...(name === "title" && !current.id ? { slug: slugify(value) } : {}),
     }));
     setTouched((prev) => ({ ...prev, [name]: true }));
+  }
+
+  function appendVietnameseImages() {
+    const parser = new DOMParser();
+    const vietnamese = parser.parseFromString(form.content, "text/html");
+    const english = parser.parseFromString(form.enContent, "text/html");
+    const existing = new Set(Array.from(english.images, (img) => img.getAttribute("src")));
+    let added = false;
+    for (const image of Array.from(vietnamese.images)) {
+      const src = image.getAttribute("src");
+      if (!src || existing.has(src)) continue;
+      const copy = english.importNode(image, false);
+      copy.removeAttribute("alt");
+      const figure = english.createElement("figure");
+      figure.append(copy);
+      english.body.append(figure);
+      existing.add(src);
+      added = true;
+    }
+    if (added) update("enContent", english.body.innerHTML);
   }
 
   async function uploadCover(event: ChangeEvent<HTMLInputElement>) {
@@ -218,8 +252,25 @@ export function NewsEditor({
     event.preventDefault();
     setForceValidated(true);
 
+    const enContentLength = form.enContent.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim().length;
+    const enFields = [form.enTitle.trim(), form.enExcerpt.trim(), enContentLength];
+    if (form.locale === "vi" && enFields.some(Boolean) &&
+        (form.enTitle.trim().length < 2 || form.enExcerpt.trim().length < 10 || enContentLength < 20)) {
+      setActiveTab("en");
+      setToast({
+        open: true,
+        type: "error",
+        title: "Bản tiếng Anh chưa đầy đủ",
+        message: "Nhập tiêu đề, tóm tắt và nội dung tiếng Anh hoặc để trống cả ba trường.",
+      });
+      return;
+    }
+
     // KIỂM TRA CHƯA NHẬP ĐỦ TRƯỜNG: BÁO LỖI ĐỎ VÀ CUỘN ĐẾN TRƯỜNG ĐẦU TIÊN
     if (!isFormCompletelyValid) {
+      if (isEnglish && (!isTitleValid || !isExcerptValid || !isContentValid)) {
+        setActiveTab("vi");
+      }
       if (!isTitleValid) {
         titleRef.current?.focus();
         titleRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -267,7 +318,10 @@ export function NewsEditor({
       revision,
       title: form.title,
       slug: form.slug,
-      locale: "vi",
+      locale: form.locale,
+      enTitle: form.enTitle.trim() || null,
+      enExcerpt: form.enExcerpt.trim() || null,
+      enContent: enContentLength ? form.enContent : null,
       category: form.category,
       authorName: form.authorName,
       excerpt: form.excerpt,
@@ -310,6 +364,7 @@ export function NewsEditor({
 
       if (!form.id) {
         setForm({ ...emptyForm, authorName });
+        setActiveTab("vi");
         setForceValidated(false);
         setTouched({});
       }
@@ -381,6 +436,7 @@ export function NewsEditor({
             type="button"
             onClick={() => {
               setForm({ ...emptyForm, authorName });
+              setActiveTab("vi");
               setForceValidated(false);
               setTouched({});
               router.push("/admin/news/create");
@@ -402,6 +458,18 @@ export function NewsEditor({
       </div>
 
       <form className="admin-card" onSubmit={submit} style={{ padding: "28px", borderRadius: "16px" }} noValidate>
+        {form.locale === "vi" && (
+          <div role="group" aria-label="Ngôn ngữ nội dung" style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
+            <button type="button" aria-pressed={!isEnglish} className={`cms-button cms-button--${isEnglish ? "secondary" : "primary"}`} onClick={() => setActiveTab("vi")}>
+              VI · Tiếng Việt
+            </button>
+            <button type="button" aria-pressed={isEnglish} className={`cms-button cms-button--${isEnglish ? "primary" : "secondary"}`} onClick={() => setActiveTab("en")}>
+              EN · English
+            </button>
+          </div>
+        )}
+        {isEnglish && <p>Dán bản tiếng Anh đã duyệt. Ảnh đại diện và đường dẫn dùng chung với bản tiếng Việt.</p>}
+
         {/* KHỐI TRÊN: XEM TRƯỚC VÀ THÔNG TIN CƠ BẢN */}
         <div className="news-compose-top" style={{ marginBottom: "28px" }}>
           {/* XEM TRƯỚC THẺ */}
@@ -443,10 +511,10 @@ export function NewsEditor({
                   {form.publishedAt ? new Date(`${form.publishedAt}T00:00:00`).toLocaleDateString("vi-VN") : "Ngày đăng"}
                 </small>
                 <h4 style={{ margin: "0 0 8px", fontSize: "var(--text-14)", fontWeight: 700, color: "#0f172a", lineHeight: 1.35 }}>
-                  {form.title || "Tiêu đề bài viết hiển thị ở đây"}
+                  {(isEnglish ? form.enTitle : form.title) || "Tiêu đề bài viết hiển thị ở đây"}
                 </h4>
                 <p style={{ margin: 0, fontSize: "var(--text-12)", color: "#475569", lineHeight: 1.4 }}>
-                  {form.excerpt || "Nội dung tóm tắt bài viết sẽ hiển thị ở đây..."}
+                  {(isEnglish ? form.enExcerpt : form.excerpt) || "Nội dung tóm tắt bài viết sẽ hiển thị ở đây..."}
                 </p>
               </div>
             </div>
@@ -458,12 +526,12 @@ export function NewsEditor({
             <div className="field full">
               <label style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
                 <span style={{ fontSize: "var(--text-14)", fontWeight: 600, color: "#1e293b" }}>
-                  Tiêu đề bài viết <span style={{ color: "#ef4444" }}>*</span>
+                  {isEnglish ? "Tiêu đề tiếng Anh" : "Tiêu đề bài viết"} <span style={{ color: "#ef4444" }}>*</span>
                 </span>
                 <input
                   ref={titleRef}
-                  value={form.title}
-                  onChange={(e) => update("title", e.target.value)}
+                  value={isEnglish ? form.enTitle : form.title}
+                  onChange={(e) => update(isEnglish ? "enTitle" : "title", e.target.value)}
                   onBlur={() => setTouched((p) => ({ ...p, title: true }))}
                   maxLength={250}
                   placeholder="Nhập tiêu đề bài viết (tối thiểu 5 ký tự)"
@@ -592,12 +660,12 @@ export function NewsEditor({
             <div className="field full">
               <label style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
                 <span style={{ fontSize: "var(--text-14)", fontWeight: 600, color: "#1e293b" }}>
-                  Nội dung tóm tắt <span style={{ color: "#ef4444" }}>*</span>
+                  {isEnglish ? "Tóm tắt tiếng Anh" : "Nội dung tóm tắt"} <span style={{ color: "#ef4444" }}>*</span>
                 </span>
                 <textarea
                   ref={excerptRef}
-                  value={form.excerpt}
-                  onChange={(e) => update("excerpt", e.target.value)}
+                  value={isEnglish ? form.enExcerpt : form.excerpt}
+                  onChange={(e) => update(isEnglish ? "enExcerpt" : "excerpt", e.target.value)}
                   onBlur={() => setTouched((p) => ({ ...p, excerpt: true }))}
                   rows={3}
                   minLength={10}
@@ -739,7 +807,7 @@ export function NewsEditor({
         <div ref={contentRef} style={{ marginTop: "16px" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
             <label className="rich-editor-label" style={{ fontSize: "var(--text-14)", fontWeight: 700, color: "#1e293b", margin: 0 }}>
-              Nội dung chi tiết bài viết <span style={{ color: "#ef4444" }}>*</span>
+              {isEnglish ? "Nội dung chi tiết tiếng Anh" : "Nội dung chi tiết bài viết"} <span style={{ color: "#ef4444" }}>*</span>
             </label>
             <span style={{ fontSize: "var(--text-12)", color: isContentValid ? "#10b981" : "#64748b" }}>
               Tối thiểu 20 ký tự
@@ -754,13 +822,20 @@ export function NewsEditor({
               transition: "all 0.2s ease",
             }}
           >
+            {isEnglish && /<img\b/i.test(form.content) && (
+              <button type="button" className="cms-button cms-button--secondary" onClick={appendVietnameseImages}>
+                Chèn ảnh từ VI vào cuối bài
+              </button>
+            )}
             <RichTextEditor
-              value={form.content}
+              key={isEnglish ? "en" : "vi"}
+              value={isEnglish ? form.enContent : form.content}
               onChange={(value) => {
-                update("content", value);
+                update(isEnglish ? "enContent" : "content", value);
               }}
               onImportedExcerpt={(value) => {
-                if (!form.excerpt) update("excerpt", value);
+                const field = isEnglish ? "enExcerpt" : "excerpt";
+                if (!form[field]) update(field, value);
               }}
             />
           </div>

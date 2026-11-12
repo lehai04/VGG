@@ -692,7 +692,7 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
         id: "law",
         name: "Luật kinh tế",
         code: "8380107",
-        tracks: [{ name: "Ứng dụng", duration_months: 18 }],
+        tracks: [{ name: "Ứng dụng", duration_months: 24 }],
         intakes: [1, 2, 3],
         assessment: "Xét tuyển",
         tuition_variants: [
@@ -2468,9 +2468,9 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
     );
     const filtering = !!query || group !== "all",
       shown = state.showAll || filtering ? filtered : filtered.slice(0, 6);
-    $("#program-result-count").textContent = filtering
-      ? filtered.length + " ngành phù hợp"
-      : "Hiển thị " + shown.length + " / 19 ngành Thạc sĩ";
+    $("#program-result-count").textContent = catalogueLocale === "en"
+      ? `Showing ${shown.length} ${filtering ? "matching " : ""}${shown.length === 1 ? "program" : "programs"}`
+      : filtering ? filtered.length + " ngành phù hợp" : "Hiển thị " + shown.length + " chương trình";
     $("#program-grid").innerHTML = shown.length
       ? shown
           .map(
@@ -2501,7 +2501,7 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
       : '<div class="program-empty"><h3>Chưa tìm thấy chương trình phù hợp.</h3><p>Thử tìm theo tên, mã ngành hoặc bỏ bộ lọc.</p><button class="text-link" id="clear-search">Xóa tìm kiếm và bộ lọc</button></div>';
     $("#show-more").hidden = filtering || filtered.length <= 6;
     $("#show-more").innerHTML =
-      (state.showAll ? "Thu gọn danh sách" : "Xem đủ 19 ngành") + " " + icon("arrow");
+      (state.showAll ? "Thu gọn danh sách" : "Xem tất cả ngành") + " " + icon("arrow");
   }
   function renderConditions() {
     const conditions = [
@@ -2836,7 +2836,10 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
       "</button></div>";
   }
   function renderFAQ() {
-    const questions = editorial?.masterFaq?.map(item => [item.question, item.answer]) ?? [
+    const questions = editorial?.masterFaq?.map(item => [item.question, item.answer.replace(
+      "Thời gian chuẩn là 18 tháng với định hướng ứng dụng, 24 tháng với định hướng nghiên cứu.",
+      "Thời gian đào tạo chuẩn tùy chương trình và định hướng. Riêng ngành Luật Kinh tế có thời gian chuẩn 24 tháng.",
+    )]) ?? [
       [
         "Tốt nghiệp ngành khác có thể đăng ký không?",
         "Có thể được xem xét nếu ngành tốt nghiệp thuộc nhóm phù hợp của chương trình đăng ký. Khoa và Viện sẽ đối chiếu bảng điểm, xác định học phần bổ sung kiến thức nếu cần. Kết quả tra cứu giúp chuẩn bị hồ sơ; điều kiện áp dụng được xác định theo hồ sơ cụ thể.",
@@ -2851,7 +2854,7 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
       ],
       [
         "Lịch học có phù hợp với người đang đi làm không?",
-        "Chương trình đào tạo theo hình thức chính quy. Lịch học bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu cụ thể được công bố theo học kỳ. Thời gian chuẩn là 18 tháng với định hướng ứng dụng, 24 tháng với định hướng nghiên cứu.",
+        "Chương trình đào tạo theo hình thức chính quy. Lịch học bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật; thời khóa biểu cụ thể được công bố theo học kỳ. Thời gian đào tạo chuẩn tùy chương trình và định hướng. Riêng ngành Luật Kinh tế có thời gian chuẩn 24 tháng.",
       ],
       [
         "Học phí toàn khóa đã bao gồm tất cả các khoản chưa?",
@@ -2909,7 +2912,7 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
     }
     openDialog(
       "Kế hoạch tuyển sinh Thạc sĩ 2027",
-      '<p>Chọn trong 19 ngành Thạc sĩ, với định hướng ứng dụng và/hoặc nghiên cứu tùy chương trình. Ba đợt nhận hồ sơ:</p><div class="notice-rounds">' +
+      '<p>Chọn trong 21+ chương trình Thạc sĩ, với định hướng ứng dụng và/hoặc nghiên cứu tùy chương trình. Ba đợt nhận hồ sơ:</p><div class="notice-rounds">' +
         rounds
           .map(
             (r) =>
@@ -2922,7 +2925,7 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
               "</div>",
           )
           .join("") +
-        '</div><h3>Phương thức tuyển sinh</h3><p>Xét tuyển kết hợp phỏng vấn: <strong>Quản trị kinh doanh, Quan hệ công chúng, Mỹ thuật ứng dụng.</strong> Các ngành còn lại xét tuyển.</p><h3>Hình thức và thời gian học</h3><p>Chính quy. Định hướng ứng dụng: 18 tháng; nghiên cứu: 24 tháng. Lịch học bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật.</p><p>Lịch phỏng vấn, công bố kết quả và nhập học được thông báo theo từng đợt tuyển sinh.</p><div class="dialog-actions"><button class="btn primary" data-apply>Xem cổng đăng ký ' +
+        '</div><h3>Phương thức tuyển sinh</h3><p>Xét tuyển kết hợp phỏng vấn: <strong>Quản trị kinh doanh, Quan hệ công chúng, Mỹ thuật ứng dụng.</strong> Các ngành còn lại xét tuyển.</p><h3>Hình thức và thời gian học</h3><p>Chính quy. Thời gian đào tạo chuẩn tùy chương trình và định hướng. Riêng ngành Luật Kinh tế có thời gian chuẩn 24 tháng. Lịch học bố trí vào buổi tối các ngày trong tuần và/hoặc thứ Bảy, Chủ nhật.</p><p>Lịch phỏng vấn, công bố kết quả và nhập học được thông báo theo từng đợt tuyển sinh.</p><div class="dialog-actions"><button class="btn primary" data-apply>Xem cổng đăng ký ' +
         icon("arrow") +
         '</button><button class="btn secondary" data-dialog-target="ho-so">Xem hồ sơ cần chuẩn bị</button></div>' +
         source("Đề án tuyển sinh Thạc sĩ 2027, mục II.2 và II.3"),
@@ -3187,13 +3190,14 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
       "Kết quả & nhập học",
     );
   }
+  let consultationTopic = "";
   function consult(topic, program) {
     closeDialog();
     if (program) $("#contact-program").value = program;
     else if (state.degree === "doctor") $("#contact-program").value = "doctor";
     else if (normalize(topic).includes("hoc phi"))
       $("#contact-program").value = $("#fee-program").value;
-    $("#contact-question").value = topic;
+    consultationTopic = topic;
     $("#form-success").hidden = true;
     scrollToSection("tu-van");
   }
@@ -3361,9 +3365,9 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
       name: $("#contact-name").value.trim(),
       phone: $("#contact-phone").value.trim(),
       email: $("#contact-email").value.trim(),
-      programme: $("#contact-program").selectedOptions[0].textContent,
+      programme: $("#contact-program").selectedOptions[0].dataset.vggSourceLabel ?? $("#contact-program").selectedOptions[0].textContent,
       interestedField: state.degree === "doctor" ? "Tiến sĩ" : "Thạc sĩ",
-      message: $("#contact-question").value.trim(),
+      message: consultationTopic || undefined,
       consent: $("#contact-consent").checked,
       website: $("#contact-website").value,
       sourcePage: "/admissions",
@@ -3383,6 +3387,7 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
       success.textContent = message;
       success.hidden = false;
       form.reset();
+      consultationTopic = "";
       $("#contact-degree").value = state.degree;
     } catch {
       if (!root.isConnected || !form.isConnected) return;
@@ -3535,7 +3540,7 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
       }
     }
     $("#context-announcement").textContent = master
-      ? "Đang xem tuyển sinh Thạc sĩ 2027, 19 ngành."
+      ? "Đang xem tuyển sinh Thạc sĩ 2027, 21+ chương trình."
       : "Đang xem tuyển sinh Tiến sĩ Khoa học Môi trường.";
     requestNavUpdate();
   }

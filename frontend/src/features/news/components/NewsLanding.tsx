@@ -1,3 +1,4 @@
+import { requestCopy, requestLanguage } from "@/i18n/request-copy";
 import { EmptyContent } from "@/shared/components/EmptyContent";
 import Image from "next/image";
 import { ArrowRight, Search, UserRound } from "lucide-react";
@@ -7,7 +8,7 @@ import { SiteFooter } from "@/shared/components/layout/SiteFooter";
 import { categoryLabel, newsCategories, type NewsPagination, type NewsPost } from "../data";
 import styles from "./NewsLanding.module.css";
 
-export function NewsLanding({
+export async function NewsLanding({
   posts,
   newestPostId,
   activeCategory,
@@ -20,6 +21,8 @@ export function NewsLanding({
   query?: string;
   pagination: NewsPagination;
 }) {
+  const t = await requestCopy();
+  const { locale } = await requestLanguage();
   const categoryHref = (value?: string) => {
     const params = new URLSearchParams();
     if (value) params.set("category", value);
@@ -36,10 +39,10 @@ export function NewsLanding({
   return (
     <main className={styles.page} id="main-content">
       <SiteHeader compact />
-      <nav className={styles.breadcrumb} aria-label="Đường dẫn">
-        <Link href="/">Trang chủ</Link>
+      <nav className={styles.breadcrumb} aria-label={t("Đường dẫn")}>
+        <Link href="/">{t("Trang chủ")}</Link>
         <span>/</span>
-        <b>Tin tức &amp; Sự kiện</b>
+        <b>{t("Tin tức & Sự kiện")}</b>
       </nav>
       <header data-site-banner className={styles.hero} data-reveal>
         <Image
@@ -52,28 +55,27 @@ export function NewsLanding({
         <div className={styles.heroShade} />
         <div data-banner-copy className={styles.heroCopy}>
           <p data-banner-label>NEWS &amp; EVENTS</p>
-          <h1 data-banner-title>TIN TỨC &amp; SỰ KIỆN</h1>
+          <h1 data-banner-title>{t("TIN TỨC & SỰ KIỆN")}</h1>
           <span data-banner-description>
-            Nơi cập nhật thông tin tuyển sinh, hoạt động học thuật, đời sống Văn Lang và những kết
-            nối quốc tế mới nhất.
+            {t("Nơi cập nhật thông tin tuyển sinh, hoạt động học thuật, đời sống Văn Lang và những kết nối quốc tế mới nhất.")}
           </span>
         </div>
       </header>
-      <section className={styles.controls} aria-label="Tìm kiếm và lọc tin tức">
-        <form action="/vi/news" method="get">
+      <section className={styles.controls} aria-label={t("Tìm kiếm và lọc tin tức")}>
+        <form action={`/${locale}/news`} method="get">
           <Search />
           <input
             type="search"
             name="q"
             defaultValue={query}
-            placeholder="Tìm kiếm theo tiêu đề bài viết..."
+            placeholder={t("Tìm kiếm theo tiêu đề bài viết...")}
           />
-          <button type="submit">Tìm kiếm</button>
+          <button type="submit">{t("Tìm kiếm")}</button>
           {activeCategory && <input type="hidden" name="category" value={activeCategory} />}
         </form>
-        <nav className={styles.tags} aria-label="Lọc tin theo chuyên mục">
+        <nav className={styles.tags} aria-label={t("Lọc tin theo chuyên mục")}>
           <Link className={!activeCategory ? styles.activeTag : undefined} href={categoryHref()}>
-            Tất cả
+            {t("Tất cả")}
           </Link>
           {newsCategories.map((category) => (
             <Link
@@ -81,7 +83,7 @@ export function NewsLanding({
               href={categoryHref(category.value)}
               key={category.value}
             >
-              {category.label}
+              {t(category.label)}
             </Link>
           ))}
         </nav>
@@ -89,10 +91,10 @@ export function NewsLanding({
       <section className={styles.results} aria-labelledby="news-results">
         <header>
           <div>
-            <p>{activeCategory ? categoryLabel(activeCategory) : "Tất cả bài viết"}</p>
-            <h2 id="news-results">{query ? `Kết quả cho “${query}”` : "Bài viết mới nhất"}</h2>
+            <p>{t(activeCategory ? categoryLabel(activeCategory) : "Tất cả bài viết")}</p>
+            <h2 id="news-results">{query ? `${t("Kết quả cho")} “${query}”` : t("Bài viết mới nhất")}</h2>
           </div>
-          <span>{pagination.total} bài viết</span>
+          <span>{pagination.total} {locale === "en" ? (pagination.total === 1 ? "article" : "articles") : "bài viết"}</span>
         </header>
         {posts.length ? (
           <div className={styles.grid}>
@@ -106,24 +108,24 @@ export function NewsLanding({
                     fill
                     sizes="(max-width:760px) 100vw,33vw"
                   />
-                  <span className={styles.categoryBadge}>{categoryLabel(post.category)}</span>
+                  <span className={styles.categoryBadge}>{t(categoryLabel(post.category))}</span>
                   {post.id === newestPostId && <strong className={styles.newBadge}>NEW</strong>}
                 </figure>
                 <div className={styles.cardBody}>
-                  <h3 className="type-card-title">{post.title}</h3>
+                  <h3 className="type-card-title">{t(post.title)}</h3>
                   <div className={styles.byline}>
                     <UserRound />
-                    <b>{post.authorName || post.author?.fullName || "Viện Sau đại học"}</b>
+                    <b>{t(post.authorName || post.author?.fullName || "Viện Sau đại học")}</b>
                     <i>·</i>
                     <time>
                       {post.publishedAt
-                        ? new Date(post.publishedAt).toLocaleDateString("vi-VN")
-                        : "Mới cập nhật"}
+                        ? new Date(post.publishedAt).toLocaleDateString(locale === "en" ? "en-US" : "vi-VN")
+                        : t("Mới cập nhật")}
                     </time>
                   </div>
-                  {post.excerpt && <p>{post.excerpt}</p>}
+                  {post.excerpt && <p>{t(post.excerpt)}</p>}
                   <b className={styles.readMore}>
-                    Đọc bài viết <ArrowRight />
+                    {t("Đọc bài viết")} <ArrowRight />
                   </b>
                 </div>
               </Link>
@@ -131,22 +133,22 @@ export function NewsLanding({
           </div>
         ) : (
           <div className={styles.emptyContainer}><EmptyContent
-            title="Không tìm thấy bài viết"
-            description={query || activeCategory || pagination.page > 1
+            title={t("Không tìm thấy bài viết")}
+            description={t(query || activeCategory || pagination.page > 1
               ? 'Hãy thử từ khóa khác hoặc chọn “Tất cả” để xem những nội dung mới nhất.'
-              : 'Nội dung đang được cập nhật. Vui lòng quay lại sau để xem những bài viết mới nhất.'}
+              : 'Nội dung đang được cập nhật. Vui lòng quay lại sau để xem những bài viết mới nhất.')}
             href="/news"
-            actionLabel={query || activeCategory || pagination.page > 1 ? "Xem tất cả bài viết" : undefined}
+            actionLabel={query || activeCategory || pagination.page > 1 ? t("Xem tất cả bài viết") : undefined}
           /></div>
         )}
         {pagination.totalPages > 1 && (
-          <nav className={styles.pagination} aria-label="Phân trang tin tức">
+          <nav className={styles.pagination} aria-label={t("Phân trang tin tức")}>
             <Link
               className={pagination.page === 1 ? styles.disabledPage : undefined}
               href={pageHref(Math.max(1, pagination.page - 1))}
               aria-disabled={pagination.page === 1}
             >
-              ‹ <span>Trước</span>
+              ‹ <span>{t("Trước")}</span>
             </Link>
             {Array.from({ length: pagination.totalPages }, (_, index) => index + 1).map((page) => (
               <Link
@@ -165,7 +167,7 @@ export function NewsLanding({
               href={pageHref(Math.min(pagination.totalPages, pagination.page + 1))}
               aria-disabled={pagination.page === pagination.totalPages}
             >
-              <span>Sau</span> ›
+              <span>{t("Sau")}</span> ›
             </Link>
           </nav>
         )}

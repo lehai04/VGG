@@ -2,6 +2,7 @@ import "server-only";
 import { headers } from "next/headers";
 import { cache } from "react";
 import { programmes as sourceProgrammes } from "@/data/programmes";
+import { applyLuatKinhTeStudyUpdate } from "@/data/programmes/luat-kinh-te";
 import {
   parseComposition,
   contentSections,
@@ -97,6 +98,9 @@ export const websiteProgrammes = cache(async () => {
   }
   const visible = all.filter((programme) => !hiddenSourceProgrammeIds.has(programme.id));
   return Promise.all(
-    visible.map((programme) => websiteContent(`programme:${programme.id}`, programme)),
+    visible.map(async (programme) => {
+      const resolved = await websiteContent(`programme:${programme.id}`, programme);
+      return resolved.id === "luat-kinh-te" ? applyLuatKinhTeStudyUpdate(resolved) : resolved;
+    }),
   );
 });

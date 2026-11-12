@@ -175,6 +175,9 @@ export const newsInput = z.object({
   authorName: z.string().trim().min(2).max(120),
   excerpt: z.string().trim().min(10).max(1000),
   content: newsContent,
+  enTitle: z.string().trim().min(2).max(250).nullish(),
+  enExcerpt: z.string().trim().min(10).max(1000).nullish(),
+  enContent: newsContent.nullish(),
   coverImage: imagePath.optional().nullable(),
   coverImageAlt: z.string().trim().max(500).optional().nullable(),
   metaTitle: z.string().trim().max(250).optional().nullable(),
@@ -189,6 +192,15 @@ export const newsInput = z.object({
   customJsonLd,
   publishedAt: z.coerce.date().optional(),
   status: status.default("DRAFT"),
+}).superRefine((post, context) => {
+  const english = [post.enTitle, post.enExcerpt, post.enContent];
+  if (english.some(Boolean) && (post.locale !== "vi" || !english.every(Boolean))) {
+    context.addIssue({
+      code: "custom",
+      path: ["enTitle"],
+      message: "Bản EN cần đủ tiêu đề, tóm tắt và nội dung trong bài tiếng Việt.",
+    });
+  }
 });
 const resourceType = z.enum([
   "DIRECTIVE_DOCUMENT",

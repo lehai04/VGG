@@ -450,7 +450,7 @@
   font-size: var(--text-16);
   font-weight: 400;
   line-height: 1.5;
-  text-align: justify;
+  text-align: start;
   overflow-wrap: break-word;
 }
 
@@ -1167,7 +1167,7 @@
 
 @media (max-width: 1024px) {
   .curriculumLayout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -1597,3 +1597,29 @@
   }
 }
 
+
+@media (max-width: 420px) {
+  .factsBar {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .moduleTitleRow,
+  .courseItem > div {
+    min-width: 0;
+  }
+  .moduleTitleRow > svg,
+  .courseCredit {
+    flex-shrink: 0;
+  }
+  .courseElectiveTag {
+    display: inline-block;
+    margin-inline-start: 0;
+    white-space: nowrap;
+  }
+  .moduleBody {
+    padding-inline: 12px;
+  }
+  .courseItem {
+    gap: 8px;
+  }
+}

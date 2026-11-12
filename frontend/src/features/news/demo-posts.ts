@@ -1,4 +1,6 @@
 import type { NewsPost } from "./data";
+import type { Locale } from "@/lib/i18n";
+import { websiteCopy } from "@/i18n/website-copy";
 
 // Frontend-only demo cards. Original articles remain on the VLU website.
 const media = "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/";
@@ -49,10 +51,11 @@ export const demoNewsPosts: NewsPost[] = articles.map(({ image, ...article }) =>
   externalUrl: `https://www.vlu.edu.vn/news/${article.slug}`,
 }));
 
-export function getDemoNewsPosts(options: { category?: string; q?: string }) {
+export function getDemoNewsPosts(options: { category?: string; q?: string; locale?: Locale }) {
   const query = options.q?.trim().toLocaleLowerCase("vi");
+  const t = websiteCopy(options.locale ?? "vi", "/news");
   return demoNewsPosts.filter((post) =>
     (!options.category || post.category === options.category) &&
-    (!query || `${post.title} ${post.excerpt ?? ""}`.toLocaleLowerCase("vi").includes(query)),
+    (!query || [post.title, post.excerpt, t(post.title), t(post.excerpt)].join(" ").toLocaleLowerCase("vi").includes(query)),
   );
 }

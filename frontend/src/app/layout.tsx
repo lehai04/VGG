@@ -77,12 +77,27 @@ const baseMetadata: Metadata = {
 
 export async function generateMetadata(): Promise<Metadata> {
   const { locale, routePath, seo } = await requestPageSeo();
+  const englishTitle = "Van Lang Institute of Postgraduate Education";
+  const englishDescription = "Postgraduate programs, admissions, research and student services at Van Lang University.";
+  const languageMetadata: Metadata = locale === "en" ? {
+    title: { default: englishTitle, template: "%s | Institute of Postgraduate Education" },
+    description: englishDescription,
+    applicationName: englishTitle,
+    keywords: ["Van Lang University", "postgraduate education", "master’s programs", "doctoral programs"],
+    openGraph: { type: "website", locale: "en_US", siteName: englishTitle, title: englishTitle, description: englishDescription },
+    twitter: { card: "summary", title: englishTitle, description: englishDescription },
+  } : {};
+  const alternatePath = routePath === "/" ? "" : routePath;
   return {
     ...baseMetadata,
+    ...languageMetadata,
     ...metadataForPageSeo(seo, locale),
     alternates: {
       canonical: seo.canonicalUrl || `/${locale}${routePath}`,
-      ...(seo.hreflang && Object.keys(seo.hreflang).length ? { languages: seo.hreflang } : {}),
+      languages: seo.hreflang && Object.keys(seo.hreflang).length ? seo.hreflang : {
+        vi: `/vi${alternatePath}`,
+        en: `/en${alternatePath}`,
+      },
     },
   };
 }
@@ -119,7 +134,7 @@ export default async function RootLayout({
       <body className="antialiased" suppressHydrationWarning>
         <VisitTracker />
         <a className="skip-link" href="#main-content">
-          Bỏ qua điều hướng
+          {locale === "en" ? "Skip navigation" : "Bỏ qua điều hướng"}
         </a>
         <LocaleProvider locale={locale} messages={messages}>
           <WebsiteChromeProvider value={{ ...chrome, programmeOptions }}>

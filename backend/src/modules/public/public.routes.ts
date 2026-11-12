@@ -1,3 +1,4 @@
+import type { NewsPost } from "@prisma/client";
 import type { FastifyInstance } from "fastify";
 import { createVisitLimit } from "./visit-limit.js";
 import { z } from "zod";
@@ -25,6 +26,24 @@ const createSchema = z.object({
 });
 
 
+function localizedNews(row: NewsPost, locale: "vi" | "en") {
+  const { enTitle, enExcerpt, enContent, ...post } = row;
+  if (locale !== "en" || post.locale !== "vi" || !enTitle || !enContent) return post;
+  return {
+    ...post,
+    locale: "en",
+    title: enTitle,
+    excerpt: enExcerpt,
+    content: enContent,
+    metaTitle: enTitle,
+    metaDescription: enExcerpt,
+    ogTitle: enTitle,
+    ogDescription: enExcerpt,
+    canonicalUrl: null,
+    customJsonLd: null,
+  };
+}
+
 export async function publicRoutes(app: FastifyInstance) {
   app.get("/api/public/media/*", async (request, reply) => {
     const key = (request.params as { "*": string })["*"] ?? "";
@@ -48,18 +67,29 @@ export async function publicRoutes(app: FastifyInstance) {
   });
   app.get("/api/public/news", async (request, reply) => {
     const query = z.object({ category: newsCategory.optional(), q: z.string().trim().max(100).optional(), locale: z.enum(["vi", "en"]).default("vi"), limit: z.coerce.number().int().min(1).max(100).default(30), page: z.coerce.number().int().min(1).default(1) }).parse(request.query);
-    const where = { status: "PUBLISHED" as const, locale: query.locale, ...(query.category ? { category: query.category } : {}), ...(query.q ? { OR: [{ title: { contains: query.q, mode: "insensitive" as const } }, { excerpt: { contains: query.q, mode: "insensitive" as const } }] } : {}) };
+    const search = query.q ? { contains: query.q, mode: "insensitive" as const } : undefined;
+    const where = {
+      status: "PUBLISHED" as const,
+      locale: query.locale === "en" ? { in: ["vi", "en"] } : "vi",
+      ...(query.category ? { category: query.category } : {}),
+      ...(search ? { OR: [
+        { title: search },
+        { excerpt: search },
+        ...(query.locale === "en" ? [{ enTitle: search }, { enExcerpt: search }] : []),
+      ] } : {}),
+    };
     const [posts, total] = await Promise.all([
       prisma.newsPost.findMany({ where, orderBy: { publishedAt: "desc" }, skip: (query.page - 1) * query.limit, take: query.limit }),
       prisma.newsPost.count({ where }),
     ]);
-    return ok(reply, { posts, pagination: { page: query.page, limit: query.limit, total, totalPages: Math.ceil(total / query.limit) } });
+    return ok(reply, { posts: posts.map((post) => localizedNews(post, query.locale)), pagination: { page: query.page, limit: query.limit, total, totalPages: Math.ceil(total / query.limit) } });
   });
   app.get("/api/public/news/:slug", async (request, reply) => {
     const params = z.object({ slug }).parse(request.params);
+    const { locale } = z.object({ locale: z.enum(["vi", "en"]).default("vi") }).parse(request.query);
     const post = await prisma.newsPost.findFirst({ where: { slug: params.slug, status: "PUBLISHED" } });
     if (!post) return fail(reply, 404, "Không tìm thấy bài viết.", "NEWS_NOT_FOUND");
-    return ok(reply, { post });
+    return ok(reply, { post: localizedNews(post, locale) });
   });
   app.get("/api/public/resources", async (_request, reply) => {
     const [resources, categories] = await Promise.all([

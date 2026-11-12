@@ -1,3 +1,4 @@
+import { requestCopy } from "@/i18n/request-copy";
 import Image from "next/image";
 import Link from "@/i18n/components/LocalizedLink";
 import { ArrowDown } from "lucide-react";
@@ -59,6 +60,7 @@ const researchLinks = [
 ] as const;
 
 export async function ResearchLanding() {
+  const t = await requestCopy();
   const content = await websiteContent('research', { ...researchCopy, goals, researchFields, partners });
   const layout=await websiteLayout('research');
   return (
@@ -67,37 +69,37 @@ export async function ResearchLanding() {
 
       <ContentPageSections pageId="research" layout={layout}>
       <section data-site-banner data-content-slot="hero" className={styles.hero}>
-        <Image src={content.hero.image} alt={content.hero.alt} fill priority sizes="100vw" />
+        <Image src={content.hero.image} alt={t(content.hero.alt)} fill priority sizes="100vw" />
         <div className={styles.heroShade} />
         <div data-banner-copy className={styles.heroCopy} data-reveal>
-          <p data-banner-label>{content.hero.label.split(" · ")[0]}</p>
-          <h1 data-banner-title>{content.hero.title}</h1>
-          <span data-banner-description>{content.hero.intro}</span>
+          <p data-banner-label>{t(content.hero.label.split(" · ")[0])}</p>
+          <h1 data-banner-title>{t(content.hero.title)}</h1>
+          <span data-banner-description>{t(content.hero.intro)}</span>
         </div>
         <a href="#overview" className={styles.heroDown} aria-label="Xem nội dung"><ArrowDown /></a>
       </section>
 
       <section className={styles.overview} id="overview" aria-labelledby="overview-title" data-reveal>
         <div>
-          <h2 data-section-label id="overview-title">{content.overview.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</h2>
-          <h3 data-section-subtitle>{content.overview.title}</h3>
-          <p>{content.overview.text}</p>
+          <h2 data-section-label id="overview-title">{t(content.overview.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, ""))}</h2>
+          <h3 data-section-subtitle>{t(content.overview.title)}</h3>
+          <p>{t(content.overview.text)}</p>
         </div>
-        <figure><Image src={content.overview.image} alt={content.overview.alt} fill sizes="(max-width: 800px) 100vw, 42vw" /></figure>
+        <figure><Image src={content.overview.image} alt={t(content.overview.alt)} fill sizes="(max-width: 800px) 100vw, 42vw" /></figure>
       </section>
 
       <section className={styles.goals} id="goals" aria-labelledby="goals-title">
         <header data-reveal>
-          <h2 data-section-label id="goals-title">{content.goalsHeading.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</h2>
-          <h3 data-section-subtitle>{content.goalsHeading.title}</h3>
-          <span>{content.goalsHeading.intro}</span>
+          <h2 data-section-label id="goals-title">{t(content.goalsHeading.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, ""))}</h2>
+          <h3 data-section-subtitle>{t(content.goalsHeading.title)}</h3>
+          <span>{t(content.goalsHeading.intro)}</span>
         </header>
         <div>
           {content.goals.map((goal) => (
             <article key={goal.title} data-reveal>
               <span aria-hidden="true" />
-              <h3>{goal.title}</h3>
-              <p>{goal.text}</p>
+              <h3>{t(goal.title)}</h3>
+              <p>{t(goal.text)}</p>
             </article>
           ))}
         </div>
@@ -105,16 +107,16 @@ export async function ResearchLanding() {
 
       <section className={styles.fields} id="fields" aria-labelledby="fields-title">
         <header data-reveal>
-          <h2 data-section-label id="fields-title">{content.fieldsHeading.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, "")}</h2>
-          <h3 data-section-subtitle>{content.fieldsHeading.title}</h3>
-          <span>{content.fieldsHeading.intro}</span>
+          <h2 data-section-label id="fields-title">{t(content.fieldsHeading.label.replace(/^\s*\d+\s*[·.\-–—]\s*/, ""))}</h2>
+          <h3 data-section-subtitle>{t(content.fieldsHeading.title)}</h3>
+          <span>{t(content.fieldsHeading.intro)}</span>
         </header>
         <div className={styles.fieldGrid}>
           {content.researchFields.map((field, index) => (
             <div className={styles.fieldCard} key={field.name} data-reveal>
-              <Image src={field.image} alt={field.name} fill sizes="(max-width: 700px) 100vw, 33vw" />
+              <Image src={field.image} alt={t(field.name)} fill sizes="(max-width: 700px) 100vw, 33vw" />
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{field.name}</h3>
+              <h3>{t(field.name)}</h3>
             </div>
           ))}
         </div>
@@ -124,8 +126,8 @@ export async function ResearchLanding() {
 
       <section data-content-slot="partners" className={styles.partners} aria-labelledby="strategic-partners-title">
         <header className={styles.partnerLead} data-reveal>
-          <h2 data-section-label id="strategic-partners-title">{content.partnersHeading.title}</h2>
-          <p>{content.partnersHeading.text}</p>
+          <h2 data-section-label id="strategic-partners-title">{t(content.partnersHeading.title)}</h2>
+          <p>{t(content.partnersHeading.text)}</p>
         </header>
         <StrategicPartnersCarousel partners={content.partners} />
       </section>
@@ -133,22 +135,22 @@ export async function ResearchLanding() {
       <section id="hop-tac-doanh-nghiep" className={styles.industryNetwork} aria-labelledby="industry-network-title">
         <div className={styles.industryRedRail} aria-hidden="true" />
         <figure className={styles.industryPhoto} data-reveal>
-          <Image src={content.industry.image} alt={content.industry.alt} fill sizes="(max-width: 900px) 100vw, 55vw" />
-          <figcaption>{content.industry.captionLine1}<br />{content.industry.captionLine2}</figcaption>
+          <Image src={content.industry.image} alt={t(content.industry.alt)} fill sizes="(max-width: 900px) 100vw, 55vw" />
+          <figcaption>{t(content.industry.captionLine1)}<br />{t(content.industry.captionLine2)}</figcaption>
         </figure>
         <div className={styles.industryContent} data-reveal>
           <header>
-            <strong>{content.industry.count}</strong>
+            <strong>{t(content.industry.count)}</strong>
             <div>
-              <h2 data-section-label id="industry-network-title">{content.industry.title}</h2>
-              <p>{content.industry.intro}</p>
+              <h2 data-section-label id="industry-network-title">{t(content.industry.title)}</h2>
+              <p>{t(content.industry.intro)}</p>
             </div>
           </header>
-          <p className={styles.industryLead}>{content.industry.text}</p>
+          <p className={styles.industryLead}>{t(content.industry.text)}</p>
           <figure className={styles.partnerLogoBoard}>
             <Image
               src={content.industry.logoImage}
-              alt={content.industry.logoAlt}
+              alt={t(content.industry.logoAlt)}
               width={832}
               height={800}
               sizes="(max-width: 900px) 100vw, 56vw"
@@ -164,6 +166,7 @@ export async function ResearchLanding() {
   );
 }
 
-export function ResearchGateway({ activeHref = "/research" }: { activeHref?: string }) {
-  return <section className={styles.admissionGateway} aria-labelledby="research-admission-title"><div className={styles.admissionScene}><Image src="/images/pages/research/content/campus.jpg" alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang" fill sizes="100vw" /><div className={styles.admissionCard} data-reveal><h2>Khám phá thêm</h2><p>Tìm hiểu các cụm nghiên cứu, dự án, công bố khoa học và hoạt động đổi mới để kết nối sâu hơn với hệ sinh thái nghiên cứu của Viện Sau đại học.</p><div><Link href="/research/cum-nghien-cuu">Các cụm nghiên cứu</Link><Link href="/research/du-an">Dự án nghiên cứu</Link></div></div></div><div className={styles.admissionNav}><h2 id="research-admission-title">Nghiên cứu &amp; Đổi mới</h2><nav aria-label="Điều hướng Nghiên cứu và Đổi mới">{researchLinks.map((item) => <Link className={item.href === activeHref ? styles.activeAdmissionLink : undefined} href={item.href} key={item.href}>{item.label}</Link>)}</nav></div></section>;
+export async function ResearchGateway({ activeHref = "/research" }: { activeHref?: string }) {
+  const t = await requestCopy();
+  return <section className={styles.admissionGateway} aria-labelledby="research-admission-title"><div className={styles.admissionScene}><Image src="/images/pages/research/content/campus.jpg" alt="Toàn cảnh khuôn viên Trường Đại học Văn Lang" fill sizes="100vw" /><div className={styles.admissionCard} data-reveal><h2>Khám phá thêm</h2><p>Tìm hiểu các cụm nghiên cứu, dự án, công bố khoa học và hoạt động đổi mới để kết nối sâu hơn với hệ sinh thái nghiên cứu của Viện Sau đại học.</p><div><Link href="/research/cum-nghien-cuu">Các cụm nghiên cứu</Link><Link href="/research/du-an">Dự án nghiên cứu</Link></div></div></div><div className={styles.admissionNav}><h2 id="research-admission-title">Nghiên cứu &amp; Đổi mới</h2><nav aria-label="Điều hướng Nghiên cứu và Đổi mới">{researchLinks.map((item) => <Link className={item.href === activeHref ? styles.activeAdmissionLink : undefined} href={item.href} key={item.href}>{t(item.label)}</Link>)}</nav></div></section>;
 }

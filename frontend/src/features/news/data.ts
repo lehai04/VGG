@@ -1,4 +1,5 @@
 import { getDemoNewsPosts } from "./demo-posts";
+import type { Locale } from "@/lib/i18n";
 
 export const newsCategories = [
   { value: "ADMISSIONS", label: "Tuyển sinh" },
@@ -10,6 +11,7 @@ export const newsCategories = [
 export type NewsPost = {
   id: string;
   slug: string;
+  locale?: Locale;
   title: string;
   category: string;
   excerpt: string | null;
@@ -36,7 +38,7 @@ export function categoryLabel(category: string) {
   return newsCategories.find((item) => item.value === category)?.label ?? "Tin tức";
 }
 export async function getNewsPosts(
-  options: { category?: string; limit?: number; q?: string } = {},
+  options: { category?: string; limit?: number; q?: string; locale?: Locale } = {},
 ) {
   const { posts } = await getPaginatedNewsPosts({ ...options, page: 1, limit: options.limit ?? 30 });
   return posts;
@@ -48,6 +50,7 @@ export async function getPaginatedNewsPosts(options: {
   limit: number;
   page: number;
   q?: string;
+  locale?: Locale;
 }) {
   const demos = process.env.VGG_DEMO_NEWS === "true" ? getDemoNewsPosts(options) : [];
   const backend = process.env.BACKEND_INTERNAL_URL;
@@ -56,21 +59,27 @@ export async function getPaginatedNewsPosts(options: {
   if (backend) {
     try {
       const params = new URLSearchParams({
-        locale: "vi",
+        locale: options.locale ?? "vi",
         limit: String(options.limit),
         page: String(options.page),
       });
       if (options.category) params.set("category", options.category);
       if (options.q) params.set("q", options.q);
-      const response = await fetch(`${backend}/api/public/news?${params}`, {
-        cache: "no-store",
-      });
-      if (!response.ok) throw new Error(`News API returned ${response.status}`);
-      const payload = (await response.json()) as {
-        data: { posts: NewsPost[]; pagination: NewsPagination };
+      const fetchListing = async () => {
+        const response = await fetch(`${backend}/api/public/news?${params}`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`News API returned ${response.status}`);
+        const payload = (await response.json()) as {
+          data: { posts: NewsPost[]; pagination: NewsPagination };
+        };
+        return payload.data;
       };
-      posts = payload.data.posts;
-      backendTotal = payload.data.pagination.total;
+      let listing = await fetchListing();
+      if (options.locale === "en" && listing.pagination.total === 0) {
+        params.set("locale", "vi");
+        listing = await fetchListing();
+      }
+      posts = listing.posts;
+      backendTotal = listing.pagination.total;
     } catch {
       // Keep the existing demo cards available when the content cannot be reached.
     }
@@ -84,12 +93,12 @@ export async function getPaginatedNewsPosts(options: {
     pagination: { page: options.page, limit: options.limit, total, totalPages: Math.ceil(total / options.limit) },
   };
 }
-export async function getNewsPost(slug: string, previewToken?: string) {
+export async function getNewsPost(slug: string, previewToken?: string, locale: Locale = "vi") {
   const backend = process.env.BACKEND_INTERNAL_URL;
   if (!backend) return null;
   try {
     if (previewToken && !/^[a-f0-9]{64}$/.test(previewToken)) return null;
-    const response = await fetch(previewToken ? `${backend}/api/public/news-preview` : `${backend}/api/public/news/${encodeURIComponent(slug)}`, {
+    const response = await fetch(previewToken ? `${backend}/api/public/news-preview` : `${backend}/api/public/news/${encodeURIComponent(slug)}?locale=${locale}`, {
       cache: "no-store",
       ...(previewToken ? { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ token: previewToken }) } : {}),
     });

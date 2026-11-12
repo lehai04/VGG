@@ -5852,3 +5852,23 @@ main :is(input, select, textarea) {
     text-wrap: wrap;
   }
 }
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-height: 26px;
+  padding: 1px 7px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  color: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: pre;
+}
+
+.language-switch:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}

@@ -45,6 +45,9 @@ model NewsPost {
   category    String        @default("GENERAL") @db.VarChar(50)
   excerpt     String?
   content     String
+  enTitle     String?       @map("en_title")
+  enExcerpt   String?       @map("en_excerpt")
+  enContent   String?       @map("en_content")
   coverImage  String?       @map("cover_image") @db.VarChar(1000)
   coverImageAlt String?     @map("cover_image_alt") @db.VarChar(500)
   metaTitle   String?       @map("meta_title") @db.VarChar(250)

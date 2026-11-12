@@ -918,6 +918,9 @@
 }
 .admissions-reference .timeline-date {
   display: inline-block;
+  max-inline-size: 100%;
+  text-wrap: balance;
+  overflow-wrap: break-word;
   color: #7b652f;
   font-size: var(--text-12);
   border: 1px solid #eadfbe;
@@ -1151,6 +1154,10 @@
   padding: 14px 0;
   border-bottom: 1px solid #edf0f3;
   cursor: pointer;
+}
+.admissions-reference .checklist-item > span {
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 .admissions-reference .checklist-item:last-child {
   border-bottom: 0;
@@ -1528,6 +1535,8 @@
 }
 .admissions-reference .form-submit {
   width: 100%;
+  white-space: normal;
+  text-wrap: balance;
   margin-top: 22px;
 }
 .admissions-reference .form-help-note {

@@ -1,17 +1,19 @@
 "use client";
 
+import { useWebsiteCopy } from "@/i18n/components/WebsiteCopy";
 import { useWebsiteChrome } from '../WebsiteChromeProvider';
 import { FooterIcon } from "./FooterIcon";
 import { useLocale } from "@/i18n/components/LocaleProvider";
 
 /** Cột địa chỉ + iframe Google Maps (cơ sở đầu tiên trong `locations`). */
 export function FooterLocation() {
+  const t = useWebsiteCopy();
   const { locations } = useWebsiteChrome();
   const { locale } = useLocale();
   const [mainLocation, ...otherLocations] = locations;
   return (
     <section className="university-footer-location">
-      <h3>{locale === "en" ? "Locations" : "Địa chỉ"}</h3>
+      <h3>{t("Địa chỉ")}</h3>
       <a
         className="university-footer-map"
         href={mainLocation.mapUrl}
@@ -32,7 +34,7 @@ export function FooterLocation() {
           <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" key={location.name}>
             <FooterIcon name="pin" />
             <span>
-              <strong>{locale === "en" ? (location === mainLocation ? "Main campus" : "Campus 2") : location.name}:</strong> {location.address}
+              <strong>{t(locale === "en" ? (location === mainLocation ? "Main campus" : "Campus 2") : location.name)}:</strong> {t(location.address)}
             </span>
           </a>
         ))}

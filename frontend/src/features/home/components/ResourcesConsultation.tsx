@@ -4,6 +4,7 @@
  * Form tư vấn (client): submit JSON tới POST /api/consultations.
  * Field ẩn `website` = honeypot chống bot. `consent` = hidden "yes".
  */
+import { useWebsiteCopy } from "@/i18n/components/WebsiteCopy";
 import { FormEvent, Fragment, useState } from "react";
 import type { ProgrammeConsultationIntro } from "@/data/programmes";
 import { useWebsiteChrome } from '@/shared/components/layout/WebsiteChromeProvider';
@@ -16,6 +17,7 @@ export function ResourcesConsultation({
   initialProgramme?: string;
   intro?: ProgrammeConsultationIntro;
 }) {
+  const t = useWebsiteCopy();
   const { messages } = useLocale();
   const { programmeOptions: PROGRAMMES } = useWebsiteChrome();
   const cta = messages.cta;
@@ -123,21 +125,21 @@ export function ResourcesConsultation({
       <div className="consultationBlock">
         {/* Cột giới thiệu nhấn mạnh giá trị người dùng nhận được trước khi điền form. */}
         <div className="consultationIntro">
-          <p>{intro?.eyebrow ?? cta.eyebrow}</p>
+          <p>{t(intro?.eyebrow ?? cta.eyebrow)}</p>
           <h2>
             {titleLines.map((line, index) => (
               <Fragment key={line}>
                 {index > 0 && " "}
-                {index === 0 ? line : <em>{line}</em>}
+                {index === 0 ? t(line) : <em>{t(line)}</em>}
               </Fragment>
             ))}
           </h2>
-          <div>{intro?.body ?? cta.support}</div>
-          <ul className="consultationBenefits" aria-label="Quyền lợi tư vấn">
+          <div>{t(intro?.body ?? cta.support)}</div>
+          <ul className="consultationBenefits" aria-label={t("Quyền lợi tư vấn")}>
             {benefits.map((benefit, index) => (
               <li key={benefit}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                {benefit}
+                {t(benefit)}
               </li>
             ))}
           </ul>
@@ -148,9 +150,9 @@ export function ResourcesConsultation({
           <div className="consultationFormHead">
             <div>
               <span>PRIVATE CONSULTATION</span>
-              <strong>{intro?.formTitle ?? cta.formTitle}</strong>
+              <strong>{t(intro?.formTitle ?? cta.formTitle)}</strong>
             </div>
-            <small>{cta.response}</small>
+            <small>{t(cta.response)}</small>
           </div>
           {/* consent phục vụ API; honeypot chặn bot và được ẩn khỏi người dùng thật. */}
           <input type="hidden" name="consent" value="yes" />
@@ -163,7 +165,7 @@ export function ResourcesConsultation({
           />
           <div className="consultationField">
             <label htmlFor="consultation-name" className="consultationLabel">
-              <span>{cta.name}</span>
+              <span>{t(cta.name)}</span>
               <span className="consultationRequired">*</span>
             </label>
             <div className="consultationInputWrapper">
@@ -176,7 +178,7 @@ export function ResourcesConsultation({
                   setNameTouched(true);
                 }}
                 onBlur={() => setNameTouched(true)}
-                placeholder="Nguyễn Văn A"
+                placeholder={t("Nguyễn Văn A")}
                 autoComplete="name"
                 minLength={2}
                 maxLength={100}
@@ -187,7 +189,7 @@ export function ResourcesConsultation({
                 }}
               />
               {showNameSuccess && (
-                <div className="consultationStatusIcon" title="Họ tên hợp lệ">
+                <div className="consultationStatusIcon" title={t("Họ tên hợp lệ")}>
                   <svg
                     width="18"
                     height="18"
@@ -205,14 +207,14 @@ export function ResourcesConsultation({
             </div>
             {showNameError && (
               <span className="consultationErrorMessage">
-                <span>⚠️</span> Vui lòng nhập họ và tên (tối thiểu 2 ký tự).
+                <span>⚠️</span> {t("Vui lòng nhập họ và tên (tối thiểu 2 ký tự).")}
               </span>
             )}
           </div>
 
           <div className="consultationField">
             <label htmlFor="consultation-phone" className="consultationLabel">
-              <span>{cta.phone}</span>
+              <span>{t(cta.phone)}</span>
               <span className="consultationRequired">*</span>
             </label>
             <div className="consultationInputWrapper">
@@ -237,7 +239,7 @@ export function ResourcesConsultation({
                 }}
               />
               {showPhoneSuccess && (
-                <div className="consultationStatusIcon" title="Số điện thoại hợp lệ">
+                <div className="consultationStatusIcon" title={t("Số điện thoại hợp lệ")}>
                   <svg
                     width="18"
                     height="18"
@@ -255,15 +257,14 @@ export function ResourcesConsultation({
             </div>
             {showPhoneError && (
               <span className="consultationErrorMessage">
-                <span>⚠️</span> Vui lòng nhập đúng định dạng: Số điện thoại phải gồm đúng 10 chữ số
-                bắt đầu bằng số 0 (VD: 0901234567).
+                <span>⚠️</span> {t("Vui lòng nhập đúng định dạng: Số điện thoại phải gồm đúng 10 chữ số bắt đầu bằng số 0 (VD: 0901234567).")}
               </span>
             )}
           </div>
 
           <div className="consultationField">
             <label htmlFor="consultation-email" className="consultationLabel">
-              <span>{cta.email}</span>
+              <span>{t(cta.email)}</span>
               <span className="consultationRequired">*</span>
             </label>
             <div className="consultationInputWrapper">
@@ -287,7 +288,7 @@ export function ResourcesConsultation({
                 }}
               />
               {showEmailSuccess && (
-                <div className="consultationStatusIcon" title="Email hợp lệ">
+                <div className="consultationStatusIcon" title={t("Email hợp lệ")}>
                   <svg
                     width="18"
                     height="18"
@@ -305,14 +306,14 @@ export function ResourcesConsultation({
             </div>
             {showEmailError && (
               <span className="consultationErrorMessage">
-                <span>⚠️</span> Vui lòng nhập đúng định dạng email (VD: hoten@gmail.com).
+                <span>⚠️</span> {t("Vui lòng nhập đúng định dạng email (VD: hoten@gmail.com).")}
               </span>
             )}
           </div>
 
           <div className="consultationField">
             <label htmlFor="consultation-programme" className="consultationLabel">
-              <span>{cta.programme}</span>
+              <span>{t(cta.programme)}</span>
               <span className="consultationRequired">*</span>
             </label>
             <div className="consultationInputWrapper">
@@ -329,11 +330,11 @@ export function ResourcesConsultation({
                 className={showProgrammeSuccess ? "is-valid" : ""}
               >
                 <option value="" disabled>
-                  {cta.chooseProgramme}
+                  {t(cta.chooseProgramme)}
                 </option>
                 {PROGRAMMES.map((programmeItem) => (
                   <option value={programmeItem} key={programmeItem}>
-                    {programmeItem}
+                    {t(programmeItem)}
                   </option>
                 ))}
               </select>
@@ -357,7 +358,7 @@ export function ResourcesConsultation({
             </div>
           </div>
           <button className="vgg-cta-pill" type="submit" disabled={isSubmitting}>
-            {isSubmitting ? cta.submitting : cta.submit}
+            {t(isSubmitting ? cta.submitting : cta.submit)}
           </button>
           {/* Thông báo kết quả gửi form nổi bật */}
           {message && (
@@ -388,7 +389,7 @@ export function ResourcesConsultation({
                     </div>
                     <div className="feedbackText">
                       <strong className="feedbackTitle">Đã gửi yêu cầu thành công!</strong>
-                      <p className="feedbackDesc">{message}</p>
+                      <p className="feedbackDesc">{t(message)}</p>
                     </div>
                   </>
                 ) : isSubmitting ? (
@@ -406,7 +407,7 @@ export function ResourcesConsultation({
                       </svg>
                     </div>
                     <div className="feedbackText">
-                      <p className="feedbackDesc">{cta.submitting}</p>
+                      <p className="feedbackDesc">{t(cta.submitting)}</p>
                     </div>
                   </>
                 ) : (
@@ -428,14 +429,14 @@ export function ResourcesConsultation({
                       </svg>
                     </div>
                     <div className="feedbackText">
-                      <p className="feedbackDesc">{message}</p>
+                      <p className="feedbackDesc">{t(message)}</p>
                     </div>
                   </>
                 )}
               </div>
             </div>
           )}
-          <small className="consultationPrivacy">{cta.privacy}</small>
+          <small className="consultationPrivacy">{t(cta.privacy)}</small>
         </form>
       </div>
     </section>

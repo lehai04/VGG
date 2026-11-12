@@ -169,13 +169,17 @@ export async function restoredCmsRoutes(app: FastifyInstance) {
       input = newsInput.parse(request.body),
       { revision } = revisionInput.parse(request.body);
     const user = (await staffFor(request))!;
+    const before = await prisma.newsPost.findUnique({ where: { id } });
+    if (!before) return fail(reply, 404, "Không tìm thấy bài viết.", "NOT_FOUND");
+    if (before.updatedAt.getTime() !== new Date(revision).getTime()) throw new Conflict();
     const post = await prisma.$transaction(async (tx) => {
-      const before = await tx.newsPost.findUnique({ where: { id } });
-      if (!before) return null;
       const update = await tx.newsPost.updateMany({
         where: { id, updatedAt: new Date(revision) },
         data: {
           ...input,
+          publishedAt: input.status === "PUBLISHED"
+            ? (input.publishedAt ?? before.publishedAt ?? new Date())
+            : input.publishedAt,
           customJsonLd: input.customJsonLd
             ? json(input.customJsonLd)
             : Prisma.DbNull,

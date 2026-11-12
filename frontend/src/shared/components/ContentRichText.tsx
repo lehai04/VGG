@@ -3,7 +3,7 @@ import { safeContentUrl, safeContentImage } from "../../../../backend/src/module
 
 const tags = new Set(["p", "br", "strong", "b", "em", "i", "u", "s", "ul", "ol", "li", "h2", "h3", "h4", "blockquote", "a"]);
 /** Render a small HTML vocabulary as escaped React nodes; never execute stored HTML. */
-export function ContentRichText({ html }: { html: string }) {
+export function ContentRichText({ html, translate = (value) => value }: { html: string; translate?: (value: string) => string }) {
   const stack: Array<{ tag: string; children: ReactNode[]; href?: string }> = [{ tag: "root", children: [] }];
   let key = 0;
   const decode = (text: string) => text.replace(/&(#x[0-9a-f]+|#\d+|amp|lt|gt|quot|apos|nbsp);/gi, (entity, name: string) => {
@@ -16,7 +16,7 @@ export function ContentRichText({ html }: { html: string }) {
   };
   const content = html.slice(0, 20000).replace(/<(script|style|iframe|object)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, "");
   for (const token of content.match(/<[^>]*>|[^<]+|</g) ?? []) {
-    if (!token.startsWith("<")) { stack.at(-1)!.children.push(decode(token)); continue; }
+    if (!token.startsWith("<")) { stack.at(-1)!.children.push(translate(decode(token))); continue; }
     const match = /^<\s*(\/?)\s*([a-z0-9]+)/i.exec(token);
     if (!match) continue;
     const tag = match[2].toLowerCase();

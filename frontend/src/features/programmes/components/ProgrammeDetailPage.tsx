@@ -1,5 +1,6 @@
 "use client";
 
+import { useWebsiteCopy } from "@/i18n/components/WebsiteCopy";
 import React, { useState } from "react";
 import Image from "next/image";
 import { ContentRichText } from "@/shared/components/ContentRichText";
@@ -53,13 +54,14 @@ import { programmeSharedContent } from "@/data/programmes/shared-content";
    Pending page — shown when details are not yet ready
    ────────────────────────────────────────────────────────────── */
 function PendingPage({ programme }: { programme: Programme }) {
+  const t = useWebsiteCopy();
   return (
     <main className={`subpage ${styles.page}`} data-programme={programme.id} id="main-content">
       <SiteHeader compact />
       <div className={`${styles.container} ${styles.pendingContainer}`}>
-        <p className={styles.heroDegree}>{programme.degree}</p>
+        <p className={styles.heroDegree}>{t(programme.degree)}</p>
         <h1 className={styles.heroTitle} data-pending="true">
-          {programme.title}
+          {t(programme.title)}
         </h1>
         <p className={styles.pendingSummary}>
           {programme.summary ?? `Thông tin chi tiết ngành ${programme.title} đang được cập nhật.`}
@@ -67,7 +69,7 @@ function PendingPage({ programme }: { programme: Programme }) {
         <div className={styles.pendingFacts}>
           <div>
             <div className={styles.pendingFactLabel}>
-              {programmeSharedContent.facts.pendingCredits}
+              {t(programmeSharedContent.facts.pendingCredits)}
             </div>
             <strong className={styles.pendingFactValue}>
               {programme.creditsLabel ?? programme.credits}
@@ -75,15 +77,15 @@ function PendingPage({ programme }: { programme: Programme }) {
           </div>
           <div>
             <div className={styles.pendingFactLabel}>
-              {programmeSharedContent.facts.pendingDuration}
+              {t(programmeSharedContent.facts.pendingDuration)}
             </div>
-            <strong className={styles.pendingFactValue}>{programme.duration}</strong>
+            <strong className={styles.pendingFactValue}>{t(programme.duration)}</strong>
           </div>
           <div>
             <div className={styles.pendingFactLabel}>
-              {programmeSharedContent.facts.pendingTuition}
+              {t(programmeSharedContent.facts.pendingTuition)}
             </div>
-            <strong className={styles.pendingFactValue}>{getProgrammeTuition(programme)}</strong>
+            <strong className={styles.pendingFactValue}>{t(getProgrammeTuition(programme))}</strong>
           </div>
         </div>
       </div>
@@ -100,12 +102,13 @@ function PendingPage({ programme }: { programme: Programme }) {
    Section Header Subcomponent
    ────────────────────────────────────────────────────────────── */
 function SectionHeader({ index, title }: { index: string; title: string }) {
+  const t = useWebsiteCopy();
   return (
     <div className={styles.sectionHeader}>
       <span hidden className={styles.sectionIndex}>{index}</span>
       <span hidden className={styles.sectionDivider} aria-hidden="true" />
       <h2 data-section-label id={`sec-${index}-title`} className={styles.sectionTitle}>
-        {title}
+        {t(title)}
       </h2>
     </div>
   );
@@ -145,6 +148,7 @@ interface FaqQuestion {
    Main Component: ProgrammeDetailPage
    ────────────────────────────────────────────────────────────── */
 export function ProgrammeDetailPage({ programme,layout }: { programme: Programme;layout?:ContentComposition }) {
+  const t = useWebsiteCopy();
   const pageContent = programme.pageContent;
   const curricula = getProgrammeCurricula(programme);
 
@@ -286,7 +290,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           {/* Subtle slogan watermark on the right */}
           <div className={styles.heroSloganWatermark} aria-hidden="true">
             {programmeSharedContent.hero.sloganLines.map((line) => (
-              <span key={line}>{line}</span>
+              <span key={line}>{t(line)}</span>
             ))}
             <span>{pageContent.hero.heroSlogan ?? programmeSharedContent.hero.fallbackSlogan}</span>
           </div>
@@ -294,21 +298,21 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           <div data-banner-copy data-banner-inset className={styles.heroContent}>
             <span data-banner-label className={styles.heroDegree}>{programme.englishTitle}</span>
             <h1 data-banner-title id="programme-title" className={styles.heroTitle} data-content-path="pageContent.hero.heroTitle">
-              {(pageContent.hero.heroTitle ?? programme.title).split("\n").map((line, index) => (
+              {t(pageContent.hero.heroTitle ?? programme.title).split("\n").map((line, index) => (
                 <React.Fragment key={line}>
                   {index > 0 && " "}
                   {line}
                 </React.Fragment>
               ))}
             </h1>
-            <p data-banner-description className={styles.heroLead} data-content-path="pageContent.hero.heroLead">{pageContent.hero.heroLead}</p>
+            <p data-banner-description className={styles.heroLead} data-content-path="pageContent.hero.heroLead">{t(pageContent.hero.heroLead)}</p>
 
             <div className={styles.heroCtas}>
               <a data-content-path="pageContent.hero.consultation.text" className={styles.btnPrimary} href={pageContent.hero.consultation.href}>
-                {pageContent.hero.consultation.text} <ArrowRight size={17} aria-hidden="true" />
+                {t(pageContent.hero.consultation.text)} <ArrowRight size={17} aria-hidden="true" />
               </a>
               <Link data-content-path="pageContent.hero.admissions.text" className={styles.btnSecondary} href={pageContent.hero.admissions.href}>
-                {pageContent.hero.admissions.text} <ArrowRight size={17} aria-hidden="true" />
+                {t(pageContent.hero.admissions.text)} <ArrowRight size={17} aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -346,9 +350,9 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                       <Icon size={20} strokeWidth={1.8} />
                     </div>
                     <div className={styles.factContent}>
-                      <span className={styles.factLabel}>{label}</span>
-                      <span className={styles.factValue}>{value}</span>
-                      {detail && <span className={styles.factDetail}>{detail}</span>}
+                      <span className={styles.factLabel}>{t(label)}</span>
+                      <span className={styles.factValue}>{t(value)}</span>
+                      {detail && <span className={styles.factDetail}>{t(detail)}</span>}
                     </div>
                   </div>
                 );
@@ -359,15 +363,15 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                     <Icon size={20} strokeWidth={1.8} />
                   </div>
                   <div className={styles.factContent}>
-                    <span className={styles.factLabel}>{label}</span>
-                    <span className={styles.factValue}>{value}</span>
+                    <span className={styles.factLabel}>{t(label)}</span>
+                    <span className={styles.factValue}>{t(value)}</span>
                   </div>
                 </div>
               ))}
         </div>
       </div>
 
-      <nav className={styles.sectionNav} aria-label="Nội dung chương trình">
+      <nav className={styles.sectionNav} aria-label={t("Nội dung chương trình")}>
         {[
           ["tong-quan", "Tổng quan"],
           ["diem-noi-bat", "Điểm nổi bật"],
@@ -383,7 +387,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           ["faq", "Câu hỏi thường gặp"],
         ].map(([id, label]) => (
           <a href={`#${id}`} key={id}>
-            {label}
+            {t(label)}
           </a>
         ))}
       </nav>
@@ -395,7 +399,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
         <div className={styles.container}>
           <SectionHeader
             index={pageContent.section01.sectionNumber}
-            title={pageContent.section01.overviewTitle}
+            title={t(pageContent.section01.overviewTitle)}
           />
 
           <div
@@ -404,16 +408,16 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           >
             <div className={styles.overviewCopy}>
               {pageContent.section01.headline && (
-                <h3 data-section-subtitle className={styles.contentHeadline}>{pageContent.section01.headline}</h3>
+                <h3 data-section-subtitle className={styles.contentHeadline}>{t(pageContent.section01.headline)}</h3>
               )}
-              {programme.contentOverview?.[0]?.html ? <div data-content-path="contentOverview.0.html"><ContentRichText html={programme.contentOverview[0].html} /></div> : overviewParagraphs.map((para, i) => (
-                <p key={i}>{para}</p>
+              {programme.contentOverview?.[0]?.html ? <div data-content-path="contentOverview.0.html"><ContentRichText html={programme.contentOverview[0].html} translate={t} /></div> : overviewParagraphs.map((para, i) => (
+                <p key={i}>{t(para)}</p>
               ))}
 
               {pageContent.section01.focusAreas && (
                 <ul className={styles.focusAreas}>
                   {pageContent.section01.focusAreas.map((area) => (
-                    <li key={area}>{area}</li>
+                    <li key={area}>{t(area)}</li>
                   ))}
                 </ul>
               )}
@@ -421,10 +425,10 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 <a
                   className={styles.btnDownloadOutline}
                   href={pageContent.section01.link.href}
-                  aria-label={pageContent.section01.link.ariaLabel}
+                  aria-label={t(pageContent.section01.link.ariaLabel)}
                 >
                   <ArrowRight size={17} aria-hidden="true" />
-                  <span>{pageContent.section01.link.text}</span>
+                  <span>{t(pageContent.section01.link.text)}</span>
                 </a>
               )}
             </div>
@@ -439,7 +443,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                       src={
                         pageContent.section01.overviewImage ?? pageContent.section01.imageFallback
                       }
-                      alt={pageContent.section01.imageAlt}
+                      alt={t(pageContent.section01.imageAlt)}
                       fill
                       sizes="(max-width: 768px) 100vw, 45vw"
                       className={styles.overviewPhoto}
@@ -448,10 +452,10 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 )}
                 {pageContent.section01.tags.length > 0 && (
                   <div className={styles.overviewRibbon}>
-                    <h3 className={styles.ribbonTitle}>{pageContent.section01.ribbonTitle}</h3>
+                    <h3 className={styles.ribbonTitle}>{t(pageContent.section01.ribbonTitle)}</h3>
                     <div className={styles.ribbonItems}>
                       {overviewTags.map((tag) => (
-                        <div className={styles.ribbonItem} key={tag}>{tag}</div>
+                        <div className={styles.ribbonItem} key={tag}>{t(tag)}</div>
                       ))}
                     </div>
                   </div>
@@ -474,7 +478,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
         <div className={styles.container}>
           <SectionHeader
             index={pageContent.section02.sectionNumber}
-            title={pageContent.section02.heading}
+            title={t(pageContent.section02.heading)}
           />
 
           <div className={styles.highlightGrid}>
@@ -483,22 +487,22 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 <div className={styles.highlightIconBox} aria-hidden="true">
                   <Icon size={24} strokeWidth={1.8} />
                 </div>
-                <h3 className={`${styles.highlightTitle} type-card-title`}>{title}</h3>
-                <p className={styles.highlightText}>{text}</p>
+                <h3 className={`${styles.highlightTitle} type-card-title`}>{t(title)}</h3>
+                <p className={styles.highlightText}>{t(text)}</p>
               </article>
             ))}
           </div>
           {highlightsList.length > 3 && (
             <details className={styles.moreHighlights}>
-              <summary>Xem thêm điểm nổi bật ({highlightsList.length - 3})</summary>
+              <summary>{t("Xem thêm điểm nổi bật")} ({highlightsList.length - 3})</summary>
               <div className={styles.highlightGrid}>
                 {highlightsList.slice(3).map(({ Icon, title, text }) => (
                   <article key={title} className={styles.highlightCard}>
                     <div className={styles.highlightIconBox} aria-hidden="true">
                       <Icon size={24} strokeWidth={1.8} />
                     </div>
-                    <h3 className={`${styles.highlightTitle} type-card-title`}>{title}</h3>
-                    <p className={styles.highlightText}>{text}</p>
+                    <h3 className={`${styles.highlightTitle} type-card-title`}>{t(title)}</h3>
+                    <p className={styles.highlightText}>{t(text)}</p>
                   </article>
                 ))}
               </div>
@@ -508,16 +512,16 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           {pageContent.section02.learningOutcomes && (
             <details className={styles.outcomesPanel} open>
               <summary className={styles.outcomesHeading}>
-                <span>{pageContent.section02.outcomesHeading}</span>
+                <span>{t(pageContent.section02.outcomesHeading)}</span>
                 <span className={styles.outcomesToggle} aria-hidden="true" />
               </summary>
-              <p className={styles.outcomesIntro}>{pageContent.section02.learningOutcomes.intro}</p>
+              <p className={styles.outcomesIntro}>{t(pageContent.section02.learningOutcomes.intro)}</p>
               <div className={styles.outcomesGrid}>
                 {pageContent.section02.learningOutcomes.items.map((outcome) => (
                   <article className={styles.outcomeItem} key={`${outcome.code}-${outcome.title}`}>
-                    <span className={styles.outcomeCode}>{outcome.code.replace(/^PLO/i, "")}</span>
-                    {outcome.title && <h3>{outcome.title}</h3>}
-                    <p>{outcome.text}</p>
+                    <span className={styles.outcomeCode}>{t(outcome.code.replace(/^PLO/i, ""))}</span>
+                    {outcome.title && <h3>{t(outcome.title)}</h3>}
+                    <p>{t(outcome.text)}</p>
                   </article>
                 ))}
               </div>
@@ -535,14 +539,14 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
         <div className={styles.container}>
           <SectionHeader
             index={pageContent.section03.sectionNumber}
-            title={pageContent.section03.audienceHeading}
+            title={t(pageContent.section03.audienceHeading)}
           />
 
           {pageContent.section03.headline && (
-            <h3 data-section-subtitle className={styles.contentHeadline}>{pageContent.section03.headline}</h3>
+            <h3 data-section-subtitle className={styles.contentHeadline}>{t(pageContent.section03.headline)}</h3>
           )}
           {pageContent.section03.intro?.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+            <p key={paragraph}>{t(paragraph)}</p>
           ))}
           {pageContent.section03.illustration && (
             <figure className={styles.audienceIllustration}>
@@ -550,7 +554,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 <Image
                   data-content-path="pageContent.section03.illustration.src"
                   src={pageContent.section03.illustration.src}
-                  alt={pageContent.section03.illustration.alt}
+                  alt={t(pageContent.section03.illustration.alt)}
                   fill
                   sizes="(max-width: 768px) 100vw, 80vw"
                   className={styles.audiencePhoto}
@@ -573,8 +577,8 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                   </div>
                 )}
                 <div className={styles.audienceBody}>
-                  <h3 className={`${styles.audienceTitle} type-card-title`}>{item.title}</h3>
-                  <p className={styles.audienceText}>{item.text}</p>
+                  <h3 className={`${styles.audienceTitle} type-card-title`}>{t(item.title)}</h3>
+                  <p className={styles.audienceText}>{t(item.text)}</p>
                 </div>
               </article>
             ))}
@@ -605,13 +609,13 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
         <div className={styles.container}>
           <SectionHeader
             index={pageContent.section04.sectionNumber}
-            title={pageContent.section04.careerHeading}
+            title={t(pageContent.section04.careerHeading)}
           />
 
           {pageContent.section04.headline && (
-            <h3 data-section-subtitle className={styles.contentHeadline}>{pageContent.section04.headline}</h3>
+            <h3 data-section-subtitle className={styles.contentHeadline}>{t(pageContent.section04.headline)}</h3>
           )}
-          {pageContent.section04.intro && <p>{pageContent.section04.intro}</p>}
+          {pageContent.section04.intro && <p>{t(pageContent.section04.intro)}</p>}
           <div className={styles.careersLayout}>
             <div className={styles.careersGrid}>
               {careersList.map(({ Icon, title, sub, group }, idx) => (
@@ -620,15 +624,15 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                     <Icon size={30} strokeWidth={1.8} />
                   </div>
                   <div className={styles.careerCopy}>
-                    {group && <p className={styles.careerGroup}>{group}</p>}
-                    <h3 className={`${styles.careerTitle} type-career-title`}>{title}</h3>
-                    <p className={styles.careerSub}>{sub}</p>
+                    {group && <p className={styles.careerGroup}>{t(group)}</p>}
+                    <h3 className={`${styles.careerTitle} type-career-title`}>{t(title)}</h3>
+                    <p className={styles.careerSub}>{t(sub)}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          {pageContent.section04.note && <p>{pageContent.section04.note}</p>}
+          {pageContent.section04.note && <p>{t(pageContent.section04.note)}</p>}
         </div>
       </section>
       )}
@@ -644,10 +648,10 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
         <div className={styles.container}>
           <SectionHeader
             index={pageContent.section05.sectionNumber}
-            title={pageContent.section05.heading}
+            title={t(pageContent.section05.heading)}
           />
 
-          <div className={styles.curriculumTabs} aria-label="Định hướng chương trình">
+          <div className={styles.curriculumTabs} aria-label={t("Định hướng chương trình")}>
             {availableTracks.map((track, index) => (
               <button
                 type="button"
@@ -661,7 +665,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 ) : (
                   <Briefcase size={18} aria-hidden="true" />
                 )}
-                <span>{track.title}</span>
+                <span>{t(track.title)}</span>
               </button>
             ))}
           </div>
@@ -669,14 +673,14 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           <div className={styles.curriculumLayout}>
             {/* Left: General Information card */}
             <aside className={styles.infoCard}>
-              <h3 className={styles.infoCardTitle}>{pageContent.section05.generalInformation}</h3>
+              <h3 className={styles.infoCardTitle}>{t(pageContent.section05.generalInformation)}</h3>
               <div className={styles.infoList}>
                 {generalFacts.map((fact) => (
                   <div className={styles.infoItem} key={fact.label}>
                     <FileText className={styles.infoIcon} size={20} aria-hidden="true" />
                     <div>
-                      <div className={styles.infoItemTitle}>{fact.label}</div>
-                      <div className={styles.infoItemValue}>{fact.value}</div>
+                      <div className={styles.infoItemTitle}>{t(fact.label)}</div>
+                      <div className={styles.infoItemValue}>{t(fact.value)}</div>
                     </div>
                   </div>
                 ))}
@@ -685,11 +689,11 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
 
             {/* Right: Modules Accordion */}
             <div className={styles.curriculumRight}>
-              {currentTrack?.subtitle && <p>{currentTrack.subtitle}</p>}
-              <p className={styles.curriculumIntro}>{curriculumIntroText}</p>
+              {currentTrack?.subtitle && <p>{t(currentTrack.subtitle)}</p>}
+              <p className={styles.curriculumIntro}>{t(curriculumIntroText)}</p>
 
               {(currentTrack?.notes ?? pageContent.section05.notes)?.map((note) => (
-                <p key={note}>{note}</p>
+                <p key={note}>{t(note)}</p>
               ))}
               <ProgrammeCurriculumGroups
                 key={currentTrack?.title}
@@ -714,7 +718,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 ) : (
                   <ArrowRight size={17} aria-hidden="true" />
                 )}
-                <span>{pageContent.section05.link.text}</span>
+                <span>{t(pageContent.section05.link.text)}</span>
               </a>
             </div>
           </div>
@@ -731,18 +735,11 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
       <div className={styles.ctaBannerWrapper}>
         <div className={styles.ctaBanner}>
           <div className={styles.ctaContent}>
-            <h2>
-              {pageContent.consultation.ctaHeading.map((line, index) => (
-                <React.Fragment key={line}>
-                  {index > 0 && " "}
-                  {line}
-                </React.Fragment>
-              ))}
-            </h2>
-            <p>{pageContent.consultation.ctaBody}</p>
+            <h2>{t(pageContent.consultation.ctaHeading.join(" "))}</h2>
+            <p>{t(pageContent.consultation.ctaBody)}</p>
           </div>
           <a className={styles.ctaButton} href={pageContent.consultation.href}>
-            <span>{pageContent.consultation.text}</span>
+            <span>{t(pageContent.consultation.text)}</span>
             <ArrowRight size={18} aria-hidden="true" />
           </a>
         </div>
@@ -758,10 +755,10 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
             <div>
               <div className={styles.faqColHeader}>
                 <h2 data-section-label id="sec-faq-title" className={styles.faqColTitle}>
-                  {pageContent.faq.heading}
+                  {t(pageContent.faq.heading)}
                 </h2>
                 <a className={styles.faqViewAllLink} href={pageContent.faq.link.href}>
-                  {pageContent.faq.link.text}
+                  {t(pageContent.faq.link.text)}
                 </a>
               </div>
 
@@ -769,10 +766,10 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 {faqsList.map((faq, idx) => (
                   <details key={idx} className={styles.faqItem}>
                     <summary className={styles.faqSummary}>
-                      <span>{faq.question}</span>
+                      <span>{t(faq.question)}</span>
                       <ChevronRight className={styles.faqChevron} size={18} aria-hidden="true" />
                     </summary>
-                    <p className={styles.faqAnswer}>{faq.answer}</p>
+                    <p className={styles.faqAnswer}>{t(faq.answer)}</p>
                   </details>
                 ))}
               </div>
@@ -780,11 +777,11 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
 
             {/* Right: Contact Information Card */}
             <aside className={styles.contactCard}>
-              <h3 className={styles.contactCardTitle}>{programmeSharedContent.contact.heading}</h3>
+              <h3 className={styles.contactCardTitle}>{t(programmeSharedContent.contact.heading)}</h3>
               <p className={styles.contactItemValue}>
-                Điện thoại:{" "}
+                {t("Điện thoại:")}{" "}
                 <a href={programmeSharedContent.contact.officePhoneHref}>
-                  {programmeSharedContent.contact.officePhone}
+                  {t(programmeSharedContent.contact.officePhone)}
                 </a>
               </p>
 
@@ -795,11 +792,11 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                   </div>
                   <div className={styles.contactItemBody}>
                     <span className={styles.contactItemLabel}>
-                      {programmeSharedContent.contact.phoneLabel}
+                      {t(programmeSharedContent.contact.phoneLabel)}
                     </span>
                     <span className={styles.contactItemValue}>
                       <a href={programmeSharedContent.contact.phoneHref}>
-                        {programmeSharedContent.contact.phone}
+                        {t(programmeSharedContent.contact.phone)}
                       </a>
                     </span>
                   </div>
@@ -811,11 +808,11 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                   </div>
                   <div className={styles.contactItemBody}>
                     <span className={styles.contactItemLabel}>
-                      {programmeSharedContent.contact.emailLabel}
+                      {t(programmeSharedContent.contact.emailLabel)}
                     </span>
                     <span className={styles.contactItemValue}>
                       <a href={programmeSharedContent.contact.emailHref}>
-                        {programmeSharedContent.contact.email}
+                        {t(programmeSharedContent.contact.email)}
                       </a>
                     </span>
                   </div>
@@ -827,12 +824,12 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                   </div>
                   <div className={styles.contactItemBody}>
                     <span className={styles.contactItemLabel}>
-                      {programmeSharedContent.contact.addressLabel}
+                      {t(programmeSharedContent.contact.addressLabel)}
                     </span>
                     <span className={styles.contactItemValue}>
-                      {programmeSharedContent.contact.institution}
+                      {t(programmeSharedContent.contact.institution)}
                       <br />
-                      {programmeSharedContent.contact.address}
+                      {t(programmeSharedContent.contact.address)}
                     </span>
                   </div>
                 </div>
@@ -846,7 +843,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                   ]
                 ).map((action) => (
                   <Link href={action.href} key={action.href}>
-                    {action.text}
+                    {t(action.text)}
                   </Link>
                 ))}
               </div>

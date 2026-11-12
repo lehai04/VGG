@@ -12,6 +12,8 @@ import { usePathname } from "next/navigation";
 import { useWebsiteChrome } from '@/shared/components/layout/WebsiteChromeProvider';
 import { useLocale } from "@/i18n/components/LocaleProvider";
 import { stripLocale } from "@/lib/i18n";
+import { LanguageSwitch } from "@/i18n/components/LanguageSwitch";
+import { useWebsiteCopy } from "@/i18n/components/WebsiteCopy";
 
 // Đường dẫn logo chính của Header.
 const LOGO_SRC = "/images/logo/logo-vgg.png";
@@ -28,6 +30,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
   const chrome = useWebsiteChrome();
   const MENU_ITEMS = menuItems(chrome.navigationGroups);
   const { locale, messages } = useLocale();
+  const t = useWebsiteCopy();
   // Quản lý trạng thái menu trên thiết bị di động.
   const [open, setOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -93,11 +96,12 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
         <Link className="topBarUniversity" href="/">
           {messages.navigation.university}
         </Link>
+        <LanguageSwitch />
       </div>
 
       <div className="headerShell" ref={headerRef}>
         <header className="header">
-          <Link className="brand" href="/" aria-label="Trang chủ Viện Sau đại học" onClick={() => { setOpen(false); }}>
+          <Link className="brand" href="/" aria-label={t("Trang chủ Viện Sau đại học")} onClick={() => { setOpen(false); }}>
             <Image
               className="brandLogo"
               src={chrome.brand.image || LOGO_SRC}
@@ -123,7 +127,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
             onClick={() => setOpen((current) => !current)}
             aria-expanded={open}
             aria-controls="mobile-primary-navigation"
-            aria-label={open ? "Đóng menu điều hướng" : "Mở menu điều hướng"}
+            aria-label={t(open ? "Đóng menu điều hướng" : "Mở menu điều hướng")}
           >
             <span className="menuButtonIcon" aria-hidden="true">
               <i />
@@ -135,7 +139,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
           <nav
             id="mobile-primary-navigation"
             className={open ? "nav open" : "nav"}
-            aria-label="Điều hướng chính"
+            aria-label={t("Điều hướng chính")}
           >
             {MENU_ITEMS.map((item) => (
               <Link
@@ -148,7 +152,7 @@ export function Header({ routeMode = false }: { routeMode?: boolean }) {
                 }
                 onClick={() => setOpen(false)}
               >
-                <span className="navTitle">{locale === "en" ? item.english : item.vietnamese}</span>
+                <span className="navTitle">{locale === "en" ? t(item.vietnamese, item.english) : item.vietnamese}</span>
               </Link>
             ))}
           </nav>

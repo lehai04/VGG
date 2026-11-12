@@ -324,7 +324,9 @@
   text-align: center !important;
   white-space: normal;
 }
-.leaderCopy p {
+:root body main .leaderCopy p {
+  text-align: center !important;
+  text-wrap: balance;
   color: #c8102e;
   margin-bottom: 0;
   font-size: 14px;
