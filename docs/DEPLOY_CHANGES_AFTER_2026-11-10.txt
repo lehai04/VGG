@@ -1,0 +1,174 @@
+﻿BẢN CHANGE / NỘI DUNG DEPLOY VGG — 13/11/2026
+Phiên bản: 77ae4b5. Tổng hợp thay đổi sau 10/11/2026 (từ e3f9c5e).
+
+Nội dung
+* Website VI / EN
+- Cập nhật bản tiếng Anh theo workbook; đồng bộ nội dung các trang, chi tiết chương trình, tuyển sinh và mục xổ xuống.
+- Đồng bộ cách viết hoa, dấu câu và bố cục; cập nhật nút VI / EN dạng bo tròn có biểu tượng quả địa cầu.
+- Đồng bộ số lượng: 21+ thạc sĩ, 01 tiến sĩ, 01 thạc sĩ liên kết quốc tế.
+- Luật Kinh tế: thời gian 24 tháng; bổ sung FAQ lịch học 2 buổi tối và 1 ngày Chủ nhật (có thể thay đổi), khoảng 30% chương trình online.
+- Cập nhật tiêu đề tìm chương trình, phần “phù hợp với bạn.” màu đỏ.
+- Cập nhật kiểm thử Quản lý Tài nguyên và Môi trường cho cả Ứng dụng và Nghiên cứu.
+* Ngành Ngôn ngữ Anh — ghi chú bổ sung theo phản hồi của Khoa
+- Định hướng Nghiên cứu: môn 4 “Seminar on Second Language Acquisition (Chuyên đề về Thụ đắc ngôn ngữ thứ hai)”.
+- Định hướng Nghiên cứu: môn 11 “Seminar on Advanced Methods of Teaching Language (Chuyên đề về Phương pháp Giảng dạy Ngôn ngữ nâng cao)”.
+- Cả hai định hướng: “Computational Linguistics (Ngôn ngữ học máy tính)”.
+- Chuẩn hóa dấu cách trước ngoặc, gồm môn 10, 20, 22 và môn 11 của định hướng Ứng dụng.
+- Giữ nguyên tên tiếng Anh của học phần; các sửa đổi trên đã có trong mã nguồn bàn giao.
+- File liên quan: frontend/src/data/programmes/ngon-ngu-anh.ts, frontend/src/data/curricula.ts, frontend/src/i18n/workbook/ngon-ngu-anh.json.
+* CMS Tin tức và Tài nguyên
+- Một bài có hai tab VI / EN, nhập bản dịch đã duyệt, dùng chung ảnh; không cần Google Cloud.
+- Thêm xác nhận đăng bài thiếu tiếng Anh, hộp dấu hỏi màu vàng nhạt.
+- Thêm tên tiếng Anh cho tài nguyên và danh mục; cập nhật API, lịch sử và tìm kiếm.
+* Giao diện
+- Tin tức gần đây dạng thẻ ngang theo mẫu.
+- Tiêu đề bài viết tối đa 36px desktop / 26px điện thoại, giãn dòng 1.4.
+- Bỏ liên kết Điều khoản, Chính sách Bảo mật, Sitemap khỏi chân trang.
+
+* Chi tiết các chỉnh sửa giao diện nhỏ lẻ
+- Bỏ căn đều hai bên trong nội dung công khai, nội dung chi tiết chương trình và đoạn giới thiệu đối tác nghiên cứu để tránh giãn khoảng trắng giữa các từ.
+- Bỏ giới hạn 2/3 dòng mô tả thẻ Tin tức ở trang chủ và trang danh sách, tránh cắt mất nội dung.
+- Nút gửi biểu mẫu tư vấn trang chủ co giãn theo nội dung, giới hạn theo khung và cho phép xuống dòng.
+- Màn hình dưới 420px: thống kê chương trình trang chủ chuyển một cột; tên trường trên thanh đầu trang cho phép xuống dòng, giảm cỡ chữ để tránh cắt chữ.
+- Căn giữa và cân đối xuống dòng phần chức danh lãnh đạo ở trang giới thiệu.
+- Danh mục chương trình: chỉnh khoảng cách tiêu đề, mô tả, màu nhấn; bỏ tiêu đề thừa bên trong khung tra cứu.
+- Danh mục chương trình: thu gọn padding khung tư vấn, cỡ chữ theo chiều rộng khung; chỉnh khoảng cách nhãn thống kê.
+- Thẻ chương trình trong vùng dưới 400px chuyển lưới hai cột; tách tên ngành, thông số và học phí thành các hàng để tránh chen chữ.
+- Chi tiết ngành: lưới chương trình học dùng minmax(0, 1fr) trên tablet để không bị nội dung đẩy rộng.
+- Chi tiết ngành trên màn hình dưới 420px: thanh thông số một cột; giảm padding nội dung học phần; giữ icon và số tín chỉ không bị co; chỉnh nhãn tự chọn, khoảng cách học phần.
+- Tuyển sinh: nhãn mốc thời gian giới hạn theo khung, tự xuống dòng; nội dung checklist không đẩy rộng; nút gửi cho phép xuống dòng.
+- Nghiên cứu trên màn hình dưới 420px: tiêu đề dự án/công bố và thành phần đi kèm xếp dọc, căn trái, bổ sung khoảng cách.
+- Tài nguyên trên màn hình dưới 420px: thông tin thẻ cho phép xuống hàng, icon không co; phần chân hộp xem tài liệu được phép thu hẹp.
+- Tin tức gần đây: khung tối đa 400px; thẻ ảnh trái/nội dung phải; badge danh mục theo màu, icon lịch, ngày đăng; viền nhẹ, bo góc và đổ bóng.
+- Tin tức gần đây: tiêu đề khu vực 24px, gạch nhấn đỏ; tiêu đề thẻ 14px; nút xem tất cả bo tròn viền đỏ; bố cục một cột khi màn hình hẹp và focus bàn phím rõ ràng.
+- Tiêu đề bài Tin tức: cỡ chữ responsive 26–36px, khoảng cách dòng 1.4, giảm độ ép khoảng cách chữ; quy tắc riêng tránh bị kiểu H1 chung ghi đè.
+- Nút VI / EN: hai nhãn giữ nguyên vị trí; nền xanh, pill trắng/chữ đỏ chỉ ngôn ngữ hiện tại; viền/hover/focus, mô tả truy cập; giữ query và vị trí neo khi đổi ngôn ngữ.
+- Footer: dịch nhãn liên kết và thông tin theo ngôn ngữ; bỏ cụm Điều khoản / Chính sách Bảo mật / Sitemap, giữ dòng bản quyền.
+- Hộp xác nhận CMS thiếu bản EN: dấu hỏi, nền biểu tượng vàng nhạt, hai lựa chọn Quay lại / Đăng bản tiếng Việt; chỉ lưu sau khi người dùng xác nhận.
+
+Triển khai
+- Đây là gói mã nguồn, không phải bản build sẵn hay bản sao database.
+- Giữ cấu hình môi trường và dữ liệu hiện có của máy chủ; sao lưu database trước triển khai.
+- Cài dependencies theo lockfile (npm ci), cấu hình môi trường theo tài liệu deploy của dự án.
+- Chạy npm run db:deploy để áp dụng migration còn thiếu:
+  20261112000000_news_english_translation (en_title, en_excerpt, en_content của news_posts)
+  20261113000000_resource_english_names (en_title của resource_files, en_name của resource_categories)
+- Build backend, frontend, CMS (npm run build), triển khai và khởi động lại đồng bộ theo cấu hình máy chủ.
+- Không chạy seed ghi đè dữ liệu hiện có. Tên EN tài nguyên cũ cần nhập bổ sung trong CMS.
+- Sau deploy kiểm tra VI/EN, đăng bài thiếu EN, lưu tài nguyên, tiêu đề trên mobile và cả hai bảng học phần ngành Ngôn ngữ Anh.
+- Chưa triển khai website chính thức trong lần bàn giao này.
+
+File đã sửa (đầy đủ 106 file so với bản ngày 10/11/2026)
+- backend/prisma/migrations/20261112000000_news_english_translation/migration.sql
+- backend/prisma/migrations/20261113000000_resource_english_names/migration.sql
+- backend/prisma/schema.prisma
+- backend/src/modules/cms/cms.routes.ts
+- backend/src/modules/cms/schemas.ts
+- backend/src/modules/content/page-defaults.json
+- backend/src/modules/public/public.routes.ts
+- backend/tests/news-translation.test.mjs
+- cms/next-env.d.ts
+- cms/src/components/cms-next/ResourceHistory.tsx
+- cms/src/components/cms/NewsEditor.tsx
+- cms/src/components/cms/NewsList.tsx
+- cms/src/components/cms/ResourceManager.tsx
+- cms/src/components/common/CenterToast.tsx
+- docs/ba/VGG_CMS_UPDATE_SPEC.md
+- docs/ba/VGG_CMS_URL_FIELD_MATRIX.md
+- frontend/public/12112026 Noi dung website EN.xlsx
+- frontend/src/app/(public)/news/[slug]/page.tsx
+- frontend/src/app/(public)/news/page.tsx
+- frontend/src/app/(public)/programmes/[slug]/page.tsx
+- frontend/src/app/content-format.css
+- frontend/src/app/globals.css
+- frontend/src/app/home.css
+- frontend/src/app/layout.tsx
+- frontend/src/data/curricula.ts
+- frontend/src/data/home-content.ts
+- frontend/src/data/programmes/catalogue-copy.ts
+- frontend/src/data/programmes/luat-kinh-te.ts
+- frontend/src/data/programmes/ngon-ngu-anh.ts
+- frontend/src/data/programmes/published-counts.json
+- frontend/src/features/admissions/AdmissionsReference.tsx
+- frontend/src/features/admissions/content-copy.json
+- frontend/src/features/admissions/editorial-content.json
+- frontend/src/features/admissions/reference-content.json
+- frontend/src/features/admissions/reference-engine.js
+- frontend/src/features/admissions/reference.css
+- frontend/src/features/admissions/translate-reference.ts
+- frontend/src/features/discover/components/DiscoverIntroduction.module.css
+- frontend/src/features/discover/components/DiscoverIntroduction.tsx
+- frontend/src/features/home/components/CountUp.tsx
+- frontend/src/features/home/components/EditorialAccordion.tsx
+- frontend/src/features/home/components/Header.tsx
+- frontend/src/features/home/components/Hero.tsx
+- frontend/src/features/home/components/ProgrammeCatalog.tsx
+- frontend/src/features/home/components/Programmes.tsx
+- frontend/src/features/home/components/Research.tsx
+- frontend/src/features/home/components/ResourcesConsultation.tsx
+- frontend/src/features/news/components/NewsDetail.module.css
+- frontend/src/features/news/components/NewsLanding.module.css
+- frontend/src/features/news/components/NewsLanding.tsx
+- frontend/src/features/news/data.ts
+- frontend/src/features/news/demo-posts.ts
+- frontend/src/features/programmes/components/ProgrammeCatalogue.module.css
+- frontend/src/features/programmes/components/ProgrammeCurriculumGroups.tsx
+- frontend/src/features/programmes/components/ProgrammeDetailPage.module.css
+- frontend/src/features/programmes/components/ProgrammeDetailPage.tsx
+- frontend/src/features/programmes/components/ProgrammeDirectory.tsx
+- frontend/src/features/programmes/components/ProgrammeSearch.tsx
+- frontend/src/features/programmes/components/ProgrammeSupplementaryContent.tsx
+- frontend/src/features/programmes/components/ProgrammesPage.tsx
+- frontend/src/features/research/components/ResearchHighlights.tsx
+- frontend/src/features/research/components/ResearchLanding.module.css
+- frontend/src/features/research/components/ResearchLanding.tsx
+- frontend/src/features/resources/components/ResourcesExplorer.tsx
+- frontend/src/features/resources/components/ResourcesLanding.module.css
+- frontend/src/features/resources/components/ResourcesLanding.tsx
+- frontend/src/features/resources/data.ts
+- frontend/src/features/student-success/components/StudentSuccessPage.tsx
+- frontend/src/i18n/components/LanguageSwitch.tsx
+- frontend/src/i18n/components/WebsiteCopy.tsx
+- frontend/src/i18n/programme-copy.ts
+- frontend/src/i18n/request-copy.ts
+- frontend/src/i18n/website-copy.ts
+- frontend/src/i18n/workbook/cong-nghe-sinh-hoc.json
+- frontend/src/i18n/workbook/cong-nghe-thong-tin.json
+- frontend/src/i18n/workbook/ke-toan.json
+- frontend/src/i18n/workbook/khoa-hoc-moi-truong.json
+- frontend/src/i18n/workbook/kien-truc.json
+- frontend/src/i18n/workbook/kinh-doanh-thuong-mai.json
+- frontend/src/i18n/workbook/ky-thuat-moi-truong.json
+- frontend/src/i18n/workbook/ky-thuat-o-to.json
+- frontend/src/i18n/workbook/ky-thuat-xay-dung.json
+- frontend/src/i18n/workbook/logistics.json
+- frontend/src/i18n/workbook/luat-kinh-te.json
+- frontend/src/i18n/workbook/ly-luan-lich-su-my-thuat.json
+- frontend/src/i18n/workbook/marketing.json
+- frontend/src/i18n/workbook/my-thuat-ung-dung.json
+- frontend/src/i18n/workbook/ngon-ngu-anh.json
+- frontend/src/i18n/workbook/public.json
+- frontend/src/i18n/workbook/quan-he-cong-chung.json
+- frontend/src/i18n/workbook/quan-ly-tai-nguyen-moi-truong.json
+- frontend/src/i18n/workbook/quan-tri-du-lich.json
+- frontend/src/i18n/workbook/quan-tri-khach-san.json
+- frontend/src/i18n/workbook/quan-tri-kinh-doanh.json
+- frontend/src/i18n/workbook/tai-chinh-ngan-hang.json
+- frontend/src/lib/i18n.ts
+- frontend/src/lib/website-content.ts
+- frontend/src/messages/en.json
+- frontend/src/proxy.ts
+- frontend/src/shared/components/ContentRichText.tsx
+- frontend/src/shared/components/layout/SiteFooter.tsx
+- frontend/src/shared/components/layout/SiteHeader.tsx
+- frontend/src/shared/components/layout/footer/FooterBottom.tsx
+- frontend/src/shared/components/layout/footer/FooterColumns.tsx
+- frontend/src/shared/components/layout/footer/FooterLocation.tsx
+- frontend/tests/programmes.test.mjs
+
+Kiểm tra bàn giao
+- Typecheck backend, frontend, CMS: đạt.
+- Frontend: 51/51 kiểm thử đạt.
+- Backend build: đạt; bộ test backend bị lỗi EACCES kết nối localhost trong môi trường kiểm tra, cần chạy lại tại môi trường IT.
+- Chưa chạy build production frontend/CMS và chưa triển khai production trong lần bàn giao này.
+- Các chỉnh sửa dashboard và ẩn ngành Du lịch ngày 10/11 không nằm trong phạm vi thay đổi mới sau ngày 10/11.
