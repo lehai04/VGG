@@ -94,7 +94,7 @@ export async function publicRoutes(app: FastifyInstance) {
   app.get("/api/public/resources", async (_request, reply) => {
     const [resources, categories] = await Promise.all([
       prisma.resourceFile.findMany({ where: { status: "PUBLISHED" }, orderBy: { publishedAt: "desc" }, include: { category: true } }),
-      prisma.resourceCategory.findMany({ orderBy: { name: "asc" }, select: { id: true, name: true } }),
+      prisma.resourceCategory.findMany({ orderBy: { name: "asc" }, select: { id: true, name: true, enName: true } }),
     ]);
     reply.header("Cache-Control", "no-store");
     return ok(reply, { resources, categories, resourceTypes: resourceType.options });

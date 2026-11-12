@@ -228,6 +228,7 @@ export const resourceInput = z
   .object({
     locale: z.enum(["vi", "en"]).default("vi"),
     title: z.string().trim().min(2).max(250),
+    enTitle: z.string().trim().max(250).transform((value) => value || null).nullish(),
     description: z.string().trim().max(2000).optional().nullable(),
     categoryId: z.string().trim().min(1),
     resourceType,
@@ -307,4 +308,5 @@ export const resourceInput = z
   });
 export const resourceCategoryInput = z.object({
   name: z.string().trim().min(1, "Tên danh mục không được để trống.").max(120),
+  enName: z.string().trim().max(120).transform((value) => value || null).nullish(),
 });

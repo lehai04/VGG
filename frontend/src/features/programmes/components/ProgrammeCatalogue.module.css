@@ -217,27 +217,35 @@
 
 .programme-search-heading {
   max-width: 960px;
-  margin: 0 auto 42px;
+  margin: 0 auto clamp(26px, 3vw, 36px);
   text-align: center;
 }
 
 /* TÌM KIẾM NGÀNH */
 
 .programme-search-heading h2 {
-  margin: 0 0 17px;
+  margin: 0 0 12px;
   color: var(--vlu-blue);
-  font-size: clamp(28px, 3vw, 42px);
+  font-size: clamp(26px, 2.8vw, 40px) !important;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.025em;
   text-align: center;
 }
 
-/* TÌM KIẾM NGÀNH */
+:global(#main-content) .programme-search-heading .programme-search-accent {
+  color: var(--vlu-red) !important;
+}
 
-/* TÌM KIẾM NGÀNH */
-
-/* TÌM KIẾM NGÀNH */
+:global(#main-content) .programme-search-heading p {
+  max-width: 76ch;
+  margin: 0 auto;
+  color: #565d73;
+  font-size: clamp(14px, 1.2vw, 17px);
+  line-height: 1.55;
+  text-align: center !important;
+  text-wrap: balance;
+}
 
 .programme-search-panel {
   max-width: 1280px;
@@ -248,31 +256,6 @@
   border-radius: 26px;
   box-shadow: 0 28px 55px rgba(31, 34, 81, 0.2);
 }
-
-/* TÌM KIẾM NGÀNH */
-
-.programme-search-panel-head {
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 18px;
-  color: white;
-}
-
-/* TÌM KIẾM NGÀNH */
-
-.programme-search-panel-head > div {
-  display: grid;
-  gap: 6px;
-}
-/* TÌM KIẾM NGÀNH */
-/* TÌM KIẾM NGÀNH */
-.programme-search-panel-head strong {
-  font-size: var(--text-20);
-  letter-spacing: -0.02em;
-}
-/* TÌM KIẾM NGÀNH */
 
 /* TÌM KIẾM NGÀNH */
 
@@ -395,10 +378,6 @@
     padding: 65px 5vw;
   }
 
-  .programme-search-heading h2 {
-    font-size: clamp(26px, 5vw, 36px);
-  }
-
   .programme-search-panel {
     padding: 22px 18px;
   }
@@ -421,10 +400,6 @@
     min-width: 0;
   }
 
-  .programme-search-panel-head {
-    align-items: flex-start;
-    flex-direction: column;
-  }
 }
 
 /* DANH MỤC NGÀNH - BỘ LỌC, THẺ VÀ CHƯƠNG TRÌNH */

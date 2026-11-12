@@ -5853,22 +5853,50 @@ main :is(input, select, textarea) {
   }
 }
 .language-switch {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   flex: 0 0 auto;
-  min-height: 26px;
-  padding: 1px 7px;
-  border: 1px solid currentColor;
-  border-radius: 4px;
-  color: inherit;
+  gap: 7px;
+  min-height: 28px;
+  padding: 2px 3px 2px 9px;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 999px;
+  background: #30345f;
+  color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 1;
   text-decoration: none;
-  white-space: pre;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.language-switch:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
+.language-switch__globe { width: 16px; height: 16px; flex-shrink: 0; }
+.language-switch__options { display: grid; grid-template-columns: repeat(2, 34px); position: relative; }
+.language-switch__indicator {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 34px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 15%);
 }
+.language-switch[data-locale="en"] .language-switch__indicator { transform: translateX(100%); }
+.language-switch__label {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 22px;
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: #e0e3f5;
+}
+.language-switch__label[data-active="true"] { color: #c61936; }
+.language-switch:hover { border-color: #fff; box-shadow: 0 0 0 3px rgb(255 255 255 / 12%); }
+.language-switch:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) { .language-switch { transition: none; } }

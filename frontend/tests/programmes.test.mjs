@@ -535,7 +535,7 @@ test("Hospitality and MBA preserve their own elective totals, source fees and ad
   );
 });
 
-test("Finance tracks and Natural Resources research retain independent source curricula and admission logic", () => {
+test("Finance and Natural Resources tracks retain independent curricula and admission logic", () => {
   const finance = programmes.find((p) => p.id === "tai-chinh-ngan-hang");
   const resources = programmes.find((p) => p.id === "quan-ly-tai-nguyen-moi-truong");
   assert.equal(finance.code, "8340201");
@@ -550,15 +550,22 @@ test("Finance tracks and Natural Resources research retain independent source cu
     ft.map((t) => getCurriculumCourses(t.groups).length),
     [19, 18],
   );
-  assert.equal(rt.length, 1);
-  assert.equal(rt[0].orientation, "Nghiên cứu");
-  assert.equal(getCurriculumCourses(rt[0].groups).length, 30);
+  assert.deepEqual(
+    rt.map((t) => t.orientation),
+    ["Ứng dụng", "Nghiên cứu"],
+  );
+  const [application, research] = rt;
+  assert.equal(getCurriculumCourses(research.groups).length, 30);
+  assert.deepEqual(
+    getCurriculumCourses(application.groups).slice(-2).map((course) => [course.code, course.credits]),
+    [["81INTE70356", 6], ["81GRPR70369", 9]],
+  );
   assert.deepEqual(
     ft.map((t) => getCurriculumCourses(t.groups).at(-1).credits),
     [9, 12],
   );
   assert.deepEqual(
-    rt[0].groups[1].courses.map((c) => c.credits),
+    research.groups[1].courses.map((c) => c.credits),
     [15, 15],
   );
   assert.match(ft[0].intro, /1\/2 chuyên đề và 2\/3 học phần/);

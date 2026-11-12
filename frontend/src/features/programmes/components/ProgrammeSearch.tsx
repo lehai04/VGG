@@ -39,17 +39,20 @@ export default function ProgrammeSearch({ content = catalogueCopy.ProgrammeSearc
     >
       <div className={`${styles["programme-search-heading"]}`}>
         <h2 id="programme-search-title">
-          {t(copy.programme_search_wrapper.tim_kiem_chuong_trinh_phu_hop_voi)}
+          {t("Tìm chương trình", "Find the program")}{" "}
+          <span className={styles["programme-search-accent"]}>
+            {t("phù hợp với bạn.", "that suits you.")}
+          </span>
         </h2>
-
+        <p>
+          {t(copy.programme_search_wrapper.tim_kiem_chuong_trinh_phu_hop_voi.replace(
+            "chương trình Thạc sĩ và Tiến sĩ",
+            "chương trình thạc sĩ và tiến sĩ",
+          ))}
+        </p>
       </div>
 
       <div className={`${styles["programme-search-panel"]}`}>
-        <div className={`${styles["programme-search-panel-head"]}`}>
-          <div>
-            <strong>{t(copy.programme_search_wrapper.chon_dieu_ban_muon_kham_pha)}</strong>
-          </div>
-        </div>
         <div className={`${styles["programme-search-top"]}`}>
           <div className={`${styles["programme-search-input"]}`}>
             <Search size={21} aria-hidden="true" />

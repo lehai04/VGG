@@ -11,12 +11,14 @@ import { ResourceHistory } from "../cms-next/ResourceHistory";
 type Category = {
   id: string;
   name: string;
+  enName?: string | null;
   createdAt: string;
   _count: { resources: number };
 };
 type Resource = {
   id: string;
   title: string;
+  enTitle?: string | null;
   categoryId: string;
   resourceType: string;
   documentType: string | null;
@@ -39,6 +41,7 @@ type ResourceForm = {
   locale: string;
   status: string;
   title: string;
+  enTitle: string;
   categoryId: string;
   resourceType: string;
   documentType: string;
@@ -70,6 +73,7 @@ const defaultForm: ResourceForm = {
   locale: "vi",
   status: "DRAFT",
   title: "",
+  enTitle: "",
   categoryId: "",
   resourceType: "DIRECTIVE_DOCUMENT",
   documentType: "",
@@ -117,7 +121,7 @@ export function ResourceManager({
     categoryId: categories[0]?.id ?? "",
   });
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [categoryForm, setCategoryForm] = useState({ id: "", name: "" });
+  const [categoryForm, setCategoryForm] = useState({ id: "", name: "", enName: "" });
   const [categoryDrawer, setCategoryDrawer] = useState(false);
   const [query, setQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
@@ -236,6 +240,7 @@ export function ResourceManager({
       locale: item.locale,
       status: item.status,
       title: item.title,
+      enTitle: item.enTitle ?? "",
       categoryId: item.categoryId,
       resourceType: item.resourceType,
       documentType: item.documentType ?? "",
@@ -313,6 +318,7 @@ export function ResourceManager({
       locale: form.locale,
       ...(form.id ? { revision: form.revision } : {}),
       title: form.title,
+      enTitle: form.enTitle.trim() || null,
       categoryId: form.categoryId,
       resourceType: form.resourceType,
       documentType:
@@ -364,7 +370,7 @@ export function ResourceManager({
         {
           method: categoryForm.id ? "PUT" : "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ name: categoryForm.name }),
+          body: JSON.stringify({ name: categoryForm.name, enName: categoryForm.enName.trim() || null }),
         },
       );
       const result = await response.json();
@@ -667,7 +673,7 @@ export function ResourceManager({
               className="primary-button"
               type="button"
               onClick={() => {
-                setCategoryForm({ id: "", name: "" });
+                setCategoryForm({ id: "", name: "", enName: "" });
                 setCategoryDrawer(true);
               }}
             >
@@ -704,6 +710,7 @@ export function ResourceManager({
                             setCategoryForm({
                               id: category.id,
                               name: category.name,
+                              enName: category.enName ?? "",
                             });
                             setCategoryDrawer(true);
                           }}
@@ -766,6 +773,7 @@ export function ResourceManager({
                   setForm((current) => ({
                     ...current,
                     ...resource,
+                    enTitle: resource.enTitle === undefined ? current.enTitle : (resource.enTitle ?? ""),
                     id: current.id,
                     revision: current.revision,
                     locale: current.locale,
@@ -868,6 +876,15 @@ export function ResourceManager({
                   maxLength={250}
                   value={form.title}
                   onChange={(event) => update("title", event.target.value)}
+                />
+              </label>
+              <label className="field">
+                Tên tài nguyên tiếng Anh (không bắt buộc)
+                <input
+                  lang="en"
+                  maxLength={250}
+                  value={form.enTitle}
+                  onChange={(event) => update("enTitle", event.target.value)}
                 />
               </label>
               {isDocument && (
@@ -1033,6 +1050,20 @@ export function ResourceManager({
                     setCategoryForm((current) => ({
                       ...current,
                       name: event.target.value,
+                    }))
+                  }
+                />
+              </label>
+              <label className="field">
+                Tên danh mục tiếng Anh (không bắt buộc)
+                <input
+                  lang="en"
+                  maxLength={120}
+                  value={categoryForm.enName}
+                  onChange={(event) =>
+                    setCategoryForm((current) => ({
+                      ...current,
+                      enName: event.target.value,
                     }))
                   }
                 />

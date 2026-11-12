@@ -18,13 +18,14 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
-.articleHeader h1 {
+/* Outrank the global H1 typography so every VI/EN article uses this size. */
+.page .articleHeader h1 {
   width: 100%;
   max-width: none;
   margin: 0;
-  font-size: clamp(1.7rem, 2.35vw, 2.8rem);
-  letter-spacing: -0.045em;
-  line-height: 1.08;
+  font-size: clamp(1.625rem, 2.5vw, 2.25rem) !important;
+  letter-spacing: -0.015em;
+  line-height: 1.4 !important;
   text-wrap: wrap;
 }
 .infoRow {

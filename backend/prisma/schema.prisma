@@ -76,6 +76,7 @@ model ResourceFile {
   slug                 String                @unique @db.VarChar(190)
   locale               String                @default("vi") @db.VarChar(5)
   title                String                @db.VarChar(250)
+  enTitle              String?               @map("en_title") @db.VarChar(250)
   description          String?
   categoryId           String                @map("category_id")
   category             ResourceCategory      @relation(fields: [categoryId], references: [id], onDelete: Restrict)
@@ -101,6 +102,7 @@ model ResourceFile {
 model ResourceCategory {
   id        String         @id @default(cuid())
   name      String         @unique @db.VarChar(120)
+  enName    String?        @map("en_name") @db.VarChar(120)
   resources ResourceFile[]
   createdAt DateTime       @default(now()) @map("created_at")
   updatedAt DateTime       @updatedAt @map("updated_at")

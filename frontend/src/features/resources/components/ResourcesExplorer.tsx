@@ -13,7 +13,7 @@ import {
   Search,
   X,
 } from "lucide-react";
-import type { PublicResource, ResourceCatalogue } from "../data";
+import type { PublicResource, ResourceCatalogue, ResourceCategory } from "../data";
 import { documentTypeLabels, resourceTypeLabels } from "../data";
 import styles from "./ResourcesLanding.module.css";
 
@@ -36,6 +36,8 @@ function FileName({ name }: { name: string }) {
 export function ResourcesExplorer({ resources, categories, resourceTypes: types }: ResourceCatalogue) {
   const t = useWebsiteCopy();
   const { locale } = useLocale();
+  const resourceTitle = (item: PublicResource) => (locale === "en" && item.enTitle) || t(item.title);
+  const categoryName = (item: ResourceCategory) => (locale === "en" && item.enName) || t(item.name);
   const [query, setQuery] = useState("");
   const [appliedQuery, setAppliedQuery] = useState("");
   const [category, setCategory] = useState("ALL");
@@ -74,6 +76,7 @@ export function ResourcesExplorer({ resources, categories, resourceTypes: types 
         item.issuingOrganization,
         item.fileName,
         t(item.title),
+        locale === "en" && item.enTitle,
         t(item.description),
         t(item.issuingOrganization),
       ]
@@ -86,7 +89,7 @@ export function ResourcesExplorer({ resources, categories, resourceTypes: types 
         (type === "ALL" || item.resourceType === type)
       );
     });
-  }, [resources, appliedQuery, category, type, t]);
+  }, [resources, appliedQuery, category, type, locale, t]);
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
   const visibleResources = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
   const fileEndpoint = (item: PublicResource, download = false) =>
@@ -129,7 +132,7 @@ export function ResourcesExplorer({ resources, categories, resourceTypes: types 
               <option value="ALL">{t("Tất cả danh mục")}</option>
               {categories.map((item) => (
                 <option value={item.id} key={item.id}>
-                  {t(item.name)}
+                  {categoryName(item)}
                 </option>
               ))}
             </select>
@@ -177,13 +180,13 @@ export function ResourcesExplorer({ resources, categories, resourceTypes: types 
                 </div>
                 <div className={styles.cardBody}>
                   <div className={styles.badges}>
-                    <span>{t(item.category.name)}</span>
+                    <span>{categoryName(item.category)}</span>
                     <i>{t(resourceTypeLabels[item.resourceType] ?? item.resourceType)}</i>
                     {item.documentType && (
                       <i>{t(documentTypeLabels[item.documentType] ?? item.documentType)}</i>
                     )}
                   </div>
-                  <h3 className="type-card-title">{t(item.title)}</h3>
+                  <h3 className="type-card-title">{resourceTitle(item)}</h3>
                   {item.description && <p>{t(item.description)}</p>}
                   <dl>
                     {item.documentNumber && (
@@ -281,13 +284,13 @@ export function ResourcesExplorer({ resources, categories, resourceTypes: types 
             className={styles.modal}
             role="dialog"
             aria-modal="true"
-            aria-label={`${t("Xem trước")} ${t(preview.title)}`}
+            aria-label={`${t("Xem trước")} ${resourceTitle(preview)}`}
             onMouseDown={(e) => e.stopPropagation()}
           >
             <header>
               <div>
                 <span>{t("XEM TRƯỚC TÀI LIỆU")}</span>
-                <h2>{t(preview.title)}</h2>
+                <h2>{resourceTitle(preview)}</h2>
               </div>
               <button onClick={() => setPreview(null)} aria-label={t("Đóng")}>
                 <X />
@@ -295,7 +298,7 @@ export function ResourcesExplorer({ resources, categories, resourceTypes: types 
             </header>
             <div className={styles.previewFrame}>
               {preview.fileType.includes("pdf") || preview.fileType.startsWith("image/") ? (
-                <iframe src={fileEndpoint(preview)} title={t(preview.title)} />
+                <iframe src={fileEndpoint(preview)} title={resourceTitle(preview)} />
               ) : (
                 <div>
                   <FileText />

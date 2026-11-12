@@ -1,7 +1,7 @@
 "use client";
 import { cmsFetch } from "@/lib/cms-fetch";
 import { useEffect, useState } from "react";
-type Snapshot={title:string;categoryId:string;resourceType:string;documentType:string|null;documentNumber:string|null;issueDate:string|null;issuingOrganization:string|null;fileName:string;fileUrl:string;fileType:string;fileSize:number};
+type Snapshot={title:string;enTitle?:string|null;categoryId:string;resourceType:string;documentType:string|null;documentNumber:string|null;issueDate:string|null;issuingOrganization:string|null;fileName:string;fileUrl:string;fileType:string;fileSize:number};
 export function ResourceHistory({id,disabled,onSelect}:{id:string;disabled:boolean;onSelect:(resource:Omit<Snapshot,"documentType"|"documentNumber"|"issueDate"|"issuingOrganization">&{documentType:string;documentNumber:string;issueDate:string;issuingOrganization:string})=>void}){
   const [page,setPage]=useState(1);const [data,setData]=useState<{versions:{id:string;createdAt:string;value:{resource:Snapshot}}[];total:number}|null>(null);const [error,setError]=useState("");
   useEffect(()=>{const controller=new AbortController();cmsFetch(`/api/cms/resources/${id}/versions?page=${page}`,{cache:"no-store",signal:controller.signal}).then(async response=>{const result=await response.json();if(!response.ok)throw Error(result.message||"Không tải được lịch sử.");setData(result.data);setError("");}).catch(reason=>{if(!controller.signal.aborted)setError(reason.message);});return()=>controller.abort();},[id,page]);

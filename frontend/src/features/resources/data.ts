@@ -1,10 +1,11 @@
 import { demoResources } from "./demo-resources";
 
-export type ResourceCategory = { id: string; name: string };
+export type ResourceCategory = { id: string; name: string; enName?: string | null };
 export type PublicResource = {
   id: string;
   slug: string;
   title: string;
+  enTitle?: string | null;
   description: string | null;
   resourceType: string;
   documentType: string | null;

@@ -99,6 +99,7 @@ export function NewsEditor({
   const isEnglish = activeTab === "en" && form.locale === "vi";
   const [revision, setRevision] = useState(initialPost?.updatedAt ?? "");
   const [loading, setLoading] = useState(false);
+  const [pendingPublish, setPendingPublish] = useState<(() => Promise<void>) | null>(null);
   const [fetchingPost, setFetchingPost] = useState(Boolean(editId && (!initialPost || initialPost.id !== editId)));
   const [uploadingImage, setUploadingImage] = useState(false);
 
@@ -250,11 +251,12 @@ export function NewsEditor({
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (loading || pendingPublish) return;
     setForceValidated(true);
 
     const enContentLength = form.enContent.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim().length;
-    const enFields = [form.enTitle.trim(), form.enExcerpt.trim(), enContentLength];
-    if (form.locale === "vi" && enFields.some(Boolean) &&
+    const hasEnglishFields = [form.enTitle.trim(), form.enExcerpt.trim(), enContentLength].some(Boolean);
+    if (form.locale === "vi" && hasEnglishFields &&
         (form.enTitle.trim().length < 2 || form.enExcerpt.trim().length < 10 || enContentLength < 20)) {
       setActiveTab("en");
       setToast({
@@ -313,6 +315,18 @@ export function NewsEditor({
       return;
     }
 
+    if (nextStatus === "PUBLISHED" && form.locale === "vi" && !hasEnglishFields) {
+      setPendingPublish(() => () => save(nextStatus, customJsonLd, enContentLength));
+      return;
+    }
+    await save(nextStatus, customJsonLd, enContentLength);
+  }
+
+  async function save(
+    nextStatus: "PUBLISHED" | "DRAFT",
+    customJsonLd: Record<string, unknown> | null,
+    enContentLength: number,
+  ) {
     setLoading(true);
     const payload = {
       revision,
@@ -898,6 +912,19 @@ export function NewsEditor({
           </button>
         </footer>
       </form>
+
+      <CenterToast
+        open={Boolean(pendingPublish)}
+        type="confirm"
+        title="Đăng bài chỉ với bản tiếng Việt?"
+        message="Bài viết chưa có bản tiếng Anh. Bạn có thể quay lại để bổ sung hoặc tiếp tục đăng bản tiếng Việt."
+        confirmLabel="Đăng bản tiếng Việt"
+        onClose={() => setPendingPublish(null)}
+        onConfirm={() => {
+          setPendingPublish(null);
+          void pendingPublish?.();
+        }}
+      />
 
       {/* THÔNG BÁO THÀNH CÔNG Ở CHÍNH GIỮA MÀN HÌNH */}
       <CenterToast
