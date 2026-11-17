@@ -1,8 +1,9 @@
 export const knowledgeSchedule = "Sáng và chiều thứ Bảy, Chủ nhật";
 export const knowledgeHours = "Sáng 07:30–11:30 / Chiều 13:30–17:15";
 
-export function formatKnowledgeTuition(amount: number) {
-  return `${new Intl.NumberFormat("vi-VN").format(amount)} VNĐ`;
+export function formatKnowledgeTuition(amount: number, locale: "vi" | "en" = "vi") {
+  const formatted = new Intl.NumberFormat(locale === "en" ? "en-GB" : "vi-VN").format(amount);
+  return `${formatted} ${locale === "en" ? "VND" : "VNĐ"}`;
 }
 
 export const personalFields = [

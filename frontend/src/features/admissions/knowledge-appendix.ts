@@ -1,8 +1,46 @@
 import { getKnowledgeAppendixProgrammes } from "./reference-engine";
+import type { Locale } from "@/lib/i18n";
+import { knowledgeTranslate } from "./knowledge-registration-copy";
+import appendixEnglish from "./knowledge-appendix.en.json";
+import registrationEnglish from "./knowledge-registration.en.json";
+import requirementEnglish from "./knowledge-requirements.en.json";
 
 const programmes = getKnowledgeAppendixProgrammes();
 type Programme = (typeof programmes)[number];
 type Group = Programme["groups"][number];
+const appendixCopy: Readonly<Record<string, string>> = appendixEnglish;
+const requirementsCopy: Readonly<Record<string, string>> = requirementEnglish;
+
+function appendixTranslate(locale: Locale) {
+  const registration = knowledgeTranslate(locale);
+  return (source: string, substitutions?: Record<string, string>) =>
+    registration(locale === "en" ? appendixCopy[source] ?? source : source, substitutions);
+}
+
+export function knowledgeSectionTitle(locale: Locale) {
+  return appendixTranslate(locale)("Đăng ký bổ sung kiến thức");
+}
+
+function termKey(value: string) {
+  return normalize(value).replace(/\s+/g, " ").replace(/[–—]/g, "-");
+}
+
+const englishTerms = new Map(
+  Object.entries({ ...registrationEnglish, ...appendixEnglish })
+    .map(([source, translated]) => [termKey(source), translated]),
+);
+
+function translateMajors(value: string, locale: Locale) {
+  if (locale === "vi") return value;
+  return value.replace(/\s+/g, " ").trim().split(/((?<=\d\))\s*[;,]\s*)/)
+    .map((part) => {
+      const match = /^(.+?)(\s*\(\d+(?:\/\d+)?\)[.;]?)$/.exec(part);
+      const label = match?.[1] ?? part;
+      const translated = englishTerms.get(termKey(label));
+      return translated ? translated + (match?.[2] ?? "") : part;
+    })
+    .join("");
+}
 
 function escapeHtml(value: string) {
   return value.replace(
@@ -26,16 +64,21 @@ function groupRequirements(groups: Group[]) {
   return sections;
 }
 
-function renderResults(programme: Programme) {
+function renderResults(programme: Programme, locale: Locale) {
+  const t = appendixTranslate(locale);
+  const major = (value: string) => escapeHtml(translateMajors(value, locale));
+  const requirementText = (value: string) =>
+    escapeHtml(locale === "en" ? requirementsCopy[value] ?? value : value);
   const sections = groupRequirements(programme.groups);
-  const name = escapeHtml(programme.name);
+  const programmeName = t(programme.name);
+  const name = escapeHtml(programmeName);
   const rows = sections
     .map(({ requirement, groups }) =>
       groups
         .map(
           (group, index) =>
-            `<tr><th scope="row">${escapeHtml(group.group)}</th><td>${escapeHtml(group.eligible_majors)}</td>${
-              index === 0 ? `<td rowspan="${groups.length}">${escapeHtml(requirement)}</td>` : ""
+            `<tr><th scope="row">${major(group.group)}</th><td>${major(group.eligible_majors)}</td>${
+              index === 0 ? `<td rowspan="${groups.length}">${requirementText(requirement)}</td>` : ""
             }</tr>`,
         )
         .join(""),
@@ -46,47 +89,49 @@ function renderResults(programme: Programme) {
       const groupList = groups
         .map(
           (group) =>
-            `<div class="knowledge-result-group"><h5>${escapeHtml(group.group)}</h5><p>${escapeHtml(group.eligible_majors)}</p></div>`,
+            `<div class="knowledge-result-group"><h5>${major(group.group)}</h5><p>${major(group.eligible_majors)}</p></div>`,
         )
         .join("");
       return `<article class="knowledge-result-card">
         ${
           groups.length === 1
             ? groupList
-            : `<details><summary>Xem ${groups.length} nhóm ngành áp dụng</summary>${groupList}</details>`
+            : `<details><summary>${escapeHtml(t("Xem {count} nhóm ngành áp dụng", { count: String(groups.length) }))}</summary>${groupList}</details>`
         }
-        <p class="knowledge-result-requirement"><strong>Yêu cầu bổ sung</strong>${escapeHtml(requirement)}</p>
+        <p class="knowledge-result-requirement"><strong>${escapeHtml(t("Yêu cầu bổ sung"))}</strong>${requirementText(requirement)}</p>
       </article>`;
     })
     .join("");
   return `
     <div class="knowledge-result-heading">
       <h4>${name}</h4>
-      <span>Mã ngành ${escapeHtml(programme.code)}</span>
+      <span>${escapeHtml(t("Mã ngành {code}", { code: programme.code }))}</span>
     </div>
     <table class="knowledge-result-table">
-      <caption class="sr-only">Học phần bổ sung kiến thức ngành ${name}</caption>
+      <caption class="sr-only">${escapeHtml(t("Học phần bổ sung kiến thức ngành {name}", { name: programmeName }))}</caption>
       <thead><tr>
-        <th scope="col">Nhóm ngành phù hợp</th>
-        <th scope="col">Ngành tốt nghiệp phù hợp</th>
-        <th scope="col">Học phần bổ sung kiến thức, số tín chỉ</th>
+        <th scope="col">${escapeHtml(t("Nhóm ngành phù hợp"))}</th>
+        <th scope="col">${escapeHtml(t("Ngành tốt nghiệp phù hợp"))}</th>
+        <th scope="col">${escapeHtml(t("Học phần bổ sung kiến thức, số tín chỉ"))}</th>
       </tr></thead>
       <tbody>${rows}</tbody>
     </table>
     <div class="knowledge-result-cards">${cards}</div>`;
 }
 
-export function knowledgeRegistrationSection(locale: string) {
+export function knowledgeRegistrationSection(locale: Locale) {
+  const t = appendixTranslate(locale);
+  const copy = (source: string) => escapeHtml(t(source));
   return `
     <section id="dang-ky-bo-sung-kien-thuc" class="section admission-step knowledge-section" aria-labelledby="knowledge-heading">
       <div class="wrap">
         <header class="knowledge-heading">
           <div>
-            <h2 id="knowledge-heading">Đăng ký bổ sung kiến thức</h2>
-            <p>Xem điều kiện học bổ sung, tra cứu học phần và đăng ký theo ngành Thạc sĩ dự tuyển.</p>
+            <h2 id="knowledge-heading">${copy("Đăng ký bổ sung kiến thức")}</h2>
+            <p>${copy("Xem điều kiện học bổ sung, tra cứu học phần và đăng ký theo ngành Thạc sĩ dự tuyển.")}</p>
           </div>
           <a class="btn primary knowledge-register" href="/${escapeHtml(locale)}/admissions/bo-sung-kien-thuc">
-            Đăng ký học bổ sung kiến thức ${icon("arrow")}
+            ${copy("Đăng ký học bổ sung kiến thức")} ${icon("arrow")}
           </a>
         </header>
 
@@ -94,77 +139,77 @@ export function knowledgeRegistrationSection(locale: string) {
           <article class="knowledge-guide">
             <span class="knowledge-icon">${icon("cap")}</span>
             <div>
-              <h3>Ai cần học bổ sung kiến thức?</h3>
-              <p>Ứng viên dự tuyển Thạc sĩ cần học bổ sung khi hồ sơ thuộc diện yêu cầu. Khoa và Viện xác định dựa trên ngành tốt nghiệp, bảng điểm đại học và chương trình Thạc sĩ đăng ký.</p>
+              <h3>${copy("Ai cần học bổ sung kiến thức?")}</h3>
+              <p>${copy("Ứng viên dự tuyển Thạc sĩ cần học bổ sung khi hồ sơ thuộc diện yêu cầu. Khoa và Viện xác định dựa trên ngành tốt nghiệp, bảng điểm đại học và chương trình Thạc sĩ đăng ký.")}</p>
             </div>
           </article>
           <article class="knowledge-guide">
             <span class="knowledge-icon">${icon("book")}</span>
             <div>
-              <h3>Cách xác định học phần cần bổ sung</h3>
-              <p>Chọn ngành Thạc sĩ dự tuyển rồi đối chiếu ngành tốt nghiệp với danh mục ngành phù hợp. Khoa và Viện kiểm tra bảng điểm để xác nhận học phần cần bổ sung cho từng hồ sơ.</p>
-              <a class="text-link" href="#tra-cuu-hoc-phan-bo-sung">Tra cứu học phần ${icon("arrow")}</a>
+              <h3>${copy("Cách xác định học phần cần bổ sung")}</h3>
+              <p>${copy("Chọn ngành Thạc sĩ dự tuyển rồi đối chiếu ngành tốt nghiệp với danh mục ngành phù hợp. Khoa và Viện kiểm tra bảng điểm để xác nhận học phần cần bổ sung cho từng hồ sơ.")}</p>
+              <a class="text-link" href="#tra-cuu-hoc-phan-bo-sung">${copy("Tra cứu học phần")} ${icon("arrow")}</a>
             </div>
           </article>
         </div>
 
         <div class="knowledge-facts">
           <article class="knowledge-fact">
-            <h3>${icon("calendar")} Lịch học và hạn đăng ký</h3>
-            <p><strong>Chờ Viện xác nhận</strong></p>
-            <p>Ứng viên thuộc diện phải học cần hoàn thành học phần trước khi xét tuyển.</p>
+            <h3>${icon("calendar")} ${copy("Lịch học và hạn đăng ký")}</h3>
+            <p><strong>${copy("Chờ Viện xác nhận")}</strong></p>
+            <p>${copy("Ứng viên thuộc diện phải học cần hoàn thành học phần trước khi xét tuyển.")}</p>
           </article>
           <article class="knowledge-fact">
-            <h3>${icon("wallet")} Học phí bổ sung</h3>
-            <p><strong class="knowledge-fee">1.200.000 đồng/môn</strong></p>
-            <p>Áp dụng cho ứng viên thuộc diện phải học bổ sung và thu riêng ngoài học phí toàn khóa.</p>
+            <h3>${icon("wallet")} ${copy("Học phí bổ sung")}</h3>
+            <p><strong class="knowledge-fee">${copy("1.200.000 đồng/môn")}</strong></p>
+            <p>${copy("Áp dụng cho ứng viên thuộc diện phải học bổ sung và thu riêng ngoài học phí toàn khóa.")}</p>
           </article>
           <article class="knowledge-fact">
-            <h3>${icon("award")} Hiệu lực kết quả</h3>
-            <p><strong>02 năm</strong> kể từ khi đạt yêu cầu và được công nhận.</p>
+            <h3>${icon("award")} ${copy("Hiệu lực kết quả")}</h3>
+            <p><strong>${copy("02 năm")}</strong> ${copy("kể từ khi đạt yêu cầu và được công nhận.")}</p>
           </article>
         </div>
 
         <section id="tra-cuu-hoc-phan-bo-sung" class="knowledge-lookup" aria-labelledby="knowledge-lookup-title" tabindex="-1">
           <header class="knowledge-lookup-heading">
-            <h3 id="knowledge-lookup-title">Tra cứu học phần bổ sung</h3>
-            <p>Phụ lục 1 · Danh mục ngành phù hợp và các học phần bổ sung kiến thức</p>
+            <h3 id="knowledge-lookup-title">${copy("Tra cứu học phần bổ sung")}</h3>
+            <p>${copy("Phụ lục 1 · Danh mục ngành phù hợp và các học phần bổ sung kiến thức")}</p>
           </header>
           <div class="knowledge-lookup-grid">
             <div class="knowledge-picker">
-              <label for="knowledge-programme-search">Ngành Thạc sĩ dự tuyển</label>
+              <label for="knowledge-programme-search">${copy("Ngành Thạc sĩ dự tuyển")}</label>
               <div class="knowledge-search">
                 ${icon("search")}
-                <input id="knowledge-programme-search" type="search" autocomplete="off" placeholder="Nhập tên hoặc mã ngành" aria-controls="knowledge-programme-list">
+                <input id="knowledge-programme-search" type="search" autocomplete="off" placeholder="${copy("Nhập tên hoặc mã ngành")}" aria-controls="knowledge-programme-list">
               </div>
               <p class="sr-only" aria-live="polite" data-knowledge-search-status></p>
-              <ul id="knowledge-programme-list" class="knowledge-programme-list" aria-label="Danh sách ngành Thạc sĩ">
+              <ul id="knowledge-programme-list" class="knowledge-programme-list" aria-label="${copy("Danh sách ngành Thạc sĩ")}">
                 ${programmes
                   .map(
                     (programme, index) =>
                       `<li><button type="button" data-knowledge-programme="${escapeHtml(programme.id)}" aria-pressed="${index === 0}" aria-controls="knowledge-lookup-results">
-                    <span>${escapeHtml(programme.name)}</span><small>${escapeHtml(programme.code)}</small>
+                    <span>${copy(programme.name)}</span><small>${escapeHtml(programme.code)}</small>
                   </button></li>`,
                   )
                   .join("")}
               </ul>
-              <p class="knowledge-empty" data-knowledge-empty hidden>Không tìm thấy ngành phù hợp với từ khóa.</p>
+              <p class="knowledge-empty" data-knowledge-empty hidden>${copy("Không tìm thấy ngành phù hợp với từ khóa.")}</p>
             </div>
             <div id="knowledge-lookup-results" class="knowledge-results">
-              ${renderResults(programmes[0])}
+              ${renderResults(programmes[0], locale)}
             </div>
           </div>
-          <p class="knowledge-review-note">${icon("info")} <span>Khoa và Viện sẽ đối chiếu bảng điểm để xác nhận học phần cần bổ sung cho từng hồ sơ.</span></p>
+          <p class="knowledge-review-note">${icon("info")} <span>${copy("Khoa và Viện sẽ đối chiếu bảng điểm để xác nhận học phần cần bổ sung cho từng hồ sơ.")}</span></p>
         </section>
 
         <section class="knowledge-support" aria-labelledby="knowledge-support-title">
           <div>
-            <h3 id="knowledge-support-title">Đầu mối hỗ trợ</h3>
-            <p>Viện Sau đại học – Trường Đại học Văn Lang</p>
+            <h3 id="knowledge-support-title">${copy("Đầu mối hỗ trợ")}</h3>
+            <p>${copy("Viện Sau đại học – Trường Đại học Văn Lang")}</p>
           </div>
           <ul>
             <li><a href="tel:+84988486869">${icon("phone")} <span><strong>Hotline</strong> 0988 48 6869</span></a></li>
-            <li><a href="tel:+842871016869">${icon("phone")} <span><strong>Điện thoại</strong> 028 7101 6869</span></a></li>
+            <li><a href="tel:+842871016869">${icon("phone")} <span><strong>${copy("Điện thoại")}</strong> 028 7101 6869</span></a></li>
             <li><a href="mailto:tuyensinh.sdh@vlu.edu.vn">${icon("mail")} <span><strong>Email</strong> tuyensinh.sdh@vlu.edu.vn</span></a></li>
           </ul>
         </section>
@@ -181,7 +226,8 @@ function normalize(value: string) {
     .trim();
 }
 
-export function connectKnowledgeLookup(root: HTMLElement) {
+export function connectKnowledgeLookup(root: HTMLElement, locale: Locale) {
+  const t = appendixTranslate(locale);
   const search = root.querySelector<HTMLInputElement>("#knowledge-programme-search");
   const list = root.querySelector<HTMLUListElement>("#knowledge-programme-list");
   const results = root.querySelector<HTMLElement>("#knowledge-lookup-results");
@@ -207,8 +253,8 @@ export function connectKnowledgeLookup(root: HTMLElement) {
     shown = id;
     if (programme) selected = programme;
     results.innerHTML = programme
-      ? renderResults(programme)
-      : '<p class="knowledge-empty">Thử nhập tên hoặc mã ngành khác để xem học phần.</p>';
+      ? renderResults(programme, locale)
+      : `<p class="knowledge-empty">${escapeHtml(t("Thử nhập tên hoặc mã ngành khác để xem học phần."))}</p>`;
   };
 
   search.addEventListener(
@@ -216,7 +262,7 @@ export function connectKnowledgeLookup(root: HTMLElement) {
     () => {
       const query = normalize(search.value);
       const matching = programmes.filter(
-        ({ name, code }) => normalize(name).includes(query) || code.includes(query),
+        ({ name, code }) => normalize(t(name)).includes(query) || normalize(name).includes(query) || code.includes(query),
       );
       const ids = new Set(matching.map(({ id }) => id));
       for (const button of buttons) {
@@ -225,8 +271,8 @@ export function connectKnowledgeLookup(root: HTMLElement) {
       }
       empty.hidden = matching.length > 0;
       status.textContent = matching.length
-        ? `${matching.length} ngành phù hợp.`
-        : "Không tìm thấy ngành phù hợp với từ khóa.";
+        ? t("{count} ngành phù hợp.", { count: String(matching.length) })
+        : t("Không tìm thấy ngành phù hợp với từ khóa.");
       updateSelection(ids.has(selected.id) ? selected : matching[0]);
     },
     options,

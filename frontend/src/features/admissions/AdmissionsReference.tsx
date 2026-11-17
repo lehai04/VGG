@@ -7,7 +7,7 @@ import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import content from "./reference-content.json";
 import type editorialContent from "./editorial-content.json";
 import { initializeAdmissions } from "./reference-engine";
-import { connectKnowledgeLookup, knowledgeRegistrationSection } from "./knowledge-appendix";
+import { connectKnowledgeLookup, knowledgeRegistrationSection, knowledgeSectionTitle } from "./knowledge-appendix";
 import { initializeAdmissionsMotion } from "./admissions-motion";
 import "./reference.css";
 import "./admissions-redesign.css";
@@ -29,7 +29,7 @@ export function AdmissionsReference({
   const { locale } = useLocale();
   const t = useWebsiteCopy();
   const bannerHtml = html
-    .replace(/(<a href="#hoc-phi-hoc-bong">[^<]*<\/a>)/, '$1<a href="#dang-ky-bo-sung-kien-thuc">Đăng ký bổ sung kiến thức</a>')
+    .replace(/(<a href="#hoc-phi-hoc-bong">[^<]*<\/a>)/, `$1<a href="#dang-ky-bo-sung-kien-thuc">${knowledgeSectionTitle(locale)}</a>`)
     .replace('<section id="ho-so-du-tuyen"', `${knowledgeRegistrationSection(locale)}<section id="ho-so-du-tuyen"`)
     .replace('<h3 class="fee-program-name" id="fee-program-name"></h3>', `<h3 class="fee-program-name" id="fee-program-name"></h3><a id="fee-program-detail" class="text-link" href="/${locale}/programmes/quan-tri-kinh-doanh">Xem chi tiết ngành Quản trị kinh doanh →</a>`)
     .replace('id="ts-hoc-phi" hidden=""><div class="wrap">', `id="ts-hoc-phi" hidden=""><div class="wrap"><a class="text-link" href="/${locale}/programmes/khoa-hoc-moi-truong">Xem chi tiết ngành Khoa học môi trường →</a>`)
@@ -60,7 +60,7 @@ export function AdmissionsReference({
     window.addEventListener("resize", measureNavigation);
     const cleanupEngine = initializeAdmissions(root.current, editorial, programmeOptions);
     const cleanupMotion = initializeAdmissionsMotion(root.current);
-    const cleanupKnowledge = connectKnowledgeLookup(container);
+    const cleanupKnowledge = connectKnowledgeLookup(container, locale);
     // The reference engine fills earlier sections during hydration, shifting deep links.
     const knowledgeAnchor = window.location.hash;
     const anchorFrame = ["#dang-ky-bo-sung-kien-thuc", "#tra-cuu-hoc-phan-bo-sung"].includes(knowledgeAnchor)

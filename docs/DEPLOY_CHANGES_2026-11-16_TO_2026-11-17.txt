@@ -1,0 +1,184 @@
+BẢN CHANGE / NỘI DUNG DEPLOY VGG — 17/11/2026
+Phiên bản: main tại 95ac97e và phần bổ sung tiếng Anh đang ở workspace, chưa commit. Tổng hợp thay đổi từ 16/11 đến 17/11/2026, so với b87e873. Phần đã commit gồm 1a3cc2f và 95ac97e.
+
+Nội dung
+* Website VI / EN
+- Trang chủ dùng video nền video-banner.webm, có ảnh poster. Banner cấu hình dạng ảnh trong CMS vẫn hiển thị theo cấu hình.
+- Đồng bộ cỡ tiêu đề banner trên desktop, tablet và điện thoại. Ẩn nhãn tiếng Anh lặp ở các banner và nhóm học phần trên bản tiếng Việt.
+- Cập nhật ảnh chi tiết chương trình theo từng ngành và từng mục, gồm banner, tổng quan, đối tượng dự tuyển, năng lực và cơ hội nghề nghiệp. Các vị trí chưa có ảnh mới tiếp tục dùng ảnh hiện tại.
+- Giữ tỷ lệ ảnh do trường cung cấp. Ảnh nghề nghiệp dùng chung cách căn phải và chuyển sắc trên desktop, xuống dưới nội dung trên màn hình nhỏ. Chuẩn hóa sáu ảnh banner và nghề nghiệp có lề trống sang WebP.
+- Bỏ dòng chữ lớn trong khung đỏ bên dưới ảnh Tổng quan. Giữ các thông tin ngắn của từng ngành.
+
+* Tuyển sinh — đăng ký học bổ sung kiến thức
+- Bổ sung mục tra cứu học phần và trang đăng ký /vi/admissions/bo-sung-kien-thuc. Khi chọn EN, cả mục Bổ sung kiến thức trên /en/admissions#dang-ky-bo-sung-kien-thuc và trang biểu mẫu /en/admissions/bo-sung-kien-thuc tự hiển thị tiếng Anh.
+- Dịch thanh điều hướng, hướng dẫn, nút đăng ký, học phí và kết quả tra cứu của 19 chương trình, gồm ngành phù hợp và yêu cầu về học phần, tín chỉ. Tra cứu hỗ trợ tên ngành tiếng Việt, tiếng Anh và mã ngành.
+- Dịch tiêu đề, nhãn biểu mẫu, tên 19 chương trình và 72 học phần riêng biệt, thông báo lỗi và xác nhận gửi thành công. Giá trị hồ sơ gửi lên API giữ nguyên để CMS tiếp nhận như trước.
+- Form nhận thông tin cá nhân, thông tin văn bằng, ngành thạc sĩ và học phần đăng ký. Hiển thị học phí tạm tính từ danh mục học phần.
+- Văn bằng và bảng điểm đại học thứ nhất là tệp bắt buộc. Hỗ trợ PDF, JPG/JPEG và PNG, tối đa 3 MB mỗi tệp.
+- Khi gửi, form chỉ hiện “Gửi hồ sơ thành công” khi API xác nhận đã tiếp nhận. Nếu lỗi, form báo cụ thể ngay cạnh nút gửi và giữ dữ liệu đã nhập để sửa. Với lỗi tại ô nhập, có nút “Đến mục cần sửa”.
+- Báo rõ khi thiếu trường, sai định dạng, tệp lỗi, học phần không hợp lệ, CCCD đã có hồ sơ, mã bảo mật sai hoặc hết hạn, và khi chưa nhận được phản hồi. Có thể đổi mã bảo mật và gửi lại.
+
+* CMS — Bổ sung kiến thức
+- Thêm mục “Bổ sung kiến thức” tại /admin/knowledge-registrations. Quản trị nội dung xem danh sách, chi tiết, tải tệp đính kèm và xuất Excel các hồ sơ đã chọn. Bản Excel gồm học phần đăng ký và học phí tạm tính.
+- Thêm “Xóa đã chọn” cạnh “Xuất Excel”. Người dùng có thể chọn từng hồ sơ hoặc chọn tất cả, sau đó xác nhận số lượng cần xóa. Xóa vĩnh viễn hồ sơ và tệp đính kèm. Danh sách cập nhật và hiển thị kết quả.
+- Dùng chung trình tạo XLSX cho danh sách bổ sung kiến thức và danh sách tư vấn.
+
+* Website và CMS Tin tức
+- Trang Tin tức hiển thị một bài lớn và tối đa ba tin mới. Điện thoại xếp nội dung theo chiều dọc.
+- Bài lớn ưu tiên tin nổi bật đã xuất bản. Khi chưa có tin nổi bật đã xuất bản, dùng bài mới nhất.
+- “Xem tất cả tin tức” mở /vi/news/all hoặc /en/news/all. Tìm kiếm, bộ lọc, danh sách và phân trang nằm ở trang này. URL tìm kiếm hoặc lọc cũ được chuyển hướng và giữ tham số.
+- CMS thêm công tắc “Tin nổi bật”, mặc định tắt. Khi lưu bài có bật nổi bật, hệ thống tắt bài nổi bật trước đó. Một bài dùng chung trạng thái nổi bật cho VI/EN. Chỉ bài đã xuất bản hiển thị công khai.
+
+Triển khai
+- Chốt revision gồm main tại 95ac97e và phần bổ sung tiếng Anh trong workspace trước khi build. Commit 95ac97e chưa chứa phần dịch mới. Sao lưu PostgreSQL và giữ cấu hình môi trường của máy chủ.
+- Cài dependencies theo lockfile bằng npm ci nếu triển khai từ mã nguồn. Với Docker Compose, build các image từ cùng revision.
+- Chạy npm run db:deploy hoặc service migrate theo quy trình Docker Compose để áp dụng các migration còn thiếu:
+  20261116000000_news_featured (thêm news_posts.is_featured và index giới hạn một bài nổi bật)
+  20261117000000_knowledge_registrations (thêm bảng hồ sơ và tệp, CCCD duy nhất, xóa theo quan hệ)
+- Build backend, frontend và CMS bằng npm run build hoặc quy trình Docker Compose của máy chủ. Khởi động lại đồng bộ ba dịch vụ sau khi migration thành công. Không chạy seed ghi đè dữ liệu.
+- Giữ BACKEND_INTERNAL_URL trỏ tới backend nội bộ và CMS_APP_URL khớp origin CMS thực tế. Đóng gói thư mục frontend/public/images_programes/ và tệp frontend/public/video/video-banner.webm cùng website.
+- Nếu chạy nhiều replica backend, truyền cùng một KNOWLEDGE_CAPTCHA_SECRET cho mọi replica để mã bảo mật được kiểm tra nhất quán.
+
+File đã sửa (đầy đủ 133 file so với b87e873)
+- backend/prisma/migrations/20261116000000_news_featured/migration.sql
+- backend/prisma/migrations/20261117000000_knowledge_registrations/migration.sql
+- backend/prisma/schema.prisma
+- backend/src/app.ts
+- backend/src/modules/cms/cms.routes.ts
+- backend/src/modules/cms/schemas.ts
+- backend/src/modules/knowledge/admin.ts
+- backend/src/modules/knowledge/course-catalogue.json
+- backend/src/modules/knowledge/public.ts
+- backend/src/modules/public/public.routes.ts
+- backend/tests/knowledge-registration.test.mjs
+- backend/tests/news-featured.test.mjs
+- cms/src/app/admin/[...section]/page.tsx
+- cms/src/app/api/admin/[...path]/route.ts
+- cms/src/components/cms-next/ConsultationWorkspace.tsx
+- cms/src/components/cms/NewsEditor.tsx
+- cms/src/components/cms/NewsList.tsx
+- cms/src/features/consultation-admin/CmsWorkspace.tsx
+- cms/src/features/consultation-admin/KnowledgeWorkspace.tsx
+- cms/src/features/consultation-admin/knowledge-workspace.module.css
+- cms/src/lib/create-xlsx.ts
+- docs/DEPLOY_NEWS_FEATURED_2026-11-16.md
+- frontend/public/images_programes/Cong-nghe_thong_tin/Cơ hội nghề nghiệp và phát triển.jpg
+- frontend/public/images_programes/Cong-nghe_thong_tin/Người có nền tảng CNTT.jpg
+- frontend/public/images_programes/Cong-nghe_thong_tin/Người hướng đến nghiên cứu.jpg
+- frontend/public/images_programes/Cong-nghe_thong_tin/Người tốt nghiệp ngành gần.jpg
+- frontend/public/images_programes/Cong-nghe_thong_tin/hero.jpg
+- frontend/public/images_programes/Cong-nghe_thong_tin/progarmtrack.jpg
+- frontend/public/images_programes/Cong_nghe_sinh_hoc/Người hướng đến giảng dạy và học tiếp.avif
+- frontend/public/images_programes/Cong_nghe_sinh_hoc/Người làm việc trong lĩnh vực liên quan.jpg
+- frontend/public/images_programes/Cong_nghe_sinh_hoc/Người muốn đi sâu vào nghiên cứu.avif
+- frontend/public/images_programes/Ke_toan/Cơ hội nghề nghiệp và phát triển.jpg
+- frontend/public/images_programes/Ke_toan/Finance, control and management professionals.jpg
+- frontend/public/images_programes/Ke_toan/People who want to develop deep expertise.jpg
+- frontend/public/images_programes/Ke_toan/People working in accounting and auditing.jpg
+- frontend/public/images_programes/Ke_toan/hero.jpg
+- frontend/public/images_programes/Khoa_hoc_moi_truong/Hợp tác và truyền đạt tri thức.jpg
+- frontend/public/images_programes/Khoa_hoc_moi_truong/Nghiên cứu và ra quyết định.jpg
+- frontend/public/images_programes/Khoa_hoc_moi_truong/Năng lực chuyên môn.jpg
+- frontend/public/images_programes/Khoa_hoc_moi_truong/hero.jpg
+- frontend/public/images_programes/Khoa_hoc_moi_truong/Định hướng đào tạo.jpg
+- frontend/public/images_programes/Kien_truc/Cơ hội nghề nghiệp và phát triển.jpg
+- frontend/public/images_programes/Kien_truc/Kiến trúc sư và người làm thiết kế.jpg
+- frontend/public/images_programes/Kien_truc/Người làm tư vấn và quản lý dự án.jpg
+- frontend/public/images_programes/Kien_truc/Người quan tâm nghiên cứu và phát triển chuyên môn.jpg
+- frontend/public/images_programes/Kinh_doanh_thuong_mai/Người hướng đến vai trò quản lý.jpg
+- frontend/public/images_programes/Kinh_doanh_thuong_mai/Người muốn phát triển trong kinh doanh số.jpg
+- frontend/public/images_programes/Kinh_doanh_thuong_mai/Người đang làm kinh doanh, thương mại.png
+- frontend/public/images_programes/Kinh_doanh_thuong_mai/hero.jpg
+- frontend/public/images_programes/Ky_thuat_moi_truong/Cơ hội nghề nghiệp và phát triển.jpg
+- frontend/public/images_programes/Ky_thuat_moi_truong/Người làm kỹ thuật và công nghệ môi trường.jpg
+- frontend/public/images_programes/Ky_thuat_moi_truong/Người làm tư vấn và quản lý môi trường.jpg
+- frontend/public/images_programes/Ky_thuat_moi_truong/Người theo đuổi nghiên cứu chuyên sâu.jpg
+- frontend/public/images_programes/Ky_thuat_moi_truong/Tổng quan.jpg
+- frontend/public/images_programes/Ky_thuat_o_to/Người hướng đến quản lý kỹ thuật.jpg
+- frontend/public/images_programes/Ky_thuat_o_to/Người làm kỹ thuật và công nghệ ô tô.jpg
+- frontend/public/images_programes/Ky_thuat_o_to/Người quan tâm nghiên cứu và R&D.jpg
+- frontend/public/images_programes/Ky_thuat_xay_dung/Cơ hội nghề nghiệp và phát triển.png
+- frontend/public/images_programes/Ky_thuat_xay_dung/Cơ hội nghề nghiệp và phát triển.webp
+- frontend/public/images_programes/Ky_thuat_xay_dung/Hợp tác và truyền đạt tri thức.jpg
+- frontend/public/images_programes/Ky_thuat_xay_dung/Nghiên cứu và ra quyết định.jpg
+- frontend/public/images_programes/Ky_thuat_xay_dung/Năng lực chuyên môn.jpg
+- frontend/public/images_programes/Ky_thuat_xay_dung/Tổng quan.jpg
+- frontend/public/images_programes/Ky_thuat_xay_dung/hero.png
+- frontend/public/images_programes/Ky_thuat_xay_dung/hero.webp
+- frontend/public/images_programes/Logistics/Người làm vận hành logistics và chuỗi cung ứng.jpg
+- frontend/public/images_programes/Logistics/Người tham gia phân tích và cải tiến hệ thống.jpg
+- frontend/public/images_programes/Logistics/Người định hướng nghiên cứu chuyên sâu.jpg
+- frontend/public/images_programes/Logistics/Tổng quan chương trình.jpg
+- frontend/public/images_programes/Luat_kinh_te/Cơ hội nghề nghiệp và phát triển.png
+- frontend/public/images_programes/Luat_kinh_te/Cơ hội nghề nghiệp và phát triển.webp
+- frontend/public/images_programes/Luat_kinh_te/Nhóm ngành Luật.jpg
+- frontend/public/images_programes/Luat_kinh_te/Nhóm ngành phù hợp khác.jpg
+- frontend/public/images_programes/Marketting/Cơ hội nghề nghiệp và phát triển.png
+- frontend/public/images_programes/Marketting/Cơ hội nghề nghiệp và phát triển.webp
+- frontend/public/images_programes/Marketting/Người hướng đến tư vấn và khởi nghiệp.jpg
+- frontend/public/images_programes/Marketting/Người làm Marketing và kinh doanh.jpg
+- frontend/public/images_programes/Marketting/Người theo đuổi nghiên cứu và giảng dạy.jpg
+- frontend/public/images_programes/My_thuat_ung_dung/Cơ hội nghề nghiệp và phát triển.jpg
+- frontend/public/images_programes/My_thuat_ung_dung/Người làm việc trong ngành sáng tạo.jpg
+- frontend/public/images_programes/My_thuat_ung_dung/Người làm việc trong thiết kế.avif
+- frontend/public/images_programes/My_thuat_ung_dung/Người quan tâm nghiên cứu mỹ thuật ứng dụng.avif
+- frontend/public/images_programes/My_thuat_ung_dung/Người định hướng giảng dạy hoặc khởi nghiệp.jpg
+- frontend/public/images_programes/My_thuat_ung_dung/Người định hướng giảng dạy và đào tạo.avif
+- frontend/public/images_programes/My_thuat_ung_dung/Nhà thiết kế & chuyên gia sáng tạo.jpg
+- frontend/public/images_programes/My_thuat_ung_dung/hero.jpg
+- frontend/public/images_programes/My_thuat_ung_dung/tổng quan.jpg
+- frontend/public/images_programes/Ngon_ngu_anh/Cơ hội nghề nghiệp và phát triển.jpg
+- frontend/public/images_programes/Ngon_ngu_anh/Tổng quan.jpg
+- frontend/public/images_programes/Ngon_ngu_anh/chương trình phù hợp với ai.jpg
+- frontend/public/images_programes/QHCC/Cơ hội nghề nghiệp và phát triển.png
+- frontend/public/images_programes/QHCC/Cơ hội nghề nghiệp và phát triển.webp
+- frontend/public/images_programes/QHCC/Tổng quan chương trình.jpg
+- frontend/public/images_programes/QHCC/chương trình phù hợp với ai.jpg
+- frontend/public/images_programes/Quan_ly_tai_nguyen_Moi_truong/Cơ hội nghề nghiệp và phát triển.png
+- frontend/public/images_programes/Quan_ly_tai_nguyen_Moi_truong/Cơ hội nghề nghiệp và phát triển.webp
+- frontend/public/images_programes/Quan_ly_tai_nguyen_Moi_truong/Tổng quan.jpg
+- frontend/public/images_programes/Quan_ly_tai_nguyen_Moi_truong/chương trìnhhphuf hợp với ai.jpg
+- frontend/public/images_programes/Quan_tri_Khach_san/Chương trìnhhphuf hợp với au.jpg
+- frontend/public/images_programes/Quan_tri_kinh_doanh/Tổng quan chương trình.jpg
+- frontend/public/images_programes/Quan_tri_kinh_doanh/chường trình phù hợp với ai.jpg
+- frontend/public/images_programes/Tai_chinh_ngan_hang/Hero.jpg
+- frontend/public/images_programes/Tai_chinh_ngan_hang/Tổng quan.jpg
+- frontend/public/images_programes/Tai_chinh_ngan_hang/chương trình phùuhopwj với ai.jpg
+- frontend/public/video/video-banner.webm
+- frontend/src/app/(public)/admissions/bo-sung-kien-thuc/page.tsx
+- frontend/src/app/(public)/news/all/page.tsx
+- frontend/src/app/(public)/news/page.tsx
+- frontend/src/app/api/knowledge-registrations/route.ts
+- frontend/src/app/banner-layout.css
+- frontend/src/data/programmes.ts
+- frontend/src/data/programmes/images.ts
+- frontend/src/features/admissions/AdmissionsReference.tsx
+- frontend/src/features/admissions/KnowledgeRegistration.module.css
+- frontend/src/features/admissions/KnowledgeRegistrationForm.tsx
+- frontend/src/features/admissions/knowledge-appendix.ts
+- frontend/src/features/admissions/knowledge-section.css
+- frontend/src/features/admissions/reference-engine.js
+- frontend/src/features/discover/components/DiscoverIntroduction.tsx
+- frontend/src/features/home/components/Hero.tsx
+- frontend/src/features/news/components/NewsLanding.module.css
+- frontend/src/features/news/components/NewsLanding.tsx
+- frontend/src/features/news/data.ts
+- frontend/src/features/programmes/components/ProgrammeCurriculumGroups.tsx
+- frontend/src/features/programmes/components/ProgrammeDetailPage.module.css
+- frontend/src/features/programmes/components/ProgrammeDetailPage.tsx
+- frontend/src/features/programmes/components/ProgrammesPage.tsx
+- frontend/src/features/research/components/ResearchLanding.tsx
+- frontend/src/features/resources/components/ResourcesLanding.tsx
+- frontend/src/features/student-success/components/StudentSuccessPage.tsx
+- frontend/src/proxy.ts
+- frontend/tests/programmes.test.mjs
+- shared/knowledge-registration.ts
+
+Kiểm tra bàn giao
+- Đã kiểm tra cục bộ: kiểm tra TypeScript frontend và CMS, build backend bằng TypeScript, build CMS và 22 bài kiểm thử chương trình.
+- Kiểm thử API hồ sơ bằng dữ liệu giả đã qua, gồm hồ sơ hợp lệ, dữ liệu nhập sai, sai mã bảo mật, thiếu tệp, học phần không hợp lệ, trùng CCCD và quyền xóa hồ sơ.
+- Đã xác nhận bản CMS localhost phục vụ nút “Xóa đã chọn” và API xóa từ chối yêu cầu chưa đăng nhập. Không xóa hồ sơ thật trong lúc kiểm tra.
+- Đã kiểm tra mục Bổ sung kiến thức và biểu mẫu trên localhost ở cả VI và EN. Kiểm tra tìm ngành bằng tên tiếng Anh, trạng thái không có kết quả và nội dung tra cứu của 19 chương trình. TypeScript frontend và 4 bài kiểm thử Tuyển sinh đã qua.
+- Sau deploy, đổi sang EN trên trang Tuyển sinh, mở mục Bổ sung kiến thức rồi kiểm tra phần tra cứu và nút dẫn đến biểu mẫu tiếng Anh. Kiểm tra thêm thông báo lỗi và xác nhận gửi của biểu mẫu tiếng Anh bằng hồ sơ thử.
+- Sau deploy, dùng hồ sơ thử để kiểm tra nộp thành công, lỗi sai mã và trùng CCCD, tải tệp, xuất Excel, xóa đúng hồ sơ và tải lại danh sách. Kiểm tra thêm Tin nổi bật, danh sách Tin tức VI/EN, video trang chủ và ảnh ngành trên desktop lẫn điện thoại.
+- Chưa xác nhận trên môi trường chính thức trong lần bàn giao này.
