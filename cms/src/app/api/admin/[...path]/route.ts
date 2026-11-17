@@ -4,7 +4,7 @@ import { cmsCookie } from "@/lib/cms-path";
 const NEWS_POST_BODY_LIMIT = 10 * 1024 * 1024;
 
 const allowed =
-  /^(?:login|logout|me|dashboard|upload-image|upload-resource|import-word|news(?:\/[a-zA-Z0-9_-]{1,100})?|resource-categories(?:\/[a-zA-Z0-9_-]{1,100})?|resources(?:\/[a-zA-Z0-9_-]{1,100}(?:\/versions)?)?|consultation-workspace(?:\/[a-zA-Z0-9_-]{1,100})?|consultations(?:\/[a-zA-Z0-9_-]{1,100})?)$/;
+  /^(?:login|logout|me|dashboard|knowledge-registrations(?:\/(?:file\/)?[a-zA-Z0-9_-]{1,100})?|upload-image|upload-resource|import-word|news(?:\/[a-zA-Z0-9_-]{1,100})?|resource-categories(?:\/[a-zA-Z0-9_-]{1,100})?|resources(?:\/[a-zA-Z0-9_-]{1,100}(?:\/versions)?)?|consultation-workspace(?:\/[a-zA-Z0-9_-]{1,100})?|consultations(?:\/[a-zA-Z0-9_-]{1,100})?)$/;
 async function forward(
   request: NextRequest,
   context: { params: Promise<{ path: string[] }> },
@@ -110,6 +110,17 @@ async function forward(
         body,
       } as RequestInit & { duplex: "half" },
     );
+    if (path.startsWith("knowledge-registrations/file/") && upstream.ok) {
+      return new NextResponse(upstream.body, {
+        headers: {
+          ...headers,
+          "Content-Type": upstream.headers.get("content-type") || "application/octet-stream",
+          "Content-Disposition": upstream.headers.get("content-disposition") || "attachment",
+          "X-Content-Type-Options": "nosniff",
+          "Content-Security-Policy": "sandbox",
+        },
+      });
+    }
     const response = new NextResponse(await upstream.text(), {
       status: upstream.status,
       headers: { ...headers, "Content-Type": "application/json" },

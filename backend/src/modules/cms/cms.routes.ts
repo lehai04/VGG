@@ -10,6 +10,7 @@ import { prisma } from "../../shared/database/prisma.js";
 import { fail, ok } from "../../shared/http/response.js";
 import { staffFor } from "../consultation-admin/access.js";
 import { newsInput, resourceInput, resourceCategoryInput } from "./schemas.js";
+import { knowledgeAdminRoutes } from "../knowledge/admin.js";
 import { dashboardData } from "./dashboard.js";
 import { uploadRoutes } from "./uploads.js";
 const ids = z.object({ id: z.string().min(1).max(100) });
@@ -137,6 +138,11 @@ export async function restoredCmsRoutes(app: FastifyInstance) {
     const input = newsInput.parse(request.body);
     const user = (await staffFor(request))!;
     const post = await prisma.$transaction(async (tx) => {
+      // Serialize feature changes; the unique partial index is a final DB safeguard.
+      await tx.$executeRaw`SELECT pg_advisory_xact_lock(20261116)`;
+      if (input.isFeatured) {
+        await tx.newsPost.updateMany({ where: { isFeatured: true }, data: { isFeatured: false } });
+      }
       const row = await tx.newsPost.create({
         data: {
           ...input,
@@ -173,6 +179,11 @@ export async function restoredCmsRoutes(app: FastifyInstance) {
     if (!before) return fail(reply, 404, "Không tìm thấy bài viết.", "NOT_FOUND");
     if (before.updatedAt.getTime() !== new Date(revision).getTime()) throw new Conflict();
     const post = await prisma.$transaction(async (tx) => {
+      // Serialize feature changes; the unique partial index is a final DB safeguard.
+      await tx.$executeRaw`SELECT pg_advisory_xact_lock(20261116)`;
+      if (input.isFeatured) {
+        await tx.newsPost.updateMany({ where: { isFeatured: true, id: { not: id } }, data: { isFeatured: false } });
+      }
       const update = await tx.newsPost.updateMany({
         where: { id, updatedAt: new Date(revision) },
         data: {
@@ -453,6 +464,7 @@ export async function restoredCmsRoutes(app: FastifyInstance) {
     return ok(reply, {});
   });
   await app.register(uploadRoutes);
+  await app.register(knowledgeAdminRoutes);
   await app.register(workspaceRoutes);
 }
 async function workspaceRoutes(app: FastifyInstance) {

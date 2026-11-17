@@ -7,6 +7,7 @@ import { Suspense, useEffect, useState, type ComponentProps } from "react";
 import {
   LayoutDashboard,
   CalendarDays,
+  ClipboardList,
   Newspaper,
   FolderOpen,
   LogOut,
@@ -17,6 +18,7 @@ import {
   RealtimeDashboard,
   type DashboardData,
 } from "@/components/dashboard/RealtimeDashboard";
+import { KnowledgeWorkspace } from "./KnowledgeWorkspace";
 import { ConsultationWorkspace } from "@/components/cms-next/ConsultationWorkspace";
 import { NewsList, type NewsPostItem } from "@/components/cms/NewsList";
 import { NewsEditor } from "@/components/cms/NewsEditor";
@@ -37,7 +39,9 @@ export function CmsWorkspace({
       ? "resources"
       : pathname.includes("/consultations")
         ? "consultations"
-        : "dashboard";
+        : pathname.includes("/knowledge-registrations")
+          ? "knowledge-registrations"
+          : "dashboard";
   const [open, setOpen] = useState(false);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -48,6 +52,7 @@ export function CmsWorkspace({
   const items = [
     { key: "dashboard", label: "Dashboard", icon: LayoutDashboard },
     { key: "consultations", label: "Lịch tư vấn", icon: CalendarDays },
+    ...(user.canManageContent ? [{ key: "knowledge-registrations", label: "Bổ sung kiến thức", icon: ClipboardList }] : []),
     { key: "news", label: "Tin tức", icon: Newspaper },
     { key: "resources", label: "Quản lý tài nguyên", icon: FolderOpen },
   ];
@@ -155,9 +160,11 @@ export function CmsWorkspace({
               <section>
                 <h1>Quản lý nội dung</h1>
                 <p>
-                  Tài khoản này không có quyền quản lý tin tức và tài nguyên.
+                  Tài khoản này chưa được cấp quyền cho mục này.
                 </p>
               </section>
+            ) : section === "knowledge-registrations" ? (
+              <KnowledgeWorkspace />
             ) : section === "news" && pathname.endsWith("/create") ? (
               <NewsEditor authorName={user.fullName} />
             ) : (

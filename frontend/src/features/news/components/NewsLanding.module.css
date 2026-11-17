@@ -162,10 +162,15 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-.results h2 {
+.results h1 {
   margin: 0;
   font-size: clamp(2.1rem, 3.8vw, 3.8rem);
   letter-spacing: -0.045em;
+}
+:global(:root body #main-content) .results h1 {
+  font-size: clamp(28px, 3vw, 42px) !important;
+  line-height: 1.3 !important;
+  text-transform: none !important;
 }
 .results > header > span {
   color: #737783;
@@ -350,3 +355,33 @@
     display: none;
   }
 }
+
+/* Editorial news landing: featured story and compact latest-news rail. */
+.page { padding-top: 140px; background: #f3f5f8; }
+.spotlight { width: min(calc(100% - 2 * var(--page-gutter)), 1546px); margin: 0 auto; padding: 36px 0 48px; }
+.eyebrow { color: #e31e36; text-transform: uppercase; font-weight: 600; margin: 0 0 10px; }
+.spotlight > h1 { margin: 0 0 36px; }
+.spotlightGrid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 24px; }
+.featureCard { position: relative; display: flex; align-items: flex-end; min-height: 600px; overflow: hidden; border-radius: 24px; color: white; text-decoration: none; background: #202550; }
+.featureCard > img { object-fit: cover; }
+.featureCard::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 20%, rgb(15 18 38 / 65%) 58%, #171a2e 100%); }
+.featureCopy { position: relative; z-index: 1; padding: 32px; width: 100%; }
+.featureCopy > span { display: inline-block; background: #e31e36; border-radius: 8px; padding: 8px 14px; font-weight: 700; margin-bottom: 16px; }
+:global(:root body #main-content) .spotlight .featureCopy h2 { color: white !important; font-size: clamp(26px, 2.5vw, 38px) !important; line-height: 1.35 !important; margin-bottom: 14px; }
+.featureCopy > p { font-size: 18px; line-height: 1.6; margin: 0 0 18px; }
+.featureCopy > b, .allNews { display: flex; align-items: center; gap: 10px; }
+.latest { min-width: 0; }
+:global(:root body #main-content) .spotlight .latest > h2 { font-size: 30px !important; margin: 0 0 20px; }
+.latestCard { display: grid; grid-template-columns: minmax(90px, .8fr) minmax(0, 1fr); gap: 18px; margin-bottom: 14px; padding: 14px; border: 1px solid #dce1eb; border-radius: 24px; background: white; color: #202550; text-decoration: none; }
+.latestCard figure { position: relative; margin: 0; min-height: 132px; overflow: hidden; border-radius: 16px; }
+.latestCard img { object-fit: cover; }
+.page .latestCard h3 { font-size: 20px !important; line-height: 1.4 !important; margin: 0 0 12px; }
+.latestCard p { display: flex; align-items: start; gap: 6px; color: #737d90; font-size: 14px; margin: 0; }
+.latestCard p svg { flex-shrink: 0; }
+.allNews { justify-content: center; margin-top: 20px; color: #e31e36; font-weight: 700; font-size: 20px; text-decoration: none; }
+.controls { scroll-margin-top: 140px; }
+.featureCard:focus-visible, .latestCard:focus-visible, .allNews:focus-visible { outline: 3px solid #e31e36; outline-offset: 4px; }
+@media(max-width: 1000px) { .spotlightGrid { grid-template-columns: minmax(0, 1fr); } .featureCard { min-height: 520px; } }
+@media(max-width: 600px) { .spotlight { padding-top: 22px; } .featureCard { min-height: 460px; } .featureCopy { padding: 22px; } .latestCard { gap: 12px; padding: 10px; border-radius: 16px; } .page .latestCard h3 { font-size: 16px !important; } .latestCard figure { min-height: 110px; } }
+
+:global(:root body #main-content) .spotlight > h1 { text-transform: none !important; font-size: clamp(28px, 3.2vw, 46px) !important; }

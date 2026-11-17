@@ -88,11 +88,11 @@ export async function DiscoverIntroduction() {
         <div data-banner-copy data-banner-inset className={`${styles.container} ${styles.heroCopy}`}>
           <div data-banner-label><SectionLabel number="">ABOUT THE INSTITUTE OF POSTGRADUATE EDUCATION</SectionLabel></div>
           <h1 data-banner-title id="discover-title">
-            {content.hero.title.map((line) => (
-              <span key={line}>{t(line)}</span>
+            {content.hero.title.map((line, index) => (
+              <span key={line}>{index === content.hero.title.length - 1 ? t(line).replace(/[.。…]+\s*$/, "") : t(line)}</span>
             ))}
           </h1>
-          <div data-banner-description className={styles.english}>{content.hero.english}</div>
+          <div data-banner-description data-banner-english-subtitle className={styles.english}>{content.hero.english}</div>
           <p data-banner-description className={styles.heroMessage}>{t(content.hero.message)}</p>
           <p data-banner-description className={styles.heroIntro}>{t(content.hero.intro)}</p>
           <Actions actions={actions} />

@@ -11,6 +11,7 @@ import { DeleteConfirmModal } from "./DeleteConfirmModal";
 import { CenterToast } from "../common/CenterToast";
 
 export type NewsPostItem = {
+  isFeatured?: boolean;
   id: string;
   slug: string;
   locale: string;

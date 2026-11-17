@@ -642,8 +642,8 @@ test("English and PR preserve track-specific credits, admission and source omiss
   );
 });
 
-test("Every programme has relevant local audience imagery and valid source attribution", () => {
-  const { programmeImageSelections, programmeImageLibrary } = loadData(
+test("Every programme has local imagery with appropriate source attribution", () => {
+  const { isProgrammePhoto, programmeImageSelections, programmeImageLibrary } = loadData(
     path.join(frontend, "src/data/programmes/images.ts"),
   );
   assert.equal(Object.keys(programmeImageSelections).length, programmes.length);
@@ -652,15 +652,30 @@ test("Every programme has relevant local audience imagery and valid source attri
     const audience = p.pageContent.section03;
     if (audience.audience.length) {
       for (const item of audience.audience) {
-        assert.ok(item.image.startsWith("/images/programme-library/"), p.id);
+        assert.ok(existsSync(path.join(frontend, "public", decodeURIComponent(item.image))), p.id);
         assert.ok(item.alt.length > 10, p.id);
-        assert.match(item.imageSource, /^https:\/\/unsplash.com\/photos\//);
+        if (isProgrammePhoto(item.image)) {
+          assert.equal(item.imageSource, undefined, p.id);
+        } else {
+          assert.ok(item.image.startsWith("/images/programme-library/"), p.id);
+          assert.match(item.imageSource, /^https:\/\/unsplash.com\/photos\//);
+        }
       }
     } else {
       assert.ok(audience.illustration, p.id);
       assert.ok(existsSync(path.join(frontend, "public", audience.illustration.src)), p.id);
     }
-    assert.ok(p.pageContent.section04.careerImage.startsWith("/images/programme-library/"), p.id);
+    const { hero, section01, section04 } = p.pageContent;
+    for (const src of [hero.heroImage, section01.overviewImage, section04.careerImage]) {
+      if (isProgrammePhoto(src)) {
+        assert.ok(existsSync(path.join(frontend, "public", decodeURIComponent(src))), src);
+      }
+    }
+    const hasProgrammePhotos = ["cong-nghe-thong-tin", "ke-toan"].includes(p.id);
+    assert.equal(isProgrammePhoto(hero.heroImage), hasProgrammePhotos, p.id);
+    assert.equal(isProgrammePhoto(section01.overviewImage), p.id === "cong-nghe-thong-tin", p.id);
+    assert.equal(isProgrammePhoto(section04.careerImage), hasProgrammePhotos, p.id);
+    assert.ok(audience.audience.every((item) => isProgrammePhoto(item.image) === hasProgrammePhotos), p.id);
   }
   for (const image of Object.values(programmeImageLibrary)) {
     assert.ok(existsSync(path.join(frontend, "public", image.src)), image.src);

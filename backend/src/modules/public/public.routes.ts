@@ -66,10 +66,11 @@ export async function publicRoutes(app: FastifyInstance) {
     }
   });
   app.get("/api/public/news", async (request, reply) => {
-    const query = z.object({ category: newsCategory.optional(), q: z.string().trim().max(100).optional(), locale: z.enum(["vi", "en"]).default("vi"), limit: z.coerce.number().int().min(1).max(100).default(30), page: z.coerce.number().int().min(1).default(1) }).parse(request.query);
+    const query = z.object({ featured: z.enum(["true"]).optional(), category: newsCategory.optional(), q: z.string().trim().max(100).optional(), locale: z.enum(["vi", "en"]).default("vi"), limit: z.coerce.number().int().min(1).max(100).default(30), page: z.coerce.number().int().min(1).default(1) }).parse(request.query);
     const search = query.q ? { contains: query.q, mode: "insensitive" as const } : undefined;
     const where = {
       status: "PUBLISHED" as const,
+      ...(query.featured ? { isFeatured: true } : {}),
       locale: query.locale === "en" ? { in: ["vi", "en"] } : "vi",
       ...(query.category ? { category: query.category } : {}),
       ...(search ? { OR: [

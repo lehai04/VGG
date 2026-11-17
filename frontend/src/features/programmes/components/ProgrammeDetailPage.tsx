@@ -39,6 +39,7 @@ import {
 } from "@/data/curricula";
 import { type Programme, getProgrammeTuition } from "@/data/programmes";
 import styles from "./ProgrammeDetailPage.module.css";
+import { isProgrammePhoto } from "@/data/programmes/images";
 import {ContentPageSections,ContentSlot} from '@/shared/components/ContentPageSections';
 import type {ContentComposition} from '../../../../../backend/src/modules/content/visual-model';
 import { ProgrammeCurriculumGroups } from "./ProgrammeCurriculumGroups";
@@ -262,6 +263,12 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
 
   /* ── 07. FAQs ────────────────────────────────────────────── */
   const faqsList: readonly FaqQuestion[] = pageContent.faq.faqs.filter((faq) => faq.hidden !== "true");
+  const heroImage =
+    pageContent.hero.heroImage || programme.bannerImage || programmeSharedContent.hero.fallbackImage;
+  const careerImage =
+    pageContent.section04.careerImage || programme.bannerImage || heroImage;
+  const fullHeroPhoto = isProgrammePhoto(heroImage);
+  const fullCareerPhoto = isProgrammePhoto(careerImage);
 
   return (
     <main className={`subpage ${styles.page}`} data-programme={programme.id} id="main-content">
@@ -271,34 +278,27 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           HERO BANNER
           ──────────────────────────────────────────────────────── */}
       <ContentPageSections pageId={`programme:${programme.id}`} layout={layout}>
-      <section data-site-banner data-content-slot="hero" data-content-path="pageContent.hero.heroImage" className={styles.hero} aria-labelledby="programme-title">
-        <Image
-          className={styles.heroBackground}
-          src={
-            pageContent.hero.heroImage ||
-            programme.bannerImage ||
-            programmeSharedContent.hero.fallbackImage
-          }
-          alt={pageContent.hero.imageAlt ?? `Ngành ${programme.title} - Đại học Văn Lang`}
-          fill
-          priority
-          sizes="100vw"
-        />
-        <div className={styles.heroOverlay} aria-hidden="true" />
+      <section data-site-banner data-full-photo={fullHeroPhoto || undefined} data-content-slot="hero" data-content-path="pageContent.hero.heroImage" className={styles.hero} aria-labelledby="programme-title">
+        {!fullHeroPhoto && (
+          <>
+            <Image className={styles.heroBackground} src={heroImage} alt={pageContent.hero.imageAlt ?? `Ngành ${programme.title} - Đại học Văn Lang`} fill priority sizes="100vw" />
+            <div className={styles.heroOverlay} aria-hidden="true" />
+          </>
+        )}
 
         <div className={styles.heroInner}>
           {/* Subtle slogan watermark on the right */}
-          <div className={styles.heroSloganWatermark} aria-hidden="true">
+          {!fullHeroPhoto && <div className={styles.heroSloganWatermark} aria-hidden="true">
             {programmeSharedContent.hero.sloganLines.map((line) => (
               <span key={line}>{t(line)}</span>
             ))}
             <span>{pageContent.hero.heroSlogan ?? programmeSharedContent.hero.fallbackSlogan}</span>
-          </div>
+          </div>}
 
           <div data-banner-copy data-banner-inset className={styles.heroContent}>
             <span data-banner-label className={styles.heroDegree}>{programme.englishTitle}</span>
             <h1 data-banner-title id="programme-title" className={styles.heroTitle} data-content-path="pageContent.hero.heroTitle">
-              {t(pageContent.hero.heroTitle ?? programme.title).split("\n").map((line, index) => (
+              {t(pageContent.hero.heroTitle ?? programme.title).replace(/[.。…]+\s*$/, "").split("\n").map((line, index) => (
                 <React.Fragment key={line}>
                   {index > 0 && " "}
                   {line}
@@ -317,6 +317,17 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
             </div>
           </div>
         </div>
+        {fullHeroPhoto && (
+          <Image
+            className={styles.heroFullPhoto}
+            src={heroImage}
+            alt={t(pageContent.hero.imageAlt ?? programme.title)}
+            width={2048}
+            height={1365}
+            priority
+            sizes="(max-width: 767px) 92vw, 46vw"
+          />
+        )}
       </section>
 
       {/* ────────────────────────────────────────────────────────
@@ -437,7 +448,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
               pageContent.section01.tags.length > 0) && (
               <div className={styles.overviewMedia}>
                 {pageContent.section01.overviewImage !== null && (
-                  <div className={styles.overviewImageWrap}>
+                  <div className={styles.overviewImageWrap} data-full-photo={isProgrammePhoto(pageContent.section01.overviewImage) || undefined}>
                     <Image
                       data-content-path="pageContent.section01.overviewImage"
                       src={
@@ -452,7 +463,6 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 )}
                 {pageContent.section01.tags.length > 0 && (
                   <div className={styles.overviewRibbon}>
-                    <h3 className={styles.ribbonTitle}>{t(pageContent.section01.ribbonTitle)}</h3>
                     <div className={styles.ribbonItems}>
                       {overviewTags.map((tag) => (
                         <div className={styles.ribbonItem} key={tag}>{t(tag)}</div>
@@ -566,10 +576,10 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
             {audienceList.map((item, idx) => (
               <article key={idx} className={styles.audienceCard}>
                 {item.image && (
-                  <div className={styles.audienceImageWrap}>
+                  <div className={styles.audienceImageWrap} data-full-photo={isProgrammePhoto(item.image) || undefined}>
                     <Image
                       src={item.image}
-                      alt={item.alt ?? item.title}
+                      alt={t(item.alt ?? item.title)}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className={styles.audiencePhoto}
@@ -592,20 +602,10 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           04 / CƠ HỘI NGHỀ NGHIỆP VÀ PHÁT TRIỂN
           ──────────────────────────────────────────────────────── */}
       {(careersList.length > 0) && (
-      <section id="nghe-nghiep" data-content-path="pageContent.section04.careerImage" className={styles.sectionCareers} aria-labelledby="sec-04-title">
-        <Image
-          className={styles.careersBackground}
-          src={
-            pageContent.section04.careerImage ||
-            programme.bannerImage ||
-            pageContent.hero.heroImage ||
-            programmeSharedContent.hero.fallbackImage
-          }
-          alt=""
-          fill
-          sizes="100vw"
-          aria-hidden="true"
-        />
+      <section id="nghe-nghiep" data-full-photo={fullCareerPhoto || undefined} data-content-path="pageContent.section04.careerImage" className={styles.sectionCareers} aria-labelledby="sec-04-title">
+        {!fullCareerPhoto && (
+          <Image className={styles.careersBackground} src={careerImage} alt="" fill sizes="100vw" aria-hidden="true" />
+        )}
         <div className={styles.container}>
           <SectionHeader
             index={pageContent.section04.sectionNumber}
@@ -631,6 +631,16 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 </div>
               ))}
             </div>
+            {fullCareerPhoto && (
+              <Image
+                className={styles.careersFullPhoto}
+                src={careerImage}
+                alt=""
+                width={2048}
+                height={1365}
+                sizes="(max-width: 767px) 92vw, 38vw"
+              />
+            )}
           </div>
           {pageContent.section04.note && <p>{t(pageContent.section04.note)}</p>}
         </div>

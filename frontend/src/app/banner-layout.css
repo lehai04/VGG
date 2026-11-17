@@ -1,7 +1,7 @@
 /* Public banners share one geometry and typography scale, including content previews. */
 :root body [data-site-banner] {
   --banner-gutter: clamp(20px, 4vw, 72px);
-  --banner-heading: clamp(44px, 3.5vw, 64px);
+  --banner-heading: clamp(32px, 2.6vw, 48px);
   position: relative;
   display: block !important;
   box-sizing: border-box;
@@ -86,11 +86,11 @@
   margin: 0;
 }
 @media(max-width:1023px) {
-  :root body [data-site-banner] { --banner-heading: clamp(32px, 4.6vw, 44px); }
+  :root body [data-site-banner] { --banner-heading: clamp(24px, 3.4vw, 32px); }
 }
 @media(max-width:767px) {
   :root body [data-site-banner] {
-    --banner-heading: clamp(28px, 7.5vw, 38px);
+    --banner-heading: clamp(22px, 5.6vw, 28px);
     min-height: min(620px, calc(100svh - 108px)) !important;
     padding-block: 48px 48px !important;
   }
@@ -142,3 +142,7 @@
 ) {
   display: none !important;
 }
+
+/* Hide duplicate English banner subtitles in Vietnamese. */
+:root:lang(vi) body [data-banner-label],
+:root:lang(vi) body [data-banner-english-subtitle] { display: none !important; }

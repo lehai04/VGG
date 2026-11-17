@@ -9,6 +9,7 @@ import { newsCategories, NewsPostItem } from "./NewsList";
 import { CenterToast } from "../common/CenterToast";
 
 const emptyForm = {
+  isFeatured: false,
   id: "",
   locale: "vi",
   enTitle: "",
@@ -66,6 +67,7 @@ export function NewsEditor({
     if (initialPost) {
       return {
         id: initialPost.id,
+        isFeatured: initialPost.isFeatured ?? false,
         locale: initialPost.locale ?? "vi",
         enTitle: initialPost.enTitle ?? "",
         enExcerpt: initialPost.enExcerpt ?? "",
@@ -95,6 +97,7 @@ export function NewsEditor({
     return { ...emptyForm, authorName };
   });
 
+  const [confirmFeatured, setConfirmFeatured] = useState(false);
   const [activeTab, setActiveTab] = useState<"vi" | "en">("vi");
   const isEnglish = activeTab === "en" && form.locale === "vi";
   const [revision, setRevision] = useState(initialPost?.updatedAt ?? "");
@@ -133,6 +136,7 @@ export function NewsEditor({
           setRevision(post.updatedAt);
           setForm({
             id: post.id,
+            isFeatured: post.isFeatured ?? false,
             locale: post.locale ?? "vi",
             enTitle: post.enTitle ?? "",
             enExcerpt: post.enExcerpt ?? "",
@@ -354,6 +358,7 @@ export function NewsEditor({
       customJsonLd,
       publishedAt: form.publishedAt,
       status: nextStatus,
+      isFeatured: form.isFeatured,
     };
 
     try {
@@ -862,6 +867,14 @@ export function NewsEditor({
         </div>
 
         {/* FOOTER NÚT HÀNH ĐỘNG */}
+        <section style={{ padding: "20px", border: "1px solid #e3e5ed", borderRadius: 12, marginBlock: 20, background: "#f8f9fc" }}>
+          <button type="button" role="switch" aria-checked={form.isFeatured} disabled={loading}
+            onClick={() => form.isFeatured ? setForm(current => ({ ...current, isFeatured: false })) : setConfirmFeatured(true)}
+            style={{ border: 0, borderRadius: 24, padding: "10px 20px", background: form.isFeatured ? "#df1936" : "#e0e4ee", color: form.isFeatured ? "white" : "#202550", cursor: "pointer", fontWeight: 700 }}>
+            Tin nổi bật: {form.isFeatured ? "Bật" : "Tắt"}
+          </button>
+          <p>Chỉ có một bài nổi bật. Thay đổi có hiệu lực khi bạn lưu hoặc đăng bài.</p>
+        </section>
         <footer
           style={{
             marginTop: "32px",
@@ -913,6 +926,10 @@ export function NewsEditor({
         </footer>
       </form>
 
+      <CenterToast open={confirmFeatured} type="confirm" title="Bật tin nổi bật?"
+        message="Bạn có chắc chắn muốn chọn bài này làm tin nổi bật? Khi lưu bài, tin nổi bật cũ sẽ tự chuyển thành bài bình thường."
+        confirmLabel="Bật tin nổi bật" onClose={() => setConfirmFeatured(false)}
+        onConfirm={() => { setForm(current => ({ ...current, isFeatured: true })); setConfirmFeatured(false); }} />
       <CenterToast
         open={Boolean(pendingPublish)}
         type="confirm"

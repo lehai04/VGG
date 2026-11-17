@@ -14,7 +14,7 @@ export async function ResourcesLanding({ resources, categories, resourceTypes }:
     <nav className={styles.breadcrumb} aria-label={t("Đường dẫn")}><Link href="/">{t("Trang chủ")}</Link><span>/</span><b>{t("Tài nguyên")}</b></nav>
     <header data-site-banner className={styles.hero}>
       <Image src="/images/pages/resources/content/banner.jpg" alt="Tài nguyên Viện Sau đại học" fill priority sizes="100vw" />
-      <div className={styles.heroShade}/><div data-banner-copy className={styles.heroCopy}><p data-banner-label>RESOURCES</p><h1 data-banner-title>{t("TÀI NGUYÊN")}</h1><span data-banner-description>{t("Tra cứu văn bản, quy định, biểu mẫu và các tài liệu chính thức phục vụ học tập, nghiên cứu và công tác tại Viện Sau đại học.")}</span></div>
+      <div className={styles.heroShade}/><div data-banner-copy className={styles.heroCopy}><p data-banner-label>RESOURCES</p><h1 data-banner-title>{t("TÀI NGUYÊN").replace(/[.。…]+\s*$/, "")}</h1><span data-banner-description>{t("Tra cứu văn bản, quy định, biểu mẫu và các tài liệu chính thức phục vụ học tập, nghiên cứu và công tác tại Viện Sau đại học.")}</span></div>
     </header>
     <ResourcesExplorer resources={resources} categories={categories} resourceTypes={resourceTypes}/><SiteFooter/>
   </main>;

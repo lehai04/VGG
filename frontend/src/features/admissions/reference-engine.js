@@ -2,48 +2,7 @@
 // Data and UI logic are bundled as a local module; no source scripts are evaluated.
 import { sendAdmissionConsultation } from "./consultation-request";
 import { admissionProgrammeSlugs } from "./programme-links";
-/** @param {HTMLElement} root @param {typeof import('./editorial-content.json') | null} [editorial] */
-export function initializeAdmissions(root, editorial = null, catalogue = []) {
-  const originalTitle = globalThis.document.title;
-  const controller = new AbortController();
-  const timers = new Set();
-  const frames = new Set();
-  const requestAnimationFrame = (callback) => {
-    const id = globalThis.requestAnimationFrame(() => {
-      frames.delete(id);
-      callback();
-    });
-    frames.add(id);
-    return id;
-  };
-  const setTimeout = (fn, ms) => {
-    const id = globalThis.setTimeout(() => {
-      timers.delete(id);
-      fn();
-    }, ms);
-    timers.add(id);
-    return id;
-  };
-  const listen = (target, event, callback, options = {}) =>
-    target.addEventListener(event, callback, { ...options, signal: controller.signal });
-  const document = {
-    querySelector: (selector) => root.querySelector(selector),
-    querySelectorAll: (selector) => root.querySelectorAll(selector),
-    getElementById: (id) => Array.from(root.querySelectorAll("[id]")).find((e) => e.id === id),
-    createElement: (tag) => globalThis.document.createElement(tag),
-    body: root,
-    get activeElement() {
-      return globalThis.document.activeElement;
-    },
-    get title() {
-      return globalThis.document.title;
-    },
-    set title(value) {
-      globalThis.document.title = value;
-    },
-  };
-
-  const DATA = {
+const DATA = {
     programs: [
       {
         id: "environment",
@@ -2353,7 +2312,64 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
         ],
       },
     ],
+};
+
+// Order and programme codes printed in Appendix 1 of the 2027 admission notice.
+const appendixProgrammeIds = [
+  "mba", "commerce", "finance", "accounting", "biotech", "architecture",
+  "environment", "resources", "construction", "law", "english", "hospitality",
+  "arts", "art-theory", "pr", "logistics", "automotive", "it", "marketing",
+];
+
+export function getKnowledgeAppendixProgrammes() {
+  return appendixProgrammeIds.map((id) => {
+    const programme = DATA.programs.find((item) => item.id === id);
+    const code = id === "resources" ? "50101" : id === "logistics" ? "340123" : programme.code.slice(1);
+    return { id, name: programme.name, code, groups: programme.bsk_groups };
+  });
+}
+
+/** @param {HTMLElement} root @param {typeof import('./editorial-content.json') | null} [editorial] */
+export function initializeAdmissions(root, editorial = null, catalogue = []) {
+  const originalTitle = globalThis.document.title;
+  const controller = new AbortController();
+  const timers = new Set();
+  const frames = new Set();
+  const requestAnimationFrame = (callback) => {
+    const id = globalThis.requestAnimationFrame(() => {
+      frames.delete(id);
+      callback();
+    });
+    frames.add(id);
+    return id;
   };
+  const setTimeout = (fn, ms) => {
+    const id = globalThis.setTimeout(() => {
+      timers.delete(id);
+      fn();
+    }, ms);
+    timers.add(id);
+    return id;
+  };
+  const listen = (target, event, callback, options = {}) =>
+    target.addEventListener(event, callback, { ...options, signal: controller.signal });
+  const document = {
+    querySelector: (selector) => root.querySelector(selector),
+    querySelectorAll: (selector) => root.querySelectorAll(selector),
+    getElementById: (id) => Array.from(root.querySelectorAll("[id]")).find((e) => e.id === id),
+    createElement: (tag) => globalThis.document.createElement(tag),
+    body: root,
+    get activeElement() {
+      return globalThis.document.activeElement;
+    },
+    get title() {
+      return globalThis.document.title;
+    },
+    set title(value) {
+      globalThis.document.title = value;
+    },
+  };
+
   const $ = (s) => document.querySelector(s),
     $$ = (s) => Array.from(document.querySelectorAll(s));
   const initialEditorialCopy = {
@@ -2980,8 +2996,8 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
       "Chương trình Thạc sĩ",
     );
   }
-  function showBsk(id) {
-    if (state.degree !== "master") return;
+  function showBsk(id, fromMasterRegistration) {
+    if (state.degree !== "master" && !fromMasterRegistration) return;
     const chosen = programs.some((p) => p.id === id) ? id : $("#fee-program").value || "mba";
     openDialog(
       "Tra cứu ngành phù hợp & bổ sung kiến thức",
@@ -3260,7 +3276,7 @@ export function initializeAdmissions(root, editorial = null, catalogue = []) {
       return;
     }
     if (b.hasAttribute("data-bsk")) {
-      showBsk(b.dataset.bsk);
+      showBsk(b.dataset.bsk, b.hasAttribute("data-bsk-master"));
       return;
     }
     if (b.hasAttribute("data-language")) {

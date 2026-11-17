@@ -38,6 +38,7 @@ enum ResourceDocumentType {
 }
 
 model NewsPost {
+  isFeatured Boolean @default(false) @map("is_featured")
   id          String        @id @default(cuid())
   slug        String        @unique @db.VarChar(190)
   locale      String        @default("vi") @db.VarChar(5)
@@ -217,4 +218,33 @@ model CmsRevision {
   createdAt DateTime @default(now()) @map("created_at")
   @@index([entityType, entityId, createdAt])
   @@map("cms_revisions")
+}
+
+model KnowledgeRegistration {
+  id              String                @id @default(uuid())
+  citizenId       String                @unique @map("citizen_id")
+  fullName        String                @map("full_name")
+  email           String
+  phone           String
+  graduateMajor   String                @map("graduate_major")
+  masterProgramme String                @map("master_programme")
+  details         Json
+  createdAt       DateTime              @default(now()) @map("created_at")
+  attachments     KnowledgeAttachment[]
+
+  @@index([createdAt])
+  @@map("knowledge_registrations")
+}
+
+model KnowledgeAttachment {
+  id             String                @id @default(uuid())
+  registrationId String                @map("registration_id")
+  registration   KnowledgeRegistration @relation(fields: [registrationId], references: [id], onDelete: Cascade)
+  field          String
+  filename       String
+  mediaType      String                @map("media_type")
+  bytes          Bytes
+
+  @@unique([registrationId, field])
+  @@map("knowledge_attachments")
 }

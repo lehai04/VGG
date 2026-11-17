@@ -9,6 +9,7 @@ export const newsCategories = [
   { value: "INTERNATIONAL_COOPERATION", label: "Hợp tác quốc tế" },
 ] as const;
 export type NewsPost = {
+  isFeatured?: boolean;
   id: string;
   slug: string;
   locale?: Locale;
@@ -38,7 +39,7 @@ export function categoryLabel(category: string) {
   return newsCategories.find((item) => item.value === category)?.label ?? "Tin tức";
 }
 export async function getNewsPosts(
-  options: { category?: string; limit?: number; q?: string; locale?: Locale } = {},
+  options: { featured?: boolean; category?: string; limit?: number; q?: string; locale?: Locale } = {},
 ) {
   const { posts } = await getPaginatedNewsPosts({ ...options, page: 1, limit: options.limit ?? 30 });
   return posts;
@@ -46,13 +47,14 @@ export async function getNewsPosts(
 
 /** Published content posts come first; demo cards remain available after them. */
 export async function getPaginatedNewsPosts(options: {
+  featured?: boolean;
   category?: string;
   limit: number;
   page: number;
   q?: string;
   locale?: Locale;
 }) {
-  const demos = process.env.VGG_DEMO_NEWS === "true" ? getDemoNewsPosts(options) : [];
+  const demos = !options.featured && process.env.VGG_DEMO_NEWS === "true" ? getDemoNewsPosts(options) : [];
   const backend = process.env.BACKEND_INTERNAL_URL;
   let posts: NewsPost[] = [];
   let backendTotal = 0;
@@ -63,6 +65,7 @@ export async function getPaginatedNewsPosts(options: {
         limit: String(options.limit),
         page: String(options.page),
       });
+      if (options.featured) params.set("featured", "true");
       if (options.category) params.set("category", options.category);
       if (options.q) params.set("q", options.q);
       const fetchListing = async () => {

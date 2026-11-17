@@ -19,11 +19,7 @@ export function ProgrammeCurriculumGroups({ groups }: { groups: readonly Curricu
               <ChevronRight size={18} className={styles.moduleChevron} aria-hidden="true" />
               <span>
                 {t(group.title, group.englishTitle ?? group.title)}
-                {locale === "vi" && group.englishTitle && (
-                  <span className={styles.courseEnglish} lang="en">
-                    {group.englishTitle}
-                  </span>
-                )}
+
               </span>
             </span>
             <span className={styles.moduleCredits}>

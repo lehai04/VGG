@@ -17,21 +17,20 @@ export async function Hero() {
   return (
     <section data-site-banner className="hero" id="top">
       <div className="heroMedia" aria-hidden="true">
-        <Image
-          fill
-          preload
-          sizes="100vw"
-          quality={75}
-          className="heroBackground"
-          src={banner?.kind === "image" ? banner.src : (banner?.poster || (hero.posterImage === "/images/pages/home/banner/banner-01.jpg" ? "/images/pages/home/banner/banner-01.webp" : hero.posterImage))}
-          alt={banner?.alt || ""}
-        />
+        {banner?.kind === "image" ? (
+          <Image fill preload sizes="100vw" quality={75} className="heroBackground" src={banner.src} alt={banner.alt || ""} />
+        ) : (
+          <video className="heroBackground" autoPlay muted loop playsInline preload="metadata"
+            poster={banner?.poster || hero.posterImage}>
+            <source src={banner?.src || "/video/video-banner.webm"} />
+          </video>
+        )}
       </div>
       <div className="heroOverlay" aria-hidden="true" />
 
       <div data-banner-copy data-banner-inset>
       <h1 data-banner-title>
-        {t(hero.title)} <em>{t(hero.emphasis)}</em>
+        {t(hero.title)} <em>{t(hero.emphasis).replace(/[.。…]+\s*$/, "")}</em>
       </h1>
       <p data-banner-description>{t(intro)}</p>
 

@@ -40,13 +40,13 @@ export async function ProgrammesLanding() {
         >
           <Link href={copy.programmes_hero.href}>{t(copy.programmes_hero.trang_chu)}</Link>
           <span>{t(copy.programmes_hero.value_1)}</span>
-          <strong>{t(copy.programmes_hero.chuong_trinh_dao_tao)}</strong>
+          <strong>{t(copy.programmes_hero.chuong_trinh_dao_tao).replace(/[.。…]+\s*$/, "")}</strong>
         </nav>
 
         <div data-banner-copy className={`${styles["programmes-hero-copy"]}`}>
           <p data-banner-label>PROGRAMMES</p>
           <h1 data-banner-title id="programmes-title">
-            <span>{t(copy.programmes_hero.chuong_trinh_dao_tao)}</span>
+            <span>{t(copy.programmes_hero.chuong_trinh_dao_tao).replace(/[.。…]+\s*$/, "")}</span>
           </h1>
           <p data-banner-description className={`${styles["programmes-hero-lead"]}`}>
             {t(copy.programmes_hero.kien_tao_lo_trinh_hoc_thuat_phu)}

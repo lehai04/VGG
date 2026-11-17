@@ -142,6 +142,37 @@ export const programmeImageSelections = {
   "my-thuat-ung-dung": ["art", "gallery", "architecture"],
   "ly-luan-lich-su-my-thuat": ["gallery", "art", "classroom"],
 } as const;
+
+const programmePhotos: Record<string, {
+  folder: string;
+  overview?: { filename: string; alt: string };
+  audience: Record<string, string>;
+}> = {
+  "cong-nghe-thong-tin": {
+    folder: "Cong-nghe_thong_tin",
+    overview: { filename: "progarmtrack.jpg", alt: "Minh họa định hướng đào tạo Công nghệ Thông tin" },
+    audience: {
+      "Người có nền tảng CNTT": "Người có nền tảng CNTT.jpg",
+      "Người tốt nghiệp ngành gần": "Người tốt nghiệp ngành gần.jpg",
+      "Người hướng đến nghiên cứu": "Người hướng đến nghiên cứu.jpg",
+    },
+  },
+  "ke-toan": {
+    folder: "Ke_toan",
+    audience: {
+      "Người đang làm kế toán, kiểm toán": "People working in accounting and auditing.jpg",
+      "Người làm tài chính, kiểm soát và quản trị": "Finance, control and management professionals.jpg",
+      "Người muốn phát triển chuyên môn sâu": "People who want to develop deep expertise.jpg",
+    },
+  },
+};
+
+const programmePhotoRoot = "/images_programes/";
+
+export function isProgrammePhoto(src?: string | null): boolean {
+  return src?.startsWith(programmePhotoRoot) ?? false;
+}
+
 export function withProgrammeImages(programme: Programme): Programme {
   const selected = programmeImageSelections[programme.id as keyof typeof programmeImageSelections];
   const page = programme.pageContent;
@@ -149,6 +180,9 @@ export function withProgrammeImages(programme: Programme): Programme {
   const pictures = selected.map((key) => programmeImageLibrary[key]);
   const primary = pictures[0];
   const overview = pictures[1];
+  const photos = programmePhotos[programme.id];
+  const photoPath = (filename: string) =>
+    `${programmePhotoRoot}${photos.folder}/${encodeURIComponent(filename)}`;
   const genericHero =
     !page.hero.heroImage ||
     page.hero.heroImage.includes("photo-1564035105550") ||
@@ -163,7 +197,13 @@ export function withProgrammeImages(programme: Programme): Programme {
       ...page,
       hero: {
         ...page.hero,
-        ...(genericHero
+        ...(photos
+          ? {
+              heroImage: photoPath("hero.jpg"),
+              imageAlt: `Ảnh giới thiệu ngành ${programme.title}`,
+              imageCredit: undefined,
+            }
+          : genericHero
           ? {
               heroImage: primary.src,
               imageAlt: primary.alt,
@@ -173,7 +213,13 @@ export function withProgrammeImages(programme: Programme): Programme {
       },
       section01: {
         ...page.section01,
-        ...(genericOverview
+        ...(photos?.overview
+          ? {
+              overviewImage: photoPath(photos.overview.filename),
+              imageAlt: photos.overview.alt,
+              imageCredit: undefined,
+            }
+          : genericOverview
           ? {
               overviewImage: overview.src,
               imageAlt: overview.alt,
@@ -184,14 +230,21 @@ export function withProgrammeImages(programme: Programme): Programme {
       section03: {
         ...page.section03,
         illustration: page.section03.audience.length ? undefined : primary,
-        audience: page.section03.audience.map((item, index) => ({
-          ...item,
-          image: pictures[index % pictures.length].src,
-          alt: pictures[index % pictures.length].alt,
-          imageSource: pictures[index % pictures.length].source,
-        })),
+        audience: page.section03.audience.map((item, index) => {
+          const filename = photos?.audience[item.title];
+          const illustration = pictures[index % pictures.length];
+          return {
+            ...item,
+            image: filename ? photoPath(filename) : illustration.src,
+            alt: filename ? item.title : illustration.alt,
+            imageSource: filename ? undefined : illustration.source,
+          };
+        }),
       },
-      section04: { ...page.section04, careerImage: primary.src },
+      section04: {
+        ...page.section04,
+        careerImage: photos ? photoPath("Cơ hội nghề nghiệp và phát triển.jpg") : primary.src,
+      },
     },
   };
 }

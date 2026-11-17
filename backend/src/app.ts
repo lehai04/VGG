@@ -1,3 +1,4 @@
+import { knowledgePublicRoutes } from "./modules/knowledge/public.js";
 import { publicRoutes } from "./modules/public/public.routes.js";
 import { consultationAdminRoutes } from "./modules/consultation-admin/admin.routes.js";
 import Fastify, { type FastifyError } from "fastify";
@@ -35,6 +36,7 @@ export async function buildApp() {
   // Ghi lỗi chi tiết phía server, nhưng lỗi 5xx chỉ trả thông báo chung cho client.
   app.setErrorHandler((error: FastifyError, request, reply) => { if (error instanceof ZodError) return reply.code(400).send({ success: false, message: 'Dữ liệu gửi lên không hợp lệ.', code: 'VALIDATION_ERROR' }); request.log.error(error); const status = error.statusCode && error.statusCode >= 400 ? error.statusCode : 500; reply.code(status).send({ success: false, message: status < 500 ? error.message : "Hệ thống đang bận.", code: "INTERNAL_ERROR" }); });
   await app.register(publicRoutes);
+  await app.register(knowledgePublicRoutes);
   await app.register(consultationAdminRoutes);
   // Khi app đóng có kiểm soát, giải phóng client database dùng chung.
   app.addHook("onClose", () => prisma.$disconnect());

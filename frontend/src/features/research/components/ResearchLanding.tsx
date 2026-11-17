@@ -73,7 +73,7 @@ export async function ResearchLanding() {
         <div className={styles.heroShade} />
         <div data-banner-copy className={styles.heroCopy} data-reveal>
           <p data-banner-label>{t(content.hero.label.split(" · ")[0])}</p>
-          <h1 data-banner-title>{t(content.hero.title)}</h1>
+          <h1 data-banner-title>{t(content.hero.title).replace(/[.。…]+\s*$/, "")}</h1>
           <span data-banner-description>{t(content.hero.intro)}</span>
         </div>
         <a href="#overview" className={styles.heroDown} aria-label="Xem nội dung"><ArrowDown /></a>

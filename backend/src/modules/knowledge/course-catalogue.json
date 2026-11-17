@@ -1,0 +1,203 @@
+{
+  "tuitionPerCourse": 1200000,
+  "programmes": [
+    {
+      "id": "environment",
+      "name": "Kỹ thuật môi trường",
+      "courses": [
+        "Cơ sở công nghệ môi trường",
+        "Công nghệ xử lý chất thải (nước, không khí, chất thải rắn)"
+      ]
+    },
+    {
+      "id": "mba",
+      "name": "Quản trị kinh doanh",
+      "courses": [
+        "Kinh tế học đại cương",
+        "Quản trị học",
+        "Marketing căn bản",
+        "Nguyên lý tài chính"
+      ]
+    },
+    {
+      "id": "commerce",
+      "name": "Kinh doanh thương mại",
+      "courses": [
+        "Kinh tế học đại cương",
+        "Quản trị học",
+        "Marketing căn bản",
+        "Nguyên lý tài chính"
+      ]
+    },
+    {
+      "id": "biotech",
+      "name": "Công nghệ sinh học",
+      "courses": [
+        "Nhập môn Công nghệ sinh học",
+        "Hóa sinh",
+        "Sinh học phân tử và Di truyền",
+        "Kỹ thuật vi sinh",
+        "Sinh lý người và động vật",
+        "Sinh lý thực vật",
+        "Công nghệ gen",
+        "Tin sinh học"
+      ]
+    },
+    {
+      "id": "resources",
+      "name": "Quản lý tài nguyên và môi trường",
+      "courses": [
+        "Quản lý môi trường: Giải pháp cho các đô thị thông minh",
+        "Đánh giá tác động môi trường",
+        "Luật và chính sách môi trường"
+      ]
+    },
+    {
+      "id": "architecture",
+      "name": "Kiến trúc",
+      "courses": [
+        "Đồ án kiến trúc công cộng",
+        "Nguyên lý kiến trúc dân dụng, công nghiệp - nhà ở",
+        "Lịch sử kiến trúc Phương Tây, Phương Đông, Việt Nam"
+      ]
+    },
+    {
+      "id": "finance",
+      "name": "Tài chính Ngân hàng",
+      "courses": [
+        "Tài chính - Tiền tệ",
+        "Nghiệp vụ Ngân hàng thương mại hoặc Ngân hàng thương mại",
+        "Tài chính doanh nghiệp"
+      ]
+    },
+    {
+      "id": "law",
+      "name": "Luật kinh tế",
+      "courses": [
+        "Luật Doanh nghiệp",
+        "Luật Thương mại",
+        "Luật Dân sự và Luật tố tụng dân sự",
+        "Luật Thương mại quốc tế",
+        "Luật Hiến pháp và Luật Hành chính",
+        "Luật Hình sự và Luật Tố tụng hình sự"
+      ]
+    },
+    {
+      "id": "arts",
+      "name": "Mỹ thuật ứng dụng",
+      "courses": [
+        "Tư duy thiết kế",
+        "Mỹ thuật học",
+        "Lịch sử Mỹ thuật",
+        "Văn hóa dân tộc học nghệ thuật"
+      ]
+    },
+    {
+      "id": "hospitality",
+      "name": "Quản trị khách sạn",
+      "courses": [
+        "Tổng quan du lịch",
+        "Quản trị tiền sảnh",
+        "Marketing du lịch"
+      ]
+    },
+    {
+      "id": "accounting",
+      "name": "Kế toán",
+      "courses": [
+        "Nguyên lý kế toán",
+        "Kế toán tài chính",
+        "Kế toán quản trị",
+        "Kiểm toán và dịch vụ đảm bảo"
+      ]
+    },
+    {
+      "id": "english",
+      "name": "Ngôn ngữ Anh",
+      "courses": [
+        "Hình thái học & cú pháp học",
+        "Ngữ âm & Âm vị học",
+        "Ngữ nghĩa học",
+        "Kỹ năng viết học thuật"
+      ]
+    },
+    {
+      "id": "construction",
+      "name": "Kỹ thuật xây dựng",
+      "courses": [
+        "Sức bền vật liệu 1",
+        "Cơ học kết cấu 1",
+        "Vật liệu xây dựng",
+        "Kết cấu bê tông cốt thép 1",
+        "Kết cấu thép 1",
+        "Kỹ thuật thi công 1",
+        "Tổ chức thi công & An toàn lao động",
+        "Nền móng"
+      ]
+    },
+    {
+      "id": "art-theory",
+      "name": "Lý luận và lịch sử mỹ thuật ứng dụng",
+      "courses": [
+        "Lịch sử Mỹ thuật",
+        "Văn hóa dân tộc học nghệ thuật",
+        "Mỹ thuật học",
+        "Lịch sử Design",
+        "Phương pháp luận sáng tạo"
+      ]
+    },
+    {
+      "id": "pr",
+      "name": "Quan hệ công chúng",
+      "courses": [
+        "Nhập môn Quan hệ công chúng",
+        "Lập kế hoạch Quan hệ công chúng",
+        "Kỹ năng viết cho Quan hệ công chúng",
+        "Marketing căn bản",
+        "Tâm lý học truyền thông"
+      ]
+    },
+    {
+      "id": "logistics",
+      "name": "Logistics và Quản lý chuỗi cung ứng",
+      "courses": [
+        "Quản trị sản xuất",
+        "Quản trị Logistics và chuỗi cung ứng",
+        "Các mô hình toán ứng dụng"
+      ]
+    },
+    {
+      "id": "automotive",
+      "name": "Kỹ thuật ô tô",
+      "courses": [
+        "Động cơ đốt trong",
+        "Lý thuyết ô tô",
+        "Hệ thống điện - điện tử ô tô",
+        "Kết cấu ô tô",
+        "Tính toán thiết kế ô tô",
+        "Công nghệ chẩn đoán sửa chữa ô tô"
+      ]
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing",
+      "courses": [
+        "Kinh tế học đại cương",
+        "Quản trị học",
+        "Marketing căn bản",
+        "Nguyên lý tài chính"
+      ]
+    },
+    {
+      "id": "it",
+      "name": "Công nghệ Thông tin",
+      "courses": [
+        "Kỹ thuật lập trình",
+        "Cấu trúc dữ liệu và giải thuật",
+        "Cơ sở dữ liệu",
+        "Xác suất thống kê ứng dụng",
+        "Nhập môn Trí tuệ nhân tạo"
+      ]
+    }
+  ]
+}

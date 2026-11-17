@@ -168,6 +168,7 @@ const customJsonLd = z
     "Schema tùy chỉnh không được vượt quá 20 KB.",
   );
 export const newsInput = z.object({
+    isFeatured: z.boolean().default(false),
   slug,
   locale: z.enum(["vi", "en"]).default("vi"),
   category: newsCategory.default("VAN_LANG_UNIVERSITY"),
