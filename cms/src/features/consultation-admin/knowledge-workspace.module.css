@@ -1,54 +1,191 @@
+.workspace {
+  --knowledge-ink: #192342;
+  --knowledge-muted: #52617a;
+  --knowledge-line: #dce3ee;
+  --knowledge-red: #ab1531;
+  --knowledge-tint: #fff0f3;
+  min-width: 0;
+  color: var(--knowledge-ink);
+}
+.heading,
+.titleGroup,
+.listHeader,
+.listTitle,
+.listActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.heading,
+.listHeader {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.heading {
+  margin-bottom: 20px;
+}
+.titleGroup {
+  align-items: flex-start;
+}
+.titleIcon,
+.emptyIcon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  background: var(--knowledge-tint);
+  color: var(--knowledge-red);
+}
+.titleIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+}
+.workspace :is(h1, h2, h3, p) {
+  margin: 0;
+}
 .workspace h1 {
-  margin-bottom: 16px;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.2;
+  font-weight: 750;
+}
+.heading p,
+.empty p,
+.selection {
+  color: var(--knowledge-muted);
+}
+.heading p {
+  margin-top: 4px;
+  font-size: 0.93rem;
+}
+.listCard,
+.card {
+  background: #fff;
+  border: 1px solid var(--knowledge-line);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px #19234208;
+  overflow-wrap: anywhere;
+}
+.listCard {
+  overflow: hidden;
 }
 .card {
   padding: clamp(16px, 3vw, 28px);
-  background: #fff;
-  border: 1px solid #dae1ec;
-  border-radius: 12px;
-  overflow-wrap: anywhere;
 }
-.card h2 {
-  margin-top: 14px;
+.listHeader {
+  padding: 16px clamp(14px, 3vw, 24px);
+  border-bottom: 1px solid var(--knowledge-line);
 }
-.card h3 {
-  margin-top: 20px;
-}
-.toolbar {
-  display: flex;
+.listTitle,
+.listActions {
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: center;
-  margin-bottom: 12px;
 }
-.export {
+.workspace h2 {
+  font-size: 1.07rem;
+  font-weight: 750;
+}
+.count {
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: #eef1f7;
+  color: #40506d;
+  font-size: 0.82rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.formLink,
+.refresh,
+.export,
+.delete {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  color: #fff;
-  background: #ab1531;
-  border: 0;
-  border-radius: 8px;
-  font-weight: 650;
+  justify-content: center;
+  min-height: 40px;
+  gap: 7px;
+  padding: 7px 12px;
+  border: 1px solid var(--knowledge-line);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--knowledge-ink);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
   cursor: pointer;
 }
-.export:disabled {
-  opacity: 0.55;
+.formLink {
+  color: var(--knowledge-red);
+}
+.formLink:hover,
+.refresh:hover:enabled {
+  border-color: #d9acb8;
+  background: var(--knowledge-tint);
+}
+.delete {
+  color: var(--knowledge-red);
+  border-color: #d9acb8;
+}
+.delete:hover:enabled {
+  background: var(--knowledge-tint);
+}
+.export {
+  color: #fff;
+  background: var(--knowledge-red);
+  border-color: var(--knowledge-red);
+}
+.export:hover:enabled {
+  background: #881129;
+}
+.refresh:disabled,
+.export:disabled,
+.delete:disabled {
+  opacity: 0.65;
   cursor: default;
 }
+.empty {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  min-height: 230px;
+  padding: 24px 16px;
+  text-align: center;
+}
+.emptyIcon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 4px;
+  border-radius: 18px;
+}
+.empty h3 {
+  font-weight: 750;
+  font-size: 1.08rem;
+}
+.empty p {
+  max-width: 38ch;
+  font-size: 0.92rem;
+}
+.selection {
+  padding: 9px clamp(14px, 3vw, 24px);
+  font-size: 0.85rem;
+}
 .link {
-  color: #ab1531;
-  text-decoration: underline;
+  color: var(--knowledge-red);
   cursor: pointer;
   text-align: left;
+  text-underline-offset: 3px;
 }
 button.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   border: 0;
   background: none;
   padding: 0;
   font: inherit;
+  font-weight: 700;
+}
+.link:hover {
+  text-decoration: underline;
 }
 .tableScroll {
   overflow-x: auto;
@@ -56,30 +193,66 @@ button.link {
 .tableScroll table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.9rem;
 }
 .tableScroll :is(th, td) {
-  padding: 10px;
-  border-bottom: 1px solid #dae1ec;
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--knowledge-line);
   text-align: left;
+  vertical-align: top;
 }
 .tableScroll th {
   background: #f4f6fa;
+  color: #364562;
+}
+.tableScroll tbody tr:last-child td {
+  border-bottom: 0;
+}
+.tableScroll tbody tr:hover {
+  background: #f9fafc;
 }
 .tableScroll input {
-  accent-color: #ab1531;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--knowledge-red);
+}
+.selectAllLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.selectAllLabel span {
+  display: none;
+}
+.card h2 {
+  margin-top: 12px;
+  font-size: 1.35rem;
+}
+.card h3 {
+  margin: 16px 0 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--knowledge-line);
+  font-size: 1rem;
+  font-weight: 750;
 }
 .details {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-  gap: 12px;
-  margin-top: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 215px), 1fr));
+  gap: 8px 12px;
+}
+.details > div {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #f7f8fb;
 }
 .details dt {
-  color: #4d5971;
-  font-size: 0.9em;
+  color: var(--knowledge-muted);
+  font-size: 0.86rem;
 }
 .details dd {
   margin: 0;
+  font-weight: 600;
 }
 .files {
   list-style: disc;
@@ -87,4 +260,48 @@ button.link {
 }
 .note {
   white-space: pre-wrap;
+}
+@media (max-width: 700px) {
+  .tableScroll :is(table, thead, tbody, tr) {
+    display: block;
+  }
+  .tableScroll thead th {
+    display: block;
+    padding-inline: 14px;
+  }
+  .tableScroll thead th:not(:first-child) {
+    display: none;
+  }
+  .selectAllLabel span {
+    display: inline;
+  }
+  .tableScroll tbody {
+    padding: 10px 14px 14px;
+  }
+  .tableScroll tbody tr {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 4px 6px;
+    padding: 10px;
+    border: 1px solid var(--knowledge-line);
+    border-radius: 10px;
+  }
+  .tableScroll tbody tr + tr {
+    margin-top: 8px;
+  }
+  .tableScroll tbody td {
+    display: block;
+    padding: 1px 0;
+    border: 0;
+    overflow-wrap: anywhere;
+  }
+  .tableScroll tbody td:nth-child(n + 3) {
+    grid-column: 2;
+  }
+  .tableScroll tbody td:nth-child(n + 3)::before {
+    display: block;
+    content: attr(data-label);
+    color: var(--knowledge-muted);
+    font-size: 0.78rem;
+  }
 }

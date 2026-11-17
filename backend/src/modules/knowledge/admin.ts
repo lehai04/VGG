@@ -5,12 +5,23 @@ import { fail, ok } from "../../shared/http/response.js";
 
 const prefix = "/api/admin/knowledge-registrations";
 const idInput = z.object({ id: z.uuid() });
+const deleteInput = z.strictObject({ ids: z.array(z.uuid()).min(1) });
 const exportDetails = z.object({
   courses: z.array(z.string()).optional(),
   estimatedTuition: z.number().int().nonnegative().optional(),
 });
 
 export async function knowledgeAdminRoutes(app: FastifyInstance) {
+  app.delete(prefix, async (request, reply) => {
+    const parsed = deleteInput.safeParse(request.body);
+    if (!parsed.success)
+      return fail(reply, 400, "Danh sách hồ sơ cần xóa không hợp lệ.", "VALIDATION_ERROR");
+    const ids = [...new Set(parsed.data.ids)];
+    const { count } = await prisma.knowledgeRegistration.deleteMany({
+      where: { id: { in: ids } },
+    });
+    return ok(reply, { count });
+  });
   app.get(prefix, async (_request, reply) => {
     const items = await prisma.knowledgeRegistration.findMany({
       orderBy: [{ createdAt: "desc" }, { id: "desc" }],

@@ -145,24 +145,172 @@ export const programmeImageSelections = {
 
 const programmePhotos: Record<string, {
   folder: string;
+  hero?: string;
   overview?: { filename: string; alt: string };
-  audience: Record<string, string>;
+  audience?: Record<string, string>;
+  audienceIllustration?: string;
+  career?: string;
 }> = {
   "cong-nghe-thong-tin": {
     folder: "Cong-nghe_thong_tin",
+    hero: "hero.jpg",
     overview: { filename: "progarmtrack.jpg", alt: "Minh họa định hướng đào tạo Công nghệ Thông tin" },
     audience: {
       "Người có nền tảng CNTT": "Người có nền tảng CNTT.jpg",
       "Người tốt nghiệp ngành gần": "Người tốt nghiệp ngành gần.jpg",
       "Người hướng đến nghiên cứu": "Người hướng đến nghiên cứu.jpg",
     },
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
   },
   "ke-toan": {
     folder: "Ke_toan",
+    hero: "hero.jpg",
     audience: {
       "Người đang làm kế toán, kiểm toán": "People working in accounting and auditing.jpg",
       "Người làm tài chính, kiểm soát và quản trị": "Finance, control and management professionals.jpg",
       "Người muốn phát triển chuyên môn sâu": "People who want to develop deep expertise.jpg",
+    },
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
+  },
+  "khoa-hoc-moi-truong": {
+    folder: "Khoa_hoc_moi_truong",
+    hero: "hero.jpg",
+    overview: { filename: "Định hướng đào tạo.jpg", alt: "Minh họa định hướng đào tạo Khoa học Môi trường" },
+    audience: {
+      "Năng lực chuyên môn": "Năng lực chuyên môn.jpg",
+      "Nghiên cứu và ra quyết định": "Nghiên cứu và ra quyết định.jpg",
+      "Hợp tác và truyền đạt tri thức": "Hợp tác và truyền đạt tri thức.jpg",
+    },
+  },
+  "ky-thuat-moi-truong": {
+    folder: "Ky_thuat_moi_truong",
+    overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Kỹ thuật Môi trường" },
+    audience: {
+      "Người làm kỹ thuật và công nghệ môi trường": "Người làm kỹ thuật và công nghệ môi trường.jpg",
+      "Người làm tư vấn và quản lý môi trường": "Người làm tư vấn và quản lý môi trường.jpg",
+      "Người theo đuổi nghiên cứu chuyên sâu": "Người theo đuổi nghiên cứu chuyên sâu.jpg",
+    },
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
+  },
+  "kien-truc": {
+    folder: "Kien_truc",
+    audience: {
+      "Kiến trúc sư và người làm thiết kế": "Kiến trúc sư và người làm thiết kế.jpg",
+      "Người làm tư vấn và quản lý dự án": "Người làm tư vấn và quản lý dự án.jpg",
+      "Người quan tâm nghiên cứu và phát triển chuyên môn": "Người quan tâm nghiên cứu và phát triển chuyên môn.jpg",
+    },
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
+  },
+  logistics: {
+    folder: "Logistics",
+    overview: { filename: "Tổng quan chương trình.jpg", alt: "Minh họa chương trình Logistics và Quản lý chuỗi cung ứng" },
+    audience: {
+      "Người làm vận hành logistics và chuỗi cung ứng": "Người làm vận hành logistics và chuỗi cung ứng.jpg",
+      "Người tham gia phân tích và cải tiến hệ thống": "Người tham gia phân tích và cải tiến hệ thống.jpg",
+      "Người định hướng nghiên cứu chuyên sâu": "Người định hướng nghiên cứu chuyên sâu.jpg",
+    },
+  },
+  "ky-thuat-xay-dung": {
+    folder: "Ky_thuat_xay_dung",
+    hero: "hero.webp",
+    overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Kỹ thuật Xây dựng" },
+    audience: {
+      "Năng lực chuyên môn": "Năng lực chuyên môn.jpg",
+      "Nghiên cứu và ra quyết định": "Nghiên cứu và ra quyết định.jpg",
+      "Hợp tác và truyền đạt tri thức": "Hợp tác và truyền đạt tri thức.jpg",
+    },
+    career: "Cơ hội nghề nghiệp và phát triển.webp",
+  },
+  "my-thuat-ung-dung": {
+    folder: "My_thuat_ung_dung",
+    hero: "hero.jpg",
+    overview: { filename: "tổng quan.jpg", alt: "Minh họa tổng quan ngành Mỹ thuật ứng dụng" },
+    audience: {
+      "Nhà thiết kế & chuyên gia sáng tạo": "Nhà thiết kế & chuyên gia sáng tạo.jpg",
+      "Người làm việc trong ngành sáng tạo": "Người làm việc trong ngành sáng tạo.jpg",
+      "Người định hướng giảng dạy hoặc khởi nghiệp": "Người định hướng giảng dạy hoặc khởi nghiệp.jpg",
+    },
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
+  },
+  "ly-luan-lich-su-my-thuat": {
+    folder: "My_thuat_ung_dung",
+    audience: {
+      "Người làm việc trong thiết kế": "Người làm việc trong thiết kế.avif",
+      "Người quan tâm nghiên cứu mỹ thuật ứng dụng": "Người quan tâm nghiên cứu mỹ thuật ứng dụng.avif",
+      "Người định hướng giảng dạy và đào tạo": "Người định hướng giảng dạy và đào tạo.avif",
+    },
+  },
+  "ky-thuat-o-to": {
+    folder: "Ky_thuat_o_to",
+    audience: {
+      "Người làm kỹ thuật và công nghệ ô tô": "Người làm kỹ thuật và công nghệ ô tô.jpg",
+      "Người hướng đến quản lý kỹ thuật": "Người hướng đến quản lý kỹ thuật.jpg",
+      "Người quan tâm nghiên cứu và R&D": "Người quan tâm nghiên cứu và R&D.jpg",
+    },
+  },
+  marketing: {
+    folder: "Marketting",
+    audience: {
+      "Người làm Marketing và kinh doanh": "Người làm Marketing và kinh doanh.jpg",
+      "Người hướng đến tư vấn và khởi nghiệp": "Người hướng đến tư vấn và khởi nghiệp.jpg",
+      "Người theo đuổi nghiên cứu và giảng dạy": "Người theo đuổi nghiên cứu và giảng dạy.jpg",
+    },
+    career: "Cơ hội nghề nghiệp và phát triển.webp",
+  },
+  "luat-kinh-te": {
+    folder: "Luat_kinh_te",
+    audience: {
+      "Nhóm ngành Luật": "Nhóm ngành Luật.jpg",
+      "Nhóm ngành phù hợp khác": "Nhóm ngành phù hợp khác.jpg",
+    },
+    career: "Cơ hội nghề nghiệp và phát triển.webp",
+  },
+  "cong-nghe-sinh-hoc": {
+    folder: "Cong_nghe_sinh_hoc",
+    audience: {
+      "Người muốn đi sâu vào nghiên cứu": "Người muốn đi sâu vào nghiên cứu.avif",
+      "Người làm việc trong lĩnh vực liên quan": "Người làm việc trong lĩnh vực liên quan.jpg",
+      "Người hướng đến giảng dạy và học tiếp": "Người hướng đến giảng dạy và học tiếp.avif",
+    },
+  },
+  "ngon-ngu-anh": {
+    folder: "Ngon_ngu_anh",
+    overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Ngôn ngữ Anh" },
+    audienceIllustration: "chương trình phù hợp với ai.jpg",
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
+  },
+  "quan-he-cong-chung": {
+    folder: "QHCC",
+    overview: { filename: "Tổng quan chương trình.jpg", alt: "Minh họa tổng quan ngành Quan hệ công chúng" },
+    audienceIllustration: "chương trình phù hợp với ai.jpg",
+    career: "Cơ hội nghề nghiệp và phát triển.webp",
+  },
+  "quan-ly-tai-nguyen-moi-truong": {
+    folder: "Quan_ly_tai_nguyen_Moi_truong",
+    overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Quản lý tài nguyên và môi trường" },
+    audienceIllustration: "chương trìnhhphuf hợp với ai.jpg",
+    career: "Cơ hội nghề nghiệp và phát triển.webp",
+  },
+  "quan-tri-khach-san": {
+    folder: "Quan_tri_Khach_san",
+    audienceIllustration: "Chương trìnhhphuf hợp với au.jpg",
+  },
+  "quan-tri-kinh-doanh": {
+    folder: "Quan_tri_kinh_doanh",
+    overview: { filename: "Tổng quan chương trình.jpg", alt: "Minh họa tổng quan ngành Quản trị kinh doanh" },
+    audienceIllustration: "chường trình phù hợp với ai.jpg",
+  },
+  "tai-chinh-ngan-hang": {
+    folder: "Tai_chinh_ngan_hang",
+    hero: "Hero.jpg",
+    overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Tài chính – Ngân hàng" },
+    audienceIllustration: "chương trình phùuhopwj với ai.jpg",
+  },
+  "kinh-doanh-thuong-mai": {
+    folder: "Kinh_doanh_thuong_mai",
+    hero: "hero.jpg",
+    audience: {
+      "Người đang làm kinh doanh, thương mại": "Người đang làm kinh doanh, thương mại.png",
     },
   },
 };
@@ -183,6 +331,12 @@ export function withProgrammeImages(programme: Programme): Programme {
   const photos = programmePhotos[programme.id];
   const photoPath = (filename: string) =>
     `${programmePhotoRoot}${photos.folder}/${encodeURIComponent(filename)}`;
+  const audienceIllustration = photos?.audienceIllustration
+    ? {
+        src: photoPath(photos.audienceIllustration),
+        alt: `Ảnh minh họa đối tượng dự tuyển ngành ${programme.title}`,
+      }
+    : page.section03.audience.length ? undefined : primary;
   const genericHero =
     !page.hero.heroImage ||
     page.hero.heroImage.includes("photo-1564035105550") ||
@@ -197,9 +351,9 @@ export function withProgrammeImages(programme: Programme): Programme {
       ...page,
       hero: {
         ...page.hero,
-        ...(photos
+        ...(photos?.hero
           ? {
-              heroImage: photoPath("hero.jpg"),
+              heroImage: photoPath(photos.hero),
               imageAlt: `Ảnh giới thiệu ngành ${programme.title}`,
               imageCredit: undefined,
             }
@@ -229,9 +383,9 @@ export function withProgrammeImages(programme: Programme): Programme {
       },
       section03: {
         ...page.section03,
-        illustration: page.section03.audience.length ? undefined : primary,
+        illustration: audienceIllustration,
         audience: page.section03.audience.map((item, index) => {
-          const filename = photos?.audience[item.title];
+          const filename = photos?.audience?.[item.title];
           const illustration = pictures[index % pictures.length];
           return {
             ...item,
@@ -243,7 +397,7 @@ export function withProgrammeImages(programme: Programme): Programme {
       },
       section04: {
         ...page.section04,
-        careerImage: photos ? photoPath("Cơ hội nghề nghiệp và phát triển.jpg") : primary.src,
+        careerImage: photos?.career ? photoPath(photos.career) : primary.src,
       },
     },
   };

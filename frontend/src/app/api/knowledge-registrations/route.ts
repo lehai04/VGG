@@ -48,10 +48,15 @@ async function forward(request: NextRequest) {
     if (upstream.status === 413) return sizeError();
     const data = await upstream.json();
     return NextResponse.json(data, { status: upstream.status, headers: responseHeaders });
-  } catch {
+  } catch (error) {
     if (tooLarge) return sizeError();
+    if (error instanceof Error && error.name === "TimeoutError")
+      return NextResponse.json(
+        { message: "Hệ thống phản hồi quá lâu. Chưa xác nhận được hồ sơ đã tiếp nhận." },
+        { status: 504, headers: responseHeaders },
+      );
     return NextResponse.json(
-      { message: "Hệ thống đang bận. Vui lòng thử lại sau." },
+      { message: "Không nhận được phản hồi từ hệ thống tiếp nhận hồ sơ. Vui lòng thử lại sau." },
       { status: 502, headers: responseHeaders },
     );
   }

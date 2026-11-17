@@ -174,12 +174,12 @@ export async function knowledgePublicRoutes(app: FastifyInstance) {
         if (!part.filename && !bytes.length) continue;
         const mediaType = attachmentType(bytes);
         if (!mediaType)
-          return fail(
-            reply,
-            400,
-            "Chỉ hỗ trợ tệp PDF, JPG và PNG.",
-            "FILE_TYPE",
-          );
+          return reply.code(400).send({
+            success: false,
+            message: "Chỉ hỗ trợ tệp PDF, JPG và PNG.",
+            code: "FILE_TYPE",
+            fields: [part.fieldname],
+          });
         attachments.push({
           field: part.fieldname,
           filename: part.filename
@@ -191,12 +191,12 @@ export async function knowledgePublicRoutes(app: FastifyInstance) {
       }
       const parsed = input.safeParse(fields);
       if (!parsed.success)
-        return fail(
-          reply,
-          400,
-          "Vui lòng kiểm tra thông tin đã nhập.",
-          "VALIDATION_ERROR",
-        );
+        return reply.code(400).send({
+          success: false,
+          message: "Vui lòng kiểm tra thông tin đã nhập.",
+          code: "VALIDATION_ERROR",
+          fields: Object.keys(z.flattenError(parsed.error).fieldErrors),
+        });
       const {
         captchaToken,
         captchaAnswer,

@@ -267,8 +267,6 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
     pageContent.hero.heroImage || programme.bannerImage || programmeSharedContent.hero.fallbackImage;
   const careerImage =
     pageContent.section04.careerImage || programme.bannerImage || heroImage;
-  const fullHeroPhoto = isProgrammePhoto(heroImage);
-  const fullCareerPhoto = isProgrammePhoto(careerImage);
 
   return (
     <main className={`subpage ${styles.page}`} data-programme={programme.id} id="main-content">
@@ -278,22 +276,26 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           HERO BANNER
           ──────────────────────────────────────────────────────── */}
       <ContentPageSections pageId={`programme:${programme.id}`} layout={layout}>
-      <section data-site-banner data-full-photo={fullHeroPhoto || undefined} data-content-slot="hero" data-content-path="pageContent.hero.heroImage" className={styles.hero} aria-labelledby="programme-title">
-        {!fullHeroPhoto && (
-          <>
-            <Image className={styles.heroBackground} src={heroImage} alt={pageContent.hero.imageAlt ?? `Ngành ${programme.title} - Đại học Văn Lang`} fill priority sizes="100vw" />
-            <div className={styles.heroOverlay} aria-hidden="true" />
-          </>
-        )}
+      <section data-site-banner data-content-slot="hero" data-content-path="pageContent.hero.heroImage" className={styles.hero} aria-labelledby="programme-title">
+        <Image
+          className={styles.heroBackground}
+          data-full-photo={isProgrammePhoto(heroImage) || undefined}
+          src={heroImage}
+          alt={t(pageContent.hero.imageAlt ?? `Ngành ${programme.title} - Đại học Văn Lang`)}
+          fill
+          priority
+          sizes="100vw"
+        />
+        <div className={styles.heroOverlay} aria-hidden="true" />
 
         <div className={styles.heroInner}>
           {/* Subtle slogan watermark on the right */}
-          {!fullHeroPhoto && <div className={styles.heroSloganWatermark} aria-hidden="true">
+          <div className={styles.heroSloganWatermark} aria-hidden="true">
             {programmeSharedContent.hero.sloganLines.map((line) => (
               <span key={line}>{t(line)}</span>
             ))}
             <span>{pageContent.hero.heroSlogan ?? programmeSharedContent.hero.fallbackSlogan}</span>
-          </div>}
+          </div>
 
           <div data-banner-copy data-banner-inset className={styles.heroContent}>
             <span data-banner-label className={styles.heroDegree}>{programme.englishTitle}</span>
@@ -317,17 +319,6 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
             </div>
           </div>
         </div>
-        {fullHeroPhoto && (
-          <Image
-            className={styles.heroFullPhoto}
-            src={heroImage}
-            alt={t(pageContent.hero.imageAlt ?? programme.title)}
-            width={2048}
-            height={1365}
-            priority
-            sizes="(max-width: 767px) 92vw, 46vw"
-          />
-        )}
       </section>
 
       {/* ────────────────────────────────────────────────────────
@@ -560,13 +551,18 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           ))}
           {pageContent.section03.illustration && (
             <figure className={styles.audienceIllustration}>
-              <div className={styles.audienceIllustrationImage}>
+              <div
+                className={styles.audienceIllustrationImage}
+                data-full-photo={isProgrammePhoto(pageContent.section03.illustration.src) || undefined}
+              >
                 <Image
                   data-content-path="pageContent.section03.illustration.src"
                   src={pageContent.section03.illustration.src}
                   alt={t(pageContent.section03.illustration.alt)}
                   fill
-                  sizes="(max-width: 768px) 100vw, 80vw"
+                  sizes={isProgrammePhoto(pageContent.section03.illustration.src)
+                    ? "(max-width: 768px) 100vw, 760px"
+                    : "(max-width: 768px) 100vw, 80vw"}
                   className={styles.audiencePhoto}
                 />
               </div>
@@ -602,10 +598,16 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           04 / CƠ HỘI NGHỀ NGHIỆP VÀ PHÁT TRIỂN
           ──────────────────────────────────────────────────────── */}
       {(careersList.length > 0) && (
-      <section id="nghe-nghiep" data-full-photo={fullCareerPhoto || undefined} data-content-path="pageContent.section04.careerImage" className={styles.sectionCareers} aria-labelledby="sec-04-title">
-        {!fullCareerPhoto && (
-          <Image className={styles.careersBackground} src={careerImage} alt="" fill sizes="100vw" aria-hidden="true" />
-        )}
+      <section id="nghe-nghiep" data-content-path="pageContent.section04.careerImage" className={styles.sectionCareers} aria-labelledby="sec-04-title">
+        <Image
+          className={styles.careersBackground}
+          data-full-photo={isProgrammePhoto(careerImage) || undefined}
+          src={careerImage}
+          alt=""
+          fill
+          sizes={isProgrammePhoto(careerImage) ? "(max-width: 1024px) 100vw, 50vw" : "100vw"}
+          aria-hidden="true"
+        />
         <div className={styles.container}>
           <SectionHeader
             index={pageContent.section04.sectionNumber}
@@ -631,16 +633,6 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 </div>
               ))}
             </div>
-            {fullCareerPhoto && (
-              <Image
-                className={styles.careersFullPhoto}
-                src={careerImage}
-                alt=""
-                width={2048}
-                height={1365}
-                sizes="(max-width: 767px) 92vw, 38vw"
-              />
-            )}
           </div>
           {pageContent.section04.note && <p>{t(pageContent.section04.note)}</p>}
         </div>

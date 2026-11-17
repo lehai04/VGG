@@ -155,7 +155,7 @@ export type ProgrammePageContent = {
     headline?: string;
     intro?: readonly string[];
     requirements?: readonly ProgrammeInformationBlock[];
-    illustration?: { src: string; alt: string; source: string };
+    illustration?: { src: string; alt: string; source?: string };
     audience: readonly {
       title: string;
       text: string;

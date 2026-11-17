@@ -5,6 +5,7 @@ import { Prisma } from "@prisma/client";
 
 process.env.DATABASE_URL ||= "postgresql://unused:unused@127.0.0.1:1/unused";
 process.env.NODE_ENV = "test";
+process.env.CMS_APP_URL ||= "http://localhost:3001";
 const { buildApp } = await import("../dist/app.js");
 const { prisma } = await import("../dist/shared/database/prisma.js");
 
@@ -16,6 +17,7 @@ test("knowledge registration validates submissions, rejects duplicate CCCD, and 
   let canManageContent = true;
   const original = {
     create: prisma.knowledgeRegistration.create,
+    deleteMany: prisma.knowledgeRegistration.deleteMany,
     findMany: prisma.knowledgeRegistration.findMany,
     findUnique: prisma.knowledgeRegistration.findUnique,
     findFile: prisma.knowledgeAttachment.findUnique,
@@ -23,6 +25,7 @@ test("knowledge registration validates submissions, rejects duplicate CCCD, and 
   };
   t.after(() => {
     prisma.knowledgeRegistration.create = original.create;
+    prisma.knowledgeRegistration.deleteMany = original.deleteMany;
     prisma.knowledgeRegistration.findMany = original.findMany;
     prisma.knowledgeRegistration.findUnique = original.findUnique;
     prisma.knowledgeAttachment.findUnique = original.findFile;
@@ -129,7 +132,10 @@ test("knowledge registration validates submissions, rejects duplicate CCCD, and 
       payload: Buffer.from(await request.arrayBuffer()),
     });
   }
-  assert.equal((await submit({ citizenId: "not-a-cccd" })).statusCode, 400);
+  const invalidFields = await submit({ citizenId: "not-a-cccd", email: "bad-email" });
+  assert.equal(invalidFields.statusCode, 400);
+  assert.equal(invalidFields.json().code, "VALIDATION_ERROR");
+  assert.deepEqual(invalidFields.json().fields, ["citizenId", "email"]);
   assert.equal(
     (await submit({ captchaAnswer: 0 })).json().code,
     "INVALID_CAPTCHA",
@@ -150,6 +156,13 @@ test("knowledge registration validates submissions, rejects duplicate CCCD, and 
     results.map(({ statusCode }) => statusCode).sort(),
     [201, 409],
     results.map(({ body }) => body).join("\n"),
+  );
+  const accepted = results.find(({ statusCode }) => statusCode === 201).json();
+  assert.equal(accepted.success, true);
+  assert.match(accepted.message, /đã tiếp nhận hồ sơ/i);
+  assert.equal(
+    results.find(({ statusCode }) => statusCode === 409).json().code,
+    "DUPLICATE_CITIZEN_ID",
   );
   assert.equal(saved.details.captchaToken, undefined);
   assert.equal(saved.masterProgramme, "Quản trị kinh doanh");
@@ -183,4 +196,27 @@ test("knowledge registration validates submissions, rejects duplicate CCCD, and 
   const file = await app.inject({ url: fileUrl, headers });
   assert.match(file.headers["content-disposition"], /^attachment/);
   assert.deepEqual(file.rawPayload, pdf);
+
+  const missingId = randomUUID();
+  let deleted = false;
+  prisma.knowledgeRegistration.deleteMany = async ({ where }) => {
+    assert.deepEqual(where, { id: { in: [saved.id, missingId] } });
+    const count = deleted ? 0 : 1;
+    deleted = true;
+    return { count };
+  };
+  const mutationHeaders = { origin: process.env.CMS_APP_URL, "x-vgg-admin": "1" };
+  const remove = (payload, requestHeaders) =>
+    app.inject({ url: adminUrl, method: "DELETE", headers: requestHeaders, payload });
+  const selection = { ids: [saved.id, missingId, saved.id] };
+  assert.equal((await remove(selection, mutationHeaders)).statusCode, 401);
+  canManageContent = false;
+  assert.equal((await remove(selection, { ...headers, ...mutationHeaders })).statusCode, 403);
+  canManageContent = true;
+  const authorizedHeaders = { ...headers, ...mutationHeaders };
+  assert.equal((await remove({ ids: [] }, authorizedHeaders)).statusCode, 400);
+  assert.equal((await remove({ ids: ["invalid"] }, authorizedHeaders)).statusCode, 400);
+  assert.equal(deleted, false);
+  assert.equal((await remove(selection, authorizedHeaders)).json().data.count, 1);
+  assert.equal((await remove(selection, authorizedHeaders)).json().data.count, 0);
 });

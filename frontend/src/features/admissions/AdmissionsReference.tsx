@@ -7,36 +7,13 @@ import { SiteHeader } from "@/shared/components/layout/SiteHeader";
 import content from "./reference-content.json";
 import type editorialContent from "./editorial-content.json";
 import { initializeAdmissions } from "./reference-engine";
-import { knowledgeAppendixHtml } from "./knowledge-appendix";
+import { connectKnowledgeLookup, knowledgeRegistrationSection } from "./knowledge-appendix";
 import { initializeAdmissionsMotion } from "./admissions-motion";
 import "./reference.css";
 import "./admissions-redesign.css";
+import "./knowledge-section.css";
 import { applyAdmissionsLayout } from "./content-layout";
 import type { ContentComposition } from "../../../../backend/src/modules/content/visual-model";
-const knowledgeTopics = [
-  {
-    heading: "Ai cần học bổ sung kiến thức",
-    body: "Ứng viên dự tuyển Thạc sĩ học bổ sung kiến thức khi hồ sơ thuộc diện yêu cầu. Khoa và Viện xác định yêu cầu theo ngành đã tốt nghiệp, bảng điểm đại học và chương trình Thạc sĩ đăng ký.",
-  },
-  {
-    heading: "Cách xác định học phần cần bổ sung",
-    body: "Chọn chương trình Thạc sĩ và tra cứu theo ngành tốt nghiệp đại học. Khoa và Viện đối chiếu bảng điểm để xác nhận các học phần cần bổ sung cho từng hồ sơ.",
-    action: '<button type="button" class="text-link" data-bsk data-bsk-master>Tra cứu ngành phù hợp và bổ sung kiến thức</button>',
-  },
-  {
-    heading: "Lịch học và hạn đăng ký",
-    body: "Ứng viên thuộc diện yêu cầu cần hoàn thành các học phần trước khi xét tuyển. Kết quả có giá trị 02 năm kể từ khi đạt yêu cầu và được công nhận. Lịch học và hạn đăng ký từng đợt đang chờ Viện xác nhận.",
-  },
-  {
-    heading: "Học phí",
-    body: "1.200.000 đồng/môn đối với ứng viên Thạc sĩ thuộc diện phải học bổ sung kiến thức. Khoản này được thu riêng ngoài học phí toàn khóa.",
-  },
-  {
-    heading: "Đầu mối hỗ trợ",
-    body: 'Viện Sau đại học – Trường Đại học Văn Lang. Hotline <a href="tel:+84988486869">0988 48 6869</a>, điện thoại <a href="tel:+842871016869">028 7101 6869</a>, email <a href="mailto:tuyensinh.sdh@vlu.edu.vn">tuyensinh.sdh@vlu.edu.vn</a>.',
-  },
-];
-
 /** Reviewed static reference markup also renders on the server. */
 export function AdmissionsReference({
   html = content.html,
@@ -53,16 +30,7 @@ export function AdmissionsReference({
   const t = useWebsiteCopy();
   const bannerHtml = html
     .replace(/(<a href="#hoc-phi-hoc-bong">[^<]*<\/a>)/, '$1<a href="#dang-ky-bo-sung-kien-thuc">Đăng ký bổ sung kiến thức</a>')
-    .replace('<section id="ho-so-du-tuyen"', `<section id="dang-ky-bo-sung-kien-thuc" class="section admission-step knowledge-section" aria-labelledby="knowledge-heading">
-      <div class="wrap">
-        <h2 id="knowledge-heading">Đăng ký bổ sung kiến thức</h2>
-        <div class="knowledge-topics">
-          ${knowledgeTopics.map(({ heading, body, action }) => `<div class="knowledge-topic"><h3>${heading}</h3><p>${body}</p>${action ?? ""}</div>`).join("")}
-        </div>
-        ${knowledgeAppendixHtml}
-        <a class="btn primary" href="/${locale}/admissions/bo-sung-kien-thuc">Đăng ký học bổ sung kiến thức</a>
-      </div>
-    </section><section id="ho-so-du-tuyen"`)
+    .replace('<section id="ho-so-du-tuyen"', `${knowledgeRegistrationSection(locale)}<section id="ho-so-du-tuyen"`)
     .replace('<h3 class="fee-program-name" id="fee-program-name"></h3>', `<h3 class="fee-program-name" id="fee-program-name"></h3><a id="fee-program-detail" class="text-link" href="/${locale}/programmes/quan-tri-kinh-doanh">Xem chi tiết ngành Quản trị kinh doanh →</a>`)
     .replace('id="ts-hoc-phi" hidden=""><div class="wrap">', `id="ts-hoc-phi" hidden=""><div class="wrap"><a class="text-link" href="/${locale}/programmes/khoa-hoc-moi-truong">Xem chi tiết ngành Khoa học môi trường →</a>`)
     .replace('class="hero admission-step admission-step-01"', 'data-site-banner class="hero admission-step admission-step-01"')
@@ -92,6 +60,14 @@ export function AdmissionsReference({
     window.addEventListener("resize", measureNavigation);
     const cleanupEngine = initializeAdmissions(root.current, editorial, programmeOptions);
     const cleanupMotion = initializeAdmissionsMotion(root.current);
+    const cleanupKnowledge = connectKnowledgeLookup(container);
+    // The reference engine fills earlier sections during hydration, shifting deep links.
+    const knowledgeAnchor = window.location.hash;
+    const anchorFrame = ["#dang-ky-bo-sung-kien-thuc", "#tra-cuu-hoc-phan-bo-sung"].includes(knowledgeAnchor)
+      ? window.requestAnimationFrame(() => {
+          container.querySelector(knowledgeAnchor)?.scrollIntoView({ block: "start", behavior: "instant" });
+        })
+      : undefined;
     const selector = root.current.querySelector<HTMLSelectElement>("#contact-program");
     const syncOptions = () => {
       if (!selector || !programmeOptions) return;
@@ -132,6 +108,8 @@ export function AdmissionsReference({
     return () => {
       cleanupTranslation?.();
       cleanupMotion();
+      cleanupKnowledge?.();
+      if (anchorFrame !== undefined) window.cancelAnimationFrame(anchorFrame);
       cleanupEngine();
       observer.disconnect();
       resizeObserver.disconnect();

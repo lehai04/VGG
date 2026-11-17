@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Download } from "lucide-react";
+import {
+  ArrowDownToLine,
+  ArrowLeft,
+  ArrowUpRight,
+  ClipboardList,
+  Inbox,
+  RefreshCw,
+  Trash2,
+} from "lucide-react";
 import { cmsPath } from "@/lib/cms-path";
 import { createXlsx } from "@/lib/create-xlsx";
 import {
@@ -17,6 +25,8 @@ import { adminApi, displayDate } from "./api";
 import styles from "./knowledge-workspace.module.css";
 
 const resource = "knowledge-registrations";
+const formUrl = `${(process.env.NEXT_PUBLIC_WEBSITE_URL || "http://localhost:3000/vi").replace(/\/$/, "")}/admissions/bo-sung-kien-thuc`;
+
 const columns = [
   ["fullName", "Họ và tên"],
   ["email", "Email"],
@@ -67,7 +77,11 @@ export function KnowledgeWorkspace() {
   const [items, setItems] = useState<Entry[]>();
   const [loadError, setLoadError] = useState("");
   const [attempt, setAttempt] = useState(0);
+  const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState("");
+  const [deleteNotice, setDeleteNotice] = useState("");
   const [active, setActive] = useState<Entry>();
   const [detail, setDetail] = useState<Detail>();
   const [detailError, setDetailError] = useState("");
@@ -79,10 +93,18 @@ export function KnowledgeWorkspace() {
     const controller = new AbortController();
     adminApi<{ items: Entry[] }>(resource, "GET", undefined, controller.signal)
       .then(({ items }) => {
-        if (!controller.signal.aborted) setItems(items);
+        if (controller.signal.aborted) return;
+        setItems(items);
+        const ids = new Set(items.map(({ id }) => id));
+        setSelected(
+          (current) => new Set([...current].filter((id) => ids.has(id))),
+        );
       })
       .catch((error: Error) => {
         if (!controller.signal.aborted) setLoadError(error.message);
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setLoading(false);
       });
     return () => controller.abort();
   }, [attempt]);
@@ -108,7 +130,13 @@ export function KnowledgeWorkspace() {
   useEffect(() => {
     if (selectAll.current)
       selectAll.current.indeterminate = !allSelected && selected.size > 0;
-  }, [allSelected, selected]);
+  }, [active, allSelected, selected]);
+
+  function refresh() {
+    setLoadError("");
+    setLoading(true);
+    setAttempt((value) => value + 1);
+  }
 
   function showDetail(entry: Entry) {
     setDetail(undefined);
@@ -123,6 +151,27 @@ export function KnowledgeWorkspace() {
       else next.delete(id);
       return next;
     });
+  }
+
+  async function deleteSelected() {
+    if (!selected.size || loading || deleting) return;
+    const ids = [...selected];
+    if (!window.confirm(`Xóa vĩnh viễn ${ids.length} hồ sơ đã chọn và các tệp đính kèm?`)) return;
+
+    setDeleting(true);
+    setDeleteError("");
+    setDeleteNotice("");
+    try {
+      const { count } = await adminApi<{ count: number }>(resource, "DELETE", { ids });
+      setItems((current) => current?.filter((entry) => !selected.has(entry.id)));
+      setSelected(new Set());
+      setDeleteNotice(count > 0 ? `Đã xóa ${count} hồ sơ.` : "Các hồ sơ đã chọn không còn trong danh sách.");
+      refresh();
+    } catch (error) {
+      setDeleteError(error instanceof Error ? error.message : "Vui lòng thử lại.");
+    } finally {
+      setDeleting(false);
+    }
   }
 
   function exportSelected() {
@@ -164,7 +213,27 @@ export function KnowledgeWorkspace() {
 
   return (
     <section className={styles.workspace}>
-      <h1>Bổ sung kiến thức</h1>
+      <header className={styles.heading}>
+        <div className={styles.titleGroup}>
+          <span className={styles.titleIcon}>
+            <ClipboardList size={24} aria-hidden="true" />
+          </span>
+          <div>
+            <h1>Bổ sung kiến thức</h1>
+            <p>
+              Quản lý hồ sơ đăng ký học bổ sung kiến thức từ website Tuyển sinh.
+            </p>
+          </div>
+        </div>
+        <a
+          className={styles.formLink}
+          href={formUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Mở biểu mẫu <ArrowUpRight size={16} aria-hidden="true" />
+        </a>
+      </header>
       {active ? (
         <div className={styles.card}>
           <button
@@ -172,7 +241,7 @@ export function KnowledgeWorkspace() {
             className={styles.link}
             onClick={() => setActive(undefined)}
           >
-            ← Về danh sách
+            <ArrowLeft size={16} aria-hidden="true" /> Về danh sách
           </button>
           <h2>{active.fullName}</h2>
           {detailError ? (
@@ -247,51 +316,90 @@ export function KnowledgeWorkspace() {
           )}
         </div>
       ) : (
-        <div className={styles.card}>
-          {loadError ? (
-            <p role="alert">
-              {loadError}{" "}
+        <section
+          className={styles.listCard}
+          aria-labelledby="knowledge-list-heading"
+          aria-busy={loading || deleting}
+        >
+          <header className={styles.listHeader}>
+            <div className={styles.listTitle}>
+              <h2 id="knowledge-list-heading">Danh sách hồ sơ</h2>
+              {items && (
+                <span className={styles.count}>{items.length} hồ sơ</span>
+              )}
+            </div>
+            <div className={styles.listActions}>
               <button
                 type="button"
-                className={styles.link}
-                onClick={() => {
-                  setLoadError("");
-                  setAttempt((value) => value + 1);
-                }}
+                className={styles.refresh}
+                disabled={loading || deleting}
+                onClick={refresh}
               >
-                Thử lại
+                <RefreshCw size={16} aria-hidden="true" /> Làm mới
               </button>
-            </p>
+              {!!items?.length && (
+                <>
+                  <button
+                    type="button"
+                    className={styles.export}
+                    disabled={!selected.size || loading || deleting}
+                    onClick={exportSelected}
+                  >
+                    <ArrowDownToLine size={17} aria-hidden="true" /> Xuất Excel
+                  </button>
+                  <button
+                    type="button"
+                    className={styles.delete}
+                    disabled={!selected.size || loading || deleting}
+                    onClick={deleteSelected}
+                  >
+                    <Trash2 size={17} aria-hidden="true" /> {deleting ? "Đang xóa…" : "Xóa đã chọn"}
+                  </button>
+                </>
+              )}
+            </div>
+          </header>
+          {deleteNotice && <p className={styles.selection} role="status">{deleteNotice}</p>}
+          {deleteError && <p className={styles.selection} role="alert">Không thể xóa hồ sơ. {deleteError}</p>}
+          {loadError ? (
+            <div className={styles.empty} role="alert">
+              <h3>Không tải được danh sách</h3>
+              <p>{loadError}</p>
+            </div>
           ) : !items ? (
-            <p role="status">Đang tải danh sách…</p>
+            <p className={styles.empty} role="status">
+              Đang tải danh sách…
+            </p>
+          ) : items.length === 0 ? (
+            <div className={styles.empty} role="status">
+              <span className={styles.emptyIcon}>
+                <Inbox size={30} aria-hidden="true" />
+              </span>
+              <h3>Chưa có hồ sơ đăng ký</h3>
+              <p>
+                Hồ sơ sẽ xuất hiện tại đây sau khi ứng viên gửi biểu mẫu thành
+                công.
+              </p>
+            </div>
           ) : (
             <>
-              <div className={styles.toolbar}>
-                <span>
-                  {items.length} hồ sơ · Đã chọn {selected.size}
-                </span>
-                <button
-                  type="button"
-                  className={styles.export}
-                  disabled={!selected.size}
-                  onClick={exportSelected}
-                >
-                  <Download size={17} /> Xuất Excel
-                </button>
+              <div className={styles.selection} role="status">
+                {selected.size
+                  ? `Đã chọn ${selected.size} hồ sơ`
+                  : "Chọn hồ sơ để xuất Excel hoặc xóa."}
               </div>
-              {items.length === 0 ? (
-                <p>Chưa có hồ sơ đăng ký.</p>
-              ) : (
-                <div className={styles.tableScroll}>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th scope="col">
+              <div className={styles.tableScroll}>
+                <table role="table" aria-labelledby="knowledge-list-heading">
+                  <thead role="rowgroup">
+                    <tr role="row">
+                      <th scope="col" role="columnheader">
+                        <label className={styles.selectAllLabel}>
                           <input
                             ref={selectAll}
                             type="checkbox"
                             aria-label="Chọn tất cả hồ sơ"
                             checked={allSelected}
+                            disabled={deleting}
                             onChange={(event) =>
                               setSelected(
                                 new Set(
@@ -302,51 +410,54 @@ export function KnowledgeWorkspace() {
                               )
                             }
                           />
+                          <span aria-hidden="true">Chọn tất cả</span>
+                        </label>
+                      </th>
+                      {columns.map(([key, label]) => (
+                        <th scope="col" role="columnheader" key={key}>
+                          {label}
                         </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody role="rowgroup">
+                    {items.map((entry) => (
+                      <tr key={entry.id} role="row">
+                        <td role="cell">
+                          <input
+                            type="checkbox"
+                            aria-label={`Chọn hồ sơ của ${entry.fullName}`}
+                            checked={selected.has(entry.id)}
+                            disabled={deleting}
+                            onChange={(event) =>
+                              selectRow(entry.id, event.target.checked)
+                            }
+                          />
+                        </td>
                         {columns.map(([key, label]) => (
-                          <th scope="col" key={key}>
-                            {label}
-                          </th>
+                          <td key={key} data-label={label} role="cell">
+                            {key === "fullName" ? (
+                              <button
+                                className={styles.link}
+                                type="button"
+                                disabled={deleting}
+                                onClick={() => showDetail(entry)}
+                              >
+                                {entry.fullName}
+                              </button>
+                            ) : (
+                              valueFor(entry, key)
+                            )}
+                          </td>
                         ))}
                       </tr>
-                    </thead>
-                    <tbody>
-                      {items.map((entry) => (
-                        <tr key={entry.id}>
-                          <td>
-                            <input
-                              type="checkbox"
-                              aria-label={`Chọn hồ sơ của ${entry.fullName}`}
-                              checked={selected.has(entry.id)}
-                              onChange={(event) =>
-                                selectRow(entry.id, event.target.checked)
-                              }
-                            />
-                          </td>
-                          {columns.map(([key]) => (
-                            <td key={key}>
-                              {key === "fullName" ? (
-                                <button
-                                  className={styles.link}
-                                  type="button"
-                                  onClick={() => showDetail(entry)}
-                                >
-                                  {entry.fullName}
-                                </button>
-                              ) : (
-                                valueFor(entry, key)
-                              )}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </>
           )}
-        </div>
+        </section>
       )}
     </section>
   );

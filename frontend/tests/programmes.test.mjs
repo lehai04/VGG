@@ -663,7 +663,7 @@ test("Every programme has local imagery with appropriate source attribution", ()
       }
     } else {
       assert.ok(audience.illustration, p.id);
-      assert.ok(existsSync(path.join(frontend, "public", audience.illustration.src)), p.id);
+      assert.ok(existsSync(path.join(frontend, "public", decodeURIComponent(audience.illustration.src))), p.id);
     }
     const { hero, section01, section04 } = p.pageContent;
     for (const src of [hero.heroImage, section01.overviewImage, section04.careerImage]) {
@@ -671,11 +671,37 @@ test("Every programme has local imagery with appropriate source attribution", ()
         assert.ok(existsSync(path.join(frontend, "public", decodeURIComponent(src))), src);
       }
     }
-    const hasProgrammePhotos = ["cong-nghe-thong-tin", "ke-toan"].includes(p.id);
-    assert.equal(isProgrammePhoto(hero.heroImage), hasProgrammePhotos, p.id);
-    assert.equal(isProgrammePhoto(section01.overviewImage), p.id === "cong-nghe-thong-tin", p.id);
-    assert.equal(isProgrammePhoto(section04.careerImage), hasProgrammePhotos, p.id);
-    assert.ok(audience.audience.every((item) => isProgrammePhoto(item.image) === hasProgrammePhotos), p.id);
+    const hasCustomHero = [
+      "cong-nghe-thong-tin", "ke-toan", "ky-thuat-xay-dung", "my-thuat-ung-dung", "tai-chinh-ngan-hang",
+      "khoa-hoc-moi-truong", "kinh-doanh-thuong-mai",
+    ].includes(p.id);
+    const hasCustomOverview = [
+      "cong-nghe-thong-tin", "khoa-hoc-moi-truong", "ky-thuat-moi-truong",
+      "logistics", "ky-thuat-xay-dung", "my-thuat-ung-dung",
+      "ngon-ngu-anh", "quan-he-cong-chung", "quan-ly-tai-nguyen-moi-truong",
+      "quan-tri-kinh-doanh", "tai-chinh-ngan-hang",
+    ].includes(p.id);
+    const hasCustomCareer = [
+      "cong-nghe-thong-tin", "ke-toan", "ky-thuat-xay-dung", "my-thuat-ung-dung",
+      "ky-thuat-moi-truong", "kien-truc", "marketing", "luat-kinh-te",
+      "ngon-ngu-anh", "quan-he-cong-chung", "quan-ly-tai-nguyen-moi-truong",
+    ].includes(p.id);
+    const hasCustomIllustration = [
+      "ngon-ngu-anh", "quan-he-cong-chung", "quan-ly-tai-nguyen-moi-truong",
+      "quan-tri-khach-san", "quan-tri-kinh-doanh", "tai-chinh-ngan-hang",
+    ].includes(p.id);
+    const hasCustomAudience = !hasCustomIllustration && (hasCustomOverview || hasCustomCareer ||
+      ["ky-thuat-o-to", "ly-luan-lich-su-my-thuat", "cong-nghe-sinh-hoc"].includes(p.id));
+    assert.equal(isProgrammePhoto(hero.heroImage), hasCustomHero, p.id);
+    assert.equal(isProgrammePhoto(section01.overviewImage), hasCustomOverview, p.id);
+    assert.equal(isProgrammePhoto(section04.careerImage), hasCustomCareer, p.id);
+    assert.equal(isProgrammePhoto(audience.illustration?.src), hasCustomIllustration, p.id);
+    const customAudience = audience.audience.filter((item) => isProgrammePhoto(item.image));
+    const expectedAudienceCount = p.id === "kinh-doanh-thuong-mai" ? 1 : hasCustomAudience ? audience.audience.length : 0;
+    assert.equal(customAudience.length, expectedAudienceCount, p.id);
+    if (p.id === "kinh-doanh-thuong-mai") {
+      assert.equal(customAudience[0].title, "Người đang làm kinh doanh, thương mại");
+    }
   }
   for (const image of Object.values(programmeImageLibrary)) {
     assert.ok(existsSync(path.join(frontend, "public", image.src)), image.src);
