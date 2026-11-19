@@ -675,17 +675,21 @@ test("Every programme has local imagery with appropriate source attribution", ()
       "cong-nghe-thong-tin", "ke-toan", "ky-thuat-xay-dung", "my-thuat-ung-dung", "tai-chinh-ngan-hang",
       "khoa-hoc-moi-truong", "kinh-doanh-thuong-mai",
       "kien-truc", "luat-kinh-te", "quan-tri-khach-san", "quan-tri-kinh-doanh",
+      "logistics", "marketing", "quan-he-cong-chung", "ly-luan-lich-su-my-thuat",
     ].includes(p.id);
     const hasCustomOverview = [
       "cong-nghe-thong-tin", "khoa-hoc-moi-truong", "ky-thuat-moi-truong",
       "logistics", "ky-thuat-xay-dung", "my-thuat-ung-dung",
       "ngon-ngu-anh", "quan-he-cong-chung", "quan-ly-tai-nguyen-moi-truong",
       "quan-tri-kinh-doanh", "tai-chinh-ngan-hang",
+      "quan-tri-khach-san", "ly-luan-lich-su-my-thuat",
     ].includes(p.id);
     const hasCustomCareer = [
       "cong-nghe-thong-tin", "ke-toan", "ky-thuat-xay-dung", "my-thuat-ung-dung",
       "ky-thuat-moi-truong", "kien-truc", "marketing", "luat-kinh-te",
       "ngon-ngu-anh", "quan-he-cong-chung", "quan-ly-tai-nguyen-moi-truong",
+      "khoa-hoc-moi-truong", "quan-tri-khach-san", "quan-tri-kinh-doanh",
+      "kinh-doanh-thuong-mai", "ly-luan-lich-su-my-thuat",
     ].includes(p.id);
     const hasCustomIllustration = [
       "ngon-ngu-anh", "quan-he-cong-chung", "quan-ly-tai-nguyen-moi-truong",
@@ -698,7 +702,7 @@ test("Every programme has local imagery with appropriate source attribution", ()
     assert.equal(isProgrammePhoto(section04.careerImage), hasCustomCareer, p.id);
     assert.equal(isProgrammePhoto(audience.illustration?.src), hasCustomIllustration, p.id);
     const customAudience = audience.audience.filter((item) => isProgrammePhoto(item.image));
-    const expectedAudienceCount = p.id === "kinh-doanh-thuong-mai" ? 1 : hasCustomAudience ? audience.audience.length : 0;
+    const expectedAudienceCount = hasCustomAudience ? audience.audience.length : 0;
     assert.equal(customAudience.length, expectedAudienceCount, p.id);
     if (p.id === "kinh-doanh-thuong-mai") {
       assert.equal(customAudience[0].title, "Người đang làm kinh doanh, thương mại");

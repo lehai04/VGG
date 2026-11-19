@@ -148,13 +148,14 @@ const programmePhotos: Record<string, {
   hero?: string;
   overview?: { filename: string; alt: string };
   audience?: Record<string, string>;
+  audienceFolder?: string;
   audienceIllustration?: string;
   career?: string;
 }> = {
   "cong-nghe-thong-tin": {
     folder: "Cong-nghe_thong_tin",
     hero: "hero.jpg",
-    overview: { filename: "progarmtrack.jpg", alt: "Minh họa định hướng đào tạo Công nghệ Thông tin" },
+    overview: { filename: "progarmtrack-20261119.webp", alt: "Minh họa định hướng đào tạo Công nghệ Thông tin" },
     audience: {
       "Người có nền tảng CNTT": "Người có nền tảng CNTT.jpg",
       "Người tốt nghiệp ngành gần": "Người tốt nghiệp ngành gần.jpg",
@@ -174,13 +175,14 @@ const programmePhotos: Record<string, {
   },
   "khoa-hoc-moi-truong": {
     folder: "Khoa_hoc_moi_truong",
-    hero: "hero.jpg",
+    hero: "hero-20261119.webp",
     overview: { filename: "Định hướng đào tạo.jpg", alt: "Minh họa định hướng đào tạo Khoa học Môi trường" },
     audience: {
       "Năng lực chuyên môn": "Năng lực chuyên môn.jpg",
       "Nghiên cứu và ra quyết định": "Nghiên cứu và ra quyết định.jpg",
       "Hợp tác và truyền đạt tri thức": "Hợp tác và truyền đạt tri thức.jpg",
     },
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
   },
   "ky-thuat-moi-truong": {
     folder: "Ky_thuat_moi_truong",
@@ -204,7 +206,8 @@ const programmePhotos: Record<string, {
   },
   logistics: {
     folder: "Logistics",
-    overview: { filename: "Tổng quan chương trình.jpg", alt: "Minh họa chương trình Logistics và Quản lý chuỗi cung ứng" },
+    hero: "hero.jpg",
+    overview: { filename: "Tổng quann chương trình.jpg", alt: "Minh họa chương trình Logistics và Quản lý chuỗi cung ứng" },
     audience: {
       "Người làm vận hành logistics và chuỗi cung ứng": "Người làm vận hành logistics và chuỗi cung ứng.jpg",
       "Người tham gia phân tích và cải tiến hệ thống": "Người tham gia phân tích và cải tiến hệ thống.jpg",
@@ -213,11 +216,11 @@ const programmePhotos: Record<string, {
   },
   "ky-thuat-xay-dung": {
     folder: "Ky_thuat_xay_dung",
-    hero: "hero.webp",
-    overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Kỹ thuật Xây dựng" },
+    hero: "hero.jpg",
+    overview: { filename: "Tổng quan-20261119.webp", alt: "Minh họa tổng quan ngành Kỹ thuật Xây dựng" },
     audience: {
       "Năng lực chuyên môn": "Năng lực chuyên môn.jpg",
-      "Nghiên cứu và ra quyết định": "Nghiên cứu và ra quyết định.jpg",
+      "Nghiên cứu và ra quyết định": "Nghiên cứu và ra quyết định.png",
       "Hợp tác và truyền đạt tri thức": "Hợp tác và truyền đạt tri thức.jpg",
     },
     career: "Cơ hội nghề nghiệp và phát triển.webp",
@@ -234,7 +237,11 @@ const programmePhotos: Record<string, {
     career: "Cơ hội nghề nghiệp và phát triển.jpg",
   },
   "ly-luan-lich-su-my-thuat": {
-    folder: "My_thuat_ung_dung",
+    folder: "Ly_luan_va_lich_su_MTUD",
+    hero: "hero.jpg",
+    overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Lý luận và Lịch sử Mỹ thuật ứng dụng" },
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
+    audienceFolder: "My_thuat_ung_dung",
     audience: {
       "Người làm việc trong thiết kế": "Người làm việc trong thiết kế.avif",
       "Người quan tâm nghiên cứu mỹ thuật ứng dụng": "Người quan tâm nghiên cứu mỹ thuật ứng dụng.avif",
@@ -251,12 +258,13 @@ const programmePhotos: Record<string, {
   },
   marketing: {
     folder: "Marketting",
+    hero: "hero.png",
     audience: {
       "Người làm Marketing và kinh doanh": "Người làm Marketing và kinh doanh.jpg",
-      "Người hướng đến tư vấn và khởi nghiệp": "Người hướng đến tư vấn và khởi nghiệp.jpg",
-      "Người theo đuổi nghiên cứu và giảng dạy": "Người theo đuổi nghiên cứu và giảng dạy.jpg",
+      "Người hướng đến tư vấn và khởi nghiệp": "Người hướng đến tư vấn và khởi nghiệp.png",
+      "Người theo đuổi nghiên cứu và giảng dạy": "Người theo đuổi nghiên cứu và giảng dạy-20261119.webp",
     },
-    career: "Cơ hội nghề nghiệp và phát triển.webp",
+    career: "Cơ hội nghề nghiệp và phát triển-20261119.webp",
   },
   "luat-kinh-te": {
     folder: "Luat_kinh_te",
@@ -283,38 +291,45 @@ const programmePhotos: Record<string, {
   },
   "quan-he-cong-chung": {
     folder: "QHCC",
-    overview: { filename: "Tổng quan chương trình.jpg", alt: "Minh họa tổng quan ngành Quan hệ công chúng" },
+    hero: "hero.jpg",
+    overview: { filename: "Tổng quan chương trình-20261119.webp", alt: "Minh họa tổng quan ngành Quan hệ công chúng" },
     audienceIllustration: "chương trình phù hợp với ai.jpg",
-    career: "Cơ hội nghề nghiệp và phát triển.webp",
+    career: "Cơ hội nghề nghiệp và phát triển-20261119.webp",
   },
   "quan-ly-tai-nguyen-moi-truong": {
     folder: "Quan_ly_tai_nguyen_Moi_truong",
     overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Quản lý tài nguyên và môi trường" },
-    audienceIllustration: "chương trìnhhphuf hợp với ai.jpg",
-    career: "Cơ hội nghề nghiệp và phát triển.webp",
+    audienceIllustration: "chương trình phù hợp với ai.jpg",
+    career: "Cơ hội nghề nghiệp và phát triển-20261119.webp",
   },
   "quan-tri-khach-san": {
     folder: "Quan_tri_Khach_san",
     hero: "hero.jpg",
+    overview: { filename: "Tổng  quan.png", alt: "Minh họa tổng quan ngành Quản trị Khách sạn" },
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
     audienceIllustration: "Chương trìnhhphuf hợp với au.jpg",
   },
   "quan-tri-kinh-doanh": {
     folder: "Quan_tri_kinh_doanh",
     hero: "Hero.jpg",
     overview: { filename: "Tổng quan chương trình.jpg", alt: "Minh họa tổng quan ngành Quản trị kinh doanh" },
-    audienceIllustration: "chường trình phù hợp với ai.jpg",
+    audienceIllustration: "Chương trình phù hợp với ai.jpg",
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
   },
   "tai-chinh-ngan-hang": {
     folder: "Tai_chinh_ngan_hang",
     hero: "hero-20261119.jpg",
     overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Tài chính – Ngân hàng" },
-    audienceIllustration: "chương trình phùuhopwj với ai.jpg",
+    audienceIllustration: "Chương trình phù hợp với ai.jpg",
   },
   "kinh-doanh-thuong-mai": {
     folder: "Kinh_doanh_thuong_mai",
     hero: "hero.jpg",
+    career: "Cơ hội nghề nghiệp và phát triển.avif",
     audience: {
       "Người đang làm kinh doanh, thương mại": "Người đang làm kinh doanh, thương mại.png",
+      "Người hướng đến vai trò quản lý": "Người hướng đến vai trò quản lý.png",
+      "Người muốn phát triển trong kinh doanh số": "Người muốn phát triển trong kinh doanh số.jpg",
     },
   },
 };
@@ -333,8 +348,8 @@ export function withProgrammeImages(programme: Programme): Programme {
   const primary = pictures[0];
   const overview = pictures[1];
   const photos = programmePhotos[programme.id];
-  const photoPath = (filename: string) =>
-    `${programmePhotoRoot}${photos.folder}/${encodeURIComponent(filename)}`;
+  const photoPath = (filename: string, folder = photos.folder) =>
+    `${programmePhotoRoot}${folder}/${encodeURIComponent(filename)}`;
   const audienceIllustration = photos?.audienceIllustration
     ? {
         src: photoPath(photos.audienceIllustration),
@@ -393,7 +408,7 @@ export function withProgrammeImages(programme: Programme): Programme {
           const illustration = pictures[index % pictures.length];
           return {
             ...item,
-            image: filename ? photoPath(filename) : illustration.src,
+            image: filename ? photoPath(filename, photos.audienceFolder) : illustration.src,
             alt: filename ? item.title : illustration.alt,
             imageSource: filename ? undefined : illustration.source,
           };
