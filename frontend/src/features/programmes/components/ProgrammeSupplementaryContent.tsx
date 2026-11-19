@@ -47,7 +47,13 @@ function InformationBlock({ block }: { block: ProgrammeInformationBlock }) {
   );
 }
 
-export function ProgrammeAdmissions({ blocks }: { blocks?: readonly ProgrammeInformationBlock[] }) {
+export function ProgrammeAdmissions({
+  blocks,
+  besideImage = false,
+}: {
+  blocks?: readonly ProgrammeInformationBlock[];
+  besideImage?: boolean;
+}) {
   const t = useWebsiteCopy();
   const content = blocks ?? [
     {
@@ -89,7 +95,7 @@ export function ProgrammeAdmissions({ blocks }: { blocks?: readonly ProgrammeInf
     (block) => !eligibility.includes(block) && !cards.includes(block) && block !== bridge,
   );
   return (
-    <div className={styles.admissions} aria-label="Điều kiện dự tuyển và bổ sung kiến thức">
+    <div className={`${styles.admissions} ${besideImage ? styles.besideImage : ""}`} aria-label="Điều kiện dự tuyển và bổ sung kiến thức">
       {eligibility.map((block) => (
         <article className={styles.eligibilitySummary} key={block.title}>
           <h3>{t(block.title)}</h3>

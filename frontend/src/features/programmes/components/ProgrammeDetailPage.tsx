@@ -549,6 +549,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           {pageContent.section03.intro?.map((paragraph) => (
             <p key={paragraph}>{t(paragraph)}</p>
           ))}
+          <div className={pageContent.section03.illustration && audienceList.length === 0 ? styles.audienceSplit : undefined}>
           {pageContent.section03.illustration && (
             <figure className={styles.audienceIllustration}>
               <div
@@ -561,14 +562,14 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                   alt={t(pageContent.section03.illustration.alt)}
                   fill
                   sizes={isProgrammePhoto(pageContent.section03.illustration.src)
-                    ? "(max-width: 768px) 100vw, 760px"
+                    ? "(max-width: 900px) 100vw, 45vw"
                     : "(max-width: 768px) 100vw, 80vw"}
                   className={styles.audiencePhoto}
                 />
               </div>
             </figure>
           )}
-          <div className={styles.audienceGrid}>
+          {audienceList.length > 0 && <div className={styles.audienceGrid}>
             {audienceList.map((item, idx) => (
               <article key={idx} className={styles.audienceCard}>
                 {item.image && (
@@ -588,8 +589,12 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                 </div>
               </article>
             ))}
+          </div>}
+          <ProgrammeAdmissions
+            blocks={pageContent.section03.requirements}
+            besideImage={Boolean(pageContent.section03.illustration) && audienceList.length === 0}
+          />
           </div>
-          <ProgrammeAdmissions blocks={pageContent.section03.requirements} />
         </div>
       </section>
       )}

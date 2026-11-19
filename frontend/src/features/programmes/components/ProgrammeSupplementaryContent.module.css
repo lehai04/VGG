@@ -179,6 +179,23 @@
   border-radius: 0 6px 6px 0;
   background: #f5f5f3;
 }
+.besideImage {
+  margin-top: 0;
+  gap: 16px;
+}
+.besideImage .eligibilitySummary {
+  padding: 24px;
+  border: 1px solid #f3d5dd;
+  border-radius: 14px;
+  background: #fff7f8;
+}
+.besideImage .entryCards {
+  grid-template-columns: minmax(0, 1fr);
+}
+.besideImage .entryCard {
+  border-radius: 14px;
+  background: #f6f8fb;
+}
 .entryCards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

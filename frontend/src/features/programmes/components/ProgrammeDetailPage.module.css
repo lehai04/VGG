@@ -1536,6 +1536,37 @@
 .audienceIllustration {
   margin: 24px 0 32px;
 }
+.audienceSplit {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(24px, 3vw, 44px);
+  margin-top: 32px;
+}
+.audienceSplit > * {
+  min-width: 0;
+}
+.audienceSplit .audienceIllustration {
+  margin: 0;
+}
+.audienceSplit .audienceIllustrationImage {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: auto;
+  background: transparent;
+}
+.audienceSplit .audienceIllustrationImage .audiencePhoto {
+  position: relative !important;
+  display: block;
+  height: auto !important;
+  width: 100% !important;
+  object-fit: contain;
+}
+@media (max-width: 900px) {
+  .audienceSplit {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 .audienceIllustrationImage {
   position: relative;
   aspect-ratio: 2.7 / 1;
