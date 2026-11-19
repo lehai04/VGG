@@ -612,7 +612,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           alt=""
           fill
           quality={95}
-          sizes={isProgrammePhoto(careerImage) ? "(max-width: 1024px) 100vw, 72vw" : "100vw"}
+          sizes="100vw"
           aria-hidden="true"
         />
         <div className={styles.container}>

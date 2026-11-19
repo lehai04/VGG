@@ -885,29 +885,42 @@
   background: linear-gradient(
     90deg,
     #fbfaf9 0%,
-    #fbfaf9 24%,
-    rgba(251, 250, 249, 0.96) 34%,
-    rgba(251, 250, 249, 0.7) 44%,
-    rgba(251, 250, 249, 0) 60%
+    #fbfaf9 34%,
+    rgba(251, 250, 249, 0.97) 48%,
+    rgba(251, 250, 249, 0.86) 60%,
+    rgba(251, 250, 249, 0.4) 78%,
+    rgba(251, 250, 249, 0.12) 100%
   );
 }
 
 .careersBackground[data-full-photo] {
   inset: 0 0 0 auto !important;
-  width: 72% !important;
+  width: 100% !important;
   height: 100% !important;
-  object-fit: contain;
+  object-fit: cover;
   object-position: right center;
   opacity: 1;
 }
 
 @media (min-width: 1025px) {
   .sectionCareers:has(> .careersBackground[data-full-photo]) > .container > * {
-    max-width: 52%;
+    max-width: none;
   }
 
   .sectionCareers:has(> .careersBackground[data-full-photo]) .careersGrid {
-    width: 100%;
+    width: min(1120px, 72%);
+    grid-template-rows: none;
+    gap: 28px 32px;
+  }
+
+  .sectionCareers:has(> .careersBackground[data-full-photo]) .careerIconBox {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+  }
+
+  .sectionCareers:has(> .careersBackground[data-full-photo]) .careerCard {
+    gap: 14px;
   }
 }
 
@@ -927,6 +940,7 @@
     height: var(--career-photo-height) !important;
     margin-block: 0;
     object-position: center bottom;
+    object-fit: contain;
   }
 }
 
