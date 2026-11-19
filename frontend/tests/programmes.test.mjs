@@ -674,6 +674,7 @@ test("Every programme has local imagery with appropriate source attribution", ()
     const hasCustomHero = [
       "cong-nghe-thong-tin", "ke-toan", "ky-thuat-xay-dung", "my-thuat-ung-dung", "tai-chinh-ngan-hang",
       "khoa-hoc-moi-truong", "kinh-doanh-thuong-mai",
+      "kien-truc", "luat-kinh-te", "quan-tri-khach-san", "quan-tri-kinh-doanh",
     ].includes(p.id);
     const hasCustomOverview = [
       "cong-nghe-thong-tin", "khoa-hoc-moi-truong", "ky-thuat-moi-truong",

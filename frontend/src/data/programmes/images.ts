@@ -164,7 +164,7 @@ const programmePhotos: Record<string, {
   },
   "ke-toan": {
     folder: "Ke_toan",
-    hero: "hero.jpg",
+    hero: "hero-20261119.jpg",
     audience: {
       "Người đang làm kế toán, kiểm toán": "People working in accounting and auditing.jpg",
       "Người làm tài chính, kiểm soát và quản trị": "Finance, control and management professionals.jpg",
@@ -194,6 +194,7 @@ const programmePhotos: Record<string, {
   },
   "kien-truc": {
     folder: "Kien_truc",
+    hero: "hero.jpg",
     audience: {
       "Kiến trúc sư và người làm thiết kế": "Kiến trúc sư và người làm thiết kế.jpg",
       "Người làm tư vấn và quản lý dự án": "Người làm tư vấn và quản lý dự án.jpg",
@@ -259,6 +260,7 @@ const programmePhotos: Record<string, {
   },
   "luat-kinh-te": {
     folder: "Luat_kinh_te",
+    hero: "hero.jpg",
     audience: {
       "Nhóm ngành Luật": "Nhóm ngành Luật.jpg",
       "Nhóm ngành phù hợp khác": "Nhóm ngành phù hợp khác.jpg",
@@ -293,16 +295,18 @@ const programmePhotos: Record<string, {
   },
   "quan-tri-khach-san": {
     folder: "Quan_tri_Khach_san",
+    hero: "hero.jpg",
     audienceIllustration: "Chương trìnhhphuf hợp với au.jpg",
   },
   "quan-tri-kinh-doanh": {
     folder: "Quan_tri_kinh_doanh",
+    hero: "Hero.jpg",
     overview: { filename: "Tổng quan chương trình.jpg", alt: "Minh họa tổng quan ngành Quản trị kinh doanh" },
     audienceIllustration: "chường trình phù hợp với ai.jpg",
   },
   "tai-chinh-ngan-hang": {
     folder: "Tai_chinh_ngan_hang",
-    hero: "Hero.jpg",
+    hero: "hero-20261119.jpg",
     overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Tài chính – Ngân hàng" },
     audienceIllustration: "chương trình phùuhopwj với ai.jpg",
   },

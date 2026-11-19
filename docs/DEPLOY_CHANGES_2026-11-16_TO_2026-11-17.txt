@@ -1,5 +1,5 @@
 BẢN CHANGE / NỘI DUNG DEPLOY VGG — 17/11/2026
-Phiên bản: main tại 95ac97e và phần bổ sung tiếng Anh đang ở workspace, chưa commit. Tổng hợp thay đổi từ 16/11 đến 17/11/2026, so với b87e873. Phần đã commit gồm 1a3cc2f và 95ac97e.
+Phiên bản: c1a0bec (main). Tổng hợp thay đổi từ 16/11 đến 17/11/2026, so với b87e873. Gồm ba commit 1a3cc2f, 95ac97e và c1a0bec.
 
 Nội dung
 * Website VI / EN
@@ -30,7 +30,7 @@ Nội dung
 - CMS thêm công tắc “Tin nổi bật”, mặc định tắt. Khi lưu bài có bật nổi bật, hệ thống tắt bài nổi bật trước đó. Một bài dùng chung trạng thái nổi bật cho VI/EN. Chỉ bài đã xuất bản hiển thị công khai.
 
 Triển khai
-- Chốt revision gồm main tại 95ac97e và phần bổ sung tiếng Anh trong workspace trước khi build. Commit 95ac97e chưa chứa phần dịch mới. Sao lưu PostgreSQL và giữ cấu hình môi trường của máy chủ.
+- Lấy mã nguồn main tại c1a0bec, đã gồm bản tiếng Anh của mục Bổ sung kiến thức và biểu mẫu. Sao lưu PostgreSQL và giữ cấu hình môi trường của máy chủ.
 - Cài dependencies theo lockfile bằng npm ci nếu triển khai từ mã nguồn. Với Docker Compose, build các image từ cùng revision.
 - Chạy npm run db:deploy hoặc service migrate theo quy trình Docker Compose để áp dụng các migration còn thiếu:
   20261116000000_news_featured (thêm news_posts.is_featured và index giới hạn một bài nổi bật)
@@ -39,7 +39,7 @@ Triển khai
 - Giữ BACKEND_INTERNAL_URL trỏ tới backend nội bộ và CMS_APP_URL khớp origin CMS thực tế. Đóng gói thư mục frontend/public/images_programes/ và tệp frontend/public/video/video-banner.webm cùng website.
 - Nếu chạy nhiều replica backend, truyền cùng một KNOWLEDGE_CAPTCHA_SECRET cho mọi replica để mã bảo mật được kiểm tra nhất quán.
 
-File đã sửa (đầy đủ 133 file so với b87e873)
+File đã sửa (đầy đủ 138 file so với b87e873, gồm file bàn giao)
 - backend/prisma/migrations/20261116000000_news_featured/migration.sql
 - backend/prisma/migrations/20261117000000_knowledge_registrations/migration.sql
 - backend/prisma/schema.prisma
@@ -61,6 +61,7 @@ File đã sửa (đầy đủ 133 file so với b87e873)
 - cms/src/features/consultation-admin/KnowledgeWorkspace.tsx
 - cms/src/features/consultation-admin/knowledge-workspace.module.css
 - cms/src/lib/create-xlsx.ts
+- docs/DEPLOY_CHANGES_2026-11-16_TO_2026-11-17.txt
 - docs/DEPLOY_NEWS_FEATURED_2026-11-16.md
 - frontend/public/images_programes/Cong-nghe_thong_tin/Cơ hội nghề nghiệp và phát triển.jpg
 - frontend/public/images_programes/Cong-nghe_thong_tin/Người có nền tảng CNTT.jpg
@@ -155,7 +156,11 @@ File đã sửa (đầy đủ 133 file so với b87e873)
 - frontend/src/features/admissions/AdmissionsReference.tsx
 - frontend/src/features/admissions/KnowledgeRegistration.module.css
 - frontend/src/features/admissions/KnowledgeRegistrationForm.tsx
+- frontend/src/features/admissions/knowledge-appendix.en.json
 - frontend/src/features/admissions/knowledge-appendix.ts
+- frontend/src/features/admissions/knowledge-registration-copy.ts
+- frontend/src/features/admissions/knowledge-registration.en.json
+- frontend/src/features/admissions/knowledge-requirements.en.json
 - frontend/src/features/admissions/knowledge-section.css
 - frontend/src/features/admissions/reference-engine.js
 - frontend/src/features/discover/components/DiscoverIntroduction.tsx
