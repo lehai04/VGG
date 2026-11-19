@@ -94,7 +94,43 @@ export function ProgrammeAdmissions({
   const other = content.filter(
     (block) => !eligibility.includes(block) && !cards.includes(block) && block !== bridge,
   );
+  const bridgePanel = bridge && (
+    <article className={styles.bridgePanel}>
+      <h3>{t(bridge.title)}</h3>
+      {bridge.paragraphs
+        ?.filter((paragraph) => !paragraph.startsWith("Kết quả bổ sung"))
+        .map((paragraph) => (
+          <p
+            className={paragraph.includes("nằm ngoài") ? styles.bridgeNotice : undefined}
+            key={paragraph}
+          >
+            {t(paragraph)}
+          </p>
+        ))}
+      {!!bridge.points?.length && (
+        <ul>
+          {bridge.points.map((point) => (
+            <li key={point}>{t(point)}</li>
+          ))}
+        </ul>
+      )}
+      {bridge.groups?.map((group) => (
+        <InformationBlock block={group} key={group.title} />
+      ))}
+      {bridge.paragraphs
+        ?.filter((paragraph) => paragraph.startsWith("Kết quả bổ sung"))
+        .map((paragraph) => (
+          <p className={styles.admissionFootnote} key={paragraph}>
+            {t(paragraph)}
+          </p>
+        ))}
+      <Link className={styles.admissionLink} href="#consultation">
+        {t("Tư vấn về ngành đầu vào ↗")}
+      </Link>
+    </article>
+  );
   return (
+    <>
     <div className={`${styles.admissions} ${besideImage ? styles.besideImage : ""}`} aria-label="Điều kiện dự tuyển và bổ sung kiến thức">
       {eligibility.map((block) => (
         <article className={styles.eligibilitySummary} key={block.title}>
@@ -115,42 +151,14 @@ export function ProgrammeAdmissions({
       {other.map((block) => (
         <InformationBlock key={block.title} block={block} />
       ))}
-      {bridge && (
-        <article className={styles.bridgePanel}>
-          <h3>{t(bridge.title)}</h3>
-          {bridge.paragraphs
-            ?.filter((paragraph) => !paragraph.startsWith("Kết quả bổ sung"))
-            .map((paragraph) => (
-              <p
-                className={paragraph.includes("nằm ngoài") ? styles.bridgeNotice : undefined}
-                key={paragraph}
-              >
-                {t(paragraph)}
-              </p>
-            ))}
-          {!!bridge.points?.length && (
-            <ul>
-              {bridge.points.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          )}
-          {bridge.groups?.map((group) => (
-            <InformationBlock block={group} key={group.title} />
-          ))}
-          {bridge.paragraphs
-            ?.filter((paragraph) => paragraph.startsWith("Kết quả bổ sung"))
-            .map((paragraph) => (
-              <p className={styles.admissionFootnote} key={paragraph}>
-                {t(paragraph)}
-              </p>
-            ))}
-          <Link className={styles.admissionLink} href="#consultation">
-            {t("Tư vấn về ngành đầu vào ↗")}
-          </Link>
-        </article>
-      )}
+      {!besideImage && bridgePanel}
     </div>
+    {besideImage && bridgePanel && (
+      <div className={`${styles.admissions} ${styles.separateBridge}`}>
+        {bridgePanel}
+      </div>
+    )}
+    </>
   );
 }
 

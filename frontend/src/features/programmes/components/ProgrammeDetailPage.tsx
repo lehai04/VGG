@@ -284,6 +284,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           alt={t(pageContent.hero.imageAlt ?? `Ngành ${programme.title} - Đại học Văn Lang`)}
           fill
           priority
+          quality={95}
           sizes="100vw"
         />
         <div className={styles.heroOverlay} aria-hidden="true" />
@@ -610,7 +611,8 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           src={careerImage}
           alt=""
           fill
-          sizes={isProgrammePhoto(careerImage) ? "(max-width: 1024px) 100vw, 50vw" : "100vw"}
+          quality={95}
+          sizes={isProgrammePhoto(careerImage) ? "(max-width: 1024px) 100vw, 72vw" : "100vw"}
           aria-hidden="true"
         />
         <div className={styles.container}>

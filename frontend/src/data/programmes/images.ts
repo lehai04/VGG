@@ -285,9 +285,10 @@ const programmePhotos: Record<string, {
   },
   "ngon-ngu-anh": {
     folder: "Ngon_ngu_anh",
-    overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Ngôn ngữ Anh" },
+    hero: "hero-20261119.webp",
+    overview: { filename: "Tổng quan-20261119.webp", alt: "Minh họa tổng quan ngành Ngôn ngữ Anh" },
     audienceIllustration: "chương trình phù hợp với ai.jpg",
-    career: "Cơ hội nghề nghiệp và phát triển.jpg",
+    career: "Cơ hội nghề nghiệp và phát triển-20261119.webp",
   },
   "quan-he-cong-chung": {
     folder: "QHCC",
