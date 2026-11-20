@@ -10,7 +10,7 @@
     ],
     "defaults": {
       "hero": {
-        "image": "/images/pages/research/content/banner-quality-20261120.webp",
+        "image": "/images/pages/research/content/banner.jpg",
         "alt": "Không gian nghiên cứu tại Văn Lang",
         "label": "RESEARCH & GLOBAL OPPORTUNITIES · Viện Sau đại học",
         "title": "Nghiên cứu khoa học",
@@ -826,7 +826,7 @@
         "title": "Nâng tầm tri thức",
         "emphasis": "Chủ động dẫn đầu.",
         "intro": "Trường Đại học Văn Lang mang đến 21+ chương trình Thạc sĩ, 01 chương trình Tiến sĩ và 01 chương trình Thạc sĩ liên kết quốc tế giúp bạn phát triển chuyên môn, nâng cao năng lực nghiên cứu và mở rộng cơ hội nghề nghiệp.",
-        "posterImage": "/images/pages/home/sections/campus-quality-20261120.webp",
+        "posterImage": "/images/pages/home/banner/banner-01.jpg",
         "primary": {
           "label": "Khám phá chương trình →",
           "href": "#programmes"
@@ -1047,7 +1047,7 @@
     ],
     "defaults": {
       "hero": {
-        "image": "/images/pages/student-success/content/banner-hd-20261119.webp",
+        "image": "/images/pages/student-success/content/banner.JPG",
         "alt": "Cộng đồng người học Viện Sau đại học",
         "label": "HÀNH TRÌNH NGƯỜI HỌC · Viện Sau đại học",
         "title": "HỌC SÂU HƠN. KẾT NỐI XA HƠN.",
@@ -11872,7 +11872,7 @@
           "alt": "Không gian khuôn viên và cơ sở vật chất Trường Đại học Văn Lang"
         },
         "closing": {
-          "image": "/images/pages/discover/introduction/seminar-quality-20261120.webp",
+          "image": "/images/pages/discover/introduction/seminar-community.webp",
           "alt": "Cộng đồng giảng viên và học viên tham gia hoạt động nghiên cứu tại Văn Lang"
         }
       },

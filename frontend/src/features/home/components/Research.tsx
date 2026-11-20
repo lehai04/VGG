@@ -5,7 +5,7 @@ import { homeContent } from '@/data/home-content';
 import { websiteContent } from '@/lib/website-content';
 
 // Ảnh đại diện cho khu vực Nghiên cứu & Đổi mới.
-const RESEARCH_IMAGE_SRC = "/images/pages/home/sections/campus-quality-20261120.webp";
+const RESEARCH_IMAGE_SRC = "/images/pages/home/sections/campus.webp";
 
 // Danh sách các hướng nghiên cứu nổi bật.
 const RESEARCH_LINKS = [

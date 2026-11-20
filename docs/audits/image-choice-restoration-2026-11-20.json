@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-20",
+  "reason": "User requested restoration of their chosen photographs; image quality work did not authorize selecting different photographs.",
+  "baseline": "5bfdf42",
+  "status": "Photo selections restored. Earlier all-clear quality claims are superseded; original low-resolution sources retain their intrinsic limits.",
+  "restoredSelections": [
+    "frontend/src/data/programmes/images.ts",
+    "frontend/src/data/student-success-content.ts",
+    "frontend/src/data/research-copy.json",
+    "frontend/src/data/home-content.ts",
+    "frontend/src/data/discover-media.ts",
+    "backend/src/modules/content/page-defaults.json"
+  ],
+  "samePhotographHigherResolution": [
+    {
+      "folder": "QHCC",
+      "original": "hero.jpg",
+      "retained": "hero-hd-20261119.webp"
+    },
+    {
+      "folder": "QHCC",
+      "original": "Tổng quan chương trình-20261119.webp",
+      "retained": "overview-hd-20261119.webp"
+    },
+    {
+      "folder": "Khoa_hoc_moi_truong",
+      "original": "hero-20261119.webp",
+      "retained": "hero-hd-20261119.webp"
+    },
+    {
+      "folder": "Ngon_ngu_anh",
+      "original": "Tổng quan-20261119.webp",
+      "retained": "overview-hd-20261119.webp"
+    },
+    {
+      "folder": "Ky_thuat_xay_dung",
+      "original": "Cơ hội nghề nghiệp và phát triển.webp",
+      "retained": "career-hd-20261119.webp"
+    }
+  ],
+  "explicitUserUpdate": "Kinh_doanh_thuong_mai/kinh-doanh-so-20261120.jpg",
+  "retained": "Responsive image sizes and display constraints only.",
+  "removedUnapprovedGeneratedAssets": [
+    "frontend/public/images/pages/discover/introduction/seminar-quality-20261120.webp",
+    "frontend/public/images/pages/home/sections/campus-quality-20261120.webp",
+    "frontend/public/images/pages/research/content/banner-quality-20261120.webp",
+    "frontend/public/images/pages/student-success/content/banner-hd-20261119.webp",
+    "frontend/public/images_programes/Cong-nghe_thong_tin/career-quality-20261120.webp",
+    "frontend/public/images_programes/Cong-nghe_thong_tin/hero-quality-20261120.webp",
+    "frontend/public/images_programes/Cong-nghe_thong_tin/overview-quality-20261120.webp",
+    "frontend/public/images_programes/Cong_nghe_sinh_hoc/career-quality-20261120.webp",
+    "frontend/public/images_programes/Cong_nghe_sinh_hoc/hero-quality-20261120.webp",
+    "frontend/public/images_programes/Cong_nghe_sinh_hoc/overview-quality-20261120.webp",
+    "frontend/public/images_programes/Ke_toan/career-quality-20261120.webp",
+    "frontend/public/images_programes/Ke_toan/hero-quality-20261120.webp",
+    "frontend/public/images_programes/Ke_toan/overview-quality-20261120.webp",
+    "frontend/public/images_programes/Kien_truc/career-quality-20261120.webp",
+    "frontend/public/images_programes/Kien_truc/overview-quality-20261120.webp",
+    "frontend/public/images_programes/Kinh_doanh_thuong_mai/career-hd-20261119.webp",
+    "frontend/public/images_programes/Kinh_doanh_thuong_mai/hero-quality-20261120.webp",
+    "frontend/public/images_programes/Kinh_doanh_thuong_mai/overview-quality-20261120.webp",
+    "frontend/public/images_programes/Ky_thuat_moi_truong/career-quality-20261120.webp",
+    "frontend/public/images_programes/Ky_thuat_moi_truong/hero-quality-20261120.webp",
+    "frontend/public/images_programes/Ky_thuat_o_to/career-quality-20261120.webp",
+    "frontend/public/images_programes/Ky_thuat_o_to/hero-quality-20261120.webp",
+    "frontend/public/images_programes/Ky_thuat_o_to/overview-quality-20261120.webp",
+    "frontend/public/images_programes/Ky_thuat_xay_dung/career-quality-20261120.webp",
+    "frontend/public/images_programes/Ky_thuat_xay_dung/hero-quality-20261120.webp",
+    "frontend/public/images_programes/Ky_thuat_xay_dung/overview-quality-20261120.webp",
+    "frontend/public/images_programes/Logistics/career-quality-20261120.webp",
+    "frontend/public/images_programes/Logistics/hero-quality-20261120.webp",
+    "frontend/public/images_programes/Logistics/overview-quality-20261120.webp",
+    "frontend/public/images_programes/Luat_kinh_te/audience-law-quality-20261120.webp",
+    "frontend/public/images_programes/Luat_kinh_te/career-quality-20261120.webp",
+    "frontend/public/images_programes/Ly_luan_va_lich_su_MTUD/career-quality-20261120.webp",
+    "frontend/public/images_programes/Ly_luan_va_lich_su_MTUD/hero-hd-20261120.webp",
+    "frontend/public/images_programes/Marketting/career-hd-20261119.webp",
+    "frontend/public/images_programes/Marketting/hero-quality-20261120.webp",
+    "frontend/public/images_programes/Marketting/overview-quality-20261120.webp",
+    "frontend/public/images_programes/My_thuat_ung_dung/career-quality-20261120.webp",
+    "frontend/public/images_programes/My_thuat_ung_dung/hero-quality-20261120.webp",
+    "frontend/public/images_programes/Ngon_ngu_anh/career-hd-20261119.webp",
+    "frontend/public/images_programes/Ngon_ngu_anh/hero-hd-20261119.webp",
+    "frontend/public/images_programes/Quan_ly_tai_nguyen_Moi_truong/career-quality-20261120.webp",
+    "frontend/public/images_programes/Quan_ly_tai_nguyen_Moi_truong/hero-quality-20261120.webp",
+    "frontend/public/images_programes/Quan_tri_Khach_san/career-quality-20261120.webp",
+    "frontend/public/images_programes/Tai_chinh_ngan_hang/career-quality-20261120.webp"
+  ],
+  "validation": {
+    "frontendTests": {
+      "passed": 51,
+      "failed": 0
+    },
+    "typecheck": "passed",
+    "lint": "passed",
+    "repositoryCheck": "passed",
+    "browser": {
+      "routes": 30,
+      "imageInstances": 219,
+      "failedRoutes": 0,
+      "brokenOrUnapprovedImages": 0
+    },
+    "note": "Load and photo-selection checks only; no claim that low-resolution originals became high-resolution."
+  }
+}

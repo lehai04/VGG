@@ -292,5 +292,6 @@
     "frontendTests": 51,
     "typecheck": "passed",
     "lint": "passed"
-  }
+  },
+  "status": "Historical audit, superseded by image-choice-restoration-2026-11-20.json. Its quality results do not describe the restored photo selections."
 }

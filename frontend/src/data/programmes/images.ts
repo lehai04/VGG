@@ -154,25 +154,24 @@ const programmePhotos: Record<string, {
 }> = {
   "cong-nghe-thong-tin": {
     folder: "Cong-nghe_thong_tin",
-    hero: "hero-quality-20261120.webp",
-    overview: { filename: "overview-quality-20261120.webp", alt: "Thực hành và nghiên cứu Công nghệ Thông tin trong phòng máy tại Văn Lang" },
+    hero: "hero.jpg",
+    overview: { filename: "progarmtrack-20261119.webp", alt: "Minh họa định hướng đào tạo Công nghệ Thông tin" },
     audience: {
       "Người có nền tảng CNTT": "Người có nền tảng CNTT.jpg",
       "Người tốt nghiệp ngành gần": "Người tốt nghiệp ngành gần.jpg",
       "Người hướng đến nghiên cứu": "Người hướng đến nghiên cứu.jpg",
     },
-    career: "career-quality-20261120.webp",
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
   },
   "ke-toan": {
     folder: "Ke_toan",
-    overview: { filename: "overview-quality-20261120.webp", alt: "Giảng dạy và thực hành kế toán trên máy tính tại Văn Lang" },
-    hero: "hero-quality-20261120.webp",
+    hero: "hero-20261119.jpg",
     audience: {
       "Người đang làm kế toán, kiểm toán": "People working in accounting and auditing.jpg",
       "Người làm tài chính, kiểm soát và quản trị": "Finance, control and management professionals.jpg",
       "Người muốn phát triển chuyên môn sâu": "People who want to develop deep expertise.jpg",
     },
-    career: "career-quality-20261120.webp",
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
   },
   "khoa-hoc-moi-truong": {
     folder: "Khoa_hoc_moi_truong",
@@ -187,31 +186,28 @@ const programmePhotos: Record<string, {
   },
   "ky-thuat-moi-truong": {
     folder: "Ky_thuat_moi_truong",
-    hero: "hero-quality-20261120.webp",
     overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Kỹ thuật Môi trường" },
     audience: {
       "Người làm kỹ thuật và công nghệ môi trường": "Người làm kỹ thuật và công nghệ môi trường.jpg",
       "Người làm tư vấn và quản lý môi trường": "Người làm tư vấn và quản lý môi trường.jpg",
       "Người theo đuổi nghiên cứu chuyên sâu": "Người theo đuổi nghiên cứu chuyên sâu.jpg",
     },
-    career: "career-quality-20261120.webp",
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
   },
   "kien-truc": {
     folder: "Kien_truc",
-    overview: { filename: "overview-quality-20261120.webp", alt: "Thực hành nghiên cứu và phát triển ý tưởng kiến trúc tại Văn Lang" },
     hero: "hero.jpg",
     audience: {
       "Kiến trúc sư và người làm thiết kế": "Kiến trúc sư và người làm thiết kế.jpg",
       "Người làm tư vấn và quản lý dự án": "Người làm tư vấn và quản lý dự án.jpg",
       "Người quan tâm nghiên cứu và phát triển chuyên môn": "Người quan tâm nghiên cứu và phát triển chuyên môn.jpg",
     },
-    career: "career-quality-20261120.webp",
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
   },
   logistics: {
     folder: "Logistics",
-    career: "career-quality-20261120.webp",
-    hero: "hero-quality-20261120.webp",
-    overview: { filename: "overview-quality-20261120.webp", alt: "Trao đổi kiến thức chuyên môn Logistics và Quản lý chuỗi cung ứng" },
+    hero: "hero.jpg",
+    overview: { filename: "Tổng quann chương trình.jpg", alt: "Minh họa chương trình Logistics và Quản lý chuỗi cung ứng" },
     audience: {
       "Người làm vận hành logistics và chuỗi cung ứng": "Người làm vận hành logistics và chuỗi cung ứng.jpg",
       "Người tham gia phân tích và cải tiến hệ thống": "Người tham gia phân tích và cải tiến hệ thống.jpg",
@@ -220,31 +216,31 @@ const programmePhotos: Record<string, {
   },
   "ky-thuat-xay-dung": {
     folder: "Ky_thuat_xay_dung",
-    hero: "hero-quality-20261120.webp",
-    overview: { filename: "overview-quality-20261120.webp", alt: "Thực hành đọc bản vẽ và kỹ thuật xây dựng tại Văn Lang" },
+    hero: "hero.jpg",
+    overview: { filename: "Tổng quan-20261119.webp", alt: "Minh họa tổng quan ngành Kỹ thuật Xây dựng" },
     audience: {
       "Năng lực chuyên môn": "Năng lực chuyên môn.jpg",
       "Nghiên cứu và ra quyết định": "Nghiên cứu và ra quyết định.png",
       "Hợp tác và truyền đạt tri thức": "Hợp tác và truyền đạt tri thức.jpg",
     },
-    career: "career-quality-20261120.webp",
+    career: "career-hd-20261119.webp",
   },
   "my-thuat-ung-dung": {
     folder: "My_thuat_ung_dung",
-    hero: "hero-quality-20261120.webp",
+    hero: "hero.jpg",
     overview: { filename: "tổng quan.jpg", alt: "Minh họa tổng quan ngành Mỹ thuật ứng dụng" },
     audience: {
       "Nhà thiết kế & chuyên gia sáng tạo": "Nhà thiết kế & chuyên gia sáng tạo.jpg",
       "Người làm việc trong ngành sáng tạo": "Người làm việc trong ngành sáng tạo.jpg",
       "Người định hướng giảng dạy hoặc khởi nghiệp": "Người định hướng giảng dạy hoặc khởi nghiệp.jpg",
     },
-    career: "career-quality-20261120.webp",
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
   },
   "ly-luan-lich-su-my-thuat": {
     folder: "Ly_luan_va_lich_su_MTUD",
-    hero: "hero-hd-20261120.webp",
+    hero: "hero.jpg",
     overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Lý luận và Lịch sử Mỹ thuật ứng dụng" },
-    career: "career-quality-20261120.webp",
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
     audienceFolder: "My_thuat_ung_dung",
     audience: {
       "Người làm việc trong thiết kế": "Người làm việc trong thiết kế.avif",
@@ -254,9 +250,6 @@ const programmePhotos: Record<string, {
   },
   "ky-thuat-o-to": {
     folder: "Ky_thuat_o_to",
-    career: "career-quality-20261120.webp",
-    overview: { filename: "overview-quality-20261120.webp", alt: "Thực hành kỹ thuật điều khiển và thiết bị tại Văn Lang" },
-    hero: "hero-quality-20261120.webp",
     audience: {
       "Người làm kỹ thuật và công nghệ ô tô": "Người làm kỹ thuật và công nghệ ô tô.jpg",
       "Người hướng đến quản lý kỹ thuật": "Người hướng đến quản lý kỹ thuật.jpg",
@@ -265,29 +258,25 @@ const programmePhotos: Record<string, {
   },
   marketing: {
     folder: "Marketting",
-    overview: { filename: "overview-quality-20261120.webp", alt: "Trao đổi chuyên môn và hoạt động học thuật tại Văn Lang" },
-    hero: "hero-quality-20261120.webp",
+    hero: "hero.png",
     audience: {
       "Người làm Marketing và kinh doanh": "Người làm Marketing và kinh doanh.jpg",
       "Người hướng đến tư vấn và khởi nghiệp": "Người hướng đến tư vấn và khởi nghiệp.png",
       "Người theo đuổi nghiên cứu và giảng dạy": "Người theo đuổi nghiên cứu và giảng dạy-20261119.webp",
     },
-    career: "career-hd-20261119.webp",
+    career: "Cơ hội nghề nghiệp và phát triển-20261119.webp",
   },
   "luat-kinh-te": {
     folder: "Luat_kinh_te",
     hero: "hero.jpg",
     audience: {
-      "Nhóm ngành Luật": "audience-law-quality-20261120.webp",
+      "Nhóm ngành Luật": "Nhóm ngành Luật.jpg",
       "Nhóm ngành phù hợp khác": "Nhóm ngành phù hợp khác.jpg",
     },
-    career: "career-quality-20261120.webp",
+    career: "Cơ hội nghề nghiệp và phát triển.webp",
   },
   "cong-nghe-sinh-hoc": {
     folder: "Cong_nghe_sinh_hoc",
-    career: "career-quality-20261120.webp",
-    overview: { filename: "overview-quality-20261120.webp", alt: "Thiết bị và thực hành phân tích mẫu trong phòng thí nghiệm Văn Lang" },
-    hero: "hero-quality-20261120.webp",
     audience: {
       "Người muốn đi sâu vào nghiên cứu": "Người muốn đi sâu vào nghiên cứu.avif",
       "Người làm việc trong lĩnh vực liên quan": "Người làm việc trong lĩnh vực liên quan.jpg",
@@ -296,10 +285,10 @@ const programmePhotos: Record<string, {
   },
   "ngon-ngu-anh": {
     folder: "Ngon_ngu_anh",
-    hero: "hero-hd-20261119.webp",
+    hero: "hero-20261119.webp",
     overview: { filename: "overview-hd-20261119.webp", alt: "Minh họa tổng quan ngành Ngôn ngữ Anh" },
     audienceIllustration: "chương trình phù hợp với ai.jpg",
-    career: "career-hd-20261119.webp",
+    career: "Cơ hội nghề nghiệp và phát triển-20261119.webp",
   },
   "quan-he-cong-chung": {
     folder: "QHCC",
@@ -310,16 +299,15 @@ const programmePhotos: Record<string, {
   },
   "quan-ly-tai-nguyen-moi-truong": {
     folder: "Quan_ly_tai_nguyen_Moi_truong",
-    hero: "hero-quality-20261120.webp",
     overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Quản lý tài nguyên và môi trường" },
-    audienceIllustration: "chương trìnhhphuf hợp với ai.jpg",
-    career: "career-quality-20261120.webp",
+    audienceIllustration: "chương trình phù hợp với ai.jpg",
+    career: "Cơ hội nghề nghiệp và phát triển-20261119.webp",
   },
   "quan-tri-khach-san": {
     folder: "Quan_tri_Khach_san",
     hero: "hero.jpg",
     overview: { filename: "Tổng  quan.png", alt: "Minh họa tổng quan ngành Quản trị Khách sạn" },
-    career: "career-quality-20261120.webp",
+    career: "Cơ hội nghề nghiệp và phát triển.jpg",
     audienceIllustration: "Chương trìnhhphuf hợp với au.jpg",
   },
   "quan-tri-kinh-doanh": {
@@ -331,16 +319,14 @@ const programmePhotos: Record<string, {
   },
   "tai-chinh-ngan-hang": {
     folder: "Tai_chinh_ngan_hang",
-    career: "career-quality-20261120.webp",
     hero: "hero-20261119.jpg",
     overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Tài chính – Ngân hàng" },
-    audienceIllustration: "chương trình phùuhopwj với ai.jpg",
+    audienceIllustration: "Chương trình phù hợp với ai.jpg",
   },
   "kinh-doanh-thuong-mai": {
     folder: "Kinh_doanh_thuong_mai",
-    overview: { filename: "overview-quality-20261120.webp", alt: "Học tập và phân tích dữ liệu kinh doanh tại Văn Lang" },
-    hero: "hero-quality-20261120.webp",
-    career: "career-hd-20261119.webp",
+    hero: "hero.jpg",
+    career: "Cơ hội nghề nghiệp và phát triển.avif",
     audience: {
       "Người đang làm kinh doanh, thương mại": "Người đang làm kinh doanh, thương mại.png",
       "Người hướng đến vai trò quản lý": "Người hướng đến vai trò quản lý.png",
