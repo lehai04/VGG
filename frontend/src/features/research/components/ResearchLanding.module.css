@@ -514,7 +514,7 @@
 .partnerRows article > div { display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; }
 .partnerRows span { color:#292d48; font-size:var(--type-control); font-weight:700; letter-spacing:-.02em; }
 .partnerRows span:nth-child(3n+2) { color:#d9233f; }
-.partnerLogoBoard { width:100%; margin:18px 0 0; }
+.partnerLogoBoard { width:100%; max-width:419px; margin:18px 0 0; }
 .partnerLogoBoard img { display:block; width:100%; height:auto; object-fit:contain; }
 
 @media(max-width:900px){

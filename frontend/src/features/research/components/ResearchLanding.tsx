@@ -114,7 +114,7 @@ export async function ResearchLanding() {
         <div className={styles.fieldGrid}>
           {content.researchFields.map((field, index) => (
             <div className={styles.fieldCard} key={field.name} data-reveal>
-              <Image src={field.image} alt={t(field.name)} fill sizes="(max-width: 700px) 100vw, 33vw" />
+              <Image src={field.image} alt={t(field.name)} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" />
               <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{t(field.name)}</h3>
             </div>

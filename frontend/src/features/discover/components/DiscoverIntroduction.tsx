@@ -259,7 +259,7 @@ export async function DiscoverIntroduction() {
           src={media.closing.image}
           alt={t(media.closing.alt)}
           fill
-          sizes="100vw"
+          sizes="(max-width: 1024px) 1600px, 100vw"
           className={styles.cover}
         />
         <div className={styles.heroShade} />

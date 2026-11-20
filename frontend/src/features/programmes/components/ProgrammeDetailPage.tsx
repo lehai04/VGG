@@ -579,7 +579,9 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
                       src={item.image}
                       alt={t(item.alt ?? item.title)}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      sizes={audienceList.length === 2
+                        ? "(max-width: 640px) 100vw, 50vw"
+                        : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
                       className={styles.audiencePhoto}
                     />
                   </div>

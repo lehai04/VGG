@@ -157,6 +157,9 @@
   position: relative;
   min-height: 0;
   aspect-ratio: 1106 / 1312;
+  width: 100%;
+  max-width: 553px;
+  justify-self: center;
 }
 .introMedia img {
   object-fit: contain;

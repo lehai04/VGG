@@ -5,7 +5,7 @@ import { homeContent } from '@/data/home-content';
 import { websiteContent } from '@/lib/website-content';
 
 // Ảnh đại diện cho khu vực Nghiên cứu & Đổi mới.
-const RESEARCH_IMAGE_SRC = "/images/pages/home/sections/campus.webp";
+const RESEARCH_IMAGE_SRC = "/images/pages/home/sections/campus-quality-20261120.webp";
 
 // Danh sách các hướng nghiên cứu nổi bật.
 const RESEARCH_LINKS = [
@@ -27,7 +27,7 @@ export async function Research() {
           src={research.image || RESEARCH_IMAGE_SRC}
           alt={t(research.alt)}
           fill
-          sizes="(max-width: 900px) 100vw, 50vw"
+          sizes="(max-width: 1024px) 1600px, 100vw"
         />
         <span>{t(research.caption)}</span>
       </div>

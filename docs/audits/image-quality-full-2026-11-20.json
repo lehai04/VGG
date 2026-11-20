@@ -1,0 +1,3082 @@
+{
+  "date": "2026-11-20",
+  "baseCommit": "f0e3722fb8326bb1b618cfec6e9c50f04f939cd8",
+  "scope": {
+    "environment": "local source and reachable published/fallback content; not a production deployment",
+    "origin": "http://127.0.0.1:3000",
+    "inventoryBefore": 320,
+    "inventoryAfter": 358,
+    "usedImageSources": 155,
+    "routes": [
+      "/en",
+      "/en/admissions",
+      "/en/admissions/bo-sung-kien-thuc",
+      "/en/discover",
+      "/en/news",
+      "/en/news/all",
+      "/en/programmes",
+      "/en/programmes/cong-nghe-sinh-hoc",
+      "/en/programmes/cong-nghe-thong-tin",
+      "/en/programmes/ke-toan",
+      "/en/programmes/khoa-hoc-moi-truong",
+      "/en/programmes/kien-truc",
+      "/en/programmes/kinh-doanh-thuong-mai",
+      "/en/programmes/ky-thuat-moi-truong",
+      "/en/programmes/ky-thuat-o-to",
+      "/en/programmes/ky-thuat-xay-dung",
+      "/en/programmes/logistics",
+      "/en/programmes/luat-kinh-te",
+      "/en/programmes/ly-luan-lich-su-my-thuat",
+      "/en/programmes/marketing",
+      "/en/programmes/my-thuat-ung-dung",
+      "/en/programmes/ngon-ngu-anh",
+      "/en/programmes/quan-he-cong-chung",
+      "/en/programmes/quan-ly-tai-nguyen-moi-truong",
+      "/en/programmes/quan-tri-khach-san",
+      "/en/programmes/quan-tri-kinh-doanh",
+      "/en/programmes/tai-chinh-ngan-hang",
+      "/en/research",
+      "/en/resources",
+      "/en/student-success",
+      "/vi",
+      "/vi/admissions",
+      "/vi/admissions/bo-sung-kien-thuc",
+      "/vi/discover",
+      "/vi/news",
+      "/vi/news/all",
+      "/vi/programmes",
+      "/vi/programmes/cong-nghe-sinh-hoc",
+      "/vi/programmes/cong-nghe-thong-tin",
+      "/vi/programmes/ke-toan",
+      "/vi/programmes/khoa-hoc-moi-truong",
+      "/vi/programmes/kien-truc",
+      "/vi/programmes/kinh-doanh-thuong-mai",
+      "/vi/programmes/ky-thuat-moi-truong",
+      "/vi/programmes/ky-thuat-o-to",
+      "/vi/programmes/ky-thuat-xay-dung",
+      "/vi/programmes/logistics",
+      "/vi/programmes/luat-kinh-te",
+      "/vi/programmes/ly-luan-lich-su-my-thuat",
+      "/vi/programmes/marketing",
+      "/vi/programmes/my-thuat-ung-dung",
+      "/vi/programmes/ngon-ngu-anh",
+      "/vi/programmes/quan-he-cong-chung",
+      "/vi/programmes/quan-ly-tai-nguyen-moi-truong",
+      "/vi/programmes/quan-tri-khach-san",
+      "/vi/programmes/quan-tri-kinh-doanh",
+      "/vi/programmes/tai-chinh-ngan-hang",
+      "/vi/research",
+      "/vi/resources",
+      "/vi/student-success"
+    ],
+    "profiles": [
+      {
+        "id": "desktop",
+        "width": 1920,
+        "height": 1080,
+        "dpr": 1
+      },
+      {
+        "id": "retina",
+        "width": 1440,
+        "height": 1000,
+        "dpr": 2
+      },
+      {
+        "id": "tablet",
+        "width": 768,
+        "height": 1024,
+        "dpr": 2
+      },
+      {
+        "id": "mobile",
+        "width": 390,
+        "height": 844,
+        "dpr": 2
+      }
+    ],
+    "pageViewportChecks": 240,
+    "renderedImageChecks": 1776,
+    "coverage": "img elements, CSS background images, video posters, both languages, sitemap and reachable internal content links; redirect aliases collapse to their destination",
+    "notCovered": "Unpublished CMS content, inaccessible backend-only records, offsite linked pages and arbitrary future viewport/DPR combinations."
+  },
+  "baseline": {
+    "affectedSourceCount": 47,
+    "flaggedImageInstances": 152
+  },
+  "criteria": {
+    "load": "HTTP and decode success; wait for decoding before classifying slow first-time optimization as failure",
+    "resolution": "Raster decoded pixels cover the rendered object-fit/object-cover area at the tested device pixel ratio, with maximum enlargement 1.25; SVG is resolution-independent",
+    "visual": "155 source-image thumbnails and 43 original candidates reviewed, plus settled production screenshots; one visibly soft Law audience photo replaced even though its pixel dimensions were near the threshold",
+    "enlargement": "No generated asset was resized above its source dimensions"
+  },
+  "changes": {
+    "newAssets": 38,
+    "programmesWithAssetChanges": 16,
+    "replacements": [
+      {
+        "id": "cong-nghe-thong-tin",
+        "slot": "hero",
+        "folder": "Cong-nghe_thong_tin",
+        "file": "hero-quality-20261120.webp",
+        "output": "/images_programes/Cong-nghe_thong_tin/hero-quality-20261120.webp",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 656940
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_1931_1_c5b505650e.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "cong-nghe-thong-tin",
+        "slot": "overview",
+        "folder": "Cong-nghe_thong_tin",
+        "file": "overview-quality-20261120.webp",
+        "output": "/images_programes/Cong-nghe_thong_tin/overview-quality-20261120.webp",
+        "alt": "Thực hành và nghiên cứu Công nghệ Thông tin trong phòng máy tại Văn Lang",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 1920,
+          "height": 1281,
+          "bytes": 201128
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_1951_1_9b997a12c9.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "cong-nghe-thong-tin",
+        "slot": "career",
+        "folder": "Cong-nghe_thong_tin",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Cong-nghe_thong_tin/career-quality-20261120.webp",
+        "original": {
+          "width": 7937,
+          "height": 5294
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 981474
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0872_18a8bc0aa0.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "marketing",
+        "slot": "hero",
+        "folder": "Marketting",
+        "file": "hero-quality-20261120.webp",
+        "output": "/images_programes/Marketting/hero-quality-20261120.webp",
+        "original": {
+          "width": 7952,
+          "height": 4970
+        },
+        "result": {
+          "width": 4096,
+          "height": 2560,
+          "bytes": 684530
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0747_9463e69fc4.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "marketing",
+        "slot": "overview",
+        "folder": "Marketting",
+        "file": "overview-quality-20261120.webp",
+        "output": "/images_programes/Marketting/overview-quality-20261120.webp",
+        "alt": "Trao đổi chuyên môn và hoạt động học thuật tại Văn Lang",
+        "original": {
+          "width": 6720,
+          "height": 4480
+        },
+        "result": {
+          "width": 1920,
+          "height": 1280,
+          "bytes": 366660
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_6460_19fac6f64f.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "ky-thuat-moi-truong",
+        "slot": "hero",
+        "folder": "Ky_thuat_moi_truong",
+        "file": "hero-quality-20261120.webp",
+        "output": "/images_programes/Ky_thuat_moi_truong/hero-quality-20261120.webp",
+        "original": {
+          "width": 7892,
+          "height": 5264
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 702120
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0821_a66fb50d1a.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "ky-thuat-moi-truong",
+        "slot": "career",
+        "folder": "Ky_thuat_moi_truong",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Ky_thuat_moi_truong/career-quality-20261120.webp",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 399924
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_2454_4644540e21.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "quan-ly-tai-nguyen-moi-truong",
+        "slot": "hero",
+        "folder": "Quan_ly_tai_nguyen_Moi_truong",
+        "file": "hero-quality-20261120.webp",
+        "output": "/images_programes/Quan_ly_tai_nguyen_Moi_truong/hero-quality-20261120.webp",
+        "original": {
+          "width": 6681,
+          "height": 3341
+        },
+        "result": {
+          "width": 4096,
+          "height": 2048,
+          "bytes": 804076
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/vlu_truong_dai_hoc_van_lang_chung_tay_vi_muc_tieu_phat_trien_ben_vung_a_82bd78416e.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "quan-ly-tai-nguyen-moi-truong",
+        "slot": "career",
+        "folder": "Quan_ly_tai_nguyen_Moi_truong",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Quan_ly_tai_nguyen_Moi_truong/career-quality-20261120.webp",
+        "original": {
+          "width": 6554,
+          "height": 3277
+        },
+        "result": {
+          "width": 4096,
+          "height": 2048,
+          "bytes": 545786
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/vlu_truong_dai_hoc_van_lang_chung_tay_vi_muc_tieu_phat_trien_ben_vung_c_49b31fd993.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "cong-nghe-sinh-hoc",
+        "slot": "hero",
+        "folder": "Cong_nghe_sinh_hoc",
+        "file": "hero-quality-20261120.webp",
+        "output": "/images_programes/Cong_nghe_sinh_hoc/hero-quality-20261120.webp",
+        "samePhoto": true,
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 399924
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_2454_4644540e21.jpg"
+      },
+      {
+        "id": "cong-nghe-sinh-hoc",
+        "slot": "overview",
+        "folder": "Cong_nghe_sinh_hoc",
+        "file": "overview-quality-20261120.webp",
+        "output": "/images_programes/Cong_nghe_sinh_hoc/overview-quality-20261120.webp",
+        "samePhoto": true,
+        "alt": "Thiết bị và thực hành phân tích mẫu trong phòng thí nghiệm Văn Lang",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 1920,
+          "height": 1281,
+          "bytes": 101860
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/r_GUI_1_Tg_2326a822b2.jpeg"
+      },
+      {
+        "id": "cong-nghe-sinh-hoc",
+        "slot": "career",
+        "folder": "Cong_nghe_sinh_hoc",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Cong_nghe_sinh_hoc/career-quality-20261120.webp",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 641006
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/xf_OE_6ehg_1f59d243ea.jpeg",
+        "samePhoto": false
+      },
+      {
+        "id": "ky-thuat-xay-dung",
+        "slot": "hero",
+        "folder": "Ky_thuat_xay_dung",
+        "file": "hero-quality-20261120.webp",
+        "output": "/images_programes/Ky_thuat_xay_dung/hero-quality-20261120.webp",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 594764
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0120_1_5bebfd1175.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "ky-thuat-xay-dung",
+        "slot": "overview",
+        "folder": "Ky_thuat_xay_dung",
+        "file": "overview-quality-20261120.webp",
+        "output": "/images_programes/Ky_thuat_xay_dung/overview-quality-20261120.webp",
+        "alt": "Thực hành đọc bản vẽ và kỹ thuật xây dựng tại Văn Lang",
+        "original": {
+          "width": 6000,
+          "height": 4000
+        },
+        "result": {
+          "width": 1920,
+          "height": 1280,
+          "bytes": 236654
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_08950_e43311bd1c.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "ky-thuat-xay-dung",
+        "slot": "career",
+        "folder": "Ky_thuat_xay_dung",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Ky_thuat_xay_dung/career-quality-20261120.webp",
+        "original": {
+          "width": 6000,
+          "height": 4000
+        },
+        "result": {
+          "width": 4096,
+          "height": 2731,
+          "bytes": 573244
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_08893_1d9655adcf.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "ky-thuat-o-to",
+        "slot": "hero",
+        "folder": "Ky_thuat_o_to",
+        "file": "hero-quality-20261120.webp",
+        "output": "/images_programes/Ky_thuat_o_to/hero-quality-20261120.webp",
+        "samePhoto": true,
+        "original": {
+          "width": 3840,
+          "height": 2561
+        },
+        "result": {
+          "width": 3840,
+          "height": 2561,
+          "bytes": 516356
+        },
+        "source": "frontend/public/images/pages/student-success/content/hotrohocvien.avif"
+      },
+      {
+        "id": "ky-thuat-o-to",
+        "slot": "overview",
+        "folder": "Ky_thuat_o_to",
+        "file": "overview-quality-20261120.webp",
+        "output": "/images_programes/Ky_thuat_o_to/overview-quality-20261120.webp",
+        "alt": "Thực hành kỹ thuật điều khiển và thiết bị tại Văn Lang",
+        "original": {
+          "width": 7937,
+          "height": 5294
+        },
+        "result": {
+          "width": 1920,
+          "height": 1281,
+          "bytes": 214426
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0906_a5db106e8b.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "ky-thuat-o-to",
+        "slot": "career",
+        "folder": "Ky_thuat_o_to",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Ky_thuat_o_to/career-quality-20261120.webp",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 751746
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0891_1e5596471b.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "kinh-doanh-thuong-mai",
+        "slot": "hero",
+        "folder": "Kinh_doanh_thuong_mai",
+        "file": "hero-quality-20261120.webp",
+        "output": "/images_programes/Kinh_doanh_thuong_mai/hero-quality-20261120.webp",
+        "original": {
+          "width": 7952,
+          "height": 4970
+        },
+        "result": {
+          "width": 4096,
+          "height": 2560,
+          "bytes": 684530
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0747_9463e69fc4.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "kinh-doanh-thuong-mai",
+        "slot": "overview",
+        "folder": "Kinh_doanh_thuong_mai",
+        "file": "overview-quality-20261120.webp",
+        "output": "/images_programes/Kinh_doanh_thuong_mai/overview-quality-20261120.webp",
+        "samePhoto": true,
+        "alt": "Học tập và phân tích dữ liệu kinh doanh tại Văn Lang",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 1920,
+          "height": 1281,
+          "bytes": 129198
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0772_4f787970c0.jpg"
+      },
+      {
+        "id": "tai-chinh-ngan-hang",
+        "slot": "career",
+        "folder": "Tai_chinh_ngan_hang",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Tai_chinh_ngan_hang/career-quality-20261120.webp",
+        "original": {
+          "width": 7937,
+          "height": 5294
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 981474
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0872_18a8bc0aa0.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "ke-toan",
+        "slot": "hero",
+        "folder": "Ke_toan",
+        "file": "hero-quality-20261120.webp",
+        "output": "/images_programes/Ke_toan/hero-quality-20261120.webp",
+        "original": {
+          "width": 7603,
+          "height": 5071
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 932760
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0495_2657b77be3.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "ke-toan",
+        "slot": "overview",
+        "folder": "Ke_toan",
+        "file": "overview-quality-20261120.webp",
+        "output": "/images_programes/Ke_toan/overview-quality-20261120.webp",
+        "samePhoto": true,
+        "alt": "Giảng dạy và thực hành kế toán trên máy tính tại Văn Lang",
+        "original": {
+          "width": 7603,
+          "height": 5071
+        },
+        "result": {
+          "width": 1920,
+          "height": 1281,
+          "bytes": 225028
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0495_2657b77be3.jpg"
+      },
+      {
+        "id": "ke-toan",
+        "slot": "career",
+        "folder": "Ke_toan",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Ke_toan/career-quality-20261120.webp",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 773596
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0503_5eecdcf9ad.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "logistics",
+        "slot": "hero",
+        "folder": "Logistics",
+        "file": "hero-quality-20261120.webp",
+        "output": "/images_programes/Logistics/hero-quality-20261120.webp",
+        "original": {
+          "width": 5965,
+          "height": 2983
+        },
+        "result": {
+          "width": 4096,
+          "height": 2048,
+          "bytes": 1477980
+        },
+        "source": "frontend/public/images/pages/programmes/logistics/programme-hero.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "logistics",
+        "slot": "overview",
+        "folder": "Logistics",
+        "file": "overview-quality-20261120.webp",
+        "output": "/images_programes/Logistics/overview-quality-20261120.webp",
+        "alt": "Trao đổi kiến thức chuyên môn Logistics và Quản lý chuỗi cung ứng",
+        "original": {
+          "width": 5982,
+          "height": 2991
+        },
+        "result": {
+          "width": 1920,
+          "height": 960,
+          "bytes": 194410
+        },
+        "source": "frontend/public/images/pages/programmes/logistics/programme-overview.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "logistics",
+        "slot": "career",
+        "folder": "Logistics",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Logistics/career-quality-20261120.webp",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 681878
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0772_4f787970c0.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "quan-tri-khach-san",
+        "slot": "career",
+        "folder": "Quan_tri_Khach_san",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Quan_tri_Khach_san/career-quality-20261120.webp",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 483430
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_1228_6fa2ffe79e.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "luat-kinh-te",
+        "slot": "career",
+        "folder": "Luat_kinh_te",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Luat_kinh_te/career-quality-20261120.webp",
+        "original": {
+          "width": 7930,
+          "height": 4461
+        },
+        "result": {
+          "width": 4096,
+          "height": 2304,
+          "bytes": 1227140
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_1885_cf9f2a6c07.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "kien-truc",
+        "slot": "career",
+        "folder": "Kien_truc",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Kien_truc/career-quality-20261120.webp",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 4096,
+          "height": 2732,
+          "bytes": 1536018
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_2093_c833c03a78.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "kien-truc",
+        "slot": "overview",
+        "folder": "Kien_truc",
+        "file": "overview-quality-20261120.webp",
+        "output": "/images_programes/Kien_truc/overview-quality-20261120.webp",
+        "samePhoto": true,
+        "alt": "Thực hành nghiên cứu và phát triển ý tưởng kiến trúc tại Văn Lang",
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "result": {
+          "width": 1920,
+          "height": 1281,
+          "bytes": 408112
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_2093_c833c03a78.jpg"
+      },
+      {
+        "id": "my-thuat-ung-dung",
+        "slot": "hero",
+        "folder": "My_thuat_ung_dung",
+        "file": "hero-quality-20261120.webp",
+        "output": "/images_programes/My_thuat_ung_dung/hero-quality-20261120.webp",
+        "original": {
+          "width": 5760,
+          "height": 3840
+        },
+        "result": {
+          "width": 4096,
+          "height": 2731,
+          "bytes": 677462
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/6_I7_A8712_d49b0868a0.JPG",
+        "samePhoto": false
+      },
+      {
+        "id": "my-thuat-ung-dung",
+        "slot": "career",
+        "folder": "My_thuat_ung_dung",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/My_thuat_ung_dung/career-quality-20261120.webp",
+        "original": {
+          "width": 5760,
+          "height": 3840
+        },
+        "result": {
+          "width": 4096,
+          "height": 2731,
+          "bytes": 1065192
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/6_I7_A9081_83e0238eb3.JPG",
+        "samePhoto": false
+      },
+      {
+        "id": "ly-luan-lich-su-my-thuat",
+        "slot": "career",
+        "folder": "Ly_luan_va_lich_su_MTUD",
+        "file": "career-quality-20261120.webp",
+        "output": "/images_programes/Ly_luan_va_lich_su_MTUD/career-quality-20261120.webp",
+        "original": {
+          "width": 5760,
+          "height": 3840
+        },
+        "result": {
+          "width": 4096,
+          "height": 2731,
+          "bytes": 677462
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/6_I7_A8712_d49b0868a0.JPG",
+        "samePhoto": false
+      },
+      {
+        "id": "home",
+        "slot": "research-and-poster",
+        "output": "/images/pages/home/sections/campus-quality-20261120.webp",
+        "samePhoto": true,
+        "original": {
+          "width": 4032,
+          "height": 2268
+        },
+        "result": {
+          "width": 4032,
+          "height": 2268,
+          "bytes": 1415342
+        },
+        "source": "frontend/public/images/pages/home/sections/campus.jpg"
+      },
+      {
+        "id": "discover",
+        "slot": "closing",
+        "output": "/images/pages/discover/introduction/seminar-quality-20261120.webp",
+        "samePhoto": true,
+        "original": {
+          "width": 6508,
+          "height": 3254
+        },
+        "result": {
+          "width": 4096,
+          "height": 2048,
+          "bytes": 942416
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/vlu_vien_sau_dai_hoc_to_chuc_hoi_thao_dan_nhap_nghien_cuu_khoa_hoc_c_f73ef5707d.jpg"
+      },
+      {
+        "id": "research",
+        "slot": "hero",
+        "output": "/images/pages/research/content/banner-quality-20261120.webp",
+        "original": {
+          "width": 6720,
+          "height": 3360
+        },
+        "result": {
+          "width": 4096,
+          "height": 2048,
+          "bytes": 406484
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/vlu_vien_sau_dai_hoc_to_chuc_hoi_thao_dan_nhap_nghien_cuu_khoa_hoc_a_8573826125.jpg",
+        "samePhoto": false
+      },
+      {
+        "id": "luat-kinh-te",
+        "slot": "audience-law",
+        "folder": "Luat_kinh_te",
+        "file": "audience-law-quality-20261120.webp",
+        "output": "/images_programes/Luat_kinh_te/audience-law-quality-20261120.webp",
+        "samePhoto": false,
+        "reason": "Original group photo was visibly soft in a rendered crop.",
+        "original": {
+          "width": 7677,
+          "height": 5121
+        },
+        "result": {
+          "width": 1920,
+          "height": 1281,
+          "bytes": 243768
+        },
+        "source": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_1909_510dca49f4.jpg"
+      }
+    ],
+    "responsiveFixes": [
+      "Use the actual two/three-column audience width when selecting source images.",
+      "Request enough pixels for tall moment-gallery tiles, including tablet layouts.",
+      "Request a wider closing-banner source on mobile in Discover.",
+      "Request enough pixels for the homepage research crop.",
+      "Use correct tablet widths for research field cards.",
+      "Bound the existing portrait and partner-logo raster to sizes supported by their source at 2x density."
+    ],
+    "preserved": "User-supplied digital-business image update and unrelated local files retained."
+  },
+  "verification": {
+    "invalidImageFiles": 0,
+    "exactCaseAssetPaths": "passed for all 154 used local paths",
+    "finalImageIssues": 0,
+    "maximumObservedRasterEnlargement": 1.23,
+    "frontendTests": {
+      "total": 51,
+      "passed": 51
+    },
+    "programmeTestsAfterLastImage": {
+      "total": 22,
+      "passed": 22
+    },
+    "typecheck": "passed",
+    "lint": "passed, including changed files after the final edit",
+    "productionBuild": "passed",
+    "repositoryGuard": "passed",
+    "diffWhitespace": "passed",
+    "productionVisualChecks": [
+      "Homepage research image",
+      "Student moment collage",
+      "Automotive hero",
+      "Law audience images after decoding",
+      "Discover closing banner at mobile DPR 2"
+    ],
+    "mediaBudget": {
+      "fullScriptPassed": false,
+      "fullTransferBytes": 24779002,
+      "limitBytes": 3000000,
+      "unchangedVideoBytes": 21864237,
+      "nonVideoTransferBytes": 2914765,
+      "nonVideoUnderLimit": true,
+      "note": "The full existing budget script still fails because it downloads the pre-existing 21.86 MB video in full. No video was changed in this image audit."
+    }
+  },
+  "images": [
+    {
+      "src": "/admissions/reference-2.webp",
+      "format": "webp",
+      "native": {
+        "width": 384,
+        "height": 150,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.89,
+      "pages": [
+        "/vi/admissions",
+        "/en/admissions"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong_nghe_sinh_hoc/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1.13,
+      "pages": [
+        "/en/programmes/cong-nghe-sinh-hoc",
+        "/vi/programmes/cong-nghe-sinh-hoc"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong_nghe_sinh_hoc/hero-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/cong-nghe-sinh-hoc",
+        "/vi/programmes/cong-nghe-sinh-hoc"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong_nghe_sinh_hoc/Người hướng đến giảng dạy và học tiếp.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 750,
+        "height": 500,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 1.13,
+      "pages": [
+        "/en/programmes/cong-nghe-sinh-hoc",
+        "/vi/programmes/cong-nghe-sinh-hoc"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong_nghe_sinh_hoc/Người làm việc trong lĩnh vực liên quan.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 750,
+        "height": 500,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1.13,
+      "pages": [
+        "/en/programmes/cong-nghe-sinh-hoc",
+        "/vi/programmes/cong-nghe-sinh-hoc"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong_nghe_sinh_hoc/Người muốn đi sâu vào nghiên cứu.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 750,
+        "height": 500,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 1.13,
+      "pages": [
+        "/en/programmes/cong-nghe-sinh-hoc",
+        "/vi/programmes/cong-nghe-sinh-hoc"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong_nghe_sinh_hoc/overview-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/cong-nghe-sinh-hoc",
+        "/vi/programmes/cong-nghe-sinh-hoc"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong-nghe_thong_tin/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/cong-nghe-thong-tin",
+        "/en/programmes/cong-nghe-thong-tin"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong-nghe_thong_tin/hero-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/cong-nghe-thong-tin",
+        "/en/programmes/cong-nghe-thong-tin"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong-nghe_thong_tin/Người có nền tảng CNTT.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/cong-nghe-thong-tin",
+        "/en/programmes/cong-nghe-thong-tin"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong-nghe_thong_tin/Người hướng đến nghiên cứu.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/cong-nghe-thong-tin",
+        "/en/programmes/cong-nghe-thong-tin"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong-nghe_thong_tin/Người tốt nghiệp ngành gần.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/cong-nghe-thong-tin",
+        "/en/programmes/cong-nghe-thong-tin"
+      ]
+    },
+    {
+      "src": "/images_programes/Cong-nghe_thong_tin/overview-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/cong-nghe-thong-tin",
+        "/en/programmes/cong-nghe-thong-tin"
+      ]
+    },
+    {
+      "src": "/images_programes/Ke_toan/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/ke-toan",
+        "/en/programmes/ke-toan"
+      ]
+    },
+    {
+      "src": "/images_programes/Ke_toan/Finance, control and management professionals.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 1280,
+        "height": 960,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.76,
+      "pages": [
+        "/vi/programmes/ke-toan",
+        "/en/programmes/ke-toan"
+      ]
+    },
+    {
+      "src": "/images_programes/Ke_toan/hero-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/ke-toan",
+        "/en/programmes/ke-toan"
+      ]
+    },
+    {
+      "src": "/images_programes/Ke_toan/overview-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/ke-toan",
+        "/en/programmes/ke-toan"
+      ]
+    },
+    {
+      "src": "/images_programes/Ke_toan/People who want to develop deep expertise.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/ke-toan",
+        "/en/programmes/ke-toan"
+      ]
+    },
+    {
+      "src": "/images_programes/Ke_toan/People working in accounting and auditing.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1366,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/ke-toan",
+        "/en/programmes/ke-toan"
+      ]
+    },
+    {
+      "src": "/images_programes/Khoa_hoc_moi_truong/Cơ hội nghề nghiệp và phát triển.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 6566,
+        "height": 3283,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/khoa-hoc-moi-truong",
+        "/vi/programmes/khoa-hoc-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Khoa_hoc_moi_truong/Định hướng đào tạo.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/khoa-hoc-moi-truong",
+        "/vi/programmes/khoa-hoc-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Khoa_hoc_moi_truong/hero-hd-20261119.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 3072,
+        "height": 1536,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/khoa-hoc-moi-truong",
+        "/vi/programmes/khoa-hoc-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Khoa_hoc_moi_truong/Hợp tác và truyền đạt tri thức.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/khoa-hoc-moi-truong",
+        "/vi/programmes/khoa-hoc-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Khoa_hoc_moi_truong/Năng lực chuyên môn.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1536,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.76,
+      "pages": [
+        "/en/programmes/khoa-hoc-moi-truong",
+        "/vi/programmes/khoa-hoc-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Khoa_hoc_moi_truong/Nghiên cứu và ra quyết định.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2000,
+        "height": 1333,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/khoa-hoc-moi-truong",
+        "/vi/programmes/khoa-hoc-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Kien_truc/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/kien-truc",
+        "/en/programmes/kien-truc"
+      ]
+    },
+    {
+      "src": "/images_programes/Kien_truc/hero.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 6172,
+        "height": 3086,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/kien-truc",
+        "/en/programmes/kien-truc"
+      ]
+    },
+    {
+      "src": "/images_programes/Kien_truc/Kiến trúc sư và người làm thiết kế.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1536,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.76,
+      "pages": [
+        "/vi/programmes/kien-truc",
+        "/en/programmes/kien-truc"
+      ]
+    },
+    {
+      "src": "/images_programes/Kien_truc/Người làm tư vấn và quản lý dự án.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/kien-truc",
+        "/en/programmes/kien-truc"
+      ]
+    },
+    {
+      "src": "/images_programes/Kien_truc/Người quan tâm nghiên cứu và phát triển chuyên môn.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/kien-truc",
+        "/en/programmes/kien-truc"
+      ]
+    },
+    {
+      "src": "/images_programes/Kien_truc/overview-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/kien-truc",
+        "/en/programmes/kien-truc"
+      ]
+    },
+    {
+      "src": "/images_programes/Kinh_doanh_thuong_mai/career-hd-20261119.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 3072,
+        "height": 2049,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1.07,
+      "pages": [
+        "/vi/programmes/kinh-doanh-thuong-mai",
+        "/en/programmes/kinh-doanh-thuong-mai"
+      ]
+    },
+    {
+      "src": "/images_programes/Kinh_doanh_thuong_mai/hero-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2560,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/kinh-doanh-thuong-mai",
+        "/en/programmes/kinh-doanh-thuong-mai"
+      ]
+    },
+    {
+      "src": "/images_programes/Kinh_doanh_thuong_mai/kinh-doanh-so-20261120.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 750,
+        "height": 500,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1.13,
+      "pages": [
+        "/vi/programmes/kinh-doanh-thuong-mai",
+        "/en/programmes/kinh-doanh-thuong-mai"
+      ]
+    },
+    {
+      "src": "/images_programes/Kinh_doanh_thuong_mai/Người đang làm kinh doanh, thương mại.png",
+      "format": "png",
+      "native": {
+        "width": 750,
+        "height": 422,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 1.13,
+      "pages": [
+        "/vi/programmes/kinh-doanh-thuong-mai",
+        "/en/programmes/kinh-doanh-thuong-mai"
+      ]
+    },
+    {
+      "src": "/images_programes/Kinh_doanh_thuong_mai/Người hướng đến vai trò quản lý.png",
+      "format": "png",
+      "native": {
+        "width": 1281,
+        "height": 853,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/kinh-doanh-thuong-mai",
+        "/en/programmes/kinh-doanh-thuong-mai"
+      ]
+    },
+    {
+      "src": "/images_programes/Kinh_doanh_thuong_mai/overview-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/kinh-doanh-thuong-mai",
+        "/en/programmes/kinh-doanh-thuong-mai"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_moi_truong/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/ky-thuat-moi-truong",
+        "/vi/programmes/ky-thuat-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_moi_truong/hero-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/ky-thuat-moi-truong",
+        "/vi/programmes/ky-thuat-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_moi_truong/Người làm kỹ thuật và công nghệ môi trường.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2000,
+        "height": 1333,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/ky-thuat-moi-truong",
+        "/vi/programmes/ky-thuat-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_moi_truong/Người làm tư vấn và quản lý môi trường.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 1280,
+        "height": 960,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.76,
+      "pages": [
+        "/en/programmes/ky-thuat-moi-truong",
+        "/vi/programmes/ky-thuat-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_moi_truong/Người theo đuổi nghiên cứu chuyên sâu.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 1730,
+        "height": 2048,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.48,
+      "pages": [
+        "/en/programmes/ky-thuat-moi-truong",
+        "/vi/programmes/ky-thuat-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_moi_truong/Tổng quan.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1536,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.76,
+      "pages": [
+        "/en/programmes/ky-thuat-moi-truong",
+        "/vi/programmes/ky-thuat-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_o_to/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/ky-thuat-o-to",
+        "/vi/programmes/ky-thuat-o-to"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_o_to/hero-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 3840,
+        "height": 2561,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/ky-thuat-o-to",
+        "/vi/programmes/ky-thuat-o-to"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_o_to/Người hướng đến quản lý kỹ thuật.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 1280,
+        "height": 720,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/ky-thuat-o-to",
+        "/vi/programmes/ky-thuat-o-to"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_o_to/Người làm kỹ thuật và công nghệ ô tô.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1536,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.76,
+      "pages": [
+        "/en/programmes/ky-thuat-o-to",
+        "/vi/programmes/ky-thuat-o-to"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_o_to/Người quan tâm nghiên cứu và R&D.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/ky-thuat-o-to",
+        "/vi/programmes/ky-thuat-o-to"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_o_to/overview-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/ky-thuat-o-to",
+        "/vi/programmes/ky-thuat-o-to"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_xay_dung/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2731,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/ky-thuat-xay-dung",
+        "/en/programmes/ky-thuat-xay-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_xay_dung/hero-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/ky-thuat-xay-dung",
+        "/en/programmes/ky-thuat-xay-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_xay_dung/Hợp tác và truyền đạt tri thức.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/ky-thuat-xay-dung",
+        "/en/programmes/ky-thuat-xay-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_xay_dung/Năng lực chuyên môn.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1152,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/ky-thuat-xay-dung",
+        "/en/programmes/ky-thuat-xay-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_xay_dung/Nghiên cứu và ra quyết định.png",
+      "format": "png",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/ky-thuat-xay-dung",
+        "/en/programmes/ky-thuat-xay-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/Ky_thuat_xay_dung/overview-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1280,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/ky-thuat-xay-dung",
+        "/en/programmes/ky-thuat-xay-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/Logistics/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/logistics",
+        "/vi/programmes/logistics"
+      ]
+    },
+    {
+      "src": "/images_programes/Logistics/hero-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2048,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/logistics",
+        "/vi/programmes/logistics"
+      ]
+    },
+    {
+      "src": "/images_programes/Logistics/Người định hướng nghiên cứu chuyên sâu.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/logistics",
+        "/vi/programmes/logistics"
+      ]
+    },
+    {
+      "src": "/images_programes/Logistics/Người làm vận hành logistics và chuỗi cung ứng.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/logistics",
+        "/vi/programmes/logistics"
+      ]
+    },
+    {
+      "src": "/images_programes/Logistics/Người tham gia phân tích và cải tiến hệ thống.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/logistics",
+        "/vi/programmes/logistics"
+      ]
+    },
+    {
+      "src": "/images_programes/Logistics/overview-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 960,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/logistics",
+        "/vi/programmes/logistics"
+      ]
+    },
+    {
+      "src": "/images_programes/Luat_kinh_te/audience-law-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/luat-kinh-te",
+        "/vi/programmes/luat-kinh-te"
+      ]
+    },
+    {
+      "src": "/images_programes/Luat_kinh_te/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2304,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/luat-kinh-te",
+        "/vi/programmes/luat-kinh-te"
+      ]
+    },
+    {
+      "src": "/images_programes/Luat_kinh_te/hero.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 5677,
+        "height": 3193,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/luat-kinh-te",
+        "/vi/programmes/luat-kinh-te"
+      ]
+    },
+    {
+      "src": "/images_programes/Luat_kinh_te/Nhóm ngành phù hợp khác.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/luat-kinh-te",
+        "/vi/programmes/luat-kinh-te"
+      ]
+    },
+    {
+      "src": "/images_programes/Ly_luan_va_lich_su_MTUD/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2731,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/ly-luan-lich-su-my-thuat",
+        "/en/programmes/ly-luan-lich-su-my-thuat"
+      ]
+    },
+    {
+      "src": "/images_programes/Ly_luan_va_lich_su_MTUD/hero-hd-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 3072,
+        "height": 2048,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/ly-luan-lich-su-my-thuat",
+        "/en/programmes/ly-luan-lich-su-my-thuat"
+      ]
+    },
+    {
+      "src": "/images_programes/Ly_luan_va_lich_su_MTUD/Tổng quan.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 1600,
+        "height": 1067,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.88,
+      "pages": [
+        "/vi/programmes/ly-luan-lich-su-my-thuat",
+        "/en/programmes/ly-luan-lich-su-my-thuat"
+      ]
+    },
+    {
+      "src": "/images_programes/Marketting/career-hd-20261119.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 3072,
+        "height": 2049,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/marketing",
+        "/en/programmes/marketing"
+      ]
+    },
+    {
+      "src": "/images_programes/Marketting/hero-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2560,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/marketing",
+        "/en/programmes/marketing"
+      ]
+    },
+    {
+      "src": "/images_programes/Marketting/Người hướng đến tư vấn và khởi nghiệp.png",
+      "format": "png",
+      "native": {
+        "width": 1000,
+        "height": 667,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/marketing",
+        "/en/programmes/marketing"
+      ]
+    },
+    {
+      "src": "/images_programes/Marketting/Người làm Marketing và kinh doanh.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/marketing",
+        "/en/programmes/marketing"
+      ]
+    },
+    {
+      "src": "/images_programes/Marketting/Người theo đuổi nghiên cứu và giảng dạy-20261119.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 2400,
+        "height": 1601,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/marketing",
+        "/en/programmes/marketing"
+      ]
+    },
+    {
+      "src": "/images_programes/Marketting/overview-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1280,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/marketing",
+        "/en/programmes/marketing"
+      ]
+    },
+    {
+      "src": "/images_programes/My_thuat_ung_dung/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2731,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/my-thuat-ung-dung",
+        "/vi/programmes/my-thuat-ung-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/My_thuat_ung_dung/hero-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2731,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/my-thuat-ung-dung",
+        "/vi/programmes/my-thuat-ung-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/My_thuat_ung_dung/Người định hướng giảng dạy hoặc khởi nghiệp.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1366,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/my-thuat-ung-dung",
+        "/vi/programmes/my-thuat-ung-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/My_thuat_ung_dung/Người định hướng giảng dạy và đào tạo.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1280,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/ly-luan-lich-su-my-thuat",
+        "/en/programmes/ly-luan-lich-su-my-thuat"
+      ]
+    },
+    {
+      "src": "/images_programes/My_thuat_ung_dung/Người làm việc trong ngành sáng tạo.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1366,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/my-thuat-ung-dung",
+        "/vi/programmes/my-thuat-ung-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/My_thuat_ung_dung/Người làm việc trong thiết kế.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1280,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/ly-luan-lich-su-my-thuat",
+        "/en/programmes/ly-luan-lich-su-my-thuat"
+      ]
+    },
+    {
+      "src": "/images_programes/My_thuat_ung_dung/Người quan tâm nghiên cứu mỹ thuật ứng dụng.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1280,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/ly-luan-lich-su-my-thuat",
+        "/en/programmes/ly-luan-lich-su-my-thuat"
+      ]
+    },
+    {
+      "src": "/images_programes/My_thuat_ung_dung/Nhà thiết kế & chuyên gia sáng tạo.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1366,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/my-thuat-ung-dung",
+        "/vi/programmes/my-thuat-ung-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/My_thuat_ung_dung/tổng quan.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1366,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/my-thuat-ung-dung",
+        "/vi/programmes/my-thuat-ung-dung"
+      ]
+    },
+    {
+      "src": "/images_programes/Ngon_ngu_anh/career-hd-20261119.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 3072,
+        "height": 2049,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/ngon-ngu-anh",
+        "/en/programmes/ngon-ngu-anh"
+      ]
+    },
+    {
+      "src": "/images_programes/Ngon_ngu_anh/chương trình phù hợp với ai.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1163,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/ngon-ngu-anh",
+        "/en/programmes/ngon-ngu-anh"
+      ]
+    },
+    {
+      "src": "/images_programes/Ngon_ngu_anh/hero-hd-20261119.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 2890,
+        "height": 1626,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/ngon-ngu-anh",
+        "/en/programmes/ngon-ngu-anh"
+      ]
+    },
+    {
+      "src": "/images_programes/Ngon_ngu_anh/overview-hd-20261119.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1600,
+        "height": 1067,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.88,
+      "pages": [
+        "/vi/programmes/ngon-ngu-anh",
+        "/en/programmes/ngon-ngu-anh"
+      ]
+    },
+    {
+      "src": "/images_programes/QHCC/chương trình phù hợp với ai.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1152,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/quan-he-cong-chung",
+        "/en/programmes/quan-he-cong-chung"
+      ]
+    },
+    {
+      "src": "/images_programes/QHCC/Cơ hội nghề nghiệp và phát triển-20261119.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 2400,
+        "height": 1417,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1.2,
+      "pages": [
+        "/vi/programmes/quan-he-cong-chung",
+        "/en/programmes/quan-he-cong-chung"
+      ]
+    },
+    {
+      "src": "/images_programes/QHCC/hero-hd-20261119.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 3072,
+        "height": 1536,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/quan-he-cong-chung",
+        "/en/programmes/quan-he-cong-chung"
+      ]
+    },
+    {
+      "src": "/images_programes/QHCC/overview-hd-20261119.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 1600,
+        "height": 1066,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.88,
+      "pages": [
+        "/vi/programmes/quan-he-cong-chung",
+        "/en/programmes/quan-he-cong-chung"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_ly_tai_nguyen_Moi_truong/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2048,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/quan-ly-tai-nguyen-moi-truong",
+        "/vi/programmes/quan-ly-tai-nguyen-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_ly_tai_nguyen_Moi_truong/chương trìnhhphuf hợp với ai.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1536,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/quan-ly-tai-nguyen-moi-truong",
+        "/vi/programmes/quan-ly-tai-nguyen-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_ly_tai_nguyen_Moi_truong/hero-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2048,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/quan-ly-tai-nguyen-moi-truong",
+        "/vi/programmes/quan-ly-tai-nguyen-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_ly_tai_nguyen_Moi_truong/Tổng quan.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/quan-ly-tai-nguyen-moi-truong",
+        "/vi/programmes/quan-ly-tai-nguyen-moi-truong"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_tri_Khach_san/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/quan-tri-khach-san",
+        "/vi/programmes/quan-tri-khach-san"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_tri_Khach_san/Chương trìnhhphuf hợp với au.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 1600,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.88,
+      "pages": [
+        "/en/programmes/quan-tri-khach-san",
+        "/vi/programmes/quan-tri-khach-san"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_tri_Khach_san/hero.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 7379,
+        "height": 4151,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/programmes/quan-tri-khach-san",
+        "/vi/programmes/quan-tri-khach-san"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_tri_Khach_san/Tổng  quan.png",
+      "format": "png",
+      "native": {
+        "width": 1800,
+        "height": 1200,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/en/programmes/quan-tri-khach-san",
+        "/vi/programmes/quan-tri-khach-san"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_tri_kinh_doanh/Chương trình phù hợp với ai.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 1600,
+        "height": 1066,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.88,
+      "pages": [
+        "/vi/programmes/quan-tri-kinh-doanh",
+        "/en/programmes/quan-tri-kinh-doanh"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_tri_kinh_doanh/Cơ hội nghề nghiệp và phát triển.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 6036,
+        "height": 3018,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/quan-tri-kinh-doanh",
+        "/en/programmes/quan-tri-kinh-doanh"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_tri_kinh_doanh/Hero.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 5639,
+        "height": 2820,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/quan-tri-kinh-doanh",
+        "/en/programmes/quan-tri-kinh-doanh"
+      ]
+    },
+    {
+      "src": "/images_programes/Quan_tri_kinh_doanh/Tổng quan chương trình.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1536,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.76,
+      "pages": [
+        "/vi/programmes/quan-tri-kinh-doanh",
+        "/en/programmes/quan-tri-kinh-doanh"
+      ]
+    },
+    {
+      "src": "/images_programes/Tai_chinh_ngan_hang/career-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2732,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/tai-chinh-ngan-hang",
+        "/en/programmes/tai-chinh-ngan-hang"
+      ]
+    },
+    {
+      "src": "/images_programes/Tai_chinh_ngan_hang/chương trình phùuhopwj với ai.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1536,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/tai-chinh-ngan-hang",
+        "/en/programmes/tai-chinh-ngan-hang"
+      ]
+    },
+    {
+      "src": "/images_programes/Tai_chinh_ngan_hang/hero-20261119.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 5986,
+        "height": 2993,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes/tai-chinh-ngan-hang",
+        "/en/programmes/tai-chinh-ngan-hang"
+      ]
+    },
+    {
+      "src": "/images_programes/Tai_chinh_ngan_hang/Tổng quan.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/programmes/tai-chinh-ngan-hang",
+        "/en/programmes/tai-chinh-ngan-hang"
+      ]
+    },
+    {
+      "src": "/images/logo/logo-vgg.png",
+      "format": "png",
+      "native": {
+        "width": 2048,
+        "height": 802,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.85,
+      "pages": [
+        "/en",
+        "/vi",
+        "/vi/programmes",
+        "/en/programmes",
+        "/vi/admissions",
+        "/en/admissions",
+        "/vi/research",
+        "/en/research",
+        "/en/student-success",
+        "/vi/student-success",
+        "/en/news",
+        "/vi/news",
+        "/vi/resources",
+        "/en/resources",
+        "/vi/programmes/cong-nghe-thong-tin",
+        "/en/programmes/cong-nghe-thong-tin",
+        "/vi/programmes/marketing",
+        "/en/programmes/marketing",
+        "/en/programmes/khoa-hoc-moi-truong",
+        "/vi/programmes/khoa-hoc-moi-truong",
+        "/en/programmes/ky-thuat-moi-truong",
+        "/vi/programmes/ky-thuat-moi-truong",
+        "/en/programmes/quan-ly-tai-nguyen-moi-truong",
+        "/vi/programmes/quan-ly-tai-nguyen-moi-truong",
+        "/en/programmes/cong-nghe-sinh-hoc",
+        "/vi/programmes/cong-nghe-sinh-hoc",
+        "/vi/programmes/ky-thuat-xay-dung",
+        "/en/programmes/ky-thuat-xay-dung",
+        "/en/programmes/ky-thuat-o-to",
+        "/vi/programmes/ky-thuat-o-to",
+        "/vi/programmes/quan-tri-kinh-doanh",
+        "/en/programmes/quan-tri-kinh-doanh",
+        "/vi/programmes/kinh-doanh-thuong-mai",
+        "/en/programmes/kinh-doanh-thuong-mai",
+        "/vi/programmes/tai-chinh-ngan-hang",
+        "/en/programmes/tai-chinh-ngan-hang",
+        "/vi/programmes/ke-toan",
+        "/en/programmes/ke-toan",
+        "/en/programmes/logistics",
+        "/vi/programmes/logistics",
+        "/en/programmes/quan-tri-khach-san",
+        "/vi/programmes/quan-tri-khach-san",
+        "/vi/programmes/quan-he-cong-chung",
+        "/en/programmes/quan-he-cong-chung",
+        "/vi/programmes/ngon-ngu-anh",
+        "/en/programmes/ngon-ngu-anh",
+        "/vi/programmes/kien-truc",
+        "/en/programmes/kien-truc",
+        "/en/programmes/my-thuat-ung-dung",
+        "/vi/programmes/my-thuat-ung-dung",
+        "/vi/programmes/ly-luan-lich-su-my-thuat",
+        "/en/programmes/ly-luan-lich-su-my-thuat",
+        "/en/admissions/bo-sung-kien-thuc",
+        "/vi/admissions/bo-sung-kien-thuc",
+        "/vi/news/all",
+        "/en/news/all",
+        "/vi/discover",
+        "/en/discover",
+        "/en/programmes/luat-kinh-te",
+        "/vi/programmes/luat-kinh-te"
+      ]
+    },
+    {
+      "src": "/images/pages/discover/content/campus.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 4032,
+        "height": 2268,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/admissions",
+        "/en/admissions",
+        "/vi/discover",
+        "/en/discover"
+      ]
+    },
+    {
+      "src": "/images/pages/discover/introduction/graduates-community.png",
+      "format": "png",
+      "native": {
+        "width": 1106,
+        "height": 1312,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/discover",
+        "/en/discover"
+      ]
+    },
+    {
+      "src": "/images/pages/discover/introduction/seminar-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2048,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/discover",
+        "/en/discover"
+      ]
+    },
+    {
+      "src": "/images/pages/discover/leadership/huynh-tan-loi-portrait.png",
+      "format": "png",
+      "native": {
+        "width": 800,
+        "height": 1000,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.78,
+      "pages": [
+        "/vi/discover",
+        "/en/discover"
+      ]
+    },
+    {
+      "src": "/images/pages/discover/leadership/nguyen-thu-hien-portrait.png",
+      "format": "png",
+      "native": {
+        "width": 800,
+        "height": 1000,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.78,
+      "pages": [
+        "/vi/discover",
+        "/en/discover"
+      ]
+    },
+    {
+      "src": "/images/pages/discover/leadership/nguyen-viet-tinh-portrait.png",
+      "format": "png",
+      "native": {
+        "width": 800,
+        "height": 1000,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.78,
+      "pages": [
+        "/vi/discover",
+        "/en/discover"
+      ]
+    },
+    {
+      "src": "/images/pages/discover/leadership/pham-quoc-anh-portrait.png",
+      "format": "png",
+      "native": {
+        "width": 800,
+        "height": 1000,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.78,
+      "pages": [
+        "/vi/discover",
+        "/en/discover"
+      ]
+    },
+    {
+      "src": "/images/pages/discover/leadership/thay2.png",
+      "format": "png",
+      "native": {
+        "width": 2076,
+        "height": 1857,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 1.09,
+      "pages": [
+        "/vi/discover",
+        "/en/discover"
+      ]
+    },
+    {
+      "src": "/images/pages/discover/leadership/tong-chi-thong-portrait.png",
+      "format": "png",
+      "native": {
+        "width": 800,
+        "height": 1000,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.78,
+      "pages": [
+        "/vi/discover",
+        "/en/discover"
+      ]
+    },
+    {
+      "src": "/images/pages/home/sections/campus-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4032,
+        "height": 2268,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 0.79,
+      "pages": [
+        "/en",
+        "/vi"
+      ]
+    },
+    {
+      "src": "/images/pages/programmes/content/campus.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 4032,
+        "height": 2268,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/programmes",
+        "/en/programmes"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/banner-quality-20261120.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 4096,
+        "height": 2048,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/Cô Diệu.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 2634,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 0.86,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/congnghekythuat.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1080,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 1.2,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/duan2.avif",
+      "format": "heif",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 0.44,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/duan3.avif",
+      "format": "heif",
+      "native": {
+        "width": 1920,
+        "height": 1280,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 0.44,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/dulich.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 1.01,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/graduates.avif",
+      "format": "heif",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 0.44,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/hoptac.JPG",
+      "format": "jpeg",
+      "native": {
+        "width": 1600,
+        "height": 1067,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.9,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/moitruong.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1920,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 0.92,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/partner-logos.png",
+      "format": "png",
+      "native": {
+        "width": 838,
+        "height": 800,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/qtkd.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1280,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 1.01,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/thietke.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 1.01,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/content/xhnv.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 1920,
+        "height": 1281,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 1.01,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/partners/angelo-state.png",
+      "format": "png",
+      "native": {
+        "width": 1001,
+        "height": 979,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.52,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/partners/inha.png",
+      "format": "png",
+      "native": {
+        "width": 316,
+        "height": 316,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.82,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/partners/liverpool-john-moores.gif",
+      "format": "gif",
+      "native": {
+        "width": 1549,
+        "height": 550,
+        "format": "gif"
+      },
+      "maxDecodedUpscale": 0.37,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/partners/ming-chuan.png",
+      "format": "png",
+      "native": {
+        "width": 316,
+        "height": 316,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.82,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/partners/newcastle.png",
+      "format": "png",
+      "native": {
+        "width": 900,
+        "height": 500,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 0.92,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/research/partners/waikato.png",
+      "format": "png",
+      "native": {
+        "width": 1956,
+        "height": 589,
+        "format": "png"
+      },
+      "maxDecodedUpscale": 1.17,
+      "pages": [
+        "/vi/research",
+        "/en/research"
+      ]
+    },
+    {
+      "src": "/images/pages/resources/content/banner.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 7008,
+        "height": 4672,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/vi/resources",
+        "/en/resources"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/banner-hd-20261119.webp",
+      "format": "jpeg",
+      "native": {
+        "width": 3072,
+        "height": 2049,
+        "format": "webp"
+      },
+      "maxDecodedUpscale": 1,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/csv.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1.22,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/hoctap.JPG",
+      "format": "jpeg",
+      "native": {
+        "width": 7952,
+        "height": 5304,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1.12,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/hocthuat.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1.22,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/hotrohocvien.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 3840,
+        "height": 2561,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 1.22,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/kk2.avif",
+      "format": "jpeg",
+      "native": {
+        "width": 1902,
+        "height": 1268,
+        "format": "heif"
+      },
+      "maxDecodedUpscale": 0.93,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/kk3.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2000,
+        "height": 1000,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1.16,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/kk4.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.93,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/kk5.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.93,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/kk6.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1152,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1.03,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/kk7.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 0.87,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/nk.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1354,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1.23,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/phattrien.PNG",
+      "format": "jpeg",
+      "native": {
+        "width": 1179,
+        "height": 779,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1.2,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/sunghiep.PNG",
+      "format": "jpeg",
+      "native": {
+        "width": 1178,
+        "height": 777,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1.23,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "/images/pages/student-success/content/tainguyen.JPG",
+      "format": "jpeg",
+      "native": {
+        "width": 2048,
+        "height": 1365,
+        "format": "jpeg"
+      },
+      "maxDecodedUpscale": 1.22,
+      "pages": [
+        "/en/student-success",
+        "/vi/student-success"
+      ]
+    },
+    {
+      "src": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_1889_be9c776c33.jpg",
+      "format": "jpeg",
+      "native": {
+        "width": 1080,
+        "height": 720
+      },
+      "maxDecodedUpscale": 1.08,
+      "pages": [
+        "/en/programmes/luat-kinh-te",
+        "/vi/programmes/luat-kinh-te"
+      ]
+    }
+  ]
+}

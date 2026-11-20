@@ -676,7 +676,8 @@ test("Every programme has local imagery with appropriate source attribution", ()
       "khoa-hoc-moi-truong", "kinh-doanh-thuong-mai",
       "kien-truc", "luat-kinh-te", "quan-tri-khach-san", "quan-tri-kinh-doanh",
       "logistics", "marketing", "quan-he-cong-chung", "ly-luan-lich-su-my-thuat",
-      "ngon-ngu-anh",
+      "ngon-ngu-anh", "ky-thuat-moi-truong", "cong-nghe-sinh-hoc",
+      "ky-thuat-o-to", "quan-ly-tai-nguyen-moi-truong",
     ].includes(p.id);
     const hasCustomOverview = [
       "cong-nghe-thong-tin", "khoa-hoc-moi-truong", "ky-thuat-moi-truong",
@@ -684,6 +685,7 @@ test("Every programme has local imagery with appropriate source attribution", ()
       "ngon-ngu-anh", "quan-he-cong-chung", "quan-ly-tai-nguyen-moi-truong",
       "quan-tri-kinh-doanh", "tai-chinh-ngan-hang",
       "quan-tri-khach-san", "ly-luan-lich-su-my-thuat",
+      "marketing", "cong-nghe-sinh-hoc", "ky-thuat-o-to", "kinh-doanh-thuong-mai", "ke-toan", "kien-truc",
     ].includes(p.id);
     const hasCustomCareer = [
       "cong-nghe-thong-tin", "ke-toan", "ky-thuat-xay-dung", "my-thuat-ung-dung",
@@ -691,6 +693,7 @@ test("Every programme has local imagery with appropriate source attribution", ()
       "ngon-ngu-anh", "quan-he-cong-chung", "quan-ly-tai-nguyen-moi-truong",
       "khoa-hoc-moi-truong", "quan-tri-khach-san", "quan-tri-kinh-doanh",
       "kinh-doanh-thuong-mai", "ly-luan-lich-su-my-thuat",
+      "cong-nghe-sinh-hoc", "ky-thuat-o-to", "tai-chinh-ngan-hang", "logistics",
     ].includes(p.id);
     const hasCustomIllustration = [
       "ngon-ngu-anh", "quan-he-cong-chung", "quan-ly-tai-nguyen-moi-truong",
