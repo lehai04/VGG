@@ -81,7 +81,7 @@ export async function DiscoverIntroduction() {
           fill
           priority
           loading="eager"
-          sizes="100vw"
+          sizes="(max-width: 1024px) 1600px, 100vw"
           className={styles.cover}
         />}
         <div className={styles.heroShade} />

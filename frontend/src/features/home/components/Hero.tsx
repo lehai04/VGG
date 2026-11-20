@@ -18,7 +18,7 @@ export async function Hero() {
     <section data-site-banner className="hero" id="top">
       <div className="heroMedia" aria-hidden="true">
         {banner?.kind === "image" ? (
-          <Image fill preload sizes="100vw" quality={75} className="heroBackground" src={banner.src} alt={banner.alt || ""} />
+          <Image fill preload sizes="(max-width: 1024px) 1600px, 100vw" quality={75} className="heroBackground" src={banner.src} alt={banner.alt || ""} />
         ) : (
           <video className="heroBackground" autoPlay muted loop playsInline preload="metadata"
             poster={banner?.poster || hero.posterImage}>

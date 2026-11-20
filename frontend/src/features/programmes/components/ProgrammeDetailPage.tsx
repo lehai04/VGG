@@ -285,7 +285,7 @@ export function ProgrammeDetailPage({ programme,layout }: { programme: Programme
           fill
           priority
           quality={95}
-          sizes="100vw"
+          sizes="(max-width: 1024px) 1600px, 100vw"
         />
         <div className={styles.heroOverlay} aria-hidden="true" />
 

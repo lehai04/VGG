@@ -69,7 +69,7 @@ export async function ResearchLanding() {
 
       <ContentPageSections pageId="research" layout={layout}>
       <section data-site-banner data-content-slot="hero" className={styles.hero}>
-        <Image src={content.hero.image} alt={t(content.hero.alt)} fill priority sizes="100vw" />
+        <Image src={content.hero.image} alt={t(content.hero.alt)} fill priority sizes="(max-width: 1024px) 1600px, 100vw" />
         <div className={styles.heroShade} />
         <div data-banner-copy className={styles.heroCopy} data-reveal>
           <p data-banner-label>{t(content.hero.label.split(" · ")[0])}</p>

@@ -30,7 +30,7 @@ export async function ProgrammesLanding() {
           alt={t(copy.programmes_hero.alt_khuon_vien_truong_dai_hoc_van)}
           fill
           priority
-          sizes="100vw"
+          sizes="(max-width: 1024px) 1600px, 100vw"
         />
         <div className={`${styles["programmes-hero-overlay"]}`} />
 

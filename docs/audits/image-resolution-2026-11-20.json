@@ -1,0 +1,296 @@
+{
+  "date": "2026-11-20",
+  "scope": {
+    "routes": [
+      "/vi/",
+      "/vi/discover",
+      "/vi/programmes",
+      "/vi/admissions",
+      "/vi/global",
+      "/vi/research",
+      "/vi/resources",
+      "/vi/news",
+      "/vi/student-success",
+      "/vi/programmes/cong-nghe-thong-tin",
+      "/vi/programmes/marketing",
+      "/vi/programmes/khoa-hoc-moi-truong",
+      "/vi/programmes/ky-thuat-moi-truong",
+      "/vi/programmes/quan-ly-tai-nguyen-moi-truong",
+      "/vi/programmes/cong-nghe-sinh-hoc",
+      "/vi/programmes/ky-thuat-o-to",
+      "/vi/programmes/quan-tri-kinh-doanh",
+      "/vi/programmes/tai-chinh-ngan-hang",
+      "/vi/programmes/ke-toan",
+      "/vi/programmes/logistics",
+      "/vi/programmes/quan-tri-khach-san",
+      "/vi/programmes/luat-kinh-te",
+      "/vi/programmes/quan-he-cong-chung",
+      "/vi/programmes/ngon-ngu-anh",
+      "/vi/programmes/kien-truc",
+      "/vi/programmes/my-thuat-ung-dung",
+      "/vi/programmes/ky-thuat-xay-dung",
+      "/vi/programmes/kinh-doanh-thuong-mai",
+      "/vi/programmes/ly-luan-lich-su-my-thuat"
+    ],
+    "viewports": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "deviceScaleFactor": 1
+      },
+      {
+        "width": 390,
+        "height": 1080,
+        "deviceScaleFactor": 2
+      }
+    ],
+    "pageChecks": 58
+  },
+  "changes": {
+    "replacements": [
+      {
+        "page": "quan-he-cong-chung",
+        "slot": "hero",
+        "old": "images_programes/QHCC/hero.jpg",
+        "file": "images_programes/QHCC/hero-hd-20261119.webp",
+        "samePhoto": true,
+        "sourceUrl": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/vlu_le_nhap_mon_khoa_quan_he_cong_chung_truyen_thong_engage_and_amplify_a_efe83793c8.jpg",
+        "before": {
+          "width": 632,
+          "height": 316
+        },
+        "original": {
+          "width": 5785,
+          "height": 2893
+        },
+        "after": {
+          "width": 3072,
+          "height": 1536,
+          "bytes": 190570
+        }
+      },
+      {
+        "page": "quan-he-cong-chung",
+        "slot": "overview",
+        "old": "images_programes/QHCC/Tổng quan chương trình-20261119.webp",
+        "file": "images_programes/QHCC/overview-hd-20261119.webp",
+        "samePhoto": true,
+        "sourceUrl": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_00998_6310f54ace.jpg",
+        "before": {
+          "width": 750,
+          "height": 499
+        },
+        "original": {
+          "width": 7952,
+          "height": 5301
+        },
+        "after": {
+          "width": 1600,
+          "height": 1066,
+          "bytes": 108362
+        }
+      },
+      {
+        "page": "khoa-hoc-moi-truong",
+        "slot": "hero",
+        "old": "images_programes/Khoa_hoc_moi_truong/hero-20261119.webp",
+        "file": "images_programes/Khoa_hoc_moi_truong/hero-hd-20261119.webp",
+        "samePhoto": true,
+        "sourceUrl": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/vlu_truong_dai_hoc_van_lang_chung_tay_vi_muc_tieu_phat_trien_ben_vung_c_49b31fd993.jpg",
+        "before": {
+          "width": 739,
+          "height": 415
+        },
+        "original": {
+          "width": 6554,
+          "height": 3277
+        },
+        "after": {
+          "width": 3072,
+          "height": 1536,
+          "bytes": 313662
+        }
+      },
+      {
+        "page": "ngon-ngu-anh",
+        "slot": "hero",
+        "old": "images_programes/Ngon_ngu_anh/hero-20261119.webp",
+        "file": "images_programes/Ngon_ngu_anh/hero-hd-20261119.webp",
+        "samePhoto": false,
+        "sourceUrl": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/gik_09631_12d3cf2375.jpg",
+        "before": {
+          "width": 1000,
+          "height": 500
+        },
+        "original": {
+          "width": 2890,
+          "height": 1626
+        },
+        "after": {
+          "width": 2890,
+          "height": 1626,
+          "bytes": 386696
+        }
+      },
+      {
+        "page": "ngon-ngu-anh",
+        "slot": "overview",
+        "old": "images_programes/Ngon_ngu_anh/Tổng quan-20261119.webp",
+        "file": "images_programes/Ngon_ngu_anh/overview-hd-20261119.webp",
+        "samePhoto": true,
+        "sourceUrl": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0581_082c2471df.jpg",
+        "before": {
+          "width": 500,
+          "height": 333
+        },
+        "original": {
+          "width": 7758,
+          "height": 5175
+        },
+        "after": {
+          "width": 1600,
+          "height": 1067,
+          "bytes": 132258
+        }
+      },
+      {
+        "page": "ngon-ngu-anh",
+        "slot": "career",
+        "old": "images_programes/Ngon_ngu_anh/Cơ hội nghề nghiệp và phát triển-20261119.webp",
+        "file": "images_programes/Ngon_ngu_anh/career-hd-20261119.webp",
+        "samePhoto": false,
+        "sourceUrl": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0801_16e223fdcf.jpg",
+        "before": {
+          "width": 1170,
+          "height": 305
+        },
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "after": {
+          "width": 3072,
+          "height": 2049,
+          "bytes": 302172
+        }
+      },
+      {
+        "page": "marketing",
+        "slot": "career",
+        "old": "images_programes/Marketting/Cơ hội nghề nghiệp và phát triển-20261119.webp",
+        "file": "images_programes/Marketting/career-hd-20261119.webp",
+        "samePhoto": false,
+        "sourceUrl": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0764_fc6e06152f.jpg",
+        "before": {
+          "width": 750,
+          "height": 423
+        },
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "after": {
+          "width": 3072,
+          "height": 2049,
+          "bytes": 301304
+        }
+      },
+      {
+        "page": "student-success",
+        "slot": "hero",
+        "old": "images/pages/student-success/content/banner.JPG",
+        "file": "images/pages/student-success/content/banner-hd-20261119.webp",
+        "samePhoto": false,
+        "sourceUrl": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_2083_4cda424f89.jpg",
+        "before": {
+          "width": 750,
+          "height": 422
+        },
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "after": {
+          "width": 3072,
+          "height": 2049,
+          "bytes": 337178
+        }
+      },
+      {
+        "page": "ky-thuat-xay-dung",
+        "slot": "career",
+        "old": "images_programes/Ky_thuat_xay_dung/Cơ hội nghề nghiệp và phát triển.webp",
+        "file": "images_programes/Ky_thuat_xay_dung/career-hd-20261119.webp",
+        "samePhoto": true,
+        "sourceUrl": "repository:frontend/public/images_programes/Ky_thuat_xay_dung/Cơ hội nghề nghiệp và phát triển.png",
+        "before": {
+          "width": 1185,
+          "height": 718
+        },
+        "original": {
+          "width": 2188,
+          "height": 718
+        },
+        "after": {
+          "width": 2188,
+          "height": 718,
+          "bytes": 109954
+        }
+      },
+      {
+        "page": "kinh-doanh-thuong-mai",
+        "slot": "career",
+        "old": "images_programes/Kinh_doanh_thuong_mai/Cơ hội nghề nghiệp và phát triển.avif",
+        "file": "images_programes/Kinh_doanh_thuong_mai/career-hd-20261119.webp",
+        "samePhoto": false,
+        "sourceUrl": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/VLU_0772_4f787970c0.jpg",
+        "before": {
+          "width": 1920,
+          "height": 600
+        },
+        "original": {
+          "width": 7952,
+          "height": 5304
+        },
+        "after": {
+          "width": 3072,
+          "height": 2049,
+          "bytes": 234308
+        }
+      },
+      {
+        "page": "ly-luan-lich-su-my-thuat",
+        "slot": "hero",
+        "old": "images_programes/Ly_luan_va_lich_su_MTUD/hero.jpg",
+        "file": "images_programes/Ly_luan_va_lich_su_MTUD/hero-hd-20261120.webp",
+        "samePhoto": false,
+        "sourceUrl": "https://vluwebmedia.s3.ap-southeast-1.amazonaws.com/6_I7_A7284_df4f1efc30.JPG",
+        "before": {
+          "width": 1920,
+          "height": 804
+        },
+        "original": {
+          "width": 5760,
+          "height": 3840
+        },
+        "after": {
+          "width": 3072,
+          "height": 2048,
+          "bytes": 251166
+        }
+      }
+    ],
+    "coverBannerSizes": "(max-width: 1024px) 1600px, 100vw",
+    "responsiveCareerPhotos": "All programme career images retain their aspect ratio in a bounded frame below the text at widths up to 1024px."
+  },
+  "verification": {
+    "httpErrors": 0,
+    "brokenImages": 0,
+    "sourceUpscaleAbove1_5": 0,
+    "mobileOptimizedHeroUpscaleAbove1_5": 0,
+    "horizontalOverflow": 0,
+    "frontendTests": 51,
+    "typecheck": "passed",
+    "lint": "passed"
+  }
+}

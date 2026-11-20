@@ -175,7 +175,7 @@ const programmePhotos: Record<string, {
   },
   "khoa-hoc-moi-truong": {
     folder: "Khoa_hoc_moi_truong",
-    hero: "hero-20261119.webp",
+    hero: "hero-hd-20261119.webp",
     overview: { filename: "Định hướng đào tạo.jpg", alt: "Minh họa định hướng đào tạo Khoa học Môi trường" },
     audience: {
       "Năng lực chuyên môn": "Năng lực chuyên môn.jpg",
@@ -223,7 +223,7 @@ const programmePhotos: Record<string, {
       "Nghiên cứu và ra quyết định": "Nghiên cứu và ra quyết định.png",
       "Hợp tác và truyền đạt tri thức": "Hợp tác và truyền đạt tri thức.jpg",
     },
-    career: "Cơ hội nghề nghiệp và phát triển.webp",
+    career: "career-hd-20261119.webp",
   },
   "my-thuat-ung-dung": {
     folder: "My_thuat_ung_dung",
@@ -238,7 +238,7 @@ const programmePhotos: Record<string, {
   },
   "ly-luan-lich-su-my-thuat": {
     folder: "Ly_luan_va_lich_su_MTUD",
-    hero: "hero.jpg",
+    hero: "hero-hd-20261120.webp",
     overview: { filename: "Tổng quan.jpg", alt: "Minh họa tổng quan ngành Lý luận và Lịch sử Mỹ thuật ứng dụng" },
     career: "Cơ hội nghề nghiệp và phát triển.jpg",
     audienceFolder: "My_thuat_ung_dung",
@@ -264,7 +264,7 @@ const programmePhotos: Record<string, {
       "Người hướng đến tư vấn và khởi nghiệp": "Người hướng đến tư vấn và khởi nghiệp.png",
       "Người theo đuổi nghiên cứu và giảng dạy": "Người theo đuổi nghiên cứu và giảng dạy-20261119.webp",
     },
-    career: "Cơ hội nghề nghiệp và phát triển-20261119.webp",
+    career: "career-hd-20261119.webp",
   },
   "luat-kinh-te": {
     folder: "Luat_kinh_te",
@@ -285,15 +285,15 @@ const programmePhotos: Record<string, {
   },
   "ngon-ngu-anh": {
     folder: "Ngon_ngu_anh",
-    hero: "hero-20261119.webp",
-    overview: { filename: "Tổng quan-20261119.webp", alt: "Minh họa tổng quan ngành Ngôn ngữ Anh" },
+    hero: "hero-hd-20261119.webp",
+    overview: { filename: "overview-hd-20261119.webp", alt: "Minh họa tổng quan ngành Ngôn ngữ Anh" },
     audienceIllustration: "chương trình phù hợp với ai.jpg",
-    career: "Cơ hội nghề nghiệp và phát triển-20261119.webp",
+    career: "career-hd-20261119.webp",
   },
   "quan-he-cong-chung": {
     folder: "QHCC",
-    hero: "hero.jpg",
-    overview: { filename: "Tổng quan chương trình-20261119.webp", alt: "Minh họa tổng quan ngành Quan hệ công chúng" },
+    hero: "hero-hd-20261119.webp",
+    overview: { filename: "overview-hd-20261119.webp", alt: "Minh họa tổng quan ngành Quan hệ công chúng" },
     audienceIllustration: "chương trình phù hợp với ai.jpg",
     career: "Cơ hội nghề nghiệp và phát triển-20261119.webp",
   },
@@ -326,7 +326,7 @@ const programmePhotos: Record<string, {
   "kinh-doanh-thuong-mai": {
     folder: "Kinh_doanh_thuong_mai",
     hero: "hero.jpg",
-    career: "Cơ hội nghề nghiệp và phát triển.avif",
+    career: "career-hd-20261119.webp",
     audience: {
       "Người đang làm kinh doanh, thương mại": "Người đang làm kinh doanh, thương mại.png",
       "Người hướng đến vai trò quản lý": "Người hướng đến vai trò quản lý.png",
